@@ -162,11 +162,11 @@
         const cta = document.getElementById('cta');
         const flash = document.getElementById('flash');
 
-        function doFlash(intensity = 0.38) {
+        function doFlash(intensity = 0.78) {
             flash.style.transition = 'none';
             flash.style.opacity = intensity;
             setTimeout(() => {
-                flash.style.transition = 'opacity 260ms ease-out';
+                flash.style.transition = 'opacity 2960ms ease-out';
                 flash.style.opacity = '0';
             }, 40);
         }
