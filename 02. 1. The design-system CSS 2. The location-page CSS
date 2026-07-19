@@ -1,0 +1,434 @@
+'use client';
+
+import { FormEvent, useState } from 'react';
+import { useRouter } from 'next/navigation';
+
+type LocationEntry = {
+  id: string;
+  value: string;
+};
+
+const createLocationEntry = (): LocationEntry => ({
+  id: crypto.randomUUID(),
+  value: '',
+});
+
+export default function GeographicalImprintsPage() {
+  const router = useRouter();
+
+  const [birthLocation, setBirthLocation] = useState('');
+  const [livedLocations, setLivedLocations] = useState<LocationEntry[]>([
+    createLocationEntry(),
+  ]);
+  const [currentLocation, setCurrentLocation] = useState('');
+  const [error, setError] = useState('');
+
+  function updateLivedLocation(id: string, value: string) {
+    setLivedLocations((locations) =>
+      locations.map((location) =>
+        location.id === id ? { ...location, value } : location,
+      ),
+    );
+  }
+
+  function addLivedLocation() {
+    setLivedLocations((locations) => [
+      ...locations,
+      createLocationEntry(),
+    ]);
+  }
+
+  function removeLivedLocation(id: string) {
+    setLivedLocations((locations) => {
+      if (locations.length === 1) {
+        return [{ ...locations[0], value: '' }];
+      }
+
+      return locations.filter((location) => location.id !== id);
+    });
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const normalizedBirthLocation = birthLocation.trim();
+    const normalizedCurrentLocation = currentLocation.trim();
+    const normalizedLivedLocations = livedLocations
+      .map((location) => location.value.trim())
+      .filter(Boolean);
+
+    if (!normalizedBirthLocation || !normalizedCurrentLocation) {
+      setError('Enter your birth location and current location to continue.');
+      return;
+    }
+
+    setError('');
+
+    sessionStorage.setItem(
+      'seen.foundation.locations',
+      JSON.stringify({
+        birthLocation: normalizedBirthLocation,
+        livedLocations: normalizedLivedLocations,
+        currentLocation: normalizedCurrentLocation,
+      }),
+    );
+
+    router.push('/foundation/birth');
+  }
+
+  return (
+    <main className="seenFlowPage">
+      <section
+        className="seenFlowShell"
+        aria-labelledby="geographical-imprints-title"
+      >
+        <div className="seenProgress" aria-label="Foundation progress">
+          <span className="seenProgressLabel">Foundation</span>
+          <span className="seenProgressValue">01 / 02</span>
+        </div>
+
+        <header className="seenFlowHeader">
+          <h1
+            id="geographical-imprints-title"
+            className="seenDisplayLarge"
+          >
+            Geographical Imprints
+          </h1>
+
+          <p className="seenFlowIntroduction">
+            Tell us where in the world your life has taken place.
+          </p>
+
+          <div className="seenDivider" aria-hidden="true" />
+        </header>
+
+        <form className="seenPanel seenFlowForm" onSubmit={handleSubmit}>
+          <div className="seenField">
+            <label className="seenLabel" htmlFor="birth-location">
+              Where were you born?
+            </label>
+
+            <div className="seenInputFrame">
+              <span className="seenFieldIcon" aria-hidden="true">
+                ⟡
+              </span>
+
+              <input
+                id="birth-location"
+                className="seenInput seenInputWithIcon"
+                type="text"
+                autoComplete="off"
+                placeholder="City, state or country"
+                value={birthLocation}
+                onChange={(event) => setBirthLocation(event.target.value)}
+              />
+            </div>
+          </div>
+
+          <fieldset className="seenFieldset">
+            <legend className="seenLabel">
+              Where else have you lived?
+            </legend>
+
+            <p className="seenFieldSupport">
+              Add each location where you lived for one year or longer.
+            </p>
+
+            <div className="seenLocationList">
+              {livedLocations.map((location, index) => (
+                <div className="seenLocationRow" key={location.id}>
+                  <div className="seenInputFrame">
+                    <span className="seenFieldIcon" aria-hidden="true">
+                      ⟡
+                    </span>
+
+                    <input
+                      className="seenInput seenInputWithIcon"
+                      type="text"
+                      autoComplete="off"
+                      aria-label={`Lived location ${index + 1}`}
+                      placeholder="City, state or country"
+                      value={location.value}
+                      onChange={(event) =>
+                        updateLivedLocation(
+                          location.id,
+                          event.target.value,
+                        )
+                      }
+                    />
+                  </div>
+
+                  {location.value && (
+                    <button
+                      className="seenLocationRemove"
+                      type="button"
+                      aria-label={`Remove lived location ${index + 1}`}
+                      onClick={() => removeLivedLocation(location.id)}
+                    >
+                      ×
+                    </button>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <button
+              className="seenAddLocation"
+              type="button"
+              onClick={addLivedLocation}
+            >
+              <span aria-hidden="true">+</span>
+              Add another location
+            </button>
+          </fieldset>
+
+          <div className="seenField">
+            <label className="seenLabel" htmlFor="current-location">
+              Where do you live now?
+            </label>
+
+            <div className="seenInputFrame">
+              <span className="seenFieldIcon" aria-hidden="true">
+                ⟡
+              </span>
+
+              <input
+                id="current-location"
+                className="seenInput seenInputWithIcon"
+                type="text"
+                autoComplete="off"
+                placeholder="City, state or country"
+                value={currentLocation}
+                onChange={(event) => setCurrentLocation(event.target.value)}
+              />
+            </div>
+          </div>
+
+          {error && (
+            <p className="seenFormError" role="alert">
+              {error}
+            </p>
+          )}
+
+          <button className="seenButtonPrimary" type="submit">
+            Continue
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <div
+          className="seenDivider seenCompletionDivider"
+          aria-hidden="true"
+        />
+      </section>
+    </main>
+  );
+}
+
+
+.seenFlowPage {
+  min-height: 100svh;
+  padding:
+    max(32px, env(safe-area-inset-top))
+    20px
+    max(32px, env(safe-area-inset-bottom));
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(251, 234, 131, 0.07),
+      transparent 34%
+    ),
+    var(--seen-bg);
+}
+
+.seenFlowShell {
+  width: min(100%, 520px);
+  margin: 0 auto;
+}
+
+.seenProgress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--seen-space-8);
+  color: var(--seen-text-secondary);
+  font-family: Inter, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.seenProgressValue {
+  color: var(--seen-gold-deep);
+}
+
+.seenFlowHeader {
+  margin-bottom: var(--seen-space-8);
+}
+
+.seenDisplayLarge {
+  margin: 0;
+  color: var(--seen-text-primary);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 13vw, 5.25rem);
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.seenFlowIntroduction {
+  max-width: 34rem;
+  margin:
+    var(--seen-space-4)
+    0
+    var(--seen-space-6);
+  color: var(--seen-text-secondary);
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.seenFlowForm {
+  display: grid;
+  gap: var(--seen-space-8);
+  padding: var(--seen-space-6);
+}
+
+.seenField,
+.seenFieldset {
+  display: grid;
+  gap: var(--seen-space-3);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.seenLabel {
+  color: var(--seen-text-secondary);
+  font-family: Inter, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.seenFieldSupport {
+  margin: -2px 0 var(--seen-space-1);
+  color: var(--seen-text-secondary);
+  font-family: Inter, sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.seenInputFrame {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.seenInputWithIcon {
+  padding-left: 46px;
+}
+
+.seenFieldIcon {
+  position: absolute;
+  top: 50%;
+  left: 17px;
+  z-index: 1;
+  color: var(--seen-gold-deep);
+  font-size: 1.1rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.seenLocationList {
+  display: grid;
+  gap: var(--seen-space-3);
+}
+
+.seenLocationRow {
+  display: flex;
+  align-items: center;
+  gap: var(--seen-space-2);
+}
+
+.seenLocationRemove {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  color: var(--seen-gold-deep);
+  background: rgba(23, 21, 18, 0.72);
+  border: 1px solid var(--seen-border);
+  border-radius: 50%;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.seenAddLocation {
+  display: inline-flex;
+  align-items: center;
+  align-self: start;
+  gap: var(--seen-space-2);
+  min-height: 44px;
+  padding: 0;
+  color: var(--seen-gold-deep);
+  background: transparent;
+  border: 0;
+  font-family: Inter, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.seenAddLocation span {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 1px solid var(--seen-border-strong);
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.seenFormError {
+  margin: -8px 0 0;
+  color: #e8b4a8;
+  font-family: Inter, sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.seenFlowForm .seenButtonPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--seen-space-3);
+  width: 100%;
+  margin-top: var(--seen-space-2);
+  cursor: pointer;
+}
+
+.seenCompletionDivider {
+  width: min(72%, 280px);
+  margin: var(--seen-space-10) auto 0;
+  opacity: 0.72;
+}
+
+@media (min-width: 700px) {
+  .seenFlowPage {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .seenFlowForm {
+    padding: var(--seen-space-8);
+  }
+}
