@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEEN Splash</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Inter:wght@400;600;700&display=swap');
+        
+        :root {
+            --seen-bg: #171512;
+            --seen-text-primary: #f4efe5;
+            --seen-gold-rich: #d4b46a;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: var(--seen-bg);
+            color: var(--seen-text-primary);
+            font-family: 'Inter', system-ui, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .ambient {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, #d4b46a 0%, transparent 68%);
+            opacity: 0.07;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 520px;
+            padding: 0 40px;
+            text-align: center;
+        }
+        
+        .word {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.3rem, 10.5vw, 6.4rem);
+            line-height: 0.91;
+            font-weight: 500;
+            letter-spacing: -0.04em;
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.35s ease-out;
+            color: var(--seen-gold-rich);
+            text-shadow: 
+                0 0 35px rgba(212, 180, 106, 0.95),
+                0 0 75px rgba(212, 180, 106, 0.55),
+                0 0 120px rgba(212, 180, 106, 0.3);
+        }
+        
+        .word.active {
+            opacity: 1;
+        }
+        
+        .message {
+            opacity: 0;
+            transition: opacity 0.6s ease-out;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.3rem, 7.8vw, 4.2rem);
+            line-height: 1.02;
+        }
+        
+        .message.show {
+            opacity: 1;
+        }
+        
+        .gold-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #b38f4f, #d4b46a, #b38f4f, transparent);
+            margin: 38px auto;
+            max-width: 210px;
+            box-shadow: 0 0 20px rgba(212, 180, 106, 0.8);
+            transform: scaleX(0);
+            transition: transform 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .gold-line.show {
+            transform: scaleX(1);
+        }
+        
+        .cta {
+            opacity: 0;
+            transition: opacity 0.4s ease-out 0.5s;
+            margin-top: 55px;
+        }
+        
+        .cta.show {
+            opacity: 1;
+        }
+        
+        .seenButtonPrimary {
+            min-height: 58px;
+            padding: 0 36px;
+            color: #171512;
+            background: linear-gradient(90deg, #b38f4f 0%, #d4b46a 48%, #b38f4f 100%);
+            border: 1px solid rgba(245, 225, 170, 0.9);
+            border-radius: 999px;
+            box-shadow: 0 0 34px rgba(212, 180, 106, 0.7),
+                        0 14px 34px rgba(0, 0, 0, 0.42),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            font-family: Inter, sans-serif;
+            font-size: 0.97rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        
+        .seenButtonPrimary:active {
+            transform: translateY(1px);
+        }
+        
+        .flash {
+            position: absolute;
+            inset: 0;
+            background: white;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 20;
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient"></div>
+    <div class="content">
+        <div id="wordContainer" class="word"></div>
+        
+        <div id="message" class="message">
+            You are so much more than that.
+        </div>
+        
+        <div id="goldLine" class="gold-line"></div>
+        
+        <div id="cta" class="cta">
+            <button onclick="enterSeen()" class="seenButtonPrimary">
+                ARE YOU READY TO BE SEEN?
+            </button>
+        </div>
+    </div>
+    
+    <div id="flash" class="flash"></div>
+
+    <script>
+        const words = ['YOU', 'ARE', 'NOT', 'YOUR', 'SUN', 'SIGN.'];
+        const wordContainer = document.getElementById('wordContainer');
+        const message = document.getElementById('message');
+        const goldLine = document.getElementById('goldLine');
+        const cta = document.getElementById('cta');
+        const flash = document.getElementById('flash');
+
+        function doFlash(intensity = 0.38) {
+            flash.style.transition = 'none';
+            flash.style.opacity = intensity;
+            setTimeout(() => {
+                flash.style.transition = 'opacity 260ms ease-out';
+                flash.style.opacity = '0';
+            }, 40);
+        }
+
+        function showWord(index) {
+            if (index >= words.length) {
+                setTimeout(() => {
+                    message.classList.add('show');
+                    setTimeout(() => {
+                        goldLine.classList.add('show');
+                        setTimeout(() => cta.classList.add('show'), 950);
+                    }, 750);
+                }, 700);
+                return;
+            }
+            
+            wordContainer.textContent = words[index];
+            wordContainer.classList.add('active');
+            
+            // No flash on words — only initial 2
+            
+            setTimeout(() => {
+                wordContainer.classList.remove('active');
+                setTimeout(() => showWord(index + 1), 340);
+            }, 520);
+        }
+
+        function startSequence() {
+            let flashCount = 0;
+            const flashInterval = setInterval(() => {
+                doFlash(0.38);
+                flashCount++;
+                if (flashCount >= 3) {
+                    clearInterval(flashInterval);
+                    setTimeout(() => showWord(0), 320);
+                }
+            }, 360);
+        }
+
+        function enterSeen() {
+            alert("Entering SEEN — heading to Foundation Intake ✨");
+        }
+
+        window.onload = startSequence;
+    </script>
+</body>
+</html>
