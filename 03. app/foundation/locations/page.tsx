@@ -27,7 +27,7 @@
               <div className="seenInputFrame">
                 <input
                   type="text"
-                  placeholder="City, State / Country"
+                  placeholder="City,State / Country"
                   value={location}
                   onChange={(e) => updateLived(index, e.target.value)}
                   className="seenInput"
