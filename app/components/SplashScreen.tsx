@@ -6,64 +6,37 @@ const WORDS = ['You', 'are', 'not', 'your', 'sun', 'sign.']
 
 export function SplashScreen({ onComplete }: { onComplete: () => void }) {
   const timers = useRef<number[]>([])
-  const [started, setStarted] = useState(false)
   const [word, setWord] = useState(-1)
   const [secondary, setSecondary] = useState(false)
   const [line, setLine] = useState(false)
   const [ctaVisible, setCtaVisible] = useState(false)
 
-  useEffect(() => () => timers.current.forEach(window.clearTimeout), [])
+  useEffect(() => {
+    const schedule = (run: () => void, delay: number) => {
+      timers.current.push(window.setTimeout(run, delay))
+    }
 
-  function schedule(run: () => void, delay: number) {
-    timers.current.push(window.setTimeout(run, delay))
-  }
-
-  function start() {
-    if (started) return
-
-    setStarted(true)
-    schedule(
-      () => WORDS.forEach((_, index) => schedule(() => setWord(index), index * 220)),
-      2400,
-    )
+    // Reveal each word of the primary line in sequence.
+    WORDS.forEach((_, index) => schedule(() => setWord(index), 700 + index * 300))
+    // Clear the primary line and bring in the affirmation.
     schedule(() => {
       setWord(-1)
       setSecondary(true)
-    }, 3800)
-    schedule(() => setLine(true), 5000)
-    schedule(() => setCtaVisible(true), 5900)
-  }
+    }, 700 + WORDS.length * 300 + 500)
+    schedule(() => setLine(true), 700 + WORDS.length * 300 + 1400)
+    schedule(() => setCtaVisible(true), 700 + WORDS.length * 300 + 2000)
 
-  useEffect(() => {
-    const fallback = window.setTimeout(start, 4500)
-    timers.current.push(fallback)
-    // The opening sequence starts once on mount.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const captured = timers.current
+    return () => captured.forEach(window.clearTimeout)
   }, [])
 
   return (
     <main className="splashPage">
-      <video
-        className={started ? 'introVideo introVideoHidden' : 'introVideo'}
-        src="/align_intro.mp4"
-        autoPlay
-        playsInline
-        muted
-        onEnded={start}
-        onError={start}
-        aria-label="SEEN opening film"
-      />
-
-      <div className="introFallback" aria-hidden="true">
+      <div className="splashAmbient" aria-hidden="true">
         <span className="introHalo introHaloOne" />
         <span className="introHalo introHaloTwo" />
-        <span className="introMonogram">S</span>
+        <span className="introHalo introHaloThree" />
       </div>
-
-      <div
-        className={started ? 'whiteFlash whiteFlashActive' : 'whiteFlash'}
-        aria-hidden="true"
-      />
 
       <section className="splashContent" aria-live="polite">
         <div className="primaryLine" aria-label="You are not your sun sign.">

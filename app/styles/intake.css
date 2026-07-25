@@ -1,0 +1,188 @@
+.giPage{
+  min-height:100svh;
+  padding:max(28px,env(safe-area-inset-top)) 22px max(40px,env(safe-area-inset-bottom));
+  background:
+    radial-gradient(90% 60% at 50% -10%, rgba(251,234,131,.05), transparent 55%),
+    var(--seen-bg);
+}
+.giFrame{width:min(100%,560px);margin:0 auto}
+
+.giBack{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:26px;
+  padding:0;
+  border:none;
+  background:none;
+  color:var(--seen-gold-deep);
+  font:700 .72rem/1 Inter,sans-serif;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+.giBack span{font-size:1.1rem;line-height:1}
+
+.giMetaRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:22px;
+}
+.giEyebrow{
+  color:var(--seen-gold-deep);
+  font:700 .74rem/1 Inter,sans-serif;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+}
+.giStepCount{color:var(--seen-gold)}
+
+.giTitle{
+  margin:0 0 16px;
+  color:var(--seen-text-primary);
+  font:500 clamp(3rem,13vw,4.6rem)/.94 'Cormorant Garamond',serif;
+  letter-spacing:-.02em;
+}
+.giSubtitle{
+  margin:0;
+  color:var(--seen-text-secondary);
+  font:400 clamp(1.05rem,4.4vw,1.28rem)/1.5 Inter,sans-serif;
+}
+
+.giDivider{
+  width:100%;
+  height:1px;
+  margin:26px 0 22px;
+  background:linear-gradient(90deg,var(--seen-gold-deep),rgba(251,234,131,.1) 60%,transparent);
+  box-shadow:0 0 12px var(--seen-glow);
+}
+
+.giPanel{
+  display:flex;
+  flex-direction:column;
+  gap:34px;
+  padding:30px 22px;
+  background:
+    radial-gradient(120% 70% at 50% 0, rgba(251,234,131,.05), transparent 60%),
+    linear-gradient(180deg,#1a1713,#120f0c);
+  border:1px solid var(--seen-border);
+  border-radius:26px;
+  box-shadow:0 30px 80px var(--seen-shadow),inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+.giGroup{display:flex;flex-direction:column;gap:12px}
+.giLabel{
+  color:var(--seen-text-primary);
+  font:700 .82rem/1.3 Inter,sans-serif;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.giOptional{
+  margin-left:8px;
+  color:var(--seen-text-secondary);
+  font-weight:500;
+  letter-spacing:.1em;
+}
+.giHelp{
+  margin:0;
+  color:var(--seen-text-secondary);
+  font:400 .95rem/1.5 Inter,sans-serif;
+}
+
+.giInputFrame{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:0 18px;
+  min-height:62px;
+  background:rgba(12,10,8,.55);
+  border:1px solid var(--seen-border);
+  border-radius:16px;
+  transition:border-color 200ms ease,box-shadow 200ms ease;
+}
+.giInputFrame:focus-within{
+  border-color:var(--seen-border-strong);
+  box-shadow:0 0 0 1px rgba(251,234,131,.25),0 0 22px rgba(251,234,131,.14);
+}
+.giSparkleWrap{display:grid;place-items:center;color:var(--seen-gold);flex:0 0 auto}
+.giSparkle{width:20px;height:20px}
+.giInput{
+  flex:1;
+  min-width:0;
+  padding:0;
+  border:none;
+  background:none;
+  color:var(--seen-text-primary);
+  font:400 1.05rem/1.3 Inter,sans-serif;
+  outline:none;
+}
+.giInput::placeholder{color:rgba(207,200,187,.55)}
+.giInput[type='date'],.giInput[type='time']{color-scheme:dark}
+
+.giLocationList{display:flex;flex-direction:column;gap:12px}
+.giLocationRow{display:flex;align-items:center;gap:10px}
+.giLocationRow .giInputFrame{flex:1}
+.giRemove{
+  display:grid;
+  place-items:center;
+  width:44px;
+  height:44px;
+  flex:0 0 auto;
+  border:1px solid var(--seen-border);
+  border-radius:50%;
+  background:none;
+  color:var(--seen-text-secondary);
+  font-size:1.4rem;
+  line-height:1;
+}
+
+.giAdd{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  align-self:flex-start;
+  padding:0;
+  border:none;
+  background:none;
+  color:var(--seen-gold);
+  font:700 .82rem/1 Inter,sans-serif;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.giAddIcon{
+  display:grid;
+  place-items:center;
+  width:34px;
+  height:34px;
+  border:1px solid var(--seen-border-strong);
+  border-radius:50%;
+  font-size:1.2rem;
+  font-weight:400;
+}
+
+.giError{
+  margin:0;
+  color:#e9b7a6;
+  font:400 .98rem/1.5 Inter,sans-serif;
+}
+
+.giContinue{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  min-height:62px;
+  margin-top:4px;
+  border:none;
+  border-radius:999px;
+  background:linear-gradient(180deg,#f7e7a0 0%,#e6cf78 48%,#cbaf55 100%);
+  color:#1a1509;
+  font:800 .92rem/1 Inter,sans-serif;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  box-shadow:0 0 0 1px rgba(251,234,131,.5),0 0 32px rgba(251,234,131,.4),0 16px 40px rgba(0,0,0,.5);
+  transition:box-shadow 240ms ease,transform 120ms ease;
+}
+.giContinue:hover{
+  box-shadow:0 0 0 1px rgba(251,234,131,.7),0 0 46px rgba(251,234,131,.58),0 18px 46px rgba(0,0,0,.55);
+}
+.giContinue:active{transform:translateY(1px)}

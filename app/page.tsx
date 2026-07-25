@@ -33,6 +33,12 @@ export default function Home() {
     setStage('intake')
   }
 
+  function replayIntro() {
+    sessionStorage.removeItem(INTRO_KEY)
+    setStage('splash')
+    window.scrollTo({ top: 0 })
+  }
+
   function completeFoundation(value: FoundationIntake) {
     setFoundation(value)
     localStorage.setItem(STORAGE_KEY, JSON.stringify(value))
@@ -41,6 +47,6 @@ export default function Home() {
   }
 
   if (stage === 'splash') return <SplashScreen onComplete={completeIntro} />
-  if (stage === 'intake') return <FoundationIntakeScreen initial={foundation} onComplete={completeFoundation} />
+  if (stage === 'intake') return <FoundationIntakeScreen initial={foundation} onComplete={completeFoundation} onReplay={replayIntro} />
   return <RecognitionScreen foundation={foundation} onEdit={() => setStage('intake')} />
 }
