@@ -1,0 +1,318 @@
+{
+  "name": "SEEN Universal Evaluation Contract",
+  "version": "1.0.0",
+  "status": "implementation_ready",
+  "purpose": "Convert minimal factual inputs into standardized cross-domain evaluations that can be deposited into portals, converged, and translated by the Oracle.",
+  "productPromise": {
+    "primary": "Show the person what happened, why it happened, what pattern formed, what it cost, and what changes the pattern.",
+    "mechanism": "Invariant multi-domain pressure reconstruction followed by portal deposition and convergence.",
+    "result": "A consistent recognition record that supports Dark Chart, Closure & Composure, and Cadence."
+  },
+  "runtime": {
+    "target": "Vercel",
+    "framework": "Next.js",
+    "language": "TypeScript",
+    "validation": "Zod",
+    "execution": "server",
+    "storageCompatibility": ["PostgreSQL", "Vercel Postgres", "Supabase", "JSON document storage"]
+  },
+  "roles": {
+    "generator": {
+      "responsibility": "Resolve factual inputs, execute invariant checklists, evaluate canonical definitions, calculate pressure, and emit normalized evaluations.",
+      "inputs": ["subjectId", "location", "startDate", "endDate"],
+      "outputs": ["environmentalPressureProfile", "seenEvaluations", "portalDeposits", "lifeSectionDeposits"]
+    },
+    "oracle": {
+      "responsibility": "Compare normalized evaluations, identify convergence, traverse active recognition branches, and render user-facing recognition.",
+      "input": "convergedEvaluationState",
+      "output": "oracleRecognition"
+    }
+  },
+  "universalEvaluationContract": {
+    "sequence": [
+      "pressure",
+      "trigger",
+      "adaptation",
+      "observableBehavior",
+      "cost",
+      "consequence",
+      "intervention",
+      "expectedChange",
+      "confidence",
+      "evidence"
+    ],
+    "outputShape": {
+      "evaluationId": "string",
+      "subjectId": "string",
+      "domain": "environment | astrology | portal | wound_marker | attachment | behavioral_lens | childhood_triangle | relationship",
+      "sourceDefinitionId": "string",
+      "evaluatedAt": "ISO-8601 datetime",
+      "pressures": ["string"],
+      "triggers": ["string"],
+      "adaptations": ["string"],
+      "observableBehaviors": ["string"],
+      "costs": ["string"],
+      "consequences": ["string"],
+      "interventions": ["string"],
+      "expectedChanges": ["string"],
+      "portalDeposits": [
+        {
+          "portalId": "integer 1-64",
+          "weight": "number 0-1",
+          "reason": "string"
+        }
+      ],
+      "lifeSectionDeposits": [
+        {
+          "lifeSectionId": "positive integer",
+          "weight": "number 0-1",
+          "reason": "string"
+        }
+      ],
+      "confidence": {
+        "score": "number 0-1",
+        "basis": ["string"]
+      },
+      "evidence": [
+        {
+          "sourceId": "string",
+          "sourceType": "user_fact | provider_fact | calculated_marker | historical_observation | registry_definition",
+          "observation": "string",
+          "weight": "number 0-1"
+        }
+      ]
+    }
+  },
+  "environmentalGenerator": {
+    "input": {
+      "subjectId": "string",
+      "location": {
+        "label": "string",
+        "country": "string",
+        "region": "string",
+        "locality": "string",
+        "latitude": "number | null",
+        "longitude": "number | null"
+      },
+      "startDate": "ISO-8601 date",
+      "endDate": "ISO-8601 date | current"
+    },
+    "invariantChecklist": [
+      { "order": 1, "id": "coordinates", "resolve": "coordinates" },
+      { "order": 2, "id": "elevation", "resolve": "elevation" },
+      { "order": 3, "id": "biome", "resolve": "biome" },
+      { "order": 4, "id": "geology_substrate", "resolve": "geology and substrate" },
+      { "order": 5, "id": "mineral_composition", "resolve": "mineral composition" },
+      { "order": 6, "id": "hydrology", "resolve": "hydrology" },
+      { "order": 7, "id": "climate_normals", "resolve": "climate normals" },
+      { "order": 8, "id": "seasonal_patterns", "resolve": "seasonal patterns" },
+      { "order": 9, "id": "geomagnetic_characteristics", "resolve": "geomagnetic characteristics" },
+      { "order": 10, "id": "air_quality", "resolve": "air quality" },
+      { "order": 11, "id": "pollution_exposure", "resolve": "pollution exposure" },
+      { "order": 12, "id": "uv_exposure", "resolve": "UV exposure" },
+      { "order": 13, "id": "disaster_exposure", "resolve": "natural disaster exposure" },
+      { "order": 14, "id": "urbanization", "resolve": "urbanization" },
+      { "order": 15, "id": "population_density", "resolve": "population density" },
+      { "order": 16, "id": "economic_conditions", "resolve": "economic conditions during the period" },
+      { "order": 17, "id": "dominant_industries", "resolve": "dominant industries" },
+      { "order": 18, "id": "education_environment", "resolve": "education environment" },
+      { "order": 19, "id": "religious_environment", "resolve": "religious environment" },
+      { "order": 20, "id": "political_environment", "resolve": "political environment" },
+      { "order": 21, "id": "crime_environment", "resolve": "crime environment" },
+      { "order": 22, "id": "infrastructure", "resolve": "infrastructure" },
+      { "order": 23, "id": "technological_environment", "resolve": "technological environment" },
+      { "order": 24, "id": "food_environment", "resolve": "food environment" },
+      { "order": 25, "id": "healthcare_access", "resolve": "healthcare access" },
+      { "order": 26, "id": "transportation", "resolve": "transportation access" }
+    ],
+    "pressureTaxonomy": {
+      "physical": ["scarcity", "abundance", "isolation", "crowding", "instability", "environmental_danger", "noise", "pollution"],
+      "social": ["belonging", "exclusion", "tribalism", "competition", "social_mobility", "status_hierarchy", "community_cohesion"],
+      "economic": ["poverty", "wealth", "financial_instability", "opportunity", "employment_volatility"],
+      "family": ["stability", "chaos", "overprotection", "neglect", "parentification", "emotional_availability", "substance_exposure"],
+      "institutional": ["school_quality", "healthcare_access", "law_enforcement", "religious_influence", "government_stability", "community_trust"],
+      "cultural": ["emotional_expression", "gender_role_norms", "achievement_pressure", "conformity", "independence", "collectivism"],
+      "geographic": ["climate_severity", "seasonal_variation", "natural_disaster_exposure", "geographic_isolation", "urban_rural_orientation"]
+    },
+    "pressureEvaluationSequence": [
+      "identifyAffectedPopulation",
+      "identifyLikelyAdaptation",
+      "identifyOrganizingEmotion",
+      "identifyNervousSystemStrategy",
+      "identifyReinforcedBelief",
+      "identifyAdaptiveBehavior",
+      "identifyLongTermCost",
+      "identifySensitizedPortals",
+      "attachEvidence",
+      "calculateConfidence"
+    ],
+    "output": {
+      "profileId": "string",
+      "subjectId": "string",
+      "location": "resolved location object",
+      "period": {
+        "startDate": "ISO-8601 date",
+        "endDate": "ISO-8601 date | current"
+      },
+      "resolvedFacts": ["provider facts"],
+      "pressures": ["normalized pressure evaluations"],
+      "baselinePressureAxes": {
+        "amplification": "number 0-1",
+        "suppression": "number 0-1",
+        "sensitization": "number 0-1",
+        "delay": "number 0-1",
+        "distortion": "number 0-1",
+        "rerouteWeight": "number 0-1",
+        "recurrenceRate": "number 0-1",
+        "splitFactor": "number 0-1"
+      },
+      "portalDeposits": ["weighted portal deposits"],
+      "confidence": {
+        "score": "number 0-1",
+        "basis": ["string"]
+      }
+    }
+  },
+  "canonicalDefinitionContract": {
+    "requiredFields": [
+      "id",
+      "domain",
+      "label",
+      "version",
+      "pressures",
+      "triggers",
+      "protectiveAdaptations",
+      "observableBehaviors",
+      "hiddenCosts",
+      "likelyConsequences",
+      "portalDeposits",
+      "lifeSectionDeposits",
+      "evidenceRequirements"
+    ],
+    "optionalFields": [
+      "possibleInterruptions",
+      "expectedChanges",
+      "requiredConfirmations",
+      "supportingConfirmations"
+    ],
+    "execution": [
+      "loadDefinition",
+      "resolveMarkers",
+      "matchRequiredConfirmations",
+      "matchSupportingConfirmations",
+      "attachEncodedCausalMeaning",
+      "calculateConfidence",
+      "emitSeenEvaluation",
+      "depositIntoPortals",
+      "depositIntoLifeSections"
+    ]
+  },
+  "woundMarkerSchema": {
+    "markerId": "string",
+    "name": "string",
+    "activationConditions": ["string"],
+    "pressureTypes": ["string"],
+    "commonTriggers": ["string"],
+    "primaryFear": ["string"],
+    "primaryEmotion": ["string"],
+    "coreBelief": ["string"],
+    "unmetNeed": ["string"],
+    "protectiveAdaptations": ["string"],
+    "nervousSystemResponses": ["string"],
+    "defensiveBehaviors": ["string"],
+    "relationalBehaviors": ["string"],
+    "immediateCosts": ["string"],
+    "longTermCosts": ["string"],
+    "relationalCosts": ["string"],
+    "identityCosts": ["string"],
+    "escalationPattern": ["string"],
+    "consequenceIfContinued": ["string"],
+    "consequenceIfInterrupted": ["string"],
+    "regulatedExpression": ["string"],
+    "affectedPortals": ["integer"],
+    "portalEffects": [
+      {
+        "portalId": "integer",
+        "effect": "amplify | suppress | distort | delay | split | reroute",
+        "weight": "number"
+      }
+    ],
+    "requiredEvidence": ["string"],
+    "contraindicators": ["string"],
+    "confidenceRules": ["string"]
+  },
+  "portalEngine": {
+    "totalPortals": 64,
+    "pressurizationRule": "EnvironmentalPressureProfile + wound marker portalEffects + other domain deposits feed into each portal before any numerology or interpretation",
+    "effectTypes": ["amplify", "suppress", "distort", "delay", "split", "reroute"]
+  },
+  "lifeSections": {
+    "total": 45,
+    "derivation": "Sectioned from the 64 pre-loaded portals after environmental and wound marker deposits"
+  },
+  "drMeizoLenses": {
+    "total": 25,
+    "integration": "Applied on top of the 45 life sections after portal deposition",
+    "lenses": [
+      "Original Personality",
+      "Formed Personality",
+      "Available Personality",
+      "Circumstance",
+      "Time Passing",
+      "Mind Space",
+      "Instinct",
+      "Individual Psychology",
+      "Social Psychology",
+      "Development",
+      "Biology",
+      "Family",
+      "Cognition",
+      "Behavior",
+      "Social Connection",
+      "Experience",
+      "Endowment",
+      "Stress",
+      "Trauma",
+      "Emotion",
+      "Culture and Society",
+      "Environmental Factors",
+      "Psychiatric Medication and Chemicals",
+      "Creativity",
+      "Life Purpose and Meaning"
+    ]
+  },
+  "pipeline": [
+    "minimalFactualInput",
+    "invariantChecklistExecution",
+    "environmentalProfile",
+    "pressureProfile",
+    "canonicalDefinitionEvaluation",
+    "portalDeposits",
+    "lifeSectionDeposits",
+    "drMeizoLensIntegration",
+    "crossDomainConvergence",
+    "oracleRecognition",
+    "closureAndComposure",
+    "cadence"
+  ],
+  "acceptanceCriteria": [
+    "Every domain emits the universal evaluation shape.",
+    "Every environmental location executes the checklist in the stored order.",
+    "Every causal relationship resolves from a canonical registry definition.",
+    "Every evaluation carries evidence and confidence.",
+    "Every portal deposit includes a weight and reason.",
+    "Every life-section deposit includes a weight and reason.",
+    "The Oracle receives domain-agnostic normalized evaluations.",
+    "Runtime validation executes before persistence and before Oracle handoff.",
+    "The project passes TypeScript type checking, automated tests, and Vercel production build."
+  ],
+  "repositoryPlacement": {
+    "contract": "src/config/seen-universal-evaluation-contract.json",
+    "schema": "src/schemas/seen-universal-evaluation-contract.schema.ts",
+    "environmentGenerator": "src/generators/environment/evaluate-environment.ts",
+    "registries": "src/registries",
+    "portalEngine": "src/engines/portals",
+    "convergenceEngine": "src/engines/convergence",
+    "oracle": "src/oracle"
+  }
+}
