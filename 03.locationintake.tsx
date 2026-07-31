@@ -1,13 +1,13 @@
     <div className="seenFlowHeader">
       <h1 className="seenDisplayLarge">Geographical Imprints</h1>
       <p className="seenFlowIntroduction">
-        Tell us about the places that have been part of your journey.
+        
       </p>
     </div>
 
     <div className="seenFlowForm">
       <div className="seenField">
-        <label className="seenLabel">Where were you born?</label>
+        <label className="seenLabel">location born?</label>
         <div className="seenInputFrame">
           <input
             type="text"
@@ -20,7 +20,7 @@
       </div>
 
       <div className="seenFieldset">
-        <label className="seenLabel">Where have you lived for more than one year?</label>
+        <label className="seenLabel">Locations lived for more than one year?</label>
         <div className="seenLocationList">
           {form.lived.map((location, index) => (
             <div key={index} className="seenLocationRow">
@@ -50,7 +50,7 @@
       </div>
 
       <div className="seenField">
-        <label className="seenLabel">Where do you live now?</label>
+        <label className="seenLabel">Current lived location?</label>
         <div className="seenInputFrame">
           <input
             type="text"
