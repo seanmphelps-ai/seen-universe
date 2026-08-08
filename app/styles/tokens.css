@@ -1,0 +1,150 @@
+/* SEEN Canonical UI Language — executable tokens.
+   Values reproduced verbatim from docs/design-system.md (the visual source of
+   truth). Do NOT alter a canonical value in this file without explicit
+   approval — palette, geometry, and component rules here are product spec, not
+   styling. */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Palette */
+  --seen-bg: #171512;
+  --seen-surface: #211e1a;
+  --seen-surface-raised: #2a251f;
+  --seen-text-primary: #f4efe5;
+  --seen-text-secondary: #cfc8bb;
+  --seen-gold: #fbea83;
+  --seen-gold-deep: #d8c56a;
+  --seen-border: rgba(251, 234, 131, 0.28);
+  --seen-border-strong: rgba(251, 234, 131, 0.58);
+  --seen-glow: rgba(251, 234, 131, 0.32);
+  --seen-shadow: rgba(0, 0, 0, 0.58);
+
+  /* Spacing */
+  --seen-space-1: 4px;
+  --seen-space-2: 8px;
+  --seen-space-3: 12px;
+  --seen-space-4: 16px;
+  --seen-space-5: 20px;
+  --seen-space-6: 24px;
+  --seen-space-8: 32px;
+  --seen-space-10: 40px;
+  --seen-space-12: 48px;
+  --seen-space-16: 64px;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--seen-bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--seen-bg);
+  color: var(--seen-text-primary);
+  font-family: Inter, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Motion — button press (docs/design-system.md § Motion) */
+button:active {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+/* Panels */
+.seenPanel {
+  padding: var(--seen-space-6);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(251, 234, 131, 0.055), transparent 44%),
+    linear-gradient(180deg, #211e1a 0%, #191613 100%);
+  border: 1px solid var(--seen-border);
+  border-radius: 24px;
+  box-shadow:
+    0 24px 70px var(--seen-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+/* Inputs */
+.seenInput {
+  width: 100%;
+  min-height: 56px;
+  padding: 15px 16px;
+  color: var(--seen-text-primary);
+  background: rgba(255, 255, 255, 0.018);
+  border: 1px solid var(--seen-border);
+  border-radius: 12px;
+  outline: 0;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.seenInput:focus {
+  background: rgba(251, 234, 131, 0.025);
+  border-color: var(--seen-border-strong);
+  box-shadow: 0 0 0 3px rgba(251, 234, 131, 0.08);
+}
+
+/* Primary button */
+.seenButtonPrimary {
+  min-height: 54px;
+  padding: 0 24px;
+  color: #171512;
+  background: linear-gradient(90deg, #d8c56a 0%, #fbea83 52%, #d8c56a 100%);
+  border: 1px solid rgba(255, 245, 177, 0.78);
+  border-radius: 999px;
+  box-shadow:
+    0 0 28px var(--seen-glow),
+    0 10px 28px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.46);
+  font-family: Inter, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Secondary and chip buttons */
+.seenButtonSecondary,
+.seenChip {
+  min-height: 50px;
+  padding: 0 22px;
+  color: var(--seen-text-primary);
+  background: rgba(23, 21, 18, 0.72);
+  border: 1px solid var(--seen-border-strong);
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+/* Dividers and glow */
+.seenDivider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--seen-gold-deep),
+    var(--seen-gold),
+    var(--seen-gold-deep),
+    transparent
+  );
+  box-shadow: 0 0 12px var(--seen-glow);
+}

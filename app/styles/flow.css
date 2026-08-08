@@ -1,0 +1,270 @@
+.seenFlowPage {
+  min-height: 100svh;
+  padding:
+    max(32px, env(safe-area-inset-top))
+    20px
+    max(32px, env(safe-area-inset-bottom));
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(251, 234, 131, 0.07),
+      transparent 34%
+    ),
+    var(--seen-bg);
+}
+
+.seenFlowShell {
+  width: min(100%, 520px);
+  margin: 0 auto;
+}
+
+.seenProgress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--seen-space-8);
+  color: var(--seen-text-secondary);
+  font-family: Inter, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.seenProgressValue {
+  color: var(--seen-gold-deep);
+}
+
+.seenFlowHeader {
+  margin-bottom: var(--seen-space-8);
+}
+
+.seenDisplayLarge {
+  margin: 0;
+  color: var(--seen-text-primary);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 13vw, 5.25rem);
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.seenFlowIntroduction {
+  max-width: 34rem;
+  margin:
+    var(--seen-space-4)
+    0
+    var(--seen-space-6);
+  color: var(--seen-text-secondary);
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.seenFlowForm {
+  display: grid;
+  gap: var(--seen-space-8);
+  padding: var(--seen-space-6);
+}
+
+.seenField,
+.seenFieldset {
+  display: grid;
+  gap: var(--seen-space-3);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.seenLabel {
+  color: var(--seen-text-secondary);
+  font-family: Inter, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.seenFieldSupport {
+  margin: -2px 0 var(--seen-space-1);
+  color: var(--seen-text-secondary);
+  font-family: Inter, sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.seenInputFrame {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.seenInputWithIcon {
+  padding-left: 46px;
+}
+
+.seenFieldIcon {
+  position: absolute;
+  top: 50%;
+  left: 17px;
+  z-index: 1;
+  color: var(--seen-gold-deep);
+  font-size: 1.1rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.seenLocationList {
+  display: grid;
+  gap: var(--seen-space-3);
+}
+
+.seenLocationRow {
+  display: flex;
+  align-items: center;
+  gap: var(--seen-space-2);
+}
+
+.seenLocationRemove {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  color: var(--seen-gold-deep);
+  background: rgba(23, 21, 18, 0.72);
+  border: 1px solid var(--seen-border);
+  border-radius: 50%;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.seenAddLocation {
+  display: inline-flex;
+  align-items: center;
+  align-self: start;
+  gap: var(--seen-space-2);
+  min-height: 44px;
+  padding: 0;
+  color: var(--seen-gold-deep);
+  background: transparent;
+  border: 0;
+  font-family: Inter, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.seenAddLocation span {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 1px solid var(--seen-border-strong);
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.seenFormError {
+  margin: -8px 0 0;
+  color: #e8b4a8;
+  font-family: Inter, sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.seenFlowForm .seenButtonPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--seen-space-3);
+  width: 100%;
+  margin-top: var(--seen-space-2);
+  cursor: pointer;
+}
+
+.seenCompletionDivider {
+  width: min(72%, 280px);
+  margin: var(--seen-space-10) auto 0;
+  opacity: 0.72;
+}
+
+.seenCitySuggestions {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--seen-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.seenCitySuggestion {
+  width: 100%;
+  padding: 12px 16px;
+  color: var(--seen-text-primary);
+  background: rgba(255, 255, 255, 0.018);
+  border: 0;
+  text-align: left;
+  font-family: Inter, sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.seenCitySuggestion:hover,
+.seenCitySuggestion:focus {
+  background: rgba(251, 234, 131, 0.08);
+}
+
+.seenResultList {
+  display: grid;
+  gap: var(--seen-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.seenResultRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--seen-space-3);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--seen-border);
+}
+
+.seenResultName {
+  color: var(--seen-text-secondary);
+  font-family: Inter, sans-serif;
+  font-size: 0.82rem;
+}
+
+.seenResultValue {
+  color: var(--seen-text-primary);
+  font-family: Inter, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+.seenFlowForm .seenButtonSecondary {
+  width: 100%;
+  cursor: pointer;
+}
+
+@media (min-width: 700px) {
+  .seenFlowPage {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .seenFlowForm {
+    padding: var(--seen-space-8);
+  }
+}

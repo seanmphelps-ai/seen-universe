@@ -1,0 +1,11 @@
+/* SEEN responsive behavior (docs/design-system.md § Responsive Behavior).
+   Primary target 390–430px mobile. Intake stays single-column through tablet;
+   desktop centers the mobile composition within a wider editorial frame while
+   controls retain their mobile geometry and touch targets at every width. */
+
+@media (min-width: 700px) {
+  /* Panel padding: 24px mobile, 32px tablet and desktop. */
+  .seenPanel {
+    padding: var(--seen-space-8);
+  }
+}
