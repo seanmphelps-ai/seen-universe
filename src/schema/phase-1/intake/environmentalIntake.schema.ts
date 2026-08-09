@@ -39,7 +39,7 @@ export const EnvironmentalDomainSchema = z.enum([
 export type EnvironmentalDomain = z.infer<typeof EnvironmentalDomainSchema>
 
 export const EnvironmentalObservationSchema = z.object({
-  domain: EnvironmentalDomainSchema,
+  domain: EnvironmentalDomainSchema.optional(),
   state: EnvironmentalStateSchema,
   value: z.string().trim().min(1),
 })
