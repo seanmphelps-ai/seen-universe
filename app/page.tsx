@@ -8,7 +8,14 @@ import { SplashScreen } from './components/SplashScreen'
 
 const STORAGE_KEY = 'seen:foundation-intake:v1'
 const INTRO_KEY = 'seen:intro-complete'
-const EMPTY: FoundationIntake = { birthLocation: '', locationsLivedOneYearOrMore: [], currentLocation: '', birthDate: '', birthTime: undefined }
+const EMPTY: FoundationIntake = {
+  birthLocation: '',
+  locationsLivedOneYearOrMore: [],
+  currentLocation: '',
+  environmentalIntake: [],
+  birthDate: '',
+  birthTime: undefined,
+}
 type Stage = 'splash' | 'intake' | 'recognition'
 
 export default function Home() {
