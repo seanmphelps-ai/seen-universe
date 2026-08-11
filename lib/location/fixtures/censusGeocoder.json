@@ -1,0 +1,23 @@
+{
+  "result": {
+    "input": {
+      "location": { "x": -118.2437, "y": 34.0522 }
+    },
+    "geographies": {
+      "Counties": [
+        {
+          "STATE": "06",
+          "COUNTY": "037",
+          "NAME": "Los Angeles County",
+          "BASENAME": "Los Angeles"
+        }
+      ],
+      "States": [
+        {
+          "STATE": "06",
+          "NAME": "California"
+        }
+      ]
+    }
+  }
+}

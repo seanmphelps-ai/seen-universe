@@ -1,0 +1,18 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"main": ".open-next/worker.js",
+	"name": "seen-universe",
+	"compatibility_date": "2026-08-09",
+	// nodejs_compat is required for lib/location's fetch-based adapters and
+	// swisseph-wasm's Node code path to run at all under workerd.
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	}
+	// Intentionally omitted for this pass (not required to get a working
+	// deployment; add if/when needed): R2 incremental cache, worker
+	// self-reference service binding, image-optimization binding. Each of
+	// those needs a `wrangler r2 bucket create` / extra setup step the task
+	// didn't ask for — see https://opennext.js.org/cloudflare/caching.
+}
