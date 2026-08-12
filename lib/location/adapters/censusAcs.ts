@@ -13,6 +13,12 @@
 // blocks outbound requests to api.census.gov. Parsing/derivation logic is
 // covered by fixture-based unit tests instead. See
 // scripts/verify-location-live.ts for the real network round-trip.
+//
+// Live-verified from a deployed (network-enabled) instance: the request
+// itself reaches api.census.gov correctly, but ACS data queries require a
+// free key (https://api.census.gov/data/key_signup.html) — Census returns
+// an HTML "Missing Key" page (2xx status) without one. Read from
+// CENSUS_API_KEY at call time; see fetchAcsRow below.
 
 const ACS_BASE = 'https://api.census.gov/data';
 
@@ -106,18 +112,36 @@ export function deriveMaterialFieldMetrics(row: AcsRawRow) {
 export function buildAcsUrl(
   year: string,
   geographyClause: string,
+  apiKey?: string,
 ): string {
   const vars = ACS_VARIABLES.join(',');
-  return `${ACS_BASE}/${year}/acs/acs5?get=${vars}&${geographyClause}`;
+  const keyClause = apiKey ? `&key=${apiKey}` : '';
+  return `${ACS_BASE}/${year}/acs/acs5?get=${vars}&${geographyClause}${keyClause}`;
 }
 
-async function fetchAcsRow(year: string, geographyClause: string): Promise<AcsRawRow> {
-  const url = buildAcsUrl(year, geographyClause);
-  // A live run against the real API returned an HTML body with a 2xx
-  // status instead of JSON — the signature of a WAF/bot-protection
-  // response to a request with no User-Agent header, which fetch() does
-  // not set by default in this runtime. Census asks API consumers to
-  // identify themselves; this also happens to fix that response.
+/**
+ * Strips the `key=` query param before a URL goes anywhere it could be
+ * logged or returned to a client (error messages, adapterFailures,
+ * findings[].limitations are all surfaced by the public
+ * /api/location/verify route). Without this, setting CENSUS_API_KEY
+ * would leak it to anyone who hits that endpoint and triggers a failure.
+ */
+export function redactApiKey(url: string): string {
+  return url.replace(/([?&]key=)[^&]+/, '$1[REDACTED]');
+}
+
+async function fetchAcsRow(
+  year: string,
+  geographyClause: string,
+  // A live run against the real API returned an HTML body — "<title>Missing
+  // Key</title>" — with a 2xx status instead of JSON: api.census.gov's data
+  // API (unlike the Geocoder) requires a free key
+  // (https://api.census.gov/data/key_signup.html). Read from env by
+  // default so adding one later requires no code change.
+  apiKey: string | undefined = process.env.CENSUS_API_KEY,
+): Promise<AcsRawRow> {
+  const url = buildAcsUrl(year, geographyClause, apiKey);
+  const safeUrl = redactApiKey(url);
   const response = await fetch(url, {
     headers: {
       'User-Agent': 'SEEN-Location-V1 (contact: seanmphelps@gmail.com)',
@@ -125,7 +149,7 @@ async function fetchAcsRow(year: string, geographyClause: string): Promise<AcsRa
     },
   });
   if (!response.ok) {
-    throw new CensusAcsError(`Census ACS request failed: HTTP ${response.status} (${url})`);
+    throw new CensusAcsError(`Census ACS request failed: HTTP ${response.status} (${safeUrl})`);
   }
   // Clone before consuming: if .json() throws, the original body is
   // already read, so the diagnostic re-read has to come from the clone
@@ -137,7 +161,7 @@ async function fetchAcsRow(year: string, geographyClause: string): Promise<AcsRa
   } catch {
     const bodyText = await responseForDiagnostics.text().catch(() => '(could not read body)');
     throw new CensusAcsError(
-      `Census ACS response was not valid JSON (status ${response.status}, url ${url}). ` +
+      `Census ACS response was not valid JSON (status ${response.status}, url ${safeUrl}). ` +
         `First 300 chars of body: ${bodyText.slice(0, 300)}`,
     );
   }

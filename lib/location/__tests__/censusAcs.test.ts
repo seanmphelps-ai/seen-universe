@@ -1,8 +1,40 @@
 import { describe, it, expect } from 'vitest';
-import { parseAcsResponse, deriveMaterialFieldMetrics, CensusAcsError } from '../adapters/censusAcs';
+import {
+  parseAcsResponse,
+  deriveMaterialFieldMetrics,
+  CensusAcsError,
+  buildAcsUrl,
+  redactApiKey,
+} from '../adapters/censusAcs';
 import countyFixture from '../fixtures/censusAcsCounty.json';
 import stateFixture from '../fixtures/censusAcsState.json';
 import nationalFixture from '../fixtures/censusAcsNational.json';
+
+describe('buildAcsUrl', () => {
+  it('appends the key param when an API key is provided', () => {
+    const url = buildAcsUrl('2020', 'for=county:037&in=state:06', 'SECRET123');
+    expect(url).toContain('&key=SECRET123');
+  });
+
+  it('omits the key param entirely when no key is provided', () => {
+    const url = buildAcsUrl('2020', 'for=county:037&in=state:06');
+    expect(url).not.toContain('key=');
+  });
+});
+
+describe('redactApiKey', () => {
+  it('replaces a key query param with a redacted placeholder', () => {
+    const url = 'https://api.census.gov/data/2020/acs/acs5?get=NAME&for=us:1&key=SECRET123';
+    const redacted = redactApiKey(url);
+    expect(redacted).not.toContain('SECRET123');
+    expect(redacted).toContain('key=[REDACTED]');
+  });
+
+  it('is a no-op on a URL with no key param', () => {
+    const url = 'https://api.census.gov/data/2020/acs/acs5?get=NAME&for=us:1';
+    expect(redactApiKey(url)).toBe(url);
+  });
+});
 
 describe('parseAcsResponse', () => {
   it('parses a real-shaped county ACS response', () => {
