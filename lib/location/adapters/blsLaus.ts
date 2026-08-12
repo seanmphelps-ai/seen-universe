@@ -91,7 +91,12 @@ export async function fetchLausCountyUnemploymentRate(
   stateFips: string,
   countyFips: string,
   year: string,
-  apiKey?: string,
+  // Unregistered BLS API v2 access is limited to roughly the most recent 3
+  // years of data — a historical query (e.g. 2018-2022) can come back
+  // empty even though the request itself succeeds. A free registration
+  // key (https://www.bls.gov/developers/) removes that limit; read from
+  // env so adding one later requires no code change.
+  apiKey: string | undefined = process.env.BLS_API_KEY,
 ): Promise<{ result: BlsSeriesResult; annualAveragePercent: number | null }> {
   const seriesId = buildLausUnemploymentRateSeriesId(stateFips, countyFips);
 
@@ -104,7 +109,10 @@ export async function fetchLausCountyUnemploymentRate(
 
   const response = await fetch(BLS_BASE, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      'User-Agent': 'SEEN-Location-V1 (contact: seanmphelps@gmail.com)',
+    },
     body: JSON.stringify(body),
   });
 

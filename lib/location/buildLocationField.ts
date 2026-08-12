@@ -293,7 +293,16 @@ export async function buildLocationField(
           : null,
       limitations:
         laus.annualAveragePercent === null
-          ? ['BLS LAUS returned no annual-average (M13) data point for the requested year.']
+          ? [
+              `BLS LAUS returned no annual-average (M13) data point for ${targetYear}. ` +
+                `Series ${laus.result.seriesID} returned ${laus.result.data.length} data point(s)` +
+                (laus.result.data.length > 0
+                  ? ` covering ${laus.result.data[laus.result.data.length - 1].year}–${laus.result.data[0].year}`
+                  : '') +
+                '. Likely cause: unregistered BLS API access only serves roughly the most ' +
+                'recent 3 years — set BLS_API_KEY (free at https://www.bls.gov/developers/) ' +
+                'to query older years.',
+            ]
           : ['No state/national comparator implemented for BLS LAUS in V1 — cross-check value only.'],
     });
   } catch (err) {

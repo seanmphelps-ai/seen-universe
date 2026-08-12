@@ -103,7 +103,12 @@ export async function resolveHistoricalGeography(
   longitude: number,
 ): Promise<HistoricalGeography> {
   const url = buildGeocoderUrl(latitude, longitude);
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    headers: {
+      'User-Agent': 'SEEN-Location-V1 (contact: seanmphelps@gmail.com)',
+      Accept: 'application/json',
+    },
+  });
 
   if (!response.ok) {
     throw new GeographyResolutionError(

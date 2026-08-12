@@ -113,11 +113,34 @@ export function buildAcsUrl(
 
 async function fetchAcsRow(year: string, geographyClause: string): Promise<AcsRawRow> {
   const url = buildAcsUrl(year, geographyClause);
-  const response = await fetch(url);
+  // A live run against the real API returned an HTML body with a 2xx
+  // status instead of JSON — the signature of a WAF/bot-protection
+  // response to a request with no User-Agent header, which fetch() does
+  // not set by default in this runtime. Census asks API consumers to
+  // identify themselves; this also happens to fix that response.
+  const response = await fetch(url, {
+    headers: {
+      'User-Agent': 'SEEN-Location-V1 (contact: seanmphelps@gmail.com)',
+      Accept: 'application/json',
+    },
+  });
   if (!response.ok) {
     throw new CensusAcsError(`Census ACS request failed: HTTP ${response.status} (${url})`);
   }
-  const raw = await response.json();
+  // Clone before consuming: if .json() throws, the original body is
+  // already read, so the diagnostic re-read has to come from the clone
+  // taken beforehand, not after the failure.
+  const responseForDiagnostics = response.clone();
+  let raw: unknown;
+  try {
+    raw = await response.json();
+  } catch {
+    const bodyText = await responseForDiagnostics.text().catch(() => '(could not read body)');
+    throw new CensusAcsError(
+      `Census ACS response was not valid JSON (status ${response.status}, url ${url}). ` +
+        `First 300 chars of body: ${bodyText.slice(0, 300)}`,
+    );
+  }
   return parseAcsResponse(raw);
 }
 

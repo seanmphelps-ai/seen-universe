@@ -17,11 +17,16 @@ const baseInput: LocationInput = {
 };
 
 function jsonResponse(body: unknown, ok = true, status = 200) {
-  return {
+  const response = {
     ok,
     status,
     json: async () => body,
-  } as Response;
+    text: async () => JSON.stringify(body),
+    clone(): Response {
+      return jsonResponse(body, ok, status);
+    },
+  };
+  return response as unknown as Response;
 }
 
 function installHappyPathFetchMock() {
