@@ -38,6 +38,7 @@ export type BlsSeriesResult = {
 
 export type BlsApiResponse = {
   status: string;
+  message?: string[];
   Results?: {
     series?: {
       seriesID: string;
@@ -52,8 +53,9 @@ export function parseBlsResponse(raw: unknown, expectedSeriesId: string): BlsSer
   const response = raw as Partial<BlsApiResponse>;
 
   if (response?.status !== 'REQUEST_SUCCEEDED') {
+    const messages = response?.message?.length ? response.message.join(' | ') : '(no message field)';
     throw new BlsLausError(
-      `BLS API did not report success (status: ${response?.status ?? 'missing'}) — request may be malformed or rate-limited.`,
+      `BLS API did not report success (status: ${response?.status ?? 'missing'}). BLS message: ${messages}`,
     );
   }
 
