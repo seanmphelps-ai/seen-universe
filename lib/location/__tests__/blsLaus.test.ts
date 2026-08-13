@@ -70,6 +70,23 @@ describe('parseBlsResponse', () => {
     }
   });
 
+  it('still redacts when the key passed in has surrounding whitespace but the echoed message does not (root cause of the live leak)', () => {
+    const cleanKey = 'f0b505d75088441cac8bf73d71a914dd';
+    const keyWithWhitespace = `${cleanKey}\n`; // e.g. pasted into a dashboard field
+    const response = {
+      status: 'REQUEST_NOT_PROCESSED',
+      message: [`The key:${cleanKey}. provided by the User is invalid.`],
+    };
+    try {
+      parseBlsResponse(response, seriesId, keyWithWhitespace);
+      throw new Error('expected parseBlsResponse to throw');
+    } catch (err) {
+      const message = (err as Error).message;
+      expect(message).not.toContain(cleanKey);
+      expect(message).toContain('[REDACTED]');
+    }
+  });
+
   it('throws when the requested series is absent from the response', () => {
     expect(() =>
       parseBlsResponse(blsFixture, 'LAUCN999990000000003'),

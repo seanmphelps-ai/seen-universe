@@ -59,7 +59,11 @@ export class BlsLausError extends Error {}
  */
 function redactKeyFromMessage(message: string, apiKey: string | undefined): string {
   if (!apiKey) return message;
-  return message.split(apiKey).join('[REDACTED]');
+  // Trim defensively here too: this function's contract shouldn't depend
+  // on every caller having already normalized the key.
+  const trimmed = apiKey.trim();
+  if (!trimmed) return message;
+  return message.split(trimmed).join('[REDACTED]');
 }
 
 export function parseBlsResponse(
@@ -130,8 +134,15 @@ export async function fetchLausCountyUnemploymentRate(
   // empty even though the request itself succeeds. A free registration
   // key (https://www.bls.gov/developers/) removes that limit; read from
   // env so adding one later requires no code change.
-  apiKey: string | undefined = process.env.BLS_API_KEY,
+  apiKeyInput: string | undefined = process.env.BLS_API_KEY,
 ): Promise<{ result: BlsSeriesResult; annualAveragePercent: number | null }> {
+  // Trimmed once here so the exact same value is used for both the
+  // outbound request and redaction-matching below — a live run showed the
+  // raw key surviving in output despite the redaction code being correct,
+  // most likely because the value read from the environment (e.g. pasted
+  // into a dashboard form) carried invisible leading/trailing whitespace
+  // that didn't match BLS's own (trimmed) echo of the key in its error text.
+  const apiKey = apiKeyInput?.trim() || undefined;
   const seriesId = buildLausUnemploymentRateSeriesId(stateFips, countyFips);
 
   const body: Record<string, unknown> = {
