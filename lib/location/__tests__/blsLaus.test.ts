@@ -53,6 +53,23 @@ describe('parseBlsResponse', () => {
     );
   });
 
+  it('redacts the API key from BLS error messages that echo it back (live-observed behavior)', () => {
+    const apiKey = 'f0b505d75088441cac8bf73d71a914dd';
+    const response = {
+      status: 'REQUEST_NOT_PROCESSED',
+      message: [`The key:${apiKey}. provided by the User is invalid.`],
+    };
+    try {
+      parseBlsResponse(response, seriesId, apiKey);
+      throw new Error('expected parseBlsResponse to throw');
+    } catch (err) {
+      expect(err).toBeInstanceOf(BlsLausError);
+      const message = (err as Error).message;
+      expect(message).not.toContain(apiKey);
+      expect(message).toContain('[REDACTED]');
+    }
+  });
+
   it('throws when the requested series is absent from the response', () => {
     expect(() =>
       parseBlsResponse(blsFixture, 'LAUCN999990000000003'),

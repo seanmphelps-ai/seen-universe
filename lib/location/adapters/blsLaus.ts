@@ -49,13 +49,33 @@ export type BlsApiResponse = {
 
 export class BlsLausError extends Error {}
 
-export function parseBlsResponse(raw: unknown, expectedSeriesId: string): BlsSeriesResult {
+/**
+ * BLS's own error responses echo the submitted registration key back
+ * verbatim (observed live: "The key:XXXX...provided by the User is
+ * invalid"). Since these messages flow into adapterFailures/limitations,
+ * which the public /api/location/verify route returns directly, the key
+ * must be stripped here before the message ever leaves this function —
+ * same reasoning as censusAcs.ts's redactApiKey.
+ */
+function redactKeyFromMessage(message: string, apiKey: string | undefined): string {
+  if (!apiKey) return message;
+  return message.split(apiKey).join('[REDACTED]');
+}
+
+export function parseBlsResponse(
+  raw: unknown,
+  expectedSeriesId: string,
+  apiKey?: string,
+): BlsSeriesResult {
   const response = raw as Partial<BlsApiResponse>;
 
   if (response?.status !== 'REQUEST_SUCCEEDED') {
     const messages = response?.message?.length ? response.message.join(' | ') : '(no message field)';
     throw new BlsLausError(
-      `BLS API did not report success (status: ${response?.status ?? 'missing'}). BLS message: ${messages}`,
+      redactKeyFromMessage(
+        `BLS API did not report success (status: ${response?.status ?? 'missing'}). BLS message: ${messages}`,
+        apiKey,
+      ),
     );
   }
 
@@ -147,7 +167,7 @@ export async function fetchLausCountyUnemploymentRate(
         `First 300 chars: ${bodyText.slice(0, 300)}`,
     );
   }
-  const result = parseBlsResponse(raw, seriesId);
+  const result = parseBlsResponse(raw, seriesId, apiKey);
 
   return {
     result,
