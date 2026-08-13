@@ -3,9 +3,27 @@ import {
   buildLausUnemploymentRateSeriesId,
   parseBlsResponse,
   extractAnnualAverage,
+  sanitizeControlCharacters,
   BlsLausError,
 } from '../adapters/blsLaus';
 import blsFixture from '../fixtures/blsLaus.json';
+
+describe('sanitizeControlCharacters', () => {
+  it('removes a raw control character embedded inside a JSON string so it becomes parseable', () => {
+    const rawControlChar = String.fromCharCode(0x0b); // vertical tab — observed cause of the live failure
+    const malformed = `{"footnotes":[{"text":"note${rawControlChar}here"}]}`;
+    expect(() => JSON.parse(malformed)).toThrow();
+
+    const sanitized = sanitizeControlCharacters(malformed);
+    expect(() => JSON.parse(sanitized)).not.toThrow();
+    expect(JSON.parse(sanitized)).toEqual({ footnotes: [{ text: 'notehere' }] });
+  });
+
+  it('leaves ordinary text untouched', () => {
+    const text = '{"a":"plain text, nothing weird"}';
+    expect(sanitizeControlCharacters(text)).toBe(text);
+  });
+});
 
 describe('buildLausUnemploymentRateSeriesId', () => {
   it('builds the documented 20-character LAUS county series ID', () => {

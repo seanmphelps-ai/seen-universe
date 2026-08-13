@@ -6,21 +6,15 @@
 // https://www.bls.gov/developers/api_signature_v2.htm
 // LAUS series ID structure: https://www.bls.gov/help/hlpforma.htm#LA
 //
-// IMPORTANT — series ID padding: BLS LAUS county series IDs follow the
-// pattern "LAUCN" + state FIPS(2) + county FIPS(3) + zero padding + measure
-// code(2), for a documented total length of 20 characters (hence 8 zeros
-// of padding here). This adapter has not been exercised against the live
-// API from this build session (sandbox network block — see
-// scripts/verify-location-live.ts), so this is the best-effort correct
-// format from documentation, not something confirmed against a real
-// response yet. If the live script gets a shape/empty-series error, check
-// this padding first.
+// Series ID padding confirmed correct against the live API: a real request
+// for LAUCN060370000000003 (Los Angeles County, CA) returned data for that
+// exact series ID.
 //
-// Cannot be exercised end-to-end from this build session — the sandbox
-// blocks outbound requests to api.bls.gov. Parsing logic is covered by
-// fixture-based unit tests. See scripts/verify-location-live.ts for the
-// real network round-trip, which will fail loudly (not silently) if this
-// series ID format is wrong.
+// Live-verified: unregistered access returns success but empty data for
+// historical years (see fetchLausCountyUnemploymentRate below). With a real
+// BLS_API_KEY, the request succeeds but the response body can contain a raw,
+// unescaped control character (observed in footnote text), which breaks
+// strict JSON.parse — see the sanitization step below.
 
 const BLS_BASE = 'https://api.bls.gov/publicAPI/v2/timeseries/data/';
 const UNEMPLOYMENT_RATE_MEASURE_CODE = '03';
@@ -87,6 +81,24 @@ export function extractAnnualAverage(result: BlsSeriesResult, year: string): num
   return point ? point.value : null;
 }
 
+/**
+ * Strips raw C0 control characters (0x00-0x1F) from a JSON response body.
+ * None are meaningful JSON structure on their own — a raw one embedded
+ * inside a string literal (observed from BLS in footnote text) is exactly
+ * what makes strict JSON.parse throw "Bad control character in string
+ * literal" on an otherwise well-formed response.
+ */
+export function sanitizeControlCharacters(text: string): string {
+  let result = '';
+  for (let i = 0; i < text.length; i++) {
+    const code = text.charCodeAt(i);
+    if (code >= 0x20) {
+      result += text[i];
+    }
+  }
+  return result;
+}
+
 export async function fetchLausCountyUnemploymentRate(
   stateFips: string,
   countyFips: string,
@@ -120,7 +132,19 @@ export async function fetchLausCountyUnemploymentRate(
     throw new BlsLausError(`BLS API request failed: HTTP ${response.status}`);
   }
 
-  const raw = await response.json();
+  const bodyText = await response.text();
+  const sanitized = sanitizeControlCharacters(bodyText);
+
+  let raw: unknown;
+  try {
+    raw = JSON.parse(sanitized);
+  } catch (err) {
+    throw new BlsLausError(
+      `BLS response was not valid JSON even after control-character sanitization ` +
+        `(${err instanceof Error ? err.message : String(err)}). ` +
+        `First 300 chars: ${bodyText.slice(0, 300)}`,
+    );
+  }
   const result = parseBlsResponse(raw, seriesId);
 
   return {
