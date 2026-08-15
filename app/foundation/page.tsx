@@ -4,19 +4,19 @@ const cards = [
   {
     number: '01',
     title: 'LOCATION',
-    line: 'Where were you molded?',
+    line: 'Where was this system molded? Location of birth, locations lived 6 months or more, current location.',
     href: '/foundation/location',
   },
   {
     number: '02',
     title: 'DATE',
-    line: 'When did you arrive?',
+    line: 'On what date was this system etched / DOB arrival?',
     href: '/foundation/birth',
   },
   {
     number: '03',
-    title: 'TIME',
-    line: 'What time were you born?',
+    title: 'TIME RECTIFICATION',
+    line: 'Please help us narrow it down. Select which summaries and to what degree resonate with the experiences you have lived.',
     href: '/foundation/birth#foundation-time',
   },
   {
