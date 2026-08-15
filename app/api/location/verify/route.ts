@@ -21,6 +21,19 @@ const TEST_INPUT: LocationInput = {
   role: 'LIVED',
 };
 
+// Reports whether an env var is actually reaching this running deployment,
+// without exposing the real value — added specifically to distinguish "the
+// Vercel env var isn't wired to Production" from "it's wired correctly but
+// the key itself is rejected by the upstream API". Never logs or returns
+// the full value.
+function maskKey(value: string | undefined): { present: boolean; length: number; masked: string | null } {
+  if (!value) return { present: false, length: 0, masked: null };
+  const trimmed = value.trim();
+  const masked =
+    trimmed.length > 8 ? `${trimmed.slice(0, 4)}...${trimmed.slice(-4)}` : '*'.repeat(trimmed.length);
+  return { present: true, length: trimmed.length, masked };
+}
+
 export async function GET() {
   const field = await buildLocationField(TEST_INPUT);
   const success = field.adapterFailures.length === 0 && field.unknownConditions.length === 0;
@@ -28,6 +41,10 @@ export async function GET() {
   return NextResponse.json(
     {
       verificationStatus: success ? 'PASSED' : 'FAILED',
+      keyDiagnostics: {
+        CENSUS_API_KEY: maskKey(process.env.CENSUS_API_KEY),
+        BLS_API_KEY: maskKey(process.env.BLS_API_KEY),
+      },
       field,
     },
     { status: success ? 200 : 500 },
