@@ -71,7 +71,7 @@ export default function SplashPage() {
   }, []);
 
   function enterSeen() {
-    router.push('/foundation/location');
+    router.push('/foundation');
   }
 
   return (
