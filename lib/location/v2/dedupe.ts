@@ -47,6 +47,7 @@ export type ExposureRecord = {
   engagement: Observation['engagement'];
   localAccountEstimate: number | null;
   publishedAt: string | null;
+  accountId: string | null;
 };
 
 export type DedupeResult = {
@@ -99,6 +100,7 @@ export function dedupeObservations(observations: Observation[]): DedupeResult {
       engagement: observation.engagement,
       localAccountEstimate: observation.localAccountEstimate,
       publishedAt: observation.publishedAt,
+      accountId: observation.accountId,
     });
 
     if (!observation.eventFingerprint) {

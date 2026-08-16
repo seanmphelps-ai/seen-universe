@@ -22,6 +22,7 @@ function observation(id: string, sourceFamily: SourceFamily, overrides: Partial<
     eventFingerprint: 'e1',
     engagement: null,
     localAccountEstimate: 0.9,
+    accountId: id,
     confidenceTerms: { geo: 0.9, classifier: 0.85, source: 0.9, authenticity: 0.95, recency: 0.8 },
     ...overrides,
   };
@@ -63,6 +64,7 @@ describe('computeConfidence', () => {
       familiesMissing: [],
       timeCoverage: 1,
       includesNonprobabilitySocial: false,
+      accountParticipation: null,
     });
 
     expect(report.capApplied).toBe(40);
@@ -82,6 +84,7 @@ describe('computeConfidence', () => {
         familiesMissing: [],
         timeCoverage: 1,
         includesNonprobabilitySocial: false,
+        accountParticipation: null,
       });
 
     const one = build(['OFFICIAL_DATA']);
@@ -98,6 +101,7 @@ describe('computeConfidence', () => {
       familiesMissing: ['SOCIAL_PUBLIC', 'ACLED'],
       timeCoverage: 1,
       includesNonprobabilitySocial: false,
+      accountParticipation: null,
     });
 
     expect(report.components.sourceFamilyCoverage).toBeCloseTo(1 / 3, 12);
@@ -112,6 +116,7 @@ describe('computeConfidence', () => {
         familiesMissing: [],
         timeCoverage: 1,
         includesNonprobabilitySocial: false,
+        accountParticipation: null,
       });
 
     expect(build('state').components.geographicPrecision).toBeLessThan(
@@ -126,6 +131,7 @@ describe('computeConfidence', () => {
       familiesMissing: [],
       timeCoverage: 0.5,
       includesNonprobabilitySocial: false,
+      accountParticipation: null,
     });
     expect(Number.isInteger(report.score)).toBe(true);
   });
@@ -137,6 +143,7 @@ describe('computeConfidence', () => {
       familiesMissing: [],
       timeCoverage: 1,
       includesNonprobabilitySocial: true,
+      accountParticipation: null,
     });
     expect(report.notes.some((n) => /digitally observable/.test(n))).toBe(true);
   });
@@ -148,6 +155,7 @@ describe('computeConfidence', () => {
       familiesMissing: [],
       timeCoverage: null,
       includesNonprobabilitySocial: false,
+      accountParticipation: null,
     });
 
     expect(report.components.classifierCalibration).toBe(0);
@@ -163,9 +171,39 @@ describe('computeConfidence', () => {
       familiesMissing: ['OFFICIAL_DATA'],
       timeCoverage: null,
       includesNonprobabilitySocial: false,
+      accountParticipation: null,
     });
 
     expect(report.score).toBe(0);
     expect(report.band).toBe('VERY_LOW');
+  });
+
+  it('reports evidence independence as a diagnostic separate from the score, and flags low independence', () => {
+    const dominated = computeConfidence({
+      observations: [observation('a', 'OFFICIAL_DATA')],
+      familiesPresent: ['OFFICIAL_DATA'],
+      familiesMissing: [],
+      timeCoverage: 1,
+      includesNonprobabilitySocial: false,
+      accountParticipation: { whale: 900, ...Object.fromEntries(Array.from({ length: 10 }, (_, i) => [`a-${i}`, 1])) },
+    });
+
+    expect(dominated.evidenceIndependence).not.toBeNull();
+    expect(dominated.evidenceIndependence!.accountHhi).toBeGreaterThan(0.5);
+    expect(dominated.notes.some((n) => /Evidence independence is low/.test(n))).toBe(true);
+    // The diagnostic must never leak into the score's own components.
+    expect(dominated.components).not.toHaveProperty('evidenceIndependence');
+  });
+
+  it('returns a null evidence-independence diagnostic when no account data was supplied', () => {
+    const report = computeConfidence({
+      observations: [observation('a', 'OFFICIAL_DATA')],
+      familiesPresent: ['OFFICIAL_DATA'],
+      familiesMissing: [],
+      timeCoverage: 1,
+      includesNonprobabilitySocial: false,
+      accountParticipation: null,
+    });
+    expect(report.evidenceIndependence).toBeNull();
   });
 });

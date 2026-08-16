@@ -57,6 +57,7 @@ describe('fuseComponent', () => {
   it('omits a missing family from the score and reports it as missing', () => {
     const fused = fuseComponent(
       'prev',
+      'PREV',
       [
         { sourceFamily: 'OFFICIAL_DATA', value: 60 },
         { sourceFamily: 'LOCAL_NEWS', value: null },
@@ -74,6 +75,7 @@ describe('fuseComponent', () => {
     // treated as 0 the fused value would collapse toward it.
     const fused = fuseComponent(
       'prev',
+      'PREV',
       [
         { sourceFamily: 'OFFICIAL_DATA', value: 80 },
         { sourceFamily: 'LOCAL_NEWS', value: 80 },
@@ -85,11 +87,7 @@ describe('fuseComponent', () => {
   });
 
   it('returns a null value — not 0 — when no family supplied the component', () => {
-    const fused = fuseComponent(
-      'phys',
-      [{ sourceFamily: 'OFFICIAL_DATA', value: null }],
-      EXPECTED,
-    );
+    const fused = fuseComponent('phys', 'PHYS', [{ sourceFamily: 'OFFICIAL_DATA', value: null }], EXPECTED);
     expect(fused.value).toBeNull();
     expect(fused.familiesPresent).toEqual([]);
   });
@@ -97,9 +95,10 @@ describe('fuseComponent', () => {
   it('flags contradiction and preserves the parallel signals', () => {
     const fused = fuseComponent(
       'prev',
+      'PREV',
       [
         { sourceFamily: 'OFFICIAL_DATA', value: 10 },
-        { sourceFamily: 'SOCIAL_PUBLIC', value: 90 },
+        { sourceFamily: 'ACLED', value: 90 },
       ],
       EXPECTED,
     );
@@ -112,9 +111,10 @@ describe('fuseComponent', () => {
   it('does not flag contradiction for ordinary spread', () => {
     const fused = fuseComponent(
       'prev',
+      'PREV',
       [
         { sourceFamily: 'OFFICIAL_DATA', value: 50 },
-        { sourceFamily: 'SOCIAL_PUBLIC', value: 50 + CONTRADICTION_SPREAD - 1 },
+        { sourceFamily: 'ACLED', value: 50 + CONTRADICTION_SPREAD - 1 },
       ],
       EXPECTED,
     );
@@ -122,20 +122,63 @@ describe('fuseComponent', () => {
   });
 
   it('never flags contradiction on a single family', () => {
-    const fused = fuseComponent('prev', [{ sourceFamily: 'OFFICIAL_DATA', value: 5 }], EXPECTED);
+    const fused = fuseComponent('prev', 'PREV', [{ sourceFamily: 'OFFICIAL_DATA', value: 5 }], EXPECTED);
     expect(fused.contradiction).toBe(false);
   });
 
-  it('weights official data above social when the two disagree', () => {
-    const fused = fuseComponent(
+  it('weights by PER-DIMENSION competence, not a single family score: official data ' +
+    'dominates PREV while social public dominates DIG — the opposite ranking', () => {
+    const prev = fuseComponent(
       'prev',
+      'PREV',
       [
         { sourceFamily: 'OFFICIAL_DATA', value: 20 },
         { sourceFamily: 'SOCIAL_PUBLIC', value: 80 },
       ],
       EXPECTED,
     );
-    expect(fused.value).toBe(20);
+    const dig = fuseComponent(
+      'dig',
+      'DIG',
+      [
+        { sourceFamily: 'OFFICIAL_DATA', value: 20 },
+        { sourceFamily: 'SOCIAL_PUBLIC', value: 80 },
+      ],
+      EXPECTED,
+    );
+
+    // Same two families, same two raw values — opposite fused answer,
+    // because OFFICIAL_DATA is authoritative for PREV and has zero
+    // declared competence for DIG, while SOCIAL_PUBLIC is the reverse.
+    expect(prev.value).toBe(20);
+    expect(dig.value).toBe(80);
+  });
+
+  it('excludes a family with zero competence for this dimension from the fused value, ' +
+    'but still reports it as present and names it incompetent', () => {
+    const fused = fuseComponent(
+      'prev',
+      'PREV',
+      [
+        { sourceFamily: 'OFFICIAL_DATA', value: 40 },
+        { sourceFamily: 'ADS', value: 95 }, // ADS has no declared PREV competence at all
+      ],
+      EXPECTED,
+    );
+
+    expect(fused.value).toBe(40);
+    expect(fused.familiesPresent).toEqual(['OFFICIAL_DATA', 'ADS']);
+    expect(fused.incompetentFamilies).toEqual(['ADS']);
+    const adsSignal = fused.signals.find((s) => s.sourceFamily === 'ADS')!;
+    expect(adsSignal.effectiveWeight).toBe(0);
+    expect(adsSignal.value).toBe(95); // preserved for transparency, just unweighted
+  });
+
+  it('returns null when every contributing family is incompetent for the dimension', () => {
+    const fused = fuseComponent('prev', 'PREV', [{ sourceFamily: 'ADS', value: 50 }], EXPECTED);
+    expect(fused.value).toBeNull();
+    expect(fused.incompetentFamilies).toEqual(['ADS']);
+    expect(fused.familiesPresent).toEqual(['ADS']);
   });
 });
 
@@ -160,7 +203,7 @@ describe('fuseVectors', () => {
       [
         vector('OFFICIAL_DATA', {
           sev: { median: 0.5, upperTail: 0.9, polarity: 'PRESSURE', n: 4 },
-          conc: { normalizedHhi: 0.3, top1PercentShare: 0.2, top10PercentShare: 0.5, accounts: 100 },
+          conc: { normalizedHhi: 0.3, top1PercentShare: 0.2, top10PercentShare: 0.5, subUnitCount: 100 },
           trend: {
             logRateRatio: 0.4,
             lower95: 0.1,

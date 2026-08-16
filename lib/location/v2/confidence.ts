@@ -15,11 +15,13 @@ import type {
   ConfidenceBand,
   ConfidenceComponents,
   ConfidenceReport,
+  EvidenceIndependenceDiagnostic,
   Observation,
   SourceFamily,
 } from './types';
 import { effectiveIndependentEvidence } from './dedupe';
 import { observationQuality, qualityTermCoverage } from './quality';
+import { normalizedHhi } from './stats';
 
 /** Hard caps by count of independent source families. */
 export const FAMILY_COUNT_CAPS: { minFamilies: number; cap: number }[] = [
@@ -79,7 +81,45 @@ export type ConfidenceInputs = {
   timeCoverage: number | null;
   /** Whether any contributing family is nonprobability social data. */
   includesNonprobabilitySocial: boolean;
+  /**
+   * Per-account participation counts feeding the evidence-independence
+   * diagnostic (account HHI). Opaque account id -> observation count.
+   * This is NOT an environmental measurement — it never informs CONC
+   * (lib/location/v2/vector.ts) — it is a statement about whether the
+   * EVIDENCE is dominated by a few accounts. Null when not obtainable.
+   */
+  accountParticipation: Record<string, number> | null;
 };
+
+/**
+ * Account-concentration diagnostic: normalized HHI over per-account
+ * observation shares, plus top-1%/top-10% contribution. Kept entirely
+ * separate from CONC (lib/location/v2/vector.ts), which measures how the
+ * CONDITION itself clusters spatially — this measures how the EVIDENCE
+ * about it clusters by source.
+ */
+export function computeEvidenceIndependence(
+  accountParticipation: Record<string, number> | null,
+): EvidenceIndependenceDiagnostic | null {
+  if (!accountParticipation) return null;
+  const counts = Object.values(accountParticipation).filter((c) => Number.isFinite(c) && c > 0);
+  if (counts.length === 0) return null;
+
+  const total = counts.reduce((acc, c) => acc + c, 0);
+  const shares = counts.map((c) => c / total).sort((a, b) => b - a);
+
+  const topShare = (fraction: number): number => {
+    const take = Math.max(1, Math.ceil(shares.length * fraction));
+    return shares.slice(0, take).reduce((acc, s) => acc + s, 0);
+  };
+
+  return {
+    accountHhi: normalizedHhi(shares),
+    top1PercentShare: topShare(0.01),
+    top10PercentShare: topShare(0.1),
+    accountCount: shares.length,
+  };
+}
 
 export function computeConfidence(inputs: ConfidenceInputs): ConfidenceReport {
   const notes: string[] = [];
@@ -186,6 +226,19 @@ export function computeConfidence(inputs: ConfidenceInputs): ConfidenceReport {
     );
   }
 
+  const evidenceIndependence = computeEvidenceIndependence(inputs.accountParticipation);
+  // Threshold matches CONTRADICTION_SPREAD's role in fuse.ts: past this
+  // point the evidence is no longer plausibly independent, and a reader
+  // needs that flagged rather than buried in a components table.
+  if (evidenceIndependence && evidenceIndependence.accountHhi > 0.5) {
+    notes.push(
+      `Evidence independence is low: the top 1% of contributing accounts produced ` +
+        `${(evidenceIndependence.top1PercentShare * 100).toFixed(0)}% of the circulation evidence ` +
+        `(account HHI ${evidenceIndependence.accountHhi.toFixed(2)}). This is a statement about the ` +
+        `EVIDENCE, not the environment — it does not affect CONC.`,
+    );
+  }
+
   return {
     components,
     familiesPresent,
@@ -195,6 +248,7 @@ export function computeConfidence(inputs: ConfidenceInputs): ConfidenceReport {
     score: Math.round(score),
     capApplied,
     band: confidenceBand(score),
+    evidenceIndependence,
     notes,
   };
 }

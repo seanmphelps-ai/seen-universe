@@ -12,35 +12,13 @@
 //   3. When families genuinely disagree, the disagreement is reported
 //      alongside the fused value rather than smoothed out of existence.
 
+import type { DimensionId } from './dimensions';
 import type { EvidenceVector, SourceFamily } from './types';
+import { familyCompetence } from './competence';
 import { weightedMedian } from './stats';
 
 /** No family may hold more than this share of total fusion weight. */
 export const MAX_FAMILY_INFLUENCE = 0.4;
-
-/**
- * Base reliability weights. Official statistical data outranks social
- * signal because it is a measured population quantity rather than a
- * nonprobability sample of the digitally observable environment — the
- * distinction AAPOR's social-media guidance turns on.
- */
-export const FAMILY_BASE_WEIGHTS: Record<SourceFamily, number> = {
-  OFFICIAL_DATA: 1.0,
-  ACLED: 0.9,
-  POPULATION_GRID: 0.85,
-  INSTITUTIONS: 0.8,
-  OSM: 0.75,
-  LOCAL_NEWS: 0.7,
-  GDELT: 0.65,
-  EVENTS: 0.6,
-  MOVEMENT_PLACE: 0.6,
-  REVIEWS: 0.5,
-  MARKETPLACE: 0.5,
-  SEARCH_INTEREST: 0.5,
-  LOCAL_FORUM: 0.45,
-  ADS: 0.4,
-  SOCIAL_PUBLIC: 0.4,
-};
 
 export type FamilySignal = {
   sourceFamily: SourceFamily;
@@ -64,6 +42,14 @@ export type FusedComponent = {
    */
   contradiction: boolean;
   contradictionNote: string | null;
+  /**
+   * Families that produced a value for this component but have zero
+   * declared competence for its governing dimension (see competence.ts).
+   * Shown in `signals` with effectiveWeight 0; excluded from the fused
+   * value entirely. Distinct from `contradiction`, which is about
+   * disagreement between competent signals.
+   */
+  incompetentFamilies: SourceFamily[];
 };
 
 /**
@@ -124,7 +110,12 @@ export function capFamilyInfluence(
 }
 
 /**
- * Fuses one component across families.
+ * Fuses one component across families, weighted by each family's
+ * competence for the GOVERNING DIMENSION — not a single per-family
+ * credibility score (see competence.ts). A family with zero declared
+ * competence for this dimension still appears in `signals` (transparency:
+ * it did produce a value) with effectiveWeight 0, but contributes nothing
+ * to the fused number — weightedMedian excludes non-positive weights.
  *
  * `expectedFamilies` is the full set the collection plan intended to
  * query. Anything in it that produced no value is returned in
@@ -134,6 +125,7 @@ export function capFamilyInfluence(
  */
 export function fuseComponent(
   component: string,
+  dimensionId: DimensionId,
   contributions: { sourceFamily: SourceFamily; value: number | null }[],
   expectedFamilies: SourceFamily[],
 ): FusedComponent {
@@ -154,11 +146,15 @@ export function fuseComponent(
       familiesMissing,
       contradiction: false,
       contradictionNote: null,
+      incompetentFamilies: [],
     };
   }
 
   const capped = capFamilyInfluence(
-    present.map((c) => ({ sourceFamily: c.sourceFamily, weight: FAMILY_BASE_WEIGHTS[c.sourceFamily] })),
+    present.map((c) => ({
+      sourceFamily: c.sourceFamily,
+      weight: familyCompetence(c.sourceFamily, dimensionId),
+    })),
   );
   const weightByFamily = new Map(capped.map((c) => [c.sourceFamily, c.weight]));
 
@@ -168,11 +164,17 @@ export function fuseComponent(
     effectiveWeight: weightByFamily.get(c.sourceFamily) ?? 0,
   }));
 
-  const fused = weightedMedian(signals.map((s) => ({ value: s.value, weight: s.effectiveWeight })));
+  const competentSignals = signals.filter((s) => s.effectiveWeight > 0);
+  const fused =
+    competentSignals.length > 0
+      ? weightedMedian(competentSignals.map((s) => ({ value: s.value, weight: s.effectiveWeight })))
+      : null;
 
   const values = present.map((c) => c.value);
   const spread = Math.max(...values) - Math.min(...values);
   const contradiction = present.length > 1 && spread > CONTRADICTION_SPREAD;
+
+  const incompetentFamilies = signals.filter((s) => s.effectiveWeight === 0).map((s) => s.sourceFamily);
 
   return {
     component,
@@ -187,8 +189,22 @@ export function fuseComponent(
         `The fused value is reported, but the parallel signals are the honest summary — ` +
         `they are preserved above and must be displayed alongside it.`
       : null,
+    incompetentFamilies,
   };
 }
+
+/** Which dimension governs each fused output key — the lookup fuseVectors uses into competence.ts. */
+const COMPONENT_DIMENSIONS: Record<string, DimensionId> = {
+  prev: 'PREV',
+  phys: 'PHYS',
+  dig: 'DIG',
+  amp: 'AMP',
+  brd: 'BRD',
+  conc: 'CONC',
+  sevMedian: 'SEV',
+  sevUpperTail: 'SEV',
+  trendLogRateRatio: 'TREND',
+};
 
 /** Fuses every numeric component of a set of per-family vectors. */
 export function fuseVectors(
@@ -208,6 +224,7 @@ export function fuseVectors(
   for (const component of numericComponents) {
     fused[component] = fuseComponent(
       component,
+      COMPONENT_DIMENSIONS[component],
       vectors.map((v) => ({ sourceFamily: v.sourceFamily, value: v[component] })),
       expectedFamilies,
     );
@@ -215,24 +232,28 @@ export function fuseVectors(
 
   fused.conc = fuseComponent(
     'conc',
+    COMPONENT_DIMENSIONS.conc,
     vectors.map((v) => ({ sourceFamily: v.sourceFamily, value: v.conc?.normalizedHhi ?? null })),
     expectedFamilies,
   );
 
   fused.sevMedian = fuseComponent(
     'sevMedian',
+    COMPONENT_DIMENSIONS.sevMedian,
     vectors.map((v) => ({ sourceFamily: v.sourceFamily, value: v.sev?.median ?? null })),
     expectedFamilies,
   );
 
   fused.sevUpperTail = fuseComponent(
     'sevUpperTail',
+    COMPONENT_DIMENSIONS.sevUpperTail,
     vectors.map((v) => ({ sourceFamily: v.sourceFamily, value: v.sev?.upperTail ?? null })),
     expectedFamilies,
   );
 
   fused.trendLogRateRatio = fuseComponent(
     'trendLogRateRatio',
+    COMPONENT_DIMENSIONS.trendLogRateRatio,
     vectors.map((v) => ({ sourceFamily: v.sourceFamily, value: v.trend?.logRateRatio ?? null })),
     expectedFamilies,
   );

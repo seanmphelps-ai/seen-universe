@@ -36,6 +36,7 @@ function exposureRecord(id: string, overrides: Partial<ExposureRecord> = {}): Ex
     engagement: null,
     localAccountEstimate: 1,
     publishedAt: '2024-01-15T00:00:00.000Z',
+    accountId: id, // distinct account per record unless a test overrides it
     ...overrides,
   };
 }
@@ -58,7 +59,8 @@ function baseInputs(overrides: Partial<VectorInputs> = {}): VectorInputs {
     sampledActiveLocalAccounts: null,
     connectedLocalPopulation: null,
     uniqueParticipatingLocalAccounts: null,
-    accountParticipation: null,
+    spatialOccurrenceDistribution: null,
+    sampledSubUnitCount: null,
     measuredDedupedLocalReach: null,
     physicalDoseInputs: [],
     amplificationBaselines: {},
@@ -251,7 +253,17 @@ describe('computeAmplification', () => {
 });
 
 describe('computeBreadth', () => {
-  it('divides participating local accounts by sampled active local accounts', () => {
+  it('computes spatial breadth as distinct affected sub-units / sampled sub-units', () => {
+    const inputs = baseInputs({
+      spatialOccurrenceDistribution: { a: 3, b: 0, c: 1, d: 0 },
+      sampledSubUnitCount: 8,
+    });
+    // 2 of 8 sampled sub-units affected (a, c) — accounts (uniqueParticipatingLocalAccounts)
+    // are absent, so BRD is the spatial signal alone.
+    expect(computeBreadth(inputs).value).toBeCloseTo(2 / 8, 12);
+  });
+
+  it('computes actor breadth as participating accounts / sampled active accounts', () => {
     const inputs = baseInputs({
       uniqueParticipatingLocalAccounts: 250,
       sampledActiveLocalAccounts: 1_000,
@@ -259,7 +271,17 @@ describe('computeBreadth', () => {
     expect(computeBreadth(inputs).value).toBeCloseTo(0.25, 12);
   });
 
-  it('caps at 1 when the numerator exceeds the sample', () => {
+  it('combines both signals by median when both are available', () => {
+    const inputs = baseInputs({
+      spatialOccurrenceDistribution: { a: 1, b: 1 }, // 2/4 = 0.5
+      sampledSubUnitCount: 4,
+      uniqueParticipatingLocalAccounts: 100, // 100/1000 = 0.1
+      sampledActiveLocalAccounts: 1_000,
+    });
+    expect(computeBreadth(inputs).value).toBeCloseTo((0.5 + 0.1) / 2, 12);
+  });
+
+  it('caps each signal at 1 when the numerator exceeds its sample', () => {
     const inputs = baseInputs({
       uniqueParticipatingLocalAccounts: 2_000,
       sampledActiveLocalAccounts: 1_000,
@@ -267,35 +289,43 @@ describe('computeBreadth', () => {
     expect(computeBreadth(inputs).value).toBe(1);
   });
 
-  it('returns null when the denominator is unavailable', () => {
+  it('returns null only when neither spatial nor actor signal is available', () => {
     expect(
       computeBreadth(baseInputs({ uniqueParticipatingLocalAccounts: 10 })).value,
     ).toBeNull();
+    expect(computeBreadth(baseInputs()).value).toBeNull();
   });
 });
 
 describe('computeConcentration', () => {
-  it('reports normalized HHI plus top-1% and top-10% contribution', () => {
-    const participation: Record<string, number> = {};
-    for (let i = 0; i < 100; i++) participation[`acct-${i}`] = 1;
-    const result = computeConcentration(baseInputs({ accountParticipation: participation }))!;
+  it('reports normalized HHI plus top-1% and top-10% contribution over sub-units', () => {
+    const distribution: Record<string, number> = {};
+    for (let i = 0; i < 100; i++) distribution[`subunit-${i}`] = 1;
+    const result = computeConcentration(baseInputs({ spatialOccurrenceDistribution: distribution }))!;
 
-    expect(result.accounts).toBe(100);
+    expect(result.subUnitCount).toBe(100);
     expect(result.normalizedHhi).toBeCloseTo(0, 10);
     expect(result.top1PercentShare).toBeCloseTo(0.01, 10);
     expect(result.top10PercentShare).toBeCloseTo(0.1, 10);
   });
 
-  it('surfaces a dominant handful of accounts', () => {
-    const participation: Record<string, number> = { whale: 900 };
-    for (let i = 0; i < 99; i++) participation[`acct-${i}`] = 1;
-    const result = computeConcentration(baseInputs({ accountParticipation: participation }))!;
+  it('surfaces occurrences clustered in a small share of the geography', () => {
+    // The contract's own example: most violence concentrated in a few sub-units.
+    const distribution: Record<string, number> = { hotspot: 900 };
+    for (let i = 0; i < 99; i++) distribution[`subunit-${i}`] = 1;
+    const result = computeConcentration(baseInputs({ spatialOccurrenceDistribution: distribution }))!;
 
     expect(result.normalizedHhi).toBeGreaterThan(0.5);
     expect(result.top1PercentShare).toBeGreaterThan(0.85);
   });
 
-  it('returns null when no participation data was obtained', () => {
+  it('never reads account participation — that is a confidence diagnostic, not CONC', () => {
+    // No spatialOccurrenceDistribution supplied; accountParticipation is not
+    // even a field on VectorInputs any more (moved to ConfidenceInputs).
+    expect(computeConcentration(baseInputs())).toBeNull();
+  });
+
+  it('returns null when no spatial distribution was obtained', () => {
     expect(computeConcentration(baseInputs())).toBeNull();
   });
 });

@@ -157,6 +157,19 @@ export type Observation = {
   /** Estimated share (0-1) of engaged accounts that are local. */
   localAccountEstimate: number | null;
 
+  /**
+   * Opaque id of the account/actor that produced this observation, when
+   * obtainable. Distinct from eventFingerprint (which identifies the
+   * underlying event) — this identifies the underlying reporter, and is
+   * what lets PREV's ambient-content path (see vector.ts) tell "4,000
+   * independent residents" apart from "the same 200 accounts posting
+   * 4,000 times": repeated content from one account is capped, not
+   * summed, so account repetition cannot manufacture prevalence. Null
+   * when the account could not be identified — each such observation is
+   * treated as its own singleton rather than grouped with others.
+   */
+  accountId: string | null;
+
   confidenceTerms: ObservationConfidenceTerms;
 };
 
@@ -220,12 +233,35 @@ export type TrendEstimate = {
   baselineWindowDays: number;
 };
 
-export type ConcentrationEstimate = {
-  /** Normalized HHI in [0,1]; 1 = one account is the entire signal. */
+/**
+ * CONC — spatial/demographic clustering of the CONDITION itself: is it
+ * spread evenly across the environment's sub-units, or concentrated in a
+ * small share of them? This is an environmental property.
+ *
+ * Not to be confused with account HHI (EvidenceIndependenceDiagnostic,
+ * in confidence.ts), which measures whether the EVIDENCE is dominated by
+ * a few accounts — a confidence/provenance question, not an
+ * environmental one. The two are computed independently and never mixed.
+ */
+export type SpatialConcentrationEstimate = {
+  /** Normalized HHI in [0,1] over sub-unit shares of total occurrences; 1 = all occurrences in one sub-unit. */
   normalizedHhi: number;
   top1PercentShare: number;
   top10PercentShare: number;
-  accounts: number;
+  subUnitCount: number;
+};
+
+/**
+ * Account HHI — an evidence-quality diagnostic, not an environmental
+ * measurement. High concentration here means a handful of accounts
+ * produced most of the CIRCULATION evidence; it says nothing about how
+ * the underlying condition is distributed and must never inform CONC.
+ */
+export type EvidenceIndependenceDiagnostic = {
+  accountHhi: number;
+  top1PercentShare: number;
+  top10PercentShare: number;
+  accountCount: number;
 };
 
 /**
@@ -244,7 +280,7 @@ export type EvidenceVector = {
   dig: number | null;
   amp: number | null;
   brd: number | null;
-  conc: ConcentrationEstimate | null;
+  conc: SpatialConcentrationEstimate | null;
   frame: FrameVector | null;
   trend: TrendEstimate | null;
 
@@ -282,5 +318,13 @@ export type ConfidenceReport = {
   /** The cap that applied, for disclosure. */
   capApplied: number;
   band: ConfidenceBand;
+  /**
+   * Account-level source concentration diagnostic. Null when no
+   * per-account participation data was supplied. Reported alongside
+   * confidence, per the contract, but is not folded into `score` — it is
+   * a diagnostic about the evidence, and score/confidence must not
+   * silently absorb a third quantity.
+   */
+  evidenceIndependence: EvidenceIndependenceDiagnostic | null;
   notes: string[];
 };

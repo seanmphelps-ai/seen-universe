@@ -29,6 +29,7 @@ const confidence: ConfidenceReport = {
   score: 61,
   capApplied: 65,
   band: 'MEDIUM',
+  evidenceIndependence: null,
   notes: [],
 };
 

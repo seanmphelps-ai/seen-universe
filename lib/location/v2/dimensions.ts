@@ -32,8 +32,24 @@ export const CONTRACT_VERSION = 'SEEN Location Execution Contract v0.1';
 export type EvidenceChannel =
   /** Deduplicated event table. One shooting is one row, always. */
   | 'INCIDENT'
-  /** Exposure table. One shooting discussed 800 times is 800 rows. */
+  /**
+   * Exposure table entries that are REACTIONS TO an incident or ambient
+   * condition — mentions, shares, commentary. One shooting discussed 800
+   * times is 800 rows here. Never admissible for PREV: talk about a
+   * condition is not occurrence of it.
+   */
   | 'CIRCULATION'
+  /**
+   * Exposure table entries that ARE themselves a sampled unit of an
+   * ambient condition — e.g. one social post directly classified as an
+   * instance of status-competition content, not a reaction to some
+   * separately identified incident. This is what makes an ambient
+   * marker's PREV a content-sampling exercise (structurally like a
+   * survey of the local content stream) rather than an attention
+   * measurement. Distinct from CIRCULATION specifically so a viral
+   * reaction thread can never be admitted here.
+   */
+  | 'AMBIENT_CONTENT_SAMPLE'
   /** Directly measured environmental quantity: ACS rate, PM2.5, park polygon. */
   | 'AMBIENT_MEASURE'
   /** Where incidents and measures fall across sub-geographies. */
@@ -94,13 +110,15 @@ export const DIMENSIONS: DimensionSpec[] = [
     uniqueInformation:
       'The rate at which the condition actually occurs, independent of how intense, how discussed, ' +
       'how spread out, or how long-lived it is.',
-    admissibleChannels: ['INCIDENT', 'AMBIENT_MEASURE'],
+    admissibleChannels: ['INCIDENT', 'AMBIENT_MEASURE', 'AMBIENT_CONTENT_SAMPLE'],
     inadmissible: [
       {
         channel: 'CIRCULATION',
         reason:
-          'Talk about a condition is not occurrence of it. Admitting circulation here is exactly ' +
-          'the failure that lets one viral event read as a high base rate.',
+          'Talk ABOUT a condition is not occurrence of it. Admitting circulation here is exactly ' +
+          'the failure that lets one viral event read as a high base rate. (A directly-classified ' +
+          'ambient content sample is admissible — see AMBIENT_CONTENT_SAMPLE — because it IS an ' +
+          'instance of the condition, not a reaction to one.)',
       },
       {
         channel: 'ACTOR_DISTRIBUTION',

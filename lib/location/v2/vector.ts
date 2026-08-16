@@ -1,8 +1,12 @@
 // Marker evidence vector V[M,L,T] — step 3 of the contract.
 //
-// Nine components, computed inside a single source family (step 4.1:
-// "Compute the full vector inside each source family first"). Cross-family
-// fusion happens later, in fuse.ts, never here.
+// Computed inside a single source family (step 4.1: "Compute the full
+// vector inside each source family first"). Cross-family fusion happens
+// later, in fuse.ts, never here.
+//
+// PERSIST (see dimensions.ts) is not yet computed here — persistence.ts
+// does not exist yet. This file currently produces the other nine
+// components of the ten-dimension spec.
 //
 // Every component returns null when its inputs were not obtainable. Null
 // is not zero: null means "not measured" and is charged to confidence,
@@ -11,19 +15,20 @@
 // them apart and every consumer must handle null explicitly.
 
 import type {
-  ConcentrationEstimate,
   EvidenceVector,
   FrameVector,
   MarkerRegistryEntry,
   ResponseFrame,
   SeverityDistribution,
   SourceFamily,
+  SpatialConcentrationEstimate,
   TrendEstimate,
   VectorKey,
 } from './types';
 import { RESPONSE_FRAMES } from './types';
 import type { ExposureRecord, FusedEvent } from './dedupe';
 import { digamma, median, normalizedHhi, quantile, robustPercentile, trigamma } from './stats';
+import { assertChannelAdmissible } from './dimensions';
 
 /** Per-event inputs the physical-dose term needs. Absent → event omitted from PHYS. */
 export type PhysicalDoseInput = {
@@ -62,11 +67,20 @@ export type VectorInputs = {
   sampledActiveLocalAccounts: number | null;
   connectedLocalPopulation: number | null;
 
-  /** Unique local accounts observed participating. Feeds BRD. */
+  /** Unique local accounts observed participating. One of two signals BRD may combine. */
   uniqueParticipatingLocalAccounts: number | null;
 
-  /** Per-account participation counts, for CONC. Keyed by opaque account id. */
-  accountParticipation: Record<string, number> | null;
+  /**
+   * Occurrence count per sub-geography (tract, neighborhood, district —
+   * whatever unit the collection plan sampled), from the INCIDENT or
+   * AMBIENT_MEASURE channel only. Feeds both BRD (distinct affected
+   * sub-units / sampled sub-units) and CONC (how those occurrences
+   * cluster). This is a spatial distribution of the CONDITION, never of
+   * the evidence about it — circulation counts must not appear here.
+   */
+  spatialOccurrenceDistribution: Record<string, number> | null;
+  /** Total sub-units the collection plan sampled, for BRD's denominator. */
+  sampledSubUnitCount: number | null;
 
   /**
    * Measured deduplicated local reach. When absent, DIG falls back to a
@@ -91,20 +105,54 @@ const TREND_PRIOR_SHAPE = 0.5;
 const Z_95 = 1.959963984540054;
 
 /**
+ * Deduplicates ambient content by account before it can inform PREV: each
+ * account contributes at most its single strongest-quality sample, and
+ * null-account records (identity unknown) are each treated as their own
+ * singleton. Without this, "the same 200 accounts posting 4,000 times"
+ * and "4,000 independent residents" would sum to the same PREV — exactly
+ * the failure the account-repetition scenario is designed to catch.
+ * Repetition beyond one account's strongest sample is evidence for
+ * AMP/DIG (it is real exposure) but not for PREV (it is not more
+ * occurrence).
+ */
+function dedupedAmbientQualitySum(exposure: ExposureRecord[]): number {
+  const byAccount = new Map<string, number>();
+  let total = 0;
+
+  for (const record of exposure) {
+    const quality = record.quality ?? 0;
+    if (record.accountId === null) {
+      total += quality;
+      continue;
+    }
+    const existing = byAccount.get(record.accountId);
+    if (existing === undefined || quality > existing) {
+      byAccount.set(record.accountId, quality);
+    }
+  }
+
+  for (const quality of byAccount.values()) total += quality;
+  return total;
+}
+
+/**
  * PREV — unique-event rate per 10k residents per 30 days for event
  * markers; weighted share of sampled local content for ambient markers.
  */
 export function computePrevalence(inputs: VectorInputs): { value: number | null; note?: string } {
   if (inputs.marker.unit === 'ambient') {
+    assertChannelAdmissible('PREV', 'AMBIENT_CONTENT_SAMPLE');
     if (inputs.sampledLocalContentCount === null || inputs.sampledLocalContentCount <= 0) {
       return { value: null, note: 'PREV unavailable: no sampled local-content denominator for an ambient marker.' };
     }
-    // Weighted share: each mention counts by its observation quality, so
-    // a body of weak matches cannot read as a strong ambient presence.
-    const weighted = inputs.exposure.reduce((acc, e) => acc + (e.quality ?? 0), 0);
+    // Weighted share of DISTINCT accounts: each account counts once, by
+    // its strongest-quality sample, so a body of weak matches cannot read
+    // as a strong ambient presence, and neither can one account repeating.
+    const weighted = dedupedAmbientQualitySum(inputs.exposure);
     return { value: weighted / inputs.sampledLocalContentCount };
   }
 
+  assertChannelAdmissible('PREV', 'INCIDENT');
   if (inputs.population === null || inputs.population <= 0) {
     return { value: null, note: 'PREV unavailable: no population denominator for an event marker.' };
   }
@@ -123,6 +171,7 @@ export function computePrevalence(inputs: VectorInputs): { value: number | null;
  * rare-but-extreme marker cannot be flattened into a low average.
  */
 export function computeSeverity(inputs: VectorInputs): SeverityDistribution | null {
+  assertChannelAdmissible('SEV', 'INCIDENT');
   const severities = inputs.events
     .map((e) => e.severity)
     .filter((s): s is number => typeof s === 'number' && Number.isFinite(s));
@@ -145,6 +194,7 @@ export function computeSeverity(inputs: VectorInputs): SeverityDistribution | nu
  * evidence, not a measured per-person exposure.
  */
 export function computePhysicalDose(inputs: VectorInputs): { value: number | null; note?: string } {
+  assertChannelAdmissible('PHYS', 'INCIDENT');
   if (inputs.physicalDoseInputs.length === 0) {
     return { value: null, note: 'PHYS unavailable: no per-event dose parameters were obtainable.' };
   }
@@ -179,6 +229,7 @@ export function computeDigitalDose(inputs: VectorInputs): {
   isProxy: boolean;
   note?: string;
 } {
+  assertChannelAdmissible('DIG', 'CIRCULATION');
   if (inputs.connectedLocalPopulation === null || inputs.connectedLocalPopulation <= 0) {
     return {
       value: null,
@@ -224,6 +275,8 @@ export function computeDigitalDose(inputs: VectorInputs): {
  * toward zero.
  */
 export function computeAmplification(inputs: VectorInputs): { value: number | null; note?: string } {
+  assertChannelAdmissible('AMP', 'CIRCULATION');
+  assertChannelAdmissible('AMP', 'TEMPORAL_EXTENT');
   const totals = {
     reposts: 0,
     comments: 0,
@@ -299,33 +352,69 @@ export function computeAmplification(inputs: VectorInputs): { value: number | nu
   return { value: median(percentiles) };
 }
 
-/** BRD — unique participating local accounts / sampled active local accounts. */
-export function computeBreadth(inputs: VectorInputs): { value: number | null; note?: string } {
-  if (inputs.uniqueParticipatingLocalAccounts === null) {
-    return { value: null, note: 'BRD unavailable: participating-account count not obtainable.' };
-  }
-  if (inputs.sampledActiveLocalAccounts === null || inputs.sampledActiveLocalAccounts <= 0) {
-    return { value: null, note: 'BRD unavailable: no sampled active-local-account denominator.' };
-  }
-  return {
-    value: Math.min(1, inputs.uniqueParticipatingLocalAccounts / inputs.sampledActiveLocalAccounts),
-  };
+/**
+ * BRD — breadth: how widely the condition is distributed across the
+ * environment's relevant units. Combines two independent signals when
+ * both are available — spatial (distinct affected sub-geographies /
+ * sampled sub-geographies) and actor-based (distinct participating local
+ * accounts / sampled active local accounts) — and takes their median so
+ * neither one alone can carry the whole answer. Either signal alone is
+ * used when the other is unavailable; BRD is null only when neither is.
+ */
+function computeSpatialBreadth(inputs: VectorInputs): number | null {
+  const distribution = inputs.spatialOccurrenceDistribution;
+  if (!distribution) return null;
+  assertChannelAdmissible('BRD', 'SPATIAL_DISTRIBUTION');
+  if (inputs.sampledSubUnitCount === null || inputs.sampledSubUnitCount <= 0) return null;
+  const affectedSubUnits = Object.values(distribution).filter((c) => c > 0).length;
+  return Math.min(1, affectedSubUnits / inputs.sampledSubUnitCount);
 }
 
-/** CONC — normalized account HHI plus top-1% and top-10% contribution. */
-export function computeConcentration(inputs: VectorInputs): ConcentrationEstimate | null {
-  const participation = inputs.accountParticipation;
-  if (!participation) return null;
+function computeActorBreadth(inputs: VectorInputs): number | null {
+  if (inputs.uniqueParticipatingLocalAccounts === null) return null;
+  assertChannelAdmissible('BRD', 'ACTOR_DISTRIBUTION');
+  if (inputs.sampledActiveLocalAccounts === null || inputs.sampledActiveLocalAccounts <= 0) return null;
+  return Math.min(1, inputs.uniqueParticipatingLocalAccounts / inputs.sampledActiveLocalAccounts);
+}
 
-  const counts = Object.values(participation).filter((c) => Number.isFinite(c) && c > 0);
+export function computeBreadth(inputs: VectorInputs): { value: number | null; note?: string } {
+  const spatial = computeSpatialBreadth(inputs);
+  const actor = computeActorBreadth(inputs);
+  const available = [spatial, actor].filter((v): v is number => v !== null);
+
+  if (available.length === 0) {
+    return {
+      value: null,
+      note:
+        'BRD unavailable: neither a spatial sub-unit distribution nor an actor-participation ' +
+        'count/denominator pair was obtainable.',
+    };
+  }
+  return { value: median(available) };
+}
+
+/**
+ * CONC — spatial/demographic clustering of the condition: normalized HHI
+ * over occurrence shares by sub-unit, plus top-1% and top-10% share.
+ * Reads spatialOccurrenceDistribution only (see VectorInputs) — the
+ * condition's own footprint, never account activity. Account
+ * concentration is a separate evidence-quality diagnostic computed in
+ * confidence.ts and must never be substituted here.
+ */
+export function computeConcentration(inputs: VectorInputs): SpatialConcentrationEstimate | null {
+  const distribution = inputs.spatialOccurrenceDistribution;
+  if (!distribution) return null;
+  assertChannelAdmissible('CONC', 'SPATIAL_DISTRIBUTION');
+
+  const counts = Object.values(distribution).filter((c) => Number.isFinite(c) && c > 0);
   if (counts.length === 0) return null;
 
   const total = counts.reduce((acc, c) => acc + c, 0);
   const shares = counts.map((c) => c / total).sort((a, b) => b - a);
 
   const topShare = (fraction: number): number => {
-    // At least one account, so a small population still reports the
-    // concentration its largest contributor actually holds.
+    // At least one sub-unit, so even a small sample still reports the
+    // concentration its largest sub-unit actually holds.
     const take = Math.max(1, Math.ceil(shares.length * fraction));
     return shares.slice(0, take).reduce((acc, s) => acc + s, 0);
   };
@@ -334,7 +423,7 @@ export function computeConcentration(inputs: VectorInputs): ConcentrationEstimat
     normalizedHhi: normalizedHhi(shares),
     top1PercentShare: topShare(0.01),
     top10PercentShare: topShare(0.1),
-    accounts: shares.length,
+    subUnitCount: shares.length,
   };
 }
 
@@ -345,6 +434,8 @@ export function computeFrameVector(inputs: VectorInputs, frames: (ResponseFrame 
 
   frames.forEach((frame, index) => {
     if (!frame) return;
+    assertChannelAdmissible('FRAME', 'INTERPRETATION');
+    assertChannelAdmissible('FRAME', 'CIRCULATION');
     const weight = inputs.exposure[index]?.quality ?? 1;
     weights.set(frame, (weights.get(frame) ?? 0) + weight);
     total += weight;
@@ -371,6 +462,8 @@ export function computeFrameVector(inputs: VectorInputs, frames: (ResponseFrame 
  */
 export function computeTrend(inputs: VectorInputs): TrendEstimate | null {
   if (!inputs.baseline) return null;
+  assertChannelAdmissible('TREND', 'INCIDENT');
+  assertChannelAdmissible('TREND', 'TEMPORAL_EXTENT');
   if (inputs.windowDays <= 0 || inputs.baseline.windowDays <= 0) return null;
 
   const currentEvents = inputs.events.length;
@@ -397,7 +490,7 @@ export function computeTrend(inputs: VectorInputs): TrendEstimate | null {
   };
 }
 
-/** Computes the full nine-component vector for one family. */
+/** Computes the nine components of V[m,l,t] this module produces for one family (PERSIST excluded, see header). */
 export function computeEvidenceVector(
   inputs: VectorInputs,
   frames: (ResponseFrame | null)[] = [],

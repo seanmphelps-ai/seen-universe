@@ -32,6 +32,7 @@ function observation(
     eventFingerprint: fingerprint,
     engagement: null,
     localAccountEstimate: 0.8,
+    accountId: id,
     confidenceTerms: { geo: quality, classifier: quality },
     ...extra,
   };

@@ -52,6 +52,36 @@ export const INFERENCE_CHAIN: InferenceStage[] = [
   'CONSEQUENCE',
 ];
 
+/**
+ * Every stage of the chain is rendered at ENVIRONMENT scope. Location
+ * reconstructs what a place asks of anyone living in it; it never
+ * concludes that a particular person answered that demand.
+ *
+ * ADAPTATION is the terminal stage Location may assert on its own
+ * evidence. Stages after it (BEHAVIOR_BELIEF, CAPACITY, COST,
+ * CONSEQUENCE) are rendered as CANDIDATE demands and possibilities the
+ * environment creates — they are handed to later SEEN systems, which
+ * decide whether any of it actually appears in this person. See
+ * interrogation.ts's ADAPTIVE_DEMAND_BOUNDARY.
+ *
+ * The distinction is not cosmetic. "This environment may train
+ * vigilance" is an environmental claim Location can support. "This
+ * person is vigilant" is a psychological claim it cannot, and the
+ * language rules below exist to keep the second from being written.
+ */
+export const LOCATION_TERMINAL_STAGE: InferenceStage = 'ADAPTATION';
+
+export const CANDIDATE_STAGES: InferenceStage[] = [
+  'BEHAVIOR_BELIEF',
+  'CAPACITY',
+  'COST',
+  'CONSEQUENCE',
+];
+
+export function isCandidateStage(stage: InferenceStage): boolean {
+  return CANDIDATE_STAGES.includes(stage);
+}
+
 /** Minimum distinct supporting observations before an inference may render. */
 export const MINIMUM_SUPPORTING_SOURCES = 3;
 
