@@ -14,7 +14,11 @@ const nextConfig: NextConfig = {
   // Marking it external makes Next.js require() it directly via Node at
   // runtime instead of bundling it — matches how it runs correctly outside
   // Next.js entirely.
-  serverExternalPackages: ['swisseph-wasm'],
+  // all-the-cities reads its cities.pbf data file via a path.join(__dirname, ...)
+  // at require time, same class of problem as swisseph-wasm above — bundling
+  // moves the compiled output away from that data file. External keeps it a
+  // plain Node require, resolved from its real location in node_modules.
+  serverExternalPackages: ['swisseph-wasm', 'all-the-cities'],
 }
 
 export default nextConfig

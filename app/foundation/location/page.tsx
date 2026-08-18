@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { LocationAutocompleteInput } from '../../../components/LocationAutocompleteInput';
 
 type LocationEntry = {
   id: string;
@@ -85,6 +86,13 @@ export default function GeographicalImprintsPage() {
         </div>
 
         <header className="seenFlowHeader">
+          <img
+            src="/foundation/location-forge.png"
+            alt=""
+            aria-hidden="true"
+            className="seenFlowHeaderArt"
+          />
+
           <h1 id="geographical-imprints-title" className="seenDisplayLarge">
             Geographical Imprints
           </h1>
@@ -107,14 +115,12 @@ export default function GeographicalImprintsPage() {
                 ⟡
               </span>
 
-              <input
+              <LocationAutocompleteInput
                 id="birth-location"
                 className="seenInput seenInputWithIcon"
-                type="text"
-                autoComplete="off"
                 placeholder="City, state or country"
                 value={birthLocation}
-                onChange={(event) => setBirthLocation(event.target.value)}
+                onChange={setBirthLocation}
               />
             </div>
           </div>
@@ -134,16 +140,12 @@ export default function GeographicalImprintsPage() {
                       ⟡
                     </span>
 
-                    <input
+                    <LocationAutocompleteInput
                       className="seenInput seenInputWithIcon"
-                      type="text"
-                      autoComplete="off"
-                      aria-label={`Lived location ${index + 1}`}
+                      ariaLabel={`Lived location ${index + 1}`}
                       placeholder="City, state or country"
                       value={location.value}
-                      onChange={(event) =>
-                        updateLivedLocation(location.id, event.target.value)
-                      }
+                      onChange={(next) => updateLivedLocation(location.id, next)}
                     />
                   </div>
 
@@ -181,14 +183,12 @@ export default function GeographicalImprintsPage() {
                 ⟡
               </span>
 
-              <input
+              <LocationAutocompleteInput
                 id="current-location"
                 className="seenInput seenInputWithIcon"
-                type="text"
-                autoComplete="off"
                 placeholder="City, state or country"
                 value={currentLocation}
-                onChange={(event) => setCurrentLocation(event.target.value)}
+                onChange={setCurrentLocation}
               />
             </div>
           </div>

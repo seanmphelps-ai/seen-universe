@@ -39,6 +39,14 @@
   margin-bottom: var(--seen-space-8);
 }
 
+.seenFlowHeaderArt {
+  display: block;
+  width: 100%;
+  max-width: 22rem;
+  margin: 0 auto var(--seen-space-6);
+  border-radius: 12px;
+}
+
 .seenDisplayLarge {
   margin: 0;
   color: var(--seen-text-primary);
@@ -218,7 +226,8 @@
 }
 
 .seenCitySuggestion:hover,
-.seenCitySuggestion:focus {
+.seenCitySuggestion:focus,
+.seenCitySuggestionActive {
   background: rgba(251, 234, 131, 0.08);
 }
 
