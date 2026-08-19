@@ -1,5 +1,11 @@
 # CLAUDE.md
 
+**The four rules, every turn:**
+1. **Think Before Coding** — surface assumptions, don't pick silently
+2. **Simplicity First** — minimum code, nothing speculative
+3. **Surgical Changes** — touch only what you must
+4. **Goal-Driven Execution** — define success criteria, verify
+
 Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
 
 **Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
