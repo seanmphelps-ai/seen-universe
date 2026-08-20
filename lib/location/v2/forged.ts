@@ -17,14 +17,14 @@
 // geographic/temporal fit, contradiction handling, and confidence.
 //
 // This file is the authoritative vocabulary for that layer. The retired
-// force-based implementation is quarantined in _legacy-force-interrogation.ts
+// implementation is quarantined in _RETIRED_DO_NOT_USE_force-interrogation.ts
 // only as a compatibility/data bridge while the model is renamed. New code
 // must import this file (or interrogation.ts), use FORGED terminology, and
 // must not introduce new force-based ontology names.
 
 import type { DimensionId } from './dimensions';
 import type { SourceFamily } from './types';
-import * as Legacy from './_legacy-force-interrogation';
+import * as Legacy from './_RETIRED_DO_NOT_USE_force-interrogation';
 
 export const FORGED_MODEL_RULE =
   'FORGED is an emergent environmental reading produced by converging evidence. It does not predeclare a causal force, predetermine an outcome, or assert that any resident developed a particular adaptation.';
