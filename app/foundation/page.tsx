@@ -4,7 +4,7 @@ const cards = [
   {
     number: '01',
     title: 'LOCATION',
-    line: 'Where was this system molded? Location of birth, locations lived 6 months or more, current location.',
+    line: 'What were you exposed to? Birth location, locations lived 6 months or more, current location.',
     href: '/foundation/location',
   },
   {
