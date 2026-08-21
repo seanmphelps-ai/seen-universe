@@ -35,6 +35,84 @@ export type WitnessProviderFailure = {
   message: string;
 };
 
+export type WitnessSourceLane = {
+  sourceFamily: SourceFamily;
+  examples: string[];
+  purpose: string;
+};
+
+/**
+ * Explicit first-pass research lanes. Concrete provider implementations can
+ * change without changing the environmental witness contract.
+ */
+export const WITNESS_SOURCE_LANES: WitnessSourceLane[] = [
+  {
+    sourceFamily: 'SOCIAL_PUBLIC',
+    examples: ['TikTok', 'Instagram', 'Facebook', 'X', 'YouTube', 'Bluesky'],
+    purpose: 'Publicly visible local behavior, attention, norms, celebration, conflict, aspiration, fear, status, belonging, and repeated complaints.',
+  },
+  {
+    sourceFamily: 'LOCAL_FORUM',
+    examples: ['Reddit', 'local forums', 'community boards', 'public neighborhood groups'],
+    purpose: 'Long-form local discussion, recurring concerns, insider descriptions, practical friction, belonging, exclusion, and local norms.',
+  },
+  {
+    sourceFamily: 'REVIEWS',
+    examples: ['Google reviews', 'Yelp', 'Tripadvisor', 'platform reviews'],
+    purpose: 'Repeated visitor and resident experience of places, services, access, safety, hospitality, recreation, and day-to-day friction.',
+  },
+  {
+    sourceFamily: 'ADS',
+    examples: ['local ads', 'public social ads', 'classified promotions'],
+    purpose: 'What is being sold, financed, feared, desired, promised, and repeatedly marketed to people in the area.',
+  },
+  {
+    sourceFamily: 'MARKETPLACE',
+    examples: ['Facebook Marketplace', 'Craigslist', 'local classifieds', 'housing listings'],
+    purpose: 'Resale behavior, housing movement, informal commerce, distress selling, luxury saturation, tools, vehicles, and what households cycle through.',
+  },
+  {
+    sourceFamily: 'SEARCH_INTEREST',
+    examples: ['search trends', 'local query patterns'],
+    purpose: 'What people appear to seek repeatedly: jobs, housing, treatment, recreation, schools, travel, services, and help.',
+  },
+  {
+    sourceFamily: 'LOCAL_NEWS',
+    examples: ['local newspapers', 'local TV', 'local radio', 'regional reporting'],
+    purpose: 'Events, institutions, disputes, hazards, civic changes, business openings/closures, public safety, and historical continuity.',
+  },
+  {
+    sourceFamily: 'EVENTS',
+    examples: ['event calendars', 'festivals', 'sports', 'rallies', 'meetings', 'fundraisers'],
+    purpose: 'What repeatedly mobilizes people and what the community makes time to gather around.',
+  },
+  {
+    sourceFamily: 'INSTITUTIONS',
+    examples: ['schools', 'hospitals', 'churches', 'libraries', 'clubs', 'employers', 'civic organizations'],
+    purpose: 'Durable local structure, access, opportunity, authority, care, education, religion, work, and social infrastructure.',
+  },
+  {
+    sourceFamily: 'MOVEMENT_PLACE',
+    examples: ['mobility data', 'place visitation', 'travel patterns'],
+    purpose: 'Where people actually go, how far ordinary life requires travel, and which places concentrate daily activity.',
+  },
+  {
+    sourceFamily: 'OSM',
+    examples: ['OpenStreetMap', 'public geospatial place data'],
+    purpose: 'Roads, land use, terrain-facing infrastructure, services, recreation, geographic access, and physical place structure.',
+  },
+  {
+    sourceFamily: 'POPULATION_GRID',
+    examples: ['population grids', 'settlement density layers'],
+    purpose: 'Human density and spatial distribution used to contextualize physical exposure and remoteness.',
+  },
+  {
+    sourceFamily: 'OFFICIAL_DATA',
+    examples: ['Census', 'BLS', 'NOAA', 'CDC', 'FBI', 'EPA', 'local government'],
+    purpose: 'Historical baselines, corroboration, structured measurements, uncertainty, and long-run comparison.',
+  },
+];
+
 export type EnvironmentalDiscovery = {
   markerId: string;
   label: string;
@@ -62,9 +140,9 @@ export type EnvironmentalWitnessRecord = {
 };
 
 /**
- * Broad witness prompts. They deliberately describe the place rather than
- * selecting what should matter to a particular person. A later SEEN pass can
- * weight these discoveries against natal and other person-specific systems.
+ * Broad witness prompts. They describe the place without selecting what
+ * should matter to a particular person. A later SEEN pass can weight these
+ * discoveries against natal and other person-specific systems.
  */
 export const WITNESS_RESEARCH_QUESTIONS: string[] = [
   'What is repeatedly encountered in ordinary daily life here?',
@@ -140,8 +218,6 @@ export async function runEnvironmentalWitness(
       try {
         const collected = await provider.collect(request);
         for (const observation of collected) {
-          // Registry validation happens here so unknown marker vocabulary
-          // cannot silently enter the environmental record.
           for (const markerId of observation.markerIds) getMarker(markerId);
           observations.push(observation);
         }
