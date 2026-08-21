@@ -1,6 +1,7 @@
 'use client';
 
-import { FormEvent, useState } from 'react';
+import Image from 'next/image';
+import { type FormEvent, type ReactNode, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { LocationAutocompleteInput } from '../../../components/LocationAutocompleteInput';
 
@@ -9,12 +10,51 @@ type LocationEntry = {
   value: string;
 };
 
+type ForgeLocationFieldProps = {
+  label: string;
+  children: ReactNode;
+};
+
 const createLocationEntry = (): LocationEntry => ({
   id: crypto.randomUUID(),
   value: '',
 });
 
-export default function GeographicalImprintsPage() {
+function LocationPinIcon() {
+  return (
+    <svg
+      className="seenForgePin"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M12 2.5a7 7 0 0 0-7 7c0 5.2 7 12 7 12s7-6.8 7-12a7 7 0 0 0-7-7Z" />
+      <circle cx="12" cy="9.5" r="2.5" />
+    </svg>
+  );
+}
+
+function ForgeTargetIcon() {
+  return (
+    <span className="seenForgeTarget" aria-hidden="true">
+      <span />
+    </span>
+  );
+}
+
+function ForgeLocationField({ label, children }: ForgeLocationFieldProps) {
+  return (
+    <div className="seenForgeField">
+      <LocationPinIcon />
+      <div className="seenForgeFieldBody">
+        <span className="seenForgeFieldLabel">{label}</span>
+        {children}
+      </div>
+      <ForgeTargetIcon />
+    </div>
+  );
+}
+
+export default function PlaceForgePage() {
   const router = useRouter();
 
   const [birthLocation, setBirthLocation] = useState('');
@@ -68,6 +108,7 @@ export default function GeographicalImprintsPage() {
         birthLocation: normalizedBirthLocation,
         livedLocations: normalizedLivedLocations,
         currentLocation: normalizedCurrentLocation,
+        minimumResidenceMonths: 6,
       }),
     );
 
@@ -75,140 +116,117 @@ export default function GeographicalImprintsPage() {
   }
 
   return (
-    <main className="seenFlowPage">
-      <section
-        className="seenFlowShell"
-        aria-labelledby="geographical-imprints-title"
-      >
-        <div className="seenProgress" aria-label="Foundation progress">
-          <span className="seenProgressLabel">Foundation</span>
-          <span className="seenProgressValue">01 / 02</span>
-        </div>
+    <main className="seenForgePage">
+      <Image
+        className="seenForgeBackdrop"
+        src="/foundation/location-forge-background.png"
+        alt=""
+        aria-hidden="true"
+        fill
+        priority
+        sizes="(max-width: 760px) 100vw, 760px"
+      />
+      <div className="seenForgeBackdropVeil" aria-hidden="true" />
 
-        <header className="seenFlowHeader">
-          <img
-            src="/foundation/location-forge.png"
-            alt=""
-            aria-hidden="true"
-            className="seenFlowHeaderArt"
-          />
-
-          <h1 id="geographical-imprints-title" className="seenDisplayLarge">
-            Geographical Imprints
+      <section className="seenForgeShell" aria-labelledby="place-forge-title">
+        <header className="seenForgeMasthead">
+          <span className="seenForgeNumber">01</span>
+          <h1 id="place-forge-title" className="seenForgeTitle">
+            Place
           </h1>
-
-          <p className="seenFlowIntroduction">
-            Tell us where in the world your life has taken place.
-          </p>
-
-          <div className="seenDivider" aria-hidden="true" />
+          <p className="seenForgeSubtitle">The Forge</p>
         </header>
 
-        <form className="seenPanel seenFlowForm" onSubmit={handleSubmit}>
-          <div className="seenField">
-            <label className="seenLabel" htmlFor="birth-location">
-              Where were you born?
-            </label>
+        <div className="seenForgeGlobeSpace" aria-hidden="true" />
 
-            <div className="seenInputFrame">
-              <span className="seenFieldIcon" aria-hidden="true">
-                ⟡
-              </span>
+        <section className="seenForgeExposure" aria-labelledby="environmental-exposures-title">
+          <header className="seenForgeExposureHeader">
+            <p className="seenForgeIncubator">Incubators of the field</p>
+            <h2 id="environmental-exposures-title">
+              Environmental Exposures
+            </h2>
+            <p>Reveal the places that shaped the pressure.</p>
+          </header>
 
+          <form className="seenForgeForm" onSubmit={handleSubmit}>
+            <ForgeLocationField label="Birth Location">
               <LocationAutocompleteInput
                 id="birth-location"
-                className="seenInput seenInputWithIcon"
-                placeholder="City, state or country"
+                className="seenForgeInput"
+                ariaLabel="Birth location"
+                placeholder="Enter city, state, country"
                 value={birthLocation}
                 onChange={setBirthLocation}
               />
-            </div>
-          </div>
+            </ForgeLocationField>
 
-          <fieldset className="seenFieldset">
-            <legend className="seenLabel">Where else have you lived?</legend>
+            <fieldset className="seenForgeFieldset">
+              <legend className="seenVisuallyHidden">
+                Locations lived six months or longer
+              </legend>
 
-            <p className="seenFieldSupport">
-              Add each location where you lived for one year or longer.
-            </p>
-
-            <div className="seenLocationList">
-              {livedLocations.map((location, index) => (
-                <div className="seenLocationRow" key={location.id}>
-                  <div className="seenInputFrame">
-                    <span className="seenFieldIcon" aria-hidden="true">
-                      ⟡
-                    </span>
-
-                    <LocationAutocompleteInput
-                      className="seenInput seenInputWithIcon"
-                      ariaLabel={`Lived location ${index + 1}`}
-                      placeholder="City, state or country"
-                      value={location.value}
-                      onChange={(next) => updateLivedLocation(location.id, next)}
-                    />
-                  </div>
-
-                  {location.value && (
-                    <button
-                      className="seenLocationRemove"
-                      type="button"
-                      aria-label={`Remove lived location ${index + 1}`}
-                      onClick={() => removeLivedLocation(location.id)}
+              <div className="seenForgeLocationList">
+                {livedLocations.map((location, index) => (
+                  <div className="seenForgeLivedRow" key={location.id}>
+                    <ForgeLocationField
+                      label={index === 0 ? 'Locations Lived 6+ Months' : `Lived Location ${index + 1}`}
                     >
-                      ×
-                    </button>
-                  )}
-                </div>
-              ))}
-            </div>
+                      <LocationAutocompleteInput
+                        className="seenForgeInput"
+                        ariaLabel={`Location lived six months or longer ${index + 1}`}
+                        placeholder="Enter city, state, country"
+                        value={location.value}
+                        onChange={(next) => updateLivedLocation(location.id, next)}
+                      />
+                    </ForgeLocationField>
 
-            <button
-              className="seenAddLocation"
-              type="button"
-              onClick={addLivedLocation}
-            >
-              <span aria-hidden="true">+</span>
-              Add another location
-            </button>
-          </fieldset>
+                    {(location.value || livedLocations.length > 1) && (
+                      <button
+                        className="seenForgeRemove"
+                        type="button"
+                        aria-label={`Remove lived location ${index + 1}`}
+                        onClick={() => removeLivedLocation(location.id)}
+                      >
+                        ×
+                      </button>
+                    )}
+                  </div>
+                ))}
+              </div>
 
-          <div className="seenField">
-            <label className="seenLabel" htmlFor="current-location">
-              Where do you live now?
-            </label>
+              <button
+                className="seenForgeAdd"
+                type="button"
+                onClick={addLivedLocation}
+              >
+                <span aria-hidden="true">+</span>
+                Add another location
+              </button>
+            </fieldset>
 
-            <div className="seenInputFrame">
-              <span className="seenFieldIcon" aria-hidden="true">
-                ⟡
-              </span>
-
+            <ForgeLocationField label="Current Location">
               <LocationAutocompleteInput
                 id="current-location"
-                className="seenInput seenInputWithIcon"
-                placeholder="City, state or country"
+                className="seenForgeInput"
+                ariaLabel="Current location"
+                placeholder="Enter city, state, country"
                 value={currentLocation}
                 onChange={setCurrentLocation}
               />
-            </div>
-          </div>
+            </ForgeLocationField>
 
-          {error && (
-            <p className="seenFormError" role="alert">
-              {error}
-            </p>
-          )}
+            {error && (
+              <p className="seenForgeError" role="alert">
+                {error}
+              </p>
+            )}
 
-          <button className="seenButtonPrimary" type="submit">
-            Continue
-            <span aria-hidden="true">→</span>
-          </button>
-        </form>
-
-        <div
-          className="seenDivider seenCompletionDivider"
-          aria-hidden="true"
-        />
+            <button className="seenForgeSubmit" type="submit">
+              Submit
+              <span aria-hidden="true">›</span>
+            </button>
+          </form>
+        </section>
       </section>
     </main>
   );

@@ -197,6 +197,25 @@ Glow concentrates around primary actions, line centers, and selected controls. L
 
 Product strings resolve from the governing intake and product-language canon.
 
+### Location — Place, The Forge
+
+`/foundation/location` uses `public/foundation/location-forge-background.png`
+as its canonical visual background and `docs/location-philosophy.md` as its
+language and claim boundary.
+
+Canonical screen hierarchy:
+
+1. `01`
+2. `PLACE`
+3. `THE FORGE`
+4. `INCUBATORS OF THE FIELD`
+5. `ENVIRONMENTAL EXPOSURES`
+6. `Reveal the places that shaped the pressure.`
+7. Birth Location
+8. Locations Lived 6+ Months
+9. Current Location
+10. Submit
+
 ## Responsive Behavior
 
 - Primary target: `390px` to `430px` mobile width.

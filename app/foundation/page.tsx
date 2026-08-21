@@ -3,8 +3,8 @@ import Link from 'next/link';
 const cards = [
   {
     number: '01',
-    title: 'LOCATION',
-    line: 'What were you exposed to? Birth location, locations lived 6 months or more, current location.',
+    title: 'PLACE',
+    line: 'The Forge. Reveal the incubators where environmental pressure accumulated: birth, lived 6+ months, and current location.',
     href: '/foundation/location',
   },
   {
