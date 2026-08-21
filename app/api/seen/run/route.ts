@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { calculateNatalChart, type NatalChartInput } from '../../../../lib/natalChart';
 import { buildLocationField } from '../../../../lib/location/buildLocationField';
 import type { LocationInput } from '../../../../lib/location/types';
+import { createHash } from 'node:crypto';
+import { buildWesternPortalBridge } from '../../../../lib/seen/westernBridge';
 
 export const runtime = 'nodejs';
 
@@ -33,14 +35,26 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const [western, locations] = await Promise.all([
-      calculateNatalChart(input.chart),
-      Promise.all(input.locations.map((location) => buildLocationField(location))),
-    ]);
+    // Canonical runtime remains environment-first. Western is first only in
+    // adapter development order, and occupies the next persistent layer.
+    const locations = await Promise.all(
+      input.locations.map((location) => buildLocationField(location)),
+    );
+    const western = await calculateNatalChart(input.chart);
+    const sourceFieldId = `western-natal:${createHash('sha256')
+      .update(JSON.stringify(input.chart))
+      .digest('hex')
+      .slice(0, 16)}`;
+    const westernBridge = buildWesternPortalBridge(western, {
+      sourceFieldId,
+      layerSequence: 1,
+    });
 
     return NextResponse.json({
-      western,
       locations,
+      western: westernBridge.western,
+      westernPortalPenetration: westernBridge.portalPenetration,
+      westernLifeSectionRouting: westernBridge.lifeSectionRouting,
     });
   } catch (err) {
     return NextResponse.json(
