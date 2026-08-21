@@ -54,7 +54,7 @@ function ForgeLocationField({ label, children }: ForgeLocationFieldProps) {
   );
 }
 
-export default function PlaceForgePage() {
+export default function ForgeLocationPage() {
   const router = useRouter();
 
   const [birthLocation, setBirthLocation] = useState('');
@@ -128,24 +128,19 @@ export default function PlaceForgePage() {
       />
       <div className="seenForgeBackdropVeil" aria-hidden="true" />
 
-      <section className="seenForgeShell" aria-labelledby="place-forge-title">
+      <section className="seenForgeShell" aria-labelledby="forge-title">
         <header className="seenForgeMasthead">
           <span className="seenForgeNumber">01</span>
-          <h1 id="place-forge-title" className="seenForgeTitle">
-            Place
+          <h1 id="forge-title" className="seenForgeTitle">
+            The Forge
           </h1>
-          <p className="seenForgeSubtitle">The Forge</p>
         </header>
 
         <div className="seenForgeGlobeSpace" aria-hidden="true" />
 
-        <section className="seenForgeExposure" aria-labelledby="environmental-exposures-title">
+        <section className="seenForgeExposure" aria-labelledby="exposure-title">
           <header className="seenForgeExposureHeader">
-            <p className="seenForgeIncubator">Incubators of the field</p>
-            <h2 id="environmental-exposures-title">
-              Environmental Exposures
-            </h2>
-            <p>Reveal the places that shaped the pressure.</p>
+            <h2 id="exposure-title">What were you exposed to?</h2>
           </header>
 
           <form className="seenForgeForm" onSubmit={handleSubmit}>
@@ -222,7 +217,7 @@ export default function PlaceForgePage() {
             )}
 
             <button className="seenForgeSubmit" type="submit">
-              Submit
+              Continue
               <span aria-hidden="true">›</span>
             </button>
           </form>
