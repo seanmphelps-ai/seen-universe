@@ -1,8 +1,8 @@
 'use client';
 
-import { FormEvent, useEffect, useMemo, useState } from 'react';
+import Image from 'next/image';
+import { FormEvent, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { CITIES, type City } from '../../../lib/cities';
 
 type StoredLocations = {
   birthLocation?: string;
@@ -12,8 +12,7 @@ export default function BirthFoundationPage() {
   const router = useRouter();
   const [name, setName] = useState('');
   const [birthDate, setBirthDate] = useState('');
-  const [cityQuery, setCityQuery] = useState('');
-  const [selectedCity, setSelectedCity] = useState<City | null>(null);
+  const [birthLocation, setBirthLocation] = useState('');
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -22,47 +21,11 @@ export default function BirthFoundationPage() {
 
     try {
       const locations = JSON.parse(stored) as StoredLocations;
-      const birthLocation = locations.birthLocation?.trim();
-      if (!birthLocation) return;
-
-      setCityQuery(birthLocation);
-
-      const normalized = birthLocation.toLowerCase();
-      const match = CITIES.find((city) => {
-        const cityName = city.name.toLowerCase();
-        const country = city.country.toLowerCase();
-        return normalized.includes(cityName) && normalized.includes(country);
-      });
-
-      if (match) {
-        setSelectedCity(match);
-        setCityQuery(`${match.name}, ${match.country}`);
-      }
+      setBirthLocation(locations.birthLocation?.trim() ?? '');
     } catch {
-      // Leave the form empty if stored Foundation data cannot be read.
+      setBirthLocation('');
     }
   }, []);
-
-  const citySuggestions = useMemo(() => {
-    const query = cityQuery.trim().toLowerCase();
-    if (!query || selectedCity) return [];
-
-    return CITIES.filter(
-      (city) =>
-        city.name.toLowerCase().includes(query) ||
-        city.country.toLowerCase().includes(query),
-    ).slice(0, 8);
-  }, [cityQuery, selectedCity]);
-
-  function handleCityInputChange(value: string) {
-    setCityQuery(value);
-    setSelectedCity(null);
-  }
-
-  function handleCitySelect(city: City) {
-    setSelectedCity(city);
-    setCityQuery(`${city.name}, ${city.country}`);
-  }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -77,8 +40,8 @@ export default function BirthFoundationPage() {
       return;
     }
 
-    if (!selectedCity) {
-      setError('Search for and select your birth location from the list.');
+    if (!birthLocation) {
+      setError('Complete your location first.');
       return;
     }
 
@@ -89,7 +52,7 @@ export default function BirthFoundationPage() {
       JSON.stringify({
         name: name.trim(),
         birthDate,
-        city: selectedCity,
+        birthLocation,
       }),
     );
 
@@ -97,109 +60,83 @@ export default function BirthFoundationPage() {
   }
 
   return (
-    <main className="seenFlowPage">
-      <section className="seenFlowShell" aria-labelledby="birth-foundation-title">
-        <div className="seenProgress" aria-label="Foundation progress">
-          <span className="seenProgressLabel">Foundation</span>
-          <span className="seenProgressValue">02</span>
-        </div>
+    <main className="seenForgePage">
+      <Image
+        className="seenForgeBackdrop"
+        src="/foundation/location-forge-background.png"
+        alt=""
+        aria-hidden="true"
+        fill
+        priority
+        sizes="(max-width: 760px) 100vw, 760px"
+      />
+      <div className="seenForgeBackdropVeil" aria-hidden="true" />
 
-        <header className="seenFlowHeader">
-          <h1 id="birth-foundation-title" className="seenDisplayLarge">
-            Birth Date
+      <section className="seenForgeShell" aria-labelledby="birth-foundation-title">
+        <header className="seenForgeMasthead">
+          <span className="seenForgeNumber">02</span>
+          <h1 id="birth-foundation-title" className="seenForgeTitle">
+            The Mark
           </h1>
-
-          <p className="seenFlowIntroduction">
-            Give us the date and place that anchor this life.
-          </p>
-
-          <div className="seenDivider" aria-hidden="true" />
         </header>
 
-        <form className="seenPanel seenFlowForm" onSubmit={handleSubmit}>
-          <div className="seenField">
-            <label className="seenLabel" htmlFor="foundation-name">
-              Name
-            </label>
-            <div className="seenInputFrame">
-              <input
-                id="foundation-name"
-                className="seenInput"
-                type="text"
-                autoComplete="name"
-                placeholder="Full name"
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-              />
-            </div>
-          </div>
+        <div className="seenForgeGlobeSpace" aria-hidden="true" />
 
-          <div className="seenField">
-            <label className="seenLabel" htmlFor="foundation-date">
-              Date of birth
-            </label>
-            <div className="seenInputFrame">
-              <input
-                id="foundation-date"
-                className="seenInput"
-                type="date"
-                value={birthDate}
-                onChange={(event) => setBirthDate(event.target.value)}
-              />
-            </div>
-          </div>
+        <section className="seenForgeExposure">
+          <header className="seenForgeExposureHeader">
+            <h2>When did this life enter the world?</h2>
+          </header>
 
-          <div className="seenField">
-            <label className="seenLabel" htmlFor="foundation-city">
-              Birth location
+          <form className="seenForgeForm" onSubmit={handleSubmit}>
+            <label className="seenForgeField">
+              <span className="seenForgeFieldBody">
+                <span className="seenForgeFieldLabel">Name</span>
+                <input
+                  id="foundation-name"
+                  className="seenForgeInput"
+                  type="text"
+                  autoComplete="name"
+                  placeholder="Full name"
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
+                />
+              </span>
             </label>
-            <div className="seenInputFrame">
-              <span className="seenFieldIcon" aria-hidden="true">⟡</span>
-              <input
-                id="foundation-city"
-                className="seenInput seenInputWithIcon"
-                type="text"
-                autoComplete="off"
-                placeholder="Search for a city"
-                value={cityQuery}
-                onChange={(event) => handleCityInputChange(event.target.value)}
-              />
-            </div>
 
-            {citySuggestions.length > 0 && (
-              <ul className="seenCitySuggestions">
-                {citySuggestions.map((city) => (
-                  <li key={`${city.name}-${city.country}`}>
-                    <button
-                      type="button"
-                      className="seenCitySuggestion"
-                      onClick={() => handleCitySelect(city)}
-                    >
-                      {city.name}, {city.country}
-                    </button>
-                  </li>
-                ))}
-              </ul>
+            <label className="seenForgeField">
+              <span className="seenForgeFieldBody">
+                <span className="seenForgeFieldLabel">Date of Birth</span>
+                <input
+                  id="foundation-date"
+                  className="seenForgeInput"
+                  type="date"
+                  value={birthDate}
+                  onChange={(event) => setBirthDate(event.target.value)}
+                />
+              </span>
+            </label>
+
+            {birthLocation && (
+              <div className="seenForgeField" aria-label="Birth location">
+                <span className="seenForgeFieldBody">
+                  <span className="seenForgeFieldLabel">Birth Location</span>
+                  <span className="seenForgeInput">{birthLocation}</span>
+                </span>
+              </div>
             )}
 
-            {cityQuery.trim() && !selectedCity && citySuggestions.length === 0 && (
-              <p className="seenFieldSupport">
-                No match in the bundled city list. Try a nearby larger city.
+            {error && (
+              <p className="seenForgeError" role="alert">
+                {error}
               </p>
             )}
-          </div>
 
-          {error && (
-            <p className="seenFormError" role="alert">
-              {error}
-            </p>
-          )}
-
-          <button className="seenButtonPrimary" type="submit">
-            Continue
-            <span aria-hidden="true">→</span>
-          </button>
-        </form>
+            <button className="seenForgeSubmit" type="submit">
+              Continue
+              <span aria-hidden="true">›</span>
+            </button>
+          </form>
+        </section>
       </section>
     </main>
   );
