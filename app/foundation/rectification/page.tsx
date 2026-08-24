@@ -78,8 +78,8 @@ export default function RectificationPage() {
   }, [router]);
 
   useEffect(() => {
-    const currentBirth = birth;
-    if (!currentBirth) return;
+    if (!birth) return;
+    const { name, birthDate, city } = birth;
 
     let cancelled = false;
 
@@ -93,11 +93,11 @@ export default function RectificationPage() {
         const chartCandidates = await Promise.all(
           minutes.map(async (candidateMinute) => {
             const chartInput: NatalChartInput = {
-              name: currentBirth.name,
-              birthDate: currentBirth.birthDate,
+              name,
+              birthDate,
               birthTime: toBirthTime(candidateMinute),
-              latitude: currentBirth.city.latitude,
-              longitude: currentBirth.city.longitude,
+              latitude: city.latitude,
+              longitude: city.longitude,
             };
 
             const response = await fetch('/api/chart', {
