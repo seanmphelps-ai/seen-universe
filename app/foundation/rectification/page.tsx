@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import type { NatalChartInput, NatalChartResult } from '../../../lib/natalChart';
+import type { RectificationScenarioResponse } from '../../../lib/rectification/schema';
 
 type StoredBirth = {
   name: string;
@@ -20,23 +21,11 @@ type Candidate = {
   chart: NatalChartResult;
 };
 
+type Ratings = Record<string, number>;
+
 const INITIAL_MINUTES = [4 * 60, 12 * 60, 20 * 60];
 const ROUND_DELTAS = [180, 90, 30];
-
-const HOUSE_DOMAINS: Record<number, string> = {
-  1: 'identity and immediate response',
-  2: 'security, resources, and self-worth',
-  3: 'communication and everyday movement',
-  4: 'home, roots, and private life',
-  5: 'creativity, pleasure, and self-expression',
-  6: 'work, routines, and daily demands',
-  7: 'partnership and one-to-one relationships',
-  8: 'intimacy, trust, loss, and shared resources',
-  9: 'belief, meaning, travel, and perspective',
-  10: 'public role, responsibility, and direction',
-  11: 'community, friendship, and future aims',
-  12: 'private processing, retreat, and what stays hidden',
-};
+const RATING_OPTIONS = [0, 25, 50, 75, 100];
 
 function normalizeMinutes(value: number) {
   return ((value % 1440) + 1440) % 1440;
@@ -55,53 +44,8 @@ function candidateMinutes(round: number, anchor: number | null) {
   return [anchor - delta, anchor, anchor + delta].map(normalizeMinutes);
 }
 
-function summarize(chart: NatalChartResult): string[] {
-  const counts = new Map<number, number>();
-  for (const planet of chart.planets) {
-    if (planet.house === null) continue;
-    counts.set(planet.house, (counts.get(planet.house) ?? 0) + 1);
-  }
-
-  const strongestHouses = [...counts.entries()]
-    .sort((a, b) => b[1] - a[1] || a[0] - b[0])
-    .slice(0, 2)
-    .map(([house]) => HOUSE_DOMAINS[house]);
-
-  const moon = chart.planets.find((planet) => planet.key === 'moon');
-  const mars = chart.planets.find((planet) => planet.key === 'mars');
-  const saturn = chart.planets.find((planet) => planet.key === 'saturn');
-  const pluto = chart.planets.find((planet) => planet.key === 'pluto');
-  const tightAspect = [...chart.aspects].sort((a, b) => a.orb - b.orb)[0];
-
-  const lines: string[] = [];
-
-  if (strongestHouses.length) {
-    lines.push(`The strongest concentration falls around ${strongestHouses.join(' and ')}.`);
-  }
-
-  if (moon?.house) {
-    lines.push(`Emotional processing is centered in ${HOUSE_DOMAINS[moon.house]}.`);
-  }
-
-  const pressurePieces = [
-    mars?.house ? `drive and conflict around ${HOUSE_DOMAINS[mars.house]}` : null,
-    saturn?.house ? `pressure and restraint around ${HOUSE_DOMAINS[saturn.house]}` : null,
-    pluto?.house ? `intensity and transformation around ${HOUSE_DOMAINS[pluto.house]}` : null,
-  ].filter(Boolean) as string[];
-
-  if (pressurePieces.length) {
-    lines.push(`This version places ${pressurePieces.join('; ')}.`);
-  }
-
-  if (tightAspect) {
-    lines.push(`One of its tightest internal relationships is ${tightAspect.point1} ${tightAspect.aspect.toLowerCase()} ${tightAspect.point2}.`);
-  }
-
-  if (chart.ascendant) {
-    lines.push(`Its outward orientation begins through ${chart.ascendant.sign}.`);
-  }
-
-  return lines.slice(0, 4);
+function ratingKey(scenarioIndex: number, candidateIndex: number) {
+  return `${scenarioIndex}:${candidateIndex}`;
 }
 
 export default function RectificationPage() {
@@ -110,8 +54,12 @@ export default function RectificationPage() {
   const [round, setRound] = useState(0);
   const [anchor, setAnchor] = useState<number | null>(null);
   const [candidates, setCandidates] = useState<Candidate[]>([]);
+  const [scenarios, setScenarios] = useState<RectificationScenarioResponse['scenarios']>([]);
+  const [ratings, setRatings] = useState<Ratings>({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
+  const [regenerateToken, setRegenerateToken] = useState(0);
+  const [history, setHistory] = useState<Array<{ round: number; scores: number[] }>>([]);
 
   const minutes = useMemo(() => candidateMinutes(round, anchor), [round, anchor]);
 
@@ -134,12 +82,14 @@ export default function RectificationPage() {
 
     let cancelled = false;
 
-    async function loadCandidates() {
+    async function loadRound() {
       setIsLoading(true);
       setError('');
+      setRatings({});
+      setScenarios([]);
 
       try {
-        const results = await Promise.all(
+        const chartCandidates = await Promise.all(
           minutes.map(async (candidateMinute) => {
             const chartInput: NatalChartInput = {
               name: birth.name,
@@ -157,7 +107,7 @@ export default function RectificationPage() {
 
             if (!response.ok) {
               const body = await response.json().catch(() => null);
-              throw new Error(body?.error || 'Could not build the summaries.');
+              throw new Error(body?.error || 'Could not calculate the candidate charts.');
             }
 
             return {
@@ -167,42 +117,101 @@ export default function RectificationPage() {
           }),
         );
 
-        if (!cancelled) setCandidates(results);
+        const scenarioResponse = await fetch('/api/rectification/scenarios', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            round,
+            candidates: chartCandidates.map((candidate, index) => ({
+              index,
+              chart: candidate.chart,
+            })),
+          }),
+        });
+
+        if (!scenarioResponse.ok) {
+          const body = await scenarioResponse.json().catch(() => null);
+          throw new Error(body?.error || 'Could not generate the behavioral scenarios.');
+        }
+
+        const generated = (await scenarioResponse.json()) as RectificationScenarioResponse;
+
+        if (!cancelled) {
+          setCandidates(chartCandidates);
+          setScenarios(generated.scenarios);
+        }
       } catch (err) {
         if (!cancelled) {
-          setError(err instanceof Error ? err.message : 'Could not build the summaries.');
+          setError(err instanceof Error ? err.message : 'Could not build this round.');
           setCandidates([]);
+          setScenarios([]);
         }
       } finally {
         if (!cancelled) setIsLoading(false);
       }
     }
 
-    loadCandidates();
+    loadRound();
 
     return () => {
       cancelled = true;
     };
-  }, [birth, minutes]);
+  }, [birth, minutes, round, regenerateToken]);
 
-  function choose(candidate: Candidate) {
-    const finalRound = round >= 3;
+  const requiredRatings = scenarios.length * 3;
+  const allRated = requiredRatings > 0 && Object.keys(ratings).length === requiredRatings;
 
-    if (finalRound) {
+  function setRating(scenarioIndex: number, candidateIndex: number, value: number) {
+    setRatings((current) => ({
+      ...current,
+      [ratingKey(scenarioIndex, candidateIndex)]: value,
+    }));
+  }
+
+  function continueRound() {
+    if (!allRated || candidates.length !== 3) return;
+
+    const scores = candidates.map((_, candidateIndex) => {
+      const values = scenarios.map((_, scenarioIndex) => ratings[ratingKey(scenarioIndex, candidateIndex)] ?? 0);
+      return values.reduce((sum, value) => sum + value, 0) / Math.max(1, values.length);
+    });
+
+    const bestScore = Math.max(...scores);
+    const winners = scores
+      .map((score, index) => ({ score, index }))
+      .filter((entry) => entry.score === bestScore);
+
+    if (bestScore === 0 || winners.length !== 1) {
+      setError(
+        bestScore === 0
+          ? 'None of these reactions fit. We’ll try a different set of scenarios.'
+          : 'Two candidates are tied. We’ll ask a different set of scenarios to separate them.',
+      );
+      setRegenerateToken((value) => value + 1);
+      return;
+    }
+
+    const winnerIndex = winners[0].index;
+    const winner = candidates[winnerIndex];
+    const nextHistory = [...history, { round: round + 1, scores }];
+    setHistory(nextHistory);
+
+    if (round >= 3) {
       sessionStorage.setItem(
         'seen.foundation.rectification',
         JSON.stringify({
-          resolvedBirthTime: toBirthTime(candidate.minutes),
+          resolvedBirthTime: toBirthTime(winner.minutes),
           roundsCompleted: round + 1,
-          method: 'behavioral-summary-narrowing',
+          method: 'llm-behavioral-scenario-ratings',
+          ratings: nextHistory,
         }),
       );
-      sessionStorage.setItem('seen.foundation.chartResult', JSON.stringify(candidate.chart));
+      sessionStorage.setItem('seen.foundation.chartResult', JSON.stringify(winner.chart));
       router.push('/chart?source=rectification');
       return;
     }
 
-    setAnchor(candidate.minutes);
+    setAnchor(winner.minutes);
     setRound((value) => value + 1);
   }
 
@@ -220,7 +229,7 @@ export default function RectificationPage() {
           </h1>
 
           <p className="seenFlowIntroduction">
-            Great. We’re going to give you a few summaries. Let us know which one resonates with you the most.
+            Great. We’re going to give you a few different situations. Tell us how true each reaction is of this person.
           </p>
 
           <div className="seenDivider" aria-hidden="true" />
@@ -228,34 +237,74 @@ export default function RectificationPage() {
 
         {isLoading && (
           <section className="seenPanel">
-            <p className="seenFieldSupport">Building the next three summaries…</p>
+            <p className="seenFieldSupport">Building the next situations…</p>
           </section>
         )}
 
-        {error && (
+        {error && !isLoading && (
           <section className="seenPanel">
             <p className="seenFormError" role="alert">{error}</p>
           </section>
         )}
 
-        {!isLoading && !error && (
+        {!isLoading && scenarios.length > 0 && (
           <div className="seenFlowForm">
-            {candidates.map((candidate, index) => (
-              <button
-                key={`${round}-${candidate.minutes}`}
-                type="button"
-                className="seenPanel"
-                onClick={() => choose(candidate)}
-                style={{ textAlign: 'left', cursor: 'pointer', width: '100%' }}
-                aria-label={`Choose summary ${index + 1}`}
-              >
-                <span className="seenLabel">Summary {String.fromCharCode(65 + index)}</span>
+            {scenarios.map((scenario, scenarioIndex) => (
+              <section className="seenPanel" key={`${round}-${scenarioIndex}`}>
+                <span className="seenLabel">Situation {scenarioIndex + 1}</span>
+                <p className="seenFlowIntroduction">{scenario.scenario}</p>
                 <div className="seenDivider" aria-hidden="true" />
-                {summarize(candidate.chart).map((line) => (
-                  <p className="seenFieldSupport" key={line}>{line}</p>
-                ))}
-              </button>
+
+                {scenario.reactions
+                  .slice()
+                  .sort((a, b) => a.candidateIndex - b.candidateIndex)
+                  .map((reaction, reactionIndex) => {
+                    const key = ratingKey(scenarioIndex, reaction.candidateIndex);
+                    const selected = ratings[key];
+
+                    return (
+                      <div key={key} style={{ marginTop: reactionIndex === 0 ? 0 : '1.5rem' }}>
+                        <p className="seenFieldSupport" style={{ marginBottom: '0.75rem' }}>
+                          {reaction.reaction}
+                        </p>
+                        <span className="seenLabel">How true is this of the person?</span>
+                        <div
+                          role="group"
+                          aria-label={`Rate reaction ${reactionIndex + 1} for situation ${scenarioIndex + 1}`}
+                          style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '0.5rem' }}
+                        >
+                          {RATING_OPTIONS.map((value) => (
+                            <button
+                              key={value}
+                              type="button"
+                              className={selected === value ? 'seenButtonPrimary' : 'seenPanel'}
+                              onClick={() => setRating(scenarioIndex, reaction.candidateIndex, value)}
+                              aria-pressed={selected === value}
+                              style={{
+                                cursor: 'pointer',
+                                minWidth: '3.5rem',
+                                padding: '0.6rem 0.75rem',
+                              }}
+                            >
+                              {value}%
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
+              </section>
             ))}
+
+            <button
+              className="seenButtonPrimary"
+              type="button"
+              disabled={!allRated}
+              onClick={continueRound}
+            >
+              Continue
+              <span aria-hidden="true">→</span>
+            </button>
           </div>
         )}
       </section>
