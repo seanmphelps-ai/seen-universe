@@ -3,7 +3,6 @@
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { CITIES, type City } from '../../../lib/cities';
-import type { NatalChartInput, NatalChartResult } from '../../../lib/natalChart';
 
 type StoredLocations = {
   birthLocation?: string;
@@ -13,11 +12,9 @@ export default function BirthFoundationPage() {
   const router = useRouter();
   const [name, setName] = useState('');
   const [birthDate, setBirthDate] = useState('');
-  const [birthTime, setBirthTime] = useState('');
   const [cityQuery, setCityQuery] = useState('');
   const [selectedCity, setSelectedCity] = useState<City | null>(null);
   const [error, setError] = useState('');
-  const [isCalculating, setIsCalculating] = useState(false);
 
   useEffect(() => {
     const stored = sessionStorage.getItem('seen.foundation.locations');
@@ -67,7 +64,7 @@ export default function BirthFoundationPage() {
     setCityQuery(`${city.name}, ${city.country}`);
   }
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     if (!name.trim()) {
@@ -86,46 +83,17 @@ export default function BirthFoundationPage() {
     }
 
     setError('');
-    setIsCalculating(true);
 
-    const chartInput: NatalChartInput = {
-      name: name.trim(),
-      birthDate,
-      birthTime: birthTime || null,
-      latitude: selectedCity.latitude,
-      longitude: selectedCity.longitude,
-    };
+    sessionStorage.setItem(
+      'seen.foundation.birth',
+      JSON.stringify({
+        name: name.trim(),
+        birthDate,
+        city: selectedCity,
+      }),
+    );
 
-    try {
-      const response = await fetch('/api/chart', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(chartInput),
-      });
-
-      if (!response.ok) {
-        const body = await response.json().catch(() => null);
-        throw new Error(body?.error || 'Calculation failed. Try again.');
-      }
-
-      const chart = (await response.json()) as NatalChartResult;
-
-      sessionStorage.setItem(
-        'seen.foundation.birth',
-        JSON.stringify({
-          name: chartInput.name,
-          birthDate: chartInput.birthDate,
-          birthTime: chartInput.birthTime,
-          city: selectedCity,
-        }),
-      );
-      sessionStorage.setItem('seen.foundation.chartResult', JSON.stringify(chart));
-
-      router.push('/chart?source=foundation');
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Calculation failed. Try again.');
-      setIsCalculating(false);
-    }
+    router.push('/foundation/rectification');
   }
 
   return (
@@ -133,16 +101,16 @@ export default function BirthFoundationPage() {
       <section className="seenFlowShell" aria-labelledby="birth-foundation-title">
         <div className="seenProgress" aria-label="Foundation progress">
           <span className="seenProgressLabel">Foundation</span>
-          <span className="seenProgressValue">02 / 02</span>
+          <span className="seenProgressValue">02</span>
         </div>
 
         <header className="seenFlowHeader">
           <h1 id="birth-foundation-title" className="seenDisplayLarge">
-            Birth Coordinates
+            Birth Date
           </h1>
 
           <p className="seenFlowIntroduction">
-            Give us the date, time, and place that anchor your chart.
+            Give us the date and place that anchor this life.
           </p>
 
           <div className="seenDivider" aria-hidden="true" />
@@ -177,24 +145,6 @@ export default function BirthFoundationPage() {
                 type="date"
                 value={birthDate}
                 onChange={(event) => setBirthDate(event.target.value)}
-              />
-            </div>
-          </div>
-
-          <div className="seenField">
-            <label className="seenLabel" htmlFor="foundation-time">
-              Time of birth
-            </label>
-            <p className="seenFieldSupport">
-              Optional. Without it, SEEN will not invent an Ascendant or houses.
-            </p>
-            <div className="seenInputFrame">
-              <input
-                id="foundation-time"
-                className="seenInput"
-                type="time"
-                value={birthTime}
-                onChange={(event) => setBirthTime(event.target.value)}
               />
             </div>
           </div>
@@ -245,9 +195,9 @@ export default function BirthFoundationPage() {
             </p>
           )}
 
-          <button className="seenButtonPrimary" type="submit" disabled={isCalculating}>
-            {isCalculating ? 'Calculating…' : 'Continue'}
-            {!isCalculating && <span aria-hidden="true">→</span>}
+          <button className="seenButtonPrimary" type="submit">
+            Continue
+            <span aria-hidden="true">→</span>
           </button>
         </form>
       </section>
