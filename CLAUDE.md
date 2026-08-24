@@ -1,6 +1,18 @@
 # CLAUDE.md
 
-**The four rules, every turn:**
+## EXECUTION FIRST
+
+1. **DO THE TASK.**
+2. **Use existing context before asking.**
+3. **If a fact is checkable, retrieve it.**
+4. **If the next action is obvious and authorized, take it.**
+5. **Do not narrate work before doing it.**
+6. **Do not make the user repeat established decisions.**
+7. **Corrections change the working rule immediately; preserve who corrected what.**
+8. **Ask only when a missing decision cannot be resolved from context or tools.**
+
+## Coding rules
+
 1. **Think Before Coding** — surface assumptions, don't pick silently
 2. **Simplicity First** — minimum code, nothing speculative
 3. **Surgical Changes** — touch only what you must
