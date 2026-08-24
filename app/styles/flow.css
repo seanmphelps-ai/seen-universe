@@ -445,6 +445,84 @@
   box-shadow: 0 0 9px rgba(255, 190, 65, 0.7);
 }
 
+.seenForgePeriodBubble {
+  position: relative;
+  display: grid;
+  gap: 9px;
+  margin: -4px 16px 4px;
+  padding: 14px 16px;
+  color: #f5ecd9;
+  background: rgba(13, 9, 5, 0.96);
+  border: 1px solid rgba(246, 188, 69, 0.72);
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.46);
+  animation: seenForgePeriodOpen 180ms ease-out;
+}
+
+.seenForgePeriodTitle {
+  color: #e7b852;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.seenForgePeriodFields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: end;
+  gap: 10px;
+}
+
+.seenForgePeriodFields label {
+  display: grid;
+  gap: 4px;
+  color: rgba(235, 229, 217, 0.72);
+  font-family: Inter, sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.seenForgePeriodFields input {
+  width: 100%;
+  min-width: 0;
+  padding: 7px 0 5px;
+  color: #f5f0e7;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(246, 188, 69, 0.72);
+  border-radius: 0;
+  outline: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+}
+
+.seenForgePeriodDash {
+  padding-bottom: 7px;
+  color: #e7b852;
+}
+
+.seenForgePeriodPresent {
+  align-self: end;
+  padding: 7px 0 6px;
+  color: #f5f0e7;
+  border-bottom: 1px solid rgba(246, 188, 69, 0.72);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+}
+
+@keyframes seenForgePeriodOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .seenForgeAdd {
   display: inline-flex;
   align-items: center;
