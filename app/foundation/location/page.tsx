@@ -8,6 +8,17 @@ import { LocationAutocompleteInput } from '../../../components/LocationAutocompl
 type LocationEntry = {
   id: string;
   value: string;
+  startYear: string;
+  endYear: string;
+  showPeriod: boolean;
+};
+
+type YearPeriodBubbleProps = {
+  startYear: string;
+  endYear?: string;
+  present?: boolean;
+  onStartYearChange: (value: string) => void;
+  onEndYearChange?: (value: string) => void;
 };
 
 type ForgeLocationFieldProps = {
@@ -18,7 +29,53 @@ type ForgeLocationFieldProps = {
 const createLocationEntry = (): LocationEntry => ({
   id: crypto.randomUUID(),
   value: '',
+  startYear: '',
+  endYear: '',
+  showPeriod: false,
 });
+
+function YearPeriodBubble({
+  startYear,
+  endYear = '',
+  present = false,
+  onStartYearChange,
+  onEndYearChange,
+}: YearPeriodBubbleProps) {
+  return (
+    <div className="seenForgePeriodBubble">
+      <span className="seenForgePeriodTitle">Approximate calendar years</span>
+      <div className="seenForgePeriodFields">
+        <label>
+          <span>From</span>
+          <input
+            type="text"
+            inputMode="numeric"
+            maxLength={4}
+            placeholder="Year"
+            value={startYear}
+            onChange={(event) => onStartYearChange(event.target.value.replace(/\D/g, ''))}
+          />
+        </label>
+        <span className="seenForgePeriodDash" aria-hidden="true">—</span>
+        {present ? (
+          <span className="seenForgePeriodPresent">Present</span>
+        ) : (
+          <label>
+            <span>To</span>
+            <input
+              type="text"
+              inputMode="numeric"
+              maxLength={4}
+              placeholder="Year"
+              value={endYear}
+              onChange={(event) => onEndYearChange?.(event.target.value.replace(/\D/g, ''))}
+            />
+          </label>
+        )}
+      </div>
+    </div>
+  );
+}
 
 function LocationPinIcon() {
   return (
@@ -58,16 +115,33 @@ export default function ForgeLocationPage() {
   const router = useRouter();
 
   const [birthLocation, setBirthLocation] = useState('');
+  const [birthStartYear, setBirthStartYear] = useState('');
+  const [birthEndYear, setBirthEndYear] = useState('');
+  const [showBirthPeriod, setShowBirthPeriod] = useState(false);
   const [livedLocations, setLivedLocations] = useState<LocationEntry[]>([
     createLocationEntry(),
   ]);
   const [currentLocation, setCurrentLocation] = useState('');
+  const [currentStartYear, setCurrentStartYear] = useState('');
+  const [showCurrentPeriod, setShowCurrentPeriod] = useState(false);
   const [error, setError] = useState('');
 
   function updateLivedLocation(id: string, value: string) {
     setLivedLocations((locations) =>
       locations.map((location) =>
         location.id === id ? { ...location, value } : location,
+      ),
+    );
+  }
+
+  function updateLivedPeriod(
+    id: string,
+    field: 'startYear' | 'endYear' | 'showPeriod',
+    value: string | boolean,
+  ) {
+    setLivedLocations((locations) =>
+      locations.map((location) =>
+        location.id === id ? { ...location, [field]: value } : location,
       ),
     );
   }
@@ -79,7 +153,7 @@ export default function ForgeLocationPage() {
   function removeLivedLocation(id: string) {
     setLivedLocations((locations) => {
       if (locations.length === 1) {
-        return [{ ...locations[0], value: '' }];
+        return [createLocationEntry()];
       }
 
       return locations.filter((location) => location.id !== id);
@@ -92,8 +166,15 @@ export default function ForgeLocationPage() {
     const normalizedBirthLocation = birthLocation.trim();
     const normalizedCurrentLocation = currentLocation.trim();
     const normalizedLivedLocations = livedLocations
-      .map((location) => location.value.trim())
-      .filter(Boolean);
+      .filter((location) => location.value.trim())
+      .map((location) => location.value.trim());
+    const livedPeriods = livedLocations
+      .filter((location) => location.value.trim())
+      .map((location) => ({
+        location: location.value.trim(),
+        startYear: location.startYear || null,
+        endYear: location.endYear || null,
+      }));
 
     if (!normalizedBirthLocation || !normalizedCurrentLocation) {
       setError('Enter your birth location and current location to continue.');
@@ -106,8 +187,17 @@ export default function ForgeLocationPage() {
       'seen.foundation.locations',
       JSON.stringify({
         birthLocation: normalizedBirthLocation,
+        birthPeriod: {
+          startYear: birthStartYear || null,
+          endYear: birthEndYear || null,
+        },
         livedLocations: normalizedLivedLocations,
+        livedPeriods,
         currentLocation: normalizedCurrentLocation,
+        currentPeriod: {
+          startYear: currentStartYear || null,
+          endYear: 'present',
+        },
         minimumResidenceMonths: 6,
       }),
     );
@@ -152,8 +242,17 @@ export default function ForgeLocationPage() {
                 placeholder="Enter city, state, country"
                 value={birthLocation}
                 onChange={setBirthLocation}
+                onLocationEntered={() => setShowBirthPeriod(true)}
               />
             </ForgeLocationField>
+            {showBirthPeriod && birthLocation.trim() && (
+              <YearPeriodBubble
+                startYear={birthStartYear}
+                endYear={birthEndYear}
+                onStartYearChange={setBirthStartYear}
+                onEndYearChange={setBirthEndYear}
+              />
+            )}
 
             <fieldset className="seenForgeFieldset">
               <legend className="seenVisuallyHidden">
@@ -172,8 +271,23 @@ export default function ForgeLocationPage() {
                         placeholder="Enter city, state, country"
                         value={location.value}
                         onChange={(next) => updateLivedLocation(location.id, next)}
+                        onLocationEntered={() =>
+                          updateLivedPeriod(location.id, 'showPeriod', true)
+                        }
                       />
                     </ForgeLocationField>
+                    {location.showPeriod && location.value.trim() && (
+                      <YearPeriodBubble
+                        startYear={location.startYear}
+                        endYear={location.endYear}
+                        onStartYearChange={(value) =>
+                          updateLivedPeriod(location.id, 'startYear', value)
+                        }
+                        onEndYearChange={(value) =>
+                          updateLivedPeriod(location.id, 'endYear', value)
+                        }
+                      />
+                    )}
 
                     {(location.value || livedLocations.length > 1) && (
                       <button
@@ -207,8 +321,16 @@ export default function ForgeLocationPage() {
                 placeholder="Enter city, state, country"
                 value={currentLocation}
                 onChange={setCurrentLocation}
+                onLocationEntered={() => setShowCurrentPeriod(true)}
               />
             </ForgeLocationField>
+            {showCurrentPeriod && currentLocation.trim() && (
+              <YearPeriodBubble
+                startYear={currentStartYear}
+                present
+                onStartYearChange={setCurrentStartYear}
+              />
+            )}
 
             {error && (
               <p className="seenForgeError" role="alert">
