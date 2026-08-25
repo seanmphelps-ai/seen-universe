@@ -446,7 +446,7 @@ export default function ForgeLocationPage() {
                   textAlign: 'center',
                 }}
               >
-                Every place adds a twist or turn to the journey. How would you like to tell us the story?
+                How would you like to tell us the story?
               </p>
               <button style={modeButtonStyle} type="button" onClick={() => setMode('voice')}>
                 Voice
