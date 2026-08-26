@@ -16,6 +16,7 @@ export default function BirthFoundationPage() {
   const [error, setError] = useState('');
 
   useEffect(() => {
+    setBirthDate(sessionStorage.getItem('seen.foundation.birthDate') ?? '');
     const stored = sessionStorage.getItem('seen.foundation.locations');
     if (!stored) return;
 
@@ -103,18 +104,12 @@ export default function BirthFoundationPage() {
               </span>
             </label>
 
-            <label className="seenForgeField">
+            <div className="seenForgeField" aria-label="Date of birth">
               <span className="seenForgeFieldBody">
                 <span className="seenForgeFieldLabel">Date of Birth</span>
-                <input
-                  id="foundation-date"
-                  className="seenForgeInput"
-                  type="date"
-                  value={birthDate}
-                  onChange={(event) => setBirthDate(event.target.value)}
-                />
+                <span className="seenForgeInput">{birthDate}</span>
               </span>
-            </label>
+            </div>
 
             {birthLocation && (
               <div className="seenForgeField" aria-label="Birth location">

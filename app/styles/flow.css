@@ -297,6 +297,13 @@
   text-transform: uppercase;
 }
 
+#exposure-title {
+  font-size: clamp(1.18rem, 5.1vw, 2rem);
+  line-height: 1.08;
+  letter-spacing: 0.055em;
+  text-wrap: balance;
+}
+
 .seenForgeExposureHeader > p:last-child {
   margin: 8px 0 0;
   color: #f2eee5;

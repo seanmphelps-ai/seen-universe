@@ -1,109 +1,141 @@
-.seenSplash {
+.seenIntro {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
   min-height: 100svh;
+  padding: max(28px, env(safe-area-inset-top)) 20px max(28px, env(safe-area-inset-bottom));
+  place-items: center;
   overflow: hidden;
-  background: var(--seen-bg);
+  background: #080706;
 }
 
-.seenSplashAmbient {
+.seenIntroAmbient {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, #d4b46a 0%, transparent 68%);
-  opacity: 0.07;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(212, 180, 106, 0.14), transparent 34%),
+    linear-gradient(180deg, transparent 52%, rgba(212, 180, 106, 0.035));
   pointer-events: none;
 }
 
-.seenSplashContent {
+.seenIntroContent {
   position: relative;
-  z-index: 10;
-  width: 100%;
-  max-width: 520px;
-  padding: 0 40px;
-  text-align: center;
+  z-index: 1;
+  width: min(100%, 620px);
 }
 
-.seenSplashWord {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 420px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3.3rem, 10.5vw, 6.4rem);
-  font-weight: 500;
-  line-height: 0.91;
-  letter-spacing: -0.04em;
+.seenIntroWord {
+  display: grid;
+  min-height: 70svh;
+  place-items: center;
   color: #d4b46a;
-  opacity: 0;
-  transition: opacity 0.35s ease-out;
-  text-shadow:
-    0 0 35px rgba(212, 180, 106, 0.95),
-    0 0 75px rgba(212, 180, 106, 0.55),
-    0 0 120px rgba(212, 180, 106, 0.3);
-}
-
-.seenSplashWord[data-active='true'] {
-  opacity: 1;
-}
-
-.seenSplashMessage {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.3rem, 7.8vw, 4.2rem);
-  line-height: 1.02;
+  font-size: clamp(3.2rem, 17vw, 6.4rem);
+  line-height: 0.92;
+  text-align: center;
   opacity: 0;
-  transition: opacity 0.6s ease-out;
+  text-shadow: 0 0 35px rgba(212, 180, 106, 0.8);
+  transition: opacity 220ms ease;
 }
 
-.seenSplashMessage[data-show='true'] {
-  opacity: 1;
+.seenIntroWord[data-active='true'] { opacity: 1; }
+
+.seenIntroReveal { margin-bottom: 28px; text-align: center; }
+.seenIntroReveal p {
+  margin: 0 0 8px;
+  color: #d4b46a;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+}
+.seenIntroReveal h1 {
+  margin: 0;
+  color: #f4efe5;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 11vw, 4.8rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: 0;
 }
 
-.seenSplashLine {
-  height: 1px;
-  max-width: 210px;
-  margin: 38px auto;
-  background: linear-gradient(90deg, transparent, #b38f4f, #d4b46a, #b38f4f, transparent);
-  box-shadow: 0 0 20px rgba(212, 180, 106, 0.8);
-  transform: scaleX(0);
-  transition: transform 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+.seenIntroModes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 14px;
+  padding: 4px;
+  background: #12100d;
+  border: 1px solid rgba(212, 180, 106, 0.34);
+}
+.seenIntroModes button {
+  min-height: 44px;
+  padding: 0 8px;
+  color: #bdb5a8;
+  background: transparent;
+  border: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.seenIntroModes button[aria-selected='true'] { color: #171512; background: #d4b46a; }
+
+.seenIntroComposer {
+  padding: 18px;
+  background: rgba(14, 12, 10, 0.92);
+  border: 1px solid rgba(212, 180, 106, 0.42);
+}
+.seenIntroComposer form { display: grid; gap: 12px; }
+.seenIntroComposer textarea {
+  width: 100%;
+  min-height: 96px;
+  resize: vertical;
+  padding: 14px;
+  color: #f4efe5;
+  background: #090806;
+  border: 1px solid rgba(212, 180, 106, 0.3);
+  border-radius: 0;
+  outline: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+.seenIntroComposer textarea:focus { border-color: #d4b46a; }
+.seenIntroThread { display: grid; gap: 8px; max-height: 190px; margin-bottom: 12px; overflow: auto; }
+.seenIntroThread p { width: fit-content; max-width: 88%; margin: 0; padding: 9px 11px; color: #e8e2d8; background: #211d18; font-size: 0.84rem; line-height: 1.4; }
+.seenIntroThread p[data-role='user'] { justify-self: end; color: #171512; background: #d4b46a; }
+.seenIntroActions { display: flex; align-items: center; gap: 8px; }
+.seenIntroMic {
+  display: grid;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  place-items: center;
+  color: #d4b46a;
+  background: #080706;
+  border: 1px solid #d4b46a;
+  border-radius: 50%;
+}
+.seenIntroMic svg { display: block; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+.seenIntroMic[data-listening='true'] { color: #fff; background: #9a3d2f; box-shadow: 0 0 16px rgba(190, 67, 48, 0.68); }
+.seenIntroSend, .seenIntroContinue {
+  min-height: 44px;
+  padding: 0 14px;
+  color: #d4b46a;
+  background: transparent;
+  border: 1px solid rgba(212, 180, 106, 0.5);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.seenIntroContinue { flex: 1; color: #171512; background: #d4b46a; border-color: #d4b46a; }
+.seenIntroError { margin: 10px 0 0; color: #ffd5c9; font-size: 0.76rem; line-height: 1.4; }
+
+@media (max-width: 390px) {
+  .seenIntro { padding-right: 14px; padding-left: 14px; }
+  .seenIntroComposer { padding: 13px; }
+  .seenIntroActions { flex-wrap: wrap; }
+  .seenIntroContinue { min-width: 180px; }
 }
 
-.seenSplashLine[data-show='true'] {
-  transform: scaleX(1);
-}
-
-.seenSplashCta {
-  margin-top: 55px;
-  opacity: 0;
-  transition: opacity 0.4s ease-out 0.5s;
-}
-
-.seenSplashCta[data-show='true'] {
-  opacity: 1;
-}
-
-.seenSplash .seenButtonPrimary {
-  width: auto;
-  min-height: 58px;
-  padding: 0 36px;
-  color: #171512;
-  background: linear-gradient(90deg, #b38f4f 0%, #d4b46a 48%, #b38f4f 100%);
-  border: 1px solid rgba(245, 225, 170, 0.9);
-  box-shadow:
-    0 0 34px rgba(212, 180, 106, 0.7),
-    0 14px 34px rgba(0, 0, 0, 0.42),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  font-size: 0.97rem;
-  letter-spacing: 0.18em;
-}
-
-.seenSplashFlash {
-  position: absolute;
-  inset: 0;
-  z-index: 20;
-  background: #ffffff;
-  opacity: 0;
-  pointer-events: none;
+@media (prefers-reduced-motion: reduce) {
+  .seenIntroWord { transition: none; }
 }
