@@ -43,6 +43,7 @@ export default function IntroductionPage() {
   }, []);
 
   function saveAndContinue() {
+    sessionStorage.setItem('seen.introduction.complete', 'true');
     sessionStorage.setItem('seen.introduction.mode', mode);
     sessionStorage.setItem('seen.introduction.story', JSON.stringify({ draft: draft.trim(), messages }));
     router.push('/foundation/location');

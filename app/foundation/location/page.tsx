@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { type FormEvent, type ReactNode, useState } from 'react';
+import { type FormEvent, type ReactNode, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { LocationAutocompleteInput } from '../../../components/LocationAutocompleteInput';
 
@@ -21,11 +21,20 @@ function ForgeLocationField({ label, children }: ForgeLocationFieldProps) { retu
 
 export default function ForgeLocationPage() {
   const router = useRouter();
+  const [introductionComplete, setIntroductionComplete] = useState(false);
   const [birthDate, setBirthDate] = useState('');
   const [birthLocation, setBirthLocation] = useState('');
   const [livedLocations, setLivedLocations] = useState<LocationEntry[]>([createLocationEntry()]);
   const [currentLocation, setCurrentLocation] = useState(''); const [currentStartYear, setCurrentStartYear] = useState(''); const [showCurrentPeriod, setShowCurrentPeriod] = useState(false);
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    if (sessionStorage.getItem('seen.introduction.complete') !== 'true') {
+      router.replace('/');
+      return;
+    }
+    setIntroductionComplete(true);
+  }, [router]);
 
   function updateLivedLocation(id: string, value: string) { setLivedLocations((locations) => locations.map((location) => location.id === id ? { ...location, value } : location)); }
   function updateLivedPeriod(id: string, field: 'startYear' | 'endYear' | 'showPeriod', value: string | boolean) { setLivedLocations((locations) => locations.map((location) => location.id === id ? { ...location, [field]: value } : location)); }
@@ -42,6 +51,8 @@ export default function ForgeLocationPage() {
     sessionStorage.setItem('seen.foundation.birthDate', birthDate);
     router.push('/foundation/birth');
   }
+
+  if (!introductionComplete) return null;
 
   return <main className="seenForgePage"><Image className="seenForgeBackdrop" src="/foundation/location-forge-background.png" alt="" aria-hidden="true" fill priority sizes="(max-width: 760px) 100vw, 760px" /><div className="seenForgeBackdropVeil" aria-hidden="true" /><section className="seenForgeShell" aria-labelledby="forge-title"><header className="seenForgeMasthead"><span className="seenForgeNumber">01</span><h1 id="forge-title" className="seenForgeTitle">The Forge</h1></header><div className="seenForgeGlobeSpace" aria-hidden="true" /><section className="seenForgeExposure" aria-labelledby="exposure-title"><header className="seenForgeExposureHeader"><h2 id="exposure-title">Tell us where and in what years the twists &amp; turns of your journey have taken place.</h2></header>
     <form className="seenForgeForm" onSubmit={handleSubmit}>
