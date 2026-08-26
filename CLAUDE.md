@@ -81,3 +81,20 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 ---
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
+
+## SEEN CONTEXT ROUTING
+
+For SEEN work:
+
+1. Read `.DOCS/MASTER_BUILD_CHECKLIST.md`.
+2. Load only the context module matching the task:
+   - Closure, relationships, comparisons → `.DOCS/contexts/CLAUDE_CLOSURE.md`
+   - Location, exposure, trips, place, time → `.DOCS/contexts/CLAUDE_LOCATION.md`
+   - Generator, portals, layers, shadows, convergence, Helix → `.DOCS/contexts/CLAUDE_GENERATOR_HELIX.md`
+   - Oracle, voice, chat, rendering → `.DOCS/contexts/CLAUDE_ORACLE.md`
+   - Cadence, tracker, widget, daily follow-through → `.DOCS/contexts/CLAUDE_CADENCE.md`
+   - Child, parent, sibling, teacher, caregiver → `.DOCS/contexts/CLAUDE_FAMILY.md`
+   - Eden, dating, sharing, consent → `.DOCS/contexts/CLAUDE_EDEN.md`
+3. Load only matching examples from `.DOCS/examples/`.
+4. Do not load every module unless the task genuinely spans them.
+5. Put recovered material in `.DOCS/incoming/` before canonizing it.
