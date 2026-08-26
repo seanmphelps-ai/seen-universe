@@ -28,7 +28,7 @@ export default function IntroductionPage() {
   const recognitionRef = useRef<Recognition | null>(null);
 
   function saveAndContinue() {
-    sessionStorage.setItem('seen.introduction.complete', 'true');
+    sessionStorage.setItem('seen.introduction.v2.complete', 'true');
     sessionStorage.setItem('seen.introduction.mode', mode);
     sessionStorage.setItem('seen.introduction.story', JSON.stringify({ draft: draft.trim(), messages }));
     router.push('/foundation/location');

@@ -29,7 +29,7 @@ export default function ForgeLocationPage() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    if (sessionStorage.getItem('seen.introduction.complete') !== 'true') {
+    if (sessionStorage.getItem('seen.introduction.v2.complete') !== 'true') {
       router.replace('/');
       return;
     }
