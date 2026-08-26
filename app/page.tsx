@@ -1,6 +1,7 @@
 'use client';
 
-import { type FormEvent, useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import { type FormEvent, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 type Mode = 'voice' | 'chat' | 'manuscript';
@@ -11,7 +12,6 @@ type Recognition = {
   onerror: (() => void) | null; onend: (() => void) | null; start: () => void; stop: () => void;
 };
 type RecognitionConstructor = new () => Recognition;
-const WORDS = ['YOU', 'ARE', 'NOT', 'YOUR', 'SUN', 'SIGN.'];
 
 function MicIcon() {
   return <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3" /><path d="M6 11a6 6 0 0 0 12 0M12 17v4M9 21h6" /></svg>;
@@ -19,9 +19,6 @@ function MicIcon() {
 
 export default function IntroductionPage() {
   const router = useRouter();
-  const [word, setWord] = useState('');
-  const [wordActive, setWordActive] = useState(false);
-  const [revealed, setRevealed] = useState(false);
   const [mode, setMode] = useState<Mode>('voice');
   const [draft, setDraft] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
@@ -29,18 +26,6 @@ export default function IntroductionPage() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
   const recognitionRef = useRef<Recognition | null>(null);
-
-  useEffect(() => {
-    const timers: ReturnType<typeof setTimeout>[] = [];
-    const schedule = (fn: () => void, delay: number) => timers.push(setTimeout(fn, delay));
-    const show = (index: number) => {
-      if (index === WORDS.length) return void schedule(() => setRevealed(true), 450);
-      setWord(WORDS[index]); setWordActive(true);
-      schedule(() => { setWordActive(false); schedule(() => show(index + 1), 180); }, 330);
-    };
-    schedule(() => show(0), 220);
-    return () => timers.forEach(clearTimeout);
-  }, []);
 
   function saveAndContinue() {
     sessionStorage.setItem('seen.introduction.complete', 'true');
@@ -86,9 +71,17 @@ export default function IntroductionPage() {
     }
   }
 
-  return <main className="seenIntro"><div className="seenIntroAmbient" aria-hidden="true" /><section className="seenIntroContent">
-    {!revealed ? <div className="seenIntroWord" data-active={wordActive}>{word}</div> : <>
-      <header className="seenIntroReveal"><p>SEEN</p><h1>You are so much more than that.</h1></header>
+  return <main className="seenForgePage">
+    <Image className="seenForgeBackdrop" src="/foundation/location-forge-background.png" alt="" aria-hidden="true" fill priority sizes="(max-width: 760px) 100vw, 760px" />
+    <div className="seenForgeBackdropVeil" aria-hidden="true" />
+    <section className="seenForgeShell">
+      <header className="seenForgeMasthead">
+        <span className="seenForgeNumber">01</span>
+        <h1 className="seenForgeTitle">The Forge</h1>
+      </header>
+      <div className="seenForgeGlobeSpace" aria-hidden="true" />
+      <section className="seenForgeExposure">
+      <div className="seenIntroContent">
       <div className="seenIntroModes" role="tablist" aria-label="Introduction format">
         {(['voice', 'chat', 'manuscript'] as const).map((item) => <button key={item} type="button" role="tab" aria-selected={mode === item} onClick={() => setMode(item)}>{item}</button>)}
       </div>
@@ -104,6 +97,8 @@ export default function IntroductionPage() {
         </form>
         {error && <p className="seenIntroError" role="alert">{error}</p>}
       </section>
-    </>}
-  </section></main>;
+      </div>
+      </section>
+    </section>
+  </main>;
 }
