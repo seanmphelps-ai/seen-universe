@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { type FormEvent, type ReactNode, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { LocationAutocompleteInput } from '../../../components/LocationAutocompleteInput';
+import { FoundationIntakeSchema } from '../../../lib/foundation/intakeSchema';
 
 type LocationEntry = { id: string; value: string; startYear: string; endYear: string; showPeriod: boolean };
 type YearPeriodBubbleProps = { startYear: string; endYear?: string; present?: boolean; onStartYearChange: (value: string) => void; onEndYearChange?: (value: string) => void };
@@ -42,13 +43,32 @@ export default function ForgeLocationPage() {
   function removeLivedLocation(id: string) { setLivedLocations((locations) => locations.length === 1 ? [createLocationEntry()] : locations.filter((location) => location.id !== id)); }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault(); const normalizedBirthLocation = birthLocation.trim(); const normalizedCurrentLocation = currentLocation.trim();
-    const normalizedLivedLocations = livedLocations.filter((location) => location.value.trim()).map((location) => location.value.trim());
-    const livedPeriods = livedLocations.filter((location) => location.value.trim()).map((location) => ({ location: location.value.trim(), startYear: location.startYear || null, endYear: location.endYear || null }));
-    if (!birthDate || !normalizedBirthLocation || !normalizedCurrentLocation) { setError('Enter your date of birth, birth location, and current city to continue.'); return; }
+    event.preventDefault();
+    const normalizedLivedLocations = livedLocations.filter((location) => location.value.trim());
+    const result = FoundationIntakeSchema.safeParse({
+      birthDate,
+      birthLocation: birthLocation.trim(),
+      livedLocations: normalizedLivedLocations.map((location) => location.value.trim()),
+      livedPeriods: normalizedLivedLocations.map((location) => ({
+        location: location.value.trim(),
+        startYear: location.startYear,
+        endYear: location.endYear,
+      })),
+      currentLocation: currentLocation.trim(),
+      currentPeriod: {
+        startYear: currentStartYear,
+        endYear: 'present',
+      },
+      minimumResidenceMonths: 12,
+    });
+    if (!result.success) {
+      setError('Complete the birth date, locations, and calendar years to continue.');
+      return;
+    }
     setError('');
-    sessionStorage.setItem('seen.foundation.locations', JSON.stringify({ birthLocation: normalizedBirthLocation, livedLocations: normalizedLivedLocations, livedPeriods, currentLocation: normalizedCurrentLocation, currentPeriod: { startYear: currentStartYear || null, endYear: 'present' }, minimumResidenceMonths: 12 }));
-    sessionStorage.setItem('seen.foundation.birthDate', birthDate);
+    const { birthDate: validatedBirthDate, ...validatedLocations } = result.data;
+    sessionStorage.setItem('seen.foundation.locations', JSON.stringify(validatedLocations));
+    sessionStorage.setItem('seen.foundation.birthDate', validatedBirthDate);
     router.push('/foundation/birth');
   }
 
