@@ -764,6 +764,69 @@
   cursor: pointer;
 }
 
+.seenChartWheel {
+  width: min(100%, 560px);
+  margin: 0 auto var(--seen-space-5);
+  color: var(--seen-text-primary);
+}
+
+.seenChartWheel svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.seenChartRing,
+.seenChartDivision,
+.seenChartHouse {
+  fill: none;
+  stroke: rgba(251, 234, 131, 0.42);
+  stroke-width: 1;
+}
+
+.seenChartHouse {
+  stroke: rgba(255, 255, 255, 0.22);
+}
+
+.seenChartZodiac,
+.seenChartPlanet,
+.seenChartHouseNumber {
+  fill: currentColor;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.seenChartZodiac {
+  fill: #fbea83;
+  font-size: 19px;
+}
+
+.seenChartPlanet {
+  font-size: 16px;
+}
+
+.seenChartHouseNumber {
+  fill: var(--seen-text-secondary);
+  font-family: Inter, sans-serif;
+  font-size: 8px;
+}
+
+.seenChartAspect {
+  stroke-width: 0.75;
+  opacity: 0.5;
+}
+
+.seenChartAspectConjunction,
+.seenChartAspectSextile,
+.seenChartAspectTrine {
+  stroke: #7abf9d;
+}
+
+.seenChartAspectSquare,
+.seenChartAspectOpposition {
+  stroke: #c97070;
+}
+
 @media (min-width: 700px) {
   .seenFlowPage {
     padding-top: 64px;
