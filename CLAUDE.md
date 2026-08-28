@@ -1,5 +1,37 @@
 # CLAUDE.md
 
+## ECC HARNESS — GOVERNING STRUCTURE
+
+ECC is the harness. Do not place another orchestration layer above it.
+
+```text
+ECC (harness: memory, instincts, security, budgets)
+  └── Caveman (output compression)
+       └── SEEN pipeline (MCPs + skills + hooks)
+            ├── browser-mcp → social pull
+            ├── postgres-mcp → storage
+            ├── intake skill
+            ├── social-pull skill
+            ├── narrative-extract skill
+            ├── chart-gen skill
+            ├── resonance skill
+            └── verify skill
+```
+
+### Execution law
+
+- ECC governs memory, instincts, security, and budgets.
+- Caveman compresses output only. It does not alter architecture, evidence, scope, or governing rules.
+- MCPs provide capabilities. They do not make product or architectural decisions.
+- Skills execute bounded jobs. They do not expand their own scope.
+- Hooks enforce deterministic boundaries where enforcement is possible.
+- `verify` is required before work is considered complete.
+- Existing SEEN architecture remains authoritative. No skill, MCP, hook, or model may replace or redesign adjacent architecture unless explicitly requested.
+- For repository work, read this file, `.DOCS/MASTER_BUILD_CHECKLIST.md`, and the matching context module before changing implementation files.
+
+Project-specific skill contracts live under `.claude/skills/`.
+Pipeline definition lives at `.DOCS/ECC_SEEN_PIPELINE.md`.
+
 ## EXECUTION FIRST
 
 1. **take the initiative- search for the top producers and respected names in the field that we are covering. assume the role/ words of those top tier specialist in the field we  are working in-  DO THE TASK-solve the problem .**
