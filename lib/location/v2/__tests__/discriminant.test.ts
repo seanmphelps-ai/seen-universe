@@ -91,7 +91,7 @@ describe('discriminant analysis', () => {
        */
       const exposures = Array.from({ length: 800 }, (_, i) =>
         exposure(`circ-${i}`, {
-          engagement: { impressions: 1000, reactions: 50 },
+          engagement: { uniqueReach: 1000, reactions: 50 },
           quality: 0.8,
         })
       );
@@ -128,7 +128,7 @@ describe('discriminant analysis', () => {
 
       const fewExposures = Array.from({ length: 10 }, (_, i) =>
         exposure(`exp-${i}`, {
-          engagement: { impressions: 200, reactions: 5 },
+          engagement: { uniqueReach: 200, reactions: 5 },
         })
       );
 
@@ -279,7 +279,7 @@ describe('discriminant analysis', () => {
        */
       const viralExposures = Array.from({ length: 5000 }, (_, i) =>
         exposure(`viral-${i}`, {
-          engagement: { impressions: 10000, reactions: 500 },
+          engagement: { uniqueReach: 10000, reactions: 500, reposts: 500 },
           quality: 0.6,
         })
       );
@@ -288,7 +288,7 @@ describe('discriminant analysis', () => {
         events: [], // No underlying incidents
         exposure: viralExposures,
         population: 100_000,
-        amplificationBaselines: { social_multiplier: 2.5 },
+        amplificationBaselines: { reposts: [1, 2, 3, 5, 8, 13] },
       });
 
       const result = computeEvidenceVector(inputs);
@@ -315,7 +315,7 @@ describe('discriminant analysis', () => {
       const posts = Array.from({ length: 4000 }, (_, i) =>
         exposure(`post-${i}`, {
           accountId: `account-${(i % 200).toString()}`,
-          engagement: { impressions: 500, reactions: 20 },
+          engagement: { uniqueReach: 500, reactions: 20 },
         })
       );
 
@@ -348,7 +348,7 @@ describe('discriminant analysis', () => {
       const socialTestimony = Array.from({ length: 200 }, (_, i) =>
         exposure(`testimony-${i}`, {
           sourceFamily: 'SOCIAL_PUBLIC' as SourceFamily,
-          engagement: { impressions: 1000, reactions: 50 },
+          engagement: { uniqueReach: 1000, reactions: 50 },
         })
       );
 
@@ -450,7 +450,7 @@ describe('discriminant analysis', () => {
 
       const massiveCirculation = Array.from({ length: 1000 }, (_, i) =>
         exposure(`circulation-${i}`, {
-          engagement: { impressions: 5000, reactions: 200 },
+          engagement: { uniqueReach: 5000, reactions: 200 },
         })
       );
 
