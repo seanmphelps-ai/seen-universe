@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useMemo, useState } from 'react';
+import Link from 'next/link';
 import { CITIES, type City } from '../../lib/cities';
 import type { NatalChartInput, NatalChartResult } from '../../lib/natalChart';
 
@@ -12,6 +13,7 @@ export default function NatalChartPage() {
   const [selectedCity, setSelectedCity] = useState<City | null>(null);
   const [error, setError] = useState('');
   const [result, setResult] = useState<NatalChartResult | null>(null);
+  const [saveMessage, setSaveMessage] = useState('');
 
   const citySuggestions = useMemo(() => {
     const query = cityQuery.trim().toLowerCase();
@@ -78,6 +80,23 @@ export default function NatalChartPage() {
 
       const chart: NatalChartResult = await response.json();
       setResult(chart);
+
+      const saveResponse = await fetch('/api/saved-people', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...chartInput,
+          birthLocation: `${selectedCity.name}, ${selectedCity.country}`,
+          westernChart: chart,
+        }),
+      });
+      if (saveResponse.ok) {
+        setSaveMessage('Saved to this person’s account.');
+      } else if (saveResponse.status === 401) {
+        setSaveMessage('Sign in to save this person and chart.');
+      } else {
+        setSaveMessage('The chart calculated successfully. Saving needs attention.');
+      }
     } catch (err) {
       setError(
         err instanceof Error ? err.message : 'Calculation failed. Try again.',
@@ -89,6 +108,7 @@ export default function NatalChartPage() {
 
   function handleStartOver() {
     setResult(null);
+    setSaveMessage('');
   }
 
   return (
@@ -106,6 +126,7 @@ export default function NatalChartPage() {
           </p>
 
           <div className="seenDivider" aria-hidden="true" />
+          <Link className="seenButtonSecondary" href="/account">Saved people</Link>
         </header>
 
         {!result && (
@@ -217,7 +238,7 @@ export default function NatalChartPage() {
           </form>
         )}
 
-        {result && <ChartResults result={result} onStartOver={handleStartOver} />}
+        {result && <ChartResults result={result} saveMessage={saveMessage} onStartOver={handleStartOver} />}
       </section>
     </main>
   );
@@ -225,15 +246,19 @@ export default function NatalChartPage() {
 
 function ChartResults({
   result,
+  saveMessage,
   onStartOver,
 }: {
   result: NatalChartResult;
+  saveMessage: string;
   onStartOver: () => void;
 }) {
   return (
     <div className="seenPanel seenFlowForm">
       <div className="seenField">
         <span className="seenLabel">{result.name}&apos;s chart</span>
+        {saveMessage && <p className="seenFieldSupport">{saveMessage}</p>}
+        {saveMessage.startsWith('Sign in') && <Link href="/auth">Sign in or create an account →</Link>}
         {!result.hasBirthTime && (
           <p className="seenFieldSupport">
             No birth time was given, so this uses noon as a placeholder for
