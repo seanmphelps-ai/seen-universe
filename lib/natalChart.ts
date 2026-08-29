@@ -83,7 +83,12 @@ const PLANET_LABELS: { key: string; label: string }[] = [
   { key: "uranus", label: "Uranus" },
   { key: "neptune", label: "Neptune" },
   { key: "pluto", label: "Pluto" },
+  { key: "chiron", label: "Chiron" },
+  { key: "lilith", label: "Black Moon Lilith" },
+  { key: "north-node", label: "North Node" },
 ];
+
+const SOUTH_NODE = { key: "south-node", label: "South Node" };
 
 // Major-aspect angles and orbs. Orb size is a matter of astrological
 // convention, not an empirical fact — these are standard, commonly used
@@ -165,6 +170,9 @@ export async function calculateNatalChart(
       uranus: swe.SE_URANUS,
       neptune: swe.SE_NEPTUNE,
       pluto: swe.SE_PLUTO,
+      chiron: swe.SE_CHIRON,
+      lilith: swe.SE_MEAN_APOG,
+      "north-node": swe.SE_TRUE_NODE,
     };
 
     const rawPositions: Record<string, Float64Array> = {};
@@ -205,6 +213,15 @@ export async function calculateNatalChart(
         house: houseForLongitude(raw[0]),
         retrograde: raw[3] < 0,
       };
+    });
+
+    const northNode = planets.find((planet) => planet.key === "north-node")!;
+    const southNodePlacement = signPlacement(northNode.longitude + 180);
+    planets.push({
+      ...SOUTH_NODE,
+      ...southNodePlacement,
+      house: houseForLongitude(southNodePlacement.longitude),
+      retrograde: northNode.retrograde,
     });
 
     const ascendant: AnglePlacement | null = ascmc
