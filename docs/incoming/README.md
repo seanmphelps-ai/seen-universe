@@ -9,5 +9,5 @@ For each source:
 3. Identify reinforced canon, new material, and contradictions.
 4. Update the relevant context module.
 5. Update `MASTER_BUILD_CHECKLIST.md`.
-6. Move approved examples into `.DOCS/examples/`.
+6. Move approved examples into `docs/examples/`.
 

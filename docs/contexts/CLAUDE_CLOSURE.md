@@ -6,7 +6,7 @@ Two complete people enter. Three recognizable comparative shadows return. The us
 
 ## Load with
 
-- `.DOCS/MASTER_BUILD_CHECKLIST.md`
+- `docs/MASTER_BUILD_CHECKLIST.md`
 - `CLAUDE_LOCATION.md`
 - `CLAUDE_GENERATOR_HELIX.md`
 - `CLAUDE_CADENCE.md`

@@ -233,12 +233,12 @@ P2 is calibration/validation, not prerequisite for scaffolding.
 ## G. Repo placement
 
 ### Canon / task contexts
-- `.DOCS/contexts/CLAUDE_LOCATION.md` -> Environmental Resonance invariants
-- `.DOCS/contexts/CLAUDE_GENERATOR_HELIX.md` -> Life Map + rendering boundary
-- new `.DOCS/contexts/CLAUDE_LIFE_MAP_RENDERING.md` -> visual map, source tabs, provenance, render modes
+- `docs/contexts/CLAUDE_LOCATION.md` -> Environmental Resonance invariants
+- `docs/contexts/CLAUDE_GENERATOR_HELIX.md` -> Life Map + rendering boundary
+- new `docs/contexts/CLAUDE_LIFE_MAP_RENDERING.md` -> visual map, source tabs, provenance, render modes
 
 ### Source knowledge / recovered thread material
-- `.DOCS/incoming/2026-08-29_THREAD_INDEX_MAP_RENDERING_RECTIFICATION.md`
+- `docs/incoming/2026-08-29_THREAD_INDEX_MAP_RENDERING_RECTIFICATION.md`
 
 ### Action plan
 - this file

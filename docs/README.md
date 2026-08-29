@@ -5,7 +5,7 @@ This directory is the modular working memory for SEEN.
 ## Loading rule
 
 1. Read the root `CLAUDE.md`.
-2. Read `.DOCS/MASTER_BUILD_CHECKLIST.md` for status and build order.
+2. Read `docs/MASTER_BUILD_CHECKLIST.md` for status and build order.
 3. Load only the context file that matches the current task.
 4. Load exemplars only when evaluating or generating the same output type.
 

@@ -27,10 +27,10 @@ ECC (harness: memory, instincts, security, budgets)
 - Hooks enforce deterministic boundaries where enforcement is possible.
 - `verify` is required before work is considered complete.
 - Existing SEEN architecture remains authoritative. No skill, MCP, hook, or model may replace or redesign adjacent architecture unless explicitly requested.
-- For repository work, read this file, `.DOCS/MASTER_BUILD_CHECKLIST.md`, and the matching context module before changing implementation files.
+- For repository work, read this file, `docs/MASTER_BUILD_CHECKLIST.md`, and the matching context module before changing implementation files.
 
 Project-specific skill contracts live under `.claude/skills/`.
-Pipeline definition lives at `.DOCS/ECC_SEEN_PIPELINE.md`.
+Pipeline definition lives at `docs/ECC_SEEN_PIPELINE.md`.
 
 ## EXECUTION FIRST
 
@@ -118,16 +118,16 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 For SEEN work:
 
-1. Read `.DOCS/MASTER_BUILD_CHECKLIST.md`.
+1. Read `docs/MASTER_BUILD_CHECKLIST.md`.
 2. Load only the context module matching the task:
-   - Closure, relationships, comparisons → `.DOCS/contexts/CLAUDE_CLOSURE.md`
-   - Location, exposure, trips, place, time → `.DOCS/contexts/CLAUDE_LOCATION.md`
-   - Generator, portals, layers, shadows, convergence, Helix → `.DOCS/contexts/CLAUDE_GENERATOR_HELIX.md`
-   - Life Map, source-system tabs, historical provenance, visual rendering, narrative/cinematic presentation → `.DOCS/contexts/CLAUDE_LIFE_MAP_RENDERING.md`
-   - Oracle, voice, chat → `.DOCS/contexts/CLAUDE_ORACLE.md`
-   - Cadence, tracker, widget, daily follow-through → `.DOCS/contexts/CLAUDE_CADENCE.md`
-   - Child, parent, sibling, teacher, caregiver → `.DOCS/contexts/CLAUDE_FAMILY.md`
-   - Eden, dating, sharing, consent → `.DOCS/contexts/CLAUDE_EDEN.md`
-3. Load only matching examples from `.DOCS/examples/`.
+   - Closure, relationships, comparisons → `docs/contexts/CLAUDE_CLOSURE.md`
+   - Location, exposure, trips, place, time → `docs/contexts/CLAUDE_LOCATION.md`
+   - Generator, portals, layers, shadows, convergence, Helix → `docs/contexts/CLAUDE_GENERATOR_HELIX.md`
+   - Life Map, source-system tabs, historical provenance, visual rendering, narrative/cinematic presentation → `docs/contexts/CLAUDE_LIFE_MAP_RENDERING.md`
+   - Oracle, voice, chat → `docs/contexts/CLAUDE_ORACLE.md`
+   - Cadence, tracker, widget, daily follow-through → `docs/contexts/CLAUDE_CADENCE.md`
+   - Child, parent, sibling, teacher, caregiver → `docs/contexts/CLAUDE_FAMILY.md`
+   - Eden, dating, sharing, consent → `docs/contexts/CLAUDE_EDEN.md`
+3. Load only matching examples from `docs/examples/`.
 4. Do not load every module unless the task genuinely spans them.
-5. Put recovered material in `.DOCS/incoming/` before canonizing it.
+5. Put recovered material in `docs/incoming/` before canonizing it.
