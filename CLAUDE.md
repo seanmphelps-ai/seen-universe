@@ -123,7 +123,8 @@ For SEEN work:
    - Closure, relationships, comparisons → `.DOCS/contexts/CLAUDE_CLOSURE.md`
    - Location, exposure, trips, place, time → `.DOCS/contexts/CLAUDE_LOCATION.md`
    - Generator, portals, layers, shadows, convergence, Helix → `.DOCS/contexts/CLAUDE_GENERATOR_HELIX.md`
-   - Oracle, voice, chat, rendering → `.DOCS/contexts/CLAUDE_ORACLE.md`
+   - Life Map, source-system tabs, historical provenance, visual rendering, narrative/cinematic presentation → `.DOCS/contexts/CLAUDE_LIFE_MAP_RENDERING.md`
+   - Oracle, voice, chat → `.DOCS/contexts/CLAUDE_ORACLE.md`
    - Cadence, tracker, widget, daily follow-through → `.DOCS/contexts/CLAUDE_CADENCE.md`
    - Child, parent, sibling, teacher, caregiver → `.DOCS/contexts/CLAUDE_FAMILY.md`
    - Eden, dating, sharing, consent → `.DOCS/contexts/CLAUDE_EDEN.md`
