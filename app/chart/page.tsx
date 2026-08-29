@@ -96,12 +96,13 @@ export default function NatalChartPage() {
       <section className="seenFlowShell" aria-labelledby="natal-chart-title">
         <header className="seenFlowHeader">
           <h1 id="natal-chart-title" className="seenDisplayLarge">
-            Natal Chart
+            Western Natal Chart
           </h1>
 
           <p className="seenFlowIntroduction">
-            Real planetary positions, Placidus houses, and major aspects —
-            calculated, not guessed.
+            Tropical planetary positions, Chiron, Black Moon Lilith, lunar
+            nodes, Placidus houses, and major aspects — calculated with Swiss
+            Ephemeris.
           </p>
 
           <div className="seenDivider" aria-hidden="true" />
@@ -327,6 +328,7 @@ const ZODIAC_SYMBOLS = ['♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', 
 const PLANET_SYMBOLS: Record<string, string> = {
   sun: '☉', moon: '☽', mercury: '☿', venus: '♀', mars: '♂',
   jupiter: '♃', saturn: '♄', uranus: '♅', neptune: '♆', pluto: '♇',
+  chiron: '⚷', lilith: '⚸', 'north-node': '☊', 'south-node': '☋',
 };
 
 function chartPoint(longitude: number, radius: number, ascendant: number) {
