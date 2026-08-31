@@ -58,6 +58,11 @@ alter table public.person_locations enable row level security;
 alter table public.western_charts enable row level security;
 alter table public.readings enable row level security;
 
+grant select, insert, update, delete on table public.people to authenticated;
+grant select, insert, update, delete on table public.person_locations to authenticated;
+grant select, insert, update, delete on table public.western_charts to authenticated;
+grant select, insert, update, delete on table public.readings to authenticated;
+
 create policy "owners manage their people" on public.people
   for all to authenticated using ((select auth.uid()) = owner_id)
   with check ((select auth.uid()) = owner_id);
