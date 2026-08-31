@@ -1,0 +1,65 @@
+name: seen-full-repo-byte-gate
+
+on:
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'schemas/**'
+      - 'runtime/**'
+      - 'governance/**'
+      - 'phase-zero/**'
+      - 'phase-one/**'
+      - '.github/**'
+      - 'README_CORE_SCHEMA_ORDER.md'
+
+jobs:
+  full-repo-byte-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build full repository byte manifest
+        id: manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          git ls-files | sort > /tmp/seen_files.txt
+          while IFS= read -r file; do
+            sha256sum "$file"
+          done < /tmp/seen_files.txt > /tmp/seen_byte_manifest.txt
+          sha256sum /tmp/seen_byte_manifest.txt | awk '{print $1}' > /tmp/seen_manifest_sha.txt
+          echo "file_count=$(wc -l < /tmp/seen_files.txt)" >> "$GITHUB_OUTPUT"
+          echo "manifest_sha=$(cat /tmp/seen_manifest_sha.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Require full repo byte-read proof in PR body
+        env:
+          BODY: ${{ github.event.pull_request.body }}
+          FILE_COUNT: ${{ steps.manifest.outputs.file_count }}
+          MANIFEST_SHA: ${{ steps.manifest.outputs.manifest_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          required_markers=(
+            "FULL_REPO_BYTE_READ_CONFIRMED"
+            "README_CORE_SCHEMA_ORDER.md read first"
+            "Every tracked repo file opened one by one"
+            "All files read in README order first"
+            "Remaining files read after ordered list"
+            "Target files reread before edit"
+            "Adjacent ordered files reread where applicable"
+            "No edit made from latest-message context alone"
+            "SEEN_MANIFEST_FILE_COUNT: ${FILE_COUNT}"
+            "SEEN_MANIFEST_SHA256: ${MANIFEST_SHA}"
+          )
+
+          for marker in "${required_markers[@]}"; do
+            if ! grep -Fq "$marker" <<< "$BODY"; then
+              echo "Missing required full repo byte-read proof: $marker"
+              echo "Current file count: ${FILE_COUNT}"
+              echo "Current manifest sha: ${MANIFEST_SHA}"
+              exit 1
+            fi
+          done
