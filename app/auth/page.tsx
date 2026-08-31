@@ -41,20 +41,6 @@ export default function AuthPage() {
     await authenticate('signin');
   }
 
-  async function socialSignIn(provider: 'google' | 'apple') {
-    setMessage('');
-    try {
-      const supabase = createClient();
-      const { error } = await supabase.auth.signInWithOAuth({
-        provider,
-        options: { redirectTo: `${window.location.origin}/auth/callback` },
-      });
-      if (error) throw error;
-    } catch (error) {
-      setMessage(error instanceof Error ? error.message : 'Account access failed.');
-    }
-  }
-
   return (
     <main className="seenFlowPage">
       <section className="seenFlowShell" aria-labelledby="account-access-title">
@@ -82,8 +68,6 @@ export default function AuthPage() {
           {message && <p className="seenFieldSupport" role="status">{message}</p>}
           <button className="seenButtonPrimary" type="submit" disabled={working}>Sign in</button>
           <button className="seenButtonSecondary" type="button" disabled={working} onClick={() => authenticate('signup')}>Create account</button>
-          <button className="seenButtonSecondary" type="button" onClick={() => socialSignIn('google')}>Continue with Google</button>
-          <button className="seenButtonSecondary" type="button" onClick={() => socialSignIn('apple')}>Continue with Apple</button>
         </form>
       </section>
     </main>

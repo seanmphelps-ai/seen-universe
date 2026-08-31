@@ -10,6 +10,7 @@ type Person = {
   birth_date: string;
   birth_time: string | null;
   birth_location: string;
+  western_charts: { id: string }[];
 };
 
 export default async function AccountPage() {
@@ -20,7 +21,7 @@ export default async function AccountPage() {
 
   const { data, error } = await supabase
     .from('people')
-    .select('id,name,birth_date,birth_time,birth_location')
+    .select('id,name,birth_date,birth_time,birth_location,western_charts(id)')
     .eq('owner_id', user.id)
     .order('created_at');
   if (error) throw error;
@@ -43,8 +44,11 @@ export default async function AccountPage() {
             <ul className="seenResultList">
               {people.map((person) => (
                 <li className="seenResultRow" key={person.id}>
-                  <span className="seenResultName">{person.name}</span>
-                  <span className="seenResultValue">{person.birth_date}{person.birth_time ? ` · ${person.birth_time}` : ''}<br />{person.birth_location}</span>
+                  <Link className="seenResultName" href={`/people/${person.id}`}>{person.name}</Link>
+                  <span className="seenResultValue">
+                    {person.birth_date}{person.birth_time ? ` · ${person.birth_time}` : ''}<br />{person.birth_location}
+                    <br />{person.western_charts.length > 0 ? 'Western chart saved' : 'No chart saved yet'}
+                  </span>
                 </li>
               ))}
             </ul>
