@@ -10,7 +10,7 @@ type Person = {
   birth_date: string;
   birth_time: string | null;
   birth_location: string;
-  western_charts: { id: string }[];
+  western_charts: { id: string } | null;
 };
 
 export default async function AccountPage() {
@@ -25,7 +25,14 @@ export default async function AccountPage() {
     .eq('owner_id', user.id)
     .order('created_at');
   if (error) throw error;
-  const people = (data ?? []) as Person[];
+  // person_id is unique on western_charts, so PostgREST embeds a single
+  // object here, while the generated client types it as an array.
+  const people: Person[] = (data ?? []).map((row) => ({
+    ...row,
+    western_charts: Array.isArray(row.western_charts)
+      ? row.western_charts[0] ?? null
+      : row.western_charts,
+  }));
 
   return (
     <main className="seenFlowPage">
@@ -47,7 +54,7 @@ export default async function AccountPage() {
                   <Link className="seenResultName" href={`/people/${person.id}`}>{person.name}</Link>
                   <span className="seenResultValue">
                     {person.birth_date}{person.birth_time ? ` · ${person.birth_time}` : ''}<br />{person.birth_location}
-                    <br />{person.western_charts.length > 0 ? 'Western chart saved' : 'No chart saved yet'}
+                    <br />{person.western_charts ? 'Western chart saved' : 'No chart saved yet'}
                   </span>
                 </li>
               ))}

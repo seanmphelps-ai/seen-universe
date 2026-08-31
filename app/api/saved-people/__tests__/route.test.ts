@@ -50,9 +50,12 @@ function makeClient() {
               return {
                 data: matched.map((row) => ({
                   ...row,
-                  western_charts: charts
-                    .filter((chart) => chart.person_id === row.id)
-                    .map((chart) => ({ id: chart.id })),
+                  // person_id is unique on western_charts, so PostgREST
+                  // embeds one object or null here, never an array.
+                  western_charts: (() => {
+                    const chart = charts.find((row_chart) => row_chart.person_id === row.id);
+                    return chart ? { id: chart.id } : null;
+                  })(),
                 })),
                 error: null,
               };
@@ -177,7 +180,7 @@ describe('reading back saved people', () => {
 
     expect(body.people).toHaveLength(2);
     expect(body.people[0].name).toBe('Bree');
-    expect(body.people[0].western_charts).toHaveLength(1);
+    expect(body.people[0].western_charts).toMatchObject({ id: expect.any(String) });
   });
 
   it('keeps one account out of another account records', async () => {
