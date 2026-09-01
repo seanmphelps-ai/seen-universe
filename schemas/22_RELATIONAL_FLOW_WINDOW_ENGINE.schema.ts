@@ -1,0 +1,6 @@
+export type RelationalWindowPrecision = 'exact' | 'approximate' | 'range_only' | 'unknown'
+export type RelationalFlowWindowType = 'shared_flow' | 'shared_friction' | 'asymmetric_readiness' | 'communication_opening' | 'repair_opening' | 'reconnection_opening' | 'commitment_opening' | 'distance_required' | 'unknown'
+export type RelationalFlowActor = { id: string; role: 'self'|'partner'|'ex_partner'|'parent'|'child'|'friend'|'other'; chartId?: string; cadenceProfileId?: string }
+export type RelationalFlowWindow = { id: string; type: RelationalFlowWindowType; start?: string; end?: string; precision: RelationalWindowPrecision; actors: RelationalFlowActor[]; activatingMarkers: string[]; softeningMarkers: string[]; frictionMarkers: string[]; likelyRelationalTone: string[]; confidence: 'high'|'moderate'|'low'|'insufficient_data' }
+export type RelationalAsymmetryMap = { actorA: string; actorB: string; actorAState: string[]; actorBState: string[]; likelyDynamic: 'mutual_opening'|'pursuer_withdrawer'|'one_ready_one_closed'|'both_guarded'|'both_overloaded'|'unknown' }
+export type RelationalTimingBoundary = { noGuaranteedReunion: true; noGuaranteedOutcome: true; windowsDescribePressureAndOpportunityOnly: true; userAgencyRequired: true }
