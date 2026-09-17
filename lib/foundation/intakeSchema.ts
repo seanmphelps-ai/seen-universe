@@ -28,7 +28,7 @@ export const FoundationIntakeSchema = z.object({
   livedPeriods: z.array(ResidencePeriodSchema),
   currentLocation: z.string().trim().min(1),
   currentPeriod: CurrentResidencePeriodSchema,
-  minimumResidenceMonths: z.literal(12),
+  minimumResidenceMonths: z.literal(6),
 }).superRefine(({ livedLocations, livedPeriods }, context) => {
   if (
     livedLocations.length !== livedPeriods.length ||
