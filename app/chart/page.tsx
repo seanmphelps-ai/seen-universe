@@ -9,12 +9,12 @@ import NatalChartView from '../../components/NatalChartView';
 export default function NatalChartPage() {
   const [name, setName] = useState('');
   const [birthDate, setBirthDate] = useState('');
-  const [birthTime, setBirthTime] = useState('');
   const [cityQuery, setCityQuery] = useState('');
   const [selectedCity, setSelectedCity] = useState<City | null>(null);
   const [error, setError] = useState('');
   const [result, setResult] = useState<NatalChartResult | null>(null);
   const [saveMessage, setSaveMessage] = useState('');
+  const [isCalculating, setIsCalculating] = useState(false);
 
   const citySuggestions = useMemo(() => {
     const query = cityQuery.trim().toLowerCase();
@@ -35,8 +35,6 @@ export default function NatalChartPage() {
     setSelectedCity(city);
     setCityQuery(`${city.name}, ${city.country}`);
   }
-
-  const [isCalculating, setIsCalculating] = useState(false);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -63,7 +61,7 @@ export default function NatalChartPage() {
       const chartInput: NatalChartInput = {
         name: name.trim(),
         birthDate,
-        birthTime: birthTime || null,
+        birthTime: null,
         latitude: selectedCity.latitude,
         longitude: selectedCity.longitude,
       };
@@ -117,17 +115,18 @@ export default function NatalChartPage() {
       <section className="seenFlowShell" aria-labelledby="natal-chart-title">
         <header className="seenFlowHeader">
           <h1 id="natal-chart-title" className="seenDisplayLarge">
-            Western Natal Chart
+            SEEN recognition
           </h1>
 
           <p className="seenFlowIntroduction">
-            Tropical planetary positions, Chiron, Black Moon Lilith, lunar
-            nodes, Placidus houses, and major aspects — calculated with Swiss
-            Ephemeris.
+            Do not enter a birth time. Date and location start three hidden
+            Western runs at 4 AM, noon, and 8 PM. You pick the pressure card
+            that matches how this person blows. Time is found by recognition,
+            not typed.
           </p>
 
           <div className="seenDivider" aria-hidden="true" />
-          <Link className="seenButtonSecondary" href="/account">Saved people</Link>
+          <Link className="seenButtonSecondary" href="/foundation/rectification">Open pressure cards</Link>
         </header>
 
         {!result && (
@@ -165,23 +164,12 @@ export default function NatalChartPage() {
             </div>
 
             <div className="seenField">
-              <label className="seenLabel" htmlFor="chart-time">
-                Time of birth
-              </label>
+              <span className="seenLabel">Time of birth</span>
               <p className="seenFieldSupport">
-                Optional. Without it, the Ascendant, Midheaven, and houses
-                can&apos;t be calculated, so they&apos;re left out rather than
-                guessed.
+                Not entered here. Unknown time is the default. The system runs
+                4 AM, noon, and 8 PM and shows three pressure cards with no
+                clocks. You pick. Then it narrows.
               </p>
-              <div className="seenInputFrame">
-                <input
-                  id="chart-time"
-                  className="seenInput"
-                  type="time"
-                  value={birthTime}
-                  onChange={(event) => setBirthTime(event.target.value)}
-                />
-              </div>
             </div>
 
             <div className="seenField">
@@ -233,7 +221,7 @@ export default function NatalChartPage() {
             )}
 
             <button className="seenButtonPrimary" type="submit" disabled={isCalculating}>
-              {isCalculating ? 'Calculating…' : 'Calculate chart'}
+              {isCalculating ? 'Calculating…' : 'Continue'}
               {!isCalculating && <span aria-hidden="true">→</span>}
             </button>
           </form>
@@ -257,15 +245,18 @@ function ChartResults({
   return (
     <div className="seenPanel seenFlowForm">
       <div className="seenField">
-        <span className="seenLabel">{result.name}&apos;s chart</span>
+        <span className="seenLabel">{result.name}'s chart</span>
         {saveMessage && <p className="seenFieldSupport">{saveMessage}</p>}
         {saveMessage.startsWith('Sign in') && <Link href="/auth">Sign in or create an account →</Link>}
       </div>
 
       <NatalChartView result={result} />
 
+      <Link className="seenButtonPrimary" href="/foundation/rectification">
+        Open pressure cards
+      </Link>
       <button className="seenButtonSecondary" type="button" onClick={onStartOver}>
-        Calculate another chart
+        Start over
       </button>
     </div>
   );
