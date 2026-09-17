@@ -15,7 +15,7 @@ const validIntake = {
     startYear: '2020',
     endYear: 'present' as const,
   },
-  minimumResidenceMonths: 12 as const,
+  minimumResidenceMonths: 6 as const,
 };
 
 describe('FoundationIntakeSchema', () => {
