@@ -32,7 +32,9 @@ Add a distinct layer between objective environmental pressure and pattern intera
 
 Rules:
 - Build place/time evidence first without biography contamination.
-- Generate 2–3 evidence-supported experiential summaries from already-collected environmental evidence.
+- Generate exactly three evidence-supported experiential summaries from already-collected environmental evidence.
+- Each summary carries both gift and cost. Never only-good. Never only-bad.
+- One leans Western markers, one Vedic, one blended.
 - User may select one, multiple, or none.
 - Selection records which measured conditions appear to have reached/resonated with the subject.
 - Selection does not rewrite objective place conditions.
