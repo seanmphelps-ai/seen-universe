@@ -56,6 +56,11 @@
   line-height: 0.98;
   letter-spacing: 0;
 }
+.seenIntroReveal .seenButtonPrimary,
+.seenIntroReveal .seenDivider {
+  margin-top: 28px;
+}
+
 
 .seenIntroModes {
   display: grid;

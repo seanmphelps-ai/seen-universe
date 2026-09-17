@@ -61,6 +61,7 @@ export default async function AccountPage() {
             </ul>
           )}
           <Link className="seenButtonPrimary" href="/chart">Calculate Western chart →</Link>
+          <Link className="seenButtonSecondary" href="/closure">Compare two people →</Link>
         </div>
 
         <form className="seenPanel seenFlowForm" action={createPerson}>
