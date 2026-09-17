@@ -27,7 +27,9 @@ Insert after objective environmental pressure and before pattern interaction.
 
 Contract:
 - input: completed EnvironmentalPressureField + provenance/evidence
-- generator output: 2–3 distinct evidence-supported experiential summaries
+- generator output: exactly three distinct evidence-supported experiential summaries
+- each summary carries both gift and cost; never only-good, never only-bad
+- one leans Western markers, one Vedic, one blended
 - user response: one / multiple / none + optional strength rating
 - persistence: `EnvironmentalResonanceRecord`
 - downstream: resonance becomes calibration evidence only
@@ -56,6 +58,7 @@ Acceptance:
 - same EnvironmentalPressureField is identical before/after user resonance input
 - resonance can be queried independently
 - downstream Generator can cite both environmental evidence and resonance evidence separately
+- candidate count is always 3
 
 ### B2. Life Map
 Create a public-facing system map backed by existing source-layer IDs, portal IDs, convergence IDs, and evidence refs.
