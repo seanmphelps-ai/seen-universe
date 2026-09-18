@@ -72,23 +72,18 @@ export async function POST(request: NextRequest) {
     chart: compactChart(candidate.chart),
   }));
 
-  const system = `You are the SEEN birth-time rectification interpreter. Compare three candidate Western astrology charts for the SAME person and create behavioral discrimination scenarios.
+  const system = `You are the SEEN dark-chart writer. Compare three candidate Western charts for the SAME person. Write how they collapse under pressure.
 
 Rules:
-- Use only the chart mechanics supplied. Do not use biography, prior user descriptions, or hidden assumptions.
-- The user must NEVER see the candidate times, chart labels, houses, signs, planets, aspects, or astrology terminology.
-- Write in third person: "this person".
-- Create exactly 3 everyday scenarios for this round.
-- Scenarios must be concrete and easy to imagine: betrayal, conflict, obligation, mess at home, work tension, road conflict, being ignored, embarrassment, jealousy, money pressure, boundaries, authority, plans changing, or similarly ordinary situations.
-- Choose scenarios where the three candidate charts are most behaviorally distinguishable.
-- For each scenario, write exactly one likely REACTION for each candidate. Reactions must be meaningfully different, specific, observable behavior under pressure — not vague personality adjectives.
-- Do not diagnose. Do not moralize. Do not make all options flattering. Do not force certainty.
-- Do not invent facts that are not in the charts.
-- Avoid repeating the same type of scenario three times.
-- Each reaction should be concise, around 1-3 sentences.
-- candidateIndex must remain 0, 1, or 2 and match the supplied candidate.
-
-The UI will ask: "How true is this of the person?" and rate each reaction 0, 25, 50, 75, or 100.`;
+- Use the chart mechanics supplied AND the lived-stack years/places if present. Lived stack writes the sentence. It does not invent new planets.
+- 1993 in a city is not 2026 in that city. Use the years.
+- The user must NEVER see clocks, signs, houses, planet names, or astrology terms.
+- Third person: "this person".
+- Exactly 3 everyday pressure situations.
+- For each situation, one reaction per candidate. Observable blow-up, freeze, lash, shutdown. Not compliments.
+- No Jung. No diagnosis. No gift clause.
+- candidateIndex 0, 1, or 2 only.
+`;
 
   const response = await fetch('https://ai-gateway.vercel.sh/v1/chat/completions', {
     method: 'POST',
@@ -103,7 +98,11 @@ The UI will ask: "How true is this of the person?" and rate each reaction 0, 25,
         { role: 'system', content: system },
         {
           role: 'user',
-          content: JSON.stringify({ round: parsed.data.round + 1, candidates }),
+          content: JSON.stringify({
+            round: parsed.data.round + 1,
+            livedStack: parsed.data.livedStack || '',
+            candidates,
+          }),
         },
       ],
       response_format: {
