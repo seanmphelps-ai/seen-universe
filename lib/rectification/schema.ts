@@ -14,10 +14,21 @@ export const HiddenRunSchema = z.object({
   woundMarkers: z.array(WoundMarkerSchema),
 });
 
+export const AttachmentOnCardSchema = z.object({
+  howTheyAttach: z.string().min(1),
+  howTheySabotageLove: z.string().min(1),
+  whatLoveFallsVictimTo: z.string().min(1),
+  costToTheOtherPerson: z.string().min(1),
+});
+
 export const DarkCardSchema = z.object({
   runId: z.string().min(1),
   clock: z.string().regex(/^\d{2}:\d{2}$/).optional(),
   paragraph: z.string().min(80),
+  reveal: z.string().min(1),
+  pressure: z.string().min(1),
+  consequence: z.string().min(1),
+  release: z.string().min(1),
   trigger: z.string().min(1),
   pressurePoint: z.string().min(1),
   behavior: z.string().min(1),
@@ -26,6 +37,10 @@ export const DarkCardSchema = z.object({
   costToThem: z.string().min(1),
   costToOthers: z.string().min(1),
   whatIsLost: z.string().min(1),
+  attachment: AttachmentOnCardSchema,
+  wound: z.string().min(1),
+  injury: z.string().min(1),
+  darknessUnderneath: z.string().min(1),
 });
 
 export const LockedTimeSchema = z.object({
@@ -64,6 +79,7 @@ export const RectificationScenarioRequestSchema = z.object({
 
 export type HiddenRun = z.infer<typeof HiddenRunSchema>;
 export type DarkCard = z.infer<typeof DarkCardSchema>;
+export type AttachmentOnCard = z.infer<typeof AttachmentOnCardSchema>;
 export type LockedTime = z.infer<typeof LockedTimeSchema>;
 export type WoundMarker = z.infer<typeof WoundMarkerSchema>;
 export type RectificationScenarioResponse = z.infer<typeof RectificationScenarioResponseSchema>;
