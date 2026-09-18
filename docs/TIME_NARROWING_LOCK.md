@@ -12,9 +12,10 @@ Known clock time is a later override only after recognition, never the first scr
 - name of the system being read
 - birth date
 - birth city (coordinates)
+- lived places 6+ months with years (collect here, before cards)
 
-These three exist so Western and Vedic wound markers can be calculated at each hidden time.
-Lived locations 6+ months come AFTER the time lock.
+These exist so Western and Vedic wound markers can be calculated at each hidden time.
+The lived stack is required for the card sentences — without it the cards are generic lash-out.
 
 ## Round 1
 
@@ -27,6 +28,7 @@ Run Western and Vedic wound-marker layers three times. Hidden.
 Each card bite includes at least: Chiron, Lilith, Ashlesha, Neptune, Mars, Venus, and matching Vedic marks.
 Render three pressure cards. No clock.
 Wound / shadow / how it blows under pressure.
+Card sentence uses the lived stack.
 User picks one.
 
 Do not mix BaZi, helix, or portals onto these first cards.
@@ -68,3 +70,4 @@ Then stop. Portals after this slice works.
 - Showing the clock on recognition cards
 - Helix / BaZi / 64 portals on the first cards
 - Environment-before-date intake
+- Cards without the lived stack
