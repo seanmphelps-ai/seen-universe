@@ -1,6 +1,6 @@
-# THREAD RUNTIME — 2026-09-17
+# THREAD RUNTIME — 2026-09-18
 
-Another thread: read this file first. Then `docs/00_INTAKE_SCHEMA.md`. Then `docs/00_INTAKE_ORDER_LOCK.md`. Then run.
+Another thread / Grok Bot: read `docs/00_GROK_BOT_FIRST_SLICE.md` first. Then this. Then run.
 
 ## Input you need from the user
 
@@ -22,36 +22,29 @@ Do not ask for a clock. Do not guess noon.
 /chart
   → writes session seen.foundation.birth { name, birthDate, city{name,country,latitude,longitude}, livedPlaces? }
   → /foundation/rectification
-       POST /api/chart three times at 04:00 / 12:00 / 20:00
+       POST /api/chart twice at 06:00 / 18:00
        POST /api/rectification/scenarios
-       three dark cards, no clocks, lived exposure in the paragraphs
+       two dark cards, no clocks, lived exposure in the paragraphs
        pick → narrow
+       STOP
 ```
 
 Calculator: `lib/natalChart.ts` via `POST /api/chart`.
 Sky numbers do not change because of lived places.
 Card *paragraphs* must use the lived exposure when present.
 
-## Card length
-
-A card is a paragraph. Minimum three sentences. Not one line. Not a tag.
-
-It must run: trigger, pressure point, behavior, where it collapses, where it thrives, cost to them, cost to others, what gets lost if it runs one more cycle.
-
-If it reads like a horoscope, the portal did not run. It got summarized.
-
 ## Forbidden for the other thread
 
 - Start at `/foundation/location`
 - Environment-before-date
-- Pretty natal wheel before three dark cards
+- Pretty natal wheel before two dark cards
 - Optional time field
 - Building 64 portals before this ladder works
 - Reading `SEEN_universal` as current
 - One-line cards
 - Sentence-only summaries
 - The word "stack" with no type — use `LivedExposure`
-- `docs/phase-one/00_PHASE_ONE_INTAKE_ARCHITECTURE.md` (dead invert)
+- `docs/phase-one/00_PHASE_ONE_INTAKE_ARCHITECTURE.md`
 
 ## If cards 503
 

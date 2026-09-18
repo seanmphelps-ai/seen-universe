@@ -1,6 +1,7 @@
-# INTAKE ORDER LOCK — 2026-09-17
+# INTAKE ORDER LOCK — 2026-09-18
 
 One path. SOL environment-before-date is dead.
+Grok Bot reads `docs/00_GROK_BOT_FIRST_SLICE.md` first.
 Full typed schema: `docs/00_INTAKE_SCHEMA.md`.
 
 ## Order
@@ -9,14 +10,14 @@ Full typed schema: `docs/00_INTAKE_SCHEMA.md`.
 2. Birth date
 3. Birth city (lat/long for Swiss Ephemeris)
 4. Lived places + years (6 months counts). Collect here. Do not score the sky with them.
-5. Three hidden runs 04:00 / 12:00 / 20:00
+5. Two hidden runs 06:00 / 18:00
    - Western + Vedic wound markers: Chiron, Lilith, Ashlesha, Neptune, Mars, Venus
    - Card uses wound bite AND the lived exposure
    - No clock on the card
    - Pick → ±3h / ±2h / ±1h
-6. Family as soil on the 45 sections
-7. Sovereignty after dark protocol
-8. Then portals / helix / cadence
+6. Family as soil on the 45 sections — AFTER first slice works
+7. Sovereignty after dark protocol — AFTER first slice works
+8. Then portals / helix / cadence — AFTER first slice works
 
 Birth city is coordinates. Lived exposure is the rooms with years. Both exist before the cards so the card is not a generic lash-out.
 Sky stays independent. Environment shapes the card, not the ephemeris.
@@ -46,3 +47,4 @@ Seed = natal. Soil = family. Weather = city / years. Equal.
 - Sentence-only summaries
 - The word "stack" with no type behind it — use `LivedExposure`
 - `docs/phase-one/00_PHASE_ONE_INTAKE_ARCHITECTURE.md` (dead invert)
+- 64 portals before the 06:00 / 18:00 pick works

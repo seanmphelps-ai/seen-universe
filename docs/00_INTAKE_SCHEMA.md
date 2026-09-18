@@ -4,6 +4,9 @@ Every stage has a defined INPUT and a defined OUTPUT.
 The output of one stage is the input of the next.
 No stage runs on a word that is not defined.
 
+Grok Bot first slice: `docs/00_GROK_BOT_FIRST_SLICE.md`.
+First slice ends at Stage 5 Round 1 working. Stages 6–10 exist as types only. Do not build them yet.
+
 ---
 
 ## Stage 0 — Identity
@@ -55,26 +58,25 @@ This is data collection. No scoring. No sky calculation. No card text yet.
 
 **Input**
 - `LivedExposure`
-- three fixed local clocks: `04:00`, `12:00`, `20:00`
+- two fixed local clocks: `06:00`, `18:00`
 
 **For each clock the engine computes (Swiss Ephemeris, never homemade):**
 - Julian Day from date + clock + birthCity timezone
 - planetary positions: Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, Chiron, true Lilith
-- if clock known: Ascendant, Midheaven, houses, lots
-- if clock unknown: houses and lots = null; signs and aspects still valid
+- houses and lots = null until time is locked; signs and aspects still valid
 - wound markers: Chiron, true Lilith, Ashlesha, Neptune, Mars, Venus — sign, degree, house (when known), aspects
 
 **Output per run**
 - `HiddenRun { clock, positions, woundMarkers[], livedExposure }`
 
-Three runs. Three outputs. None shown to the user yet.
+Two runs. Two outputs. None shown to the user yet.
 
 ---
 
 ## Stage 4 — Dark Cards
 
 **Input**
-- `HiddenRun[]` (all three)
+- `HiddenRun[]` (both)
 - `LivedExposure`
 
 **For each run the generator produces one card:**
@@ -85,9 +87,9 @@ Three runs. Three outputs. None shown to the user yet.
 - the lived exposure shapes the sentence: same Chiron in 1995 Compton and 2026 Whitefish is a different card
 
 **Output**
-- `DarkCard[]` (three), each `{ runId, paragraph, livedExposureRef }`
+- `DarkCard[]` (two), each `{ runId, paragraph, livedExposureRef }`
 
-If a card reads like a horoscope, the portal did not run. It got summarized. Reject it.
+If a card reads like a horoscope, reject it.
 
 ---
 
@@ -96,7 +98,7 @@ If a card reads like a horoscope, the portal did not run. It got summarized. Rej
 **Input**
 - `DarkCard[]`
 
-**Round 1**: user picks one of three.
+**Round 1**: user picks one of two (06:00 vs 18:00).
 **Round 2**: ±3h around the pick → three new cards.
 **Round 3**: ±2h → three new cards.
 **Round 4**: ±1h → three new cards.
@@ -104,74 +106,52 @@ If a card reads like a horoscope, the portal did not run. It got summarized. Rej
 **Output**
 - `LockedTime { localClock, timezone, confidence, rounds[] }`
 
+FIRST SLICE ENDS HERE.
+
 ---
 
-## Stage 6 — Locked Western
+## Stage 6 — Locked Western — DO NOT BUILD YET
 
 **Input**
 - `LockedTime`
 - `BirthAnchor`
 
 **Output**
-- full Western chart at the locked clock: positions, houses, angles, aspects, lots
-- rendered in its own tab, not mixed with dark cards
+- full Western chart at the locked clock
 
 ---
 
-## Stage 7 — Lived-Location Gift and Cost
-
-**Input**
-- `LivedExposure`
-- `LockedWestern`
-
-**Output**
-- per lived place: one gift sentence, one cost sentence, both true
-- never only-good, never only-bad
+## Stage 7 — Lived-Location Gift and Cost — DO NOT BUILD YET
 
 ---
 
-## Stage 8 — Family as Soil
-
-**Input**
-- `LockedWestern`
-- family intake (optional, collected here)
-
-**Output**
-- soil modifiers applied to the 45 Life sections
-- family feeds or starves the seed; it does not replace it
+## Stage 8 — Family as Soil — DO NOT BUILD YET
 
 ---
 
-## Stage 9 — Sovereignty
-
-**Input**
-- dark cards + locked western + lived exposure + family soil
-
-**Output**
-- the loop named: trigger → action → destruction → reset → trigger
-- what the pattern protects
-- what is available if the loop stops
-- nothing positive before this stage
+## Stage 9 — Sovereignty — DO NOT BUILD YET
 
 ---
 
-## Stage 10 — Portals and Helix
+## Stage 10 — Portals and Helix — DO NOT BUILD YET
 
-**Input**
-- everything above
-
-**Output**
-- 64 portals, always present, interrogated not filed
-- helix runtime: spinning, modalities selectable, interconnected
-- Jung layer last, visible only
+64 portals file into 45 life sections later. They are not this slice.
+This is where other builders lost the plot. Do not start it.
 
 ---
 
 ## The chain, one line
 
-`Identity → BirthAnchor → LivedExposure → HiddenRun[3] → DarkCard[3] → Pick/Narrow → LockedTime → LockedWestern → LivedGiftCost → FamilySoil → Sovereignty → Portals/Helix`
+`Identity → BirthAnchor → LivedExposure → HiddenRun[2] → DarkCard[2] → Pick/Narrow → STOP`
 
 Each arrow is a typed handoff. No stage skips its input. No stage invents its output.
+
+---
+
+## UI
+
+Horizontal scroll rail of live HTML cards over Forge atmosphere art.
+No splash required. No sitemap tree. No separate tab per clock.
 
 ---
 
@@ -185,7 +165,8 @@ Each arrow is a typed handoff. No stage skips its input. No stage invents its ou
 - One-line or sentence-only cards
 - Planet names or house numbers in user-facing text
 - Jung on dark cards
-- 108 portals (there are 64)
+- 108 portals (there are 64, and they are not this slice)
 - Personality bands
 - Scoring engines on the first cards
-- `docs/phase-one/00_PHASE_ONE_INTAKE_ARCHITECTURE.md` (dead — environment-before-date)
+- Building Stage 6–10 because the file lists them
+- `docs/phase-one/00_PHASE_ONE_INTAKE_ARCHITECTURE.md`
