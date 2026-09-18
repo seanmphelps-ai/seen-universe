@@ -15,7 +15,7 @@ Known clock time is a later override only after recognition, never the first scr
 - lived places 6+ months with years (collect here, before cards)
 
 These exist so Western and Vedic wound markers can be calculated at each hidden time.
-The lived stack is required for the card sentences — without it the cards are generic lash-out.
+The lived stack is required for the cards — without it the cards are generic lash-out.
 
 ## Round 1
 
@@ -25,10 +25,10 @@ Run Western and Vedic wound-marker layers three times. Hidden.
 - 12:00
 - 20:00
 
-Each card bite includes at least: Chiron, Lilith, Ashlesha, Neptune, Mars, Venus, and matching Vedic marks.
+Each card includes at least: Chiron, Lilith, Ashlesha, Neptune, Mars, Venus, and matching Vedic marks.
 Render three pressure cards. No clock.
 Wound / shadow / how it blows under pressure.
-Card sentence uses the lived stack.
+Card uses the lived stack.
 User picks one.
 
 Do not mix BaZi, helix, or portals onto these first cards.
@@ -63,6 +63,14 @@ Then family as soil.
 Then sovereignty. Nothing positive before that.
 Then stop. Portals after this slice works.
 
+## Card length
+
+A card is a paragraph. Minimum three sentences. Not one line. Not a tag.
+
+It must run: trigger, pressure point, behavior, where it collapses, where it thrives, cost to them, cost to others, what gets lost if it runs one more cycle.
+
+If it reads like a horoscope, the portal did not run. It got summarized.
+
 ## Forbidden
 
 - "Time of birth optional"
@@ -71,3 +79,5 @@ Then stop. Portals after this slice works.
 - Helix / BaZi / 64 portals on the first cards
 - Environment-before-date intake
 - Cards without the lived stack
+- One-line cards
+- Sentence-only summaries
