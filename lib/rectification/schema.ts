@@ -22,6 +22,7 @@ export const RectificationScenarioResponseSchema = z.object({
 export const RectificationScenarioRequestSchema = z.object({
   round: z.number().int().min(0).max(3),
   candidates: z.array(RectificationCandidateSchema).length(3),
+  livedStack: z.string().optional(),
 });
 
 export type RectificationScenarioResponse = z.infer<typeof RectificationScenarioResponseSchema>;
