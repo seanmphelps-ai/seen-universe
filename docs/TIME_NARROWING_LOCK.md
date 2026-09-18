@@ -2,15 +2,20 @@
 
 Time is not optional. Time is not typed.
 
+The first chart is a dark chart: how this system collapses under pressure.
+
 Unknown birth time is the default SEEN path.
 Known clock time is a later override only after recognition, never the first screen.
+
+This file plus `docs/00_INTAKE_ORDER_LOCK.md` beat foundation §2.0–2.6.
 
 ## Required intake before any chart
 
 - name of the system being read (self, ex, parent, child)
 - birth date
 - birth location
-- lived locations 6 months or more
+
+Lived locations 6 months or more come AFTER the time lock.
 
 ## Round 1
 
@@ -49,7 +54,8 @@ Three cards. No clock. Pick one.
 Locked time is calibration evidence.
 It is not a proven birth certificate time.
 Re-run Western at the locked time into its own tab.
-Mix with the location incubator field.
+Then lived-location gift+cost cards.
+Then family as soil.
 Then stop. Portals come after this slice works.
 
 ## Forbidden
@@ -58,3 +64,4 @@ Then stop. Portals come after this slice works.
 - Guessing noon as a stand-in
 - Showing the clock on recognition cards
 - Mixing Vedic / BaZi / helix into the same card
+- Environment-before-date intake

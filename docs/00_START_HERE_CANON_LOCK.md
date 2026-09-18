@@ -4,7 +4,27 @@
 
 The active product is the complete production-grade SEEN™ Closure & Composure PWA.
 
-`docs/01_CLOSURE_COMPOSURE_RUNTIME_ORDER.md` controls product entry, runtime sequence, independent person execution, multi-person convergence, portal pre-charge, recognition calibration, Full Helix Ignition, Dr. Maisel lens inspection, Drama Triangle evaluation, Jungian inversion, Life Section routing, and Sovereignty completion.
+`docs/00_INTAKE_ORDER_LOCK.md` and `docs/TIME_NARROWING_LOCK.md` control first-run intake and the dark pressure chart.
+
+`docs/01_CLOSURE_COMPOSURE_RUNTIME_ORDER.md` controls later product entry after the dark chart works.
+
+Foundation `docs/01_SEEN_FOUNDATION_AND_THREE_COORDINATES.md` §2.0–2.6 is retired on input order. Do not build environment-before-date.
+
+## First product slice
+
+Dark chart. Collapse under pressure.
+
+```text
+Name
+→ Date
+→ Birth city
+→ Hidden 4 AM / noon / 8 PM Western pressure cards (no clock)
+→ Pick
+→ Narrow ±3 / ±2 / ±1
+→ Lived places 6+ months, three gift+cost cards
+→ Family as soil on the 45 sections
+→ Stop. Portals after this slice works.
+```
 
 ## Repository Authority
 
@@ -18,9 +38,13 @@ Conflicting work is revised, migrated, replaced, or retired.
 
 Existing file age, naming, location, and prior completion status do not establish authority.
 
-## SEEN Runtime Layers
+`docs/00_INTAKE_ORDER_LOCK.md` beats older foundation order language.
 
-SEEN operates through distinct runtime layers.
+## Forces
+
+Seed = natal. Soil = family. Weather = city / years lived. Equal. Sensitivity discovered by recognition, not pre-weighted.
+
+## SEEN Runtime Layers
 
 ### Builder / Application Architecture
 
@@ -54,11 +78,13 @@ The Oracle renders user-facing recognition.
 
 The Oracle owns naming, interpretation, pacing, disclosure, consent, uncertainty expression, emotional containment, Dark Chart presentation, What Neither Could See presentation, Jungian inversion presentation, and Sovereignty presentation.
 
+First Oracle surface is the dark pressure card. How they blow. Not a compliment natal.
+
 ### Portals
 
 All 64 portals receive traceable deposits and route established signals through the active SEEN field.
 
-Environmental pressure pre-charges the portals before birth-date and chart interpretation.
+Portal pre-charge from environment does not run before seed calculation. Environment is weather on a calculated seed.
 
 Full portal evaluation occurs after recognition selection and Full Helix Ignition.
 
@@ -79,9 +105,12 @@ Cadence remains a typed future handoff boundary and sits outside the active Clos
 ```text
 Splash
 → Ready
-→ Experience Mode Selection
-   ├── Single Person
-   └── Multi-Person
+→ Name + date + birth city
+→ Dark pressure cards
+→ Time lock
+→ Lived-location cards
+→ Family soil
+→ Then experience mode / helix
 ```
 
 Every person completes the full independent runtime before relationship convergence begins.
@@ -89,30 +118,20 @@ Every person completes the full independent runtime before relationship converge
 ## Canonical Runtime Flow
 
 ```text
-Environmental Intake
-→ Place Resolution
-→ Place-Period Temporalization
-→ Baseline Environmental Pressure
-→ Portal Pre-Charge
-→ Birth Foundation Intake
-→ Numerology
-→ Swiss Ephemeris Candidate Runs
-→ Western / Vedic / Hellenistic Interpretation
-→ Maternal / Family Pressure
-→ Childhood Safety / Belonging / Reward Triangle
-→ Attachment Evaluation
-→ Wound Evaluation
-→ Shadow Evaluation
-→ Recognition Summary Generation
-→ Recognition Selection
-→ Full Helix Ignition
+Birth Foundation Intake (name, date, birth city)
+→ Dark Western pressure runs 04:00 / 12:00 / 20:00
+→ Recognition pick
+→ Time narrowing
+→ Lived-location gift+cost cards
+→ Family soil modifiers
+→ Locked-time Western tab
+→ Mix seed + soil + weather into 45 sections
+→ Full Helix Ignition (after the slice works)
 → 64-Portal Scan
 → Dr. Maisel 25-Lens Inspection
-→ Recursive Passes
 → Convergence / Divergence
 → Drama Triangle Evaluation
 → Jungian Sovereignty Inversion
-→ 45 Life Section Routing
 → Generator Output
 → Oracle Reveal
 → Sovereignty
@@ -210,12 +229,10 @@ Every implementation session advances the clickable, usable, sellable SEEN appli
 
 ```text
 CLAUDE.md
-→ 00_SEEN_APPLICATION_ENTRY.md
+→ docs/00_INTAKE_ORDER_LOCK.md
+→ docs/TIME_NARROWING_LOCK.md
 → docs/00_START_HERE_CANON_LOCK.md
-→ docs/01_CLOSURE_COMPOSURE_RUNTIME_ORDER.md
 → docs/SEEN_CANONICAL_UI_LANGUAGE.md
-→ README_CORE_SCHEMA_ORDER.md
-→ active schemas and runtime contracts
 → application implementation
 → verification
 ```
