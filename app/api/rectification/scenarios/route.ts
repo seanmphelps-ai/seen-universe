@@ -3,6 +3,7 @@ import {
   RectificationScenarioRequestSchema,
   RectificationScenarioResponseSchema,
 } from '../../../../lib/rectification/schema';
+import { DARK_CHART_GENERATOR_SYSTEM } from '../../../../lib/rectification/darkChartGenerator';
 
 export const runtime = 'nodejs';
 
@@ -12,7 +13,7 @@ const RESPONSE_SCHEMA = {
   properties: {
     scenarios: {
       type: 'array',
-      minItems: 3,
+      minItems: 2,
       maxItems: 3,
       items: {
         type: 'object',
@@ -21,7 +22,7 @@ const RESPONSE_SCHEMA = {
           scenario: { type: 'string' },
           reactions: {
             type: 'array',
-            minItems: 3,
+            minItems: 2,
             maxItems: 3,
             items: {
               type: 'object',
@@ -72,17 +73,13 @@ export async function POST(request: NextRequest) {
     chart: compactChart(candidate.chart),
   }));
 
-  const system = `You are the SEEN dark-chart writer. Compare three candidate Western charts for the SAME person. Write how they collapse under pressure.
+  const system = `${DARK_CHART_GENERATOR_SYSTEM}
 
-Rules:
-- Use the chart mechanics supplied AND the lived-stack years/places if present. Lived stack writes the sentence. It does not invent new planets.
-- 1993 in a city is not 2026 in that city. Use the years.
-- The user must NEVER see clocks, signs, houses, planet names, or astrology terms.
-- Third person: "this person".
-- Exactly 3 everyday pressure situations.
-- For each situation, one reaction per candidate. Observable blow-up, freeze, lash, shutdown. Not compliments.
-- No Jung. No diagnosis. No gift clause.
-- candidateIndex 0, 1, or 2 only.
+This call compares candidate charts for the SAME person.
+Write everyday pressure situations.
+For each situation, one reaction per candidate.
+Each reaction must include how they attach and how they sabotage love.
+Lived places with years write the sentence. They do not invent planets.
 `;
 
   const response = await fetch('https://ai-gateway.vercel.sh/v1/chat/completions', {
@@ -101,6 +98,7 @@ Rules:
           content: JSON.stringify({
             round: parsed.data.round + 1,
             livedStack: parsed.data.livedStack || '',
+            livedExposure: parsed.data.livedExposure || null,
             candidates,
           }),
         },
