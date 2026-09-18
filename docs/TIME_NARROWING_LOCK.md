@@ -7,6 +7,8 @@ The first chart is a dark chart: how this system collapses under pressure.
 Unknown birth time is the default SEEN path.
 Known clock time is a later override only after recognition, never the first screen.
 
+Full typed schema: `docs/00_INTAKE_SCHEMA.md`.
+
 ## Required before the three runs
 
 - name of the system being read
@@ -15,7 +17,7 @@ Known clock time is a later override only after recognition, never the first scr
 - lived places 6+ months with years (collect here, before cards)
 
 These exist so Western and Vedic wound markers can be calculated at each hidden time.
-The lived stack is required for the cards — without it the cards are generic lash-out.
+The lived exposure is required for the cards — without it the cards are generic lash-out.
 
 ## Round 1
 
@@ -28,7 +30,7 @@ Run Western and Vedic wound-marker layers three times. Hidden.
 Each card includes at least: Chiron, Lilith, Ashlesha, Neptune, Mars, Venus, and matching Vedic marks.
 Render three pressure cards. No clock.
 Wound / shadow / how it blows under pressure.
-Card uses the lived stack.
+Card uses the lived exposure.
 User picks one.
 
 Do not mix BaZi, helix, or portals onto these first cards.
@@ -78,6 +80,7 @@ If it reads like a horoscope, the portal did not run. It got summarized.
 - Showing the clock on recognition cards
 - Helix / BaZi / 64 portals on the first cards
 - Environment-before-date intake
-- Cards without the lived stack
+- Cards without the lived exposure
 - One-line cards
 - Sentence-only summaries
+- The word "stack" undefined — type is `LivedExposure`

@@ -1,4 +1,22 @@
+# SUPERSEDED — DO NOT BUILD
+
+This file is dead. It says environment before date. That invert is killed.
+
+Controlling files:
+- `docs/00_INTAKE_SCHEMA.md` (typed inputs and outputs, chained)
+- `docs/00_INTAKE_ORDER_LOCK.md`
+- `docs/TIME_NARROWING_LOCK.md`
+
+Order is: name → date → birth city → lived exposure → dark pressure time cards → family soil → sovereignty → portals.
+
+Environment is weather on a calculated seed. It is not the front door.
+Everything below this line is historical and must not be implemented.
+
+---
+
 # SEEN — Phase 1 Environmental Field Prepass
+
+[... original content retained below for history only ...]
 
 Phase 1 begins with environment, not questionnaire intake.
 
@@ -69,6 +87,8 @@ Each phase may amplify, suppress, distort, stabilize, or reroute later signals.
 Do not flatten all locations into a single generic place summary.
 
 ## Pre-Date Wound-Trigger Map
+
+Before birth date is interpreted, the Generator creates an environmental wound-trigger map.
 
 Before birth date is interpreted, the Generator creates an environmental wound-trigger map.
 

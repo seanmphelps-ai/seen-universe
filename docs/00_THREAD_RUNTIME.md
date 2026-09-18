@@ -1,6 +1,6 @@
 # THREAD RUNTIME — 2026-09-17
 
-Another thread: read this file first. Then `docs/00_INTAKE_ORDER_LOCK.md`. Then run.
+Another thread: read this file first. Then `docs/00_INTAKE_SCHEMA.md`. Then `docs/00_INTAKE_ORDER_LOCK.md`. Then run.
 
 ## Input you need from the user
 
@@ -20,17 +20,17 @@ Do not ask for a clock. Do not guess noon.
 
 ```text
 /chart
-  → writes session seen.foundation.birth { name, birthDate, city{name,country,latitude,longitude}, livedStack? }
+  → writes session seen.foundation.birth { name, birthDate, city{name,country,latitude,longitude}, livedPlaces? }
   → /foundation/rectification
        POST /api/chart three times at 04:00 / 12:00 / 20:00
        POST /api/rectification/scenarios
-       three dark cards, no clocks
+       three dark cards, no clocks, lived exposure in the paragraphs
        pick → narrow
 ```
 
 Calculator: `lib/natalChart.ts` via `POST /api/chart`.
 Sky numbers do not change because of lived places.
-Card *paragraphs* must use the lived stack when present.
+Card *paragraphs* must use the lived exposure when present.
 
 ## Card length
 
@@ -50,6 +50,8 @@ If it reads like a horoscope, the portal did not run. It got summarized.
 - Reading `SEEN_universal` as current
 - One-line cards
 - Sentence-only summaries
+- The word "stack" with no type — use `LivedExposure`
+- `docs/phase-one/00_PHASE_ONE_INTAKE_ARCHITECTURE.md` (dead invert)
 
 ## If cards 503
 

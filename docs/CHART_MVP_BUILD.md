@@ -1,11 +1,17 @@
 # CHART MVP — BUILDER BRIEF
 
-Read `docs/00_THREAD_RUNTIME.md` then `docs/00_INTAKE_ORDER_LOCK.md`.
+Read `docs/00_THREAD_RUNTIME.md`, then `docs/00_INTAKE_SCHEMA.md`, then `docs/00_INTAKE_ORDER_LOCK.md`.
 
-Entry is `/chart`. Date + birth city required. Lived stack collected before cards.
+Entry is `/chart`. Date + birth city required. Lived exposure collected before cards.
 Then `/foundation/rectification`.
 
 Do not open `/foundation/location` first.
+
+## The chain
+
+`Identity → BirthAnchor → LivedExposure → HiddenRun[3] → DarkCard[3] → Pick/Narrow → LockedTime → LockedWestern → LivedGiftCost → FamilySoil → Sovereignty → Portals/Helix`
+
+Each stage has typed inputs and outputs. See `docs/00_INTAKE_SCHEMA.md`.
 
 ## Card length
 

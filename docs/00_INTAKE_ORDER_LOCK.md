@@ -1,6 +1,7 @@
 # INTAKE ORDER LOCK — 2026-09-17
 
 One path. SOL environment-before-date is dead.
+Full typed schema: `docs/00_INTAKE_SCHEMA.md`.
 
 ## Order
 
@@ -10,14 +11,14 @@ One path. SOL environment-before-date is dead.
 4. Lived places + years (6 months counts). Collect here. Do not score the sky with them.
 5. Three hidden runs 04:00 / 12:00 / 20:00
    - Western + Vedic wound markers: Chiron, Lilith, Ashlesha, Neptune, Mars, Venus
-   - Card uses wound bite AND the lived stack
+   - Card uses wound bite AND the lived exposure
    - No clock on the card
    - Pick → ±3h / ±2h / ±1h
 6. Family as soil on the 45 sections
 7. Sovereignty after dark protocol
 8. Then portals / helix / cadence
 
-Birth city is coordinates. Lived stack is the rooms with years. Both exist before the cards so the summary is not a generic lash-out.
+Birth city is coordinates. Lived exposure is the rooms with years. Both exist before the cards so the card is not a generic lash-out.
 Sky stays independent. Environment shapes the card, not the ephemeris.
 
 ## Card length
@@ -43,3 +44,5 @@ Seed = natal. Soil = family. Weather = city / years. Equal.
 - Jung on dark cards
 - One-line cards
 - Sentence-only summaries
+- The word "stack" with no type behind it — use `LivedExposure`
+- `docs/phase-one/00_PHASE_ONE_INTAKE_ARCHITECTURE.md` (dead invert)
