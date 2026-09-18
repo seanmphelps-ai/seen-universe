@@ -7,27 +7,30 @@ The first chart is a dark chart: how this system collapses under pressure.
 Unknown birth time is the default SEEN path.
 Known clock time is a later override only after recognition, never the first screen.
 
-This file plus `docs/00_INTAKE_ORDER_LOCK.md` beat foundation §2.0–2.6.
+## Required before the three runs
 
-## Required intake before any chart
-
-- name of the system being read (self, ex, parent, child)
+- name of the system being read
 - birth date
-- birth location
+- birth city (coordinates)
 
-Lived locations 6 months or more come AFTER the time lock.
+These three exist so Western and Vedic wound markers can be calculated at each hidden time.
+Lived locations 6+ months come AFTER the time lock.
 
 ## Round 1
 
-Run Western three times. Hidden.
+Run Western and Vedic wound-marker layers three times. Hidden.
 
 - 04:00
 - 12:00
 - 20:00
 
-Render three pressure cards. No clock on the card.
-Each card is wound / shadow / how it blows under pressure.
+Each card bite includes at least: Chiron, Lilith, Ashlesha, Neptune, Mars, Venus, and matching Vedic marks.
+Render three pressure cards. No clock.
+Wound / shadow / how it blows under pressure.
 User picks one.
+
+Do not mix BaZi, helix, or portals onto these first cards.
+Western + Vedic wound markers only.
 
 ## Round 2
 
@@ -51,17 +54,17 @@ Three cards. No clock. Pick one.
 
 ## Lock
 
-Locked time is calibration evidence.
-It is not a proven birth certificate time.
+Locked time is calibration evidence. Not a birth certificate.
 Re-run Western at the locked time into its own tab.
-Then lived-location gift+cost cards.
+Then lived-location gift+cost cards with years.
 Then family as soil.
-Then stop. Portals come after this slice works.
+Then sovereignty. Nothing positive before that.
+Then stop. Portals after this slice works.
 
 ## Forbidden
 
 - "Time of birth optional"
 - Guessing noon as a stand-in
 - Showing the clock on recognition cards
-- Mixing Vedic / BaZi / helix into the same card
+- Helix / BaZi / 64 portals on the first cards
 - Environment-before-date intake
