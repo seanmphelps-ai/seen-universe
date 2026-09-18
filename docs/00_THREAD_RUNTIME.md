@@ -30,7 +30,15 @@ Do not ask for a clock. Do not guess noon.
 
 Calculator: `lib/natalChart.ts` via `POST /api/chart`.
 Sky numbers do not change because of lived places.
-Card *sentences* must use the lived stack when present.
+Card *paragraphs* must use the lived stack when present.
+
+## Card length
+
+A card is a paragraph. Minimum three sentences. Not one line. Not a tag.
+
+It must run: trigger, pressure point, behavior, where it collapses, where it thrives, cost to them, cost to others, what gets lost if it runs one more cycle.
+
+If it reads like a horoscope, the portal did not run. It got summarized.
 
 ## Forbidden for the other thread
 
@@ -40,6 +48,8 @@ Card *sentences* must use the lived stack when present.
 - Optional time field
 - Building 64 portals before this ladder works
 - Reading `SEEN_universal` as current
+- One-line cards
+- Sentence-only summaries
 
 ## If cards 503
 
