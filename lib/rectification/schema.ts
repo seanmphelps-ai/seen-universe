@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const HiddenClockSchema = z.enum(['06:00', '18:00']);
+export const HiddenClockSchema = z.enum(['04:00', '12:00', '20:00']);
 
 export const WoundMarkerSchema = z.object({
   id: z.enum(['chiron', 'trueLilith', 'ashlesha', 'neptune', 'mars', 'venus']),
