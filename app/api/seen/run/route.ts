@@ -4,6 +4,16 @@ import { buildLocationField } from '../../../../lib/location/buildLocationField'
 import type { LocationInput } from '../../../../lib/location/types';
 import { createHash } from 'node:crypto';
 import { buildWesternPortalBridge } from '../../../../lib/seen/westernBridge';
+import {
+  computeRuntimeEvidenceVector,
+  fuseRuntimeVectors,
+} from '../../../../lib/location/v2/runtime';
+import {
+  officialFieldToV2Inputs,
+  missingProductFamilies,
+  PRODUCT_SOURCE_FAMILIES,
+} from '../../../../lib/location/v2/fromOfficialField';
+import { ALL_FORGED_INTERROGATIONS } from '../../../../lib/location/v2/forged';
 
 export const runtime = 'nodejs';
 
@@ -35,11 +45,28 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    // Canonical runtime remains environment-first. Western is first only in
-    // adapter development order, and occupies the next persistent layer.
-    const locations = await Promise.all(
+    const officialFields = await Promise.all(
       input.locations.map((location) => buildLocationField(location)),
     );
+
+    const locationV2 = officialFields.map((field) => {
+      const officialInputs = officialFieldToV2Inputs(field);
+      const vectors = officialInputs.map(computeRuntimeEvidenceVector);
+      const fusion = fuseRuntimeVectors(vectors, PRODUCT_SOURCE_FAMILIES);
+      const collectedFamilies = ['OFFICIAL_DATA'] as const;
+
+      return {
+        input: field.input,
+        officialField: field,
+        collectedFamilies,
+        missingFamilies: missingProductFamilies([...collectedFamilies]),
+        socialCollection: 'NOT_COLLECTED',
+        vectors,
+        fusion,
+        forgedInterrogations: ALL_FORGED_INTERROGATIONS,
+      };
+    });
+
     const western = await calculateNatalChart(input.chart);
     const sourceFieldId = `western-natal:${createHash('sha256')
       .update(JSON.stringify(input.chart))
@@ -51,7 +78,8 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json({
-      locations,
+      locations: officialFields,
+      locationV2,
       western: westernBridge.western,
       westernPortalPenetration: westernBridge.portalPenetration,
       westernLifeSectionRouting: westernBridge.lifeSectionRouting,
