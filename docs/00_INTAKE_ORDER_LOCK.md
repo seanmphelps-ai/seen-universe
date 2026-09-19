@@ -1,8 +1,6 @@
-# INTAKE ORDER LOCK — 2026-09-18
+# INTAKE ORDER LOCK — 2026-09-19
 
 One path. SOL environment-before-date is dead.
-Grok Bot reads `docs/00_GROK_BOT_FIRST_SLICE.md` first.
-Full typed schema: `docs/00_INTAKE_SCHEMA.md`.
 
 ## Order
 
@@ -10,25 +8,17 @@ Full typed schema: `docs/00_INTAKE_SCHEMA.md`.
 2. Birth date
 3. Birth city (lat/long for Swiss Ephemeris)
 4. Lived places + years (6 months counts). Collect here. Do not score the sky with them.
-5. Two hidden runs 06:00 / 18:00
+5. Three hidden runs: 04:00 / 12:00 / 20:00
    - Western + Vedic wound markers: Chiron, Lilith, Ashlesha, Neptune, Mars, Venus
    - Card uses wound bite AND the lived exposure
    - No clock on the card
-   - Pick → ±3h / ±2h / ±1h
-6. Family as soil on the 45 sections — AFTER first slice works
-7. Sovereignty after dark protocol — AFTER first slice works
-8. Then portals / helix / cadence — AFTER first slice works
+   - Pick → neighbors → ±2h → ±1h
+6. Family as soil on the 45 sections — after the dark cards work
+7. Sovereignty after dark protocol
+8. Then portals / helix / cadence
 
-Birth city is coordinates. Lived exposure is the rooms with years. Both exist before the cards so the card is not a generic lash-out.
+Birth city is coordinates. Lived exposure is the rooms with years.
 Sky stays independent. Environment shapes the card, not the ephemeris.
-
-## Card length
-
-A card is a paragraph. Minimum three sentences. Not one line. Not a tag.
-
-It must run: trigger, pressure point, behavior, where it collapses, where it thrives, cost to them, cost to others, what gets lost if it runs one more cycle.
-
-If it reads like a horoscope, the portal did not run. It got summarized.
 
 ## Forces
 
@@ -38,13 +28,7 @@ Seed = natal. Soil = family. Weather = city / years. Equal.
 
 - Location page before date
 - Optional time
-- Noon stand-in
-- Clock on cards
-- Pretty wheel before dark cards
-- Environment rewriting Swiss numbers
-- Jung on dark cards
+- Showing the clock on recognition cards
+- Round 1 at 06:00 / 18:00
 - One-line cards
-- Sentence-only summaries
-- The word "stack" with no type behind it — use `LivedExposure`
-- `docs/phase-one/00_PHASE_ONE_INTAKE_ARCHITECTURE.md` (dead invert)
-- 64 portals before the 06:00 / 18:00 pick works
+- Environment rewriting Swiss numbers
