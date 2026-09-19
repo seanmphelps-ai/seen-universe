@@ -14,6 +14,7 @@ type StoredBirth = {
     latitude: number;
     longitude: number;
   };
+  livedStack?: string;
 };
 
 type Candidate = {
@@ -23,8 +24,8 @@ type Candidate = {
 
 type Ratings = Record<string, number>;
 
-const INITIAL_MINUTES = [4 * 60, 12 * 60, 20 * 60];
-const ROUND_DELTAS = [180, 90, 30];
+const INITIAL_MINUTES = [6 * 60, 18 * 60];
+const ROUND_DELTAS = [180, 120, 60];
 const RATING_OPTIONS = [0, 25, 50, 75, 100];
 
 function normalizeMinutes(value: number) {
@@ -79,7 +80,7 @@ export default function RectificationPage() {
 
   useEffect(() => {
     if (!birth) return;
-    const { name, birthDate, city } = birth;
+    const { name, birthDate, city, livedStack } = birth;
 
     let cancelled = false;
 
@@ -123,8 +124,10 @@ export default function RectificationPage() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             round,
+            livedStack: livedStack || '',
             candidates: chartCandidates.map((candidate, index) => ({
               index,
+              clock: toBirthTime(candidate.minutes),
               chart: candidate.chart,
             })),
           }),
@@ -159,7 +162,7 @@ export default function RectificationPage() {
     };
   }, [birth, minutes, round, regenerateToken]);
 
-  const requiredRatings = scenarios.length * 3;
+  const requiredRatings = scenarios.length * Math.max(1, candidates.length);
   const allRated = requiredRatings > 0 && Object.keys(ratings).length === requiredRatings;
 
   function setRating(scenarioIndex: number, candidateIndex: number, value: number) {
@@ -170,7 +173,7 @@ export default function RectificationPage() {
   }
 
   function continueRound() {
-    if (!allRated || candidates.length !== 3) return;
+    if (!allRated || candidates.length < 2) return;
 
     const scores = candidates.map((_, candidateIndex) => {
       const values = scenarios.map((_, scenarioIndex) => ratings[ratingKey(scenarioIndex, candidateIndex)] ?? 0);
@@ -185,8 +188,8 @@ export default function RectificationPage() {
     if (bestScore === 0 || winners.length !== 1) {
       setError(
         bestScore === 0
-          ? 'None of these reactions fit. We’ll try a different set of scenarios.'
-          : 'Two candidates are tied. We’ll ask a different set of scenarios to separate them.',
+          ? 'None of these reactions fit. We will try a different set of scenarios.'
+          : 'Two candidates are tied. We will ask a different set of scenarios to separate them.',
       );
       setRegenerateToken((value) => value + 1);
       return;
@@ -230,7 +233,8 @@ export default function RectificationPage() {
           </h1>
 
           <p className="seenFlowIntroduction">
-            Great. We’re going to give you a few different situations. Tell us how true each reaction is of this person.
+            A few situations. Say how true each reaction is of this person.
+            Lived places already went in. They shape the sentences. No clock on the card.
           </p>
 
           <div className="seenDivider" aria-hidden="true" />

@@ -78,9 +78,9 @@ export default function NatalChartPage() {
           </h1>
 
           <p className="seenFlowIntroduction">
-            Date and birth city start three hidden Western runs at 4 AM, noon,
-            and 8 PM. Add lived places with years if you have them. Time is
-            found by the pressure cards. Do not type a clock.
+            Date and birth city start two hidden Western runs at 6 AM and 6 PM.
+            Add lived places with years. Those years write the card. They do not
+            move the planets. Time is found by the pressure cards. Do not type a clock.
           </p>
 
           <div className="seenDivider" aria-hidden="true" />
