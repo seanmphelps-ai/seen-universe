@@ -1,10 +1,10 @@
 'use client';
 
-import { FormEvent, useEffect, useMemo, useState } from 'react';
-import type { NatalChartResult } from '../../../lib/natalChart';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import {
   fetchDarkWindowSeeds,
+  fetchSeedsForClocks,
   type EngineSeedCard,
 } from '../../../lib/seen/darkCardSeeds';
 
@@ -21,8 +21,6 @@ type StoredBirth = {
   birthLocation?: string;
   city?: PlaceCity;
   livedStack?: string;
-  knownCivilTime?: string;
-  knownTimeLabel?: string;
 };
 
 type CitySuggestion = {
@@ -38,9 +36,12 @@ type CardCalibration = {
   fromAge: string;
 };
 
+type RectificationPhase = 'round1' | 'round2' | 'narrowing-stub';
+
 const RESONANCE_STEPS = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100] as const;
 
-const ROUND_DELTAS_HOURS = [3, 2, 1] as const;
+/** Hours for post–Round-2 stub plan (±2h / ±1h). Round-2 itself uses ±3h. */
+const POST_ROUND2_STUB_HOURS = [2, 1] as const;
 
 function clockToMinutes(clock: string) {
   const [h, m] = clock.split(':').map(Number);
@@ -52,6 +53,17 @@ function minutesToClock(minutes: number) {
   const hour = Math.floor(normalized / 60);
   const minute = normalized % 60;
   return `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+}
+
+/** Neighbor set [anchor−Δ, anchor, anchor+Δ] wrapped to 24h. */
+function neighborClocksForDelta(anchorClock: string, deltaHours: number): string[] {
+  const anchorMinutes = clockToMinutes(anchorClock);
+  const delta = deltaHours * 60;
+  return [
+    minutesToClock(anchorMinutes - delta),
+    minutesToClock(anchorMinutes),
+    minutesToClock(anchorMinutes + delta),
+  ];
 }
 
 async function resolveCityFromLabel(query: string): Promise<PlaceCity | null> {
@@ -99,6 +111,11 @@ function emptyCalibrations(count: number): CardCalibration[] {
   return Array.from({ length: count }, () => ({ resonancePercent: null, fromAge: '' }));
 }
 
+function placeLabelFor(birth: StoredBirth): string {
+  const city = birth.city!;
+  return birth.birthLocation?.trim() || `${city.name}, ${city.country}`;
+}
+
 export default function RectificationPage() {
   const router = useRouter();
   const [birth, setBirth] = useState<StoredBirth | null>(null);
@@ -106,12 +123,13 @@ export default function RectificationPage() {
   const [calibrations, setCalibrations] = useState<CardCalibration[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
-  const [phase, setPhase] = useState<'round1' | 'narrowing-stub'>('round1');
+  const [phase, setPhase] = useState<RectificationPhase>('round1');
   const [pickedRunId, setPickedRunId] = useState<string | null>(null);
   const [narrowingMessage, setNarrowingMessage] = useState('');
   const [regenerateToken, setRegenerateToken] = useState(0);
-  const [knownCivilTime, setKnownCivilTime] = useState('');
-  const [knownTimeLoading, setKnownTimeLoading] = useState(false);
+  /** Prevents Round-1 useEffect from wiping Round-2 while neighbor cards load. */
+  const phaseRef = useRef<RectificationPhase>(phase);
+  phaseRef.current = phase;
 
   useEffect(() => {
     const raw = sessionStorage.getItem('seen.foundation.birth');
@@ -156,14 +174,12 @@ export default function RectificationPage() {
           sessionStorage.setItem('seen.foundation.birth', JSON.stringify(next));
           if (!cancelled) {
             setBirth(next);
-            setKnownCivilTime(next.knownCivilTime ?? '');
-          }
+            }
           return;
         }
 
         if (!cancelled) {
           setBirth({ ...parsed, city });
-          setKnownCivilTime(parsed.knownCivilTime ?? '');
         }
       } catch {
         if (!cancelled) router.replace('/foundation/birth');
@@ -178,6 +194,9 @@ export default function RectificationPage() {
 
   useEffect(() => {
     if (!birth?.city) return;
+    // Critical: do not reload Round-1 while Round-2 is active (neighbor fetch / cards).
+    // "Back to Round 1" sets phase to round1 before bumping regenerateToken.
+    if (phaseRef.current === 'round2') return;
 
     let cancelled = false;
 
@@ -190,9 +209,8 @@ export default function RectificationPage() {
       setPickedRunId(null);
       setNarrowingMessage('');
 
-      const { name, birthDate, city, livedStack, birthLocation } = birth!;
-      const placeLabel =
-        birthLocation?.trim() || `${city!.name}, ${city!.country}`;
+      const { name, birthDate, city, livedStack } = birth!;
+      const placeLabel = placeLabelFor(birth!);
 
       try {
         // PRIMARY Round-1 path: real Swiss dark-windows (not LLM scenarios).
@@ -250,8 +268,13 @@ export default function RectificationPage() {
     );
   }
 
-  function continueFromRound1() {
-    if (!allCalibrated || cards.length < 3) return;
+  function pickUniqueMaxWinner(): {
+    card: EngineSeedCard;
+    index: number;
+    resonance: number;
+    fromAge: string;
+  } | null {
+    if (!allCalibrated || cards.length < 3) return null;
 
     const scored = cards.map((card, index) => ({
       card,
@@ -267,17 +290,23 @@ export default function RectificationPage() {
       setError(
         'None of these summaries registered. Adjust resonance, or regenerate for a fresh set.',
       );
-      return;
+      return null;
     }
 
     if (winners.length !== 1) {
       setError(
         'Two or more cards share the highest resonance. Change one rating so a single recognition leads, or regenerate.',
       );
-      return;
+      return null;
     }
 
-    const winner = winners[0];
+    return winners[0];
+  }
+
+  async function continueFromRound1() {
+    const winner = pickUniqueMaxWinner();
+    if (!winner || !birth?.city) return;
+
     setError('');
     setPickedRunId(winner.card.runId);
 
@@ -288,7 +317,6 @@ export default function RectificationPage() {
       fromAge: calibrations[index]?.fromAge.trim() ?? '',
     }));
 
-    const knownTime = knownCivilTime.trim();
     sessionStorage.setItem('seen.foundation.chartResult', JSON.stringify(winner.card.chart));
     sessionStorage.setItem(
       'seen.foundation.rectification',
@@ -301,125 +329,133 @@ export default function RectificationPage() {
         pickedClock: winner.card.clock,
         pickedResonancePercent: winner.resonance,
         pickedFromAge: winner.fromAge,
-        ...(knownTime
-          ? {
-              knownCivilTime: knownTime,
-              knownTimeLabel: 'known time — not rectified',
-            }
-          : {}),
+
       }),
     );
 
-    // Stub narrowing ±3 / ±2 / ±1 — no dead-end after cards render.
+    // Round-2: ±3h neighbors around Round-1 pick (metadata clock, never on face).
     const anchorClock = winner.card.clock ?? '12:00';
-    const anchorMinutes = clockToMinutes(anchorClock);
-    const stubPlan = ROUND_DELTAS_HOURS.map((hours) => {
-      const delta = hours * 60;
-      return {
-        hours,
-        neighbors: [
-          minutesToClock(anchorMinutes - delta),
-          minutesToClock(anchorMinutes),
-          minutesToClock(anchorMinutes + delta),
-        ],
-      };
-    });
+    const neighborClocks = neighborClocksForDelta(anchorClock, 3);
 
-    setNarrowingMessage(
-      `Recognition locked for Round 1. Next narrowing (±3h / ±2h / ±1h) is stubbed for this ship slice — three anonymous cards per step, clocks stay in metadata. Planned neighbor sets are ready when Round 2 wires in.`,
-    );
-    sessionStorage.setItem(
-      'seen.foundation.rectification.narrowingStub',
-      JSON.stringify({ anchorClock, stubPlan }),
-    );
-    setPhase('narrowing-stub');
-  }
+    setPhase('round2');
+    setIsLoading(true);
+    setCards([]);
+    setCalibrations([]);
+    setNarrowingMessage('');
 
-  async function lockKnownTime(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (!birth?.city || !/^\d{2}:\d{2}$/.test(knownCivilTime) || knownTimeLoading) return;
-    setKnownTimeLoading(true);
-    setError('');
     try {
-      const response = await fetch('/api/seen/chart-engine/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+      const seeds = await fetchSeedsForClocks(
+        {
           name: birth.name,
           birthDate: birth.birthDate,
           latitude: birth.city.latitude,
           longitude: birth.city.longitude,
-          birthPlaceLabel: `${birth.city.name}, ${birth.city.country}`,
+          birthPlaceLabel: placeLabelFor(birth),
           livedStack: birth.livedStack,
-          clock: knownCivilTime,
-          mode: 'single',
-        }),
-      });
-      const payload = (await response.json().catch(() => null)) as { chart?: NatalChartResult; error?: string } | null;
-      if (!response.ok || !payload?.chart) throw new Error(payload?.error || 'Known time could not be calculated.');
-      sessionStorage.setItem('seen.foundation.chartResult', JSON.stringify(payload.chart));
-      sessionStorage.setItem('seen.foundation.rectification', JSON.stringify({
-        method: 'known-time-not-rectified',
-        knownCivilTime,
-        knownTimeLabel: 'known time — not rectified',
-      }));
+        },
+        neighborClocks,
+      );
+
+      if (seeds.length < 3) {
+        throw new Error('Chart engine returned fewer than three Round-2 neighbor cards.');
+      }
+
+      setCards(seeds.slice(0, 3));
+      setCalibrations(emptyCalibrations(3));
       setPickedRunId(null);
-      setNarrowingMessage('Known time held. This foundation was calculated directly and was not rectified through the cards.');
-      setPhase('narrowing-stub');
-    } catch (caught) {
-      setError(caught instanceof Error ? caught.message : 'Known time could not be calculated.');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Could not build Round-2 recognition cards.');
+      setCards([]);
+      setCalibrations([]);
     } finally {
-      setKnownTimeLoading(false);
+      setIsLoading(false);
     }
   }
+
+  function continueFromRound2() {
+    const winner = pickUniqueMaxWinner();
+    if (!winner) return;
+
+    setError('');
+    setPickedRunId(winner.card.runId);
+
+    const clocksMeta = cards.map((card, index) => ({
+      runId: card.runId,
+      clock: card.clock,
+      resonancePercent: calibrations[index]?.resonancePercent ?? null,
+      fromAge: calibrations[index]?.fromAge.trim() ?? '',
+    }));
+
+    sessionStorage.setItem('seen.foundation.chartResult', JSON.stringify(winner.card.chart));
+    sessionStorage.setItem(
+      'seen.foundation.rectification',
+      JSON.stringify({
+        round: 2,
+        method: 'engine-dark-windows-pressure-prose',
+        pickedRunId: winner.card.runId,
+        clocksMeta,
+        pickedClock: winner.card.clock,
+        pickedResonancePercent: winner.resonance,
+        pickedFromAge: winner.fromAge,
+
+      }),
+    );
+
+    // Stub ±2h / ±1h after Round-2 pick — Round 3/4 not wired yet.
+    const anchorClock = winner.card.clock ?? '12:00';
+    const stubPlan = POST_ROUND2_STUB_HOURS.map((hours) => ({
+      hours,
+      neighbors: neighborClocksForDelta(anchorClock, hours),
+    }));
+
+    setNarrowingMessage(
+      'Recognition locked for Round 2 (±3h neighbors). Next narrowing (±2h / ±1h) is stubbed for this ship slice — three anonymous cards per step when wired, clocks stay in metadata.',
+    );
+    sessionStorage.setItem(
+      'seen.foundation.rectification.narrowingStub',
+      JSON.stringify({ anchorClock, stubPlan, afterRound: 2 }),
+    );
+    setPhase('narrowing-stub');
+  }
+
+  function backToRound1() {
+    setPhase('round1');
+    setRegenerateToken((v) => v + 1);
+  }
+
+  const showingCards =
+    !isLoading && (phase === 'round1' || phase === 'round2') && cards.length > 0;
 
   return (
     <main className="seenFlowPage">
       <section className="seenFlowShell" aria-labelledby="rectification-title">
         <div className="seenProgress" aria-label="Foundation progress">
           <span className="seenProgressLabel">Foundation</span>
-          <span className="seenProgressValue">03</span>
+          <span className="seenProgressValue">04</span>
         </div>
 
         <header className="seenFlowHeader">
           <h1 id="rectification-title" className="seenDisplayLarge">
-            Recognition
+            Resonance
           </h1>
 
           <p className="seenFlowIntroduction">
             Three anonymous pressure summaries. Say how much of each you can see
-            yourself in, and from what age it started to feel true. No clock on
-            the card.
+            yourself in, and from what age it started to feel true. The calculation
+            stays backstage; the cards stay anonymous.
           </p>
 
           <div className="seenDivider" aria-hidden="true" />
         </header>
 
-        {phase === 'round1' && (
-          <form className="seenPanel" style={{ marginBottom: '1.25rem' }} onSubmit={lockKnownTime}>
-            <label>
-              <span className="seenLabel">known time — not rectified</span>
-              <input
-                className="seenForgeInput"
-                type="time"
-                value={knownCivilTime}
-                onChange={(event) => setKnownCivilTime(event.target.value)}
-                style={{ display: 'block', width: '100%', marginTop: '0.5rem' }}
-              />
-            </label>
-            <p className="seenFieldSupport" style={{ marginTop: '0.5rem' }}>
-              Optional. Calculates one civil clock directly — known time — not rectified.
-            </p>
-            <button className="seenButtonSecondary" type="submit" disabled={!knownCivilTime || knownTimeLoading} style={{ marginTop: '0.75rem' }}>
-              {knownTimeLoading ? 'Calculating…' : 'Use known time'}
-              <span aria-hidden="true">→</span>
-            </button>
-          </form>
-        )}
 
         {isLoading && (
           <section className="seenPanel">
-            <p className="seenFieldSupport">Building pressure cards from the sky…</p>
+            <p className="seenFieldSupport">
+              {phase === 'round2'
+                ? 'Narrowing — building three neighbor pressure cards…'
+                : 'Building pressure cards from the sky…'}
+            </p>
           </section>
         )}
 
@@ -438,10 +474,20 @@ export default function RectificationPage() {
                 Regenerate cards
               </button>
             )}
+            {phase === 'round2' && (
+              <button
+                type="button"
+                className="seenButtonPrimary"
+                style={{ marginTop: '1rem' }}
+                onClick={backToRound1}
+              >
+                Back to Round 1
+              </button>
+            )}
           </section>
         )}
 
-        {!isLoading && phase === 'round1' && cards.length > 0 && (
+        {showingCards && (
           <div className="seenFlowForm">
             {cards.map((card, index) => {
               const cal = calibrations[index] ?? {
@@ -510,7 +556,7 @@ export default function RectificationPage() {
               className="seenButtonPrimary"
               type="button"
               disabled={!allCalibrated}
-              onClick={continueFromRound1}
+              onClick={phase === 'round2' ? continueFromRound2 : continueFromRound1}
             >
               Continue
               <span aria-hidden="true">→</span>
@@ -523,13 +569,15 @@ export default function RectificationPage() {
             <span className="seenLabel">Foundation held</span>
             <p className="seenFlowIntroduction">{narrowingMessage}</p>
             {pickedRunId && (
-              <p className="seenFieldSupport">Pick stored. Narrowing ±3 / ±2 / ±1 comes next.</p>
+              <p className="seenFieldSupport">
+                Pick stored. Narrowing ±2h / ±1h comes next when wired.
+              </p>
             )}
             <div className="seenDivider" aria-hidden="true" />
             <button
               type="button"
               className="seenButtonPrimary"
-              onClick={() => setRegenerateToken((v) => v + 1)}
+              onClick={backToRound1}
             >
               Back to Round 1
             </button>
