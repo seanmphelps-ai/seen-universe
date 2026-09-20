@@ -1,13 +1,26 @@
 /**
  * Soft dark-card seeds when LLM scenarios are unavailable.
  * Uses the real chart engine (Swiss + GeoPresence + wounds + 64 portals).
+ * Face output is anonymous pressure prose — clocks stay metadata only.
  */
 
+import type { NatalChartResult } from '../natalChart';
+import {
+  pressureProseFromSeed,
+  runIdForClock,
+} from '../rectification/pressureProseFromSeed';
+
 export type EngineSeedCard = {
-  clock: string;
-  geoSummary: string;
-  wounds: Array<{ label: string; sign: string; degree: number; qualities: string[] }>;
-  topPortals: Array<{ portalId: number; name: string; expression: string }>;
+  runId: string;
+  chart: NatalChartResult;
+  /** Metadata only — never render on card faces. */
+  clock?: string;
+  /** Anonymous pressure paragraph for the card face. */
+  paragraph: string;
+  /** Raw cues retained for session/debug; not for face UI. */
+  geoSummary?: string;
+  wounds?: Array<{ label: string; sign: string; degree: number; qualities: string[] }>;
+  topPortals?: Array<{ portalId: number; name: string; expression: string }>;
 };
 
 export async function fetchDarkWindowSeeds(input: {
@@ -18,7 +31,7 @@ export async function fetchDarkWindowSeeds(input: {
   birthPlaceLabel: string;
   livedStack?: string;
 }): Promise<EngineSeedCard[]> {
-  const response = await fetch('/api/seen/chart-engine', {
+  const response = await fetch('/api/seen/chart-engine/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ ...input, mode: 'dark-windows' }),
@@ -31,6 +44,7 @@ export async function fetchDarkWindowSeeds(input: {
 
   const payload = (await response.json()) as {
     results: Array<{
+      chart: NatalChartResult;
       darkCardSeed: {
         clock: string;
         geoSummary: string;
@@ -38,6 +52,7 @@ export async function fetchDarkWindowSeeds(input: {
           label: string;
           sign: string;
           degree: number;
+          house?: number | null;
           qualities: string[];
         }>;
         topPortals: Array<{ portalId: number; name: string; expression: string }>;
@@ -45,15 +60,37 @@ export async function fetchDarkWindowSeeds(input: {
     }>;
   };
 
-  return payload.results.map((result) => ({
-    clock: result.darkCardSeed.clock,
-    geoSummary: result.darkCardSeed.geoSummary,
-    wounds: result.darkCardSeed.woundMarkers.map((w) => ({
+  return payload.results.map((result, index) => {
+    const seed = result.darkCardSeed;
+    const clock = seed.clock;
+    const wounds = seed.woundMarkers.map((w) => ({
       label: w.label,
       sign: w.sign,
       degree: w.degree,
+      house: w.house ?? null,
       qualities: w.qualities,
-    })),
-    topPortals: result.darkCardSeed.topPortals,
-  }));
+    }));
+    const topPortals = seed.topPortals;
+    const paragraph = pressureProseFromSeed({
+      clock,
+      geoSummary: seed.geoSummary,
+      wounds,
+      topPortals,
+    });
+
+    return {
+      runId: runIdForClock(clock, index),
+      chart: result.chart,
+      clock,
+      paragraph,
+      geoSummary: seed.geoSummary,
+      wounds: wounds.map(({ label, sign, degree, qualities }) => ({
+        label,
+        sign,
+        degree,
+        qualities,
+      })),
+      topPortals,
+    };
+  });
 }

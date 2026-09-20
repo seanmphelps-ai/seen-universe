@@ -61,7 +61,7 @@ export function LocationAutocompleteInput({
     debounceRef.current = setTimeout(async () => {
       try {
         const response = await fetch(
-          `/api/location/suggest?q=${encodeURIComponent(query)}`,
+          `/api/location/suggest/?q=${encodeURIComponent(query)}`,
         );
         if (!response.ok) return;
         const data: { suggestions: CitySuggestion[] } = await response.json();
