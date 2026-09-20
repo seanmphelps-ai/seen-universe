@@ -1,31 +1,23 @@
 # Research upload inventory
 
-This inventory records research/schema/documentation copied from the box to `docs/research/` on branch `closure-and-composure`. These are research artifacts only; no production code or product features were added.
+This inventory records research/schema/documentation from the box for branch `closure-and-composure`. These are research artifacts only; no production code or product features were added.
 
-## Pushed
+## Pushed in this upload
 
-- **142 source documents** were selected from the requested packs.
-- Hellenistic: `CANON/`, `LOTS/`, `AUDIT/`, `SOURCE_LOCK/`, and `CORRECTION_LEDGER/` copied under `docs/research/hellenistic/`.
-- Western, Vedic, BaZi, Dreamspell, and Portals `SOURCE_LOCK/` packs copied under their matching modality paths.
-- Ship `DARK_CARDS_*.md` copied under `docs/research/ship/`.
-- Shared `SEEN_SOURCE_LOCK/` copied under `docs/research/source-lock/` when present.
-- Existing `docs/hellenistic/` build-law documents are outside this upload and were left untouched.
+- **29 source documents** from the requested packs, plus this inventory.
+- Hellenistic source-lock core: `00_README`, `03_CALCULATION_AUTHORITY`, `05_DISAGREEMENT_REGISTER`, `06_UNRESOLVED_REGISTER`, `PHASE1_SOURCE_SHELF`, and the Tarzana validation case.
+- Hellenistic canon drafts: `00_INDEX`, `03_INPUT_REQUIREMENTS`, `04_ASTRONOMICAL_CALC_REQUIREMENTS`, `05_CHART_FRAMEWORK`, `06_SECT`, `07_PLANETARY_CONDITION`, and `08_CONFIGURATIONS`.
+- Hellenistic correction ledger `CL-001` through `CL-013`.
+- Ship `DARK_CARDS_1979-08-01_TARZANA.md`.
+- Shared `SEEN_SOURCE_LOCK/` prompt and Phase-1 shelf summary.
 
-## Still only paper / not production code
+## Still only paper on the box (not pushed)
 
-- All files in this research upload remain research, schema, audit, source-lock, correction-ledger, or dark-card documentation. They are not wired into the application and do not claim product behavior.
-- The Hellenistic `LOTS/` material is existing paper; no new Lots research was run.
+- The remaining **113** selected source documents remain only on paper/box at this point: Hellenistic `CANON` manifests/seeds, all Hellenistic `LOTS/`, Hellenistic `AUDIT/`, Hellenistic source-lock manifests/mechanics, and all Western, Vedic, BaZi, Dreamspell, and Portals `SOURCE_LOCK/` packs.
+- These artifacts are not production code and are not wired into the application. The Hellenistic `LOTS/` material is existing paper; no new Lots research was run.
+
+## Source selection and exclusions
+
+- Selected source packs contained 142 text/schema documents: Hellenistic 94; Western 8; Vedic 8; BaZi 8; Dreamspell 13; Portals 8; ship dark cards 1; shared source-lock 2.
+- Existing `docs/hellenistic/` build-law documents were left untouched.
 - No binaries, archives, screenshots, PDFs, `tmp/` content, or other non-document artifacts were copied.
-
-## Source file counts
-
-- Hellenistic selected packs: 94 files
-- Western SOURCE_LOCK: 8 files
-- Vedic SOURCE_LOCK: 8 files
-- BaZi SOURCE_LOCK: 8 files
-- Dreamspell SOURCE_LOCK: 13 files
-- Portals SOURCE_LOCK: 8 files
-- Ship dark cards: 1 file
-- Shared SEEN_SOURCE_LOCK: 2 files
-
-The complete per-file manifest is represented by the paths in the committed research tree.
