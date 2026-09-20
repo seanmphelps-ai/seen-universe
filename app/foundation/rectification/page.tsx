@@ -4,6 +4,10 @@ import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import type { NatalChartInput, NatalChartResult } from '../../../lib/natalChart';
 import type { RectificationScenarioResponse } from '../../../lib/rectification/schema';
+import {
+  fetchDarkWindowSeeds,
+  type EngineSeedCard,
+} from '../../../lib/seen/darkCardSeeds';
 
 type StoredBirth = {
   name: string;
@@ -49,6 +53,11 @@ function ratingKey(scenarioIndex: number, candidateIndex: number) {
   return `${scenarioIndex}:${candidateIndex}`;
 }
 
+function clockToMinutes(clock: string) {
+  const [h, m] = clock.split(':').map(Number);
+  return h * 60 + m;
+}
+
 export default function RectificationPage() {
   const router = useRouter();
   const [birth, setBirth] = useState<StoredBirth | null>(null);
@@ -56,6 +65,9 @@ export default function RectificationPage() {
   const [anchor, setAnchor] = useState<number | null>(null);
   const [candidates, setCandidates] = useState<Candidate[]>([]);
   const [scenarios, setScenarios] = useState<RectificationScenarioResponse['scenarios']>([]);
+  const [seedCards, setSeedCards] = useState<EngineSeedCard[]>([]);
+  const [seedMode, setSeedMode] = useState(false);
+  const [selectedSeedClock, setSelectedSeedClock] = useState<string | null>(null);
   const [ratings, setRatings] = useState<Ratings>({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
@@ -89,6 +101,9 @@ export default function RectificationPage() {
       setError('');
       setRatings({});
       setScenarios([]);
+      setSeedCards([]);
+      setSeedMode(false);
+      setSelectedSeedClock(null);
 
       try {
         const chartCandidates = await Promise.all(
@@ -119,6 +134,9 @@ export default function RectificationPage() {
           }),
         );
 
+        if (cancelled) return;
+        setCandidates(chartCandidates);
+
         const scenarioResponse = await fetch('/api/rectification/scenarios', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -133,22 +151,38 @@ export default function RectificationPage() {
           }),
         });
 
-        if (!scenarioResponse.ok) {
-          const body = await scenarioResponse.json().catch(() => null);
-          throw new Error(body?.error || 'Could not generate the behavioral scenarios.');
+        if (scenarioResponse.ok) {
+          const generated = (await scenarioResponse.json()) as RectificationScenarioResponse;
+          if (!cancelled) {
+            setScenarios(generated.scenarios);
+            setSeedMode(false);
+          }
+          return;
         }
 
-        const generated = (await scenarioResponse.json()) as RectificationScenarioResponse;
+        // LLM scenarios unavailable — fall back to real engine dark-card seeds
+        const seeds = await fetchDarkWindowSeeds({
+          name,
+          birthDate,
+          latitude: city.latitude,
+          longitude: city.longitude,
+          birthPlaceLabel: `${city.name}, ${city.country}`,
+          livedStack,
+        });
 
         if (!cancelled) {
-          setCandidates(chartCandidates);
-          setScenarios(generated.scenarios);
+          setSeedCards(seeds);
+          setSeedMode(true);
+          setError(
+            'Pressure prose needs AI Gateway. Showing real dark-card seeds from Swiss + GeoPresence + wounds + 64 portals instead.',
+          );
         }
       } catch (err) {
         if (!cancelled) {
           setError(err instanceof Error ? err.message : 'Could not build this round.');
           setCandidates([]);
           setScenarios([]);
+          setSeedCards([]);
         }
       } finally {
         if (!cancelled) setIsLoading(false);
@@ -170,6 +204,31 @@ export default function RectificationPage() {
       ...current,
       [ratingKey(scenarioIndex, candidateIndex)]: value,
     }));
+  }
+
+  function lockChart(winner: Candidate, method: string) {
+    sessionStorage.setItem(
+      'seen.foundation.rectification',
+      JSON.stringify({
+        resolvedBirthTime: toBirthTime(winner.minutes),
+        roundsCompleted: round + 1,
+        method,
+        ratings: history,
+      }),
+    );
+    sessionStorage.setItem('seen.foundation.chartResult', JSON.stringify(winner.chart));
+    router.push('/chart?source=rectification');
+  }
+
+  function lockFromSeed() {
+    if (!selectedSeedClock || candidates.length === 0) return;
+    const minutesWanted = clockToMinutes(selectedSeedClock);
+    const winner =
+      candidates.find((c) => c.minutes === minutesWanted) ||
+      candidates.reduce((best, c) =>
+        Math.abs(c.minutes - minutesWanted) < Math.abs(best.minutes - minutesWanted) ? c : best,
+      );
+    lockChart(winner, 'engine-dark-card-seed');
   }
 
   function continueRound() {
@@ -201,17 +260,7 @@ export default function RectificationPage() {
     setHistory(nextHistory);
 
     if (round >= 3) {
-      sessionStorage.setItem(
-        'seen.foundation.rectification',
-        JSON.stringify({
-          resolvedBirthTime: toBirthTime(winner.minutes),
-          roundsCompleted: round + 1,
-          method: 'llm-behavioral-scenario-ratings',
-          ratings: nextHistory,
-        }),
-      );
-      sessionStorage.setItem('seen.foundation.chartResult', JSON.stringify(winner.chart));
-      router.push('/chart?source=rectification');
+      lockChart(winner, 'llm-behavioral-scenario-ratings');
       return;
     }
 
@@ -252,7 +301,55 @@ export default function RectificationPage() {
           </section>
         )}
 
-        {!isLoading && scenarios.length > 0 && (
+        {!isLoading && seedMode && seedCards.length > 0 && (
+          <div className="seenFlowForm">
+            {seedCards.map((card) => (
+              <section className="seenPanel" key={card.clock}>
+                <span className="seenLabel">Dark window {card.clock}</span>
+                <p className="seenFlowIntroduction">{card.geoSummary}</p>
+                <div className="seenDivider" aria-hidden="true" />
+                <p className="seenFieldSupport">
+                  Wounds:{' '}
+                  {card.wounds
+                    .filter((w) => w.sign !== 'UNKNOWN')
+                    .slice(0, 6)
+                    .map((w) => `${w.label} ${w.sign} ${w.degree}°`)
+                    .join(' · ')}
+                </p>
+                <p className="seenFieldSupport">
+                  Pressurized portals:{' '}
+                  {card.topPortals
+                    .slice(0, 5)
+                    .map((p) => `${p.portalId} ${p.name}`)
+                    .join(' · ')}
+                </p>
+                <button
+                  type="button"
+                  className={
+                    selectedSeedClock === card.clock ? 'seenButtonPrimary' : 'seenPanel'
+                  }
+                  style={{ cursor: 'pointer', marginTop: '1rem', padding: '0.75rem' }}
+                  onClick={() => setSelectedSeedClock(card.clock)}
+                  aria-pressed={selectedSeedClock === card.clock}
+                >
+                  This window fits
+                </button>
+              </section>
+            ))}
+
+            <button
+              className="seenButtonPrimary"
+              type="button"
+              disabled={!selectedSeedClock}
+              onClick={lockFromSeed}
+            >
+              Lock chart from this window
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        )}
+
+        {!isLoading && !seedMode && scenarios.length > 0 && (
           <div className="seenFlowForm">
             {scenarios.map((scenario, scenarioIndex) => (
               <section className="seenPanel" key={`${round}-${scenarioIndex}`}>
