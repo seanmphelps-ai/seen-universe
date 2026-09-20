@@ -1,19 +1,27 @@
 # SEEN_FRAMEWORK
 
-## Part 1 of 2 — LOCKED PRINCIPLES
+## LOCKED
 
-Store verbatim:
-
-- 64 portals, not 108; modalities never declare a Portal off
-- No exact birth time; initial dark cards at 04:00 / 12:00 / 20:00
-- Time-narrowing: 4AM/noon/8PM → 3hrs above/below user pick → 2hrs → 1hr, narrowing until chart stops lying
-- Location = light/heat exposure, poverty, violence, the land — not just lat/long. Phrase: "Take the stars and shove them in the dirt"
-- Wound markers: any destabilizing/severing/compulsive factor qualifies; baseline pressure amplifies OR mutes/delays/distorts/reroutes
-- Oracle deepen: nesting questions, darkness first, inversion/Cadence only after. Cadence = emotional Apple Health
+- 64 portals not 108, modalities never declare a Portal off
+- No exact birth time; dark cards at 04:00/12:00/20:00
+- Time-narrowing: 4AM/noon/8PM then 3hrs then 2hrs then 1hr above/below until chart stops lying
+- Location = light/heat/poverty/violence/land not lat/long. Phrase: "Take the stars and shove them in the dirt."
+- Wound markers: destabilizing/severing/compulsive factors qualify; baseline pressure amplifies OR mutes/delays/distorts/reroutes
+- Oracle: nesting questions, darkness first, Cadence only after, Cadence = emotional Apple Health
 - Sequence: SEEN → Composure → Cadence
-- Mirrored & Seen: cross-system family tree OK; delivery logic sealed; orientation written last shown first; never decide capacity — offer deepen choices; Jung inversion = trust→capacity beat
-- Human Design = starting point, gates become portals (transcend not replace); I Ching spine kept
-- No-masks product layer: see each other's charts/struggles/healing before first date. Phrase: "Swipe right on someone's self-realization, not their face"
-- App name: Scene (ties to SEEN, screen, no masks)
+- Mirrored & Seen: cross-system tree OK, delivery logic sealed, orientation written last shown first, offer deepen choices not decisions, Jung inversion = trust→capacity
+- Human Design = starting point, gates become portals. I Ching spine kept
+- No-masks dating layer: see charts/struggles/healing pre-date. Phrase: "Swipe right on someone's self-realization, not their face."
+- App name: Scene
 - Phrase: "Seen. You. Them. Us."
-- Agent architecture: dedicated agents per concern (time-narrowing agent, location agent, etc.)
+- Dedicated agents per concern: time-narrowing, location, etc.
+
+## BIRTH-IMPRINT / FIRST SABOTAGE LOOP
+
+- Prolonged pressure, cling, then forced exit
+- "The certificate clock can lie."
+- "The imprint makes it earlier when labor peaked."
+- Forceps/extraction trauma → chron wound: identity, rejection, Lilith, rage at forced emergence, Typhon
+- Baby resisted → chart reflects pre-emergence tension
+- Ascendant/houses are the knife; cusp flips in 25-45 min
+- Prolonged labors favor earlier time frame
