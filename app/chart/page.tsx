@@ -78,9 +78,10 @@ export default function NatalChartPage() {
           </h1>
 
           <p className="seenFlowIntroduction">
-            Date and birth city start two hidden Western runs at 6 AM and 6 PM.
-            Add lived places with years. Those years write the card. They do not
-            move the planets. Time is found by the pressure cards. Do not type a clock.
+            Date and birth city start three hidden Western runs at 04:00, 12:00,
+            and 20:00. Add lived places with years. Those years write the card.
+            They do not move the planets. Time is found by the pressure cards.
+            Do not type a clock.
           </p>
 
           <div className="seenDivider" aria-hidden="true" />
@@ -168,7 +169,7 @@ export default function NatalChartPage() {
             </div>
             <p className="seenFieldSupport">
               Six months counts. Years required. This writes the card sentence.
-              It does not rewrite the sky.
+              It does not rewrite the sky. Stars get shoved in the dirt.
             </p>
           </div>
 
