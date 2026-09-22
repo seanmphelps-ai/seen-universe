@@ -131,3 +131,4 @@ For SEEN work:
 3. Load only matching examples from `docs/examples/`.
 4. Do not load every module unless the task genuinely spans them.
 5. Put recovered material in `docs/incoming/` before canonizing it.
+6. When multiple recovered or candidate sources must be reconciled, run `docs/00_SOURCE_CONVERGENCE_SEQUENCE_GATE.md` and update `docs/source-analysis/SOURCE_SEQUENCE_MATRIX.csv` before canonization or implementation.
