@@ -470,7 +470,10 @@ Build this first as one working vertical slice:
 - [ ] Add recovered Eden documents
 - [ ] Add recovered copy and splash research
 - [ ] Compare each recovered source with current canon
-- [ ] Record additions, reinforcements, and contradictions
+- [ ] Run `docs/00_SOURCE_CONVERGENCE_SEQUENCE_GATE.md` for multi-source recovery passes
+- [ ] Add every recovered source to `docs/source-analysis/SOURCE_SEQUENCE_MATRIX.csv`
+- [ ] Record additions, reinforcements, contradictions, dependencies, and final disposition
+- [ ] Add complete handoff examples for every accepted multi-stage path
 - [ ] Update this checklist after every accepted decision
 
 ## DECISIONS TO LOCK
