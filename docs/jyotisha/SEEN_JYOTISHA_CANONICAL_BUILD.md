@@ -136,3 +136,109 @@ Maintain `SOURCE_LOCK`, `CANON`, `CORRECTION_LEDGER`, `OPEN_QUESTIONS`, `VALIDAT
 ## Concrete stop and handoff
 
 The local `01_SOURCE_LOCK_CANDIDATES.md` is a starting register; Grok Bot's existing Vedic shelf is external and its contents have not been imported or independently checked here. Inspect it before assigning new research. Screenshot indicates BPHS (Santhanam), *Light on Life*, *Phaladīpikā*, and a calendar committee/IMD standard; confirm actual edition, passage coverage and roles. *Light on Life* is modern interpretation, not an ancient primary text. “Default Lahiri” requires exact definition, engine mode/version and numeric value; source identity alone does not decide it. Dispatch Job 01 to A; send same bounded scope and raw source candidates to B without A's conclusions; reconcile and version. Production Jyotiṣa output requires corresponding source, calculation and testimony artifacts to clear audit.
+
+
+---
+
+## Production Jyotiṣa reading execution and delivery contract
+
+Research completion is not module completion. The Jyotiṣa module is complete only when verified school-specific canon can execute real birth data through a delivered Jyotiṣa reading.
+
+After the relevant Jobs 01–09 clear audit, execute:
+
+```text
+BIRTH INTAKE
+→ INPUT VALIDATION
+→ ASTRONOMICAL SUBSTRATE
+→ SCHOOL-SPECIFIC CHART COMPUTATION
+→ NAKṢATRA/PĀDA STATE
+→ APPLICABLE DAŚĀ STATE
+→ VERIFIED CHART RULE PACKETS
+→ ATOMIC TESTIMONIES
+→ WITHIN-SCHOOL SYNTHESIS
+→ JYOTIṢA READING
+→ DELIVERY
+```
+
+### Mandatory reading execution
+
+For the selected audited school/source packet, run every production-eligible verified mechanic whose required inputs and applicability conditions are satisfied. Do not stop after proving that a registry or formula exists.
+
+The reading must actually compute and use, when verified and applicable:
+- the native's nakṣatra by name (for example Aśleṣā when the verified calculation places the Moon there), its pāda, source-specific ruler/deity/symbol or other attributes only where admitted by the locked source;
+- the applicable daśā family, current mahādaśā/antardaśā/pratyantardaśā or other source-attested levels, birth balance, transitions, and timing where the chosen school supports them;
+- graha and rāśi states;
+- lagna and bhāva states when birth-time certainty permits;
+- source-attested vargas;
+- dṛṣṭi;
+- yogas;
+- planetary strength/condition;
+- kārakas;
+- topical procedures;
+- timing/predictive procedures;
+- every additional verified mechanic discovered for that school/source packet.
+
+This list is a minimum execution expectation, not a boundary. The locked technique inventory determines the complete runnable set.
+
+Never merge Parāśarī, Varāhamihira, Jaimini, Tājika, or other traditions into a generic “Vedic reading.” Execute and synthesize within the selected audited school packet. Cross-school comparison, if requested, remains explicitly separated by school and provenance.
+
+A mechanic that lacks sufficient input, has unresolved blocking conflict, or remains research-only is NOT_RUN with an explicit reason. Never replace it with model memory or a modern default.
+
+### Production reading intake
+
+Use the Native intake contract above. A reading request must resolve the required birth inputs, source-lock version, school packet, astronomical conventions, ayanāṃśa implementation/version/value, node policy, nakṣatra scheme, daśā family applicability, year-length policy, and rule packet IDs before dependent calculations run.
+
+Unknown birth time propagates uncertainty. Do not fabricate exact lagna, bhāva, time-sensitive varga, Moon boundary, or daśā start when the interval crosses a relevant boundary.
+
+### Production reading output
+
+The delivered reading must contain:
+1. reproducible computed chart state and convention/version references;
+2. named nakṣatra and pāda result when determinable;
+3. applicable daśā timeline/state when determinable and source-authorized;
+4. all applicable verified chart-rule results for the selected school;
+5. atomic testimonies linked to calculation trace and primary-source rule;
+6. school-specific synthesis that preserves contradictions and conditional rules;
+7. timing/predictive findings when requested and verified;
+8. explicit uncertainty and NOT_RUN mechanics;
+9. a final human-readable Jyotiṣa reading generated from the verified testimony set.
+
+The user-facing reading is not a research dump. The Generator converts verified atomic testimonies into coherent prose without adding unsupported astrology. Machine-readable provenance remains attached behind each claim.
+
+### Handoff and delivery protocol
+
+```text
+SOURCE_LOCK
+→ VERIFIED SCHOOL CANON
+→ PRODUCTION SCHEMA
+→ BIRTH INTAKE
+→ CALCULATION RUNNER
+→ NAKṢATRA/DAŚĀ + CHART RULE EXECUTION
+→ TESTIMONY GENERATOR
+→ WITHIN-SCHOOL SYNTHESIS
+→ READING RENDERER
+→ DELIVERY
+```
+
+Every handoff carries: module version; source-lock version; school ID; input fingerprint; convention/version IDs; calculation trace IDs; rule/testimony IDs; uncertainty state; audit status; and NOT_RUN reasons.
+
+The sequence does not stop at a validated research artifact. Once an artifact clears its gate, dispatch the next required job automatically. Once all dependencies for a production reading are locked, dispatch the end-to-end reading fixture and delivery test.
+
+### End-to-end completion gate
+
+Jyotiṣa is not DONE because nakṣatra, daśā, schema, or validators exist.
+
+DONE requires at least one independently reproducible fixture:
+
+```text
+KNOWN BIRTH INPUT
+→ VERIFIED ASTRONOMICAL STATE
+→ NAMED NAKṢATRA/PĀDA
+→ APPLICABLE DAŚĀ STATE
+→ VERIFIED SCHOOL-SPECIFIC CHART MECHANICS
+→ ATOMIC TESTIMONIES
+→ SYNTHESIZED JYOTIṢA READING
+→ RENDERED DELIVERY
+```
+
+Agent B independently reproduces the calculation and audits the final rendered reading claim-by-claim against the locked source packet. Any unsupported, omitted applicable, miscalculated, cross-school, or untraceable claim blocks delivery and returns to correction/regression/version/lock.
