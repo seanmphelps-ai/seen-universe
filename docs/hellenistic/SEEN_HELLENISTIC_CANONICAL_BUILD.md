@@ -373,3 +373,83 @@ Completeness is discovered, not presumed.
 The purpose of this process is not to make the proposed SEEN architecture appear correct.
 
 The purpose is to determine, preserve, calculate, and expose the most historically defensible Hellenistic system possible, with sufficient provenance and independent verification that SEEN can safely build upon it.
+
+
+---
+
+# PRODUCTION READING EXECUTION AND DELIVERY CONTRACT
+
+Research completion is not module completion. The Hellenistic module is complete only when verified canon can execute a real chart from intake through a delivered Hellenistic reading.
+
+After Jobs 01–16 clear their required audit gates, execute the production reading pipeline:
+
+```text
+BIRTH INTAKE
+→ INPUT VALIDATION
+→ ASTRONOMICAL CHART CALCULATION
+→ VERIFIED HELLENISTIC DERIVED MECHANICS
+→ SOURCE-SPECIFIC DELINEATION
+→ ATOMIC TESTIMONIES
+→ WITHIN-TRADITION SYNTHESIS
+→ HELLENISTIC READING
+→ DELIVERY
+```
+
+## Reading intake
+
+The production runner must accept, at minimum: birth date and calendar; birth place and coordinate precision; local birth time, certainty, and source; historical time-zone conversion and uncertainty; ephemeris/version/calculation policy; and the locked Hellenistic tradition/source packet to execute.
+
+Unknown or uncertain birth time must propagate uncertainty. Never manufacture an exact Ascendant, houses/places, Lots, sect status, time-lord start, or other time-sensitive result when the input does not support it.
+
+## Mandatory execution
+
+For a reading, run every production-eligible verified mechanic whose required inputs and source/tradition conditions are satisfied. Do not cherry-pick only familiar techniques. This includes, when verified and applicable: chart framework; sect; planetary condition; configurations; receptions; bonification/maltreatment; Lots; topical procedures; time-lord/predictive procedures; advanced/source-specific techniques; and any additional mechanics discovered and locked by the canon.
+
+A mechanic with insufficient input, unresolved blocking conflict, or research-only status must not be silently substituted. Record it as NOT_RUN with the reason.
+
+## Reading output
+
+The delivered Hellenistic reading must contain:
+1. calculation/result trace sufficient to reproduce the chart state;
+2. the applicable verified Hellenistic findings;
+3. atomic testimonies with source/rule provenance;
+4. source/tradition-specific interpretation;
+5. synthesis of compatible testimonies without erasing conflicts;
+6. temporal/predictive findings when requested and verified;
+7. explicit uncertainty and NOT_RUN mechanics;
+8. a final human-readable Hellenistic reading generated from the verified testimony set.
+
+The user-facing reading is not a dump of research records. The Generator converts verified testimonies into coherent prose while retaining machine-readable provenance behind every claim.
+
+## Handoff and delivery gate
+
+```text
+VERIFIED CANON
+→ PRODUCTION SCHEMA
+→ CALCULATION RUNNER
+→ TESTIMONY GENERATOR
+→ SYNTHESIS
+→ READING RENDERER
+→ DELIVERY
+```
+
+Each handoff passes versioned artifact IDs, input fingerprint, source-lock version, calculation trace references, testimony IDs, uncertainty state, and validation status.
+
+No reading may claim VERIFIED provenance unless its complete upstream chain passes validation. Research-only mechanics remain excluded from production.
+
+## Completion test
+
+The Hellenistic module is not DONE merely because the corpus, schema, or validators exist.
+
+DONE requires at least one end-to-end regression fixture demonstrating:
+
+```text
+KNOWN BIRTH INPUT
+→ REPRODUCIBLE CALCULATIONS
+→ VERIFIED MECHANICS
+→ VERIFIED TESTIMONIES
+→ SYNTHESIZED READING
+→ RENDERED DELIVERY
+```
+
+Agent B independently reproduces the fixture and confirms the delivered reading contains no unsupported production claims. Failure returns to the responsible artifact; correction, regression, version, and lock repeat before delivery.
