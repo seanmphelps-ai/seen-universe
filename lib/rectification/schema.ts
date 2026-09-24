@@ -3,7 +3,8 @@ import { z } from 'zod';
 export const HiddenClockSchema = z.enum(['04:00', '12:00', '20:00']);
 
 export const WoundMarkerSchema = z.object({
-  id: z.enum(['chiron', 'trueLilith', 'ashlesha', 'neptune', 'mars', 'venus']),
+  id: z.string().min(1),
+  sourceSystemId: z.string().min(1),
   sign: z.string().min(1),
   degree: z.number(),
   house: z.number().int().min(1).max(12).nullable(),
