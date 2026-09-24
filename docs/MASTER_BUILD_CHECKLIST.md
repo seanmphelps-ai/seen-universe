@@ -175,7 +175,7 @@ Build this first as one working vertical slice:
 - [ ] Add and verify nakshatras and dashas
 - [?] Lock whether numerology remains in the first product pass
 - [ ] Verify Galaxy Signature / Dreamspell calculation protocol
-- [ ] Preserve Human Design and I Ching-derived mechanics as source layers
+- [ ] Preserve the 64 SEEN Portals as their own layer, using canonical hexagram names without Human Design or independent I Ching calculations
 - [ ] Implement time-certainty states
 - [ ] Generate rectification candidates after date and location calculations
 - [ ] Present three recognition cards per round
