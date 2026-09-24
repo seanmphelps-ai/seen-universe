@@ -30,7 +30,7 @@ First deliver one separate, whole native reading each for Western, Hellenistic, 
 6. Production docs currently exclude independent I Ching and Human Design (`docs/64_PORTALS.md`, `docs/00_FULL_SYSTEM_MAP.md`), whereas historical docs include them. Current instruction is to inspect their actual contribution before changing active status. Do not silently resolve that decision by editing canon.
 7. `docs/00_FULL_SYSTEM_MAP.md` and the source shelf describe multiple modalities, but `docs/MASTER_BUILD_CHECKLIST.md` still treats numerology as undecided. The current instruction includes numerology.
 8. Introductory time-window and intake documents differ. Lock a single shared birth anchor, time-certainty policy and location timeline before all eight agents run; a model must not infer missing times or casting inputs.
-9. `lib/rectification/schema.ts` accepts one singular `wound` in `DarkCardSchema`, and `lib/rectification/darkChartGenerator.ts` asks for a singular surface wound. Meanwhile `lib/seen/darkCardSeeds.ts` retains a wound array. The later dark-chart contract must represent every audited wound and trace each back to its native source finding.
+9. Production `lib/rectification/schema.ts` accepted one singular `wound` in `DarkCardSchema`, and `lib/rectification/darkChartGenerator.ts` asked for a singular surface wound. This review branch replaces those with source-identified wound records. Complete native readers and per-finding auditor coverage are still required before the runtime can attest that none were omitted.
 
 ## Full-pipeline acceptance gate
 
