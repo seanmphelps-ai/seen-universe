@@ -39,9 +39,13 @@ export const DarkCardSchema = z.object({
   costToOthers: z.string().min(1),
   whatIsLost: z.string().min(1),
   attachment: AttachmentOnCardSchema,
-  wound: z.string().min(1),
-  injury: z.string().min(1),
-  darknessUnderneath: z.string().min(1),
+  wounds: z.array(z.object({
+    sourceSystemId: z.string().min(1),
+    sourceFindingId: z.string().min(1),
+    wound: z.string().min(1),
+    injury: z.string().min(1),
+    darknessUnderneath: z.string().min(1),
+  })),
   /** Ship-facing calibration — set by UI after recognition. */
   resonancePercent: z.number().int().min(0).max(100).optional(),
   /** Ship-facing calibration — age or age range text. */
