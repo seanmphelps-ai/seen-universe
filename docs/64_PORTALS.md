@@ -3,7 +3,7 @@
 Version: 1.0.0
 Status: CANONICAL — do not invent beyond this list.
 
-The 64 Portals are the I Ching hexagrams restructured as behavioral frequencies. They are always present. They are not switched on by degree. They are not gates that open. They are channels through which pressure becomes behavior.
+The 64 SEEN Portals retain the canonical I Ching hexagram names as identities, restructured as behavioral frequencies. Human Design and independent I Ching calculations are excluded from the SEEN runtime. They are always present. They are not switched on by degree. They are not gates that open. They are channels through which pressure becomes behavior.
 
 Each portal is evaluated through the same extraction arc:
 
