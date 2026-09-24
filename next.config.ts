@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next'
+import { withEve } from 'eve/next'
 
 const nextConfig: NextConfig = {
   // Was 'export' (fully static). Removed for the /chart route: real Swiss
@@ -21,4 +22,4 @@ const nextConfig: NextConfig = {
   serverExternalPackages: ['swisseph-wasm', 'all-the-cities'],
 }
 
-export default nextConfig
+export default withEve(nextConfig)
