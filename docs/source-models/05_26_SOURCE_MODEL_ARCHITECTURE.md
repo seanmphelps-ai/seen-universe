@@ -2,7 +2,7 @@
 
 ## Status
 
-Source material captured for later normalization into runtime schemas and contracts.
+SUPERSEDED HISTORICAL SOURCE. Preserve for provenance only. Its independent I Ching / Human Design and gate-synthesis instructions are retired; `docs/64_PORTALS.md` governs the active SEEN Portal model. Do not use this document as an implementation contract.
 
 ## Core Sequence
 
