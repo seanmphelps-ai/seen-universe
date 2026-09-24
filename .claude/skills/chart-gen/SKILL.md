@@ -19,7 +19,7 @@ External astrology/chart callout APIs are not part of the canonical Western calc
 - Preserve unknown-time limits: planetary positions may be calculated, while houses, Ascendant, and Midheaven remain absent until a supported birth time exists.
 - Complete the Western calculation independently before Location, environmental, portal, convergence, or narrative interpretation reads it.
 - Pass the completed `NatalChartResult` forward without changing its astronomical facts.
-- Keep Western, Hellenistic, Vedic, Lots, nakshatras/dashas, Human Design, I Ching-derived mechanics, and other approved systems independent.
+- Keep Western, Hellenistic, Vedic, Lots, nakshatras/dashas, and other approved source systems independent; route findings separately into SEEN's own 64 Portals.
 - Preserve source-system identity, calculation version, inputs, outputs, confidence, and provenance.
 
 ## Rules
