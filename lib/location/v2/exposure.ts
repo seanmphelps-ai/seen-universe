@@ -168,7 +168,7 @@ export function buildExposureProfile(
 
 /**
  * The conditioning input handed to the Western / Vedic / Hellenistic /
- * BaZi / I Ching / Human Design modules.
+ * BaZi modules and SEEN's own 64-Portal layer.
  *
  * The contract is explicit about what this is and is not: those modules
  * receive the same location vector as a conditioning input, and the
@@ -183,7 +183,7 @@ export type LocationConditioningInput = {
 
 export const CONDITIONING_DISCLOSURE =
   'This location vector is supplied to symbolic modules (Western, Vedic, Hellenistic, BaZi, ' +
-  'I Ching, Human Design) as a conditioning input only. The evidence engine is independent of ' +
+  'and the SEEN 64-Portal layer) as a conditioning input only. The evidence engine is independent of ' +
   'them and makes no claim that any symbolic system is validated by this data, nor that this ' +
   'data is validated by them.';
 
