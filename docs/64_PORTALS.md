@@ -3,7 +3,7 @@
 Version: 1.0.0
 Status: CANONICAL — do not invent beyond this list.
 
-The 64 SEEN Portals retain the canonical I Ching hexagram names as identities, restructured as behavioral frequencies. Human Design and independent I Ching are retained as separate candidate native systems for full independent implementation and audited comparison before any activation decision. Their outputs must remain separate from the 64 SEEN Portals; neither system is silently excluded or automatically admitted to convergence. They are always present. They are not switched on by degree. They are not gates that open. They are channels through which pressure becomes behavior.
+The 64 SEEN Portals are SEEN's separate archetypal interpretation layer. They retain the canonical hexagram names as identities, restructured as behavioral frequencies. Human Design and traditional I Ching are independent native systems with their own complete traditional readings and auditors, like every other modality. The 64 Portals are always present. They are not switched on by degree. They are not gates that open. They are channels through which pressure becomes behavior.
 
 Each portal is evaluated through the same extraction arc:
 
