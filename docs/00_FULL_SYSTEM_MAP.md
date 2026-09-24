@@ -106,9 +106,11 @@ Agents:
 - Numerology
 - Tzolk'in
 - Galactic signature
+- Human Design (complete traditional native reading)
+- Traditional I Ching (complete traditional native reading; request required casting inputs rather than inventing them)
 - 25 lenses (after the list exists)
 
-Not 64 agents. The 64 Portals retain their canonical hexagram names and run as SEEN's own pressure, behavioral, and environmental interpretation layer. Human Design and independent I Ching calculations are excluded.
+The 64 Portals are a separate SEEN archetypal layer, distinct from all traditional native systems. Human Design and traditional I Ching each produce a separate complete native reading and receive an independent auditor.
 
 Each agent returns `{ sectionId, finding, source, arc }` and files it. Source tag never stripped.
 
