@@ -136,7 +136,7 @@ function costCrack(archetype: PressureArchetype): { cost: string; crack: string 
   if (archetype === 'private-test') {
     return {
       cost: 'The partner is pulled into defending themselves against a case that was built in private. This person gets temporary control, but loses the simple contact they wanted.',
-      crack: 'If it runs one more cycle, they rewrite the whole relationship around one wound and call withdrawal self-protection—winning the argument alone.',
+      crack: 'If it runs one more cycle, they rewrite the whole relationship around accumulated pressure and call withdrawal self-protection—winning the argument alone.',
     };
   }
   if (archetype === 'public-worth') {

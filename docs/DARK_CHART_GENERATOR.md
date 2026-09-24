@@ -13,14 +13,14 @@ Without the key the Swiss math still runs. The paragraphs will 503. Do not fake 
 
 1. Date + birth city already computed
 2. Lived year-rows (plus-bubble page, not a textarea)
-3. Wound markers from Western + Vedic only on this slice
+3. Complete native readings, independently audited, with every source-identified wound finding retained
 4. Write `DarkCardSchema`
 5. Stop
 
 ## Card must contain
 
 Reveal → pressure → consequence → release
-Wound → injury → darkness underneath
+For each source finding: wound → injury → darkness underneath
 Attachment: how they attach, how they sabotage love, what love falls victim to, cost to the other person
 
 If attachment is empty, reject the card.

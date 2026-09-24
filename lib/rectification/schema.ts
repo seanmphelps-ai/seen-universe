@@ -3,7 +3,8 @@ import { z } from 'zod';
 export const HiddenClockSchema = z.enum(['04:00', '12:00', '20:00']);
 
 export const WoundMarkerSchema = z.object({
-  id: z.enum(['chiron', 'trueLilith', 'ashlesha', 'neptune', 'mars', 'venus']),
+  id: z.string().min(1),
+  sourceSystemId: z.string().min(1),
   sign: z.string().min(1),
   degree: z.number(),
   house: z.number().int().min(1).max(12).nullable(),
@@ -39,9 +40,13 @@ export const DarkCardSchema = z.object({
   costToOthers: z.string().min(1),
   whatIsLost: z.string().min(1),
   attachment: AttachmentOnCardSchema,
-  wound: z.string().min(1),
-  injury: z.string().min(1),
-  darknessUnderneath: z.string().min(1),
+  wounds: z.array(z.object({
+    sourceSystemId: z.string().min(1),
+    sourceFindingId: z.string().min(1),
+    wound: z.string().min(1),
+    injury: z.string().min(1),
+    darknessUnderneath: z.string().min(1),
+  })),
   /** Ship-facing calibration — set by UI after recognition. */
   resonancePercent: z.number().int().min(0).max(100).optional(),
   /** Ship-facing calibration — age or age range text. */

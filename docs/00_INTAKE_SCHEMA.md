@@ -64,7 +64,7 @@ This is data collection. No scoring. No sky calculation. No card text yet.
 - Julian Day from date + clock + birthCity timezone
 - planetary positions: Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, Chiron, true Lilith
 - houses and lots = null until time is locked; signs and aspects still valid
-- wound markers: Chiron, true Lilith, Ashlesha, Neptune, Mars, Venus — sign, degree, house (when known), aspects
+- wound findings: all applicable, source-identified findings from each complete native reading — preserve the underlying placements and aspects where that modality supports them
 
 **Output per run**
 - `HiddenRun { clock, positions, woundMarkers[], livedExposure }`

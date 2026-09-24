@@ -10,7 +10,6 @@ import type { BaselinePressureEffect } from './geoPresence';
 export type WoundMarkerId =
   | 'chiron'
   | 'trueLilith'
-  | 'ashlesha'
   | 'neptune'
   | 'mars'
   | 'venus'
@@ -76,17 +75,6 @@ export function extractWoundMarkers(
       pressure: applyPressure(baseline, core.qualities),
     });
   }
-
-  // Ashlesha is Vedic — flag as pending native calc, still eligible by rule
-  hits.push({
-    id: 'ashlesha',
-    label: 'Ashlesha (pending Vedic native)',
-    sign: 'UNKNOWN',
-    degree: 0,
-    house: null,
-    qualities: ['binding', 'entanglement', 'secrecy'],
-    pressure: applyPressure(baseline, ['binding', 'entanglement']),
-  });
 
   return hits;
 }
