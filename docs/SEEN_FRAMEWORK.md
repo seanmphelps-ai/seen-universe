@@ -10,7 +10,7 @@
 - Oracle: nesting questions, darkness first, Cadence only after, Cadence = emotional Apple Health
 - Sequence: SEEN → Composure → Cadence
 - Mirrored & Seen: cross-system tree OK, delivery logic sealed, orientation written last shown first, offer deepen choices not decisions, Jung inversion = trust→capacity
-- Human Design = starting point, gates become portals. I Ching spine kept
+- The 64 SEEN Portals retain canonical hexagram names; Human Design and independent I Ching computation are excluded.
 - No-masks dating layer: see charts/struggles/healing pre-date. Phrase: "Swipe right on someone's self-realization, not their face."
 - App name: Scene
 - Phrase: "Seen. You. Them. Us."
