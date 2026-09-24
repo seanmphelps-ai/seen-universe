@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { DarkCardSchema } from '../schema';
+import { DarkCardSchema, HiddenRunSchema } from '../schema';
 
 const card = {
   runId: 'dark-example',
@@ -35,5 +35,13 @@ describe('dark card wound coverage', () => {
 
   it('rejects the old single-wound shape', () => {
     expect(DarkCardSchema.safeParse({ ...card, wound: 'One wound', injury: 'One injury', darknessUnderneath: 'One root' }).success).toBe(false);
+  });
+
+  it('accepts multiple native markers beyond the old fixed list', () => {
+    const woundMarkers = [
+      { id: 'first-native-rule', sourceSystemId: 'western', sign: 'Aries', degree: 12, house: 1 },
+      { id: 'second-native-rule', sourceSystemId: 'hellenistic', sign: 'Cancer', degree: 4, house: 8 },
+    ];
+    expect(HiddenRunSchema.parse({ clock: '04:00', woundMarkers }).woundMarkers).toEqual(woundMarkers);
   });
 });
