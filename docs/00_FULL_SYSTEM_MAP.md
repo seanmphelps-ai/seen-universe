@@ -106,10 +106,9 @@ Agents:
 - Numerology
 - Tzolk'in
 - Galactic signature
-- Human Design / I Ching degree-to-gate map
 - 25 lenses (after the list exists)
 
-Not 64 agents. Portals are I Ching bones with Human Design depth. SEEN adds lived years, dark time pick, and soil. That is the extra support I Ching and HD do not have.
+Not 64 agents. The 64 Portals retain their canonical hexagram names and run as SEEN's own pressure, behavioral, and environmental interpretation layer. Human Design and independent I Ching calculations are excluded.
 
 Each agent returns `{ sectionId, finding, source, arc }` and files it. Source tag never stripped.
 
@@ -121,8 +120,8 @@ File: `docs/04_IT.md`
 
 No bypass.
 Native marker keeps full weight.
-Degree maps to gate / hexagram where the mapping is real.
-Composite = marker × degree × gate × lived years.
+Portals receive source-tagged deposits only through SEEN's documented routing rules.
+Composite analysis preserves each native marker and incorporates supported lived-exposure evidence.
 SEEN asks: pressure, trigger, adaptation, behavior, payoff, cost, consequence, people, place, time, recurrence, failure, potential.
 File into a Life Section. Keep source.
 
@@ -131,7 +130,7 @@ An old spicy reading line is not a calculation rule.
 
 Three operations:
 1. Discovery — each modality finds what it knows
-2. Resolution — cross only on a real map (degree → gate)
+2. Resolution — route only through documented SEEN Portal mappings
 3. Dissection — ask the lattice of the higher-resolution signal
 
 No mash. No rewrite of the original marker.
