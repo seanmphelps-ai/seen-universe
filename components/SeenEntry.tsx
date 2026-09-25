@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { resolveExperienceMode } from '../lib/seen/experienceMode';
 
-const WORDS = ['YOU', 'ARE', 'NOT', 'YOUR', 'SUN', 'SIGN.'];
+const WORDS = ['LOCATION', 'WROTE', 'YOU', 'FIRST.'];
 
 export default function SeenEntry() {
   const router = useRouter();
@@ -48,14 +48,14 @@ export default function SeenEntry() {
         {phase === 'ready' && (
           <div className="seenIntroReveal">
             <p>SEEN</p>
-            <h1>You are so much more than that.</h1>
+            <h1>The chart is the last layer.</h1>
             <div className="seenDivider" aria-hidden="true" />
             <button
               type="button"
               className="seenButtonPrimary"
               onClick={() => setPhase('mode')}
             >
-              Are you ready to be seen?
+              Enter the operating system
             </button>
           </div>
         )}
