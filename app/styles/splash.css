@@ -1,169 +1,128 @@
-.seenIntro {
+.seenRailPage {
   position: relative;
-  display: grid;
   min-height: 100svh;
-  padding: max(28px, env(safe-area-inset-top)) 20px max(28px, env(safe-area-inset-bottom));
-  place-items: center;
   overflow: hidden;
-  background: #080706;
+  background: #070605;
+  color: #f4efe5;
 }
-
-.seenIntroAmbient {
+.seenRailWorld {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  filter: saturate(0.85) contrast(1.05);
+}
+.seenRailVeil {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 18%, rgba(212, 180, 106, 0.14), transparent 34%),
-    linear-gradient(180deg, transparent 52%, rgba(212, 180, 106, 0.035));
-  pointer-events: none;
+    linear-gradient(180deg, rgba(7,6,5,0.2) 0%, rgba(7,6,5,0.55) 55%, rgba(7,6,5,0.92) 100%);
 }
-
-.seenIntroContent {
+.seenRailHead,
+.seenRail,
+.seenRailFoot {
   position: relative;
   z-index: 1;
-  width: min(100%, 620px);
 }
-
-.seenIntroWord {
-  display: grid;
-  min-height: 70svh;
-  place-items: center;
-  color: #d4b46a;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3.2rem, 17vw, 6.4rem);
-  line-height: 0.92;
-  text-align: center;
-  opacity: 0;
-  text-shadow: 0 0 35px rgba(212, 180, 106, 0.8);
-  transition: opacity 220ms ease;
-}
-
-.seenIntroWord[data-active='true'] { opacity: 1; }
-
-.seenIntroReveal { margin-bottom: 28px; text-align: center; }
-.seenIntroReveal p {
-  margin: 0 0 8px;
-  color: #d4b46a;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.28em;
-}
-.seenIntroReveal h1 {
-  margin: 0;
-  color: #f4efe5;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.5rem, 11vw, 4.8rem);
-  font-weight: 400;
-  line-height: 0.98;
-  letter-spacing: 0;
-}
-.seenIntroReveal .seenButtonPrimary,
-.seenIntroReveal .seenDivider {
-  margin-top: 28px;
-}
-
-.seenIntroComposer {
-  padding: 18px;
-  background: rgba(14, 12, 10, 0.92);
-  border: 1px solid rgba(212, 180, 106, 0.42);
-}
-.seenIntroContinue {
-  min-height: 44px;
-  padding: 0 14px;
-  color: #171512;
-  background: #d4b46a;
-  border: 1px solid #d4b46a;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.forgeBoard {
-  width: 100%;
-  max-width: 720px;
-  margin: 0 auto;
-  place-items: stretch;
-  gap: 14px;
-  z-index: 1;
-}
-.forgeTop {
-  position: relative;
-  z-index: 1;
+.seenRailHead {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: baseline;
+  padding: max(22px, env(safe-area-inset-top)) 18px 8px;
 }
-.forgeTop span {
+.seenRailHead span {
+  letter-spacing: 0.32em;
+  color: #d4b46a;
+  font-size: 0.72rem;
+}
+.seenRailHead b {
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: #cfc6b6;
+}
+.seenRail {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 12px 18px 18px;
+  -webkit-overflow-scrolling: touch;
+}
+.seenRail::-webkit-scrollbar { display: none; }
+.seenPlacard {
+  position: relative;
+  flex: 0 0 min(78vw, 320px);
+  height: min(58svh, 460px);
+  scroll-snap-align: center;
+  overflow: hidden;
+  border: 1px solid rgba(212,180,106,0.28);
+  background: rgba(10,9,8,0.55);
+  backdrop-filter: blur(8px);
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+.seenPlacard.center {
+  border-color: rgba(212,180,106,0.8);
+  transform: translateY(-4px);
+}
+.seenPlacard.live {
+  box-shadow: 0 0 28px rgba(212,180,106,0.18);
+}
+.forgePulse {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.seenPlacardCopy {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+}
+.seenPlacardCopy span {
   display: block;
   color: #d4b46a;
   letter-spacing: 0.22em;
-  font-size: 0.68rem;
+  font-size: 0.66rem;
+  margin-bottom: 8px;
 }
-.forgeTop b {
-  display: block;
-  color: #f4efe5;
+.seenPlacardCopy h2 {
+  margin: 0;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
   font-weight: 400;
+  font-size: clamp(2rem, 8vw, 3.1rem);
+  line-height: 0.92;
 }
-.forgeStats em {
-  margin-left: 12px;
-  color: #d4b46a;
+.seenPlacardCopy p {
+  margin: 10px 0 14px;
+  color: #d8d0c2;
+  font-size: 0.92rem;
+}
+.seenPlacardCopy em {
   font-style: normal;
-  letter-spacing: 0.12em;
-  font-size: 0.72rem;
-}
-.forgeStage {
-  position: relative;
-  height: 220px;
-  border: 1px solid rgba(212,180,106,0.28);
-  background: rgba(10,9,8,0.8);
-  overflow: hidden;
-}
-.forgeRing { width: 100%; height: 100%; display: block; }
-.forgeHud {
-  position: absolute;
-  inset: 12px;
-  pointer-events: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  color: #d4b46a;
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-}
-.forgeHud p { margin: 0; max-width: 42%; text-align: right; color: #f4efe5; letter-spacing: 0.04em; }
-.forgeSpark { display: flex; align-items: flex-end; gap: 2px; height: 22px; margin-top: 6px; }
-.forgeSpark i { width: 3px; background: #d4b46a; display: block; }
-.forgeGrid {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-}
-.forgeCard {
-  min-height: 72px;
-  padding: 8px;
-  text-align: left;
-  color: #bdb5a8;
-  background: #12100d;
-  border: 1px solid rgba(212,180,106,0.22);
-}
-.forgeCard span { display: block; font-size: 0.62rem; letter-spacing: 0.14em; }
-.forgeCard b { display: block; color: #f4efe5; font-size: 1.1rem; margin: 4px 0 2px; }
-.forgeCard em { font-style: normal; font-size: 0.58rem; letter-spacing: 0.12em; color: #7d766b; }
-.forgeCard.linked { border-color: rgba(212,180,106,0.7); }
-.forgeCard.on { background: #1a1712; color: #d4b46a; box-shadow: 0 0 18px rgba(212,180,106,0.18); }
-.forgeGo { width: 100%; }
-.forgeWho {
-  margin: 0 0 12px;
-  color: #d4b46a;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
+  font-size: 0.62rem;
+  color: #d4b46a;
 }
-
-@media (max-width: 390px) {
-  .seenIntro { padding-right: 14px; padding-left: 14px; }
-  .forgeGrid { grid-template-columns: repeat(2, 1fr); }
+.seenRailFoot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 8px 18px max(22px, env(safe-area-inset-bottom));
+}
+.seenRailFoot button {
+  min-height: 48px;
+  border: 1px solid #d4b46a;
+  background: #d4b46a;
+  color: #171512;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+.seenRailFoot button.alt {
+  background: transparent;
+  color: #d4b46a;
 }
