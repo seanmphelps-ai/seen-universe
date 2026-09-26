@@ -1,5 +1,9 @@
 /**
- * Deterministic anonymous pressure paragraphs from chart-engine darkCardSeed.
+ * Temporary screen text for the current rectification page.
+ * TODO (HARD LAW): this string is not the recognition contract.
+ * Recognition is not one anonymous folded paragraph.
+ * Modalities stay whole. Location does not rewrite the native reading.
+ * Replace with PORTAL_EXTRACTION_FIELDS from lib/portals/template.ts.
  * Uses geoSummary + wound qualities + portal names/expressions as INTERNAL cues only.
  * Never prints planet/sign/house/clock/portal numbers, TOD labels, or astrology jargon on the face.
  */
@@ -193,7 +197,7 @@ function portalCueSentence(
 }
 
 /**
- * Build a multi-sentence anonymous pressure paragraph (min ~3 sentences).
+ * TODO (HARD LAW): temporary joined screen text, not the recognition face.
  * Voice: third person "this person".
  */
 export function pressureProseFromSeed(seed: PressureSeedInput): string {

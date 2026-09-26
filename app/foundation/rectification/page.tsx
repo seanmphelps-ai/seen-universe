@@ -421,9 +421,8 @@ export default function RectificationPage() {
           </h1>
 
           <p className="seenFlowIntroduction">
-            Three anonymous pressure summaries. Say how much of each you can see
-            yourself in, and from what age it started to feel true. The calculation
-            stays backstage; the summaries stay anonymous.
+            Say how much of each you can see yourself in, and from what age it
+            started to feel true. The calculation stays backstage.
           </p>
 
           <div className="seenDivider" aria-hidden="true" />
@@ -478,12 +477,13 @@ export default function RectificationPage() {
               return (
                 <section className="seenPanel" key={card.runId}>
                   <span className="seenLabel">Recognition {index + 1}</span>
+                  {/* TODO (HARD LAW): paragraph is temporary screen text, not the recognition contract. Render PORTAL_EXTRACTION_FIELDS. Do not fold modalities. */}
                   <p className="seenFlowIntroduction">{card.paragraph}</p>
 
                   <div className="seenDivider" aria-hidden="true" />
 
                   <span className="seenLabel">
-                    How much of this summary can you see yourself in?
+                    How much of this can you see yourself in?
                   </span>
                   <div
                     role="group"

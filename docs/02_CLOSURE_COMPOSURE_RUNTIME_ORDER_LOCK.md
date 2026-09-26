@@ -79,7 +79,7 @@ Every runtime layer defines validated input and output contracts. Every handoff 
 
 ## Environmental Intake and Portal Pre-Charge
 
-Environmental intake precedes birth-derived interpretation.
+Native seed is calculated whole first. Location is the incubator after that seed. It shows how the seed will or will not grow in that dirt. It does not rewrite the native reading.
 
 Collect:
 
@@ -90,7 +90,7 @@ Collect:
 
 Resolve each location into structured records, then temporalize each exposure into a place-period field.
 
-Portal pre-charge receives environmental pressure before chart interpretation.
+Portal pre-charge from location runs after the intact seed. It does not rewrite the native reading.
 
 Required contracts:
 
@@ -366,8 +366,8 @@ A Closure & Composure implementation path is complete when:
 
 - experience mode is explicit;
 - every person completes independently;
-- environmental intake precedes birth-derived interpretation;
-- portal pre-charge precedes chart interpretation;
+- native seed is calculated whole before location incubates it;
+- portal pre-charge does not run before seed calculation and does not rewrite the native reading;
 - recognition selection activates Full Helix Ignition;
 - all 64 portals are scanned;
 - Dr. Maisel lenses execute in the defined position;

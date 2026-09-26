@@ -26,6 +26,13 @@ export const DarkCardSchema = z.object({
   runId: z.string().min(1),
   /** Metadata only — never required for face render. */
   clock: z.string().regex(/^\d{2}:\d{2}$/).optional(),
+  /**
+   * TODO (HARD LAW): not the recognition contract.
+   * Recognition is not one anonymous folded paragraph.
+   * Retained so the current rectification screen still typechecks.
+   * Replace with PORTAL_EXTRACTION_FIELDS from lib/portals/template.ts.
+   * Modalities stay whole. Location does not rewrite the native reading.
+   */
   paragraph: z.string().min(80),
   reveal: z.string().min(1),
   pressure: z.string().min(1),
@@ -50,22 +57,6 @@ export const DarkCardSchema = z.object({
   /** Ship-facing calibration — set by UI after recognition. */
   resonancePercent: z.number().int().min(0).max(100).optional(),
   /** Ship-facing calibration — age or age range text. */
-  fromAge: z.string().min(1).optional(),
-});
-
-/** Round-1 face card: anonymous paragraph + optional calibration fields. */
-export const ShipDarkCardSchema = z.object({
-  runId: z.string().min(1),
-  clock: z.string().regex(/^\d{2}:\d{2}$/).optional(),
-  paragraph: z.string().min(80),
-  resonancePercent: z.number().int().min(0).max(100).optional(),
-  fromAge: z.string().min(1).optional(),
-});
-
-export const ShipDarkCardCollectionSchema = z.object({
-  cards: z.array(ShipDarkCardSchema).min(1).max(3),
-  /** Optional collection-level echo of per-card resonance (ship convenience). */
-  resonancePercent: z.number().int().min(0).max(100).optional(),
   fromAge: z.string().min(1).optional(),
 });
 
@@ -105,8 +96,6 @@ export const RectificationScenarioRequestSchema = z.object({
 
 export type HiddenRun = z.infer<typeof HiddenRunSchema>;
 export type DarkCard = z.infer<typeof DarkCardSchema>;
-export type ShipDarkCard = z.infer<typeof ShipDarkCardSchema>;
-export type ShipDarkCardCollection = z.infer<typeof ShipDarkCardCollectionSchema>;
 export type AttachmentOnCard = z.infer<typeof AttachmentOnCardSchema>;
 export type LockedTime = z.infer<typeof LockedTimeSchema>;
 export type WoundMarker = z.infer<typeof WoundMarkerSchema>;

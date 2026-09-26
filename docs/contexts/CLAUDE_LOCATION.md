@@ -25,7 +25,7 @@ Sequence:
 
 - Generate exactly three distinct experiential summaries only from the already-calculated environmental evidence for that place/time.
 - Each summary is a different field of the same city/era (micro-neighborhood, social stratum, or period cut) and must carry both gift and cost. Never only-good. Never only-bad.
-- One summary leans Western markers, one Vedic, one blended.
+- Summaries stay on the environmental field. They do not mix modalities, fold traditions into shared prose, or rewrite a native reading.
 - The subject may select one, multiple, or none.
 - Preserve the response as a separate `EnvironmentalResonanceRecord` with evidence/provenance references.
 - A selection records which measured conditions appear to have reached/resonated with the subject; it does not rewrite the objective Environmental Pressure Field.

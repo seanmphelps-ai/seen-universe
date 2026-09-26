@@ -1,7 +1,8 @@
 /**
  * Soft dark-card seeds when LLM scenarios are unavailable.
  * Uses the real chart engine (Swiss + GeoPresence + wounds + 64 portals).
- * Face output is anonymous pressure prose — clocks stay metadata only.
+ * TODO (HARD LAW): `paragraph` is temporary screen text, not the recognition contract.
+ * Recognition is not one anonymous folded paragraph. Clocks stay metadata only.
  */
 
 import type { NatalChartResult } from '../natalChart';
@@ -15,7 +16,7 @@ export type EngineSeedCard = {
   chart: NatalChartResult;
   /** Metadata only — never render on card faces. */
   clock?: string;
-  /** Anonymous pressure paragraph for the card face. */
+  /** TODO (HARD LAW): temporary screen text, not the recognition contract. */
   paragraph: string;
   /** Raw cues retained for session/debug; not for face UI. */
   geoSummary?: string;
