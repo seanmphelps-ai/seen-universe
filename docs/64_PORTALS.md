@@ -217,7 +217,7 @@ The almost, the state of being nearly there. When pressured: the inability to fi
 
 ## Routing Rules
 
-1. Every portal receives environmental pre-charge before chart interpretation.
+1. Native seed is calculated whole first. Location incubates that seed and does not rewrite the native reading. Portal extraction, when present, is a structured field list and does not blend modalities.
 2. Every portal is evaluated for activation status: active, weak, dormant, contradictory, insufficient signal.
 3. Every portal deposit carries a `portalId` (1–64), a `weight` (0–1), and a `reason`.
 4. The Generator surfaces only the strongest sufficiently converged portals.

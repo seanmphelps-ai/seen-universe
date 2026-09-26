@@ -51,13 +51,11 @@ Three cards. No clock. Pick one.
 
 Locked time is calibration evidence. Not a birth certificate.
 
-## Card length
+## Card
 
-A card is a paragraph. Minimum three sentences. Not one line.
+Recognition is not one folded paragraph. The card is the structured extraction fields: triggers, pressure points, failure modes, costs/consequences, how pressure builds, how it releases, what typically gets destroyed, how long they let it go, show, defend, react, and what is lost if it runs one more cycle.
 
-It must run: trigger, pressure point, behavior, where it collapses, where it thrives, cost to them, cost to others, what gets lost if it runs one more cycle.
-
-Lived years shape the sentences. Swiss numbers do not change.
+Lived years show how the intact seed meets that dirt. They do not rewrite the native reading. Swiss numbers do not change.
 
 ## Forbidden
 

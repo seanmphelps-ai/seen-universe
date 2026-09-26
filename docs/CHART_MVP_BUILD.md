@@ -14,10 +14,8 @@ Do not build portals.
 
 `Identity → BirthAnchor → LivedExposure → HiddenRun[2] → DarkCard[2] → Pick → STOP`
 
-## Card length
+## Card
 
-A card is a paragraph. Minimum three sentences. Not one line. Not a tag.
+Recognition is not one folded paragraph. The card is the structured extraction fields: triggers, pressure points, failure modes, costs/consequences, how pressure builds, how it releases, what typically gets destroyed, how long they let it go, show, defend, react, and what is lost if it runs one more cycle.
 
-It must run: trigger, pressure point, behavior, where it collapses, where it thrives, cost to them, cost to others, what gets lost if it runs one more cycle.
-
-If it reads like a horoscope, reject it.
+Clocks stay off the card. Modalities stay whole. If it reads like a horoscope, or if it mixes traditions, reject it.
