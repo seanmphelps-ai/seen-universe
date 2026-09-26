@@ -1,92 +1,118 @@
-.seenMap {
+.seenTree {
   position: relative;
   min-height: 100svh;
+  display: flex;
+  flex-direction: column;
   background: #171512;
   color: #f4efe5;
-  overflow: hidden;
 }
-.seenMapWorld {
+.seenTreeWorld {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.5;
+  opacity: 0.62;
 }
-.seenMapVeil {
+.seenTreeVeil {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 45%, rgba(23,21,18,0.15), rgba(23,21,18,0.82));
+  background: linear-gradient(180deg, rgba(23,21,18,0.2), rgba(23,21,18,0.72) 70%);
 }
-.seenMapHead,
-.seenMapStage,
-.seenMapDock {
+.seenTreeHead,
+.seenRing,
+.seenPeople,
+.seenTreeHint,
+.seenPlacardPlus {
   position: relative;
   z-index: 1;
 }
-.seenMapHead {
-  padding: max(18px, env(safe-area-inset-top)) 16px 0;
-  letter-spacing: 0.4em;
-  color: #d8c56a;
-  font-size: 0.7rem;
+.seenTreeHead {
+  padding: max(16px, env(safe-area-inset-top)) 16px 0;
   text-align: center;
-}
-.seenMapStage {
-  position: relative;
-  height: min(62svh, 560px);
-  touch-action: none;
-}
-.seenMapCanvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-.seenOrb {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  min-width: 92px;
-  min-height: 92px;
-  padding: 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(251,234,131,0.35);
-  background: rgba(23,21,18,0.78);
-  color: #f4efe5;
-  letter-spacing: 0.08em;
-  font-size: 0.62rem;
-}
-.seenOrb b {
-  display: block;
+  letter-spacing: 0.42em;
   color: #d8c56a;
-  font-weight: 500;
-  margin-bottom: 4px;
+  font-size: 0.72rem;
 }
-.seenOrb.on {
+.seenRing {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 72px 1fr 72px;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+}
+.seenRingFront {
+  min-height: 280px;
+  padding: 22px 18px;
+  background: linear-gradient(180deg, rgba(33,30,26,0.82), rgba(23,21,18,0.9));
+  border: 1px solid rgba(251,234,131,0.35);
+}
+.seenRingFront b {
+  color: #d8c56a;
+  letter-spacing: 0.2em;
+  font-size: 0.68rem;
+}
+.seenRingFront h1 {
+  margin: 8px 0 16px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 2.4rem;
+}
+.seenRingGhost {
+  height: 140px;
+  padding: 8px 4px;
+  color: rgba(244,239,229,0.35);
+  background: transparent;
+  border: 0;
+  writing-mode: vertical-rl;
+  transform: scale(0.92);
+}
+.seenRingGhost.left { transform: scale(0.86) rotate(8deg); }
+.seenRingGhost.right { transform: scale(0.86) rotate(-8deg); }
+.seenPeople {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 16px;
+}
+.seenPeople button {
+  min-height: 44px;
+  padding: 0 14px;
+  color: #f4efe5;
+  background: rgba(23,21,18,0.7);
+  border: 1px solid rgba(251,234,131,0.28);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.seenPeople button.on {
   border-color: #fbea83;
-  box-shadow: 0 0 28px rgba(251,234,131,0.28);
-  z-index: 3;
+  color: #171512;
+  background: #d8c56a;
 }
-.seenMapDock {
-  padding: 8px 16px max(20px, env(safe-area-inset-bottom));
+.seenPeople .add {
+  width: 44px;
+  padding: 0;
 }
-.seenPlacardInput,
-.seenPlacardYears input {
+.seenTreeHint {
+  margin: 0 16px 10px;
+  color: #cfc8bb;
+  font-size: 0.78rem;
+}
+.seenPlacardInput {
   width: 100%;
   min-height: 48px;
   margin-bottom: 8px;
   padding: 10px 12px;
   color: #f4efe5;
-  background: rgba(255,255,255,0.02);
+  background: rgba(255,255,255,0.03);
   border: 1px solid rgba(251,234,131,0.28);
 }
-.seenPlacardYears {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
 .seenPlacardPlus {
-  min-height: 40px;
-  padding: 0 16px;
+  align-self: center;
+  margin: 0 16px max(16px, env(safe-area-inset-bottom));
+  min-height: 48px;
+  padding: 0 22px;
   color: #171512;
   background: #d8c56a;
   border: 0;
