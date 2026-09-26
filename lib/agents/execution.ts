@@ -1,6 +1,6 @@
 import { calculateNatalChart, type NatalChartInput, type NatalChartResult } from '../natalChart';
 
-export type ModalityId =
+export type NativeSystem =
   | 'western'
   | 'hellenistic'
   | 'jyotisha'
@@ -8,6 +8,45 @@ export type ModalityId =
   | 'numerology'
   | 'tzolkin'
   | 'dreamspell';
+
+export type ModalityId = NativeSystem;
+
+export type JobContext = {
+  name: string;
+  birthDate: string;
+  birthTime: string | null;
+  latitude: number;
+  longitude: number;
+};
+
+export type Reading = {
+  system: NativeSystem;
+  output: unknown;
+  sources: string[];
+};
+
+export type PortalResult = {
+  portal: number;
+  output: unknown;
+  sources: string[];
+};
+
+export type Audit = {
+  passed: boolean;
+  findings: string[];
+};
+
+export type NativeWorker = {
+  system: NativeSystem;
+  read: (context: JobContext) => Promise<Reading>;
+  audit: (context: JobContext, reading: Reading) => Promise<Audit>;
+};
+
+export type PortalWorker = {
+  portal: number;
+  run: (context: JobContext, acceptedReadings: Reading[]) => Promise<PortalResult>;
+  audit: (context: JobContext, result: PortalResult) => Promise<Audit>;
+};
 
 export type CocoonStatus = 'positions_only' | 'pending_source_lock' | 'pending_auditor';
 
