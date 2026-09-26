@@ -25,6 +25,39 @@ export type PortalExtractionField = (typeof PORTAL_EXTRACTION_FIELDS)[number];
 
 export type PortalExtraction = Record<PortalExtractionField, string>;
 
+export const PORTAL_EXTRACTION_LABELS: Record<PortalExtractionField, string> = {
+  triggers: 'Triggers',
+  pressurePoints: 'Pressure points',
+  failureModes: 'Failure modes',
+  costsConsequences: 'Costs / consequences',
+  pressureBuild: 'How pressure builds',
+  release: 'How it releases',
+  typicallyDestroyed: 'What typically gets destroyed',
+  howLongTheyLetItGo: 'How long they let it go',
+  show: 'Show',
+  defend: 'Defend',
+  react: 'React',
+  lostIfOneMoreCycle: 'What is lost if it runs one more cycle',
+};
+
+/** Unfilled slots. Do not write syncretic prose, location dirt, or clock-archetype blends into these fields. */
+export function emptyPortalExtraction(): PortalExtraction {
+  return {
+    triggers: '',
+    pressurePoints: '',
+    failureModes: '',
+    costsConsequences: '',
+    pressureBuild: '',
+    release: '',
+    typicallyDestroyed: '',
+    howLongTheyLetItGo: '',
+    show: '',
+    defend: '',
+    react: '',
+    lostIfOneMoreCycle: '',
+  };
+}
+
 export type PortalActivation = {
   portalId: string;
   placeName: string;

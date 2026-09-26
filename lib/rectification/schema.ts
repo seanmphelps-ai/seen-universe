@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { PORTAL_EXTRACTION_FIELDS } from '../portals/template';
 
 export const HiddenClockSchema = z.enum(['04:00', '12:00', '20:00']);
 
@@ -22,18 +23,34 @@ export const AttachmentOnCardSchema = z.object({
   costToTheOtherPerson: z.string().min(1),
 });
 
+/**
+ * HARD LAW: ship face is these slots, not a paragraph.
+ * Empty string means unfilled. Do not fold modalities, location, or clock archetypes into them.
+ * Behavioral pressure for one time window only, from that window's own native reading, or left empty.
+ */
+export const PortalExtractionSchema = z.object({
+  triggers: z.string(),
+  pressurePoints: z.string(),
+  failureModes: z.string(),
+  costsConsequences: z.string(),
+  pressureBuild: z.string(),
+  release: z.string(),
+  typicallyDestroyed: z.string(),
+  howLongTheyLetItGo: z.string(),
+  show: z.string(),
+  defend: z.string(),
+  react: z.string(),
+  lostIfOneMoreCycle: z.string(),
+}).refine(
+  (extraction) => PORTAL_EXTRACTION_FIELDS.every((field) => field in extraction),
+  { message: 'Extraction must list every portal field.' },
+);
+
 export const DarkCardSchema = z.object({
   runId: z.string().min(1),
   /** Metadata only — never required for face render. */
   clock: z.string().regex(/^\d{2}:\d{2}$/).optional(),
-  /**
-   * TODO (HARD LAW): not the recognition contract.
-   * Recognition is not one anonymous folded paragraph.
-   * Retained so the current rectification screen still typechecks.
-   * Replace with PORTAL_EXTRACTION_FIELDS from lib/portals/template.ts.
-   * Modalities stay whole. Location does not rewrite the native reading.
-   */
-  paragraph: z.string().min(80),
+  extraction: PortalExtractionSchema,
   reveal: z.string().min(1),
   pressure: z.string().min(1),
   consequence: z.string().min(1),
