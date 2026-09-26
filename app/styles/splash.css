@@ -1,88 +1,73 @@
-.seenBoard {
+.seenMap {
   position: relative;
   min-height: 100svh;
-  overflow: hidden;
   background: #171512;
   color: #f4efe5;
+  overflow: hidden;
 }
-.seenBoardWorld {
+.seenMapWorld {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.55;
+  opacity: 0.5;
 }
-.seenBoardVeil {
+.seenMapVeil {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(23,21,18,0.25), rgba(23,21,18,0.88));
+  background: radial-gradient(circle at 50% 45%, rgba(23,21,18,0.15), rgba(23,21,18,0.82));
 }
-.seenBoardHead,
-.seenBoardRail,
-.seenBoardError {
+.seenMapHead,
+.seenMapStage,
+.seenMapDock {
   position: relative;
   z-index: 1;
 }
-.seenBoardHead {
-  padding: max(22px, env(safe-area-inset-top)) 18px 8px;
-  text-align: center;
-}
-.seenBoardHead span {
+.seenMapHead {
+  padding: max(18px, env(safe-area-inset-top)) 16px 0;
   letter-spacing: 0.4em;
   color: #d8c56a;
   font-size: 0.7rem;
+  text-align: center;
 }
-.seenBoardHead p {
-  margin: 8px 0 0;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.seenMapStage {
+  position: relative;
+  height: min(62svh, 560px);
+  touch-action: none;
+}
+.seenMapCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.seenOrb {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  min-width: 92px;
+  min-height: 92px;
+  padding: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(251,234,131,0.35);
+  background: rgba(23,21,18,0.78);
+  color: #f4efe5;
+  letter-spacing: 0.08em;
   font-size: 0.62rem;
-  color: #cfc8bb;
 }
-.seenBoardRail {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 12px 18px 28px;
-  -webkit-overflow-scrolling: touch;
-}
-.seenBoardRail::-webkit-scrollbar { display: none; }
-.seenPlacard {
-  flex: 0 0 min(78vw, 300px);
-  min-height: 420px;
-  scroll-snap-align: center;
-  padding: 18px 16px 16px;
-  text-align: left;
-  color: inherit;
-  background:
-    radial-gradient(circle at 50% 0%, rgba(251,234,131,0.06), transparent 44%),
-    linear-gradient(180deg, #211e1a 0%, #191613 100%);
-  border: 1px solid rgba(251,234,131,0.28);
-  box-shadow: 0 24px 70px rgba(0,0,0,0.58);
-}
-.seenPlacard.on {
-  border-color: rgba(251,234,131,0.72);
-}
-.seenPlacard em {
+.seenOrb b {
   display: block;
   color: #d8c56a;
-  letter-spacing: 0.22em;
-  font-size: 0.68rem;
-  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 4px;
 }
-.seenPlacard h2 {
-  margin: 10px 0 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
-  font-size: 2.1rem;
-  line-height: 0.95;
+.seenOrb.on {
+  border-color: #fbea83;
+  box-shadow: 0 0 28px rgba(251,234,131,0.28);
+  z-index: 3;
 }
-.seenPlacard p {
-  margin: 8px 0 16px;
-  color: #cfc8bb;
-  font-size: 0.88rem;
+.seenMapDock {
+  padding: 8px 16px max(20px, env(safe-area-inset-bottom));
 }
 .seenPlacardInput,
 .seenPlacardYears input {
@@ -100,22 +85,10 @@
   gap: 8px;
 }
 .seenPlacardPlus {
-  width: 40px;
-  height: 40px;
-  margin-top: 6px;
+  min-height: 40px;
+  padding: 0 16px;
   color: #171512;
   background: #d8c56a;
   border: 0;
   border-radius: 999px;
-  font-size: 1.4rem;
-  line-height: 1;
-}
-.seenPlacard.begin {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-.seenBoardError {
-  padding: 0 18px 24px;
-  color: #fbea83;
 }
