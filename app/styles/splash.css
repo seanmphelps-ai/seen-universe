@@ -3,8 +3,11 @@
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  background: #171512;
+  gap: 10px;
+  padding: 0 10px max(12px, env(safe-area-inset-bottom));
+  background: #100e0c;
   color: #f4efe5;
+  overflow-x: hidden;
 }
 .seenTreeWorld {
   position: absolute;
@@ -12,109 +15,206 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.62;
+  opacity: 0.55;
 }
 .seenTreeVeil {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(23,21,18,0.2), rgba(23,21,18,0.72) 70%);
+  background:
+    radial-gradient(ellipse at center, rgba(16,14,12,0.15), rgba(16,14,12,0.78) 72%),
+    linear-gradient(180deg, rgba(16,14,12,0.25), rgba(16,14,12,0.55));
 }
 .seenTreeHead,
-.seenRing,
-.seenPeople,
-.seenTreeHint,
+.seenBoard,
+.seenJev,
+.seenWheel,
 .seenPlacardPlus {
   position: relative;
   z-index: 1;
 }
 .seenTreeHead {
-  padding: max(16px, env(safe-area-inset-top)) 16px 0;
+  padding-top: max(14px, env(safe-area-inset-top));
   text-align: center;
-  letter-spacing: 0.42em;
-  color: #d8c56a;
-  font-size: 0.72rem;
 }
-.seenRing {
-  flex: 1;
-  display: grid;
-  grid-template-columns: 72px 1fr 72px;
-  align-items: center;
-  gap: 6px;
-  padding: 12px 8px;
+.seenTreeHead span {
+  display: block;
+  letter-spacing: 0.48em;
+  color: #e6d7a2;
+  font-family: Georgia, 'Palatino Linotype', serif;
+  font-size: 1.35rem;
 }
-.seenRingFront {
-  min-height: 280px;
-  padding: 22px 18px;
-  background: linear-gradient(180deg, rgba(33,30,26,0.82), rgba(23,21,18,0.9));
-  border: 1px solid rgba(251,234,131,0.35);
-}
-.seenRingFront b {
-  color: #d8c56a;
-  letter-spacing: 0.2em;
+.seenTreeHead small {
+  display: block;
+  margin-top: 4px;
+  color: #cfc6b4;
+  letter-spacing: 0.08em;
   font-size: 0.68rem;
 }
-.seenRingFront h1 {
-  margin: 8px 0 16px;
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
-  font-size: 2.4rem;
-}
-.seenRingGhost {
-  height: 140px;
-  padding: 8px 4px;
-  color: rgba(244,239,229,0.35);
-  background: transparent;
-  border: 0;
-  writing-mode: vertical-rl;
-  transform: scale(0.92);
-}
-.seenRingGhost.left { transform: scale(0.86) rotate(8deg); }
-.seenRingGhost.right { transform: scale(0.86) rotate(-8deg); }
-.seenPeople {
-  display: flex;
+.seenBoard {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
   gap: 8px;
-  overflow-x: auto;
-  padding: 8px 16px;
+  align-items: stretch;
 }
-.seenPeople button {
-  min-height: 44px;
-  padding: 0 14px;
+.seenPlate,
+.seenCenter,
+.seenCard {
+  background:
+    linear-gradient(180deg, rgba(62, 52, 38, 0.88), rgba(22, 18, 14, 0.92));
+  border: 1px solid rgba(216, 197, 106, 0.38);
+  box-shadow: inset 0 0 0 1px rgba(255, 244, 214, 0.04);
+}
+.seenPlate,
+.seenCenter {
+  min-height: 112px;
+  padding: 10px;
+}
+.seenPlate b,
+.seenCenter b,
+.seenJev header b {
+  display: block;
+  color: #e6d7a2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.62rem;
+}
+.seenPlate p,
+.seenCenter p {
+  margin: 8px 0 0;
   color: #f4efe5;
-  background: rgba(23,21,18,0.7);
-  border: 1px solid rgba(251,234,131,0.28);
-  border-radius: 999px;
-  white-space: nowrap;
+  font-family: Georgia, 'Palatino Linotype', serif;
+  font-size: 0.82rem;
+  line-height: 1.35;
 }
-.seenPeople button.on {
+.seenCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.seenCenter.hot {
   border-color: #fbea83;
-  color: #171512;
-  background: #d8c56a;
 }
-.seenPeople .add {
-  width: 44px;
-  padding: 0;
+.seenCenter h1 {
+  margin: 6px 0 0;
+  font-family: Georgia, 'Palatino Linotype', serif;
+  font-weight: 400;
+  font-size: 1.5rem;
 }
-.seenTreeHint {
-  margin: 0 16px 10px;
-  color: #cfc8bb;
-  font-size: 0.78rem;
+.seenJev {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 10px;
+  background: rgba(16, 14, 12, 0.72);
+  border: 1px solid rgba(216, 197, 106, 0.28);
 }
+.seenJev header {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.seenJev header span {
+  color: #cfc6b4;
+  font-size: 0.68rem;
+}
+.seenJev label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #e6d7a2;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.seenJev label:nth-child(4) {
+  grid-column: 1 / -1;
+}
+.seenJev input,
 .seenPlacardInput {
   width: 100%;
-  min-height: 48px;
-  margin-bottom: 8px;
-  padding: 10px 12px;
+  min-height: 40px;
+  padding: 8px 10px;
   color: #f4efe5;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(251,234,131,0.28);
+  background: rgba(255, 248, 230, 0.04);
+  border: 1px solid rgba(216, 197, 106, 0.28);
+  font-family: Georgia, 'Palatino Linotype', serif;
+}
+.seenJevCocoons {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+}
+.seenJevCocoons i {
+  padding: 4px 8px;
+  color: #cfc6b4;
+  border: 1px solid rgba(216, 197, 106, 0.25);
+  font-style: normal;
+  font-size: 0.68rem;
+}
+.seenJevCocoons i.on {
+  color: #171512;
+  background: #e6d7a2;
+}
+.seenWheel {
+  display: grid;
+  grid-template-columns: 36px 1fr 36px;
+  align-items: center;
+  min-height: 168px;
+}
+.seenSpin {
+  height: 64px;
+  color: #e6d7a2;
+  background: transparent;
+  border: 0;
+  font-size: 1.8rem;
+}
+.seenWheelRail {
+  position: relative;
+  height: 168px;
+  overflow: hidden;
+}
+.seenCard {
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  width: 132px;
+  height: 148px;
+  margin-left: -66px;
+  padding: 12px 10px;
+  text-align: center;
+  cursor: pointer;
+  touch-action: none;
+}
+.seenCard b {
+  color: #e6d7a2;
+  letter-spacing: 0.16em;
+  font-size: 0.62rem;
+}
+.seenCard h2 {
+  margin: 8px 0 0;
+  font-family: Georgia, 'Palatino Linotype', serif;
+  font-weight: 400;
+  font-size: 1.05rem;
+}
+.seenCard em {
+  display: block;
+  margin-top: 10px;
+  color: #cfc6b4;
+  font-size: 0.72rem;
+}
+.seenCard.cocoon {
+  cursor: grab;
 }
 .seenPlacardPlus {
   align-self: center;
-  margin: 0 16px max(16px, env(safe-area-inset-bottom));
-  min-height: 48px;
+  min-height: 46px;
   padding: 0 22px;
   color: #171512;
-  background: #d8c56a;
+  background: #e6d7a2;
   border: 0;
   border-radius: 999px;
 }
