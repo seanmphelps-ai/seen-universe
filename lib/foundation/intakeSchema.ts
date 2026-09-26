@@ -55,6 +55,7 @@ export const FoundationIntakeSchema = z.object({
   birthDate: z.iso.date(),
   birthLocation: z.string().trim().min(1),
   birthCity: PlaceSchema.optional(),
+  maternityLocation: z.string().trim().optional(),
   livedLocations: z.array(z.string().trim().min(1)),
   livedPeriods: z.array(ResidencePeriodSchema),
   livedPlaces: z.array(LivedPlaceSchema).optional(),
