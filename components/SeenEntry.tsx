@@ -5,24 +5,57 @@ import { useRouter } from 'next/navigation';
 import { LocationAutocompleteInput } from './LocationAutocompleteInput';
 
 type Lived = { id: string; value: string; startYear: string; endYear: string };
-type NodeId = 'place' | 'mark' | 'code' | 'resonance' | 'begin';
+type NodeId = 'place' | 'mark' | 'code' | 'resonance' | 'key' | 'begin';
 
 const NODES: { id: NodeId; title: string; sub: string; x: number; y: number }[] = [
-  { id: 'place', title: 'PLACE', sub: '01', x: 0.22, y: 0.58 },
-  { id: 'mark', title: 'THE MARK', sub: '02', x: 0.5, y: 0.28 },
-  { id: 'code', title: 'THE CODE', sub: '03', x: 0.78, y: 0.52 },
-  { id: 'resonance', title: 'RESONANCE', sub: '04', x: 0.58, y: 0.78 },
-  { id: 'begin', title: 'BEGIN', sub: 'JOIN', x: 0.5, y: 0.52 },
+  { id: 'place', title: 'PLACE', sub: '01', x: 0.2, y: 0.58 },
+  { id: 'mark', title: 'THE MARK', sub: '02', x: 0.48, y: 0.26 },
+  { id: 'code', title: 'THE CODE', sub: '03', x: 0.8, y: 0.48 },
+  { id: 'resonance', title: 'RESONANCE', sub: '04', x: 0.62, y: 0.8 },
+  { id: 'key', title: 'KEY', sub: '101', x: 0.28, y: 0.3 },
+  { id: 'begin', title: 'BEGIN', sub: 'JOIN', x: 0.5, y: 0.54 },
 ];
 
 const LINKS: [NodeId, NodeId][] = [
   ['place', 'mark'],
   ['mark', 'code'],
   ['code', 'resonance'],
+  ['key', 'place'],
+  ['key', 'mark'],
+  ['key', 'code'],
+  ['key', 'begin'],
   ['place', 'begin'],
   ['mark', 'begin'],
-  ['code', 'begin'],
-  ['resonance', 'begin'],
+];
+
+const PLANET_101: [string, string][] = [
+  ['Sun', 'Vital heat. What the life keeps trying to be.'],
+  ['Moon', 'The body of habit. What soothes and what swallows.'],
+  ['Mercury', 'The tongue and the split. How they think out loud.'],
+  ['Venus', 'What they bind to. Taste, bond, the price of beauty.'],
+  ['Mars', 'The cut. How they take, fight, and spend heat.'],
+  ['Jupiter', 'Where they enlarge. Faith, excess, the big room.'],
+  ['Saturn', 'The wall. Time, duty, the cold teacher.'],
+  ['Uranus', 'The break in the pattern. Sudden weather.'],
+  ['Neptune', 'The dissolve. Fog, holy longing, leak.'],
+  ['Pluto', 'What will not stay buried. Power, rot, rebirth.'],
+  ['Chiron', 'The unhealable spot that teaches.'],
+  ['Lilith', 'The part that will not come to the table.'],
+];
+
+const HOUSE_101: [string, string][] = [
+  ['1', 'The body in the doorway. How they arrive.'],
+  ['2', 'Worth, food, what they keep.'],
+  ['3', 'Street, sibling, the near word.'],
+  ['4', 'The house under the house. Root, night, family soil.'],
+  ['5', 'Heat that plays. Risk, child, making.'],
+  ['6', 'Work of the day. Service, craft, the body under strain.'],
+  ['7', 'The other chair. Contract, mirror, opponent.'],
+  ['8', 'Shared blood and shared debt. What dies between two people.'],
+  ['9', 'The far road. Law, faith, the long meaning.'],
+  ['10', 'The visible work. Rank, weather of reputation.'],
+  ['11', 'The circle. Allies, future, the room of peers.'],
+  ['12', 'The back room. Hidden cost, exile, the undoing.'],
 ];
 
 const newLived = (): Lived => ({ id: crypto.randomUUID(), value: '', startYear: '', endYear: '' });
@@ -33,6 +66,8 @@ export default function SeenEntry() {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState(() => Object.fromEntries(NODES.map((n) => [n.id, { x: n.x, y: n.y }])));
   const [focus, setFocus] = useState<NodeId>('place');
+  const [stack, setStack] = useState<NodeId[]>(['place']);
+  const [keyOpen, setKeyOpen] = useState<'planet' | 'house' | 'portal' | 'lens' | null>(null);
   const [name, setName] = useState('');
   const [birthDate, setBirthDate] = useState('');
   const [birthCity, setBirthCity] = useState('');
@@ -83,6 +118,22 @@ export default function SeenEntry() {
     return () => cancelAnimationFrame(raf);
   }, [pos]);
 
+  function openNode(id: NodeId) {
+    setStack((prev) => (prev[prev.length - 1] === id ? prev : [...prev, id]));
+    setFocus(id);
+    if (id !== 'key') setKeyOpen(null);
+  }
+
+  function back() {
+    setStack((prev) => {
+      if (prev.length < 2) return prev;
+      const next = prev.slice(0, -1);
+      setFocus(next[next.length - 1]);
+      return next;
+    });
+    setKeyOpen(null);
+  }
+
   function pointId(clientX: number, clientY: number): NodeId | null {
     const wrap = wrapRef.current;
     if (!wrap) return null;
@@ -112,7 +163,7 @@ export default function SeenEntry() {
       dx: pos[id].x - (event.clientX - r.left) / r.width,
       dy: pos[id].y - (event.clientY - r.top) / r.height,
     };
-    setFocus(id);
+    openNode(id);
     (event.target as HTMLElement).setPointerCapture(event.pointerId);
   }
 
@@ -133,7 +184,7 @@ export default function SeenEntry() {
 
   function go() {
     if (!name.trim() || !birthDate || !birthCity.trim()) {
-      setFocus('mark');
+      openNode('mark');
       return;
     }
     const places = lived.filter((row) => row.value.trim());
@@ -157,7 +208,10 @@ export default function SeenEntry() {
     <main className="seenMap">
       <img className="seenMapWorld" src="/foundation/location-forge-background.png" alt="" />
       <div className="seenMapVeil" />
-      <header className="seenMapHead"><span>SEEN</span></header>
+      <header className="seenMapHead">
+        <span>SEEN</span>
+        {stack.length > 1 ? <button type="button" className="seenBack" onClick={back}>Back</button> : null}
+      </header>
       <div className="seenMapStage" ref={wrapRef} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp}>
         <canvas ref={canvasRef} className="seenMapCanvas" />
         {NODES.map((node) => {
@@ -168,7 +222,7 @@ export default function SeenEntry() {
               type="button"
               className={`seenOrb${focus === node.id ? ' on' : ''}`}
               style={{ left: `${p.x * 100}%`, top: `${p.y * 100}%` }}
-              onClick={() => (node.id === 'begin' ? go() : setFocus(node.id))}
+              onClick={() => (node.id === 'begin' ? go() : openNode(node.id))}
             >
               <b>{node.sub}</b>
               {node.title}
@@ -198,6 +252,18 @@ export default function SeenEntry() {
             <input className="seenPlacardInput" type="text" placeholder="Name" value={name} onChange={(event) => setName(event.target.value)} />
             <input className="seenPlacardInput" type="date" value={birthDate} onChange={(event) => setBirthDate(event.target.value)} />
           </>
+        )}
+        {focus === 'key' && (
+          <div className="seenKey">
+            <button type="button" onClick={() => setKeyOpen('planet')}>Planet</button>
+            <button type="button" onClick={() => setKeyOpen('house')}>House</button>
+            <button type="button" onClick={() => setKeyOpen('portal')}>Portal</button>
+            <button type="button" onClick={() => setKeyOpen('lens')}>Lens</button>
+            {keyOpen === 'planet' && PLANET_101.map(([k, v]) => <p key={k}><b>{k}.</b> {v}</p>)}
+            {keyOpen === 'house' && HOUSE_101.map(([k, v]) => <p key={k}><b>{k}.</b> {v}</p>)}
+            {keyOpen === 'portal' && <p>The 64 names and extraction live in docs/64_PORTALS.md. This plate opens that book. It does not invent a 65th.</p>}
+            {keyOpen === 'lens' && <p>Dr. Maisel 25-lens list is named in canon and not locked as a file. This plate will not invent the 25.</p>}
+          </div>
         )}
         {focus === 'begin' && <button type="button" className="seenPlacardPlus" onClick={go}>Begin</button>}
       </section>
