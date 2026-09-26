@@ -2,123 +2,112 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { resolveExperienceMode } from '../lib/seen/experienceMode';
+import { LocationAutocompleteInput } from './LocationAutocompleteInput';
 
-const CARDS = [
-  {
-    id: 'closure',
-    num: '00',
-    title: 'CLOSURE',
-    sub: '& COMPOSURE',
-    use: 'Someone else\u2019s chart. The first trust.',
-    href: 'multi',
-  },
-  {
-    id: 'place',
-    num: '01',
-    title: 'PLACE',
-    sub: 'THE SOIL',
-    use: 'Where you are changes everything.',
-    href: 'location',
-  },
-  {
-    id: 'mark',
-    num: '02',
-    title: 'THE MARK',
-    sub: 'THE DAY',
-    use: 'The day you entered the world.',
-    href: 'location',
-  },
-  {
-    id: 'code',
-    num: '03',
-    title: 'THE CODE',
-    sub: 'HIDDEN IN THE DAY',
-    use: 'Logic and pattern in the birthday.',
-    href: 'location',
-  },
-  {
-    id: 'resonance',
-    num: '04',
-    title: 'RESONANCE',
-    sub: 'YOUR FREQUENCY',
-    use: 'Time and rhythm that complete you.',
-    href: 'location',
-  },
-  {
-    id: 'forge',
-    num: '05',
-    title: 'FORGE',
-    sub: 'THE JOIN',
-    use: 'The act that binds the layers.',
-    href: 'location',
-  },
-  {
-    id: 'cadence',
-    num: '06',
-    title: 'CADENCE',
-    sub: '260 DAYS',
-    use: 'Earth time. Not clock time.',
-    href: 'single',
-  },
-] as const;
+type Lived = { id: string; value: string; startYear: string; endYear: string };
+
+const newLived = (): Lived => ({
+  id: crypto.randomUUID(),
+  value: '',
+  startYear: '',
+  endYear: '',
+});
 
 export default function SeenEntry() {
   const router = useRouter();
   const [focus, setFocus] = useState(0);
+  const [name, setName] = useState('');
+  const [birthDate, setBirthDate] = useState('');
+  const [birthCity, setBirthCity] = useState('');
+  const [maternityCity, setMaternityCity] = useState('');
+  const [lived, setLived] = useState<Lived[]>([newLived()]);
+  const [error, setError] = useState('');
 
-  function go(card: (typeof CARDS)[number]) {
-    const mode = card.href === 'multi' ? 'multi_person' : 'single_person';
-    const resolved = resolveExperienceMode({ mode });
-    try {
-      sessionStorage.setItem('seen:experience-mode', JSON.stringify(resolved));
-      sessionStorage.setItem('seen:entry-card', card.id);
-    } catch {}
-    if (card.href === 'multi' || resolved.next !== 'person_a_foundation') {
-      router.push('/closure');
+  function saveAndGo() {
+    if (!name.trim() || !birthDate || !birthCity.trim()) {
+      setError('Name, date, and birth city.');
+      setFocus(0);
       return;
     }
-    router.push('/foundation/location');
+    const places = lived.filter((row) => row.value.trim());
+    try {
+      sessionStorage.setItem('seen.introduction.v2.complete', 'true');
+      sessionStorage.setItem('seen.foundation.name', name.trim());
+      sessionStorage.setItem('seen.foundation.birthDate', birthDate);
+      sessionStorage.setItem(
+        'seen.foundation.locations',
+        JSON.stringify({
+          name: name.trim(),
+          birthLocation: birthCity.trim(),
+          maternityLocation: maternityCity.trim() || undefined,
+          livedLocations: places.map((row) => row.value.trim()),
+          livedPeriods: places.map((row) => ({
+            location: row.value.trim(),
+            startYear: row.startYear,
+            endYear: row.endYear,
+          })),
+        }),
+      );
+    } catch {}
+    router.push('/foundation/birth');
   }
 
   return (
-    <main className="seenDepth">
-      <img className="seenDepthWorld" src="/foundation/location-forge-background.png" alt="" />
-      <div className="seenDepthVeil" />
+    <main className="seenBoard">
+      <img className="seenBoardWorld" src="/foundation/location-forge-background.png" alt="" />
+      <div className="seenBoardVeil" />
 
-      <header className="seenDepthHead">
+      <header className="seenBoardHead">
         <span>SEEN</span>
-        <h1>SEEN</h1>
         <p>Same seed. Different soil. Different tree.</p>
       </header>
 
-      <section className="seenDepthStage" aria-label="Layers">
-        {CARDS.map((card, i) => {
-          const delta = i - focus;
-          const abs = Math.abs(delta);
-          return (
-            <button
-              key={card.id}
-              type="button"
-              className={`seenGlass${i === focus ? ' focus' : ''}`}
-              style={{
-                transform: `translate3d(${delta * 18}%, ${abs * 6}px, ${-abs * 140}px) rotateY(${delta * -9}deg) scale(${1 - abs * 0.12})`,
-                opacity: abs > 3 ? 0 : 1 - abs * 0.18,
-                zIndex: 20 - abs,
-                filter: `blur(${abs * 1.2}px)`,
-              }}
-              onClick={() => (i === focus ? go(card) : setFocus(i))}
-            >
-              <em>{card.num}</em>
-              <strong>{card.title}</strong>
-              <span>{card.sub}</span>
-              <p>{card.use}</p>
-            </button>
-          );
-        })}
-      </section>
+      <div className="seenBoardRail">
+        <article className={`seenPlacard${focus === 0 ? ' on' : ''}`} onClick={() => setFocus(0)}>
+          <em>01</em>
+          <h2>PLACE</h2>
+          <p>The soil</p>
+          <LocationAutocompleteInput className="seenPlacardInput" ariaLabel="Birth city" placeholder="Birth city" value={birthCity} onChange={setBirthCity} />
+          <LocationAutocompleteInput className="seenPlacardInput" ariaLabel="Maternity city if different" placeholder="Maternity city if different" value={maternityCity} onChange={setMaternityCity} />
+          {lived.map((row, index) => (
+            <div key={row.id} className="seenPlacardLived">
+              <LocationAutocompleteInput className="seenPlacardInput" ariaLabel={`Lived city ${index + 1}`} placeholder="Lived 6+ months" value={row.value} onChange={(value) => setLived((rows) => rows.map((item) => (item.id === row.id ? { ...item, value } : item)))} />
+              <div className="seenPlacardYears">
+                <input inputMode="numeric" maxLength={4} placeholder="From" value={row.startYear} onChange={(event) => setLived((rows) => rows.map((item) => (item.id === row.id ? { ...item, startYear: event.target.value.replace(/\D/g, '') } : item)))} />
+                <input inputMode="numeric" maxLength={4} placeholder="To" value={row.endYear} onChange={(event) => setLived((rows) => rows.map((item) => (item.id === row.id ? { ...item, endYear: event.target.value.replace(/\D/g, '') } : item)))} />
+              </div>
+            </div>
+          ))}
+          <button type="button" className="seenPlacardPlus" onClick={(event) => { event.stopPropagation(); setLived((rows) => [...rows, newLived()]); }}>+</button>
+        </article>
 
-      <p className="seenDepthHint">{CARDS[focus].use}</p>
+        <article className={`seenPlacard${focus === 1 ? ' on' : ''}`} onClick={() => setFocus(1)}>
+          <em>02</em>
+          <h2>THE MARK</h2>
+          <p>The day you entered the world</p>
+          <input className="seenPlacardInput" type="text" placeholder="Name" value={name} onChange={(event) => setName(event.target.value)} />
+          <input className="seenPlacardInput" type="date" value={birthDate} onChange={(event) => setBirthDate(event.target.value)} />
+        </article>
+
+        <article className={`seenPlacard${focus === 2 ? ' on' : ''}`} onClick={() => setFocus(2)}>
+          <em>03</em>
+          <h2>THE CODE</h2>
+          <p>Hidden in the day</p>
+        </article>
+
+        <article className={`seenPlacard${focus === 3 ? ' on' : ''}`} onClick={() => setFocus(3)}>
+          <em>04</em>
+          <h2>RESONANCE</h2>
+          <p>Your frequency</p>
+        </article>
+
+        <button type="button" className={`seenPlacard begin${focus === 4 ? ' on' : ''}`} onClick={saveAndGo}>
+          <em>05</em>
+          <h2>BEGIN</h2>
+          <p>The join</p>
+        </button>
+      </div>
+      {error ? <p className="seenBoardError">{error}</p> : null}
     </main>
   );
 }
