@@ -1,203 +1,233 @@
-.seenWheelPage {
-  position: relative;
+.seenAlivePage {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  padding: max(14px, env(safe-area-inset-top)) 14px max(20px, env(safe-area-inset-bottom));
+  gap: 12px;
+  padding: max(12px, env(safe-area-inset-top)) 10px max(16px, env(safe-area-inset-bottom));
   background: #070605;
   color: #f4efe5;
   overflow-x: hidden;
 }
 
-.seenWheelWorld {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.28;
-}
-
-.seenWheelVeil {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, rgba(7, 6, 5, 0.2), rgba(7, 6, 5, 0.88) 70%);
-}
-
-.seenWheelHead,
-.seenOrbit,
-.seenCityMarks,
-.seenReplay,
-.seenHeld {
-  position: relative;
-  z-index: 1;
-}
-
-.seenWheelHead {
+.seenAliveHead {
   text-align: center;
 }
 
-.seenWheelHead span {
+.seenAliveHead span {
   display: block;
   letter-spacing: 0.46em;
   color: #e6d7a2;
   font-family: Georgia, 'Palatino Linotype', serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 }
 
-.seenWheelHead small {
+.seenAliveHead small {
   display: block;
   margin-top: 4px;
   color: #cfc6b4;
-  letter-spacing: 0.06em;
-  font-size: 0.68rem;
+  font-size: 0.72rem;
 }
 
-.seenOrbit {
+.seenStage {
   position: relative;
-  width: min(92vw, 440px);
-  height: min(92vw, 440px);
+  width: min(100%, 980px);
+  height: min(72vh, 640px);
+  margin: 0 auto;
 }
 
-.seenBand {
+.seenPosterLive {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  inset: 8% 6%;
+  overflow: hidden;
   border: 1px solid rgba(216, 197, 106, 0.35);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  animation: seenSpin linear infinite;
+  background: #070605;
+  animation: seenThrob 8s ease-in-out infinite;
+  z-index: 2;
 }
 
-.seenBand.back {
-  animation-name: seenSpinBack;
-  border-color: rgba(244, 239, 229, 0.22);
+.seenPosterLive img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.seenBand b {
+.seenRoots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 46%;
+  pointer-events: none;
+}
+
+.seenRoots .root {
+  fill: none;
+  stroke: rgba(230, 215, 162, 0.8);
+  stroke-width: 0.45;
+  stroke-linecap: round;
+  stroke-dasharray: 52;
+  stroke-dashoffset: 52;
+  animation: seenRootsGrow 8s ease-in-out infinite;
+}
+
+.seenRoots .b { animation-delay: 0.25s; }
+.seenRoots .c { animation-delay: 0.5s; }
+.seenRoots .d { animation-delay: 0.15s; }
+.seenRoots .e { animation-delay: 0.4s; }
+
+.seenPulse {
   position: absolute;
   left: 50%;
-  top: 0;
+  top: 46%;
+  width: 90px;
+  height: 90px;
   transform: translate(-50%, -50%);
-  color: #e6d7a2;
-  font-family: Georgia, 'Palatino Linotype', serif;
-  font-weight: 400;
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
-  animation: seenSpinBack linear infinite;
-}
-
-.seenBand.back b {
-  animation-name: seenSpin;
-}
-
-.seenHub {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 34%;
-  height: 34%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  border: 1px solid rgba(216, 197, 106, 0.55);
   border-radius: 50%;
-  background: rgba(12, 10, 8, 0.82);
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(230, 215, 162, 0.45), rgba(230, 215, 162, 0) 68%);
+  animation: seenPulse 8s ease-in-out infinite;
 }
 
-.seenHub b {
-  color: #e6d7a2;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-}
-
-.seenHub p {
-  margin: 4px 8px 0;
-  color: #f4efe5;
-  font-family: Georgia, 'Palatino Linotype', serif;
-  font-size: 0.72rem;
-}
-
-.seenCityMarks {
+.seenCombined {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 6px;
-  width: min(100%, 520px);
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  z-index: 3;
 }
 
-.seenCityMarks li {
+.seenCombined button {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 8px;
-  border: 1px solid rgba(216, 197, 106, 0.35);
-  color: #e6d7a2;
-  font-size: 0.75rem;
-}
-
-.seenCityMarks button,
-.seenWhen button,
-.seenReplay > button {
-  color: #e6d7a2;
-  background: transparent;
-  border: 0;
-}
-
-.seenReplay {
-  width: min(100%, 520px);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
-.seenReplayLead,
-.seenWhen,
-.seenCityField,
-.seenReplay > button,
-.seenHeld {
-  grid-column: 1 / -1;
-}
-
-.seenReplayLead,
-.seenHeld {
-  margin: 0;
-  color: #cfc6b4;
+  min-height: 32px;
+  padding: 0 8px;
+  color: #f4efe5;
+  background: rgba(18, 14, 10, 0.82);
+  border: 1px solid rgba(216, 197, 106, 0.45);
   font-family: Georgia, 'Palatino Linotype', serif;
-  font-size: 0.84rem;
-  line-height: 1.4;
-  text-align: center;
 }
 
-.seenWhen {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
-.seenWhen button,
-.seenReplay > button {
-  min-height: 42px;
-  border: 1px solid rgba(216, 197, 106, 0.4);
-}
-
-.seenWhen button.on,
-.seenReplay > button {
+.seenCombined button.on {
   color: #171512;
   background: #e6d7a2;
 }
 
-.seenReplay label {
+.seenCombined i {
+  font-style: normal;
+  opacity: 0.7;
+}
+
+.seenPlacard {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 92px;
+  height: 112px;
+  margin-left: -46px;
+  margin-top: -56px;
+  padding: 10px 8px;
+  text-align: center;
+  touch-action: none;
+  cursor: grab;
+  background: linear-gradient(180deg, rgba(74, 62, 44, 0.94), rgba(20, 16, 12, 0.94));
+  border: 1px solid rgba(216, 197, 106, 0.5);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.seenPlacard.dragging {
+  position: fixed;
+  margin: 0;
+  cursor: grabbing;
+}
+
+.seenPlacard b {
+  display: block;
+  color: #e6d7a2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.55rem;
+}
+
+.seenPlacard h2 {
+  margin: 8px 0 0;
+  color: #f4efe5;
+  font-family: Georgia, 'Palatino Linotype', serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.seenSheet {
+  width: min(100%, 640px);
+  margin: 0 auto;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(54, 44, 32, 0.96), rgba(14, 12, 10, 0.96));
+  border: 1px solid rgba(216, 197, 106, 0.4);
+}
+
+.seenSheet header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.seenSheet header b {
+  color: #e6d7a2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.62rem;
+}
+
+.seenSheet h2,
+.seenSheet p,
+.seenSheet legend {
+  font-family: Georgia, 'Palatino Linotype', serif;
+  font-weight: 400;
+}
+
+.seenSheet h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.seenSheet header button,
+.seenSheetGrid > button,
+.seenSheetGrid fieldset > button {
+  margin-left: auto;
+  min-height: 36px;
+  padding: 0 10px;
+  color: #e6d7a2;
+  background: transparent;
+  border: 1px solid rgba(216, 197, 106, 0.4);
+}
+
+.seenSheetGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.seenSheetGrid p,
+.seenSheet > p,
+.seenSheetGrid .wide,
+.seenSheetGrid > button,
+.seenSheetGrid fieldset {
+  grid-column: 1 / -1;
+}
+
+.seenSheetGrid p,
+.seenSheet > p {
+  margin: 0;
+  color: #cfc6b4;
+}
+
+.seenSheet label,
+.seenSheet legend {
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -207,23 +237,49 @@
   text-transform: uppercase;
 }
 
-.seenReplay input,
+.seenSheet label.check {
+  flex-direction: row;
+  align-items: center;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.85rem;
+  color: #f4efe5;
+}
+
+.seenSheet input,
 .seenPlacardInput {
   width: 100%;
-  min-height: 42px;
+  min-height: 40px;
   padding: 8px 10px;
   color: #f4efe5;
   background: rgba(255, 248, 230, 0.04);
   border: 1px solid rgba(216, 197, 106, 0.28);
   font-family: Georgia, 'Palatino Linotype', serif;
-  text-transform: none;
-  letter-spacing: 0;
   font-size: 0.95rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.seenSheet input[type='checkbox'] {
+  width: auto;
+  min-height: 0;
+  padding: 0;
+}
+
+.seenSheet fieldset {
+  margin: 0;
+  padding: 8px;
+  border: 1px solid rgba(216, 197, 106, 0.28);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.seenSheet fieldset legend {
+  padding: 0 6px;
 }
 
 .seenCitySuggestions {
-  position: relative;
-  z-index: 3;
   margin: 4px 0 0;
   padding: 0;
   list-style: none;
@@ -234,7 +290,7 @@
 .seenCitySuggestion {
   display: block;
   width: 100%;
-  min-height: 42px;
+  min-height: 40px;
   padding: 8px 10px;
   text-align: left;
   color: #f4efe5;
@@ -246,12 +302,32 @@
   background: rgba(230, 215, 162, 0.16);
 }
 
-@keyframes seenSpin {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
+@keyframes seenThrob {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  16% { transform: scale(1.025); filter: brightness(1.12); }
+  30% { transform: scale(1.008); filter: brightness(1.03); }
+  46% { transform: scale(1.04); filter: brightness(1.16); }
+  68% { transform: scale(1); filter: brightness(1); }
 }
 
-@keyframes seenSpinBack {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(-360deg); }
+@keyframes seenPulse {
+  0%, 100% { opacity: 0.25; transform: translate(-50%, -50%) scale(0.8); }
+  16% { opacity: 0.85; transform: translate(-50%, -50%) scale(1.15); }
+  30% { opacity: 0.35; transform: translate(-50%, -50%) scale(0.9); }
+  46% { opacity: 1; transform: translate(-50%, -50%) scale(1.35); }
+  68% { opacity: 0.25; transform: translate(-50%, -50%) scale(0.8); }
+}
+
+@keyframes seenRootsGrow {
+  0% { stroke-dashoffset: 52; opacity: 0.15; }
+  58% { stroke-dashoffset: 0; opacity: 0.9; }
+  100% { stroke-dashoffset: 52; opacity: 0.12; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seenPosterLive,
+  .seenRoots .root,
+  .seenPulse {
+    animation: none;
+  }
 }
