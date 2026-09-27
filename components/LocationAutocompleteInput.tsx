@@ -20,7 +20,7 @@ type LocationAutocompleteInputProps = {
   placeholder?: string;
   ariaLabel?: string;
   className?: string;
-  onLocationEntered?: () => void;
+  onLocationEntered?: (label: string) => void;
 };
 
 const DEBOUNCE_MS = 200;
@@ -95,7 +95,7 @@ export function LocationAutocompleteInput({
 
   function selectSuggestion(suggestion: CitySuggestion) {
     onChange(suggestion.label);
-    onLocationEntered?.();
+    onLocationEntered?.(suggestion.label);
     setSuggestions([]);
     setOpen(false);
   }
@@ -140,7 +140,7 @@ export function LocationAutocompleteInput({
         }}
         onFocus={() => setOpen(true)}
         onBlur={() => {
-          if (value.trim()) onLocationEntered?.();
+          if (value.trim()) onLocationEntered?.(value);
         }}
         onKeyDown={handleKeyDown}
       />
