@@ -154,7 +154,6 @@ export default function SeenEntry() {
     <main className="seenAlivePage">
       <header className="seenAliveHead">
         <span>SEEN</span>
-        <small>Swipe the rail. Tap the front placard and it goes onto the poster.</small>
       </header>
 
       <div
@@ -219,9 +218,9 @@ export default function SeenEntry() {
               key={card.id}
               className={delta === 0 ? 'seenRailCard front' : 'seenRailCard'}
               style={{
-                transform: `translateX(${delta * 86}px) scale(${delta === 0 ? 1 : 0.86})`,
+                transform: `translateX(${delta * 70}px) scale(${abs === 0 ? 1.24 : abs === 1 ? 0.74 : 0.58})`,
                 zIndex: 10 - abs,
-                opacity: 1 - abs * 0.18,
+                opacity: 1 - abs * 0.28,
               }}
               onClick={() => {
                 if (moved.current) return;

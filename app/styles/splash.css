@@ -1,14 +1,12 @@
 .seenAlivePage {
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: max(12px, env(safe-area-inset-top)) 12px max(18px, env(safe-area-inset-bottom));
-  background: #070605;
   color: #f3ecdf;
 }
 
 .seenAliveHead {
+  position: relative;
+  z-index: 2;
+  padding: max(12px, env(safe-area-inset-top)) 12px 0;
   text-align: center;
 }
 
@@ -28,18 +26,18 @@
 }
 
 .seenPosterFrame {
-  position: relative;
-  width: min(100%, 760px);
-  margin: 0 auto;
-  border: 1px solid rgba(216, 197, 106, 0.35);
-  background: #100e0c;
-  animation: seenThrob 8s ease-in-out infinite;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: #070605;
 }
 
 .seenPosterFrame img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .seenNested {
@@ -67,10 +65,14 @@
 }
 
 .seenRail {
-  position: relative;
-  height: 248px;
-  width: min(100%, 760px);
-  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  height: 300px;
+  width: 100%;
+  margin: 0;
   overflow: hidden;
 }
 
@@ -150,8 +152,10 @@
 .seenRailNudge.right { right: 0; }
 
 .seenSheet {
-  width: min(100%, 640px);
-  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+  width: min(100% - 24px, 640px);
+  margin: 12px auto 0;
   padding: 12px;
   background: linear-gradient(180deg, rgba(54, 44, 32, 0.96), rgba(14, 12, 10, 0.96));
   border: 1px solid rgba(216, 197, 106, 0.4);
