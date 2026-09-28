@@ -58,16 +58,16 @@ export default function SeenEntry() {
           if (delta > count / 2) delta -= count;
           if (delta < -count / 2) delta += count;
           const abs = Math.abs(delta);
-          if (abs > 2) return null;
+          if (abs > 1) return null;
           return (
             <button
               key={card.id}
               type="button"
               className={abs === 0 ? 'seenRailCard front' : 'seenRailCard'}
               style={{
-                transform: `translateX(${delta * 78}px) scale(${abs === 0 ? 1.18 : abs === 1 ? 0.72 : 0.55})`,
+                transform: `translateX(${delta * 28}vw) scale(${abs === 0 ? 1 : 0.78})`,
                 zIndex: 10 - abs,
-                opacity: 1 - abs * 0.22,
+                opacity: abs === 0 ? 1 : 0.92,
               }}
               onClick={() => {
                 if (moved.current) return;

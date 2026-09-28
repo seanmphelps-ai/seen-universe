@@ -1,41 +1,41 @@
 .seenAlivePage {
+  height: 100svh;
   min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   background: #070605;
 }
 
 .seenPosterFrame {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 72vh;
-  z-index: 0;
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
 }
 
 .seenPosterFrame img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center bottom;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .seenRail {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  height: 32vh;
+  position: relative;
+  flex: 0 0 auto;
+  height: 38vh;
+  width: 100%;
   overflow: hidden;
 }
 
 .seenRailCard {
   position: absolute;
   left: 50%;
-  bottom: 12px;
-  width: 128px;
-  margin-left: -64px;
+  bottom: max(8px, env(safe-area-inset-bottom));
+  width: min(42vw, 168px);
+  margin-left: calc(min(42vw, 168px) / -2);
   padding: 0;
   background: none;
   border: 0;
