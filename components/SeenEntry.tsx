@@ -189,8 +189,14 @@ export default function SeenEntry() {
           )}
         </div>
 
-        {PLACARDS.filter((card) => !dropped.includes(card.id)).map((card) => {
+        {PLACARDS.filter((card) => !dropped.includes(card.id)).map((card, index, ridingCards) => {
           const riding = drag?.id === card.id;
+          const angle = (index / ridingCards.length) * Math.PI * 2 - Math.PI / 2;
+          const parked = {
+            transform: `translate(${Math.cos(angle) * 132}px, ${Math.sin(angle) * 168}px)`,
+            opacity: 1,
+            zIndex: 6,
+          };
           return (
             <article
               key={card.id}
@@ -198,7 +204,7 @@ export default function SeenEntry() {
                 cardRefs.current[card.id] = node;
               }}
               className={riding ? 'seenPlacard dragging' : 'seenPlacard'}
-              style={riding ? { left: drag.x, top: drag.y, transform: 'none', opacity: 1, zIndex: 40 } : undefined}
+              style={riding ? { left: drag.x, top: drag.y, transform: 'none', opacity: 1, zIndex: 40 } : parked}
               onPointerDown={(event) => pointerDown(event, card.id)}
               onPointerMove={pointerMove}
               onPointerUp={pointerUp}
