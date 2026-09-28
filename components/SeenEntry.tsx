@@ -3,11 +3,22 @@
 import { useRef, useState } from 'react';
 
 const CARDS = [
+  { id: 'forged', src: '/foundation/cards/forged.jpg' },
+  { id: 'forces', src: '/foundation/cards/forces.jpg' },
   { id: 'place', src: '/foundation/cards/place.jpg' },
   { id: 'mark', src: '/foundation/cards/mark.jpg' },
   { id: 'code', src: '/foundation/cards/code.jpg' },
   { id: 'resonance', src: '/foundation/cards/resonance.jpg' },
   { id: 'ignite', src: '/foundation/cards/ignite.jpg' },
+  { id: 'western', src: '/foundation/cards/western.jpg' },
+  { id: 'hellenistic', src: '/foundation/cards/hellenistic.jpg' },
+  { id: 'tzolkin', src: '/foundation/cards/tzolkin.jpg' },
+  { id: 'bazi', src: '/foundation/cards/bazi.jpg' },
+  { id: 'vedic', src: '/foundation/cards/vedic.jpg' },
+  { id: 'numerology', src: '/foundation/cards/numerology.jpg' },
+  { id: 'signature', src: '/foundation/cards/signature.jpg' },
+  { id: 'trio', src: '/foundation/cards/trio.jpg' },
+  { id: 'galaxy-time', src: '/foundation/cards/galaxy-time.jpg' },
 ] as const;
 
 export default function SeenEntry() {
