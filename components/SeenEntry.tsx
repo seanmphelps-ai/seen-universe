@@ -129,7 +129,7 @@ export default function SeenEntry() {
               type="button"
               className={abs === 0 ? 'seenRailCard front' : 'seenRailCard'}
               style={{
-                transform: `translateX(${delta * 28}vw) scale(${abs === 0 ? 1 : 0.78})`,
+                transform: `translateX(${delta * 30}vw) scale(${abs === 0 ? 1 : 0.84})`,
                 zIndex: 10 - abs,
                 opacity: abs === 0 ? 1 : 0.92,
               }}
@@ -142,8 +142,8 @@ export default function SeenEntry() {
             </button>
           );
         })}
+        <p className="seenSynopsis">{CARDS[index].line}</p>
       </div>
-      <p className="seenSynopsis">{CARDS[index].line}</p>
     </main>
   );
 }

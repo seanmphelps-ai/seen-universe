@@ -1,6 +1,6 @@
 .seenAlivePage {
+  position: relative;
   height: 100svh;
-  min-height: 100svh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -8,51 +8,57 @@
 }
 
 .seenPosterFrame {
-  position: relative;
-  flex: 0 0 auto;
-  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .seenPosterFrame img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
 }
 
 .seenRail {
   position: relative;
-  flex: 1 1 auto;
-  min-height: 0;
-  width: 100%;
+  flex: 0 0 42vh;
+  height: 42vh;
   overflow: hidden;
 }
 
 .seenRailCard {
   position: absolute;
   left: 50%;
-  bottom: max(8px, env(safe-area-inset-bottom));
-  width: min(42vw, 168px);
-  margin-left: calc(min(42vw, 168px) / -2);
+  bottom: 64px;
+  width: min(44vw, 176px);
+  margin: 0 0 0 calc(min(44vw, 176px) / -2);
   padding: 0;
-  background: none;
   border: 0;
-  box-shadow: none;
+  background: none;
+  transform-origin: center bottom;
 }
 
 .seenRailCard img {
   display: block;
   width: 100%;
   height: auto;
+  max-height: calc(42vh - 76px);
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 .seenSynopsis {
-  flex: 0 0 auto;
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: max(8px, env(safe-area-inset-bottom));
   margin: 0;
-  padding: 8px 16px max(12px, env(safe-area-inset-bottom));
   color: #e6d7a2;
   font-family: Georgia, 'Palatino Linotype', serif;
-  font-size: 0.84rem;
-  line-height: 1.35;
+  font-size: 0.78rem;
+  line-height: 1.3;
   text-align: center;
 }
 
