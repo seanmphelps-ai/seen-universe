@@ -1,35 +1,12 @@
 .seenAlivePage {
   min-height: 100svh;
-  color: #f3ecdf;
-}
-
-.seenAliveHead {
-  position: relative;
-  z-index: 2;
-  padding: max(12px, env(safe-area-inset-top)) 12px 0;
-  text-align: center;
-}
-
-.seenAliveHead span {
-  display: block;
-  letter-spacing: 0.42em;
-  color: #e6d7a2;
-  font-family: Georgia, 'Palatino Linotype', serif;
-  font-size: 1.05rem;
-}
-
-.seenAliveHead small {
-  display: block;
-  margin-top: 4px;
-  color: #cfc6b4;
-  font-size: 0.72rem;
+  background: #070605;
 }
 
 .seenPosterFrame {
   position: fixed;
   inset: 0;
   z-index: 0;
-  background: #070605;
 }
 
 .seenPosterFrame img {
@@ -37,31 +14,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-}
-
-.seenNested {
-  position: absolute;
-  left: 8px;
-  right: 8px;
-  bottom: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.seenNested button {
-  min-height: 32px;
-  padding: 0 8px;
-  color: #f3ecdf;
-  background: rgba(16, 12, 8, 0.82);
-  border: 1px solid rgba(216, 197, 106, 0.5);
-  font-family: Georgia, 'Palatino Linotype', serif;
-}
-
-.seenNested button.on {
-  color: #1a140c;
-  background: #e6d7a2;
+  object-position: center 30%;
 }
 
 .seenRail {
@@ -70,226 +23,29 @@
   right: 0;
   bottom: 0;
   z-index: 2;
-  height: 300px;
-  width: 100%;
-  margin: 0;
+  height: 46vh;
   overflow: hidden;
 }
 
 .seenRailCard {
   position: absolute;
   left: 50%;
-  top: 8px;
-  width: 148px;
-  height: 220px;
-  margin-left: -74px;
-  padding: 14px 10px 12px;
-  text-align: center;
-  background:
-    radial-gradient(circle at 50% 0%, rgba(232, 206, 150, 0.16), transparent 42%),
-    linear-gradient(180deg, #4a3d2e 0%, #2a231b 38%, #16130f 100%);
-  border: 1px solid rgba(214, 176, 106, 0.72);
-  box-shadow:
-    inset 0 0 0 5px rgba(22, 16, 10, 0.35),
-    inset 0 0 0 6px rgba(214, 176, 106, 0.22),
-    0 16px 28px rgba(0, 0, 0, 0.45);
-}
-
-.seenRailCard.front {
-  box-shadow:
-    inset 0 0 0 5px rgba(22, 16, 10, 0.28),
-    inset 0 0 0 6px rgba(230, 198, 130, 0.45),
-    0 18px 32px rgba(0, 0, 0, 0.55);
-}
-
-.seenRailCard b {
-  display: block;
-  color: #e6d7a2;
-  letter-spacing: 0.22em;
-  font-size: 0.68rem;
-}
-
-.seenRailCard h2 {
-  margin: 6px 0 0;
-  color: #f6efe2;
-  font-family: Georgia, 'Palatino Linotype', serif;
-  font-weight: 400;
-  font-size: 1.12rem;
-  line-height: 1;
-}
-
-.seenRailCard p {
-  margin: 8px 0 0;
-  color: #d9c7a2;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-size: 0.62rem;
-}
-
-.seenEmblem {
-  display: block;
-  width: 74px;
-  height: 74px;
-  margin: 12px auto 0;
-  fill: none;
-  stroke: #e6d7a2;
-  stroke-width: 1.4;
-}
-
-.seenRailNudge {
-  position: absolute;
-  top: 90px;
-  z-index: 20;
-  width: 36px;
-  height: 48px;
-  color: #e6d7a2;
-  background: transparent;
+  bottom: 12px;
+  width: 168px;
+  margin-left: -84px;
+  padding: 0;
+  background: none;
   border: 0;
-  font-size: 2rem;
+  box-shadow: none;
 }
 
-.seenRailNudge.left { left: 0; }
-.seenRailNudge.right { right: 0; }
-
-.seenSheet {
-  position: relative;
-  z-index: 3;
-  width: min(100% - 24px, 640px);
-  margin: 12px auto 0;
-  padding: 12px;
-  background: linear-gradient(180deg, rgba(54, 44, 32, 0.96), rgba(14, 12, 10, 0.96));
-  border: 1px solid rgba(216, 197, 106, 0.4);
-}
-
-.seenSheet header {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.seenSheet header b,
-.seenSheet legend {
-  color: #e6d7a2;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-size: 0.62rem;
-}
-
-.seenSheet h2,
-.seenSheet p {
-  font-family: Georgia, 'Palatino Linotype', serif;
-  font-weight: 400;
-}
-
-.seenSheet h2 { margin: 0; font-size: 1.35rem; }
-
-.seenSheet header button,
-.seenSheetGrid > button {
-  margin-left: auto;
-  min-height: 36px;
-  padding: 0 10px;
-  color: #e6d7a2;
-  background: transparent;
-  border: 1px solid rgba(216, 197, 106, 0.4);
-}
-
-.seenSheetGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.seenSheetGrid p,
-.seenSheet > p,
-.seenSheetGrid .wide,
-.seenSheetGrid > button,
-.seenSheetGrid fieldset {
-  grid-column: 1 / -1;
-}
-
-.seenSheetGrid p,
-.seenSheet > p {
-  margin: 0;
-  color: #cfc6b4;
-}
-
-.seenSheet label {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  color: #e6d7a2;
-  font-size: 0.62rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.seenSheet label.check {
-  flex-direction: row;
-  align-items: center;
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: 0.85rem;
-  color: #f3ecdf;
-}
-
-.seenSheet input,
-.seenPlacardInput {
-  width: 100%;
-  min-height: 40px;
-  padding: 8px 10px;
-  color: #f3ecdf;
-  background: rgba(255, 248, 230, 0.04);
-  border: 1px solid rgba(216, 197, 106, 0.28);
-  font-family: Georgia, 'Palatino Linotype', serif;
-  font-size: 0.95rem;
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-.seenSheet input[type='checkbox'] {
-  width: auto;
-  min-height: 0;
-  padding: 0;
-}
-
-.seenSheet fieldset {
-  margin: 0;
-  padding: 8px;
-  border: 1px solid rgba(216, 197, 106, 0.28);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
-.seenCitySuggestions {
-  margin: 4px 0 0;
-  padding: 0;
-  list-style: none;
-  background: #16130f;
-  border: 1px solid rgba(216, 197, 106, 0.35);
-}
-
-.seenCitySuggestion {
+.seenRailCard img {
   display: block;
   width: 100%;
-  min-height: 40px;
-  padding: 8px 10px;
-  text-align: left;
-  color: #f3ecdf;
-  background: transparent;
-  border: 0;
+  height: auto;
 }
 
-.seenCitySuggestionActive {
-  background: rgba(230, 215, 162, 0.16);
-}
-
-@keyframes seenThrob {
-  0%, 100% { transform: scale(1); }
-  46% { transform: scale(1.015); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .seenPosterFrame { animation: none; }
+button,
+[role='button'] {
+  cursor: pointer;
 }
