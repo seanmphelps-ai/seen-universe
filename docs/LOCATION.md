@@ -4,6 +4,8 @@ This is the location layer of SEEN.
 Not a first slice. Not optional color on a natal chart.
 Place trains the person. The person can be transplanted. The training can rot.
 
+How the generator does the reconstruction: `docs/LOCATION_EVIDENCE_MVP.md`.
+
 ---
 
 ## Law
@@ -20,7 +22,7 @@ Location and chart are equal forces. Neither whispers. Neither shouts by rule.
 The person’s life decides which one ran louder in that window.
 
 Six months is enough contact for a place to count.
-Birth place, every 6+ month place, and current place are separate snapshots.
+Birth place, every 6+ month place, current place, and maternal pregnancy place are separate snapshots.
 Never one blended city profile.
 1993 Los Angeles is not 2026 Los Angeles.
 Hills are not flats. Compton 1960 is not Compton 1995.
@@ -161,6 +163,8 @@ Do not rebuild city autocomplete. It already exists.
 Do not merge two residences into one person.
 
 Marker math stays a vector. Do not collapse place into one score.
+
+How to collect and classify that public narrative: `docs/LOCATION_EVIDENCE_MVP.md`.
 
 ---
 
