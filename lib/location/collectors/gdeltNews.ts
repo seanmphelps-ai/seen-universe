@@ -10,19 +10,11 @@ type GdeltArticle = {
   url?: string;
   title?: string;
   seendate?: string;
-  domain?: string;
-  language?: string;
-  sourcecountry?: string;
 };
 
 type GdeltDocResponse = {
   articles?: GdeltArticle[];
 };
-
-const MARKER_QUERIES: { markerId: string; query: string }[] = [
-  { markerId: 'violent_incident', query: '(shooting OR homicide OR stabbing OR "killed")' },
-  { markerId: 'civil_unest_event'.replace('civil_unest_event', 'civil_unrest_event'), query: '(protest OR riot OR unrest)' },
-];
 
 function gdeltStamp(isoDate: string, endOfDay: boolean): string {
   const d = isoDate.replaceAll('-', '').slice(0, 8);
@@ -101,7 +93,7 @@ export const gdeltNewsProvider: WitnessProvider = {
     for (const lane of [
       { markerId: 'violent_incident', query: '(shooting OR homicide OR stabbing OR killed)' },
       { markerId: 'civil_unrest_event', query: '(protest OR riot OR unrest)' },
-    ]) {
+    ] as const) {
       const articles = await fetchArticles(`"${place}" ${lane.query}`, queryStart, windowEnd);
       for (const article of articles) {
         const url = article.url?.trim() || null;
