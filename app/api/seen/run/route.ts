@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { createHash } from 'node:crypto';
 import { calculateNatalChart, type NatalChartInput } from '../../../../lib/natalChart';
 import { buildLocationField } from '../../../../lib/location/buildLocationField';
 import type { LocationInput } from '../../../../lib/location/types';
-import { createHash } from 'node:crypto';
+import { gdeltNewsProvider } from '../../../../lib/location/collectors/gdeltNews';
 import { buildWesternPortalBridge } from '../../../../lib/seen/westernBridge';
+import { runEnvironmentalWitness } from '../../../../lib/location/v2/environmentalWitness';
 import {
   computeRuntimeEvidenceVector,
   fuseRuntimeVectors,
@@ -13,7 +15,7 @@ import {
   missingProductFamilies,
   PRODUCT_SOURCE_FAMILIES,
 } from '../../../../lib/location/v2/fromOfficialField';
-import { ALL_FORGED_INTERROGATIONS } from '../../../../lib/location/v2/forged';
+import { observationsToRuntimeInputs } from '../../../../lib/location/v2/observationsToRuntime';
 
 export const runtime = 'nodejs';
 
@@ -49,23 +51,58 @@ export async function POST(request: NextRequest) {
       input.locations.map((location) => buildLocationField(location)),
     );
 
-    const locationV2 = officialFields.map((field) => {
-      const officialInputs = officialFieldToV2Inputs(field);
-      const vectors = officialInputs.map(computeRuntimeEvidenceVector);
-      const fusion = fuseRuntimeVectors(vectors, PRODUCT_SOURCE_FAMILIES);
-      const collectedFamilies = ['OFFICIAL_DATA'] as const;
+    const locationV2 = await Promise.all(
+      officialFields.map(async (field) => {
+        const locationId = `${field.input.role}:${field.input.latitude},${field.input.longitude}`;
+        const windowStart = field.input.exposureStart;
+        const windowEnd = field.input.exposureEnd ?? new Date().toISOString().slice(0, 10);
 
-      return {
-        input: field.input,
-        officialField: field,
-        collectedFamilies,
-        missingFamilies: missingProductFamilies([...collectedFamilies]),
-        socialCollection: 'NOT_COLLECTED',
-        vectors,
-        fusion,
-        forgedInterrogations: ALL_FORGED_INTERROGATIONS,
-      };
-    });
+        const witness = await runEnvironmentalWitness(
+          {
+            locationId,
+            location: field.input.label,
+            windowStart,
+            windowEnd,
+          },
+          [gdeltNewsProvider],
+        );
+
+        const officialInputs = officialFieldToV2Inputs(field);
+        const collectedInputs = observationsToRuntimeInputs(
+          witness.observations,
+          locationId,
+          windowStart,
+          windowEnd,
+        );
+        const vectors = [...officialInputs, ...collectedInputs].map(computeRuntimeEvidenceVector);
+        const collectedFamilies = [
+          'OFFICIAL_DATA',
+          ...witness.familiesPresent,
+        ] as typeof PRODUCT_SOURCE_FAMILIES;
+
+        return {
+          input: field.input,
+          officialField: field,
+          witness: {
+            observationCount: witness.observations.length,
+            discoveries: witness.discoveries,
+            familiesPresent: witness.familiesPresent,
+            providerFailures: witness.providerFailures,
+            sample: witness.observations.slice(0, 20).map((item) => ({
+              observationId: item.observationId,
+              sourceUrl: item.sourceUrl,
+              publishedAt: item.publishedAt,
+              markerIds: item.markerIds,
+              provider: item.provider,
+            })),
+          },
+          collectedFamilies: [...new Set(collectedFamilies)],
+          missingFamilies: missingProductFamilies([...new Set(collectedFamilies)]),
+          vectors,
+          fusion: fuseRuntimeVectors(vectors, PRODUCT_SOURCE_FAMILIES),
+        };
+      }),
+    );
 
     const western = await calculateNatalChart(input.chart);
     const sourceFieldId = `western-natal:${createHash('sha256')
