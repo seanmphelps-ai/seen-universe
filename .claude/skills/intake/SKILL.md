@@ -10,7 +10,7 @@ Seal clean subject and location-period inputs before downstream calculation.
 - birth location with calendar time frame
 - every lived location of 6 months or more with calendar time frame period 
 - current location
-- repeated long stays same locstion as separate time periods
+- repeated long stays same locstion if separate calendar time periods
 - trip/event location and dates when relevant
 - confirmed geographic record and provenance
 - calendar timeframe for every location-period
