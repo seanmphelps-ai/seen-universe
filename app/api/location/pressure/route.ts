@@ -7,7 +7,7 @@ import {
 
 export const runtime = 'nodejs';
 
-const SKETCHES: SketchId[] = ['A', 'B', 'C'];
+const SKETCHES: SketchId[] = ['western', 'vedic', 'blended'];
 
 export async function GET(request: NextRequest) {
   const label = request.nextUrl.searchParams.get('q')?.trim() ?? '';
@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Missing q (location label).' }, { status: 400 });
   }
 
-  const selected = request.nextUrl.searchParams.get('sketch')?.trim().toUpperCase() as SketchId | null;
+  const selected = request.nextUrl.searchParams.get('sketch')?.trim().toLowerCase() as SketchId | null;
   const base = buildLocationPressure(label);
   const record =
     selected && SKETCHES.includes(selected) ? lockLocationSketch(base, selected) : base;
