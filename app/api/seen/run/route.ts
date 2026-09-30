@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { calculateNatalChart, type NatalChartInput } from '../../../../lib/natalChart';
 import { buildLocationField } from '../../../../lib/location/buildLocationField';
 import type { LocationInput } from '../../../../lib/location/types';
-import { gdeltNewsProvider } from '../../../../lib/location/collectors/gdeltNews';
+import { redditForumProvider } from '../../../../lib/location/collectors/redditForum';
 import { buildWesternPortalBridge } from '../../../../lib/seen/westernBridge';
 import { runEnvironmentalWitness } from '../../../../lib/location/v2/environmentalWitness';
 import {
@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
             windowStart,
             windowEnd,
           },
-          [gdeltNewsProvider],
+          [redditForumProvider],
         );
 
         const officialInputs = officialFieldToV2Inputs(field);
@@ -75,10 +75,7 @@ export async function POST(request: NextRequest) {
           windowEnd,
         );
         const vectors = [...officialInputs, ...collectedInputs].map(computeRuntimeEvidenceVector);
-        const collectedFamilies = [
-          'OFFICIAL_DATA',
-          ...witness.familiesPresent,
-        ] as typeof PRODUCT_SOURCE_FAMILIES;
+        const collectedFamilies = ['OFFICIAL_DATA', ...witness.familiesPresent];
 
         return {
           input: field.input,
@@ -94,6 +91,7 @@ export async function POST(request: NextRequest) {
               publishedAt: item.publishedAt,
               markerIds: item.markerIds,
               provider: item.provider,
+              matchedGeography: item.matchedGeography,
             })),
           },
           collectedFamilies: [...new Set(collectedFamilies)],
