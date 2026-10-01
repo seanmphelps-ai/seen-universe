@@ -19,7 +19,13 @@ const nextConfig: NextConfig = {
   // at require time, same class of problem as swisseph-wasm above — bundling
   // moves the compiled output away from that data file. External keeps it a
   // plain Node require, resolved from its real location in node_modules.
-  serverExternalPackages: ['swisseph-wasm', 'all-the-cities'],
+  serverExternalPackages: [
+    'swisseph-wasm',
+    'all-the-cities',
+    'lunar-javascript',
+    '@oshimishi/dreamspell-math',
+    '@drewsonne/maya-dates',
+  ],
 }
 
 export default withEve(nextConfig)
