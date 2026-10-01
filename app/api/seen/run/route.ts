@@ -16,6 +16,7 @@ import {
   PRODUCT_SOURCE_FAMILIES,
 } from '../../../../lib/location/v2/fromOfficialField';
 import { observationsToRuntimeInputs } from '../../../../lib/location/v2/observationsToRuntime';
+import type { SourceFamily } from '../../../../lib/location/v2/types';
 
 export const runtime = 'nodejs';
 
@@ -75,7 +76,8 @@ export async function POST(request: NextRequest) {
           windowEnd,
         );
         const vectors = [...officialInputs, ...collectedInputs].map(computeRuntimeEvidenceVector);
-        const collectedFamilies = ['OFFICIAL_DATA', ...witness.familiesPresent];
+        const collectedFamilies: SourceFamily[] = ['OFFICIAL_DATA', ...witness.familiesPresent];
+        const uniqueFamilies: SourceFamily[] = [...new Set<SourceFamily>(collectedFamilies)];
 
         return {
           input: field.input,
@@ -94,8 +96,8 @@ export async function POST(request: NextRequest) {
               matchedGeography: item.matchedGeography,
             })),
           },
-          collectedFamilies: [...new Set(collectedFamilies)],
-          missingFamilies: missingProductFamilies([...new Set(collectedFamilies)]),
+          collectedFamilies: uniqueFamilies,
+          missingFamilies: missingProductFamilies(uniqueFamilies),
           vectors,
           fusion: fuseRuntimeVectors(vectors, PRODUCT_SOURCE_FAMILIES),
         };
