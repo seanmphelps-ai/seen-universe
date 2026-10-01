@@ -25,6 +25,9 @@ const nextConfig: NextConfig = {
     'lunar-javascript',
     '@oshimishi/dreamspell-math',
     '@drewsonne/maya-dates',
+    'kriya-ephemeris',
+    'kriya-ephemeris-timelords',
+    'free-human-design',
   ],
 }
 

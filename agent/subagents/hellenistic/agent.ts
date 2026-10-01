@@ -1,11 +1,13 @@
 import { defineAgent } from 'eve'
-import { calculateNatalChart, type NatalChartInput } from '../../../lib/natalChart'
+import { calculateHellenistic, type HellenisticCalcResult } from '../../../lib/hellenisticCalc'
+import type { NatalChartInput } from '../../../lib/natalChart'
 
-// Wheel: swisseph-wasm via lib/natalChart.ts.
-// Call: calculateNatalChart(input). Input: NatalChartInput. Output: NatalChartResult.
-// Lots, sect, and whole-sign houses are not calculated.
-export function readHellenisticPositions(input: NatalChartInput) {
-  return calculateNatalChart(input)
+// Wheel: swisseph-wasm calculateNatalChart + houses W + azalt SE_ECL2HOR,
+// and kriya-ephemeris-timelords partOfFortuneDeg / partOfSpiritDeg / partOfErosDeg.
+// Call: calculateHellenistic(input). Input: NatalChartInput.
+// Output: positions, sect, whole-sign places, and labeled Lots. partOfErosDeg is not a SEEN default.
+export function readHellenisticPositions(input: NatalChartInput): Promise<HellenisticCalcResult> {
+  return calculateHellenistic(input)
 }
 
 export default defineAgent({
