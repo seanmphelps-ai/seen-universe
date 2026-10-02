@@ -237,3 +237,18 @@ export function runIdForClock(clock: string, index: number): string {
   const normalized = /^\d{2}:\d{2}$/.test(clock) ? clock : `r1-${index}`;
   return `dark-${normalized.replace(':', '')}-${index}`;
 }
+
+const CLOCK_ON_FACE = /\b\d{1,2}:\d{2}\b/;
+
+/** Card face only. Rejects a clock or a one-line card before the UI can show it. */
+export function anonymousCardFace(paragraph: string): string {
+  const text = paragraph.replace(/\s+/g, ' ').trim();
+  if (CLOCK_ON_FACE.test(text)) {
+    throw new Error('A dark card cannot show a clock.');
+  }
+  const sentences = text.split(/(?<=[.!?])\s+/).filter((sentence) => sentence.length > 0);
+  if (sentences.length < 3) {
+    throw new Error('A dark card has to be a paragraph.');
+  }
+  return text;
+}

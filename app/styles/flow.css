@@ -76,6 +76,19 @@
   padding: var(--seen-space-6);
 }
 
+.seenPickCard {
+  display: block;
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.seenPickCard.isSelected {
+  border-color: var(--seen-text-primary);
+}
+
 .seenField,
 .seenFieldset {
   display: grid;
