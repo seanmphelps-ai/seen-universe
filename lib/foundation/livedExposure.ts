@@ -95,8 +95,12 @@ export function collectLivedPlaces(rows: LivedPlaceDraft[], now = new Date()): L
 export function livedStackFromPlaces(places: LivedPlace[]): string {
   return places
     .map((entry) => {
-      const end = entry.endYear == null ? 'now' : String(entry.endYear);
-      return `${entry.place.name} ${entry.startYear}–${end}`;
+      if (entry.endYear == null) return `${entry.place.name} ${entry.startYear}–now`;
+      if (entry.yearsLived < 1) {
+        const months = Math.round(entry.yearsLived * 12);
+        return `${entry.place.name} ${entry.startYear} (${months} months)`;
+      }
+      return `${entry.place.name} ${entry.startYear}–${entry.endYear}`;
     })
     .join('. ');
 }

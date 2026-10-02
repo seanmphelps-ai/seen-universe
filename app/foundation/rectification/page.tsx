@@ -311,11 +311,13 @@ export default function RectificationPage() {
           <h1 id="rectification-title" className="seenDisplayLarge">
             Pressure
           </h1>
-          <p className="seenFlowIntroduction">
-            {phase === 'round1'
-              ? 'Three anonymous summaries. Pick the one you recognize.'
-              : 'Three neighboring summaries. Pick the one you recognize.'}
-          </p>
+          {phase !== 'complete' && (
+            <p className="seenFlowIntroduction">
+              {phase === 'round1'
+                ? 'Three anonymous summaries. Pick the one you recognize.'
+                : 'Three neighboring summaries. Pick the one you recognize.'}
+            </p>
+          )}
           <div className="seenDivider" aria-hidden="true" />
         </header>
 

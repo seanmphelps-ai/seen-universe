@@ -42,6 +42,15 @@ describe('lived exposure', () => {
     expect(livedStackFromPlaces([place])).toBe('Los Angeles 2020–now');
   });
 
+  it('writes a same-year six-month stay as months, not a repeated year', () => {
+    const place = buildLivedPlace({
+      place: tarzana,
+      startMonth: '2020-01',
+      endMonth: '2020-07',
+    });
+    expect(livedStackFromPlaces([place])).toBe('Los Angeles 2020 (6 months)');
+  });
+
   it('skips a blank row and requires a selected city', () => {
     const blank = emptyLivedPlaceDraft('a');
     expect(collectLivedPlaces([blank])).toEqual([]);
