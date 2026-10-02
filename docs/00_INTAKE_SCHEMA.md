@@ -58,7 +58,7 @@ This is data collection. No scoring. No sky calculation. No card text yet.
 
 **Input**
 - `LivedExposure`
-- two fixed local clocks: `06:00`, `18:00`
+- three fixed local clocks: `04:00`, `12:00`, `20:00`
 
 **For each clock the engine computes (Swiss Ephemeris, never homemade):**
 - Julian Day from date + clock + birthCity timezone
@@ -69,14 +69,14 @@ This is data collection. No scoring. No sky calculation. No card text yet.
 **Output per run**
 - `HiddenRun { clock, positions, woundMarkers[], livedExposure }`
 
-Two runs. Two outputs. None shown to the user yet.
+Three runs. Three outputs. None shown to the user yet. Round 1 is these clocks. `06:00` and `18:00` are not hidden-run clocks.
 
 ---
 
 ## Stage 4 — Dark Cards
 
 **Input**
-- `HiddenRun[]` (both)
+- `HiddenRun[]` (three: `04:00`, `12:00`, `20:00`)
 - `LivedExposure`
 
 **For each run the generator produces one card:**
@@ -87,7 +87,7 @@ Two runs. Two outputs. None shown to the user yet.
 - the lived exposure shapes the sentence: same Chiron in 1995 Compton and 2026 Whitefish is a different card
 
 **Output**
-- `DarkCard[]` (two), each `{ runId, paragraph, livedExposureRef }`
+- `DarkCard[]` (three), each `{ runId, paragraph, livedExposureRef }`
 
 If a card reads like a horoscope, reject it.
 
@@ -98,7 +98,7 @@ If a card reads like a horoscope, reject it.
 **Input**
 - `DarkCard[]`
 
-**Round 1**: user picks one of two (06:00 vs 18:00).
+**Round 1**: three hidden runs (`04:00`, `12:00`, `20:00`). User picks the summary they recognize. No clock on the card.
 **Round 2**: ±3h around the pick → three new cards.
 **Round 3**: ±2h → three new cards.
 **Round 4**: ±1h → three new cards.
@@ -142,7 +142,7 @@ This is where other builders lost the plot. Do not start it.
 
 ## The chain, one line
 
-`Identity → BirthAnchor → LivedExposure → HiddenRun[2] → DarkCard[2] → Pick/Narrow → STOP`
+`Identity → BirthAnchor → LivedExposure → HiddenRun[3] → DarkCard[3] → Pick/Narrow (±3h → ±2h → ±1h) → STOP`
 
 Each arrow is a typed handoff. No stage skips its input. No stage invents its output.
 
@@ -160,7 +160,7 @@ No splash required. No sitemap tree. No separate tab per clock.
 - The word "stack" with no type behind it
 - Environment before date
 - Optional time
-- Noon as a stand-in
+- Round 1 at 06:00 / 18:00
 - Clock on dark cards
 - One-line or sentence-only cards
 - Planet names or house numbers in user-facing text

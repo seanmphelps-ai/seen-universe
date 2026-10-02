@@ -12,7 +12,7 @@ One path. SOL environment-before-date is dead.
    - Western + Vedic wound markers: Chiron, Lilith, Ashlesha, Neptune, Mars, Venus
    - Card uses wound bite AND the lived exposure
    - No clock on the card
-   - Pick → neighbors → ±2h → ±1h
+   - Pick → ±3h → ±2h → ±1h
 6. Family as soil on the 45 sections — after the dark cards work
 7. Sovereignty after dark protocol
 8. Then portals / helix / cadence
