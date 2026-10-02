@@ -29,7 +29,7 @@ Contract:
 - input: completed EnvironmentalPressureField + provenance/evidence
 - generator output: exactly three distinct evidence-supported experiential summaries
 - each summary carries both gift and cost; never only-good, never only-bad
-- one leans Western markers, one Vedic, one blended
+- summaries stay on the environmental field and do not mix modalities or rewrite a native reading
 - user response: one / multiple / none + optional strength rating
 - persistence: `EnvironmentalResonanceRecord`
 - downstream: resonance becomes calibration evidence only

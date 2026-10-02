@@ -16,4 +16,4 @@ Example shape, not a reading:
 
 Lived place rule stays: six months or more to count as soil. A visit can still be queried as a crossing. It does not become soil.
 
-Dark cards stop being universal prose. Face of a time-class is eight portal asks. The person recognizes the ask, not a recycled paragraph.
+Recognition is not universal prose and not a portal-ask list. Each modality stays whole. Portal extraction, when shown, is the structured field list in `docs/canon/PORTAL_TEMPLATE.md`. Location incubates the intact seed and does not rewrite it.

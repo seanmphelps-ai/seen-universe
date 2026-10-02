@@ -42,7 +42,7 @@ Change only this:
 2. Round 0 must accept 2 candidates. Later rounds stay 3.
 3. Pass `livedPlaces` from `seen.foundation.birth` into the scenarios request. Stop sending nothing.
 4. Stop requiring `candidates.length !== 3` before continue on round 0.
-5. Cards must be the dark paragraph fields in `DarkCardSchema`, not a 0–100 rating grid if that grid is still the only chooser. Pick the card. Then narrow.
+5. Cards carry the structured portal extraction fields, not one anonymous folded paragraph, and not a 0–100 rating grid if that grid is still the only chooser. Pick the card. Then narrow.
 
 ## Do not use as the first screen
 

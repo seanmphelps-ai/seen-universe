@@ -1,41 +1,27 @@
 /**
- * Soft dark-card seeds when LLM scenarios are unavailable.
- * Uses the real chart engine (Swiss + GeoPresence + wounds + 64 portals).
- * Face output is anonymous pressure prose — clocks stay metadata only.
+ * Time-window seeds from the chart engine.
+ * HARD LAW: the recognition face is structured extraction slots for that window.
+ * Slots stay empty until one native reading supplies behavioral pressure.
+ * Do not fold wound tags, portal metaphor lines, and location into one narrative.
+ * Location does not rewrite the native seed on the card face.
+ * Clock-driven archetype blends are not a face.
  */
 
 import type { NatalChartResult } from '../natalChart';
-import {
-  pressureProseFromSeed,
-  runIdForClock,
-} from '../rectification/pressureProseFromSeed';
+import { emptyPortalExtraction, type PortalExtraction } from '../portals/template';
 
 export type EngineSeedCard = {
   runId: string;
   chart: NatalChartResult;
   /** Metadata only — never render on card faces. */
   clock?: string;
-  /** Anonymous pressure paragraph for the card face. */
-  paragraph: string;
-  /** Raw cues retained for session/debug; not for face UI. */
-  geoSummary?: string;
-  wounds?: Array<{ label: string; sign: string; degree: number; qualities: string[] }>;
-  topPortals?: Array<{ portalId: number; name: string; expression: string }>;
+  extraction: PortalExtraction;
 };
 
 type DarkWindowResultPayload = {
   chart: NatalChartResult;
   darkCardSeed: {
     clock: string;
-    geoSummary: string;
-    woundMarkers: Array<{
-      label: string;
-      sign: string;
-      degree: number;
-      house?: number | null;
-      qualities: string[];
-    }>;
-    topPortals: Array<{ portalId: number; name: string; expression: string }>;
   };
 };
 
@@ -48,38 +34,19 @@ type SeedFetchInput = {
   livedStack?: string;
 };
 
+function runIdForClock(clock: string, index: number): string {
+  const normalized = /^\d{2}:\d{2}$/.test(clock) ? clock : `r1-${index}`;
+  return `dark-${normalized.replace(':', '')}-${index}`;
+}
+
 function mapResultsToCards(results: DarkWindowResultPayload[]): EngineSeedCard[] {
   return results.map((result, index) => {
-    const seed = result.darkCardSeed;
-    const clock = seed.clock;
-    const wounds = seed.woundMarkers.map((w) => ({
-      label: w.label,
-      sign: w.sign,
-      degree: w.degree,
-      house: w.house ?? null,
-      qualities: w.qualities,
-    }));
-    const topPortals = seed.topPortals;
-    const paragraph = pressureProseFromSeed({
-      clock,
-      geoSummary: seed.geoSummary,
-      wounds,
-      topPortals,
-    });
-
+    const clock = result.darkCardSeed.clock;
     return {
       runId: runIdForClock(clock, index),
       chart: result.chart,
       clock,
-      paragraph,
-      geoSummary: seed.geoSummary,
-      wounds: wounds.map(({ label, sign, degree, qualities }) => ({
-        label,
-        sign,
-        degree,
-        qualities,
-      })),
-      topPortals,
+      extraction: emptyPortalExtraction(),
     };
   });
 }

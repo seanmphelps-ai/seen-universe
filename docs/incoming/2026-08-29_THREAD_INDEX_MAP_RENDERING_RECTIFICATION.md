@@ -34,7 +34,7 @@ Rules:
 - Build place/time evidence first without biography contamination.
 - Generate exactly three evidence-supported experiential summaries from already-collected environmental evidence.
 - Each summary carries both gift and cost. Never only-good. Never only-bad.
-- One leans Western markers, one Vedic, one blended.
+- Summaries stay on the environmental field. They do not mix modalities or rewrite a native reading.
 - User may select one, multiple, or none.
 - Selection records which measured conditions appear to have reached/resonated with the subject.
 - Selection does not rewrite objective place conditions.

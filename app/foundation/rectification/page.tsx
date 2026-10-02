@@ -7,6 +7,10 @@ import {
   fetchSeedsForClocks,
   type EngineSeedCard,
 } from '../../../lib/seen/darkCardSeeds';
+import {
+  PORTAL_EXTRACTION_FIELDS,
+  PORTAL_EXTRACTION_LABELS,
+} from '../../../lib/portals/template';
 
 type PlaceCity = {
   name: string;
@@ -233,7 +237,7 @@ export default function RectificationPage() {
         setCalibrations(emptyCalibrations(Math.min(3, seeds.length)));
       } catch (err) {
         if (!cancelled) {
-          setError(err instanceof Error ? err.message : 'Could not build recognition summaries.');
+          setError(err instanceof Error ? err.message : 'Could not build recognition fields.');
           setCards([]);
           setCalibrations([]);
         }
@@ -289,7 +293,7 @@ export default function RectificationPage() {
 
     if (max === 0) {
       setError(
-        'None of these summaries registered. Adjust resonance, or regenerate for a fresh set.',
+        'None of these registered. Adjust resonance, or regenerate for a fresh set.',
       );
       return null;
     }
@@ -308,7 +312,7 @@ export default function RectificationPage() {
     if (!winner) return null;
     return {
       round,
-      method: 'engine-dark-windows-pressure-prose',
+      method: 'engine-dark-windows',
       pickedRunId: winner.card.runId,
       clocksMeta: cards.map((card, index) => ({
         runId: card.runId,
@@ -338,7 +342,7 @@ export default function RectificationPage() {
       'seen.foundation.rectification',
       JSON.stringify({
         round,
-        method: 'engine-dark-windows-pressure-prose',
+        method: 'engine-dark-windows',
         pickedRunId: winner.card.runId,
         pickedClock: winner.card.clock,
         pickedResonancePercent: winner.resonance,
@@ -380,7 +384,7 @@ export default function RectificationPage() {
       );
 
       if (seeds.length < 3) {
-        throw new Error(`Chart engine returned fewer than three Round-${nextRound} neighbor summaries.`);
+        throw new Error(`Chart engine returned fewer than three Round-${nextRound} windows.`);
       }
 
       setCards(seeds.slice(0, 3));
@@ -390,7 +394,7 @@ export default function RectificationPage() {
       setError(
         err instanceof Error
           ? err.message
-          : `Could not build Round-${nextRound} recognition summaries.`,
+          : `Could not build Round-${nextRound} recognition fields.`,
       );
       setCards([]);
       setCalibrations([]);
@@ -421,9 +425,8 @@ export default function RectificationPage() {
           </h1>
 
           <p className="seenFlowIntroduction">
-            Three anonymous pressure summaries. Say how much of each you can see
-            yourself in, and from what age it started to feel true. The calculation
-            stays backstage; the summaries stay anonymous.
+            Say how much of each you can see yourself in, and from what age it
+            started to feel true. The calculation stays backstage.
           </p>
 
           <div className="seenDivider" aria-hidden="true" />
@@ -434,8 +437,8 @@ export default function RectificationPage() {
           <section className="seenPanel">
             <p className="seenFieldSupport">
               {phase === 'round1'
-                ? 'Building pressure summaries…'
-                : 'Narrowing — building three neighboring pressure summaries…'}
+                ? 'Building time windows…'
+                : 'Narrowing — building three neighboring time windows…'}
             </p>
           </section>
         )}
@@ -452,7 +455,7 @@ export default function RectificationPage() {
                 style={{ marginTop: '1rem' }}
                 onClick={() => setRegenerateToken((v) => v + 1)}
               >
-                Regenerate summaries
+                Regenerate
               </button>
             )}
             {phase !== 'round1' && phase !== 'complete' && (
@@ -478,12 +481,19 @@ export default function RectificationPage() {
               return (
                 <section className="seenPanel" key={card.runId}>
                   <span className="seenLabel">Recognition {index + 1}</span>
-                  <p className="seenFlowIntroduction">{card.paragraph}</p>
+                  <dl>
+                    {PORTAL_EXTRACTION_FIELDS.map((field) => (
+                      <div key={field}>
+                        <dt className="seenLabel">{PORTAL_EXTRACTION_LABELS[field]}</dt>
+                        <dd className="seenFlowIntroduction">{card.extraction[field]}</dd>
+                      </div>
+                    ))}
+                  </dl>
 
                   <div className="seenDivider" aria-hidden="true" />
 
                   <span className="seenLabel">
-                    How much of this summary can you see yourself in?
+                    How much of this can you see yourself in?
                   </span>
                   <div
                     role="group"

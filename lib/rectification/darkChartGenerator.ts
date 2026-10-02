@@ -34,6 +34,13 @@ No clocks, signs, houses, planet names, nakshatra names, hexagram numbers, or as
 Human speech. Coil, erase, mask, go quiet, rewrite the story.
 Attachment is the core. If love is missing from the card, the card failed.
 
+HARD LAW
+Keep each supplied modality whole. Do not fold traditions into shared prose.
+Location incubates the intact seed. It does not rewrite the native reading.
+Fill portal extraction as separate fields only: triggers, pressure points, failure modes, costs/consequences, how pressure builds, how it releases, what typically gets destroyed, how long they let it go, show, defend, react, what is lost if it runs one more cycle.
+Those fields are not a license to blend modalities.
+The recognition face is not one anonymous folded paragraph.
+
 FORBIDDEN
 - Geo presence before the sky that was already computed
 - 108 portals

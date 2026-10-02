@@ -1,9 +1,10 @@
 import { describe, expect, it } from 'vitest';
+import { emptyPortalExtraction } from '../../portals/template';
 import { DarkCardSchema, HiddenRunSchema } from '../schema';
 
 const card = {
   runId: 'dark-example',
-  paragraph: 'A'.repeat(80),
+  extraction: emptyPortalExtraction(),
   reveal: 'Reveal',
   pressure: 'Pressure',
   consequence: 'Consequence',
@@ -35,6 +36,17 @@ describe('dark card wound coverage', () => {
 
   it('rejects the old single-wound shape', () => {
     expect(DarkCardSchema.safeParse({ ...card, wound: 'One wound', injury: 'One injury', darknessUnderneath: 'One root' }).success).toBe(false);
+  });
+
+  it('does not require a folded paragraph and keeps extraction slots empty', () => {
+    const { extraction, ...withoutExtraction } = card;
+    const wounds = [
+      { sourceSystemId: 'western', sourceFindingId: 'w1', wound: 'First', injury: 'First injury', darknessUnderneath: 'First root' },
+    ];
+    expect(DarkCardSchema.safeParse({ ...withoutExtraction, paragraph: 'A'.repeat(80), wounds }).success).toBe(false);
+    const parsed = DarkCardSchema.parse({ ...card, wounds });
+    expect(parsed.extraction).toEqual(extraction);
+    expect(parsed).not.toHaveProperty('paragraph');
   });
 
   it('accepts multiple native markers beyond the old fixed list', () => {

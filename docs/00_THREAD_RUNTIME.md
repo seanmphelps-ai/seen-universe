@@ -24,14 +24,14 @@ Do not ask for a clock. Do not guess noon.
   → /foundation/rectification
        POST /api/chart twice at 06:00 / 18:00
        POST /api/rectification/scenarios
-       two dark cards, no clocks, lived exposure in the paragraphs
+       two dark cards, no clocks, lived exposure in the extraction fields
        pick → narrow
        STOP
 ```
 
 Calculator: `lib/natalChart.ts` via `POST /api/chart`.
 Sky numbers do not change because of lived places.
-Card *paragraphs* must use the lived exposure when present.
+Card extraction fields use the lived exposure when present. Location does not rewrite the native reading. Do not fold modalities into one paragraph.
 
 ## Forbidden for the other thread
 

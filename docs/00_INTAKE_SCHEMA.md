@@ -80,16 +80,17 @@ Two runs. Two outputs. None shown to the user yet.
 - `LivedExposure`
 
 **For each run the generator produces one card:**
-- a paragraph, minimum three sentences
+- structured extraction fields, not one folded paragraph
 - no clock shown
 - no planet names, house numbers, degrees, or aspect types visible
-- must contain: trigger, pressure point, behavior, where it collapses, where it thrives, cost to them, cost to others, what is lost if it runs one more cycle
-- the lived exposure shapes the sentence: same Chiron in 1995 Compton and 2026 Whitefish is a different card
+- fields: triggers, pressure points, failure modes, costs/consequences, how pressure builds, how it releases, what typically gets destroyed, how long they let it go, show, defend, react, what is lost if it runs one more cycle
+- lived exposure shows how the intact seed meets that dirt. It does not rewrite the native reading. Same seed in 1995 Compton and 2026 Whitefish is a different incubation.
+- modalities stay whole. Do not mix them into shared prose.
 
 **Output**
-- `DarkCard[]` (two), each `{ runId, paragraph, livedExposureRef }`
+- `DarkCard[]` (two), each `{ runId, livedExposureRef, extraction }` where `extraction` is the field list in `docs/canon/PORTAL_TEMPLATE.md`
 
-If a card reads like a horoscope, reject it.
+If a card reads like a horoscope, or if it blends modalities, reject it.
 
 ---
 
