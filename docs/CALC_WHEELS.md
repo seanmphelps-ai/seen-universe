@@ -2,6 +2,10 @@
 
 Each row is the installed calculation package and the function the modality agent calls. Interpretive editions are not included.
 
+## Time rectification input law
+
+SEEN does not ask the user to supply or classify an “exact time.” Birth time is established through Time Rectification after the user has selected the Location experiential summary that best resonates with lived experience. The first rectification round generates three hidden-time summaries from 04:00, 12:00 noon, and 20:00. The user selects the summary that best matches lived experience. Each following round narrows around the selected candidate with three candidates: the selected time and the times three hours before and three hours after it. Candidate clock times remain hidden from the user; selections are calibration evidence and never rewrite source calculations. The rectified candidate time is then supplied to time-dependent modality calculators.
+
 | Modality | Package | Entry | Input | Output |
 |---|---|---|---|---|
 | Western | `swisseph-wasm` | `calculateNatalChart` in `lib/natalChart.ts`, called by `agent/subagents/western/agent.ts` `readWesternChart` | `name`, `birthDate`, `birthTime` or null, `latitude`, `longitude` | `NatalChartResult` |
