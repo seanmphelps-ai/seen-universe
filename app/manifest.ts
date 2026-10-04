@@ -4,10 +4,10 @@ export const dynamic = 'force-static';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'SEEN — Closure & Composure',
+    name: 'SEEN',
     short_name: 'SEEN',
-    description: 'You are not your sun sign. You are so much more than that.',
-    start_url: '/',
+    description: 'SEEN',
+    start_url: '/chart',
     display: 'standalone',
     orientation: 'portrait',
     background_color: '#171512',
