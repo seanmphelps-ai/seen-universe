@@ -29,30 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        {children}
-        <a
-          href="/status"
-          aria-label="Open live build status"
-          style={{
-            position: 'fixed',
-            right: 'max(12px, env(safe-area-inset-right))',
-            bottom: 'max(12px, env(safe-area-inset-bottom))',
-            zIndex: 1000,
-            border: '1px solid rgba(255,255,255,.22)',
-            borderRadius: 999,
-            padding: '8px 11px',
-            background: 'rgba(23,21,18,.88)',
-            color: 'rgba(255,255,255,.78)',
-            fontSize: 11,
-            letterSpacing: '.08em',
-            textDecoration: 'none',
-            backdropFilter: 'blur(10px)',
-          }}
-        >
-          BUILD
-        </a>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
