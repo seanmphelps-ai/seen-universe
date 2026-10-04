@@ -2,3 +2,44 @@
 @import './styles/splash.css';
 @import './styles/flow.css';
 @import './styles/responsive.css';
+
+/* Poster page — full-screen placard artwork */
+.seenPosterPage {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.seenPosterImage {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.seenPosterBack {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  color: #d8c56a;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border: 1px solid rgba(216, 197, 106, 0.35);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+.seenPosterBack:hover {
+  border-color: #d8c56a;
+}
