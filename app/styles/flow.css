@@ -210,6 +210,11 @@
   cursor: pointer;
 }
 
+a.seenButtonPrimary,
+a.seenButtonSecondary {
+  text-decoration: none;
+}
+
 .seenAlivePage.seenIntakeDeck {
   height: auto;
   min-height: 100svh;

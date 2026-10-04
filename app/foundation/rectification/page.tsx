@@ -1,7 +1,13 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import {
+  BIRTH_RECORD_KEY,
+  INTAKE_DECK_HREF,
+  RECTIFICATION_RECORD_KEY,
+} from '../../../lib/foundation/intakeDeck';
 import {
   fetchSeedsForClocks,
   type EngineSeedCard,
@@ -104,9 +110,9 @@ export default function RectificationPage() {
   phaseRef.current = phase;
 
   useEffect(() => {
-    const raw = sessionStorage.getItem('seen.foundation.birth');
+    const raw = sessionStorage.getItem(BIRTH_RECORD_KEY);
     if (!raw) {
-      router.replace('/chart');
+      router.replace(INTAKE_DECK_HREF.mark);
       return;
     }
 
@@ -115,6 +121,10 @@ export default function RectificationPage() {
     async function hydrateBirth() {
       try {
         const parsed = JSON.parse(raw!) as StoredBirth;
+        if (!parsed.birthDate) {
+          if (!cancelled) router.replace(INTAKE_DECK_HREF.mark);
+          return;
+        }
         let city = parsed.city;
         if (
           !city ||
@@ -139,14 +149,14 @@ export default function RectificationPage() {
           }
           city = resolved;
           const next = { ...parsed, city };
-          sessionStorage.setItem('seen.foundation.birth', JSON.stringify(next));
+          sessionStorage.setItem(BIRTH_RECORD_KEY, JSON.stringify(next));
           if (!cancelled) setBirth(next);
           return;
         }
 
         if (!cancelled) setBirth({ ...parsed, city });
       } catch {
-        if (!cancelled) router.replace('/chart');
+        if (!cancelled) router.replace(INTAKE_DECK_HREF.mark);
       }
     }
 
@@ -232,7 +242,7 @@ export default function RectificationPage() {
 
     sessionStorage.setItem('seen.foundation.chartResult', JSON.stringify(winner.chart));
     sessionStorage.setItem(
-      'seen.foundation.rectification',
+      RECTIFICATION_RECORD_KEY,
       JSON.stringify({
         round,
         method: 'engine-dark-windows-pressure-prose',
@@ -388,7 +398,10 @@ export default function RectificationPage() {
             <span className="seenLabel">Recognition locked</span>
             <p className="seenFlowIntroduction">{lockedMessage}</p>
             <div className="seenDivider" aria-hidden="true" />
-            <button type="button" className="seenButtonPrimary" onClick={backToRound1}>
+            <Link className="seenButtonPrimary" href={INTAKE_DECK_HREF.reveal}>
+              Reveal
+            </Link>
+            <button type="button" className="seenButtonSecondary" onClick={backToRound1}>
               Start over
             </button>
           </section>

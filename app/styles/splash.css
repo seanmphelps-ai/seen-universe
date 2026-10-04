@@ -1,3 +1,18 @@
+a.seenEntryStart {
+  position: absolute;
+  z-index: 30;
+  top: max(16px, env(safe-area-inset-top));
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  margin-top: 0;
+  transform: translateX(-50%);
+  min-width: 148px;
+  text-decoration: none;
+}
+
 .seenAlivePage {
   position: relative;
   height: 100svh;
