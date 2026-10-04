@@ -17,7 +17,7 @@ export async function calculateJyotishaAstronomy(input: JyotishaAstronomyInput) 
   const time = /^(\d{2}):(\d{2})$/.exec(input.birthTime);
   if (!date || !time || !Number.isFinite(input.latitude) || Math.abs(input.latitude) > 90 ||
       !Number.isFinite(input.longitude) || Math.abs(input.longitude) > 180) {
-    throw new Error('A valid birth date, exact time, and birth coordinates are required.');
+    throw new Error('A valid birth date, time, and birth coordinates are required.');
   }
   const zone = tzlookup(input.latitude, input.longitude);
   const local = DateTime.fromObject({
