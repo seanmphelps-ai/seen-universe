@@ -96,8 +96,8 @@ Build this first as one working vertical slice:
 - [ ] Collect current location
 - [ ] Collect location start and end dates or approximate calendar years
 - [ ] Collect specific relationship/event dates and locations when relevant
-- [ ] Store time certainty separately
-- [ ] Begin birth-time rectification only after date and location provide the candidate material
+- [ ] Do not ask the user to classify or provide an exact birth time; establish birth time through Time Rectification
+- [ ] Begin Time Rectification only after the user selects the Location experiential summary that best resonates with lived experience
 - [ ] Support one-person use when no second subject is supplied
 - [ ] Support a second subject without rebuilding Person A
 
@@ -176,12 +176,13 @@ Build this first as one working vertical slice:
 - [?] Lock whether numerology remains in the first product pass
 - [ ] Verify Galaxy Signature / Dreamspell calculation protocol
 - [ ] Preserve the 64 SEEN Portals as their own layer, using canonical hexagram names without Human Design or independent I Ching calculations
-- [ ] Implement time-certainty states
-- [ ] Generate rectification candidates after date and location calculations
-- [ ] Present three recognition cards per round
-- [ ] Allow up to four rectification rounds
-- [ ] Preserve the user's resonance selections as calibration evidence
-- [ ] Store the final time confidence and provenance
+- [ ] Begin Time Rectification after the user selects the Location experiential summary that best resonates with lived experience
+- [ ] Generate the first three hidden-time summaries from 04:00, 12:00 noon, and 20:00
+- [ ] Present three recognition summaries per rectification round without exposing candidate clock times
+- [ ] After each user selection, narrow around the selected candidate using selected time -3 hours, selected time, and selected time +3 hours
+- [ ] Continue narrowing through the approved rectification rounds
+- [ ] Preserve every user resonance selection as calibration evidence without rewriting source calculations
+- [ ] Store the final rectified time, confidence, and provenance
 
 ## PERMANENT 64-PORTAL ARCHITECTURE
 
