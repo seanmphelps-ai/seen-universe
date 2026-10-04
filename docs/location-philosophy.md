@@ -1,8 +1,8 @@
-# Location Philosophy — Place, Incubator, Exposure, Forge
+# Location Philosophy — Place, Incubator, Exposure
 
 ## Canonical language
 
-**Place is the incubator. Environmental exposure is what accumulates inside it. The Forge is the shaping process produced by repeated contact over time.**
+**Place is the incubator. Environmental exposure is what accumulates inside it. The location card's label is environmental exposure.**
 
 Location establishes environmental conditions and exposure potential. It does not establish a person's outcome by itself.
 
@@ -33,8 +33,7 @@ Each location may contribute distinct physical, social, economic, cultural, inst
 
 ## Language bank
 
-- Place — The Forge
-- Environmental Exposures
+- environmental exposure
 - Incubator
 - Exposure location
 - Overall exposure
@@ -73,11 +72,10 @@ SEEN may say an environment **may shape**, **may reinforce**, **appears associat
 
 ```text
 01
-PLACE
-THE FORGE
+environmental exposure
+What were you exposed to?
 
-INCUBATORS OF THE FIELD
-ENVIRONMENTAL EXPOSURES
+Incubators of the field
 Reveal the places that shaped the pressure.
 
 BIRTH LOCATION

@@ -5,15 +5,16 @@ import { LocationAutocompleteInput } from '../../../components/LocationAutocompl
 import { LocationPressureCards } from '../../../components/LocationPressureCards';
 import type { SketchId } from '../../../lib/location/pressure';
 
-export default function ForgeLocationPage() {
+/** Location card. Its label is environmental exposure. */
+export default function LocationPage() {
   const [label, setLabel] = useState('');
   const [locked, setLocked] = useState<SketchId | null>(null);
 
   return (
     <main className="seenAlivePage">
-      <section className="seenPanel seenFlowForm">
-        <span className="seenLabel">Place</span>
-        <h1>Incubators of the field</h1>
+      <section className="seenPanel seenFlowForm" aria-labelledby="location-card-title">
+        <h1 id="location-card-title">environmental exposure</h1>
+        <p className="seenFieldSupport">Incubators of the field</p>
         <p className="seenFieldSupport">Reveal the places that shaped the pressure.</p>
         <div className="seenField">
           <label className="seenLabel" htmlFor="location-q">
