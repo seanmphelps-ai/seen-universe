@@ -9,7 +9,7 @@ export default function PosterPage() {
         alt="SEEN — The Forge. A golden tree of light rising through mountains and crystals, with the words: Same seed. Different soil. Different tree."
       />
       <div className="seenPosterActions">
-        <Link className="seenButtonPrimary" href="/chart">
+        <Link className="seenButtonPrimary" href="/foundation/birth/">
           Enter the Forge
         </Link>
       </div>

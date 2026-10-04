@@ -19,7 +19,43 @@ import {
 } from '../../../lib/foundation/livedExposure';
 import { LivedPlacesField } from './LivedPlacesField';
 
-const CARD_COPY: Record<IntakeCard, { title: string; support: string; step: string; total: string; next: string; back: string | null; href: string; backTo: string | null; storageKey: string | null; storageValue: ((v: string) => string) | null; validate: (s: { name: string; birthDate: string; birthCity: Place | null; livedRows: LivedPlaceDraft[] }) => string | null; onAdvance: (s: { name: string; birthDate: string; birthCity: Place | null; livedRows: LivedPlaceDraft[] }, router: ReturnType<typeof useRouter>) => void; render: (s: { name: string; birthDate: string; setName: (v: string) => void; setBirthDate: (v: string) => void; cityQuery: string; setCityQuery: (v: string) => void; setBirthCity: (v: Place | null) => void; livedRows: LivedPlaceDraft[]; setLivedRows: (v: LivedPlaceDraft[]) => void }) => React.ReactNode; } = {
+const INTAKE_CARDS = ['name', 'birthDate', 'birthCity', 'livedPlaces'] as const;
+
+const CARD_COPY: Record<IntakeCard, {
+  title: string;
+  support: string;
+  step: string;
+  total: string;
+  next: string;
+  back: string | null;
+  backTo: string | null;
+  validate: (s: {
+    name: string;
+    birthDate: string;
+    birthCity: Place | null;
+    livedRows: LivedPlaceDraft[];
+  }) => string | null;
+  onAdvance: (
+    s: {
+      name: string;
+      birthDate: string;
+      birthCity: Place | null;
+      livedRows: LivedPlaceDraft[];
+    },
+    router: ReturnType<typeof useRouter>,
+  ) => void;
+  render: (s: {
+    name: string;
+    setName: (v: string) => void;
+    birthDate: string;
+    setBirthDate: (v: string) => void;
+    cityQuery: string;
+    setCityQuery: (v: string) => void;
+    setBirthCity: (v: Place | null) => void;
+    livedRows: LivedPlaceDraft[];
+    setLivedRows: (v: LivedPlaceDraft[]) => void;
+  }) => React.ReactNode;
+}> = {
   name: {
     title: 'name'
 ,
@@ -33,13 +69,7 @@ const CARD_COPY: Record<IntakeCard, { title: string; support: string; step: stri
 ,
     back: null
 ,
-    href: '/foundation/birth'
-,
     backTo: null
-,
-    storageKey: null
-,
-    storageValue: null
 ,
     validate: ({ name }) => nameCardError(name)
 ,
@@ -79,13 +109,7 @@ const CARD_COPY: Record<IntakeCard, { title: string; support: string; step: stri
 ,
     back: 'Back'
 ,
-    href: '/foundation/birth'
-,
-    backTo: '/foundation/birth'
-,
-    storageKey: null
-,
-    storageValue: null
+    backTo: '/poster/'
 ,
     validate: ({ birthDate }) => birthDateCardError(birthDate)
 ,
@@ -123,13 +147,7 @@ const CARD_COPY: Record<IntakeCard, { title: string; support: string; step: stri
 ,
     back: 'Back'
 ,
-    href: '/foundation/birth'
-,
-    backTo: '/foundation/birth'
-,
-    storageKey: null
-,
-    storageValue: null
+    backTo: '/poster/'
 ,
     validate: ({ birthCity }) => birthCityCardError(birthCity)
 ,
@@ -176,13 +194,7 @@ const CARD_COPY: Record<IntakeCard, { title: string; support: string; step: stri
 ,
     back: 'Back'
 ,
-    href: '/foundation/birth'
-,
-    backTo: '/foundation/birth'
-,
-    storageKey: 'seen.foundation.birth'
-,
-    storageValue: null
+    backTo: '/poster/'
 ,
     validate: ({ livedRows }) => {
       try {
@@ -275,5 +287,3 @@ export default function BirthFoundationPage() {
   )
 ,
 }
-
-const INTAKE_CARDS = ['name', 'birthDate', 'birthCity', 'livedPlaces'] as const;
