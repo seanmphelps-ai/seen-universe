@@ -300,26 +300,16 @@ export default function RectificationPage() {
   const round = phaseRound(phase);
 
   return (
-    <main className="seenFlowPage">
-      <section className="seenFlowShell" aria-labelledby="rectification-title">
-        <div className="seenProgress" aria-label="Foundation progress">
-          <span className="seenProgressLabel">Foundation</span>
-          <span className="seenProgressValue">04</span>
-        </div>
-
-        <header className="seenFlowHeader">
-          <h1 id="rectification-title" className="seenDisplayLarge">
-            Pressure
-          </h1>
-          {phase !== 'complete' && (
-            <p className="seenFlowIntroduction">
-              {phase === 'round1'
-                ? 'Three anonymous summaries. Pick the one you recognize.'
-                : 'Three neighboring summaries. Pick the one you recognize.'}
-            </p>
-          )}
-          <div className="seenDivider" aria-hidden="true" />
-        </header>
+    <main className="seenAlivePage seenIntakeDeck">
+      <section className="seenPanel seenFlowForm" aria-labelledby="rectification-title">
+        <h1 id="rectification-title">pressure</h1>
+        {phase !== 'complete' && (
+          <p className="seenFieldSupport">
+            {phase === 'round1'
+              ? 'Three anonymous summaries. Pick the one you recognize.'
+              : 'Three neighboring summaries. Pick the one you recognize.'}
+          </p>
+        )}
 
         {isLoading && birth && (
           <section className="seenPanel">

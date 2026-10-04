@@ -1,7 +1,8 @@
 'use client';
 
-import { useMemo, useRef } from 'react';
-import { CITIES } from '../lib/cities';
+import { useRef, type Dispatch, type SetStateAction } from 'react';
+import { LocationAutocompleteInput } from './LocationAutocompleteInput';
+import { placeFromSuggestion } from '../lib/foundation/intakeDeck';
 import {
   emptyLivedPlaceDraft,
   type LivedPlaceDraft,
@@ -9,23 +10,24 @@ import {
 
 type LivedPlacesFieldProps = {
   rows: LivedPlaceDraft[];
-  onChange: (rows: LivedPlaceDraft[]) => void;
+  onChange: Dispatch<SetStateAction<LivedPlaceDraft[]>>;
 };
 
 export default function LivedPlacesField({ rows, onChange }: LivedPlacesFieldProps) {
   const nextId = useRef(rows.length);
 
   function update(id: string, patch: Partial<LivedPlaceDraft>) {
-    onChange(rows.map((row) => (row.id === id ? { ...row, ...patch } : row)));
+    onChange((current) => current.map((row) => (row.id === id ? { ...row, ...patch } : row)));
   }
 
   function addRow() {
     nextId.current += 1;
-    onChange([...rows, emptyLivedPlaceDraft(String(nextId.current))]);
+    const id = String(nextId.current);
+    onChange((current) => [...current, emptyLivedPlaceDraft(id)]);
   }
 
   function removeRow(id: string) {
-    onChange(rows.filter((row) => row.id !== id));
+    onChange((current) => current.filter((row) => row.id !== id));
   }
 
   return (
@@ -62,50 +64,31 @@ function LivedPlaceRow({
   onChange: (patch: Partial<LivedPlaceDraft>) => void;
   onRemove?: () => void;
 }) {
-  const suggestions = useMemo(() => {
-    const query = row.query.trim().toLowerCase();
-    if (!query || row.city) return [];
-    return CITIES.filter(
-      (city) =>
-        city.name.toLowerCase().includes(query) ||
-        city.country.toLowerCase().includes(query),
-    ).slice(0, 8);
-  }, [row.city, row.query]);
-
   return (
     <div className="seenField">
       <label className="seenLabel" htmlFor={`lived-city-${row.id}`}>
         Place {index + 1}
       </label>
       <div className="seenInputFrame">
-        <input
+        <LocationAutocompleteInput
           id={`lived-city-${row.id}`}
           className="seenInput"
-          type="text"
-          autoComplete="off"
-          placeholder="Search for a city"
           value={row.query}
-          onChange={(event) => onChange({ query: event.target.value, city: null })}
+          placeholder="Search for a city"
+          ariaLabel={`Place ${index + 1}`}
+          onChange={(value) => onChange({ query: value })}
+          onPlaceSelect={(suggestion) => {
+            if (!suggestion) {
+              onChange({ city: null });
+              return;
+            }
+            onChange({
+              query: suggestion.label,
+              city: placeFromSuggestion(suggestion),
+            });
+          }}
         />
       </div>
-      {suggestions.length > 0 && (
-        <ul className="seenCitySuggestions">
-          {suggestions.map((city) => (
-            <li key={`${city.name}-${city.country}`}>
-              <button
-                type="button"
-                className="seenCitySuggestion"
-                onClick={() => onChange({
-                  city,
-                  query: `${city.name}, ${city.country}`,
-                })}
-              >
-                {city.name}, {city.country}
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
       <label className="seenLabel" htmlFor={`lived-start-${row.id}`}>
         From
       </label>

@@ -79,9 +79,19 @@ describe('first-slice screens', () => {
     const chart = readFileSync('app/chart/page.tsx', 'utf8');
     expect(chart).not.toMatch(/type="time"/);
     expect(chart).not.toMatch(/06:00|18:00|04:00|12:00|20:00/);
+    expect(chart).toContain('type="date"');
+    expect(chart).toContain('LocationAutocompleteInput');
+    expect(chart).not.toContain('CITIES');
+    const lived = readFileSync('components/LivedPlacesField.tsx', 'utf8');
+    expect(lived).toContain('LocationAutocompleteInput');
+    expect(lived).not.toContain('CITIES');
+    expect(lived).not.toMatch(/type="time"/);
     const birth = readFileSync('app/foundation/birth/page.tsx', 'utf8');
     expect(birth).toContain("redirect('/chart')");
     expect(birth).not.toContain('foundation/location');
+    const location = readFileSync('app/foundation/location/page.tsx', 'utf8');
+    expect(location).toContain('environmental exposure');
+    expect(location).not.toContain('The Forge');
   });
 
   it('does not render a clock on the recognition cards', () => {

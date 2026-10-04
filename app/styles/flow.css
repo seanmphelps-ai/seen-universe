@@ -199,7 +199,8 @@
   line-height: 1.45;
 }
 
-.seenFlowForm .seenButtonPrimary {
+.seenFlowForm .seenButtonPrimary,
+.seenFlowForm .seenButtonSecondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -207,6 +208,12 @@
   width: 100%;
   margin-top: var(--seen-space-2);
   cursor: pointer;
+}
+
+.seenAlivePage.seenIntakeDeck {
+  height: auto;
+  min-height: 100svh;
+  overflow: auto;
 }
 
 .seenCompletionDivider {
