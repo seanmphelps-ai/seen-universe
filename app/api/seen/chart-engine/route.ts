@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { resolveDarkClocks } from '../../../../lib/rectification/timeNarrowing';
 import { DARK_WINDOWS, runChartEngine, runDarkWindowSet } from '../../../../lib/seen/chartEngine';
 
 export const runtime = 'nodejs';
@@ -44,10 +45,11 @@ export async function POST(request: NextRequest) {
 
   try {
     if (mode === 'dark-windows') {
-      const resolvedClocks =
-        Array.isArray(clocks) && clocks.length > 0 && clocks.every(isClock)
-          ? clocks
-          : [...DARK_WINDOWS];
+      const resolved = resolveDarkClocks(clocks, DARK_WINDOWS);
+      if (!resolved.ok) {
+        return NextResponse.json({ error: resolved.error }, { status: 400 });
+      }
+      const resolvedClocks = resolved.clocks;
 
       const results = await runDarkWindowSet(
         {
@@ -66,7 +68,12 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    const resolvedClock = clock && isClock(clock) ? clock : '12:00';
+    if (!clock || !isClock(clock)) {
+      return NextResponse.json(
+        { error: 'A hidden clock is required. Do not guess noon.' },
+        { status: 400 },
+      );
+    }
     const result = await runChartEngine({
       name,
       birthDate,
@@ -74,7 +81,7 @@ export async function POST(request: NextRequest) {
       longitude,
       birthPlaceLabel,
       livedStack,
-      clock: resolvedClock,
+      clock,
     });
     return NextResponse.json(result);
   } catch (err) {

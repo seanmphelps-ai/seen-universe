@@ -2,7 +2,13 @@
 
 import { FormEvent, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import LivedPlacesField from '../../components/LivedPlacesField';
 import { CITIES, type City } from '../../lib/cities';
+import {
+  collectLivedPlaces,
+  emptyLivedPlaceDraft,
+  livedStackFromPlaces,
+} from '../../lib/foundation/livedExposure';
 
 export default function NatalChartPage() {
   const router = useRouter();
@@ -10,7 +16,7 @@ export default function NatalChartPage() {
   const [birthDate, setBirthDate] = useState('');
   const [cityQuery, setCityQuery] = useState('');
   const [selectedCity, setSelectedCity] = useState<City | null>(null);
-  const [livedStack, setLivedStack] = useState('');
+  const [livedRows, setLivedRows] = useState(() => [emptyLivedPlaceDraft('1')]);
   const [error, setError] = useState('');
 
   const citySuggestions = useMemo(() => {
@@ -51,6 +57,14 @@ export default function NatalChartPage() {
       return;
     }
 
+    let livedPlaces;
+    try {
+      livedPlaces = collectLivedPlaces(livedRows);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Check the lived places.');
+      return;
+    }
+
     sessionStorage.setItem(
       'seen.foundation.birth',
       JSON.stringify({
@@ -62,7 +76,8 @@ export default function NatalChartPage() {
           latitude: selectedCity.latitude,
           longitude: selectedCity.longitude,
         },
-        livedStack: livedStack.trim(),
+        livedPlaces,
+        livedStack: livedStackFromPlaces(livedPlaces),
       }),
     );
 
@@ -78,10 +93,10 @@ export default function NatalChartPage() {
           </h1>
 
           <p className="seenFlowIntroduction">
-            Date and birth city start three hidden Western runs at 04:00, 12:00,
-            and 20:00. Add lived places with years. Those years write the card.
-            They do not move the planets. Time is found by the pressure cards.
-            Do not type a clock.
+            Name, birth date, and birth city come first. Then the places lived,
+            with years. Six months counts. Those years write the card. They do
+            not move the planets. Time is found by the pressure cards. Do not
+            type a clock.
           </p>
 
           <div className="seenDivider" aria-hidden="true" />
@@ -153,25 +168,7 @@ export default function NatalChartPage() {
             )}
           </div>
 
-          <div className="seenField">
-            <label className="seenLabel" htmlFor="chart-lived">
-              Lived places + years
-            </label>
-            <div className="seenInputFrame">
-              <textarea
-                id="chart-lived"
-                className="seenInput"
-                rows={4}
-                placeholder="Castro Valley 1979–1999. Santa Monica 1999–2018. Whitefish 2020–now."
-                value={livedStack}
-                onChange={(event) => setLivedStack(event.target.value)}
-              />
-            </div>
-            <p className="seenFieldSupport">
-              Six months counts. Years required. This writes the card sentence.
-              It does not rewrite the sky. Stars get shoved in the dirt.
-            </p>
-          </div>
+          <LivedPlacesField rows={livedRows} onChange={setLivedRows} />
 
           {error && (
             <p className="seenFormError" role="alert">

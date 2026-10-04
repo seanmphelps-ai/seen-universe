@@ -6,6 +6,7 @@
 
 import type { NatalChartResult } from '../natalChart';
 import {
+  anonymousCardFace,
   pressureProseFromSeed,
   runIdForClock,
 } from '../rectification/pressureProseFromSeed';
@@ -60,12 +61,12 @@ function mapResultsToCards(results: DarkWindowResultPayload[]): EngineSeedCard[]
       qualities: w.qualities,
     }));
     const topPortals = seed.topPortals;
-    const paragraph = pressureProseFromSeed({
+    const paragraph = anonymousCardFace(pressureProseFromSeed({
       clock,
       geoSummary: seed.geoSummary,
       wounds,
       topPortals,
-    });
+    }));
 
     return {
       runId: runIdForClock(clock, index),
