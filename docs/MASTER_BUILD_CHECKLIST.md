@@ -56,7 +56,7 @@ Build this first as one working vertical slice:
 - [ ] Calculate location effects separately for every person
 - [ ] Calculate how a shared place affected the relationship field
 - [ ] Explain why a trip improved, strained, or changed the relationship
-- [ ] Include the exact time period spent in each place
+- [ ] Include the time period spent in each place
 - [ ] Include trip/event location and dates when analyzing a specific event
 - [ ] Build the Dark Chart around wound markers, shadow mechanics, protective adaptations, sabotage potential, and recurring loops
 - [ ] Preserve the full marker universe instead of reducing the result to a compatibility score
