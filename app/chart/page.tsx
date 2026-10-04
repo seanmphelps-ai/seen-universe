@@ -1,108 +1,103 @@
 'use client';
 
-import { FormEvent, useMemo, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import LivedPlacesField from '../../components/LivedPlacesField';
-import { CITIES, type City } from '../../lib/cities';
+import { LocationAutocompleteInput } from '../../components/LocationAutocompleteInput';
+import {
+  INTAKE_CARDS,
+  birthCityCardError,
+  birthDateCardError,
+  buildIntakeRecord,
+  nameCardError,
+  placeFromSuggestion,
+  type IntakeCard,
+} from '../../lib/foundation/intakeDeck';
+import type { Place } from '../../lib/foundation/intakeSchema';
 import {
   collectLivedPlaces,
   emptyLivedPlaceDraft,
-  livedStackFromPlaces,
+  type LivedPlaceDraft,
 } from '../../lib/foundation/livedExposure';
+
+const CARD_COPY: Record<IntakeCard, { title: string; support: string }> = {
+  name: {
+    title: 'name',
+    support: 'Name of the system being read.',
+  },
+  birthDate: {
+    title: 'birth date',
+    support: 'The day this system entered.',
+  },
+  birthCity: {
+    title: 'birth city',
+    support: 'Search for the city. The pick carries latitude and longitude.',
+  },
+  livedPlaces: {
+    title: 'lived places',
+    support: 'Six months or more. A shorter stay does not count.',
+  },
+};
 
 export default function NatalChartPage() {
   const router = useRouter();
+  const [step, setStep] = useState(0);
   const [name, setName] = useState('');
   const [birthDate, setBirthDate] = useState('');
   const [cityQuery, setCityQuery] = useState('');
-  const [selectedCity, setSelectedCity] = useState<City | null>(null);
-  const [livedRows, setLivedRows] = useState(() => [emptyLivedPlaceDraft('1')]);
+  const [birthCity, setBirthCity] = useState<Place | null>(null);
+  const [livedRows, setLivedRows] = useState<LivedPlaceDraft[]>(() => [emptyLivedPlaceDraft('1')]);
   const [error, setError] = useState('');
 
-  const citySuggestions = useMemo(() => {
-    const query = cityQuery.trim().toLowerCase();
-    if (!query || selectedCity) return [];
-    return CITIES.filter(
-      (city) =>
-        city.name.toLowerCase().includes(query) ||
-        city.country.toLowerCase().includes(query),
-    ).slice(0, 8);
-  }, [cityQuery, selectedCity]);
+  const card = INTAKE_CARDS[step] ?? 'name';
+  const copy = CARD_COPY[card];
 
-  function handleCityInputChange(value: string) {
-    setCityQuery(value);
-    setSelectedCity(null);
-  }
-
-  function handleCitySelect(city: City) {
-    setSelectedCity(city);
-    setCityQuery(`${city.name}, ${city.country}`);
-  }
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  function advance(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
-    if (!name.trim()) {
-      setError('Enter a name.');
+    const message = errorFor(card);
+    if (message) {
+      setError(message);
+      return;
+    }
+    setError('');
+    if (step < INTAKE_CARDS.length - 1) {
+      setStep(step + 1);
       return;
     }
 
-    if (!birthDate) {
-      setError('Enter a date of birth.');
-      return;
-    }
-
-    if (!selectedCity) {
-      setError('Search for and select a birth location from the list.');
-      return;
-    }
-
-    let livedPlaces;
     try {
-      livedPlaces = collectLivedPlaces(livedRows);
+      const record = buildIntakeRecord({
+        name,
+        birthDate,
+        birthCity: birthCity!,
+        livedPlaces: collectLivedPlaces(livedRows),
+      });
+      sessionStorage.setItem('seen.foundation.birth', JSON.stringify(record));
+      router.push('/foundation/rectification');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Check the lived places.');
-      return;
     }
+  }
 
-    sessionStorage.setItem(
-      'seen.foundation.birth',
-      JSON.stringify({
-        name: name.trim(),
-        birthDate,
-        city: {
-          name: selectedCity.name,
-          country: selectedCity.country,
-          latitude: selectedCity.latitude,
-          longitude: selectedCity.longitude,
-        },
-        livedPlaces,
-        livedStack: livedStackFromPlaces(livedPlaces),
-      }),
-    );
-
-    router.push('/foundation/rectification');
+  function errorFor(current: IntakeCard): string | null {
+    if (current === 'name') return nameCardError(name);
+    if (current === 'birthDate') return birthDateCardError(birthDate);
+    if (current === 'birthCity') return birthCityCardError(birthCity);
+    try {
+      collectLivedPlaces(livedRows);
+      return null;
+    } catch (err) {
+      return err instanceof Error ? err.message : 'Check the lived places.';
+    }
   }
 
   return (
-    <main className="seenFlowPage">
-      <section className="seenFlowShell" aria-labelledby="natal-chart-title">
-        <header className="seenFlowHeader">
-          <h1 id="natal-chart-title" className="seenDisplayLarge">
-            SEEN recognition
-          </h1>
+    <main className="seenAlivePage seenIntakeDeck">
+      <form className="seenPanel seenFlowForm" noValidate onSubmit={advance} aria-labelledby="intake-card-title">
+        <h1 id="intake-card-title">{copy.title}</h1>
+        <p className="seenFieldSupport">{copy.support}</p>
 
-          <p className="seenFlowIntroduction">
-            Name, birth date, and birth city come first. Then the places lived,
-            with years. Six months counts. Those years write the card. They do
-            not move the planets. Time is found by the pressure cards. Do not
-            type a clock.
-          </p>
-
-          <div className="seenDivider" aria-hidden="true" />
-        </header>
-
-        <form className="seenPanel seenFlowForm" onSubmit={handleSubmit}>
+        {card === 'name' && (
           <div className="seenField">
             <label className="seenLabel" htmlFor="chart-name">
               Name
@@ -112,14 +107,16 @@ export default function NatalChartPage() {
                 id="chart-name"
                 className="seenInput"
                 type="text"
-                autoComplete="off"
+                autoComplete="name"
                 placeholder="Self, parent, child, or ex"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
               />
             </div>
           </div>
+        )}
 
+        {card === 'birthDate' && (
           <div className="seenField">
             <label className="seenLabel" htmlFor="chart-date">
               Date of birth
@@ -134,54 +131,61 @@ export default function NatalChartPage() {
               />
             </div>
           </div>
+        )}
 
+        {card === 'birthCity' && (
           <div className="seenField">
             <label className="seenLabel" htmlFor="chart-city">
-              Birth location
+              Birth city
             </label>
             <div className="seenInputFrame">
-              <input
+              <LocationAutocompleteInput
                 id="chart-city"
                 className="seenInput"
-                type="text"
-                autoComplete="off"
-                placeholder="Search for a city"
                 value={cityQuery}
-                onChange={(event) => handleCityInputChange(event.target.value)}
+                placeholder="Search for a city"
+                ariaLabel="Birth city"
+                onChange={setCityQuery}
+                onPlaceSelect={(suggestion) => {
+                  if (!suggestion) {
+                    setBirthCity(null);
+                    return;
+                  }
+                  setCityQuery(suggestion.label);
+                  setBirthCity(placeFromSuggestion(suggestion));
+                }}
               />
             </div>
-
-            {citySuggestions.length > 0 && (
-              <ul className="seenCitySuggestions">
-                {citySuggestions.map((city) => (
-                  <li key={`${city.name}-${city.country}`}>
-                    <button
-                      type="button"
-                      className="seenCitySuggestion"
-                      onClick={() => handleCitySelect(city)}
-                    >
-                      {city.name}, {city.country}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
           </div>
+        )}
 
+        {card === 'livedPlaces' && (
           <LivedPlacesField rows={livedRows} onChange={setLivedRows} />
+        )}
 
-          {error && (
-            <p className="seenFormError" role="alert">
-              {error}
-            </p>
-          )}
+        {error && (
+          <p className="seenFormError" role="alert">
+            {error}
+          </p>
+        )}
 
-          <button className="seenButtonPrimary" type="submit">
-            Start pressure cards
-            <span aria-hidden="true">→</span>
+        <button className="seenButtonPrimary" type="submit">
+          Continue
+          <span aria-hidden="true">→</span>
+        </button>
+        {step > 0 && (
+          <button
+            className="seenButtonSecondary"
+            type="button"
+            onClick={() => {
+              setError('');
+              setStep(step - 1);
+            }}
+          >
+            Back
           </button>
-        </form>
-      </section>
+        )}
+      </form>
     </main>
   );
 }

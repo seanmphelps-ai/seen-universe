@@ -21,6 +21,8 @@ type LocationAutocompleteInputProps = {
   ariaLabel?: string;
   className?: string;
   onLocationEntered?: (label: string) => void;
+  /** Selected city with coordinates. Null when the text is no longer that pick. */
+  onPlaceSelect?: (suggestion: CitySuggestion | null) => void;
 };
 
 const DEBOUNCE_MS = 200;
@@ -39,6 +41,7 @@ export function LocationAutocompleteInput({
   ariaLabel,
   className,
   onLocationEntered,
+  onPlaceSelect,
 }: LocationAutocompleteInputProps) {
   const [suggestions, setSuggestions] = useState<CitySuggestion[]>([]);
   const [open, setOpen] = useState(false);
@@ -94,7 +97,11 @@ export function LocationAutocompleteInput({
   }, []);
 
   function selectSuggestion(suggestion: CitySuggestion) {
-    onChange(suggestion.label);
+    if (onPlaceSelect) {
+      onPlaceSelect(suggestion);
+    } else {
+      onChange(suggestion.label);
+    }
     onLocationEntered?.(suggestion.label);
     setSuggestions([]);
     setOpen(false);
@@ -136,6 +143,7 @@ export function LocationAutocompleteInput({
         value={value}
         onChange={(event) => {
           onChange(event.target.value);
+          onPlaceSelect?.(null);
           setOpen(true);
         }}
         onFocus={() => setOpen(true)}
