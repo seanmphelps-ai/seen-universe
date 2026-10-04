@@ -32,9 +32,6 @@ export const metadata: Metadata = {
 export default function PosterPage() {
   return (
     <main className="seenPosterPage">
-      <a className="seenPosterBack" href="/chart">
-        ← back to the forge
-      </a>
       <img
         className="seenPosterImage"
         src="/foundation/seen-poster.jpg"
