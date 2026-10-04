@@ -1,7 +1,7 @@
 // SEEN Location V1 — canonical contract.
 //
 // Scope: this is the tightened V1 spec, which supersedes the older
-// 25-question / full Environmental Forge scope. V1 deliberately omits
+// 25-question / full environmental-exposure scope. V1 deliberately omits
 // percentile/extremity normalization, pressure/support composite scores,
 // and multi-location accumulation — those belonged to the older, wider
 // spec. V1 keeps only: exposure, one real Material Field vertical slice,

@@ -50,14 +50,16 @@ Commercial Type's **Frame** collection is under review:
 
 Do not implement these font files until an appropriate web/app license and project-owned assets are available. Until then, keep typography tokens replaceable rather than scattering font-family declarations throughout components.
 
-## Forge location card/page
+## Location card/page
+
+The location card is the location card. It is not The Forge. Where this card needs a label, the label is environmental exposure.
 
 User-facing language should be minimal.
 
 Current hierarchy:
 
 - `01` — optional small index
-- `THE FORGE` — primary title
+- `environmental exposure` — primary title
 - `What were you exposed to?` — supporting question
 - `Birth Location`
 - `Locations Lived 6+ Months`
@@ -65,9 +67,9 @@ Current hierarchy:
 - `+ Add another location`
 - `Continue`
 
-Do not introduce `PLACE`, `Where were you formed?`, `Where was this system molded?`, or similar formation/identity claims.
+Do not introduce `THE FORGE`, `PLACE`, `Where were you formed?`, `Where was this system molded?`, or similar formation/identity claims as the name of this card.
 
-Location is an exposure/incubator field. It collects the conditions a human lived inside. FORGED conclusions emerge later from evidence convergence; the UI must not imply that a location predetermined or completed a person.
+Location is an exposure/incubator field. It collects the conditions a human lived inside. Later conclusions emerge from evidence convergence; the UI must not imply that a location predetermined or completed a person.
 
 ## Change discipline
 
