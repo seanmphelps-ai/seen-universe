@@ -1,5 +1,5 @@
-import SeenEntry from '../components/SeenEntry';
+import { redirect } from 'next/navigation';
 
 export default function HomePage() {
-  return <SeenEntry />;
+  redirect('/chart');
 }
