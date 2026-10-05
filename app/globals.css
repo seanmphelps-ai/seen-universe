@@ -2,3 +2,39 @@
 @import './styles/splash.css';
 @import './styles/flow.css';
 @import './styles/responsive.css';
+
+/* Poster page — full-screen placard artwork with entry button */
+.seenPosterPage {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.seenPosterImage {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.seenPosterActions {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.seenPosterActions .seenButtonPrimary {
+  width: min(100%, 360px);
+}
