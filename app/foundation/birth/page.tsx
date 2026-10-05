@@ -21,7 +21,7 @@ import { LivedPlacesField } from './LivedPlacesField';
 
 const INTAKE_CARDS = ['name', 'birthDate', 'birthCity', 'livedPlaces'] as const;
 
-const CARD_COPY: Record<IntakeCard, {
+type CardCopy = {
   title: string;
   support: string;
   step: string;
@@ -55,7 +55,9 @@ const CARD_COPY: Record<IntakeCard, {
     livedRows: LivedPlaceDraft[];
     setLivedRows: (v: LivedPlaceDraft[]) => void;
   }) => React.ReactNode;
-}> = {
+}
+
+const CARD_COPY: Record<IntakeCard, CardCopy> = {
   name: {
     title: 'name'
 ,

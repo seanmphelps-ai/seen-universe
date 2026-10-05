@@ -13,6 +13,5 @@ export default function AccountPage() {
         </Link>
       </div>
     </main>
-  )
-,
+  );
 }
