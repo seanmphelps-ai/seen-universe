@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'SEEN',
     short_name: 'SEEN',
     description: 'SEEN',
-    start_url: '/chart',
+    start_url: '/',
     display: 'standalone',
     orientation: 'portrait',
     background_color: '#171512',
