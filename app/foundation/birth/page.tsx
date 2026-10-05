@@ -16,7 +16,7 @@ import {
   collectLivedPlaces,
   emptyLivedPlaceDraft,
   type LivedPlaceDraft,
-} from '../../../lib/foundation/livedExposure';
+} from './livedExposure';
 import { LivedPlacesField } from './LivedPlacesField';
 
 const INTAKE_CARDS = ['name', 'birthDate', 'birthCity', 'livedPlaces'] as const;
