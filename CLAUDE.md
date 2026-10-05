@@ -29,7 +29,7 @@ ECC (harness: memory, instincts, security, budgets)
 - Existing SEEN architecture remains authoritative. No skill, MCP, hook, or model may replace or redesign adjacent architecture unless explicitly requested.
 - For repository work, read this file, `docs/MASTER_BUILD_CHECKLIST.md`, and the matching context module before changing implementation files.
 
-Project-specific skill contracts live under `.claude/skills/`.
+Project-specific skill contracts live under `.agents/skills/`.
 Pipeline definition lives at `docs/ECC_SEEN_PIPELINE.md`.
 
 ## EXECUTION FIRST

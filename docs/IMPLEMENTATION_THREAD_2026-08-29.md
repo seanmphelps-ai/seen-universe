@@ -121,7 +121,7 @@ Acceptance:
 - every factual/interpretive sentence can be traced to an existing supported claim or is explicitly marked as metaphorical presentation
 
 ### B5. Screenwriter rendering skill
-Create `.claude/skills/screenwriter/SKILL.md` after the rendering contract exists.
+Create `.agents/skills/screenwriter/SKILL.md` after the rendering contract exists.
 
 Purpose:
 Translate supported SEEN findings into cinematic/narrative form while preserving the underlying evidence.
@@ -251,7 +251,7 @@ P2 is calibration/validation, not prerequisite for scaffolding.
 - `lib/seen/...` -> public Life Map projection contract
 - `lib/rendering/...` -> rendering contract and modes
 - `app/...` -> Life Map + source-system views
-- `.claude/skills/screenwriter/SKILL.md` -> only after rendering contract
+- `.agents/skills/screenwriter/SKILL.md` -> only after rendering contract
 
 ## H. Build order
 
