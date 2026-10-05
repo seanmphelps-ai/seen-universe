@@ -286,6 +286,5 @@ export default function BirthFoundationPage() {
         )}
       </form>
     </main>
-  )
-,
+  ),
 }
