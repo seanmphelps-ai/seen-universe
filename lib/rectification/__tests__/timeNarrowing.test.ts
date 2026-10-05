@@ -75,30 +75,50 @@ describe('time narrowing ladder', () => {
 });
 
 describe('first-slice screens', () => {
-  it('keeps the intake screen free of a typed clock and the dead round-1 pair', () => {
-    const chart = readFileSync('app/chart/page.tsx', 'utf8');
-    expect(chart).not.toMatch(/type="time"/);
-    expect(chart).not.toMatch(/06:00|18:00|04:00|12:00|20:00/);
-    expect(chart).toContain('type="date"');
-    expect(chart).toContain('LocationAutocompleteInput');
-    expect(chart).not.toContain('CITIES');
-    const lived = readFileSync('components/LivedPlacesField.tsx', 'utf8');
-    expect(lived).toContain('LocationAutocompleteInput');
-    expect(lived).not.toContain('CITIES');
-    expect(lived).not.toMatch(/type="time"/);
-    const birth = readFileSync('app/foundation/birth/page.tsx', 'utf8');
-    expect(birth).toContain("redirect('/chart')");
-    expect(birth).not.toContain('foundation/location');
+  it('opens enter, then environmental exposure, then an empty date picker', () => {
+    const home = readFileSync('app/page.tsx', 'utf8');
+    const entry = readFileSync('components/SeenEntry.tsx', 'utf8');
+    expect(home).toContain('SeenEntry');
+    expect(entry).toContain('href="/foundation/location"');
+    expect(entry).toContain('/foundation/seen-poster.jpg');
+    expect(entry).not.toMatch(/Kalispell|08\/01\/1979|1979-08-01|12:41/);
+
     const location = readFileSync('app/foundation/location/page.tsx', 'utf8');
     expect(location).toContain('environmental exposure');
-    expect(location).not.toContain('The Forge');
+    expect(location).toContain('LocationAutocompleteInput');
+    expect(location).toContain("useState('')");
+    expect(location).toContain('/foundation/date');
+    expect(location).not.toMatch(/The Forge|THE FORGE/);
+    expect(location).not.toMatch(/Kalispell|08\/01\/1979|1979-08-01|12:41/);
+    expect(location).not.toMatch(/type="time"/);
+
+    const date = readFileSync('app/foundation/date/page.tsx', 'utf8');
+    expect(date).toContain('type="date"');
+    expect(date).toContain("useState('')");
+    expect(date).not.toMatch(/type="text"|type="time"/);
+    expect(date).toContain('/foundation/rectification');
+    expect(date).not.toMatch(/Kalispell|08\/01\/1979|1979-08-01|12:41/);
+
+    const chart = readFileSync('app/chart/page.tsx', 'utf8');
+    expect(chart).toContain("redirect('/foundation/location')");
+    expect(chart).not.toMatch(/type="time"/);
+    const birth = readFileSync('app/foundation/birth/page.tsx', 'utf8');
+    expect(birth).toContain("redirect('/foundation/date')");
   });
 
   it('does not render a clock on the recognition cards', () => {
     const page = readFileSync('app/foundation/rectification/page.tsx', 'utf8');
     expect(page).not.toMatch(/\{card\.clock\}/);
     expect(page).not.toMatch(/type="time"/);
-    expect(page).not.toMatch(/06:00|18:00/);
+    expect(page).not.toMatch(/exact time/i);
+    expect(page).not.toMatch(/06:00|18:00|noon/);
+    expect(page).toContain('clocksForRound');
     expect(page).toContain('Pick the one');
+    expect(page).toContain('/foundation/reveal');
+
+    const reveal = readFileSync('app/foundation/reveal/page.tsx', 'utf8');
+    expect(reveal).not.toMatch(/type="time"|exact time|oracle|chatbot|manuscript/i);
+    expect(reveal).not.toMatch(/\b\d{1,2}:\d{2}\b/);
+    expect(reveal).not.toMatch(/Kalispell|08\/01\/1979|1979-08-01|12:41/);
   });
 });

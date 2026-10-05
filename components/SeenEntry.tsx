@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 
 const CARDS = [
@@ -99,6 +100,9 @@ export default function SeenEntry() {
     <main className="seenAlivePage">
       <div className="seenPosterFrame">
         <img src="/foundation/seen-poster.jpg" alt="" />
+        <Link className="seenButtonPrimary seenEntryStart" href="/foundation/location">
+          Enter
+        </Link>
       </div>
       <div
         className="seenRail"

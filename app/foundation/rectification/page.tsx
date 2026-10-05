@@ -6,6 +6,7 @@ import {
   fetchSeedsForClocks,
   type EngineSeedCard,
 } from '../../../lib/seen/darkCardSeeds';
+import { BIRTH_SESSION_KEY } from '../../../lib/foundation/intakeDeck';
 import {
   clocksForRound,
   type NarrowingRound,
@@ -104,9 +105,9 @@ export default function RectificationPage() {
   phaseRef.current = phase;
 
   useEffect(() => {
-    const raw = sessionStorage.getItem('seen.foundation.birth');
+    const raw = sessionStorage.getItem(BIRTH_SESSION_KEY);
     if (!raw) {
-      router.replace('/chart');
+      router.replace('/foundation/location');
       return;
     }
 
@@ -115,6 +116,10 @@ export default function RectificationPage() {
     async function hydrateBirth() {
       try {
         const parsed = JSON.parse(raw!) as StoredBirth;
+        if (!parsed.birthDate) {
+          if (!cancelled) router.replace('/foundation/date');
+          return;
+        }
         let city = parsed.city;
         if (
           !city ||
@@ -139,14 +144,14 @@ export default function RectificationPage() {
           }
           city = resolved;
           const next = { ...parsed, city };
-          sessionStorage.setItem('seen.foundation.birth', JSON.stringify(next));
+          sessionStorage.setItem(BIRTH_SESSION_KEY, JSON.stringify(next));
           if (!cancelled) setBirth(next);
           return;
         }
 
         if (!cancelled) setBirth({ ...parsed, city });
       } catch {
-        if (!cancelled) router.replace('/chart');
+        if (!cancelled) router.replace('/foundation/location');
       }
     }
 
@@ -299,6 +304,11 @@ export default function RectificationPage() {
   const showingCards = !isLoading && phase !== 'complete' && cards.length > 0;
   const round = phaseRound(phase);
 
+  useEffect(() => {
+    if (!showingCards) return;
+    document.getElementById('rectification-title')?.scrollIntoView();
+  }, [showingCards, phase, cards]);
+
   return (
     <main className="seenAlivePage seenIntakeDeck">
       <section className="seenPanel seenFlowForm" aria-labelledby="rectification-title">
@@ -307,7 +317,7 @@ export default function RectificationPage() {
           <p className="seenFieldSupport">
             {phase === 'round1'
               ? 'Three anonymous summaries. Pick the one you recognize.'
-              : 'Three neighboring summaries. Pick the one you recognize.'}
+              : `Three neighboring summaries. Pass ${round}. Pick the one you recognize.`}
           </p>
         )}
 
@@ -350,6 +360,15 @@ export default function RectificationPage() {
 
         {showingCards && (
           <div className="seenFlowForm">
+            <button
+              className="seenButtonPrimary seenStickyAction"
+              type="button"
+              disabled={!pickedRunId}
+              onClick={() => continueRound(round)}
+            >
+              This one
+              <span aria-hidden="true">→</span>
+            </button>
             <div role="radiogroup" aria-label="Pressure summaries" style={{ display: 'grid', gap: '1.5rem' }}>
               {cards.map((card, index) => {
                 const selected = pickedRunId === card.runId;
@@ -371,15 +390,6 @@ export default function RectificationPage() {
                 );
               })}
             </div>
-            <button
-              className="seenButtonPrimary"
-              type="button"
-              disabled={!pickedRunId}
-              onClick={() => continueRound(round)}
-            >
-              This one
-              <span aria-hidden="true">→</span>
-            </button>
           </div>
         )}
 
@@ -388,7 +398,11 @@ export default function RectificationPage() {
             <span className="seenLabel">Recognition locked</span>
             <p className="seenFlowIntroduction">{lockedMessage}</p>
             <div className="seenDivider" aria-hidden="true" />
-            <button type="button" className="seenButtonPrimary" onClick={backToRound1}>
+            <button type="button" className="seenButtonPrimary seenStickyAction" onClick={() => router.push('/foundation/reveal')}>
+              Continue
+              <span aria-hidden="true">→</span>
+            </button>
+            <button type="button" className="seenButtonSecondary" onClick={backToRound1}>
               Start over
             </button>
           </section>

@@ -216,6 +216,12 @@
   overflow: auto;
 }
 
+.seenStickyAction {
+  position: sticky;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  z-index: 4;
+}
+
 .seenCompletionDivider {
   width: min(72%, 280px);
   margin: var(--seen-space-10) auto 0;

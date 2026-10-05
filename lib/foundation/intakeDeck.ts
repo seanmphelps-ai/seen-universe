@@ -66,3 +66,36 @@ export function buildIntakeRecord(input: {
     livedStack: livedStackFromPlaces(input.livedPlaces),
   };
 }
+
+/** Visitor order. Place stays the location card. Time is the existing ladder. */
+export const VISITOR_DECK = ['enter', 'place', 'date', 'time', 'reveal'] as const;
+
+export const BIRTH_SESSION_KEY = 'seen.foundation.birth';
+
+/** This deck does not ask for a name. The engine still needs a subject label. */
+export const DECK_SUBJECT_NAME = 'self';
+
+export type DeckBirthRecord = IntakeBirthRecord & {
+  birthLocation: string;
+};
+
+export function buildDeckBirthRecord(input: {
+  birthDate: string;
+  birthCity: Place;
+  birthLocation: string;
+}): DeckBirthRecord {
+  const dateError = birthDateCardError(input.birthDate);
+  if (dateError) throw new Error(dateError);
+  const cityError = birthCityCardError(input.birthCity);
+  if (cityError) throw new Error(cityError);
+  const birthLocation = input.birthLocation.trim();
+  if (!birthLocation) throw new Error('Select a place from the list.');
+
+  const record = buildIntakeRecord({
+    name: DECK_SUBJECT_NAME,
+    birthDate: input.birthDate,
+    birthCity: input.birthCity,
+    livedPlaces: [],
+  });
+  return { ...record, birthLocation };
+}

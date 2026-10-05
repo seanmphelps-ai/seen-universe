@@ -8,9 +8,21 @@
 }
 
 .seenPosterFrame {
+  position: relative;
   flex: 1 1 auto;
   min-height: 0;
   overflow: hidden;
+}
+
+.seenEntryStart {
+  position: absolute;
+  z-index: 2;
+  left: 16px;
+  right: 16px;
+  bottom: 12px;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
 }
 
 .seenPosterFrame img {
