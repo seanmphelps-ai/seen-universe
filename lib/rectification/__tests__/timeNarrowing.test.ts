@@ -80,7 +80,7 @@ describe('first-slice screens', () => {
     expect(chart).not.toMatch(/type="time"/);
     expect(chart).not.toMatch(/06:00|18:00|04:00|12:00|20:00/);
     expect(chart).toContain('type="date"');
-    expect(chart).toContain('LocationAutocompleteInput');
+    expect(chart).not.toContain('LocationAutocompleteInput');
     expect(chart).not.toContain('CITIES');
     const lived = readFileSync('components/LivedPlacesField.tsx', 'utf8');
     expect(lived).toContain('LocationAutocompleteInput');
@@ -91,7 +91,8 @@ describe('first-slice screens', () => {
     expect(birth).not.toContain('foundation/location');
     const location = readFileSync('app/foundation/location/page.tsx', 'utf8');
     expect(location).toContain('environmental exposure');
-    expect(location).not.toContain('The Forge');
+    expect(location).toContain('LocationAutocompleteInput');
+    expect(location).not.toMatch(/Forge/i);
   });
 
   it('does not render a clock on the recognition cards', () => {
@@ -100,5 +101,6 @@ describe('first-slice screens', () => {
     expect(page).not.toMatch(/type="time"/);
     expect(page).not.toMatch(/06:00|18:00/);
     expect(page).toContain('Pick the one');
+    expect(page).toContain('INTAKE_DECK_HREF.reveal');
   });
 });
