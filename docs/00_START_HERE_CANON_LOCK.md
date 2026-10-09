@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-08 task=affirmative repository instruction follow-up
 # START HERE — SEEN CANON LOCK
 
 ## Controlling Product
@@ -8,7 +9,7 @@ The active product is the complete production-grade SEEN™ Closure & Composure 
 
 `docs/01_CLOSURE_COMPOSURE_RUNTIME_ORDER.md` controls later product entry after the dark chart works.
 
-Foundation `docs/01_SEEN_FOUNDATION_AND_THREE_COORDINATES.md` §2.0–2.6 is retired on input order. Do not build environment-before-date.
+Foundation `docs/01_SEEN_FOUNDATION_AND_THREE_COORDINATES.md` §2.0–2.6 is retired on input order. Build first-run intake using the date-before-environment sequence in the controlling intake lock.
 
 ## First product slice
 
@@ -36,13 +37,13 @@ Aligned work is retained and extended.
 
 Conflicting work is revised, migrated, replaced, or retired.
 
-Existing file age, naming, location, and prior completion status do not establish authority.
+Establish authority through the controlling specification and verified alignment; record file age, naming, location, and completion status as context.
 
 `docs/00_INTAKE_ORDER_LOCK.md` beats older foundation order language.
 
 ## Forces
 
-Seed = natal. Soil = family. Weather = city / years lived. Equal. Sensitivity discovered by recognition, not pre-weighted.
+Seed = natal. Soil = family. Weather = city / years lived. Equal. Discover sensitivity through recognition, then apply the supported weighting.
 
 ## SEEN Runtime Layers
 
@@ -78,13 +79,13 @@ The Oracle renders user-facing recognition.
 
 The Oracle owns naming, interpretation, pacing, disclosure, consent, uncertainty expression, emotional containment, Dark Chart presentation, What Neither Could See presentation, Jungian inversion presentation, and Sovereignty presentation.
 
-First Oracle surface is the dark pressure card. How they blow. Not a compliment natal.
+First Oracle surface is the dark pressure card describing collapse under pressure.
 
 ### Portals
 
 All 64 portals receive traceable deposits and route established signals through the active SEEN field.
 
-Portal pre-charge from environment does not run before seed calculation. Environment is weather on a calculated seed.
+Calculate the natal seed before environmental portal pre-charge. Environment is weather on that calculated seed.
 
 Full portal evaluation occurs after recognition selection and Full Helix Ignition.
 

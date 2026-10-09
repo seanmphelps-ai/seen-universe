@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-08 task=affirmative repository instruction follow-up
 # LOCATION CONTEXT
 
 Location changes expression. Every person, place, and timeframe is evaluated independently before comparison.
@@ -24,13 +25,13 @@ Sequence:
 `ENVIRONMENTAL REALITY -> REMEMBERED EXPERIENCE -> RESONANCE -> PATTERN INTERACTION`
 
 - Generate exactly three distinct experiential summaries only from the already-calculated environmental evidence for that place/time.
-- Each summary is a different field of the same city/era (micro-neighborhood, social stratum, or period cut) and must carry both gift and cost. Never only-good. Never only-bad.
+- Each summary is a different field of the same city/era (micro-neighborhood, social stratum, or period cut) and carries both gift and cost in every summary.
 - One summary leans Western markers, one Vedic, one blended.
 - The subject may select one, multiple, or none.
 - Preserve the response as a separate `EnvironmentalResonanceRecord` with evidence/provenance references.
-- A selection records which measured conditions appear to have reached/resonated with the subject; it does not rewrite the objective Environmental Pressure Field.
-- Non-selection does not prove a condition was absent.
-- Biography, later behavior, symbolic-system results, and expected personality do not contaminate the initial environmental calculation or candidate-summary generation.
+- A selection records which measured conditions appear to have reached/resonated with the subject; the objective Environmental Pressure Field remains intact.
+- Store non-selection as recognition evidence; establish absence through environmental evidence.
+- Generate the initial environmental calculation and candidate summaries from environmental evidence. Apply biography, later behavior, symbolic-system results, and expected personality as separately attributed downstream inputs.
 - Downstream Generator claims distinguish measured environmental reality from remembered experience and resonance.
 
 ## Core question

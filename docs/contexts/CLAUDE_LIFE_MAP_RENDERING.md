@@ -1,6 +1,7 @@
+// PROVENANCE: bot=codex session=2026-10-08 task=affirmative repository instruction follow-up
 # LIFE MAP / RENDERING CONTEXT
 
-The Life Map makes SEEN's structure visible without exposing proprietary implementation internals. Rendering changes presentation, not findings.
+The Life Map makes SEEN's structure visible through public explanations while proprietary implementation internals remain server-side. Rendering changes presentation and preserves findings.
 
 ## Life Map
 
@@ -27,15 +28,15 @@ Private/server-side:
 - scoring formulas
 - prompts
 - internal routing rules
-- hidden schemas and implementation details not required for user inspection
+- hidden schemas and implementation details outside the user-facing evidence explanation
 
 ## Source-system views
 
-Each approved source system receives its own native view/tab. A system view uses the preserved raw source result and does not blend in other systems. Convergence is a separate view.
+Each approved source system receives its own native view/tab. A system view uses its preserved raw source result. Present cross-system convergence in a separate view.
 
 ## Historical provenance
 
-A source-system view/map marker may show tradition, origin region, earliest documented era, later development, and what the system contributes. Every production historical claim must carry verified source references. Approximate conversational dates are not production facts.
+A source-system view/map marker may show tradition, origin region, earliest documented era, later development, and what the system contributes. Every production historical claim must carry verified source references. Production historical dates carry verified source references; conversational estimates retain their approximate status.
 
 ## Rendering modes
 
@@ -51,9 +52,9 @@ Candidate modes:
 
 Every output preserves `renderMode`, `renderVersion`, `claimRefs`, and `evidenceRefs`.
 
-Rendering may change voice, sequence, metaphor, scene construction, pacing, and emphasis. It cannot invent biography, alter source calculations, erase contradictions, or turn metaphor into evidence.
+Rendering may change voice, sequence, metaphor, scene construction, pacing, and emphasis. Keep biography source-backed, calculations intact, contradictions visible, and metaphor explicitly distinct from evidence.
 
-Rule: `Creativity after convergence, not before.`
+Rule: `Establish convergence, then apply creative rendering.`
 
 ## Visual standard
 
@@ -65,4 +66,4 @@ Rule: `Creativity after convergence, not before.`
 
 ## Western exploration
 
-Western may use reel/carousel exploration and visual metaphors for houses so long as the UI remains a projection of the preserved Western calculation. Visual metaphor never changes native Western semantics.
+Western may use reel/carousel exploration and visual metaphors for houses so long as the UI remains a projection of the preserved Western calculation. Visual metaphor preserves native Western semantics.

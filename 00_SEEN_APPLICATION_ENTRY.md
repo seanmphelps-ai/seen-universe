@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-08 task=affirmative repository instruction follow-up
 # SEEN APPLICATION ENTRY — CURRENT BUILD
 
 This file is the entry point for implementation work in the active SEEN application.
@@ -7,13 +8,13 @@ This file is the entry point for implementation work in the active SEEN applicat
 - Active repository: `seanmphelps-ai/seen-universe`
 - Active branch: `closure-and-composure`
 - `seanmphelps-ai/SEEN_universal` is a reference/salvage repository only.
-- Nothing is copied from `SEEN_universal` without checking it against the current build.
+- Compare each candidate from `SEEN_universal` against the current build before copying it.
 
 ## First rule
 
 Inspect before creating.
 
-Do not build a second version of something that already exists. Do not replace a working current implementation with an older Universal contract just because the older file is more complete on paper.
+Reuse existing working implementations. Evaluate older Universal contracts against current behavior and acceptance criteria, then adapt the valid missing functionality into the existing implementation.
 
 For every Universal file or commit:
 
@@ -23,7 +24,7 @@ Then either connect the valid work to the active application or leave it retired
 
 ## Current product entry
 
-The application already collects the core user inputs. Do not invent a parallel intake system.
+Reuse the application intake that already collects the core user inputs.
 
 ```text
 Location
@@ -36,7 +37,7 @@ Location uses birthplace, locations lived for at least six months, and current l
 
 ## Runtime rule
 
-A committed file is not an implemented feature.
+Connect committed files to the intended runtime to implement a feature.
 
 A feature is complete only when it is:
 
@@ -46,11 +47,11 @@ A feature is complete only when it is:
 - tested;
 - production verified.
 
-A green build alone does not prove feature completeness.
+Verify feature completeness through the reachable application flow, tests, and production behavior in addition to the build.
 
 ## Location architecture
 
-Location reconstructs the environment first. It does not declare what happened to the person.
+Location reconstructs the environment first. Establish personal events through separately attributed person-level evidence.
 
 The core question is:
 
@@ -67,7 +68,7 @@ Location evidence may come from independent layers including:
 - built environment and access;
 - structured social, economic, institutional, and official data.
 
-No layer automatically outranks or erases another. Keep each layer measurable, time-specific, provenance-aware, and confidence-aware. Do not collapse all Location evidence into one generic score.
+Preserve every layer as measurable, time-specific, provenance-aware, and confidence-aware evidence. Evaluate each contribution explicitly and retain the distinct Location dimensions through synthesis.
 
 ## Current Location engine
 
@@ -84,13 +85,13 @@ The active Location V2 code already contains:
 - FORGED interrogation rules;
 - explicit unsupported/gap handling.
 
-Do not create a replacement scoring system unless the existing one is first proven insufficient.
+Reuse the existing scoring system; establish and document its insufficiency before implementing a replacement within the authorized scope.
 
 Current implementation gap: the V2 scoring runtime begins after normalized evidence has already been supplied. The primary SEEN runtime still uses the older Location field path rather than a fully collected V2/FORGED Location result.
 
 ## Location execution target
 
-Use the existing application intake. The missing work is runtime connection, not another intake model.
+Use the existing application intake. The missing work is connecting the existing intake to the runtime.
 
 ```text
 existing Location + lived period
@@ -102,11 +103,11 @@ existing Location + lived period
 → active SEEN runtime
 ```
 
-Later natal, wound, shadow, portal, or other systems may interrogate the established Location field. They do not manufacture Location evidence.
+Later natal, wound, shadow, portal, or other systems may interrogate the established Location field. Keep their interpretations linked to the independently collected Location evidence.
 
 ## Universal salvage rule
 
-Audit Universal one concept at a time, not by bulk migration.
+Audit and integrate Universal one concept at a time.
 
 When the current build reaches a concern such as schemas, runtime, Generator, Oracle, UX, visual system, persistence, or recovery:
 
@@ -127,7 +128,7 @@ Current target architecture:
 - Railway — excluded
 - Dyad — excluded
 
-Do not change deployment architecture until the current production configuration is audited.
+Audit the current production configuration before making an authorized deployment architecture change.
 
 ## Read order for implementation work
 
