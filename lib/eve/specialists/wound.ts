@@ -1,11 +1,12 @@
+// PROVENANCE: bot=grok session=2026-10-08 task=fix wound specialist imports that failed the Vercel typecheck
 /**
  * Wound specialist — first Eve specialist path.
  * Delegates to existing extractWoundMarkers. No new wound logic.
  */
 
-import type { NatalChartResult } from "../natalChart";
-import type { BaselinePressureEffect } from "../seen/geoPresence";
-import { extractWoundMarkers, type WoundMarkerHit } from "../seen/woundMarkers";
+import type { NatalChartResult } from "../../natalChart";
+import type { BaselinePressureEffect } from "../../seen/geoPresence";
+import { extractWoundMarkers, type WoundMarkerHit } from "../../seen/woundMarkers";
 import type { EveResult, EveTask } from "../types";
 
 export async function runWoundSpecialist(task: EveTask): Promise<EveResult> {
