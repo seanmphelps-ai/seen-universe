@@ -26,7 +26,7 @@ Store the subject's selections as calibration evidence linked to the candidates 
 
 ## Completion checks
 
-- No given Gate, Line, planetary position, source extraction, environmental record, or other original calculation is changed because a candidate resonates or fails to resonate.
+- Every original Gate, Line, planetary position, source extraction, environmental record, and calculation remains intact. Store recognition and rejection as separate calibration records.
 - Uncertainty and contradiction are preserved.
 - User recognition is kept separate from source truth.
 - Birth-time rectification uses resonance only within the approved rectification protocol.

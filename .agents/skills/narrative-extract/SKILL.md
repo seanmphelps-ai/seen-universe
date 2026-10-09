@@ -38,6 +38,6 @@ Extract structured environmental signals from location-period evidence.
 
 - Every extracted claim points back to evidence.
 - Confidence is kept separate from intensity.
-- Contradictory signals are preserved rather than averaged away.
-- Environment describes pressure and exposure; it does not prove belief, participation, identity, adoption, or harm.
-- No astrology is run and no chart calculations are altered in this skill.
+- Contradictory signals remain distinct in the extracted records.
+- Environmental records describe observed pressure and exposure. Claims about belief, participation, identity, adoption, or harm require their own supporting evidence.
+- This skill outputs environmental signals and preserves chart calculations for the chart-gen stage.

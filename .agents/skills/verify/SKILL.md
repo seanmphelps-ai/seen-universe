@@ -28,7 +28,7 @@ Verify that pipeline work meets its governing contract before completion is decl
 ## Actions
 
 1. Verify the requested scope was followed.
-2. Verify protected/adjacent architecture was not changed without authorization.
+2. Verify each architecture change traces to the user's authorized scope and that surrounding architecture is preserved.
 3. Verify required repository and matching context files were read.
 4. Verify the timeframe is correct.
 5. Verify requested and matched geography are preserved.
@@ -39,7 +39,7 @@ Verify that pipeline work meets its governing contract before completion is decl
 10. Verify source calculations remain independent.
 11. Verify tests/typecheck/build checks relevant to the change pass.
 12. Verify output records satisfy their governing contracts.
-13. On failure, return the failure to the bounded skill responsible for it, or stop when the active task does not authorize repair.
+13. On failure, route the exact failed check and evidence to the responsible skill. Complete authorized repairs and reverify; continue independent authorized work while a genuinely unresolved decision awaits the user.
 
 ## Outputs
 
@@ -47,5 +47,5 @@ Verify that pipeline work meets its governing contract before completion is decl
 
 ## Completion checks
 
-- A failed verification does not authorize unrelated repair or redesign.
+- Repairs address the failed checks within the user's authorized scope; preserve surrounding architecture.
 - The output is PASS with verified checks, or FAIL with the exact failed checks and evidence.

@@ -21,12 +21,12 @@ Implement one complete independent traditional system from intake through its na
 ## Actions
 
 1. Read CLAUDE.md, the latest docs/incoming source audit, current runtime, and system-specific source files BEFORE editing.
-2. Inspect the existing implementation; never rebuild completed functionality.
+2. Inspect and reuse completed functionality; implement the remaining assigned behavior.
 3. Use canonical system-specific methods and verified primary or named school sources.
-4. If source authority or school conflicts, record the unresolved question rather than inventing a rule.
+4. Record conflicting source authorities or schools as unresolved questions; continue independent work supported by verified rules.
 5. Build a complete independent intake-to-native-reading path and unit/integration tests for the assigned system.
 6. Preserve all applicable source-backed markers.
-7. Work in files owned by the assigned system; avoid modifying shared orchestration files simultaneously with other workers.
+7. Work in files owned by the assigned system; coordinate shared orchestration edits through the conductor's file assignments.
 8. Report exact changed files, test commands/results, unresolved source questions, and remaining gaps.
 
 ## Outputs
@@ -42,6 +42,6 @@ Implement one complete independent traditional system from intake through its na
 - Tests pass.
 - Native output is demonstrable.
 - All applicable source-backed markers survive.
-- No single-wound ranking, fabricated markers, or premature cross-system blending.
+- Preserve every applicable verified wound marker and the complete independent native reading before cross-system synthesis.
 - Portals and convergence remain downstream.
 - Next.js 15, local Swiss Ephemeris where relevant, Supabase, Vercel, and the existing branch are preserved.

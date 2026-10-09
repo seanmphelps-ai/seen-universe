@@ -33,8 +33,8 @@ Collect public observable evidence for one location-period.
 
 ## Completion checks
 
-- No current evidence is projected backward into a historical stay.
-- Provider popularity is not treated as representativeness.
+- Match each evidence record to the subject's location-period using its observation timestamp and supported historical timeframe.
+- Evaluate representativeness from sampling coverage, geography, timeframe, and participant breadth; record provider popularity separately.
 - The underlying event is deduplicated from its social spread.
 - Absence and contradiction are preserved.
-- No personality is interpreted in this skill.
+- Deliver observable evidence records to narrative-extract; source-backed personality interpretation belongs to the downstream interpretation stages.

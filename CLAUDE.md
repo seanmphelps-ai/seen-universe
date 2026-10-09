@@ -1,134 +1,69 @@
-# CLAUDE.md
+// PROVENANCE: bot=codex session=2026-10-08 task=complete positive-instruction rewrite of repository agent guidance
+# Repository Execution Instructions
 
-## ECC HARNESS — GOVERNING STRUCTURE
+## Mission
 
-ECC is the harness. Do not place another orchestration layer above it.
+Complete the user's requested work in the existing SEEN implementation. Treat the request as authorization for the intermediate steps needed to deliver and verify it. Use the current branch, existing context, product canon, schemas, and working implementation as the starting point.
 
-```text
-ECC (harness: memory, instincts, security, budgets)
-  └── Caveman (output compression)
-       └── SEEN pipeline (MCPs + skills + hooks)
-            ├── browser-mcp → social pull
-            ├── postgres-mcp → storage
-            ├── intake skill
-            ├── social-pull skill
-            ├── narrative-extract skill
-            ├── chart-gen skill
-            ├── resonance skill
-            └── verify skill
-```
+A status question about previously requested work initiates inspection, completion of the remaining authorized work, verification, and a concise outcome report. Honor an explicit request for status only or a pause.
 
-### Execution law
+## Execution
 
-- ECC governs memory, instincts, security, and budgets.
-- Caveman compresses output only. It does not alter architecture, evidence, scope, or governing rules.
-- MCPs provide capabilities. They do not make product or architectural decisions.
-- Skills execute bounded jobs. They do not expand their own scope.
-- Hooks enforce deterministic boundaries where enforcement is possible.
-- `verify` is required before work is considered complete.
-- Existing SEEN architecture remains authoritative. No skill, MCP, hook, or model may replace or redesign adjacent architecture unless explicitly requested.
-- For repository work, read this file, `docs/MASTER_BUILD_CHECKLIST.md`, and the matching context module before changing implementation files.
+1. Identify the relevant professional discipline and apply its methods. Research respected practitioners, primary sources, and the user's named references when the task requires domain research. Spend at least one minute actively retrieving, comparing, and validating named sources for a substantive research task.
+2. Recover established decisions from repository context and available tools. Apply user corrections immediately and preserve their attribution.
+3. Resolve routine implementation choices from evidence and the active request. State material assumptions and tradeoffs. Ask about a missing decision when it genuinely blocks the dependent work; complete independent authorized work first.
+4. Take the next obvious authorized action. Deliver the implementation, investigation, or complete rewritten text requested.
+5. Keep communication concise and centered on findings, solutions, and verified outcomes.
+6. Continue through recoverable failures, authorized repairs, and relevant verification. Report a genuine blocker with the exact user action needed to resolve it.
 
-Project-specific skill contracts live under `.agents/skills/`.
-Pipeline definition lives at `docs/ECC_SEEN_PIPELINE.md`.
+## Governing structure
 
-## EXECUTION FIRST
+ECC provides the harness for memory, instincts, security, and budgets. Caveman compresses presentation while preserving architecture, evidence, scope, and governing meaning. SEEN's pipeline runs within that harness.
 
-1. **take the initiative- search for the top producers and respected names in the field that we are covering. assume the role/ words of those top tier specialist in the field we  are working in-  DO THE TASK-solve the problem .**
-2. **Use existing context-if a specific name is given dive right into that name, don't stay around it compare sources verify validate  spend atleast 1 minute actively searching and comparing  .**
-3. ** not wait to be asked immediately find the facts cross check McGrath other sources  is checkable, retrieve it.**
-4. **return discovery directly- not hownor why but what are the steps to a solution as wuiclly  as possoble  If the next action is obvious and authorized, take it.**
-5. **Do not narrate or repeat  and work before doing it.**
-6. **Do not make the user repeat established decisions.**
-7. **Corrections change the working rule immediately; preserve who corrected what.**
-8. **Ask only when a missing decision cannot be resolved from context or tools.**
+- MCPs provide retrieval and storage capabilities through provider-agnostic interfaces.
+- Skills execute the bounded stage assigned by the active user task.
+- Hooks enforce deterministic checks.
+- Existing SEEN architecture remains authoritative; implement authorized product and architectural changes through its existing interfaces.
+- Run the relevant verification before declaring the requested work complete.
 
-## Coding rules
+Project-specific contracts live in `.agents/skills/`. Agent roles live in `.agents/agents/`. The pipeline definition is `docs/ECC_SEEN_PIPELINE.md`. Use these existing instruction locations and update their contents in place.
 
-1. **Think Before Coding** — surface assumptions, don't pick silently
-2. **Simplicity First** — minimum code, nothing speculative
-3. **Surgical Changes** — touch only what you must
-4. **Goal-Driven Execution** — define success criteria, verify
+## Read order and context routing
 
-Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
+Before implementation edits, read this file, `docs/MASTER_BUILD_CHECKLIST.md`, the matching context module, and the current implementation.
 
-**Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
+| Active task | Context module |
+| --- | --- |
+| Closure, relationships, comparisons | `docs/contexts/CLAUDE_CLOSURE.md` |
+| Location, exposure, trips, place, time | `docs/contexts/CLAUDE_LOCATION.md` |
+| Generator, portals, layers, shadows, convergence, Helix | `docs/contexts/CLAUDE_GENERATOR_HELIX.md` |
+| Life Map, source-system tabs, historical provenance, visual and narrative rendering | `docs/contexts/CLAUDE_LIFE_MAP_RENDERING.md` |
+| Oracle, voice, chat | `docs/contexts/CLAUDE_ORACLE.md` |
+| Cadence, tracker, widget, daily follow-through | `docs/contexts/CLAUDE_CADENCE.md` |
+| Child, parent, sibling, teacher, caregiver | `docs/contexts/CLAUDE_FAMILY.md` |
+| Eden, dating, sharing, consent | `docs/contexts/CLAUDE_EDEN.md` |
 
-## 1. Think Before Coding
+Load the modules and examples from `docs/examples/` that support the task. Load multiple modules when the task spans their responsibilities.
 
-**Don't assume. Don't hide confusion. Surface tradeoffs.**
+Place recovered source material in `docs/incoming/`. When reconciling multiple recovered or candidate sources, run `docs/00_SOURCE_CONVERGENCE_SEQUENCE_GATE.md` and update `docs/source-analysis/SOURCE_SEQUENCE_MATRIX.csv` before canonization or implementation.
 
-Before implementing:
-- State your assumptions explicitly. If uncertain, ask.
-- If multiple interpretations exist, present them - don't pick silently.
-- If a simpler approach exists, say so. Push back when warranted.
-- If something is unclear, stop. Name what's confusing. Ask.
+## Implementation method
 
-## 2. Simplicity First
+1. Inspect the active branch and working code. Reuse completed behavior and established project decisions.
+2. Define verifiable success criteria for the requested change and a brief sequence of implementation and verification steps when the task spans several steps.
+3. Implement the smallest complete solution within the requested scope. Use concrete behavior and structures appropriate to the task.
+4. Match existing style. Trace every changed line to the request. Preserve surrounding code, comments, formatting, and existing functionality.
+5. Remove imports, variables, and functions made unused by this change. Report unrelated dead code as a separate finding and preserve it for a separately authorized cleanup.
+6. Prefer the simpler sufficient implementation. Keep abstractions and configuration tied to actual requested use cases; handle states that can occur in the supported flow.
+7. Preserve parallel workers' edits through coordinated file ownership and integration on `closure-and-composure`.
+8. Verify the behavior against the original request. For a bug, reproduce the failure and verify the correction. For a refactor, compare relevant checks before and after. For validation, exercise supported and invalid inputs.
+9. Run checks relevant to the change. For integrated runtime changes, run `npm run typecheck`, `npm test`, and `npm run build`.
+10. Commit the completed work on the existing active branch and report changed behavior, verification evidence, and material unresolved limits.
 
-**Minimum code that solves the problem. Nothing speculative.**
+## Provenance and delivery
 
-- No features beyond what was asked.
-- No abstractions for single-use code.
-- No "flexibility" or "configurability" that wasn't requested.
-- No error handling for impossible scenarios.
-- If you write 200 lines and it could be 50, rewrite it.
+Preserve each rewritten file's existing first-line provenance header. Add the repository's `// PROVENANCE: bot=<bot-name> session=<YYYY-MM-DD> task=<task>` header to changed files that need one. Follow `PROVENANCE.md` and the available repository hook.
 
-Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+Completion reports reflect actions actually performed and evidence actually collected. Mark missing evidence as unresolved, finish independent work, and identify the concrete remaining dependency.
 
-## 3. Surgical Changes
-
-**Touch only what you must. Clean up only your own mess.**
-
-When editing existing code:
-- Don't "improve" adjacent code, comments, or formatting.
-- Don't refactor things that aren't broken.
-- Match existing style, even if you'd do it differently.
-- If you notice unrelated dead code, mention it - don't delete it.
-
-When your changes create orphans:
-- Remove imports/variables/functions that YOUR changes made unused.
-- Don't remove pre-existing dead code unless asked.
-
-The test: Every changed line should trace directly to the user's request.
-
-## 4. Goal-Driven Execution
-
-**Define success criteria. Loop until verified.**
-
-Transform tasks into verifiable goals:
-- "Add validation" → "Write tests for invalid inputs, then make them pass"
-- "Fix the bug" → "Write a test that reproduces it, then make it pass"
-- "Refactor X" → "Ensure tests pass before and after"
-
-For multi-step tasks, state a brief plan:
-```
-1. [Step] → verify: [check]
-2. [Step] → verify: [check]
-3. [Step] → verify: [check]
-```
-
-Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
-
----
-
-**These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
-
-## SEEN CONTEXT ROUTING
-
-For SEEN work:
-
-1. Read `docs/MASTER_BUILD_CHECKLIST.md`.
-2. Load only the context module matching the task:
-   - Closure, relationships, comparisons → `docs/contexts/CLAUDE_CLOSURE.md`
-   - Location, exposure, trips, place, time → `docs/contexts/CLAUDE_LOCATION.md`
-   - Generator, portals, layers, shadows, convergence, Helix → `docs/contexts/CLAUDE_GENERATOR_HELIX.md`
-   - Life Map, source-system tabs, historical provenance, visual rendering, narrative/cinematic presentation → `docs/contexts/CLAUDE_LIFE_MAP_RENDERING.md`
-   - Oracle, voice, chat → `docs/contexts/CLAUDE_ORACLE.md`
-   - Cadence, tracker, widget, daily follow-through → `docs/contexts/CLAUDE_CADENCE.md`
-   - Child, parent, sibling, teacher, caregiver → `docs/contexts/CLAUDE_FAMILY.md`
-   - Eden, dating, sharing, consent → `docs/contexts/CLAUDE_EDEN.md`
-3. Load only matching examples from `docs/examples/`.
-4. Do not load every module unless the task genuinely spans them.
-5. Put recovered material in `docs/incoming/` before canonizing it.
-6. When multiple recovered or candidate sources must be reconciled, run `docs/00_SOURCE_CONVERGENCE_SEQUENCE_GATE.md` and update `docs/source-analysis/SOURCE_SEQUENCE_MATRIX.csv` before canonization or implementation.
+Each session delivers the requested reviewable result, relevant verification, and a concise report. Successful execution produces focused diffs, reused context, preserved operational meaning, and working behavior.

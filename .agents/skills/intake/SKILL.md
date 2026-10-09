@@ -51,7 +51,7 @@ Collect and validate all inputs necessary for all downstream calculations, inclu
 - Birth location with calendar time frame is present.
 - Every lived location of 6 months or more has a calendar time frame period.
 - Current location is present.
-- No invented dates, places, coordinates, or time certainty.
+- Dates, places, coordinates, and time confidence retain their supplied or verified provenance.
 - Approximate dates are preserved as approximate.
 - Date and location material exists.
 - Calculation, rendering, and generator architecture are unmodified by this skill.
