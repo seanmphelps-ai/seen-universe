@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # COMMIT_ACTIONS_REVERSE_ONELINE.md
 
 Reverse one-line git log (oldest → newest) for `seanmphelps-ai/SEEN_universal`.
@@ -5,8 +6,6 @@ Reverse one-line git log (oldest → newest) for `seanmphelps-ai/SEEN_universal`
 Branch treated as main: `mirrored`.
 
 Generated from verified GitHub connector commit-search results and explicit commit fetches on 2026-06-11.
-
-> Scope note: this file replaces the previous header-only placeholder with the recovered commit entries available through the connector. It is a commit-action recovery file, not a generated architecture file.
 
 ---
 
@@ -95,8 +94,6 @@ Generated from verified GitHub connector commit-search results and explicit comm
 
 ## Known explicit gate/action commits surfaced during recovery
 
-These commits were specifically referenced by prior action-placeholder planning and should be treated as action-backed commits, not vague summaries:
-
 - `44ce8c575a091204c8a5c026ca51c050755f5fe6` — Add Oracle entry gate with sequential visibility lock
 - `7d1529618df8c66ab59f4da57685f901053c2c97` — Transfer Start Here canon lock word for word
 - `63bffeebbe0cf71dc1e308f58e3af9f3994ee2bb` — Replace start here canon with Oracle presence lock
@@ -108,8 +105,3 @@ These commits were specifically referenced by prior action-placeholder planning 
 ---
 
 ## Recovery rule
-
-Do not convert this file into architecture.
-Do not infer missing commit intent.
-Do not create placeholder action files from commit messages alone.
-If an action file is created from a commit, it must be backed by the commit diff and the changed file path(s), not by the title only.

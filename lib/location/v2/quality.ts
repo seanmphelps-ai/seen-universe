@@ -1,15 +1,4 @@
-// Observation quality q — the weighted geometric mean of whichever
-// confidence terms are available.
-//
-// Contract: "Observation quality q is the weighted geometric mean of
-// available geo, classifier, source reliability, authenticity, and
-// recency terms (all 0-1). Missing optional terms are omitted, not set
-// to zero."
-//
-// Omission vs. zero is the whole point. A geometric mean is annihilated
-// by a single zero, so treating "we didn't measure authenticity" as
-// authenticity = 0 would silently discard a perfectly good observation.
-// Omitted terms drop out of both the numerator and the denominator.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import type { ObservationConfidenceTerms } from './types';
 
@@ -29,18 +18,7 @@ export const QUALITY_TERM_WEIGHTS: Record<keyof ObservationConfidenceTerms, numb
 
 export class QualityTermRangeError extends Error {}
 
-/**
- * Weighted geometric mean over present terms:
- *   q = exp( Σ wᵢ·ln(xᵢ) / Σ wᵢ )
- *
- * Returns null when no term at all is available — that is an
- * uncharacterized observation, and the caller must charge it to
- * confidence rather than assume a value for it.
- *
- * A genuine measured 0 on any term does yield q = 0. That is correct and
- * deliberate: a measured zero on, say, authenticity means the item is
- * judged inauthentic, and it should carry no evidential weight.
- */
+
 export function observationQuality(terms: ObservationConfidenceTerms): number | null {
   const present = (Object.keys(QUALITY_TERM_WEIGHTS) as (keyof ObservationConfidenceTerms)[])
     .map((termName) => ({ termName, value: terms[termName] }))
@@ -54,7 +32,7 @@ export function observationQuality(terms: ObservationConfidenceTerms): number | 
     if (value < 0 || value > 1) {
       throw new QualityTermRangeError(
         `Quality term "${termName}" must be in [0,1] — received ${value}. ` +
-          `Out-of-range terms indicate an adapter bug; they are not clamped silently.`,
+          `Out-of-range terms indicate an adapter bug and require an explicit error.`,
       );
     }
   }
@@ -75,11 +53,7 @@ export function observationQuality(terms: ObservationConfidenceTerms): number | 
   return Math.exp(weightedLogSum / weightSum);
 }
 
-/**
- * How many of the five terms were actually measured. Feeds the
- * provenance-completeness component of confidence — an observation
- * scored on one term is not as trustworthy as the same q scored on five.
- */
+
 export function qualityTermCoverage(terms: ObservationConfidenceTerms): number {
   const total = Object.keys(QUALITY_TERM_WEIGHTS).length;
   const measured = (Object.keys(QUALITY_TERM_WEIGHTS) as (keyof ObservationConfidenceTerms)[])

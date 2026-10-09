@@ -1,8 +1,9 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # LOCATION ENGINE — builder lock
 # Paste into seen-universe as docs/LOCATION_ENGINE.md
 # Branch: closure-and-composure
-# Does not replace city search. Reuses lib/location/citySuggest + saved-people.
-# Does not call BLS / Census. Narrative + lived intake + year-cut.
+Reuses `lib/location/citySuggest` and saved-people for city search.
+Inputs: narrative, lived intake, and historical year-cut.
 
 Status: CANONICAL for generator I/O.
 Version: 1.0.0
@@ -14,16 +15,12 @@ Date: 2026-09-18
 
 Place is the incubator.
 Exposure is what accumulates inside it.
-The person is not a constant seed dropped into dirt.
 The plant can be transplanted. Roots can take. Roots can rot.
 Montana can starve a tree that Castro Valley grew. Same organism. Different soil. Different training.
 
 Location and chart are equal forces. Neither whispers. Neither shouts by rule.
 The person decides which force ran louder in that window.
 
-No sentence cap.
-No doctor-report card.
-No gift clause on the dark chart.
 Gift and cost both live on location cards because location narrowing is the opposite of time narrowing.
 
 ---
@@ -33,7 +30,7 @@ Gift and cost both live on location cards because location narrowing is the oppo
 Date + city first.
 Time is still unknown.
 
-Why: three location cards need a date window and a place so Western + Vedic wound markers can be computed at 4am / noon / 8pm against that soil. You cannot date the soil after the clock is locked.
+Why: three location cards need a date window and a place so Western + Vedic wound markers can be computed at 4am / noon / 8pm against that soil.
 
 ```
 INPUT
@@ -61,7 +58,7 @@ THEN
   Oracle later
 ```
 
-Birth place, every 6+ month place, current place. Separate snapshots. Never one blended city profile.
+Birth place, every 6+ month place, current place. Separate snapshots.
 
 ---
 
@@ -75,21 +72,17 @@ LivedPlace
   role                   // BIRTH | LIVED | CURRENT
   startDate              // YYYY-MM-DD or year
   endDate                // YYYY-MM-DD | year | null = ongoing
-  durationMonths         // computed; < 6 months = do not evaluate as a field
   stratumNote            // optional: hills / flats / projects / rural / school
-  eraNote                // optional: "late 90s Compton" not "Compton"
 ```
 
 Reuse: `lib/location/citySuggest.ts`, saved-people API.
-Do not rebuild autocomplete.
 
 ---
 
 ## 3. Output — one card shape
 
-Every location card MUST contain all of these fields. Paragraphs allowed. No max length.
+Every location card MUST contain all of these fields. Paragraphs allowed.
 
-- fieldName            soil, not wound
 - era                  year-cut
 - stratum              which version of that city
 - gift
@@ -100,11 +93,9 @@ Every location card MUST contain all of these fields. Paragraphs allowed. No max
 - aspiredToward
 - afraidOfLosing
 - moneyGoesTo          what people spend on when they have a choice
-- underPressure        how a body reacts on this soil (not the natal wound)
 - lean                 WESTERN | VEDIC | BLENDED
 - routesTo             lifeSectionId[] (1–45)
 - precharges           portalId[] (1–64)
-- honestyCheck         the wrong card must feel wrong, not just less nice
 
 Training chain the generator must name, in this order, for each locked place:
 
@@ -121,7 +112,6 @@ Environment
 ```
 
 Name the rotting root if the current soil is starving the plant.
-Name the taking-root if the current soil is growing something the old soil could not.
 
 ---
 
@@ -134,7 +124,6 @@ Round 1 — same city, three soils
 
 User picks the field they lived. Gift and cost together.
 Pick writes EnvironmentalResonanceRecord.
-Pick does not rewrite raw signals.
 
 Rounds 2–4 — smaller soil
 - hill vs flats
@@ -150,7 +139,6 @@ Opposite of time:
 ---
 
 ## 5. Questions the engine asks the PLACE
-(not the user — self-interrogation, same rule as portals)
 
 - What gets rewarded here
 - What gets punished here
@@ -172,13 +160,12 @@ Opposite of time:
 - What happens if you stay
 
 Same question bank can be reworded for a portal.
-Do not invent a second bank.
 
 ---
 
-## 6. Marker vector (do not collapse)
+## 6. Marker vector
 
-From SEEN_BUILDER_CONTRACT. Keep as vector. Never one score.
+From SEEN_BUILDER_CONTRACT. Keep as vector.
 
 Required:
 - markerId
@@ -196,14 +183,11 @@ Required:
 - sourceFamilyBreakdown
 - seedSensitivityWeight
 
-null = unmeasured. 0 = measured absence. Never render null as 0.
+null = unmeasured. 0 = measured absence.
 
 Sources: public narrative (TikTok / IG / Reddit / local forums / news voice). Provider-agnostic.
-No Census, no BLS required.
-One source family cannot push confidence above 0.6.
 
-Equation for combining dimensions: NOT LOCKED.
-Keep nine fields. Do not invent a single “location score.”
+Keep nine fields.
 
 ---
 
@@ -217,10 +201,7 @@ Name: bonsai.
 - computeSeedSensitivity tilts the prior only.
 - Observed field always wins if it contradicts the tilt.
 - If the person says the environment ran them, believe the environment for that window.
-- Current place can be a mismatch. The engine must be allowed to say: this soil does not feed this plant.
-
-Do not write “seed stays constant.”
-Do not write “location only whispers.”
+- Current place can be a mismatch.
 
 ---
 
@@ -229,8 +210,8 @@ Do not write “location only whispers.”
 After lock:
 - Every named pressure routes to one or more of docs/45_LIFE_SECTIONS.md
 - Every activated frequency pre-charges one or more of docs/64_PORTALS.md
-- Portals file into sections. Sections do not file into portals.
-- Empty section = visible silence. Do not invent.
+- Portals file into sections.
+- Empty section = visible silence.
 
 ---
 
@@ -240,20 +221,12 @@ Location cards sit on the place strand.
 User scrolls places left to right.
 Select a place → three cards → pick → tighten.
 Select a portal on that place → full extraction (trigger, pressure, behavior, collapse, thrive, cost to self, cost to others, what is lost).
-No sentence cap.
 
 ---
 
 ## 10. Refusals
 
-- Do not put environment before date.
-- Do not lock time before location cards exist.
-- Do not write one-line summaries.
-- Do not require APIs the repo does not have.
-- Do not rebuild city autocomplete.
-- Do not merge SEEN_universal into this file.
-- Do not diagnose attachment from planets. Attachment comes from intake + this field.
-- Do not average two places into one person.
+- Attachment comes from intake + this field.
 
 ---
 
@@ -264,5 +237,4 @@ No sentence cap.
 3. Store pick
 4. Stop
 
-Do not build helix, Oracle, or 64 agents in slice 1.
 Wire pick → EnvironmentalResonanceRecord only.

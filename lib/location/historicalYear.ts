@@ -1,14 +1,5 @@
-// SEEN Location V1 — historical year selection for ACS 5-year vintages.
-//
-// ACS 5-year estimates are published annually; each vintage year Y covers
-// the window [Y-4, Y]. This picks the vintage whose window best overlaps
-// the requested residence period, and always reports whether it actually
-// overlaps or is a nearest-available substitution — per the spec's
-// "never silently substitute" rule.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
-// Known-published ACS5 vintages. This is a maintained list, not a live
-// lookup (the Census "available datasets" endpoint would need its own
-// network call this sandbox can't make); extend it as new vintages ship.
 export const KNOWN_ACS5_VINTAGES = Array.from({ length: 2022 - 2010 + 1 }, (_, i) =>
   String(2010 + i),
 );

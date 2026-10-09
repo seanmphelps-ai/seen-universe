@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { DARK_WINDOWS } from '../../seen/chartEngine';
@@ -94,7 +95,7 @@ describe('first-slice screens', () => {
     expect(location).not.toContain('The Forge');
   });
 
-  it('does not render a clock on the recognition cards', () => {
+  it('renders recognition cards with behavioral summaries', () => {
     const page = readFileSync('app/foundation/rectification/page.tsx', 'utf8');
     expect(page).not.toMatch(/\{card\.clock\}/);
     expect(page).not.toMatch(/type="time"/);

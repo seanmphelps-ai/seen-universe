@@ -1,11 +1,4 @@
-// SEEN Location V1 — orchestrator.
-//
-// LocationInput -> geography resolution -> independent source adapters ->
-// normalize -> classify -> provenance -> LocationField -> optional delta.
-//
-// Each adapter is fetched independently (Promise.allSettled): one failing
-// source degrades that condition to UNKNOWN with a recorded reason, and
-// does not affect the others or crash the result.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import { resolveHistoricalGeography, GeographyResolutionError } from './geography';
 import {
@@ -84,8 +77,6 @@ export async function buildLocationField(
   }
 
   if (!geography) {
-    // Without geography, no source adapter can run — every Material Field
-    // condition becomes UNKNOWN rather than partially guessed.
     for (const [id, label, dir] of [
       ['median_household_income', 'Median household income', 'HIGHER_IS_MORE'],
       ['poverty_rate', 'Poverty rate', 'LOWER_IS_MORE'],
@@ -252,9 +243,6 @@ export async function buildLocationField(
 
   // --- BLS LAUS (independent of Census entirely) ---
   try {
-    // BLS LAUS is a monthly/annual time series, not a 5-year window — use
-    // the single year closest to the residence period's midpoint rather
-    // than the ACS vintage year.
     const targetYear = String(
       Math.round(
         (Number(input.exposureStart.slice(0, 4)) +

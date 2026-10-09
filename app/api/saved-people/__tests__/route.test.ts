@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 // One in-memory stand-in for the SEEN Postgres schema. It mirrors the two
@@ -50,8 +51,6 @@ function makeClient() {
               return {
                 data: matched.map((row) => ({
                   ...row,
-                  // person_id is unique on western_charts, so PostgREST
-                  // embeds one object or null here, never an array.
                   western_charts: (() => {
                     const chart = charts.find((row_chart) => row_chart.person_id === row.id);
                     return chart ? { id: chart.id } : null;
@@ -109,7 +108,7 @@ beforeEach(() => {
 });
 
 describe('saving people and their Western charts', () => {
-  it('rejects a save from a visitor who is not signed in', async () => {
+  it('rejects a save from an anonymous visitor', async () => {
     currentUser = null;
     const response = await post(BREE);
 
@@ -192,7 +191,7 @@ describe('reading back saved people', () => {
     expect(body.people).toHaveLength(0);
   });
 
-  it('refuses to list anything for a visitor who is not signed in', async () => {
+  it('refuses to list anything for an anonymous visitor', async () => {
     currentUser = null;
     const response = await GET();
 

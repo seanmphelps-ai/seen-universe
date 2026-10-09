@@ -1,5 +1,4 @@
-# SEEN Chart Engine (smallest working slice)
-
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 ## Endpoint
 
 `POST /api/seen/chart-engine`
@@ -28,7 +27,6 @@
 ## Added
 - `lib/seen/geoPresence.ts` — dirt pressure heuristics
 - `lib/seen/woundMarkers.ts` — rule-governed extraction from natal
-- `lib/seen/portals64.ts` — 64 I Ching spine (never inactive)
 - `lib/seen/chartEngine.ts` — orchestration
 - `app/api/seen/chart-engine/route.ts`
 

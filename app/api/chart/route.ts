@@ -1,8 +1,7 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { NextRequest, NextResponse } from 'next/server';
 import { calculateNatalChart, type NatalChartInput } from '../../../lib/natalChart';
 
-// Explicit Node.js runtime (not edge) — swisseph-wasm's Node code path reads
-// its .wasm/.data files from disk via fs, which edge doesn't support.
 export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {

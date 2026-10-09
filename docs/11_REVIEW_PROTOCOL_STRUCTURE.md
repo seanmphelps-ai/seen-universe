@@ -1,10 +1,9 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # 11_REVIEW_PROTOCOL_STRUCTURE
 
 Purpose: verify SEEN repository order, naming, numbering, folder placement, dependency order, and reference integrity.
 
 This protocol runs after FOUNDATION and before ALIGNMENT.
-
-No architecture may be invented in this protocol.
 
 ## PASS 6 - Naming
 
@@ -24,8 +23,6 @@ Flag:
 Check numeric order.
 
 Verify that earlier files are truly earlier in responsibility.
-
-Do not preserve prior numbering blindly.
 
 Preserve prior numbering only when it is structurally stronger.
 
@@ -88,5 +85,3 @@ Return:
 5. Reference integrity findings
 6. Exact files requiring move or rename
 7. Confidence per finding: locked / likely / uncertain
-
-Do not apply changes in this protocol.

@@ -1,16 +1,4 @@
-// Dedupe incident, preserve exposure.
-//
-// Contract: "Cluster reports/posts into one underlying event e. Within
-// each source family retain only its strongest confirmation; fuse
-// independent families: p(e) = 1 - Π_f [1 - max(q_o in e,f)]. All
-// mentions remain in a separate exposure table. Result: one shooting is
-// one event, while 800 posts remain 800 exposure/amplification
-// observations."
-//
-// The two tables come out of one pass and are returned together so a
-// caller cannot accidentally use the collapsed set where it needed the
-// full set. Nothing is dropped: every input observation appears in
-// exposure exactly once.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import type { Observation, SourceFamily } from './types';
 import { observationQuality } from './quality';
@@ -55,23 +43,11 @@ export type DedupeResult = {
   events: FusedEvent[];
   /** One entry per input observation, always. Use for AMP, BRD, CONC, DIG. */
   exposure: ExposureRecord[];
-  /**
-   * Observations with no fingerprint. They cannot be attributed to an
-   * event, so they count as exposure only — never as incidents. Reported
-   * explicitly rather than silently bucketed.
-   */
+
   unfingerprintedCount: number;
 };
 
-/**
- * Fuses independent family confirmations into p(e).
- *
- *   p(e) = 1 - Π_f [1 - max(q_o in e,f)]
- *
- * The product runs over families, not observations, which is what makes
- * 800 posts about one shooting worth exactly one social-family
- * confirmation rather than 800 multiplicative ones.
- */
+
 export function fuseEventProbability(familyMaxQualities: number[]): number {
   if (familyMaxQualities.length === 0) return 0;
   let complement = 1;
@@ -89,8 +65,6 @@ export function dedupeObservations(observations: Observation[]): DedupeResult {
   for (const observation of observations) {
     const quality = observationQuality(observation.confidenceTerms);
 
-    // Every observation lands in the exposure table, without exception —
-    // including unfingerprinted ones and ones whose quality is null.
     exposure.push({
       observationId: observation.observationId,
       eventFingerprint: observation.eventFingerprint,
@@ -124,9 +98,6 @@ export function dedupeObservations(observations: Observation[]): DedupeResult {
 
     for (const observation of clustered) {
       const quality = observationQuality(observation.confidenceTerms);
-      // An observation with no measured quality term cannot confirm an
-      // event — there is nothing to fuse. It still counts as exposure
-      // (already recorded above) and is charged to confidence downstream.
       if (quality === null) continue;
 
       const existing = strongestPerFamily.get(observation.sourceFamily);

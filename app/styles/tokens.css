@@ -1,8 +1,5 @@
-/* SEEN Canonical UI Language — executable tokens.
-   Values reproduced verbatim from docs/design-system.md (the visual source of
-   truth). Do NOT alter a canonical value in this file without explicit
-   approval — palette, geometry, and component rules here are product spec, not
-   styling. */
+/* PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap');
 

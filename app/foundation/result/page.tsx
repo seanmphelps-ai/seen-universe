@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -206,7 +207,7 @@ export default function FoundationResultPage() {
                 <section aria-labelledby="wounds-title">
                   <h2 id="wounds-title" className="seenLabel">Wound markers — ranked</h2>
                   <p className="seenFieldSupport">
-                    These are the patterns the chart carries. Rank is authored, not computed — it weighs how tight the aspect is, how heavy the planet is, which house it sits in, and whether several markers fire together.
+                    These are the patterns the chart carries. Rank follows authored criteria — it weighs how tight the aspect is, how heavy the planet is, which house it sits in, and whether several markers fire together.
                   </p>
                   <ul className="seenFlowIntroduction" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '1rem' }}>
                     {rankedWounds.map((wound) => (

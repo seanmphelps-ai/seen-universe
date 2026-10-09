@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 /**
  * Soft dark-card seeds when LLM scenarios are unavailable.
  * Uses the real chart engine (Swiss + GeoPresence + wounds + 64 portals).
@@ -14,11 +15,11 @@ import {
 export type EngineSeedCard = {
   runId: string;
   chart: NatalChartResult;
-  /** Metadata only — never render on card faces. */
+
   clock?: string;
   /** Anonymous pressure paragraph for the card face. */
   paragraph: string;
-  /** Raw cues retained for session/debug; not for face UI. */
+
   geoSummary?: string;
   wounds?: Array<{ label: string; sign: string; degree: number; qualities: string[] }>;
   topPortals?: Array<{ portalId: number; name: string; expression: string }>;

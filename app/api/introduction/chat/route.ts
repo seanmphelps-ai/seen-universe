@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 
@@ -10,13 +11,13 @@ export async function POST(request: NextRequest) {
   const parsed = RequestSchema.safeParse(await request.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ error: 'Invalid message.' }, { status: 400 });
   const key = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
-  if (!key) return NextResponse.json({ error: 'SEEN chat is not configured.' }, { status: 503 });
+  if (!key) return NextResponse.json({ error: 'SEEN chat requires configuration.' }, { status: 503 });
   const response = await fetch('https://ai-gateway.vercel.sh/v1/chat/completions', {
     method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` },
     body: JSON.stringify({
       model: process.env.SEEN_INTRODUCTION_MODEL || 'openai/gpt-5.6-sol', stream: false, max_tokens: 180,
       messages: [
-        { role: 'system', content: 'You are the opening listener for SEEN. Help a person begin telling their own story. Ask one brief, humane, concrete follow-up at a time. Reflect their language without diagnosing, interpreting, flattering, moralizing, or claiming to know them. Never mention astrology. Keep every response under 45 words.' },
+        { role: 'system', content: 'You are the opening listener for SEEN. Help a person begin telling their own story. Ask one brief, humane, concrete follow-up at a time. Reflect the words and experiences they share. Keep the conversation focused on their story. Keep every response under 45 words.' },
         ...parsed.data.messages,
       ],
     }),

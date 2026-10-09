@@ -1,15 +1,4 @@
-// Confidence is separate — step 5 of the contract.
-//
-// "Publish component values + band (very low/low/medium/high), not false
-// decimal precision. Apply hard caps: 1 family <=40; 2 <=65; 3 <=80; 4+
-// <=95. Nonprobability social data describes the digitally observable
-// environment, not every resident."
-//
-// Confidence never multiplies into the score. A high-scoring cell with
-// one family stays high-scoring and low-confidence, and the display must
-// carry both. Folding them together would let a confident-looking number
-// launder thin evidence, which is the specific failure this section of
-// the contract exists to prevent.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import type {
   ConfidenceBand,
@@ -50,11 +39,7 @@ const COMPONENT_WEIGHTS: Record<keyof ConfidenceComponents, number> = {
   provenanceCompleteness: 0.6,
 };
 
-/**
- * Effective independent evidence saturates rather than growing without
- * bound: going from 1 to 5 independent observations is a large gain in
- * trustworthiness, 50 to 54 is not. Half-saturation at 8.
- */
+
 const EVIDENCE_HALF_SATURATION = 8;
 
 export function evidenceComponentScore(effectiveEvidence: number): number {
@@ -81,13 +66,7 @@ export type ConfidenceInputs = {
   timeCoverage: number | null;
   /** Whether any contributing family is nonprobability social data. */
   includesNonprobabilitySocial: boolean;
-  /**
-   * Per-account participation counts feeding the evidence-independence
-   * diagnostic (account HHI). Opaque account id -> observation count.
-   * This is NOT an environmental measurement — it never informs CONC
-   * (lib/location/v2/vector.ts) — it is a statement about whether the
-   * EVIDENCE is dominated by a few accounts. Null when not obtainable.
-   */
+
   accountParticipation: Record<string, number> | null;
 };
 
@@ -165,9 +144,6 @@ export function computeConfidence(inputs: ConfidenceInputs): ConfidenceReport {
           const hasPublished = o.publishedAt !== null;
           const hasMatchedGeography = o.matchedGeography !== null;
           const structural = (Number(hasUrl) + Number(hasPublished) + Number(hasMatchedGeography)) / 3;
-          // Half structural provenance, half how many quality terms were
-          // actually measured — an observation nobody characterized is
-          // not fully provenanced even if its URL is present.
           return acc + 0.5 * structural + 0.5 * qualityTermCoverage(o.confidenceTerms);
         }, 0) / observations.length;
 
@@ -227,15 +203,12 @@ export function computeConfidence(inputs: ConfidenceInputs): ConfidenceReport {
   }
 
   const evidenceIndependence = computeEvidenceIndependence(inputs.accountParticipation);
-  // Threshold matches CONTRADICTION_SPREAD's role in fuse.ts: past this
-  // point the evidence is no longer plausibly independent, and a reader
-  // needs that flagged rather than buried in a components table.
   if (evidenceIndependence && evidenceIndependence.accountHhi > 0.5) {
     notes.push(
       `Evidence independence is low: the top 1% of contributing accounts produced ` +
         `${(evidenceIndependence.top1PercentShare * 100).toFixed(0)}% of the circulation evidence ` +
         `(account HHI ${evidenceIndependence.accountHhi.toFixed(2)}). This is a statement about the ` +
-        `EVIDENCE, not the environment — it does not affect CONC.`,
+        `EVIDENCE. CONC remains a separate environmental measurement.`,
     );
   }
 

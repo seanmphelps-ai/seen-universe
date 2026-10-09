@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, expect, it } from "vitest";
 import type { NatalChartResult } from "../natalChart";
 import { runEveOrchestrator } from "../orchestrator";
@@ -69,6 +70,6 @@ describe("Eve orchestrator first slice", () => {
     });
 
     expect(out.results[0].status).toBe("error");
-    expect(out.results[0].error).toContain("No specialist registered");
+    expect(out.results[0].error).toContain("Specialist registration required");
   });
 });

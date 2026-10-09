@@ -1,54 +1,14 @@
-// SEEN Location Execution Contract v0.1 — the ten-dimension specification.
-//
-//   V[m,l,t] = [PREV, SEV, PHYS, DIG, AMP, BRD, CONC, FRAME, PERSIST, TREND]
-//   with CONFIDENCE and PROVENANCE deliberately outside the vector.
-//
-// This module exists to answer one objection, which is the difference
-// between a defensible measurement layer and sophisticated-looking
-// arbitrary scoring:
-//
-//   "One widespread violent event could raise prevalence, physical
-//    exposure, breadth, concentration, and amplification unless the model
-//    explicitly defines what evidence is allowed to affect each one."
-//
-// The fix is not weighting. It is admissibility. Evidence is sorted into
-// disjoint CHANNELS, and each dimension declares which channels it may
-// read. A single viral incident lands in the INCIDENT channel once and in
-// the CIRCULATION channel many times; because PREV cannot read CIRCULATION
-// and DIG cannot read INCIDENT, that one event physically cannot inflate
-// both. The separation is structural, not a matter of tuning.
-//
-// Each dimension below therefore declares: the question it answers, the
-// unique information it captures that no other dimension does, the
-// channels it MAY read, the channels it MUST NOT read, its denominator,
-// and how it normalizes globally.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 export const CONTRACT_VERSION = 'SEEN Location Execution Contract v0.1';
 
-/**
- * Disjoint evidence channels. Every observation is routed to exactly the
- * channels it is competent to inform, at ingestion — not at scoring time.
- */
+
 export type EvidenceChannel =
   /** Deduplicated event table. One shooting is one row, always. */
   | 'INCIDENT'
-  /**
-   * Exposure table entries that are REACTIONS TO an incident or ambient
-   * condition — mentions, shares, commentary. One shooting discussed 800
-   * times is 800 rows here. Never admissible for PREV: talk about a
-   * condition is not occurrence of it.
-   */
+
   | 'CIRCULATION'
-  /**
-   * Exposure table entries that ARE themselves a sampled unit of an
-   * ambient condition — e.g. one social post directly classified as an
-   * instance of status-competition content, not a reaction to some
-   * separately identified incident. This is what makes an ambient
-   * marker's PREV a content-sampling exercise (structurally like a
-   * survey of the local content stream) rather than an attention
-   * measurement. Distinct from CIRCULATION specifically so a viral
-   * reaction thread can never be admitted here.
-   */
+
   | 'AMBIENT_CONTENT_SAMPLE'
   /** Directly measured environmental quantity: ACS rate, PM2.5, park polygon. */
   | 'AMBIENT_MEASURE'
@@ -61,13 +21,7 @@ export type EvidenceChannel =
   /** Expressed stance toward the condition. */
   | 'INTERPRETATION';
 
-/**
- * MAGNITUDE dimensions measure properties of the condition itself.
- * MEANING dimensions measure the environment's collective interpretation
- * of the condition. They are not the same kind of variable and are not
- * fused, normalized, or compared as though they were — FRAME is the only
- * MEANING dimension and it carries a distribution, not a magnitude.
- */
+
 export type DimensionLayer = 'MAGNITUDE' | 'MEANING';
 
 export type DimensionId =
@@ -88,11 +42,11 @@ export type DimensionSpec = {
   layer: DimensionLayer;
   /** The question this dimension, and only this dimension, answers. */
   question: string;
-  /** What it captures that no other dimension in the vector captures. */
+
   uniqueInformation: string;
   /** Channels this dimension is permitted to read. */
   admissibleChannels: EvidenceChannel[];
-  /** Channels it must never read, with the reason each is excluded. */
+
   inadmissible: { channel: EvidenceChannel; reason: string }[];
   denominator: string;
   /** How the dimension is made comparable across countries and data regimes. */
@@ -115,27 +69,26 @@ export const DIMENSIONS: DimensionSpec[] = [
       {
         channel: 'CIRCULATION',
         reason:
-          'Talk ABOUT a condition is not occurrence of it. Admitting circulation here is exactly ' +
+          'Discussion and occurrence are separate evidence channels. Mixing circulation into occurrence creates ' +
           'the failure that lets one viral event read as a high base rate. (A directly-classified ' +
           'ambient content sample is admissible — see AMBIENT_CONTENT_SAMPLE — because it IS an ' +
-          'instance of the condition, not a reaction to one.)',
+          'instance of the condition.)',
       },
       {
         channel: 'ACTOR_DISTRIBUTION',
-        reason: 'Who is posting says nothing about how often the condition occurs.',
+        reason: 'Occurrence frequency requires condition evidence. Account identity belongs to source diagnostics.',
       },
       {
         channel: 'INTERPRETATION',
-        reason: 'How a place feels about a condition does not change its rate.',
+        reason: 'Condition rate requires occurrence evidence; sentiment belongs to FRAME.',
       },
     ],
     denominator:
       'Population at risk for event markers (per 10k residents per 30 days); the measure\'s own ' +
       'universe for ambient markers (e.g. persons for whom poverty status is determined).',
     globalNormalization:
-      'Rate per population, then percentile-ranked against same-marker cells in the same ' +
-      'settlement-type peer group. Rate-per-population is comparable across countries in a way ' +
-      'raw counts and platform volumes are not.',
+      'Rate per population, percentile-ranked against same-marker cells in the same settlement-type ' +
+      'peer group. Population normalization supports comparison across countries.',
     range: 'Rate ≥ 0, plus a 0-100 percentile against the peer group.',
   },
   {
@@ -144,25 +97,24 @@ export const DIMENSIONS: DimensionSpec[] = [
     layer: 'MAGNITUDE',
     question: 'When the condition occurs, how intense is it?',
     uniqueInformation:
-      'Intensity per occurrence. Ten minor incidents must not outrank two catastrophic ones, ' +
-      'which is only possible if intensity is held separate from rate.',
+      'Intensity per occurrence. Rank severity separately from occurrence rate.',
     admissibleChannels: ['INCIDENT', 'AMBIENT_MEASURE'],
     inadmissible: [
       {
         channel: 'CIRCULATION',
         reason:
-          'Volume of discussion is not intensity. A widely discussed minor incident is not a severe one.',
+          'Intensity measures occurrence severity. Discussion volume belongs to DIG.',
       },
       {
         channel: 'INTERPRETATION',
         reason:
-          'Outrage is a framing response, not a severity measurement; it belongs to FRAME.',
+          'Outrage is a framing response belonging to FRAME.',
       },
     ],
-    denominator: 'None — severity is a distribution over occurrences, not a rate.',
+    denominator: 'Severity is a distribution over occurrences with occurrence-level units.',
     globalNormalization:
       'Marker-declared severity rubric with explicit level definitions, so the same rubric applies ' +
-      'in every country. Reported as median AND upper tail so a rare extreme is never averaged away.',
+      'in every country. Report both the median and upper tail to retain rare extremes.',
     range: '0-1 per occurrence; reported as {median, upperTail}.',
   },
   {
@@ -172,9 +124,8 @@ export const DIMENSIONS: DimensionSpec[] = [
     question:
       'How likely was someone actually living there to encounter this condition in their physical world?',
     uniqueInformation:
-      'Lived encounter probability. Distinct from PREV because a condition can be common in a ' +
-      'metro yet physically remote from a given resident, and distinct from DIG because encountering ' +
-      'something in the street is not encountering it in a feed.',
+      'Lived encounter probability. A common condition can be physically remote from a resident. ' +
+      'PHYS measures street exposure, DIG measures feed exposure, and PREV measures occurrence.',
     admissibleChannels: ['INCIDENT', 'AMBIENT_MEASURE', 'SPATIAL_DISTRIBUTION', 'TEMPORAL_EXTENT'],
     inadmissible: [
       {
@@ -185,7 +136,7 @@ export const DIMENSIONS: DimensionSpec[] = [
       },
       {
         channel: 'ACTOR_DISTRIBUTION',
-        reason: 'Posting behavior does not establish physical proximity.',
+        reason: 'Physical proximity requires location evidence.',
       },
     ],
     denominator: 'Resident population within the affected sub-geographies.',
@@ -200,25 +151,25 @@ export const DIMENSIONS: DimensionSpec[] = [
     layer: 'MAGNITUDE',
     question: "How present was this condition in the person's information environment?",
     uniqueInformation:
-      'Presence in consciousness rather than in the street. A condition can have low physical ' +
+      'Presence in the information environment. A condition can have low physical ' +
       'prevalence and still dominate local attention.',
     admissibleChannels: ['CIRCULATION', 'ACTOR_DISTRIBUTION'],
     inadmissible: [
       {
         channel: 'INCIDENT',
         reason:
-          'The deduplicated incident count is what DIG must be compared AGAINST, not built from. ' +
+          'DIG uses encountered-content evidence and compares it with the deduplicated incident count. ' +
           'Reading it here would make DIG partly a restatement of PREV.',
       },
       {
         channel: 'AMBIENT_MEASURE',
-        reason: 'Official statistics are not part of the information environment residents inhabit.',
+        reason: 'Information exposure requires evidence of content residents encounter.',
       },
     ],
     denominator: 'Connected local population.',
     globalNormalization:
       'Reach saturation 1-exp(-deduped local reach / connected local population), plus a mandatory ' +
-      'composition split (see DIG_COMPOSITION) so platform activity is never read as lived prevalence.',
+      'composition split (see DIG_COMPOSITION), keeping platform activity and lived prevalence distinct.',
     range: '0-1, always accompanied by its composition.',
   },
   {
@@ -228,9 +179,8 @@ export const DIMENSIONS: DimensionSpec[] = [
     question:
       'How disproportionately visible or consequential was this condition relative to its raw prevalence?',
     uniqueInformation:
-      'The GAP between attention and occurrence. AMP is definitionally relational: it is not volume ' +
-      '(that is DIG) and not rate (that is PREV) but the ratio between them. One murder that ' +
-      'reorganizes a small town is high AMP at low PREV.',
+      'The GAP between attention and occurrence. AMP measures the ratio of DIG to PREV. ' +
+      'One murder that reorganizes a small town is high AMP at low PREV.',
     admissibleChannels: ['CIRCULATION', 'ACTOR_DISTRIBUTION', 'TEMPORAL_EXTENT'],
     inadmissible: [
       {
@@ -241,14 +191,14 @@ export const DIMENSIONS: DimensionSpec[] = [
       },
       {
         channel: 'SPATIAL_DISTRIBUTION',
-        reason: 'Where a condition sits is BRD and CONC, not salience.',
+        reason: 'The location of a condition informs BRD and CONC.',
       },
     ],
     denominator: 'Its own prevalence — AMP is computed as attention relative to PREV.',
     globalNormalization:
       'Log ratio of normalized digital exposure to normalized prevalence, percentile-ranked against ' +
       'the provider/marker baseline. Because it is a ratio of two already-normalized quantities it ' +
-      'is scale-free and does not privilege large platforms or large countries.',
+      'adjusts for platform and country size.',
     range: 'Log ratio, plus a 0-100 percentile.',
   },
   {
@@ -259,14 +209,14 @@ export const DIMENSIONS: DimensionSpec[] = [
       'How widely distributed is the condition across neighborhoods, classes, ages, occupations and institutions?',
     uniqueInformation:
       'Spread across distinct units of the environment. Distinguishes ambient culture from a ' +
-      'localized pocket. Counting distinct affected units, never repeat volume within a unit.',
+      'localized pocket. Count distinct affected units.',
     admissibleChannels: ['SPATIAL_DISTRIBUTION', 'ACTOR_DISTRIBUTION', 'AMBIENT_MEASURE'],
     inadmissible: [
       {
         channel: 'CIRCULATION',
         reason:
-          'Raw post volume is not spread. A thousand posts from one neighborhood is narrow, not ' +
-          'broad — only the distinct-unit count may inform BRD.',
+          'Spread requires distinct affected locations. A thousand posts from one neighborhood represent ' +
+          'one geographic unit; the distinct-unit count informs BRD.',
       },
       {
         channel: 'INCIDENT',
@@ -300,7 +250,7 @@ export const DIMENSIONS: DimensionSpec[] = [
       },
       {
         channel: 'INTERPRETATION',
-        reason: 'Framing has no spatial distribution of its own here.',
+        reason: 'Spatial concentration requires occurrence-location evidence.',
       },
     ],
     denominator: 'Total occurrences across sub-geographies.',
@@ -316,26 +266,25 @@ export const DIMENSIONS: DimensionSpec[] = [
     layer: 'MEANING',
     question: 'How does this environment interpret and respond to the condition?',
     uniqueInformation:
-      'Collective interpretation, not any property of the condition. The same underlying condition ' +
+      'Collective interpretation of the condition. The same underlying condition ' +
       'produces different human pressure depending on whether it is treated as criminality, tragedy, ' +
       'normal life, or cause for celebration. Kept in the vector but classified as a MEANING layer: ' +
-      'it is a distribution over stances, has no magnitude, and is never fused with or ranked ' +
-      'against the magnitude dimensions.',
+      'it is a distribution over stances, reported separately from magnitude dimensions.',
     admissibleChannels: ['INTERPRETATION', 'CIRCULATION'],
     inadmissible: [
       {
         channel: 'INCIDENT',
-        reason: 'The occurrence of an event says nothing about how it was received.',
+        reason: 'Reception requires evidence of expressed reactions.',
       },
       {
         channel: 'AMBIENT_MEASURE',
-        reason: 'Official statistics carry no stance toward what they measure.',
+        reason: 'Stance requires evidence of expressed interpretation.',
       },
     ],
     denominator: 'Total quality-weighted stance-bearing observations.',
     globalNormalization:
       'Probability distribution over the twelve declared response frames, summing to 1. A ' +
-      'distribution is directly comparable across cultures; a single "acceptance score" would not be.',
+      'distribution supports direct comparison across cultures.',
     range: 'Probability vector over 12 frames, sums to 1.',
   },
   {
@@ -347,7 +296,7 @@ export const DIMENSIONS: DimensionSpec[] = [
       'Chronicity. TREND gives direction of change; PERSIST gives how much of the lived window the ' +
       'condition was actually active and in what temporal regime. Two environments with identical ' +
       'PREV and identical TREND can differ completely here, and for environment → pressure → ' +
-      'adaptation that difference is decisive: adaptation is driven by duration, not by averages.',
+      'adaptation that difference is decisive: adaptation is driven by duration.',
     admissibleChannels: ['TEMPORAL_EXTENT', 'INCIDENT', 'AMBIENT_MEASURE'],
     inadmissible: [
       {
@@ -358,14 +307,14 @@ export const DIMENSIONS: DimensionSpec[] = [
       },
       {
         channel: 'ACTOR_DISTRIBUTION',
-        reason: 'Who spoke has no bearing on how long the condition endured.',
+        reason: 'Condition duration requires temporal evidence.',
       },
     ],
     denominator: 'Length of the requested exposure window.',
     globalNormalization:
       'Active-time fraction of the window, plus a declared regime classification. Both are ' +
       'window-relative, so a 20-year residence and a 2-year residence are each scored against ' +
-      'their own lived interval rather than against calendar time.',
+      'their own lived interval.',
     range: '0-1 active fraction, plus a regime label.',
   },
   {
@@ -382,11 +331,11 @@ export const DIMENSIONS: DimensionSpec[] = [
         channel: 'CIRCULATION',
         reason:
           'Rising discussion tracks platform growth and news cycles at least as much as it tracks ' +
-          'the condition. Trend must come from occurrence, not attention.',
+          'the condition. Trend requires occurrence evidence.',
       },
       {
         channel: 'INTERPRETATION',
-        reason: 'Shifting attitudes are a FRAME trend, not a condition trend.',
+        reason: 'Shifting attitudes form a FRAME trend.',
       },
     ],
     denominator: 'Prior-period rate over the same geography.',
@@ -410,48 +359,30 @@ export function isChannelAdmissible(id: DimensionId, channel: EvidenceChannel): 
 
 export class InadmissibleEvidenceError extends Error {}
 
-/**
- * Enforces the admissibility rule at the point evidence is handed to a
- * dimension. Throwing rather than filtering is deliberate: silently
- * dropping inadmissible evidence would hide an adapter routing bug, and
- * those bugs are precisely what re-inflate one event across five
- * dimensions.
- */
+
 export function assertChannelAdmissible(id: DimensionId, channel: EvidenceChannel): void {
   if (!isChannelAdmissible(id, channel)) {
     const dimension = getDimension(id);
     const rule = dimension.inadmissible.find((r) => r.channel === channel);
     throw new InadmissibleEvidenceError(
-      `${id} may not read the ${channel} channel. ${rule?.reason ?? 'Channel not declared admissible.'}`,
+      `${id} requires declared admissibility for the ${channel} channel. ${rule?.reason ?? 'Channel requires declared admissibility.'}`,
     );
   }
 }
 
-/**
- * DIG composition. "People are talking about it" is not one thing, and
- * conflating its four meanings is how platform activity gets mistaken for
- * lived prevalence. Every DIG value must carry this split.
- */
+
 export type DigitalComposition = {
-  /** First-person resident testimony: "you literally cannot walk anywhere here". */
+
   livedTestimonyShare: number;
-  /** Publisher/media circulation rather than resident voice. */
+
   mediaShare: number;
   /** Non-local accounts discussing the place. */
   outsiderShare: number;
-  /**
-   * Share of circulation attributable to the single largest event cluster.
-   * High values mean one viral event is dominating attention, which
-   * supports AMP but must not support PREV.
-   */
+
   viralConcentrationShare: number;
 };
 
-/**
- * Which DIG components may inform lived prevalence at all. Only
- * first-person resident testimony can, and only as corroboration —
- * never as the primary basis for PREV in a place with official data.
- */
+
 export const PREVALENCE_CORROBORATING_DIG_COMPONENT: keyof DigitalComposition =
   'livedTestimonyShare';
 

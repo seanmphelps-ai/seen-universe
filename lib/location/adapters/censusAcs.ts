@@ -1,24 +1,4 @@
-// SEEN Location V1 — Census ACS 5-Year adapter (Material Field vertical slice).
-//
-// Real, documented Census ACS 5-Year Estimates endpoint and response shape:
-// https://www.census.gov/data/developers/data-sets/acs-5year.html
-//
-// Response shape is a JSON array of arrays: header row, then one data row
-// per requested geography — never an object. This adapter fetches the same
-// variables at county, state, and national ("us") geography in one batched
-// call per level, so the comparator step (see comparator.ts) has real
-// same-year baselines rather than an invented reference point.
-//
-// Cannot be exercised end-to-end from this build session — the sandbox
-// blocks outbound requests to api.census.gov. Parsing/derivation logic is
-// covered by fixture-based unit tests instead. See
-// scripts/verify-location-live.ts for the real network round-trip.
-//
-// Live-verified from a deployed (network-enabled) instance: the request
-// itself reaches api.census.gov correctly, but ACS data queries require a
-// free key (https://api.census.gov/data/key_signup.html) — Census returns
-// an HTML "Missing Key" page (2xx status) without one. Read from
-// CENSUS_API_KEY at call time; see fetchAcsRow below.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 const ACS_BASE = 'https://api.census.gov/data';
 
@@ -37,9 +17,6 @@ const ACS_VARIABLES = [
   'B23025_002E',
 ] as const;
 
-// ACS encodes "not available" as large negative sentinel values instead of
-// null/omission. Treating any negative value as missing is the documented,
-// correct way to detect this — not a heuristic.
 function acsValueOrNull(raw: string | undefined): number | null {
   if (raw === undefined) return null;
   const n = Number(raw);
@@ -61,7 +38,7 @@ export class CensusAcsError extends Error {}
 export function parseAcsResponse(raw: unknown): AcsRawRow {
   if (!Array.isArray(raw) || raw.length < 2 || !Array.isArray(raw[0]) || !Array.isArray(raw[1])) {
     throw new CensusAcsError(
-      'Census ACS response is not the documented [header, ...rows] array shape — upstream shape has changed.',
+      'Census ACS response requires the documented [header, ...rows] array shape.',
     );
   }
 
@@ -119,13 +96,7 @@ export function buildAcsUrl(
   return `${ACS_BASE}/${year}/acs/acs5?get=${vars}&${geographyClause}${keyClause}`;
 }
 
-/**
- * Strips the `key=` query param before a URL goes anywhere it could be
- * logged or returned to a client (error messages, adapterFailures,
- * findings[].limitations are all surfaced by the public
- * /api/location/verify route). Without this, setting CENSUS_API_KEY
- * would leak it to anyone who hits that endpoint and triggers a failure.
- */
+
 export function redactApiKey(url: string): string {
   return url.replace(/([?&]key=)[^&]+/, '$1[REDACTED]');
 }
@@ -133,11 +104,6 @@ export function redactApiKey(url: string): string {
 async function fetchAcsRow(
   year: string,
   geographyClause: string,
-  // A live run against the real API returned an HTML body — "<title>Missing
-  // Key</title>" — with a 2xx status instead of JSON: api.census.gov's data
-  // API (unlike the Geocoder) requires a free key
-  // (https://api.census.gov/data/key_signup.html). Read from env by
-  // default so adding one later requires no code change.
   apiKey: string | undefined = process.env.CENSUS_API_KEY,
 ): Promise<AcsRawRow> {
   const url = buildAcsUrl(year, geographyClause, apiKey);
@@ -151,9 +117,6 @@ async function fetchAcsRow(
   if (!response.ok) {
     throw new CensusAcsError(`Census ACS request failed: HTTP ${response.status} (${safeUrl})`);
   }
-  // Clone before consuming: if .json() throws, the original body is
-  // already read, so the diagnostic re-read has to come from the clone
-  // taken beforehand, not after the failure.
   const responseForDiagnostics = response.clone();
   let raw: unknown;
   try {

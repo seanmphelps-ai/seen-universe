@@ -1,14 +1,10 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import SwissEph from 'swisseph-wasm';
 import tzlookup from 'tz-lookup';
 import { DateTime } from 'luxon';
 
 export type SiderealMode = 'lahiri' | 'raman' | 'fagan-bradley';
 
-// birthTime is a hidden candidate produced by SEEN Time Rectification, not a user-declared
-// “exact time.” Rectification begins only after Location resonance selection: the first
-// three summaries use 04:00, 12:00, and 20:00; subsequent rounds test the selected
-// candidate at -3 hours, the selected time, and +3 hours. Candidate clocks stay hidden
-// from the user. This calculator consumes a candidate; it does not perform rectification.
 export type JyotishaAstronomyInput = {
   birthDate: string;
   birthTime: string;

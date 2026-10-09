@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 /**
  * Smallest SEEN chart engine: Swiss sky + GeoPresence + wound markers + 64 portals.
  */
@@ -17,7 +18,7 @@ export type ChartEngineInput = {
   longitude: number;
   birthPlaceLabel: string;
   livedStack?: string;
-  /** Hidden clock from dark-card window or narrowed pick — never a typed UX clock */
+
   clock: string;
 };
 

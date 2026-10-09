@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # ASTRONOMICAL CALCULATION REQUIREMENTS v0.1 DRAFT
 
 Governing: step 4  
@@ -15,7 +16,7 @@ Swiss Ephemeris 2.10.03 (+ se1 ephemeris files) = Layer 2 truth for tropical lon
 | Sun altitude | ecliptic→horizontal | Sect test; near-0° policy OPEN |
 | Sidereal time / RAMC | as needed for angles | |
 
-## Must NOT claim as Swiss
+## Traditional mechanics requiring their own source authority
 Lot formulas, whole-sign place topics, bounds tables, chronocrator math beyond astronomy.
 
 ## Validation

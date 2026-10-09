@@ -1,13 +1,4 @@
-// PERSIST — condition persistence/duration for one [M,L,T] cell.
-//
-// This module deliberately measures the temporal extent of the CONDITION,
-// not the persistence of discussion about it. Attention persistence belongs
-// to AMP. PERSIST reads TEMPORAL_EXTENT and reports the fraction of the
-// requested exposure window during which the condition was active.
-//
-// Regime classification is not guessed from arbitrary thresholds here.
-// Callers may supply a regime only when the marker/provider contract has
-// enough evidence to establish it; otherwise the regime remains UNKNOWN.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import {
   assertChannelAdmissible,
@@ -28,7 +19,7 @@ export type PersistenceInputs = {
   /** Requested exposure window, ISO-8601. */
   windowStart: string;
   windowEnd: string;
-  /** Condition-active intervals. Discussion/circulation intervals do not belong here. */
+
   extents: TemporalExtentInput[];
   /** Evidence-backed regime classification, when independently established. */
   regime?: PersistenceRegime | null;
@@ -41,13 +32,7 @@ function parseMs(value: string): number | null {
   return Number.isFinite(parsed) ? parsed : null;
 }
 
-/**
- * Computes condition persistence inside the requested exposure window.
- *
- * Null means the temporal extent was not measurable. It is never converted
- * to zero: zero would mean the condition was measured and known to be absent,
- * which is a different claim.
- */
+
 export function computePersistence(inputs: PersistenceInputs): PersistenceEstimate | null {
   const windowStartMs = parseMs(inputs.windowStart);
   const windowEndMs = parseMs(inputs.windowEnd);

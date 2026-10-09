@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # CHART MVP — BUILDER BRIEF
 
 Read `docs/00_GROK_BOT_FIRST_SLICE.md` first.
@@ -5,10 +6,7 @@ Then `docs/00_INTAKE_SCHEMA.md`.
 Then `docs/00_INTAKE_ORDER_LOCK.md`.
 
 Entry is `/chart`. Date + birth city required. Lived exposure collected before cards.
-Horizontal rail. Two cards at 06:00 and 18:00. No clocks.
-
-Do not open `/foundation/location` first.
-Do not build portals.
+Horizontal rail. Two cards at 06:00 and 18:00.
 
 ## The chain for this slice
 
@@ -16,7 +14,7 @@ Do not build portals.
 
 ## Card length
 
-A card is a paragraph. Minimum three sentences. Not one line. Not a tag.
+A card is a paragraph. Minimum three sentences.
 
 It must run: trigger, pressure point, behavior, where it collapses, where it thrives, cost to them, cost to others, what gets lost if it runs one more cycle.
 

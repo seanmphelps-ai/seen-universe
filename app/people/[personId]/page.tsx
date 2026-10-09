@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 import NatalChartView from '../../../components/NatalChartView';
@@ -53,14 +54,14 @@ export default async function SavedPersonPage({
               <div className="seenField">
                 <span className="seenLabel">Stored Western chart</span>
                 <p className="seenFieldSupport" data-chart-id={storedChart?.id}>
-                  Read from this account. Nothing was recalculated.
+                  Read from this account. The saved calculation is displayed.
                 </p>
               </div>
               <NatalChartView result={chart} />
             </>
           ) : (
             <>
-              <p className="seenFieldSupport">No Western chart is stored for this person yet.</p>
+              <p className="seenFieldSupport">This person’s Western chart is awaiting calculation.</p>
               <Link className="seenButtonPrimary" href="/chart">Calculate Western chart →</Link>
             </>
           )}

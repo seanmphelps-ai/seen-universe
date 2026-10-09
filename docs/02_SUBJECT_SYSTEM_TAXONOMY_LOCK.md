@@ -1,22 +1,13 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # 02_SUBJECT_SYSTEM_TAXONOMY_LOCK
 
-Status: non-runtime canon file.
+Status: taxonomy canon reference.
 
-This file defines SEEN taxonomy language. It does not execute runtime behavior, collect intake, produce output, or render user-facing response content.
-
-Input contract: not applicable.
-
-Output contract: not applicable.
+This file defines SEEN taxonomy language.
 
 Use Subject System for the person being read.
 
 The Subject System is the living human system under interpretation: their history, adaptations, relational patterning, nervous system tendencies, environmental conditioning, behavioral evidence, and current state.
-
-The Subject System is not a modality.
-
-The Subject System is not a marker.
-
-The Subject System is not a lens.
 
 Modalities are source systems.
 
@@ -30,8 +21,6 @@ The SEEN Protocol applies approved modalities, markers, and lenses to the Subjec
 
 ## Runtime Boundary
 
-A pass must never be treated as a lens.
-
 A pass acts on the material.
 
 A lens interprets the material.
@@ -39,8 +28,6 @@ A lens interprets the material.
 A modality supplies a source system.
 
 A marker supplies a specific signal inside a modality.
-
-The Subject System is the human system being interpreted, not another modality beside Western, Vedic, or any other approved source system.
 
 ## User-Facing Boundary
 

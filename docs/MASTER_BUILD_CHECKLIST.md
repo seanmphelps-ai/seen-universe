@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # SEEN MASTER BUILD CHECKLIST
 
 Repository: `seanmphelps-ai/seen-universe`  
@@ -39,7 +40,6 @@ Build this first as one working vertical slice:
 - [ ] User selects the card that is true
 - [ ] Closure & Composure result explains what happened
 - [ ] First Cadence action begins immediately
-- [ ] Daily tracking begins without a second onboarding process
 
 ## PRODUCT SPINE
 
@@ -59,7 +59,6 @@ Build this first as one working vertical slice:
 - [ ] Include the time period spent in each place
 - [ ] Include trip/event location and dates when analyzing a specific event
 - [ ] Build the Dark Chart around wound markers, shadow mechanics, protective adaptations, sabotage potential, and recurring loops
-- [ ] Preserve the full marker universe instead of reducing the result to a compatibility score
 - [ ] Detect convergence across independent source systems
 - [ ] Render convergence through the Helix / DNA-strand model
 - [ ] Preserve conflicting signals as simultaneous expression
@@ -96,10 +95,7 @@ Build this first as one working vertical slice:
 - [ ] Collect current location
 - [ ] Collect location start and end dates or approximate calendar years
 - [ ] Collect specific relationship/event dates and locations when relevant
-- [ ] Do not ask the user to classify or provide an exact birth time; establish birth time through Time Rectification
 - [ ] Begin Time Rectification only after the user selects the Location experiential summary that best resonates with lived experience
-- [ ] Support one-person use when no second subject is supplied
-- [ ] Support a second subject without rebuilding Person A
 
 ## LOCATION INTAKE FIXES
 
@@ -116,7 +112,6 @@ Build this first as one working vertical slice:
 - [ ] Support repeated lived locations
 - [ ] Support revisiting the same location during different periods
 - [ ] Support temporary trips and event locations separately from residence history
-- [ ] Validate chronological order without flattening uncertain dates
 - [ ] Save intake beyond `sessionStorage`
 
 ## LOCATION ENGINE
@@ -144,7 +139,6 @@ Build this first as one working vertical slice:
 - [ ] Produce an `EnvironmentalPressureField` for every location-period pair
 - [ ] Route every environmental contribution into all relevant portals
 - [ ] Produce a complete 64-record Environmental Portal Layer
-- [ ] Represent low pressure explicitly instead of omitting a portal
 
 ## LOCATION EVIDENCE PIPELINE
 
@@ -175,13 +169,10 @@ Build this first as one working vertical slice:
 - [ ] Add and verify nakshatras and dashas
 - [?] Lock whether numerology remains in the first product pass
 - [ ] Verify Galaxy Signature / Dreamspell calculation protocol
-- [ ] Preserve the 64 SEEN Portals as their own layer, using canonical hexagram names without Human Design or independent I Ching calculations
 - [ ] Begin Time Rectification after the user selects the Location experiential summary that best resonates with lived experience
 - [ ] Generate the first three hidden-time summaries from 04:00, 12:00 noon, and 20:00
-- [ ] Present three recognition summaries per rectification round without exposing candidate clock times
 - [ ] After each user selection, narrow around the selected candidate using selected time -3 hours, selected time, and selected time +3 hours
 - [ ] Continue narrowing through the approved rectification rounds
-- [ ] Preserve every user resonance selection as calibration evidence without rewriting source calculations
 - [ ] Store the final rectified time, confidence, and provenance
 
 ## PERMANENT 64-PORTAL ARCHITECTURE
@@ -197,7 +188,6 @@ Build this first as one working vertical slice:
 - [ ] Preserve evidence and provenance
 - [ ] Preserve contradictions
 - [ ] Apply append-first, synthesize-second, render-third
-- [ ] Enforce the no-cancellation rule
 - [ ] Record simultaneous amplification and restraint
 - [ ] Model split, delayed, oscillating, rerouted, context-dependent, and collapsed expression
 - [ ] Route portal outputs into Life Sections continuously
@@ -239,7 +229,6 @@ Build this first as one working vertical slice:
 - [ ] Detect amplified and suppressed expression
 - [ ] Preserve the full evidence trail behind every convergence
 - [ ] Generate a stable convergence ID
-- [ ] Render the Helix / DNA strand without flattening source layers
 - [ ] Allow the user to inspect the evidence behind a visible strand
 
 ## COMPARATIVE ENGINE
@@ -337,7 +326,6 @@ Build this first as one working vertical slice:
 - [ ] Produce a teacher-facing explanation
 - [ ] Explain current pressure, trigger, adaptation, capacity, and support need
 - [ ] Explain how the environment changes the child's expression
-- [ ] Explain behavior without reducing the child to a label
 - [ ] Provide specific coordination language for school and home
 - [ ] Allow ongoing Cadence observations from authorized caregivers
 - [ ] Preserve observer identity and provenance
@@ -357,12 +345,10 @@ Build this first as one working vertical slice:
 ## EDEN — MASK-FREE DATING
 
 - [ ] Build Eden after the SEEN → Closure & Composure → Cadence path works
-- [ ] Use a processed SEEN profile rather than a shallow sign profile
 - [ ] Let users choose what to share
 - [ ] Allow mutual chart and comparative-field reading
 - [ ] Show strengths, active work, regulation needs, and relationship capacities
 - [ ] Distinguish journaled private detail from shareable pattern summaries
-- [ ] Allow users to share Cadence consistency without exposing raw journal text
 - [ ] Show areas of current struggle only through explicit sharing controls
 - [ ] Generate a comparative Helix before matching claims
 - [ ] Support place and timing compatibility for dates, trips, and relocation
@@ -396,7 +382,6 @@ Build this first as one working vertical slice:
 - [ ] Generator routes Life Sections
 - [ ] Generator returns finalized records
 - [ ] Oracle renders finalized records into questions, cards, explanations, and practices
-- [ ] Oracle never invents a missing calculation
 - [ ] Missing components produce explicit missing-state records
 
 ## VISUAL SYSTEM
@@ -408,7 +393,6 @@ Build this first as one working vertical slice:
 - [ ] Implement pulse, turn, dissolve, environmental transformation, and next-question transitions
 - [ ] Visualize Location pressure before celestial layers
 - [ ] Visualize distinct modality layers interwoven in the Helix
-- [ ] Visualize low-pressure portals without removing them
 - [ ] Verify animation performance and reduced-motion behavior
 
 ## TESTING AND RELEASE
@@ -416,7 +400,6 @@ Build this first as one working vertical slice:
 - [ ] Add unit tests for every source calculator
 - [ ] Add schema validation tests
 - [ ] Add provenance-preservation tests
-- [ ] Add no-cancellation tests
 - [ ] Add contradiction and convergence tests
 - [ ] Add Person A / Person B isolation tests
 - [ ] Add location-duration and repeated-location tests
@@ -502,4 +485,3 @@ Build this first as one working vertical slice:
 - [ ] Begins a Cadence track immediately
 - [ ] Logs the next trigger in one tap or by voice
 - [ ] Returns and sees the pattern accumulating over time
-

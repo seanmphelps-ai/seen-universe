@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, expect, it } from 'vitest';
 import type { NatalChartResult } from '../../natalChart';
 import { PortalPenetrationRunSchema } from '../portalPenetration';
@@ -84,7 +85,7 @@ describe('buildWesternPortalBridge', () => {
 
     expect(result.portalPenetration.layers[0].evidence[0].confidence).toBe(0.75);
     expect(result.portalPenetration.layers[0].evidence[0].summary).toContain(
-      'no houses or angles because birth time is unknown',
+      'houses and angles await a known birth time',
     );
   });
 

@@ -1,16 +1,4 @@
-// SEEN Location V1 — historical geography resolution.
-//
-// Resolves latitude/longitude to a county via the real, public U.S. Census
-// Bureau Geocoder API. County-level only (see types.ts for why).
-//
-// Endpoint and response shape are the real, documented Census Geocoder
-// "geographies/coordinates" contract:
-// https://geocoding.geo.census.gov/geocoder/Geographies.html
-//
-// This module cannot be exercised end-to-end from this build session — the
-// sandbox blocks outbound requests to geocoding.geo.census.gov. Parsing
-// logic is covered by fixture-based unit tests instead. See
-// scripts/verify-location-live.ts for the real network round-trip.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import type { HistoricalGeography } from './types';
 

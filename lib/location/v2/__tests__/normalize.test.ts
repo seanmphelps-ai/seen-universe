@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, it, expect } from 'vitest';
 import {
   estimateEmpiricalPrior,
@@ -15,7 +16,7 @@ describe('normalizeAgainstBaseline', () => {
     expect(result.logScaled).toBe(true);
   });
 
-  it('log-scales by default so outliers do not compress the ordinary range', () => {
+  it('log-scales outliers to preserve ordinary-range resolution', () => {
     const baseline = [1, 2, 3, 4, 1_000_000];
     const logScaled = normalizeAgainstBaseline(3, baseline).normalized;
     const linear = normalizeAgainstBaseline(3, baseline, { logScale: false }).normalized;
@@ -93,7 +94,7 @@ describe('partialPool', () => {
     expect(pooled.observationWeight).toBe(0);
   });
 
-  it('does not shrink a cell measured without error', () => {
+  it('preserves an exactly measured cell', () => {
     const pooled = partialPool(80, 0, prior);
     expect(pooled.median).toBe(80);
     expect(pooled.observationWeight).toBe(1);

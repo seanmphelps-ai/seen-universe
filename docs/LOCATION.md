@@ -1,7 +1,7 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # LOCATION
 
 This is the location layer of SEEN.
-Not a first slice. Not optional color on a natal chart.
 Place trains the person. The person can be transplanted. The training can rot.
 
 How the generator does the reconstruction: `docs/LOCATION_EVIDENCE_MVP.md`.
@@ -16,16 +16,11 @@ Duration, recurrence, intensity, and pathway decide the dose.
 
 The chart is a cutting.
 The place is pot, weather, and soil.
-Same cutting in Castro Valley is not the same tree in Montana.
-The seed does not stay constant.
 Location and chart are equal forces. Neither whispers. Neither shouts by rule.
 The person’s life decides which one ran louder in that window.
 
 Six months is enough contact for a place to count.
 Birth place, every 6+ month place, current place, and maternal pregnancy place are separate snapshots.
-Never one blended city profile.
-1993 Los Angeles is not 2026 Los Angeles.
-Hills are not flats. Compton 1960 is not Compton 1995.
 
 ---
 
@@ -37,16 +32,15 @@ Time is still unknown.
 
 Location cards name the soil before the clock is treated as known.
 Time cards name how the system blows under pressure.
-Those are two jobs. Do not mash them into one sentence and call it done.
+Those are two jobs.
 
 Environment must be inside the summaries early enough that the person recognizes the life they lived.
-You cannot describe how someone lashes out in a vacuum and call the place a whisper afterward.
 
 ---
 
 ## What the engine is trying to learn
 
-The place asks itself. Not the user.
+The place asks itself.
 
 - What gets rewarded here
 - What gets punished here
@@ -67,7 +61,7 @@ The place asks itself. Not the user.
 - What happens if you transplant out of it
 - What happens if you stay
 
-Same bank can be reworded for a portal. Do not invent a second bank.
+Same bank can be reworded for a portal.
 
 ---
 
@@ -86,7 +80,6 @@ Environment
 → Consequence
 
 If the current soil is starving the plant, name the rotting root.
-If the current soil is growing what the old soil could not, name the taking-root.
 
 ---
 
@@ -96,7 +89,6 @@ Location narrowing is the opposite of time narrowing.
 
 Time goes darker: mask, sabotage, collapse.
 Location keeps the whole field: gift and cost on every card.
-Never only-good. Never only-bad.
 
 Round 1 — same city, three soils
 - Western lean
@@ -115,7 +107,6 @@ Then tighten:
 Still three cards. Still gift and cost.
 
 Every card includes:
-- field name (soil, not wound)
 - era
 - stratum
 - gift
@@ -130,9 +121,6 @@ Every card includes:
 - routes into the 45 life sections
 - pre-charge into the 64 portals
 
-No sentence cap.
-No doctor report.
-No one-line summary.
 This is someone’s life. Over-inform.
 
 ---
@@ -143,14 +131,13 @@ Places sit on a strand you can scroll.
 Pick a place. See the cards. Pick a portal on that place. See the full extraction:
 trigger, pressure, behavior, collapse, thrive, cost to self, cost to others, what is lost.
 
-Empty stays empty. Do not invent a node.
+Empty stays empty.
 
 ---
 
 ## Filing
 
 Portals file into life sections.
-Life sections do not file into portals.
 Empty section = visible silence.
 
 ---
@@ -158,11 +145,9 @@ Empty section = visible silence.
 ## Sources
 
 Public narrative is enough: local voice, forums, news, the way a place talks.
-No Census required. No BLS required.
-Do not rebuild city autocomplete. It already exists.
-Do not merge two residences into one person.
+It already exists.
 
-Marker math stays a vector. Do not collapse place into one score.
+Marker math stays a vector.
 
 How to collect and classify that public narrative: `docs/LOCATION_EVIDENCE_MVP.md`.
 

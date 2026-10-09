@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { NextRequest, NextResponse } from 'next/server';
 import {
   RectificationScenarioRequestSchema,
@@ -63,7 +64,7 @@ export async function POST(request: NextRequest) {
   const key = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
   if (!key) {
     return NextResponse.json(
-      { error: 'LLM access is not configured for this deployment.' },
+      { error: 'This deployment requires LLM access configuration.' },
       { status: 503 },
     );
   }
@@ -79,7 +80,7 @@ This call compares candidate charts for the SAME person.
 Write everyday pressure situations.
 For each situation, one reaction per candidate.
 Each reaction must include how they attach and how they sabotage love.
-Lived places with years write the sentence. They do not invent planets.
+Lived places and years shape the sentence. Use the computed planetary positions.
 `;
 
   const response = await fetch('https://ai-gateway.vercel.sh/v1/chat/completions', {
@@ -137,7 +138,7 @@ Lived places with years write the sentence. They do not invent planets.
 
   const validated = RectificationScenarioResponseSchema.safeParse(decoded);
   if (!validated.success) {
-    return NextResponse.json({ error: 'The LLM response did not match the rectification schema.' }, { status: 502 });
+    return NextResponse.json({ error: 'The LLM response requires a valid rectification schema.' }, { status: 502 });
   }
 
   return NextResponse.json(validated.data);

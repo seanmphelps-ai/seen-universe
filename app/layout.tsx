@@ -1,9 +1,10 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
   title: 'SEEN — Closure & Composure',
-  description: 'You are not your sun sign. You are so much more than that.',
+  description: 'Your story holds a whole universe.',
   manifest: '/manifest.webmanifest',
   applicationName: 'SEEN',
   appleWebApp: {

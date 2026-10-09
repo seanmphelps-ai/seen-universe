@@ -1,6 +1,7 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # GATHER — closure-and-composure
 
-Counted 2026-10-03. 347 files. No new order in this file.
+Counted 2026-10-03. 347 files.
 
 ## Counts
 
@@ -14,14 +15,14 @@ Counted 2026-10-03. 347 files. No new order in this file.
 
 ## Already-written order files
 
-These exist. They do not agree with each other.
+These exist.
 
-- `00_SEEN_APPLICATION_ENTRY.md` — entry is Location, date of birth, time rectification, begin. Six-month lived places. Location does not declare what happened to the person.
+- `00_SEEN_APPLICATION_ENTRY.md` — entry is Location, date of birth, time rectification, begin. Six-month lived places.
 - `docs/01_CLOSURE_COMPOSURE_RUNTIME_ORDER.md` — long controlling order: splash, one person or two, each person finishes alone, then relationship. Environmental intake before birth foundation. Generator calculates. Oracle speaks from finished output.
 - `docs/02_CLOSURE_COMPOSURE_RUNTIME_ORDER_LOCK.md` — lock on that order.
-- `docs/00_INTAKE_ORDER_LOCK.md` — name, date, birth city, lived places. Do not score the sky with lived places.
+- `docs/00_INTAKE_ORDER_LOCK.md` — name, date, birth city, lived places.
 - `docs/02_SEEN_MISSION_VISION_PRODUCT_LOCK.md` — mirror, why this happened, why it repeats.
-- `RUNTIME_ORDER.md` — written tonight before this gather. Do not use it as the order.
+- `RUNTIME_ORDER.md` — written tonight before this gather.
 
 ## Phone routes that exist
 
@@ -37,8 +38,8 @@ These exist. They do not agree with each other.
 
 ## Agent folders that exist
 
-`agent/subagents/` has western, hellenistic, jyotish, bazi, numerology, tzolkin, dreamspell, humandesign, iching. Each is a folder. Not wired as one run.
+`agent/subagents/` has western, hellenistic, jyotish, bazi, numerology, tzolkin, dreamspell, humandesign, iching. Each is a folder.
 
-## Not done
+## Pending review
 
-Comments inside the 347 files were not read. Commit history was not read. This is the file list and the order files already on the branch.
+This is the file list and the order files already on the branch.

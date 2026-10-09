@@ -1,8 +1,5 @@
-/**
- * GeoPresence — location as dirt pressure, not lat/long labels.
- * Locked phrase: "Take the stars and shove them in the dirt."
- * Heuristic baseline from lived text + coordinates. Does NOT invent planetary positions.
- */
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
+
 
 export type GeoPresenceInput = {
   birthPlaceLabel: string;
@@ -81,10 +78,10 @@ export function computeGeoPresence(input: GeoPresenceInput): GeoPresenceResult {
             : 'Ambient light/heat profile inferred from place labels — refine with lived years.',
       povertySignal: povertyHint
         ? 'Lived text flags scarcity pressure — amplify survival loops.'
-        : 'No explicit poverty language; keep scarcity as UNKNOWN unless lived years say otherwise.',
+        : 'Keep scarcity as UNKNOWN until lived-year evidence supports a reading.',
       violenceSignal: violenceHint
         ? 'Lived text flags threat/violence exposure — raise collapse/reactivity thresholds.'
-        : 'No explicit violence language; do not invent body-count narratives.',
+        : 'Violence evidence is unspecified; keep the reading grounded in supplied observations.',
       landSignal: urban
         ? 'Concrete/containment land — low wild-animal imprint, high institutional density.'
         : mountain

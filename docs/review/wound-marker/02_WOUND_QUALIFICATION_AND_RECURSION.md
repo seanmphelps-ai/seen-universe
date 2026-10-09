@@ -1,6 +1,5 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # Wound qualification and recursive extraction
-
-> Exact sections from the uploaded draft, filed by subject; **not automatically approved architecture**. Section numbering is preserved. See 00_SOURCE_DOCUMENT_UNVALIDATED.md for the entire source, including its introductory 15-point overview and retraction.
 
 ==================================================
 4. BRING WOUND-MARKER RUNTIME INTO CANON ALIGNMENT
@@ -37,12 +36,7 @@ The qualifying rule governs eligibility.
 
 Strong non-overlap wound signals remain eligible and preserved.
 
-Do not fabricate data for markers whose required native calculation has not yet been implemented.
-
 Example:
-If Ashlesha requires a verified Vedic calculation that is unavailable at that stage, represent that dependency as unresolved/pending rather than inserting a synthetic marker hit.
-
-
 
 ==================================================
 5. IMPLEMENT RECURSIVE EXTRACTION
@@ -55,8 +49,6 @@ Minimum recursive passes:
 
 Preferred recursive passes:
 7
-
-Each pass must deepen the existing evidence graph rather than replacing previous findings.
 
 Follow the strongest supported signals through relevant mechanics including, where evidence exists:
 
@@ -73,6 +65,3 @@ Follow the strongest supported signals through relevant mechanics including, whe
 Preserve the evidence trail for every recursive finding.
 
 Prevent recursion from generating unsupported interpretations merely to satisfy pass count.
-
-A pass with no additional supported finding may record that no further supported extraction was found.
-

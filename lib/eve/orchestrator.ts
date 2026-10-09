@@ -1,7 +1,5 @@
-/**
- * Smallest working Eve orchestrator.
- * Routes tasks to specialists. Does not sit above ECC or replace SEEN pipeline.
- */
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
+
 
 import type { EveOrchestratorInput, EveOrchestratorOutput, EveResult, EveTask } from "./";
 import { runWoundSpecialist } from "./";
@@ -23,7 +21,7 @@ async function dispatch(task: EveTask): Promise<EveResult> {
         specialist: "unknown",
         status: "error",
         output: null,
-        error: `No specialist registered for kind: ${task.kind}`,
+        error: `Specialist registration required for kind: ${task.kind}`,
       };
   }
 }

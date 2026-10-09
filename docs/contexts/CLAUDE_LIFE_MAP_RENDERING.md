@@ -58,10 +58,8 @@ Rule: `Establish convergence, then apply creative rendering.`
 
 ## Visual standard
 
-- Forge remains a continuous visual world rather than an isolated placard.
 - Dark celestial / bronze-gold / ivory remains the working visual direction until the design system is explicitly changed.
 - Typography is structural: width, scale, spacing, negative space, proportion, and motion are intentional system behaviors.
-- Establish at least one ownable SEEN typographic/visual behavior that remains recognizable without celestial artwork.
 - Mobile-first validation at 390–430 px is required.
 
 ## Western exploration

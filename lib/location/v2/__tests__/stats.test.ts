@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, it, expect } from 'vitest';
 import {
   digamma,
@@ -29,7 +30,7 @@ describe('quantile', () => {
     expect(() => quantile([1, 2], 1.5)).toThrow();
   });
 
-  it('does not mutate the caller array', () => {
+  it('preserves the caller array', () => {
     const values = [3, 1, 2];
     median(values);
     expect(values).toEqual([3, 1, 2]);
@@ -71,7 +72,7 @@ describe('weightedMedian', () => {
 });
 
 describe('robustPercentile', () => {
-  it('uses the midrank convention so an exact tie is not 0 or 100', () => {
+  it('uses midrank for exact ties', () => {
     expect(robustPercentile(5, [5])).toBe(50);
   });
 

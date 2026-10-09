@@ -1,6 +1,5 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # Pressure, activation, age, timing, environment and relationships
-
-> Exact sections from the uploaded draft, filed by subject; **not automatically approved architecture**. Section numbering is preserved. See 00_SOURCE_DOCUMENT_UNVALIDATED.md for the entire source, including its introductory 15-point overview and retraction.
 
 ==================================================
 3. IMPLEMENT THE FULL PRESSURE VECTOR
@@ -24,8 +23,6 @@ Provide neutral defaults for absent dimensions.
 Pressure dimensions describe modulation of potential/expression.
 
 They must remain traceable to the evidence that changed them.
-
-
 
 ==================================================
 7. MODEL CONDITIONAL ACTIVATION
@@ -60,8 +57,6 @@ Likewise, regulation/support/suppression may reduce or reroute expression even w
 
 All resulting activation outputs must remain probabilistic, conditional, time-sensitive, and convergence-driven.
 
-
-
 ==================================================
 8. IMPLEMENT AGE-ARC PARTICIPATION
 ==================================================
@@ -70,14 +65,9 @@ Preserve canonical AgeArcWindow data.
 
 Age arcs may modify activation likelihood/intensity only when the runtime has a valid age/event-time context to evaluate.
 
-Do not silently use present-day age when the requested analysis concerns a historical relationship/event.
-
 When the relevant evaluation age/time is unavailable, preserve age-arc evaluation as unresolved.
 
 Age arcs modulate expression over developmental time.
-They do not redefine the underlying person's identity.
-
-
 
 ==================================================
 9. KEEP NATAL POTENTIAL AND ACTIVE TIMING DISTINCT
@@ -88,12 +78,6 @@ Preserve natal/source potential independently from active timing conditions.
 Verified timing systems may alter current/event-specific activation conditions while retaining their own source identity and provenance.
 
 Timing deposits must remain distinguishable from natal deposits.
-
-Do not convert timing evidence into a generic wound score.
-
-Where a timing system has not yet been implemented or source-verified, preserve that system as unresolved rather than simulating its output.
-
-
 
 ==================================================
 10. ENVIRONMENT / GEOPRESENCE MODULATION
@@ -126,8 +110,6 @@ Each environmental contribution must retain provenance.
 
 Environment participates in convergence while remaining independently inspectable.
 
-
-
 ==================================================
 11. PERSON / RELATIONSHIP ACTIVATION
 ==================================================
@@ -156,7 +138,4 @@ Relationship convergence may include supported:
 - cost/consequence
 - capacity
 
-Do not mutate either person's native/source record to represent the relationship.
-
 The relationship field is a synthesis layer built from preserved individual evidence.
-

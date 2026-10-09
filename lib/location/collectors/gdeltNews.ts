@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { createHash } from 'node:crypto';
 import type { WitnessProvider } from '../v2/environmentalWitness';
 import type { Observation } from '../v2/types';
@@ -80,7 +81,7 @@ export const gdeltNewsProvider: WitnessProvider = {
 
     if (windowEndMs < GDELT_DOC_START) {
       throw new Error(
-        `GDELT DOC 2.0 does not cover ${request.windowStart}–${windowEnd}. Coverage begins 2017.`,
+        `GDELT DOC 2.0 coverage is unavailable for ${request.windowStart}–${windowEnd}. Coverage begins 2017.`,
       );
     }
 

@@ -103,7 +103,7 @@ const CLUSTERS: { markers: string[]; bonus: number; signature: string }[] = [
   {
     markers: ['uranus', 'mars'],
     bonus: 0.25,
-    signature: 'Shock meets rage. Sudden break, sudden explosion, no warning.',
+    signature: 'Shock meets rage. Sudden break, sudden explosion, with sudden onset.',
   },
   {
     markers: ['chiron', 'venus'],
@@ -120,50 +120,50 @@ const CLUSTERS: { markers: string[]; bonus: number; signature: string }[] = [
 const SIGNATURES: Record<string, { signature: string; cost: string; repeatPattern: string; label: string }> = {
   chiron: {
     label: 'Chiron',
-    signature: 'The wound that does not close. Shame, inadequacy, feeling broken in a way that cannot be fixed. It reopens under pressure, and the person tries to heal it by performing the wound publicly.',
-    cost: 'Chronic self-attack. The person becomes their own worst critic and cannot stop.',
+    signature: 'The recurring wound. Shame, inadequacy, and persistent feelings of brokenness. It reopens under pressure, and the person tries to heal it by performing the wound publicly.',
+    cost: 'Chronic self-attack. The person becomes trapped in persistent self-criticism.',
     repeatPattern: 'Repeats the story of being broken to anyone who will listen, then feels drained and unseen.',
   },
   trueLilith: {
     label: 'True Lilith',
-    signature: 'The exiled instinct. Rage that was never allowed to exist, so it leaks sideways: passive aggression, sudden explosions, or total shutdown. It fires when the person feels controlled or unseen.',
-    cost: 'The person cannot express anger directly, so it comes out distorted or not at all.',
+    signature: 'The exiled instinct. Suppressed rage leaks sideways: passive aggression, sudden explosions, or total shutdown. It fires when the person feels controlled or unseen.',
+    cost: 'The person struggles to express anger directly; it emerges as distortion or suppression.',
     repeatPattern: 'Builds resentment silently, then erupts or withdraws completely.',
   },
   neptune: {
     label: 'Neptune',
     signature: 'The fog. Self-undoing, dissolution, losing the thread of who you are. It fires when the person escapes into fantasy, substances, or another person instead of facing reality.',
-    cost: 'The person cannot hold a clear sense of self under pressure.',
+    cost: 'The person’s sense of self becomes unstable under pressure.',
     repeatPattern: 'Escapes, then returns to find everything worse.',
   },
   mars: {
     label: 'Mars',
-    signature: 'The severing force. Compulsive action, rage, cutting things off. It fires when the person feels blocked or threatened and responds with force instead of patience.',
+    signature: 'The severing force. Compulsive action, rage, cutting things off. It fires when the person feels blocked or threatened and responds with force and urgency.',
     cost: 'The person burns bridges and relationships with impulsive action.',
     repeatPattern: 'Explodes, regrets, withdraws, then repeats.',
   },
   venus: {
     label: 'Venus',
     signature: 'The relational wound. Attachment, sabotage, love as battlefield. It fires when the person needs proof of love and punishes the missing proof.',
-    cost: 'Every bond carries the original hurt. The person cannot trust closeness without control.',
+    cost: 'Every bond carries the original hurt. The person ties trust in closeness to control.',
     repeatPattern: 'Moves close, needs proof, punishes absence, withdraws, calls it honesty.',
   },
   saturn: {
     label: 'Saturn',
-    signature: 'The fear structure. Contraction, delay, the rule that says you are not enough. It fires when the person faces responsibility and freezes or overworks.',
+    signature: 'The fear structure. Contraction, delay, the rule that demands constant proof of worth. It fires when the person faces responsibility and freezes or overworks.',
     cost: 'The person lives under a self-imposed sentence of inadequacy.',
     repeatPattern: 'Proves worth through exhaustion, then collapses.',
   },
   pluto: {
     label: 'Pluto',
     signature: 'The power distortion. Compulsion, control, collapse. It fires when the person feels powerless and grabs for control or surrenders completely.',
-    cost: 'The person cannot tolerate vulnerability, so they either dominate or disappear.',
+    cost: 'Vulnerability drives the person toward domination or withdrawal.',
     repeatPattern: 'Controls, loses, rebuilds the same structure, loses again.',
   },
   uranus: {
     label: 'Uranus',
     signature: 'The shock. Sudden upheaval, rebellion, breaking free without warning. It fires when the person feels trapped and explodes outward.',
-    cost: 'The person cannot tolerate stagnation, so they destroy what is stable.',
+    cost: 'Stagnation drives the person to disrupt stability.',
     repeatPattern: 'Breaks free, feels lost, rebuilds, breaks again.',
   },
 }

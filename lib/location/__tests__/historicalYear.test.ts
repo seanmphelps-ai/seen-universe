@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, it, expect } from 'vitest';
 import { selectAcsVintageYear, KNOWN_ACS5_VINTAGES } from '../historicalYear';
 
@@ -21,7 +22,7 @@ describe('selectAcsVintageYear', () => {
     expect(selection.dataYear).toBe(KNOWN_ACS5_VINTAGES[0]);
   });
 
-  it('never selects a vintage outside the known list', () => {
+  it('selects a vintage from the known list', () => {
     const selection = selectAcsVintageYear('1900-01-01', '1901-01-01');
     expect(KNOWN_ACS5_VINTAGES).toContain(selection.dataYear);
   });

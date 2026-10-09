@@ -1,18 +1,4 @@
-// Marker registry — the contract's registry rule.
-//
-// "Each marker declares unit (event or ambient), denominator (population,
-// local content, active accounts, places, or none), polarity, exclusions,
-// severity rubric, and downstream SEEN mappings."
-//
-// Every marker here is declared against a source family that can actually
-// supply it. A marker with no reachable provider still belongs in the
-// registry — its absence is then visible as a missing family and charged
-// to confidence, which is far better than the marker quietly not existing.
-//
-// Polarity note: SUPPORT markers are not "good" markers. Abundance is a
-// pressure of its own, and the inference layer reads both tails (see
-// pressureDirectionLabel). A registry that only tracked deprivation would
-// miss half of what the environment trains.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import type { MarkerRegistryEntry } from './types';
 
@@ -42,7 +28,7 @@ export const MARKER_REGISTRY: MarkerRegistryEntry[] = [
     exclusions: [
       'Fictional, historical, or commemorative references to past violence.',
       'Incidents whose geocode resolves only to state level or coarser.',
-      'Reposts and commentary — these are exposure, not incidents (see dedupe.ts).',
+      'Reposts and commentary belong to the exposure channel (see dedupe.ts).',
       'Law-enforcement training exercises and drills.',
     ],
     severityRubric: HARM_SEVERITY_RUBRIC,
@@ -69,7 +55,7 @@ export const MARKER_REGISTRY: MarkerRegistryEntry[] = [
     polarity: 'PRESSURE',
     exclusions: [
       'Seasonal agricultural fluctuation where the series is unadjusted and the marker is read as a trend.',
-      'Persons not in the civilian labor force — the denominator is labor force, not population.',
+      'Persons outside the civilian labor force; use the civilian labor force denominator.',
     ],
     severityRubric: RATE_SEVERITY_RUBRIC,
     seenMappings: ['money', 'achievement_failure', 'risk'],

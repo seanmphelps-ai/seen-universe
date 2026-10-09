@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, it, expect } from 'vitest';
 import type { SourceFamily } from '../types';
 import { getMarker } from '../registry';
@@ -14,12 +15,7 @@ import {
 } from '../vector';
 import type { FusedEvent, ExposureRecord } from '../dedupe';
 
-/**
- * Discriminant tests: synthetic environment scenarios proving each dimension
- * captures unique information. The goal is not merely that dimensions vary,
- * but that they respond to structurally different kinds of evidence and
- * therefore carve up the phenomenon into distinct, meaningful pieces.
- */
+
 
 function fusedEvent(
   fingerprint: string,
@@ -104,7 +100,6 @@ describe('discriminant analysis', () => {
 
       const result = computeEvidenceVector(inputs);
 
-      // PREV is anchored by incident count, not circulation count
       expect(result.prev).toBeLessThan(5); // roughly one incident per 100k
       // DIG is sensitive to volume of circulation
       if (result.dig !== null) {
@@ -115,12 +110,7 @@ describe('discriminant analysis', () => {
 
   describe('scenario: high prevalence, low digital circulation', () => {
     it('elevates PREV without forcing DIG to follow', () => {
-      /**
-       * Many incidents (high prevalence) but minimal social circulation.
-       * PREV should be higher than DIG.
-       * DIG should be low or moderate.
-       * This proves the dimensions are not coerced into lockstep.
-       */
+
       // 500 incidents over 100k in 90 days = 50 per 10k per 90d = 16.7 per 10k per 30d
       const manyIncidents = Array.from({ length: 500 }, (_, i) =>
         fusedEvent(`incident-${i}`, 0.8, 0.6)
@@ -154,11 +144,7 @@ describe('discriminant analysis', () => {
 
   describe('scenario: condition isolated to 3% of geography', () => {
     it('elevates BRD and CONC differently based on spatial distribution', () => {
-      /**
-       * A condition exists but is tightly localized to 3% of the geography.
-       * BRD (breadth) should be low — it doesn't spread across neighborhoods.
-       * CONC (concentration) should be high — heavily concentrated in that 3%.
-       */
+
       const tract1 = Array.from({ length: 40 }, (_, i) =>
         exposure(`t1-${i}`, { accountId: `tract-1-${i}` })
       );
@@ -236,13 +222,7 @@ describe('discriminant analysis', () => {
 
   describe('scenario: high PHYS (official data), low DIG (no social)', () => {
     it('separates physical exposure from digital amplification', () => {
-      /**
-       * A condition with high physical exposure (official measurement)
-       * but low digital footprint (not discussed online).
-       * PHYS should be high.
-       * DIG should be low.
-       * These are orthogonal measurements.
-       */
+
       const inputs = vectorInputs({
         key: {
           markerId: 'economic_deprivation',
@@ -260,8 +240,6 @@ describe('discriminant analysis', () => {
       const physResult = computePhysicalDose(inputs);
       const digResult = computeDigitalDose(inputs);
 
-      // PHYS should reflect the measured environmental quantity or be null
-      // DIG should be low or null for ambient measure with no social data
       if (digResult.value !== null && physResult.value !== null) {
         expect(digResult.value).toBeLessThan(physResult.value);
       }
@@ -339,12 +317,7 @@ describe('discriminant analysis', () => {
 
   describe('scenario: missing structured data, substantial lived testimony', () => {
     it('preserves social voice when official data is absent', () => {
-      /**
-       * Official data sources are sparse or completely absent,
-       * but many residents report on social media.
-       * This is not a failure — it's a valid, necessary evidence stream.
-       * DIG should be present and elevated.
-       */
+
       const socialTestimony = Array.from({ length: 200 }, (_, i) =>
         exposure(`testimony-${i}`, {
           sourceFamily: 'SOCIAL_PUBLIC' as SourceFamily,
@@ -360,7 +333,6 @@ describe('discriminant analysis', () => {
 
       const result = computeEvidenceVector(inputs);
 
-      // Should produce a result, not fail
       expect(result).toBeDefined();
       // DIG should be elevated by social presence
       if (result.dig !== null) {
@@ -433,7 +405,6 @@ describe('discriminant analysis', () => {
         const sevValues = Object.values(result.sev).filter((v) => v !== null) as number[];
         const avgSev = sevValues.reduce((a, b) => a + b, 0) / sevValues.length;
         expect(avgSev).toBeGreaterThan(50);
-        // Digital dose should be low from no circulation
         expect(result.dig).toBeLessThan(20);
       }
     });
@@ -466,7 +437,6 @@ describe('discriminant analysis', () => {
       if (result.prev !== null) {
         expect(result.prev).toBeLessThan(0.2);
       }
-      // Despite massive circulation, PREV doesn't inflate
     });
   });
 });

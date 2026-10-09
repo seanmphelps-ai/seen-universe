@@ -1,13 +1,13 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { defineAgent } from 'eve'
 import { calculateIChing } from '../../../lib/ichingCalc'
 
-// Wheel: none. calculateIChing throws IChingCalcBlocked and returns no hexagram.
 export function readIChing(): never {
   return calculateIChing()
 }
 
 export default defineAgent({
-  description: 'I Ching calc is blocked until a cast exists. This axle does not invent a hexagram.',
+  description: 'I Ching calculation requires a cast containing a question, method, and six lines.',
   model: 'openai/gpt-6-sol',
   reasoning: 'high',
   defaultTools: false,

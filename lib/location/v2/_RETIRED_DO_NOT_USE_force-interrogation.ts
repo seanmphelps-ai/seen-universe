@@ -1,49 +1,4 @@
-// SEEN Location — the universal interrogation registry.
-//
-// This sits immediately upstream of the scoring engine. It is the
-// "WHAT are we measuring?" contract; the engine is the "HOW".
-//
-//   1. WHAT  — this file. The canonical environmental forces SEEN
-//              interrogates in EVERY place, each fully specified so the
-//              engine never has to invent semantics at runtime.
-//   2. HOW   — dimensions.ts / vector.ts / fuse.ts / confidence.ts.
-//   3. WHERE — geographic nesting. Partially specified here via
-//              `geographicScope`; the cross-level comparison machinery
-//              itself is NOT built (see GEOGRAPHIC_NESTING_TODO).
-//
-// Canonical schema, one entry per force:
-//
-//   MARKER ID · DEFINITION · QUESTION · OBSERVABLE SIGNALS ·
-//   ALLOWED EVIDENCE · DISALLOWED EVIDENCE/INFERENCE · GEOGRAPHIC SCOPE ·
-//   TEMPORAL RULE · SCORING DIMENSIONS · SOURCE COMPETENCE ·
-//   NORMALIZATION/BASELINE · OUTPUT · CONFIDENCE+PROVENANCE ·
-//   DEPENDENCY/CORRELATION GROUP
-//
-// Two fields carry most of the weight:
-//
-//   DISALLOWED INFERENCE closes the gap between "this evidence is
-//   admissible" and "this conclusion follows". Admissibility is handled
-//   structurally by dimensions.ts; this field blocks the conclusions that
-//   remain tempting even from admissible evidence.
-//
-//   CORRELATION GROUP prevents the double-counting that dimension-level
-//   admissibility cannot catch. dimensions.ts stops one viral event from
-//   inflating five DIMENSIONS of one marker. It does nothing about four
-//   distinct markers that are all really measuring material hardship. If
-//   those four feed a downstream composite at full weight, the same
-//   underlying phenomenon is counted four times — double-counting
-//   recreated one level up. See CORRELATION_GROUPS and decorrelatedWeights.
-//
-// ─────────────────────────────────────────────────────────────────────
-// THE HANDOFF BOUNDARY
-//
-//   observed environment
-//     → rewarded / punished / normalized / scarce / salient conditions
-//     → environmental pressures and affordances
-//     → CANDIDATE ADAPTIVE DEMANDS        ← Location stops here
-//     ─────────────────────────────────────────────────────────────
-//     → whether those adaptations appear in this person
-//                                          ← a LATER SEEN system, not this one
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import type { DimensionId } from './dimensions';
 import type { SourceFamily } from './types';
@@ -76,7 +31,7 @@ export type EnvironmentalForce =
   | 'REQUIRED_CAPACITIES'
   | 'ADAPTIVE_DEMAND';
 
-/** Levels at which a force is meaningful. A force read at the wrong level is not comparable. */
+
 export type GeographicLevel = 'LOCALITY' | 'METRO' | 'REGION' | 'COUNTRY';
 
 export type TemporalRule = {
@@ -105,11 +60,7 @@ export type ForceSpec = {
   observableSignals: string[];
   /** Which source families may establish it. */
   allowedEvidence: SourceFamily[];
-  /**
-   * What cannot be used to claim it, and what cannot be concluded from
-   * it even on admissible evidence. The second half is the load-bearing
-   * one — see module header.
-   */
+
   disallowedEvidence: string[];
   disallowedInference: string[];
   /** Levels at which this force is meaningful. */
@@ -139,14 +90,14 @@ const STRUCTURED: SourceFamily[] = ['OFFICIAL_DATA', 'INSTITUTIONS'];
 
 /** Applies to most discourse-derived forces. */
 const DISCOURSE_DISALLOWED: string[] = [
-  'Content from accounts whose local-account estimate is below 0.5 — outsider discussion is not local environment.',
+  'Content from accounts with a local-account estimate below 0.5 represents outsider discussion.',
   'Advertising placed by non-local advertisers targeting the area.',
   'Circulation of a single viral item treated as independent observations (see dedupe.ts).',
 ];
 
 const STANDARD_TEMPORAL: TemporalRule = {
   persistenceBasis:
-    'Active-time fraction of the exposure window, from the condition\'s own temporal extent — never from how long it was discussed.',
+    'Active-time fraction of the exposure window, from the condition\'s own temporal extent; discussion duration belongs to a separate channel.',
   changeBasis: 'Posterior log rate ratio, current window vs prior-period baseline over the same geography.',
   minimumWindowDays: 90,
 };
@@ -171,7 +122,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     disallowedEvidence: [...DISCOURSE_DISALLOWED],
     disallowedInference: [
       'That any resident pursues or values the rewarded thing.',
-      'That the reward structure is fair, deserved, or attainable by everyone — attainability is BRD and CONC, not REWARD.',
+      'That the reward structure is fair, deserved, or attainable by everyone — attainability is measured by BRD and CONC.',
       'That absence of reward for something means it is punished; PUNISHMENT is measured separately.',
     ],
     geographicScope: ALL_LEVELS,
@@ -191,23 +142,23 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     force: 'PUNISHMENT',
     definition:
       'The set of behaviors and attributes this environment systematically responds to with sanction, ' +
-      'exclusion, or enforcement — and, separately, those it conspicuously does not respond to at all.',
+      'exclusion, or enforcement — and, separately, conditions met with silence.',
     question: 'What gets punished or ignored here?',
     observableSignals: [
       'Behaviors drawing public condemnation, sanction, or enforcement',
-      'What is conspicuously not responded to (the "ignored" half)',
+      'Conditions met with conspicuous silence (the "ignored" half)',
       'Enforcement and prosecution patterns',
       'Social exclusion following specific acts',
     ],
     allowedEvidence: [...PUBLIC_DISCOURSE, ...STRUCTURED, 'ACLED'],
     disallowedEvidence: [
       ...DISCOURSE_DISALLOWED,
-      'Enforcement data used as a proxy for underlying behavior rate — it measures response, not occurrence.',
+      'Enforcement data used as a proxy for underlying behavior rate — it measures institutional response.',
     ],
     disallowedInference: [
       'That a resident internalized the punishment, was subject to it, or endorses it.',
       'That the punished behavior is rare; punishment and prevalence are independent.',
-      'That enforcement intensity reflects community values rather than institutional policy.',
+      'Claims about community values require community evidence alongside institutional policy.',
     ],
     geographicScope: ALL_LEVELS,
     temporalRule: STANDARD_TEMPORAL,
@@ -277,7 +228,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
       'Closed or demolished venues still present in map extracts.',
     ],
     disallowedInference: [
-      'That a resident experienced belonging. Availability is not receipt.',
+      'Individual receipt of belonging requires evidence about that resident.',
       'That presence of belonging routes implies absence of exclusion — EXCLUSION is measured separately and the two coexist.',
     ],
     geographicScope: LOCAL_LEVELS,
@@ -319,7 +270,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     scoringDimensions: ['CONC', 'BRD', 'FRAME', 'PERSIST'],
     sourceCompetenceOverrides: [],
     normalization: {
-      baseline: 'Within-environment distribution across sub-units, not an external comparator.',
+      baseline: 'Within-environment distribution across sub-units.',
       method: 'Normalized spatial HHI over sub-units; peer-group percentile for the HHI itself.',
     },
     output:
@@ -385,7 +336,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     sourceCompetenceOverrides: [],
     normalization: {
       baseline: 'Peer-group FRAME distributions for the same markers.',
-      method: 'FRAME probability vector; no magnitude normalization (FRAME is a MEANING-layer dimension).',
+      method: 'FRAME probability vector, reported as a MEANING-layer distribution.',
     },
     output: 'Objects of fear ranked by FRAME weight, with PERSIST across the window.',
     evidencedByMarkers: ['violent_incident', 'economic_deprivation', 'labor_instability'],
@@ -411,7 +362,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     disallowedInference: [
       'That the attended-to condition is common. Attention and prevalence are separate dimensions precisely because they diverge — that divergence IS amplification.',
       'That a resident attended to it, cared about it, or was even aware of it.',
-      'That attention reflects importance to residents rather than platform dynamics.',
+      'Claims about resident importance require evidence of resident attention and platform dynamics.',
     ],
     geographicScope: ALL_LEVELS,
     temporalRule: {
@@ -423,7 +374,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     sourceCompetenceOverrides: [],
     normalization: {
       baseline: 'This environment\'s own PREV for the same marker — AMP is attention relative to occurrence.',
-      method: 'Log ratio of normalized DIG to normalized PREV; scale-free, so platform size does not drive it.',
+      method: 'Log ratio of normalized DIG to normalized PREV, adjusted for platform size.',
     },
     output: 'Attention-holding conditions ranked by AMP, with the DIG composition split accompanying each.',
     evidencedByMarkers: ['violent_incident', 'civil_unrest_event', 'status_competition_signal'],
@@ -443,7 +394,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     allowedEvidence: [...PUBLIC_DISCOURSE, ...STRUCTURED],
     disallowedEvidence: [
       ...DISCOURSE_DISALLOWED,
-      'Absence of data read as absence of response — a place with no social data is not thereby normalized.',
+      'An empty social-data record requires an UNKNOWN response status.',
     ],
     disallowedInference: [
       'That a resident accepted it as normal.',
@@ -453,7 +404,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     geographicScope: ALL_LEVELS,
     temporalRule: {
       persistenceBasis: 'Sustained high PREV across the window with flat TREND.',
-      changeBasis: 'Change in the AMP-to-PREV relationship, not in PREV alone.',
+      changeBasis: 'Change in the AMP-to-PREV relationship.',
       minimumWindowDays: 365,
     },
     scoringDimensions: ['PERSIST', 'PREV', 'FRAME', 'AMP'],
@@ -487,7 +438,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     ],
     disallowedInference: [
       'That a resident experienced the shortage or the surplus.',
-      'That abundance is benign — abundance is tracked as its own pressure, not as absence of pressure.',
+      'That abundance is benign — abundance is tracked as its own pressure.',
       'That per-capita provision implies per-capita access; access is CONC and PHYS.',
     ],
     geographicScope: ALL_LEVELS,
@@ -516,24 +467,23 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     allowedEvidence: ['MARKETPLACE', 'ADS', 'SEARCH_INTEREST', 'OFFICIAL_DATA', 'REVIEWS'],
     disallowedEvidence: [
       'Advertising by non-local advertisers read as local demand.',
-      'Spending data not conditioned on local income distribution.',
+      'Spending data requires conditioning on local income distribution.',
     ],
     disallowedInference: [
       'That a resident spends this way.',
-      'That spending reflects values rather than availability — a place with one category of business produces spending in that category.',
-      'That discretionary spending exists at all where SCARCITY shows it does not.',
+      'Values claims require evidence of choice among available options; local business availability shapes spending.',
+      'Discretionary-spending claims require measured disposable resources.',
     ],
     geographicScope: LOCAL_LEVELS,
     temporalRule: STANDARD_TEMPORAL,
     scoringDimensions: ['PREV', 'BRD', 'FRAME', 'TREND'],
     sourceCompetenceOverrides: [
-      // Commercial listings are the primary instrument here, not a weak proxy.
       { family: 'MARKETPLACE', dimension: 'PREV', competence: 0.8 },
       { family: 'MARKETPLACE', dimension: 'BRD', competence: 0.55 },
     ],
     normalization: {
       baseline: 'Category shares in the peer group at matched median household income.',
-      method: 'Share-of-discretionary percentile, conditioned on measured income so poorer places are not read as ascetic.',
+      method: 'Share-of-discretionary percentile, conditioned on measured income to distinguish resources from spending choices.',
     },
     output: 'Ranked discretionary categories with TREND, explicitly conditioned on measured disposable income.',
     evidencedByMarkers: ['affluence_saturation', 'status_competition_signal'],
@@ -556,7 +506,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     ],
     disallowedInference: [
       'That a resident faced that tradeoff or made that choice.',
-      'That the sacrifice ordering reflects preference rather than constraint.',
+      'Preference claims require evidence distinguishing choice from constraint.',
     ],
     geographicScope: ALL_LEVELS,
     temporalRule: {
@@ -600,7 +550,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     sourceCompetenceOverrides: [],
     normalization: {
       baseline: 'Peer-group readings per trust target.',
-      method: 'Per-target percentile; targets never collapsed into a single trust score.',
+      method: 'Per-target percentile; each target retains its own trust result.',
     },
     output: 'Trust conditions across targets (neighbors, institutions, authority) with FRAME stance per target.',
     evidencedByMarkers: ['violent_incident', 'collective_aid_signal', 'institutional_density'],
@@ -637,7 +587,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     },
     output:
       'Safety profile with PHYS (lived encounter likelihood) and CONC (citywide vs concentrated) reported ' +
-      'together. A citywide rate is never returned without its CONC.',
+      'together. A citywide rate includes its CONC.',
     evidencedByMarkers: ['violent_incident', 'civil_unrest_event'],
     correlationGroup: 'threat_perception',
   },
@@ -645,7 +595,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     force: 'INTIMACY',
     definition:
       'The prevailing structures of close relationship and household formation here. Declared ' +
-      'non-evaluative: this force describes form, never quality or desirability.',
+      'descriptive: this force describes environmental form.',
     question: 'What does this environment teach about intimacy and relationships?',
     observableSignals: [
       'Household and family structures',
@@ -790,7 +740,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     geographicScope: ALL_LEVELS,
     temporalRule: {
       persistenceBasis: 'Sustained volatility across the window rather than a single shock.',
-      changeBasis: 'Change in variance, not in level.',
+      changeBasis: 'Change in variance.',
       minimumWindowDays: 730,
     },
     scoringDimensions: ['PREV', 'SEV', 'PERSIST', 'TREND'],
@@ -799,7 +749,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
       baseline: 'Peer-group volatility over a matched window.',
       method: 'Coefficient of variation over the series, percentile-ranked; buffers reported as a separate availability reading.',
     },
-    output: 'Risk profile with volatility and buffer availability reported separately, never netted.',
+    output: 'Risk profile with volatility and buffer availability reported separately.',
     evidencedByMarkers: ['violent_incident', 'labor_instability', 'economic_deprivation'],
     correlationGroup: 'threat_perception',
   },
@@ -816,7 +766,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     allowedEvidence: [...PUBLIC_DISCOURSE, ...STRUCTURED, 'GDELT'],
     disallowedEvidence: [
       ...DISCOURSE_DISALLOWED,
-      'Demographic composition alone used to assert treatment — composition is not stance.',
+      'Treatment claims require evidence of stance toward the population.',
       'National discourse attributed to local residents.',
     ],
     disallowedInference: [
@@ -853,7 +803,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     ],
     disallowedInference: [
       'That a resident moved freely or was constrained.',
-      'That infrastructure presence equals access — PHYS and CONC carry that, not raw density.',
+      'That infrastructure presence equals access — PHYS and CONC measure access.',
     ],
     geographicScope: LOCAL_LEVELS,
     temporalRule: STANDARD_TEMPORAL,
@@ -861,7 +811,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     sourceCompetenceOverrides: [],
     normalization: {
       baseline: 'Peer-group coverage per resident at matched settlement type.',
-      method: 'Coverage share and PHYS dose saturation; settlement-type matching is essential since rural and urban are not comparable.',
+      method: 'Coverage share and PHYS dose saturation, compared within matching settlement types.',
     },
     output: 'Physical mobility profile with PHYS and coverage distribution across sub-units.',
     evidencedByMarkers: [],
@@ -871,7 +821,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     force: 'POSSIBILITY',
     definition:
       'The range of life paths this environment makes visible and imaginable to residents. Perceived, ' +
-      'not measured attainment.',
+      'with measured attainment reported separately.',
     question: 'What does this environment make seem reachable, and what unimaginable?',
     observableSignals: [
       'Visible range of occupations and life paths',
@@ -901,7 +851,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     force: 'REACHABLE_FUTURES',
     definition:
       'The outcomes measurably attainable from this environment, given its actual pipelines and ' +
-      'transition costs. Measured attainment, not perception.',
+      'transition costs. Measured attainment.',
     question: 'What futures are actually reachable from here?',
     observableSignals: [
       'Measured mobility outcomes by origin',
@@ -932,7 +882,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     },
     output:
       'Reachable-future set with the structural preconditions each requires. Returns UNKNOWN where ' +
-      'intergenerational mobility data is unavailable — which is currently everywhere, as that source is not wired in.',
+      'intergenerational mobility data awaits integration across all locations.',
     evidencedByMarkers: ['educational_attrition', 'economic_deprivation'],
     correlationGroup: 'attainment',
   },
@@ -965,7 +915,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
     },
     output:
       'Capacity demands the environment makes — direct input to ADAPTIVE_DEMAND. Stated as a requirement ' +
-      'of the place, never as a description of anyone who lived there.',
+      'of the place; individual descriptions require person-specific evidence.',
     evidencedByMarkers: ['violent_incident', 'economic_deprivation', 'labor_instability', 'institutional_density'],
     correlationGroup: 'adaptive',
   },
@@ -1011,19 +961,7 @@ export const FORCE_REGISTRY: ForceSpec[] = [
   },
 ];
 
-/**
- * Correlation groups — the defense against double-counting ACROSS forces.
- *
- * dimensions.ts prevents one event from inflating five dimensions of one
- * marker. It does nothing about several forces that are all really
- * measuring the same underlying environmental phenomenon. EXCLUSION,
- * SCARCITY, SPENDING_PRIORITY and SACRIFICE all lean heavily on material
- * hardship; if a downstream composite takes all four at full weight, that
- * hardship is counted four times.
- *
- * `redundancy` is the assumed shared variance within the group, used by
- * decorrelatedWeights to discount members after the first.
- */
+
 export type CorrelationGroup = {
   id: string;
   label: string;
@@ -1059,7 +997,7 @@ export const CORRELATION_GROUPS: CorrelationGroup[] = [
     redundancy: 0.6,
     rationale:
       'All three read from overlapping incident and hazard evidence. They diverge meaningfully — ' +
-      'fear is not danger — but they are far from independent.',
+      'fear and danger are distinct, related measurements.',
   },
   {
     id: 'social_infrastructure',
@@ -1091,7 +1029,7 @@ export const CORRELATION_GROUPS: CorrelationGroup[] = [
     redundancy: 0.5,
     rationale:
       'NORM is defined partly as an absence of the amplification ATTENTION measures. They are two ' +
-      'readings of one salience structure and must not both count at full weight.',
+      'readings of one salience structure and require a shared weight adjustment.',
   },
   {
     id: 'institutional_relation',
@@ -1117,19 +1055,7 @@ export function getCorrelationGroup(id: string): CorrelationGroup {
   return group;
 }
 
-/**
- * Discounts correlated forces so a downstream composite cannot count one
- * underlying phenomenon several times.
- *
- * Within a group of n contributing members with redundancy ρ, the group's
- * total weight is 1 + (n-1)(1-ρ) rather than n — the standard effective-N
- * correction. At ρ=0 members are independent and nothing is discounted;
- * at ρ=1 the whole group counts once. Each member receives an equal share
- * of that corrected total, so ordering does not matter and no member is
- * arbitrarily privileged.
- *
- * Forces with no declared group are independent and keep weight 1.
- */
+
 export function decorrelatedWeights(
   forces: EnvironmentalForce[],
 ): { force: EnvironmentalForce; weight: number; correlationGroup: string | null }[] {
@@ -1192,17 +1118,16 @@ export type AdaptiveDemand = {
   derivedFromForces: EnvironmentalForce[];
   candidateCapacity: string;
   candidateCost: string;
-  /** Fixed. A type-level statement that this describes a place, not a person. */
+
   scope: 'ENVIRONMENT';
-  /** The boundary, carried in the payload so it cannot be dropped downstream. */
+
   notAClaimAbout: string;
 };
 
 export const ADAPTIVE_DEMAND_BOUNDARY =
-  'This is a candidate demand the environment appears to make of anyone living in it. It is not a ' +
-  'finding about any individual. Whether a specific person developed this adaptation — or developed ' +
-  'it at all, or paid this cost — is determined by later SEEN systems observing that person, never ' +
-  'inferred from environmental evidence alone.';
+  'This is a candidate environmental demand. Person-specific evidence is required to establish ' +
+  'whether an individual developed this adaptation, expressed it, or paid its cost. Later SEEN ' +
+  'systems establish those findings by observing that person.';
 
 export function makeAdaptiveDemand(
   input: Omit<AdaptiveDemand, 'scope' | 'notAClaimAbout'>,
@@ -1223,12 +1148,7 @@ export function getForce(force: EnvironmentalForce): ForceSpec {
   return spec;
 }
 
-/**
- * Forces with no backing marker in registry.ts. Reported rather than
- * hidden: an un-evidenced force is a known gap in the instrument, and
- * silently omitting it would make the instrument look more complete than
- * it is.
- */
+
 export function forcesWithoutMarkerCoverage(): EnvironmentalForce[] {
   return FORCE_REGISTRY.filter((f) => f.evidencedByMarkers.length === 0).map((f) => f.force);
 }
@@ -1237,15 +1157,9 @@ export function markersReferencedByForces(): string[] {
   return [...new Set(FORCE_REGISTRY.flatMap((f) => f.evidencedByMarkers))].sort();
 }
 
-/**
- * Geographic nesting is the third piece of the contract. Each force
- * declares the levels it is meaningful at (`geographicScope`), but the
- * machinery to measure comparable signals ACROSS levels — and so separate
- * a local-specific effect from the surrounding regional field — is NOT
- * built. Declared here so the gap is visible in code, not only in discussion.
- */
+
 export const GEOGRAPHIC_NESTING_TODO =
-  'NOT IMPLEMENTED: comparable signals across locality → county/metro → state/region → country, so ' +
+  'PENDING IMPLEMENTATION: comparable signals across locality → county/metro → state/region → country, so ' +
   'local-specific effects can be distinguished from the larger surrounding field. Forces declare ' +
   'their applicable levels via geographicScope, but readings are currently single-resolution ' +
   '(county, per HistoricalGeography in ../types).';

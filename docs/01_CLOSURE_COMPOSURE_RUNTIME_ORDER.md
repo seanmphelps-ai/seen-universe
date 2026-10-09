@@ -1,5 +1,4 @@
-# SEEN™ CLOSURE & COMPOSURE — CONTROLLING RUNTIME ORDER
-
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 ## Repository Continuity and Source-of-Truth Rule
 
 Build the complete production-grade SEEN™ Closure & Composure application within the active SEEN repository.
@@ -30,8 +29,6 @@ Retain and extend existing work when it:
 - passes the required quality gates;
 - reduces duplicated work;
 - remains maintainable within the final application.
-
-Existing work gains authority through alignment with this specification, rather than through age, location, naming, or prior completion status.
 
 When prior implementation conflicts with this specification:
 
@@ -73,7 +70,7 @@ Every person completes the individual runtime independently.
 
 Relationship data enters only after Person A and Person B each hold a validated independent Generator output.
 
-A relationship run references independent person states. It does not rewrite either baseline.
+A relationship run references independent person states.
 
 ## Canonical Individual Runtime
 
@@ -163,9 +160,7 @@ Birth foundation collects:
 
 Unknown birth time initiates hidden candidate-time comparison using the configured canonical candidate set.
 
-The user receives behavioral recognition summaries rather than candidate clock times.
-
-Recognition selection becomes calibration evidence. It does not claim a proven birth time.
+Recognition selection becomes calibration evidence.
 
 ## Childhood Formation Triangle
 
@@ -298,7 +293,7 @@ Required contracts:
 - `SovereigntyRoleInversionInputSchema`;
 - `SovereigntyRoleInversionOutputSchema`.
 
-The Drama Triangle is one input to the broader Jungian inversion. It does not replace the complete Jungian inversion field.
+The Drama Triangle is one input to the broader Jungian inversion.
 
 ## Jungian Inversion
 
@@ -423,15 +418,11 @@ The Generator owns:
 - provenance;
 - unresolved variables.
 
-The Generator produces structured evidence rather than persuasive user-facing prose.
-
 ## Oracle Boundary
 
 The Oracle receives finalized Generator output and renders paced human recognition.
 
 The Oracle may select, sequence, translate, name, pace, and disclose established evidence.
-
-The Oracle preserves uncertainty and does not fabricate missing calculations.
 
 ## Implementation Law
 

@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, it, expect } from 'vitest';
 import { capForFamilyCount, computeConfidence, confidenceBand } from '../confidence';
 import type { Observation, SourceFamily } from '../types';
@@ -191,7 +192,6 @@ describe('computeConfidence', () => {
     expect(dominated.evidenceIndependence).not.toBeNull();
     expect(dominated.evidenceIndependence!.accountHhi).toBeGreaterThan(0.5);
     expect(dominated.notes.some((n) => /Evidence independence is low/.test(n))).toBe(true);
-    // The diagnostic must never leak into the score's own components.
     expect(dominated.components).not.toHaveProperty('evidenceIndependence');
   });
 

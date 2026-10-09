@@ -1,11 +1,4 @@
-// City typeahead for the location intake fields (birth / lived / current).
-//
-// Backed by a bundled ~135k-city dataset (all-the-cities) so suggestions
-// are instant and require no external API key. This module is the swap
-// seam: it is the only place that knows where suggestions come from. A
-// future move to a live geocoder (Mapbox, Google Places) replaces the
-// inside of suggestCities() only — the API route and the client input
-// never change.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import countries from 'all-the-cities';
 import isoCountries from 'i18n-iso-countries';
@@ -40,7 +33,7 @@ export type CitySuggestion = {
   /** Display string for the dropdown, e.g. "Austin, TX, United States". */
   label: string;
   city: string;
-  /** US state abbreviation or raw GeoNames admin code; null when not meaningful to show. */
+
   region: string | null;
   country: string;
   countryCode: string;
@@ -51,10 +44,6 @@ export type CitySuggestion = {
 
 type RawCity = (typeof countries)[number];
 
-// Only the US dataset carries a human-readable admin code (postal state
-// abbreviation) in this source. Other countries' adminCode is a bare
-// GeoNames region number with no bundled name table, so it is omitted
-// rather than shown as a meaningless digit string.
 function regionFor(entry: RawCity): string | null {
   if (entry.country === 'US' && entry.adminCode) return entry.adminCode;
   return null;
@@ -66,8 +55,6 @@ function labelFor(entry: RawCity): string {
   return region ? `${entry.name}, ${region}, ${country}` : `${entry.name}, ${country}`;
 }
 
-// Sorted once at module load so higher-population matches surface first
-// without re-sorting per request.
 const SORTED_CITIES: RawCity[] = [...countries].sort((a, b) => b.population - a.population);
 
 const MIN_QUERY_LENGTH = 2;

@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import type { NatalChartResult } from '../lib/natalChart';
 
 const ZODIAC_SYMBOLS = ['♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓'];
@@ -67,9 +68,8 @@ export default function NatalChartView({ result }: { result: NatalChartResult })
     <>
       {!result.hasBirthTime && (
         <p className="seenFieldSupport">
-          No birth time was given, so this uses noon as a placeholder for
-          sign positions only. Ascendant, Midheaven, and houses require a
-          real birth time and are not shown.
+          Birth time is unknown. Noon provides placeholder sign positions.
+          Ascendant, Midheaven, and houses become available with a real birth time.
         </p>
       )}
 

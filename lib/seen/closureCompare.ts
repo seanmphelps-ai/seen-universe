@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { z } from 'zod';
 import type { NatalChartResult } from '../natalChart';
 
@@ -136,9 +137,9 @@ const PATTERNS: Pattern[] = [
     card: (hit, a, b) => ({
       title: 'The Hold',
       happened: `${a} and ${b} meet where care or identity runs into a limiting structure. ${evidenceLine(hit)}.`,
-      adaptation: 'One person contains. The other becomes careful. The field tightens instead of naming the limit.',
+      adaptation: 'One person contains. The other becomes careful. The field tightens around an unspoken limit.',
       cost: 'Warmth goes quiet. Need is managed. The relationship starts living inside the hold.',
-      firstAction: 'When the hold arrives, name it once. Do not explain it. Write one sentence about what the body does.',
+      firstAction: 'When the hold arrives, name it once. Write one sentence about what the body does.',
     }),
   },
   {
@@ -156,7 +157,7 @@ const PATTERNS: Pattern[] = [
       happened: `${a} and ${b} share a charge that moves faster than language. ${evidenceLine(hit)}.`,
       adaptation: 'Pursuit, spark, or conflict is used to feel the bond. Stillness is treated as loss.',
       cost: 'The nervous system stays on. Repair is delayed because the heat is mistaken for truth.',
-      firstAction: 'Pause one heat cycle today. Do not send the second message. Note what you wanted the heat to prove.',
+      firstAction: 'Pause one heat cycle today. Hold the second message as a draft. Note what you wanted the heat to prove.',
     }),
   },
   {
@@ -172,9 +173,9 @@ const PATTERNS: Pattern[] = [
     card: (hit, a, b) => ({
       title: 'The Care Collapse',
       happened: `The care field between ${a} and ${b} is load-bearing. ${evidenceLine(hit)}.`,
-      adaptation: 'One attunes. One disappears or floods. Care becomes the job instead of the contact.',
+      adaptation: 'One attunes. One disappears or floods. Care becomes an obligation that crowds out contact.',
       cost: 'Resentment grows in the person who holds. Abandonment grows in the person who is held.',
-      firstAction: 'Ask one need out loud without fixing the other person. Stop at the ask.',
+      firstAction: 'Ask one need out loud. Give the other person room to respond. Stop at the ask.',
     }),
   },
   {
@@ -192,7 +193,7 @@ const PATTERNS: Pattern[] = [
       happened: `${a} and ${b} recognize each other as a single field too quickly. ${evidenceLine(hit)}.`,
       adaptation: 'Difference is treated as betrayal. Agreement is treated as love.',
       cost: 'Neither person stays distinct long enough for a real yes. Conflict is postponed, then amplified.',
-      firstAction: 'Keep one preference that the other person does not share. Do not convert it into a fight or a gift.',
+      firstAction: 'Keep one preference of your own. Allow both people their separate preferences.',
     }),
   },
   {
@@ -209,7 +210,7 @@ const PATTERNS: Pattern[] = [
       happened: `The contact between ${a} and ${b} feels older than the current story. ${evidenceLine(hit)}.`,
       adaptation: 'An old contract is replayed as if it were this person, this year, this house.',
       cost: 'The present relationship is asked to finish a prior one. Neither person can win that assignment.',
-      firstAction: 'Write the sentence “this is now, not then.” Keep the current name in it.',
+      firstAction: 'Write the sentence “this belongs to the present.” Keep the current name in it.',
     }),
   },
   {
@@ -225,7 +226,7 @@ const PATTERNS: Pattern[] = [
       title: 'The Wound Hook',
       happened: `A sensitive point in one chart is touched by the other. ${evidenceLine(hit)}.`,
       adaptation: 'The hook is read as fate. The injury is protected by either silence or a blade.',
-      cost: 'Intimacy and injury travel together. The relationship organizes around the wound instead of the bond.',
+      cost: 'Intimacy and injury travel together. The wound dominates how the relationship organizes.',
       firstAction: 'When the hook fires, name the sensation before the story. One word is enough.',
     }),
   },
@@ -238,7 +239,7 @@ function fallbackCard(hit: SynastryHit, index: number): ComparativeShadowCard {
     happened: evidenceLine(hit),
     adaptation: 'The field organizes around this contact before either person has language for it.',
     cost: 'Unnamed contact becomes a repeating move.',
-    firstAction: 'Say the contact in plain language once. Do not interpret it yet.',
+    firstAction: 'Say the contact in plain language once. Keep this step observational.',
     evidence: [evidenceLine(hit)],
     confidence: confidenceFromOrb(hit.orb),
   };
@@ -288,11 +289,11 @@ export function compareClosureCharts(
     cards.push({
       id: `insufficient-${cards.length}`,
       title: 'Insufficient Western contact',
-      happened: 'These two independent Western fields did not produce a third major synastry contact inside standard orbs.',
-      adaptation: 'Do not invent a shadow to fill the slot.',
+      happened: 'These two independent Western fields produced fewer than three major synastry contacts inside standard orbs.',
+      adaptation: 'Keep this slot empty until sourced shadow evidence is available.',
       cost: 'Forced meaning would overwrite the evidence.',
       firstAction: 'Keep both charts. Add location, time certainty, or a second source system before claiming a third pattern.',
-      evidence: ['No remaining major synastry aspect inside orb.'],
+      evidence: ['Major synastry contacts inside orb are exhausted.'],
       confidence: 0.2,
     });
   }
@@ -303,8 +304,8 @@ export function compareClosureCharts(
     personB: personB.name,
     westernIndependent: true,
     unresolved: [
-      'Location pressure was not run for this comparison.',
-      'Wound, attachment, and Helix layers are not claimed.',
+      'Location pressure awaits calculation for this comparison.',
+      'Wound, attachment, and Helix layers await their required evidence.',
       'This is a Western synastry field only.',
     ],
     hits,

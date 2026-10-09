@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, expect, it } from 'vitest';
 import { evaluateValuesUnderPressure } from '../valuesIntegrity';
 
@@ -17,7 +18,7 @@ describe('evaluateValuesUnderPressure', () => {
     );
   });
 
-  it('does not invent a contradiction when no exception is supplied', () => {
+  it('keeps an empty exception record free of inferred contradiction', () => {
     const result = evaluateValuesUnderPressure({
       statedValue: 'compassion',
       behavior: 'acts compassionately when it costs time',

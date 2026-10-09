@@ -1,19 +1,7 @@
-// SEEN Location V1 — comparator + classification.
-//
-// Classification must be reproducible from the measurement and an explicit
-// stored comparator, never guessed from prose. V1 uses a simple, disclosed
-// ratio-to-baseline rule rather than a true cross-county percentile rank
-// (which would require pulling ACS data for every U.S. county — out of
-// scope for the first vertical slice). The rule and its threshold are
-// stored in code, not invented per-request, and the comparator value used
-// is always recorded on the finding.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import type { Classification, ComparatorValue, IndicatorDirection } from './types';
 
-// A value more than 15% above/below the chosen baseline is classified
-// ABUNDANT/SCARCE (direction-adjusted); otherwise PRESENT. This threshold
-// is a disclosed V1 default, not a claim about what magnitude of
-// difference is meaningful for any given person.
 const ABUNDANT_SCARCE_THRESHOLD_RATIO = 0.15;
 
 export function classifyAgainstComparator(

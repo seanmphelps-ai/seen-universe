@@ -1,18 +1,15 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # Hellenistic Lots / Kleroi — Exhaustive Corpus Reconstruction Protocol
 
-**Status:** Research/evidence gate. Not production implementation.
+**Status:** Research/evidence gate.
 
 ## Objective
 Reconstruct every Lot attested anywhere in the locked Hellenistic source corpus.
 
-Do not assume how many Lots exist, which are important, that the Seven Hermetic Lots are complete, that identically named Lots use identical formulas, that different authors share one formula tradition, or that a modern English name uniquely identifies an ancient Lot.
-
-The Seven Hermetic Lots are a required subset, not the inventory boundary.
-
 ### Required known-coverage check
 Fortune; Spirit/Daimon; Eros; Necessity; Courage; Victory; Nemesis.
 
-Their presence does not establish completeness. Every additional Lot encountered in the locked corpus must be added.
+Every additional Lot encountered in the locked corpus must be added.
 
 ## Locked corpus to traverse
 Search each source independently and preserve author/witness identity.
@@ -29,8 +26,6 @@ Search each source independently and preserve author/witness identity.
 10. Pseudo-Porphyry. Preserve disputed authorship; store PSEUDO_PORPHYRY separately from traditional attribution.
 11. Fragmentary authorities: Antiochus; Nechepso/Petosiris; Critodemus; Teucer; Serapio. Identify transmitting witness, edition, quotation/paraphrase status, and attribution certainty.
 
-A bibliographically known source without passage-level access is an ACCESS GAP, not completed coverage.
-
 ## PASS 1 — Sequential corpus reading
 Traverse every accessible primary text BOOK → CHAPTER → SECTION → PASSAGE before relying on a known-Lot search list.
 
@@ -40,8 +35,6 @@ Capture every passage containing:
 3. rule explicitly identified as a Lot;
 4. unnamed calculated point functioning as a Lot;
 5. alternate Lot name;
-6. formula without delineation;
-7. delineation without repeated formula;
 8. reference to another author's Lot;
 9. quotation/paraphrase concerning a Lot;
 10. derived place counted from a Lot;
@@ -71,13 +64,8 @@ Minimum seeds:
 
 Add every new term, synonym, spelling, grammatical form, and Lot name discovered in Pass 1 to the dictionary and rerun. Discovery expands its own vocabulary.
 
-## PASS 3 — Formula-pattern discovery
-Search independently for Lot-like mathematical operations even when a translator does not use "Lot": distance/arc between A and B projected from C; A→B from Ascendant; B→A from Ascendant; analogous constructions using Sun, Moon, Ascendant, Fortune, Spirit, planets, rulers, angles, signs, other Lots, or other horoscope points.
-
-FLAG rather than automatically classify uncertain constructions.
-
 ## PASS 4 — Index/apparatus discovery
-Search critical-edition indices, translation indices, TOCs, editorial notes, footnotes, critical apparatus, glossaries, and manuscript notes. Every discovery must return to the primary passage. Secondary material is a discovery aid, not implementation evidence.
+Search critical-edition indices, translation indices, TOCs, editorial notes, footnotes, critical apparatus, glossaries, and manuscript notes. Every discovery must return to the primary passage.
 
 ## PASS 5 — Author inventories
 Produce independently:
@@ -93,8 +81,6 @@ PSEUDO_PORPHYRY_LOTS[]
 ANONYMOUS_379_LOTS[]
 FRAGMENTARY_AUTHORITY_LOTS[]
 
-Do not merge them.
-
 ## PASS 6 — Lot-centric inventory
 Invert the evidence for every discovered Lot so both AUTHOR→LOT and LOT→AUTHOR exist and reconcile.
 
@@ -106,21 +92,17 @@ Keep LITERARY_ATTESTATION and DOCUMENTARY_ATTESTATION separate.
 For documentary witnesses record document identifier, date, provenance if known, edition/publication, relevant passage/data, calculated Lots, reconstruction method, uncertainty, and relationship to literary traditions.
 
 ## PASS 8 — Formula identity
-A Lot name is not a formula ID. Preserve lotConceptId, formulaTraditionId, and authorFormulaId separately.
+Preserve lotConceptId, formulaTraditionId, and authorFormulaId separately.
 
-For Eros and every divergent Lot, never select a global formula. Establish WHO used WHICH formula, in WHICH witness, under WHICH conditions.
+Establish WHO used WHICH formula, in WHICH witness, under WHICH conditions.
 
 ## PASS 9 — Formula normalization
-Preserve both SOURCE EXPRESSION and NORMALIZED COMPUTATIONAL EXPRESSION. Never store only normalization. It must trace back to source instruction.
+Preserve both SOURCE EXPRESSION and NORMALIZED COMPUTATIONAL EXPRESSION. It must trace back to source instruction.
 
 Determine explicitly: day formula; night formula; whether reversal exists; whether explicit or inferred; starting point; ending point; projection point; counting/zodiacal direction; longitude convention; 360° normalization; boundary behavior; required astronomical inputs; dependencies on other Lots/rulers.
 
-If evidence does not establish a field: UNKNOWN.
-
 ## PASS 10 — Delineation
 For each Lot extract only where attested: signification; ruler/lord signification; sign; house/place; condition; ruler condition; angularity; benefic/malefic testimony; aspects/configurations; derived places; relationships with Fortune/Spirit/other Lots; topical uses; timing uses; actual authorial delineation sequence; worked examples.
-
-Do not manufacture a universal delineation algorithm from different authors.
 
 ## PASS 11 — Timing
 Treat CALCULATION, DELINEATION, and TIMING as separate mechanics.
@@ -136,7 +118,7 @@ formula { dayFormula; nightFormula; reversalExplicit; reversalInferred; formulaS
 calculation { startingPoint; endingPoint; projectedFrom; zodiacalDirection; normalizationRule; degreeResult };
 sectRequirements; rulerProcedure; derivedHouseProcedure; aspectOrTestimonyProcedure; delineationProcedure; timingUses[]; topicalUses[]; authorVariants[]; conflictingFormulas[]; transmissionProblems[]; textualVariants[]; uncertainties[]; provenance[]; validationCases[].
 
-No field may be filled from model memory. Unsupported fields = UNKNOWN.
+Unsupported fields = UNKNOWN.
 
 ## PASS 13 — Reproducible validation
 Every implemented formula requires:
@@ -149,10 +131,7 @@ F independently calculated reference result.
 
 Record inputs, expected intermediate arc, expected projection, normalized longitude, sign, degree, and source supporting expected result.
 
-Without reproducible validation: NOT IMPLEMENTATION_READY.
-
 ## PASS 14 — Conflict preservation
-Never resolve historical disagreement by majority vote.
 
 Persist mechanic; witness A; witness B; competing formulas/procedures; textual evidence; chronology; transmission relationship if known; scholarly discussion; resolution status.
 
@@ -163,18 +142,13 @@ Eros is first-class.
 
 Search every locked source for Eros / Erōs / Ἔρως / Love / Desire plus contextual Lot terminology. Verify that each occurrence actually refers to a calculated Lot.
 
-Do not substitute modern relationship astrology, generic Venus interpretation, compatibility interpretation, or unsourced modern formulas.
-
-Do not assume a universal Eros formula. Record every attested Eros formula, reversal rule, delineation, ruler procedure, derived-place use, timing use, variant, and conflict independently before comparing traditions.
+Record every attested Eros formula, reversal rule, delineation, ruler procedure, derived-place use, timing use, variant, and conflict independently before comparing traditions.
 
 ## PASS 16 — Independent completeness audit
-The auditor receives the LOCKED SOURCE CORPUS but not the extractor's final Lot list initially.
 
 The auditor independently reconstructs all Lots, passages, formulas, variants, delineation procedures, timing uses, and documentary witnesses. Then compare EXTRACTOR INVENTORY vs AUDITOR INVENTORY. Every mismatch returns to source.
 
 Persist for each finding: auditFindingId; evidence; resolution = CORRECT | REBUT | OPEN; canonChange; correction history; auditor verification status.
-
-Do not self-certify extractor work as independent audit.
 
 ## PASS 17 — Negative coverage audit
 For every locked author/witness record:
@@ -184,8 +158,6 @@ SOURCE_INCOMPLETE
 ACCESS_BLOCKED
 TEXT_CORRUPT
 UNCERTAIN
-
-Silence is not evidence of absence.
 
 ## Completion gate
 LOTS_DISCOVERY_COMPLETE = TRUE only when:
@@ -207,7 +179,6 @@ LOTS_DISCOVERY_COMPLETE = TRUE only when:
 
 If any condition fails:
 LOTS_DISCOVERY_COMPLETE = FALSE.
-NO PRODUCTION IMPLEMENTATION.
 
 ## Required outputs
 Persist:
@@ -223,4 +194,4 @@ HELLENISTIC_LOTS_AUDIT_REPORT
 Only after source/inventory audit may exact implementation schemas be designed. Only after schema audit may production calculation code be written.
 
 ## Scope boundary
-This protocol covers Lots/kleroi only. It does not certify complete Hellenistic astrology. Every other Hellenistic technique family requires its own exhaustive source-discovery and independent-audit protocol before the Hellenistic module can be considered complete.
+This protocol covers Lots/kleroi only. Every other Hellenistic technique family requires its own exhaustive source-discovery and independent-audit protocol before the Hellenistic module can be considered complete.

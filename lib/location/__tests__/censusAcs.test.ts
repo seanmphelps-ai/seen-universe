@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, it, expect } from 'vitest';
 import {
   parseAcsResponse,
@@ -52,7 +53,7 @@ describe('parseAcsResponse', () => {
     expect(parseAcsResponse(nationalFixture).name).toBe('United States');
   });
 
-  it('throws (not silently returns nulls) when the response is not the documented array shape', () => {
+  it('throws (not silently returns nulls) for an invalid response array shape', () => {
     expect(() => parseAcsResponse({ not: 'an array' })).toThrow(CensusAcsError);
     expect(() => parseAcsResponse([])).toThrow(CensusAcsError);
     expect(() => parseAcsResponse([['NAME']])).toThrow(CensusAcsError);

@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 'use client';
 
 import { useRef, type Dispatch, type SetStateAction } from 'react';
@@ -35,7 +36,7 @@ export default function LivedPlacesField({ rows, onChange }: LivedPlacesFieldPro
       <legend className="seenLabel">Lived places + years</legend>
       <p className="seenFieldSupport">
         Six months counts. Years required. This writes the card sentence.
-        It does not rewrite the sky.
+        The sky retains its computed positions.
       </p>
       {rows.map((row, index) => (
         <LivedPlaceRow

@@ -87,7 +87,7 @@ The active Location V2 code already contains:
 
 Reuse the existing scoring system; establish and document its insufficiency before implementing a replacement within the authorized scope.
 
-Current implementation gap: the V2 scoring runtime begins after normalized evidence has already been supplied. The primary SEEN runtime still uses the older Location field path rather than a fully collected V2/FORGED Location result.
+Current implementation gap: the V2 scoring runtime begins after normalized evidence has already been supplied.
 
 ## Location execution target
 

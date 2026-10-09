@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 'use client';
 
 import { FormEvent, useState } from 'react';
@@ -35,7 +36,7 @@ const CARD_COPY: Record<IntakeCard, { title: string; support: string }> = {
   },
   livedPlaces: {
     title: 'lived places',
-    support: 'Six months or more. A shorter stay does not count.',
+    support: 'Include stays of six months or more.',
   },
 };
 

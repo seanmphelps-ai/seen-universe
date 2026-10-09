@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { z } from 'zod';
 import type { NatalChartResult } from '../natalChart';
 import {
@@ -125,7 +126,7 @@ export function buildWesternPortalBridge(
   const chartSummary = summarizeChart(western);
   const confidence = western.hasBirthTime ? 1 : 0.75;
   const mappingGap =
-    'Canonical portal-specific Western interpretation criteria are not present; no portal activation claim emitted.';
+    'Portal activation awaits canonical portal-specific Western interpretation criteria.';
 
   const portalPenetration = WesternPortalPenetrationRunSchema.parse({
     schemaVersion: '1.0.0',
@@ -206,7 +207,7 @@ export function buildWesternPortalBridge(
 function summarizeChart(western: NatalChartResult): string {
   const timedStructures = western.hasBirthTime
     ? `${western.houses?.length ?? 0} houses plus Ascendant and Midheaven`
-    : 'no houses or angles because birth time is unknown';
+    : 'houses and angles await a known birth time';
 
   return [
     `Swiss Ephemeris Western natal result for ${western.planets.length} planets`,

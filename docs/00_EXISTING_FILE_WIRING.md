@@ -1,6 +1,7 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # EXISTING FILE WIRING
 
-Builder: change these files. Do not create a second city search or a second people table.
+Builder: change these files.
 
 ## Already built — reuse
 
@@ -40,19 +41,19 @@ Change only this:
 
 1. `INITIAL_MINUTES` is `[4*60, 12*60, 20*60]`. First try: `[6*60, 18*60]`.
 2. Round 0 must accept 2 candidates. Later rounds stay 3.
-3. Pass `livedPlaces` from `seen.foundation.birth` into the scenarios request. Stop sending nothing.
+3. Pass `livedPlaces` from `seen.foundation.birth` into the scenarios request.
 4. Stop requiring `candidates.length !== 3` before continue on round 0.
-5. Cards must be the dark paragraph fields in `DarkCardSchema`, not a 0–100 rating grid if that grid is still the only chooser. Pick the card. Then narrow.
+5. Pick the card. Then narrow.
 
-## Do not use as the first screen
+## Later-stage components
 
 `app/foundation/birth/page.tsx`
 
-It expects location to already exist (`Complete your location first`). That is the old invert. Leave the file. Do not route `/chart` through it.
+It expects location to already exist (`Complete your location first`). That is the old invert. Leave the file.
 
 `components/NatalIntakeForm.tsx`
 
-It still has optional time. Do not use it on the first screen. Keep it for a later locked-time override only.
+It still has optional time. Keep it for a later locked-time override only.
 
 ## Saved people
 

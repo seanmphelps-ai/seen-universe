@@ -1,12 +1,4 @@
-// Normalize, fuse, express uncertainty — step 4 of the contract.
-//
-// 1. Raw count/rate is always kept beside the normalized 0-100 value.
-//    Normalization is a presentation of the evidence, never a
-//    replacement for it, so NormalizedValue carries both.
-// 2. Sparse cells are partially pooled toward a marker × region ×
-//    settlement-type prior by empirical Bayes, and the result is
-//    reported as a posterior median with 50%/95% intervals rather than
-//    a bare point estimate.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import { log1pTransform, normalQuantile, robustPercentile } from './stats';
 
@@ -30,17 +22,7 @@ export type NormalizedValue = {
   logScaled: boolean;
 };
 
-/**
- * Percentile-normalizes a value against a provider-specific baseline.
- * Heavy-tailed count-like quantities are log1p-transformed first so a
- * handful of viral outliers do not compress every ordinary value into
- * the bottom percentile.
- *
- * Baselines are provider-specific by construction: the caller passes the
- * baseline drawn from the same provider, marker, and time basis. Ranking
- * one provider's counts against another's would manufacture a difference
- * that is really just a difference in platform size.
- */
+
 export function normalizeAgainstBaseline(
   raw: number,
   baseline: number[],
@@ -50,7 +32,7 @@ export function normalizeAgainstBaseline(
   if (baseline.length === 0) {
     throw new Error(
       'normalizeAgainstBaseline requires a non-empty provider-specific baseline — ' +
-        'an absent baseline must be charged to confidence by the caller, not filled with a default.',
+        'the caller must record the missing baseline in confidence.',
     );
   }
   const scaledBaseline = logScale ? log1pTransform(baseline) : baseline;
@@ -92,10 +74,6 @@ export function estimateEmpiricalPrior(
   const mean = usable.reduce((acc, p) => acc + p.value, 0) / n;
 
   if (n === 1) {
-    // A single peer carries no information about between-cell spread.
-    // τ² = 0 would force complete pooling onto one arbitrary neighbour,
-    // so the peer's own sampling variance is used as a weak, honest
-    // stand-in for how much cells in this group can differ.
     return { mean, variance: usable[0].variance, peerCount: 1 };
   }
 
@@ -144,11 +122,9 @@ export function partialPool(
   let posteriorVariance: number;
 
   if (prior.variance === 0) {
-    // No between-cell variation is supported by the peers: pool completely.
     posteriorMean = prior.mean;
     posteriorVariance = 0;
   } else if (samplingVariance === 0) {
-    // The cell is measured exactly; nothing to shrink.
     posteriorMean = observedValue;
     posteriorVariance = 0;
   } else {

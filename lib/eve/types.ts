@@ -1,7 +1,5 @@
-/**
- * Minimal Eve types for the first orchestrator slice.
- * Does not replace or extend existing SEEN contracts.
- */
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
+
 
 export type EveTask = {
   id: string;

@@ -1,11 +1,9 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # TIME NARROWING LOCK
-
-Time is not optional. Time is not typed on the first screen.
 
 The first chart is a dark chart: how this system collapses under pressure.
 
 Unknown birth time is the default SEEN path.
-Known clock time is a later override only after recognition, never the first screen.
 
 ## Required before the runs
 
@@ -16,7 +14,7 @@ Known clock time is a later override only after recognition, never the first scr
 
 ## Round 1
 
-Three hidden runs. No clock on the card.
+Three hidden runs.
 
 - 04:00
 - 12:00
@@ -25,7 +23,7 @@ Three hidden runs. No clock on the card.
 Western + Vedic wound markers on each.
 User picks one.
 
-06:00 / 18:00 is dead. Do not use it.
+06:00 / 18:00 is dead.
 
 ## Round 2
 
@@ -35,29 +33,29 @@ Keep the pick. Add the two neighbors.
 - if 12:00 → 09:00 / 12:00 / 15:00
 - if 20:00 → 17:00 / 20:00 / 23:00
 
-Three cards. No clock. Pick one.
+Three cards. Pick one.
 
 ## Round 3
 
 Pick ±2 hours and the pick.
-Three cards. No clock. Pick one.
+Three cards. Pick one.
 
 ## Round 4
 
 Pick ±1 hour and the pick.
-Three cards. No clock. Pick one.
+Three cards. Pick one.
 
 ## Lock
 
-Locked time is calibration evidence. Not a birth certificate.
+Locked time is calibration evidence.
 
 ## Card length
 
-A card is a paragraph. Minimum three sentences. Not one line.
+A card is a paragraph. Minimum three sentences.
 
 It must run: trigger, pressure point, behavior, where it collapses, where it thrives, cost to them, cost to others, what gets lost if it runs one more cycle.
 
-Lived years shape the sentences. Swiss numbers do not change.
+Lived years shape the sentences.
 
 ## Forbidden
 

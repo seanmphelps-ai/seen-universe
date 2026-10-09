@@ -1,8 +1,5 @@
-/**
- * Deterministic anonymous pressure paragraphs from chart-engine darkCardSeed.
- * Uses geoSummary + wound qualities + portal names/expressions as INTERNAL cues only.
- * Never prints planet/sign/house/clock/portal numbers, TOD labels, or astrology jargon on the face.
- */
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
+
 
 export type PressureSeedInput = {
   clock?: string;
@@ -70,14 +67,12 @@ function livedDirtCue(geoSummary?: string): string {
   if (!raw) {
     return 'The ground they grew on still shapes how pressure lands, even when they pretend the past is closed.';
   }
-  // Soften engine doctrine lines into human dirt without inventing poverty/violence.
   if (/poverty|violence|scarcity/i.test(raw) && /UNKNOWN|no explicit/i.test(raw)) {
     return 'Place left a baseline of caution in the body: heat, distance, and the sense that the room can turn.';
   }
   if (/shove|dirt|coordinates/i.test(raw)) {
     return 'Where they lived still sits under the story: the body remembers the room before the mind names it.';
   }
-  // Never paste raw engine jargon onto the card face.
   return 'Lived ground still colors how closeness and threat get read.';
 }
 
@@ -106,7 +101,7 @@ function behaviorFromQualities(qualities: string[], archetype: PressureArchetype
     if (rage) {
       return 'They raise the temperature of the room, force a decision, and punish hesitation as if it were disrespect.';
     }
-    return 'They turn disagreement into a referendum on respect and will not rest until they feel unmistakably chosen.';
+    return 'They turn disagreement into a referendum on respect and pursue reassurance until they feel unmistakably chosen.';
   }
 
   // distance-break
@@ -141,8 +136,8 @@ function costCrack(archetype: PressureArchetype): { cost: string; crack: string 
   }
   if (archetype === 'public-worth') {
     return {
-      cost: 'The original problem gets buried under the fight to be recognized. The partner feels managed rather than met, cast as audience, critic, or rival.',
-      crack: 'If it runs one more cycle, they confuse being loved with being affirmed, then punish the relationship for failing to provide constant proof—losing tenderness that does not need applause.',
+      cost: 'The original problem gets buried under the fight to be recognized. The partner feels managed and cast as audience, critic, or rival.',
+      crack: 'If it runs one more cycle, they confuse being loved with being affirmed, then punish the relationship for failing to provide constant proof—losing quiet, unperformed tenderness.',
     };
   }
   return {
@@ -166,7 +161,6 @@ function portalCueSentence(
   const pressurized = expressions.some((e) => e === 'pressurized' || e === 'recurrent' || e === 'distorted');
   const sensitized = expressions.some((e) => e === 'sensitized');
 
-  // Translate portal *names* into behavioral metaphors — never print the names.
   const joined = names.join(' ').toLowerCase();
   if (/conflict|opposition|obstruction|splitting|oppression/.test(joined)) {
     return 'Under strain, conflict becomes the shortest path to feeling real again.';
@@ -209,14 +203,13 @@ export function pressureProseFromSeed(seed: PressureSeedInput): string {
     archetype === 'private-test'
       ? 'This person looks for the hidden motive before they trust the visible one. They can be warm, proud, and intensely loyal, but closeness also feels like a place where they can be watched, judged, or left.'
       : archetype === 'public-worth'
-        ? 'This person wants to be unmistakably valued. They can bring heat, charm, and a strong public presence, but rejection lands as an attack on their worth—not merely a disagreement.'
+        ? 'This person wants to be unmistakably valued. They can bring heat, charm, and a strong public presence, but rejection lands as an attack on their worthduring disagreement.'
         : 'This person keeps a cool distance until someone reaches the protected core. Then the response can be sudden: intense pursuit, an abrupt exit, or a clean break that leaves little room for negotiation.';
 
   const parts = [reveal, pressure, behavior];
   if (portalLine) parts.push(portalLine);
   parts.push(dirt, cost, crack);
 
-  // Ensure we never leak clock/TOD/astro tokens on the face.
   const paragraph = parts.join(' ').replace(/\s+/g, ' ').trim();
   return stripForbiddenFaceTokens(paragraph);
 }
@@ -244,7 +237,7 @@ const CLOCK_ON_FACE = /\b\d{1,2}:\d{2}\b/;
 export function anonymousCardFace(paragraph: string): string {
   const text = paragraph.replace(/\s+/g, ' ').trim();
   if (CLOCK_ON_FACE.test(text)) {
-    throw new Error('A dark card cannot show a clock.');
+    throw new Error('A dark card displays behavioral recognition; clocks remain in internal metadata.');
   }
   const sentences = text.split(/(?<=[.!?])\s+/).filter((sentence) => sentence.length > 0);
   if (sentences.length < 3) {

@@ -1,5 +1,4 @@
-# 02_CLOSURE_COMPOSURE_RUNTIME_ORDER_LOCK
-
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 ## Authority
 
 This file defines the controlling Closure & Composure runtime sequence inside the active SEEN repository.
@@ -40,7 +39,7 @@ Person B complete
 → relational convergence permitted
 ```
 
-Relationship context may reference each person. It does not overwrite either stored baseline, active state, source field, or calibrated recognition anchor.
+Relationship context may reference each person.
 
 ## Canonical Person Runtime Order
 
@@ -118,7 +117,7 @@ Birth foundation collects:
 - current name;
 - optional pronouns.
 
-Unknown birth time activates the canonical hidden candidate set configured for the build. The user receives behavioral recognition summaries and never sees candidate times.
+Unknown birth time activates the canonical hidden candidate set configured for the build.
 
 Required contracts:
 
@@ -293,7 +292,7 @@ Required contracts:
 - `JungInversionInputSchema`
 - `JungInversionOutputSchema`
 
-Jungian inversion transforms established signal. It preserves source linkage and creates no unsupported source claim.
+Jungian inversion transforms established signal.
 
 ## 45 Life Sections Registry
 

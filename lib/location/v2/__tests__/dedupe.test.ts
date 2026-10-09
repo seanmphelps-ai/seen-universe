@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, it, expect } from 'vitest';
 import {
   dedupeObservations,
@@ -47,7 +48,7 @@ describe('fuseEventProbability', () => {
     expect(fuseEventProbability([])).toBe(0);
   });
 
-  it('is monotonic — an extra independent family never lowers p(e)', () => {
+  it('is monotonic as independent evidence families increase', () => {
     const two = fuseEventProbability([0.6, 0.6]);
     const three = fuseEventProbability([0.6, 0.6, 0.6]);
     expect(three).toBeGreaterThan(two);
@@ -81,7 +82,7 @@ describe('dedupeObservations', () => {
     expect(confirmation.observationCount).toBe(2);
   });
 
-  it('does not let repeat mentions in one family inflate p(e)', () => {
+  it('deduplicates repeat mentions within each family', () => {
     const single = dedupeObservations([observation('a', 'SOCIAL_PUBLIC', 'e', 0.7)]);
     const hundred = dedupeObservations(
       Array.from({ length: 100 }, (_, i) => observation(`a-${i}`, 'SOCIAL_PUBLIC', 'e', 0.7)),

@@ -1,7 +1,4 @@
-// Wheel: @csessh/sochumenh@0.3.0 (MIT) https://github.com/agentics-vn/sochumenh-npm
-// Call: parseDob + the package's numeric calculators (lifePath, expression, and the rest of its calc exports).
-// Input: name plus birthDate "YYYY-MM-DD", reformatted to the package's DD-MM-YYYY parseDob.
-// Output: { value, karmicDebtHits } from those functions. interpretationsVi is not returned.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import {
   accessibilityAttitude,

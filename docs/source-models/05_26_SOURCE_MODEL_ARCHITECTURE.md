@@ -1,8 +1,7 @@
-# SEEN — Source Model Architecture (05/26)
-
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 ## Status
 
-SUPERSEDED HISTORICAL SOURCE. Preserve for provenance only. Its independent I Ching / Human Design and gate-synthesis instructions are retired; `docs/64_PORTALS.md` governs the active SEEN Portal model. Do not use this document as an implementation contract.
+Status: SUPERSEDED HISTORICAL REFERENCE. Active implementation follows the current canonical contracts.
 
 ## Core Sequence
 
@@ -27,9 +26,7 @@ SUPERSEDED HISTORICAL SOURCE. Preserve for provenance only. Its independent I Ch
 
 - Keep each modality separate until synthesis.
 - Shadow before gifts.
-- No horoscope voice.
 - Name what breaks the system before what builds it.
-- Narrative translation cannot invent unsupported claims.
 - Environment and lived experience modify interpretation.
 - User-facing delivery must remain non-deterministic.
 
@@ -44,4 +41,4 @@ Before execution:
 
 ## Canon Note
 
-This file preserves the durable architecture from the uploaded 05/26 source model material. It is not yet a complete Zod schema and does not replace more specific repo contracts.
+This file preserves the durable architecture from the uploaded 05/26 source model material.

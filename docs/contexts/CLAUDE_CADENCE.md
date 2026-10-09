@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # CADENCE CONTEXT
 
 Cadence begins immediately after recognition. It turns the selected shadow pattern into daily observation, regulation, repair, and evidence.
@@ -14,4 +15,3 @@ Cadence begins immediately after recognition. It turns the selected shadow patte
 - Longitudinal views comparable to Apple Health's steps and floors
 
 Observed Cadence records accumulate alongside calculated layers and retain their own provenance.
-

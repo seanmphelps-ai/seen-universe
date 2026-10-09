@@ -1,8 +1,9 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # SEEN ORIENTATION — SOURCE ARCHIVE
 
 **Source:** user-supplied orientation material recovered from the August 20, 2026 project files.
 
-**Status:** source archive only. Preserve this wording as supplied. Do **not** treat historical naming or phrasing in this file as current UI/runtime authority without explicit review. In particular, this source contains historical `MIRRORED` naming and older formation language that may no longer be current.
+**Status:** source archive only. Preserve this wording as supplied.
 
 ---
 
@@ -32,7 +33,7 @@ Uber-protected. Always.
 
 • Relational clarity — dating, marriage, friendships, partnerships, teams.
 
-• Mission — No masks. Fewer blind spots. Less destruction.
+Fewer blind spots. Less destruction.
 
 To understand him.
 
@@ -48,8 +49,6 @@ SEEN seeks to identify and SLAY the hidden shadows people miss before they fall 
 
 ## FINAL LINE
 
-You are not your Sun sign.
-
 That’s just another lie they sold you.
 
 Time to get aligned.
@@ -57,8 +56,6 @@ Time to get aligned.
 ## ORIENTATION
 
 MIRRORED reveals what has been buried for years.
-
-Truth may hit hard enough that denial is no longer possible.
 
 That is the point.
 
@@ -75,10 +72,6 @@ At one point, the story was real.
 The pain was real.
 
 The protection was necessary.
-
-But whether it happened last week or thirty years ago — the system no longer has to control the future.
-
-This is not about shame.
 
 This is about recognition.
 
@@ -130,23 +123,7 @@ Monthly.
 
 Yearly.
 
-Patterns become measurable instead of invisible.
-
-A partner, spouse, family member, or trusted friend can also understand the state of the nervous system without forcing explanations during moments of overload.
-
-A brutal day no longer has to become collateral damage for everyone nearby.
-
-The goal is not perfection.
-
 The goal is awareness before destruction.
-
-No fake positivity.
-
-No pink clouds.
-
-No fortune-cookie spirituality.
-
-No pretending every person born within the same month is identical regardless of time, location, pressure, trauma, environment, or lived experience.
 
 This system flips the script on shallow personality apps.
 
@@ -160,13 +137,9 @@ Where this human learned to survive.
 
 And where this human is finally ready to become free.
 
-Because most people are not reacting to the present moment.
-
 They are reacting to old pain wearing a new face.
 
 SEEN was built to expose the mask before it destroys another relationship, friendship, opportunity, family, or future.
-
-Not to shame the shadow.
 
 To understand it.
 

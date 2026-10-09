@@ -1,8 +1,7 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # SOURCE HANDOFF EXAMPLES
 
 These examples define the minimum level of completeness expected when sequence analysis says one stage hands off to another.
-
-## Example A — Location path
 
 ### 1. User input
 
@@ -56,8 +55,6 @@ Keep GeoPresence, biome, and abiotic outputs separate before synthesis.
 ```
 
 ### 5. Portal routing
-
-Every supported contribution routes into relevant portals without deleting low-pressure portals.
 
 ```json
 {
@@ -127,5 +124,3 @@ At every arrow, preserve:
 - confidence
 - contradictions
 - unresolved variables
-
-Do not collapse these fields merely because the user-facing output is simple.

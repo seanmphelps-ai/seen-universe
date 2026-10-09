@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # APPROVED EXEMPLARS
 
 Store approved outputs here as evidence of the voice, depth, derivation, and usefulness the runtime must reproduce.
@@ -11,4 +12,3 @@ Store approved outputs here as evidence of the voice, depth, derivation, and use
 - `FAMILY_COMPARATIVE_EXEMPLAR.md`
 
 Each exemplar must preserve source inputs, version, output, accepted strengths, corrections, and the exact runtime behavior it demonstrates.
-

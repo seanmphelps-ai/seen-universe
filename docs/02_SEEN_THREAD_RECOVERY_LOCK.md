@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # SEEN — THREAD RECOVERY LOCK
 
 This file preserves the useful corrections from the thread and removes the noise.
@@ -9,8 +10,6 @@ SEEN comes first.
 Closure & Composure is the MVP.
 
 Cadence comes later, after the user has already been seen.
-
-The first user experience is not tracking.
 
 The first user experience is recognition.
 
@@ -40,7 +39,6 @@ The app must first show:
 - what belonged to Person A
 - what belonged to Person B
 - what life/environment shaped
-- what the user no longer needs to personalize
 
 ## FINAL LOCK
 

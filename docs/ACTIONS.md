@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # ACTIONS.md — Consolidated Commit-Backed Action Register
 
 Branch treated as main: `mirrored`
@@ -11,8 +12,6 @@ This is the single consolidated register for recovered commit-backed work in `se
 It prevents the wrong repair pattern: making dozens of new files from commit titles alone.
 
 ## Zod migration boundary rule
-
-Do not convert the entire codebase to Zod.
 
 Convert canonical data contracts and `.schema.ts` files into Zod runtime schemas.
 
@@ -48,9 +47,6 @@ Use these classifications for commit/action mapping:
 - `MIGRATION_NEEDED_TO_ZOD`: canonical contract or `.schema.ts` file is TypeScript-only and should be migrated.
 - `NORMAL_TYPESCRIPT_ENGINE`: engine/algorithm/helper logic remains normal TypeScript.
 - `NORMAL_TYPESCRIPT_UI`: UI implementation remains normal TypeScript.
-- `DOC_ONLY_CANON`: conceptual documentation only; no runtime schema conversion required.
-
-The rule is not “Zod everything.”
 
 The rule is: Zod for canonical data contracts and runtime schema boundaries; normal TypeScript for implementation code.
 
@@ -63,17 +59,15 @@ Every row below carries this schema:
 - **Input**: existing file(s) touched by the commit.
 - **Action**: apply or preserve the commit-backed change in the proper existing file(s).
 - **Output**: affected file(s) on `mirrored`, or a traceable recovery record when diff expansion is still pending.
-- **Runtime obligation**: no inference beyond verified source commit and changed path(s).
 
 ## Status
 
 - `MATERIALIZED`: explicitly repaired, created, or verified during recovery.
 - `RECOVERED_INDEX`: recovered from commit history and listed here for the next diff-backed pass.
-- `DO_NOT_INFER`: do not expand from title alone.
 
 ## Numbering note
 
-Rows below follow recovered chronological commit order. Existing `docs/actions/001_*` through `010_*` are explicit recovery files and do not replace this full register.
+Rows below follow recovered chronological commit order.
 
 ---
 
@@ -165,13 +159,10 @@ Rows below follow recovered chronological commit order. Existing `docs/actions/0
 ## Recovery obligations
 
 1. Before further edits, fetch the exact source commit and read its changed file path(s).
-2. Do not create a new per-commit file unless the source commit or existing repo structure requires it.
 3. Apply work into the correct existing docs, schema, runtime, workflow, governance, or README file.
-4. Use `UNRESOLVED` only when the fetched commit diff truly does not contain enough information.
 5. Keep this file as the consolidated register and update status as each commit is verified.
 
 ## Completed in current recovery pass
 
 - Repaired `docs/COMMIT_ACTIONS_REVERSE_ONELINE.md`.
 - Created explicit recovery records `docs/actions/001_44ce8c5.md` through `docs/actions/010_af7a8bb.md`.
-- Created this consolidated `docs/ACTIONS.md` to cover the broader recovered commit set without generating dozens of additional files.

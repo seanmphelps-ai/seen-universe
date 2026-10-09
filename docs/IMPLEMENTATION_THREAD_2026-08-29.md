@@ -1,9 +1,4 @@
-# SEEN IMPLEMENTATION BREAKDOWN — 2026-08-29
-
-Purpose: convert the 2026-08-29 thread into repo work without losing source knowledge or prematurely canonizing experiments.
-
-## A. Already correct — preserve
-
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 ### Western runtime bridge
 Verified path:
 
@@ -13,14 +8,10 @@ Action:
 - preserve this path
 - keep external chart APIs outside the canonical runtime
 - keep Location downstream of completed Western calculation
-- preserve unknown-time limits: no houses/Ascendant/MC without a real candidate time
 
 Acceptance:
 - direct code path remains local
 - Western raw result remains inspectable before portal routing
-- Location cannot alter Western planetary calculations
-
-## B. Canonical architecture additions to implement
 
 ### B1. Environmental Resonance
 Insert after objective environmental pressure and before pattern interaction.
@@ -28,7 +19,6 @@ Insert after objective environmental pressure and before pattern interaction.
 Contract:
 - input: completed EnvironmentalPressureField + provenance/evidence
 - generator output: exactly three distinct evidence-supported experiential summaries
-- each summary carries both gift and cost; never only-good, never only-bad
 - one leans Western markers, one Vedic, one blended
 - user response: one / multiple / none + optional strength rating
 - persistence: `EnvironmentalResonanceRecord`
@@ -50,8 +40,6 @@ Required fields:
 
 Rules:
 - objective environmental record stays immutable
-- no biography/later behavior used to generate the initial candidate summaries
-- non-selection does not erase environmental evidence
 - downstream claims distinguish measured environment from remembered experience
 
 Acceptance:
@@ -79,8 +67,6 @@ Public/private boundary:
 Acceptance:
 - user can inspect a visible convergence back to its source records
 - source layers remain visually and structurally independent
-- map never implies convergence where support is absent
-- internal recipe is not serialized to the client
 
 ### B3. Source-system views
 Implement one view/tab per approved independent system.
@@ -96,7 +82,6 @@ Each system view must show:
 Convergence remains a separate view.
 
 Acceptance:
-- no blended source calculation appears inside a native system tab
 - identical raw source record is used by both tab and downstream routing
 
 ### B4. Adaptive rendering system
@@ -114,7 +99,6 @@ Shared render contract:
 - input is immutable Generator result / claim set
 - output contains `renderMode`, `renderVersion`, `claimRefs[]`, `evidenceRefs[]`
 - rendering can change sequence, voice, metaphor, scene construction, and emphasis
-- rendering cannot add unsupported facts or modify source calculations
 
 Acceptance:
 - multiple render modes from the same Generator record resolve to the same underlying claim IDs
@@ -133,10 +117,8 @@ Required behavior:
 - use metaphor only as metaphor
 - return claim/evidence references with the rendered output
 
-## C. Design system work
-
 ### C1. Restore Forge continuity
-The product should not use isolated Forge decoration. Forge is the continuous visual world of the formative process.
+Forge is the continuous visual world of the formative process.
 
 Action:
 - restore a continuous dark-celestial / bronze-gold / ivory visual language across Location -> Date -> Rectification/Resonance -> system exploration
@@ -147,7 +129,6 @@ Action:
 Research top-tier identity/digital systems before implementation and define one SEEN-specific typographic behavior.
 
 Acceptance:
-- identifiable in a crop without celestial artwork
 - works at 390–430 px
 - consistent rules documented in design system
 
@@ -161,8 +142,6 @@ Prototype must demonstrate:
 - one supported convergence
 - drill-down to evidence
 - historical provenance marker
-
-Do not expose proprietary scoring/routing internals in the prototype.
 
 ## D. Historical provenance layer
 
@@ -180,10 +159,9 @@ For each system store/display-ready metadata:
 - `verificationStatus`
 
 Important:
-- approximate conversational dates are not production facts
 - the R.H. Naylor / Princess Margaret / mass-market sun-sign history requires direct sources before release
 
-## E. Time rectification experiment — do not replace canon yet
+## E. Time rectification experiment — Candidate research
 
 Current canonical UX remains:
 - three recognition cards per round
@@ -207,7 +185,6 @@ Evaluation metrics:
 - final candidate stability across repeated runs
 
 Decision gate:
-- keep 3-card model unless 12-candidate experiment materially improves discrimination without unacceptable fatigue/noise/cost
 
 ## F. Location scoring/source audit integration
 
@@ -230,10 +207,6 @@ Implement P1 before downstream convergence:
 - aggregate confidence definitions
 - approximate residence dates
 - birth role separated from residence exposure
-
-P2 is calibration/validation, not prerequisite for scaffolding.
-
-## G. Repo placement
 
 ### Canon / task contexts
 - `docs/contexts/CLAUDE_LOCATION.md` -> Environmental Resonance invariants
@@ -270,11 +243,8 @@ P2 is calibration/validation, not prerequisite for scaffolding.
 
 - Source systems remain independent.
 - Raw calculations are preserved.
-- Environment never changes astronomical calculations.
-- User resonance is calibration evidence, not retroactive truth.
 - Convergence requires independently supported inputs.
 - Creativity/rendering happens after supported findings exist.
 - Contradictions survive.
 - Weak/insufficient evidence can return `UNKNOWN` / `insufficient_signal`.
-- Public visualization can show structure without exposing proprietary implementation internals.
 - Final Life Section count remains unchanged until explicitly locked.

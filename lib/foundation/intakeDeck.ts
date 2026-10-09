@@ -1,8 +1,9 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { z } from 'zod';
 import { BirthAnchorSchema, PlaceSchema, type LivedPlace, type Place } from './intakeSchema';
 import { livedStackFromPlaces } from './livedExposure';
 
-/** Click path after the location card. No clock card. */
+
 export const INTAKE_CARDS = ['name', 'birthDate', 'birthCity', 'livedPlaces'] as const;
 
 export type IntakeCard = (typeof INTAKE_CARDS)[number];

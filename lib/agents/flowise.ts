@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 /** Flowise Agentflow V2 prediction adapter for SEEN's existing worker contracts.
  * Flowise runs as a separate service; this module executes its configured flows.
  * Configure server-only FLOWISE_URL, FLOWISE_API_KEY and per-worker flow IDs.
@@ -29,7 +30,7 @@ export async function invokeFlowise<T>(
   validate: (value: unknown) => value is T,
 ): Promise<T> {
   const flowId = config.flowIds[flow];
-  if (!flowId) throw new Error(`Flowise flow not configured: ${flow}`);
+  if (!flowId) throw new Error(`Flowise flow requires configuration: ${flow}`);
   const base = new URL(config.url);
   if (base.protocol !== 'https:' && base.hostname !== 'localhost' && base.hostname !== '127.0.0.1')
     throw new Error('Flowise requires HTTPS except for local development');

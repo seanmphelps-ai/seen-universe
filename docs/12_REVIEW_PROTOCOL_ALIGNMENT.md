@@ -1,18 +1,13 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # 12_REVIEW_PROTOCOL_ALIGNMENT
 
 Purpose: verify SEEN canon, Oracle-first presence, Closure & Composure, schema contracts, drift risk, and user-facing safety.
 
 This protocol runs after STRUCTURE and before EXECUTION.
 
-No fixes may be applied until this protocol completes.
-
 ## PASS 11 - Oracle First
 
 Confirm the Oracle field remains before interpretation, calculation, extraction, comparison, routing, Cadence, portals, rendering, or user-facing output.
-
-Confirm the Oracle is corrigible without becoming collapsible.
-
-Confirm correction does not mean automatic agreement.
 
 ## PASS 12 - Canon Alignment
 
@@ -62,12 +57,9 @@ Flag anything that could cause:
 Confirm:
 
 - mechanics stay hidden until requested
-- intake answers are not repeated literally
-- wound markers are not exposed too early
 - false certainty is reduced
 - overload is respected
 - regulation closes major reveals
-- no darkness is revealed without a way back to agency
 
 ## Gate Output
 
@@ -80,5 +72,3 @@ Return:
 5. User-facing safety findings
 6. Required fixes for execution protocol
 7. Confidence per finding: locked / likely / uncertain
-
-Do not apply changes in this protocol.

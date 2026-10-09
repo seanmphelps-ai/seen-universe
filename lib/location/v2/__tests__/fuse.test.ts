@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, it, expect } from 'vitest';
 import {
   CONTRADICTION_SPREAD,
@@ -70,7 +71,7 @@ describe('fuseComponent', () => {
     expect(fused.familiesMissing).toEqual(['LOCAL_NEWS', 'SOCIAL_PUBLIC', 'GDELT']);
   });
 
-  it('never substitutes a zero for an absent family', () => {
+  it('preserves an absent family as missing', () => {
     // Two families both reporting 80; a third absent. If absence were
     // treated as 0 the fused value would collapse toward it.
     const fused = fuseComponent(
@@ -108,7 +109,7 @@ describe('fuseComponent', () => {
     expect(fused.signals.map((s) => s.value).sort((a, b) => a - b)).toEqual([10, 90]);
   });
 
-  it('does not flag contradiction for ordinary spread', () => {
+  it('accepts ordinary spread as consistent evidence', () => {
     const fused = fuseComponent(
       'prev',
       'PREV',
@@ -121,7 +122,7 @@ describe('fuseComponent', () => {
     expect(fused.contradiction).toBe(false);
   });
 
-  it('never flags contradiction on a single family', () => {
+  it('requires multiple families for contradiction', () => {
     const fused = fuseComponent('prev', 'PREV', [{ sourceFamily: 'OFFICIAL_DATA', value: 5 }], EXPECTED);
     expect(fused.contradiction).toBe(false);
   });

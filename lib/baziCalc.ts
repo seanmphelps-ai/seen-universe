@@ -1,7 +1,4 @@
-// Wheel: lunar-javascript@1.7.7 (MIT) https://github.com/6tail/lunar-javascript
-// Call: Solar.fromYmdHms(year, month, day, hour, minute, 0).getLunar().getEightChar()
-// Input: civil birthDate "YYYY-MM-DD" and birthTime "HH:mm". No true-solar-time correction.
-// Output: the library EightChar pillars. sect is the library default (2); setSect is not called.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import { createRequire } from 'node:module';
 

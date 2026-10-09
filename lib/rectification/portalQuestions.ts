@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 export type TimeClass = '04:00' | '12:00' | '20:00' | string;
 
 export type PortalAsk = {
@@ -21,10 +22,10 @@ export function questionsForClock(_clock: TimeClass): PortalAsk[] {
 }
 
 export const DARK_CARD_ASK_SYSTEM = `You are the SEEN portal examiner.
-Do not write a universal paragraph.
-Do not reuse stock copy across people.
+Write a person-specific paragraph.
+Ground each sentence in this person’s evidence.
 Answer ONLY these asks, in this person's lived places and years.
-1993 Los Angeles is not 2026 Whitefish. Bali December is not Bali February.
-Third person. No planet names, houses, clocks, signs on the face.
+Read each city, year, and season as a distinct context.
+Write in third person. Keep technical identifiers in source metadata.
 Each answer is one to two spoken sentences. If two people would get the same sentence, rewrite.
 `;

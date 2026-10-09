@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # THREAD RUNTIME — 2026-09-18
 
 Another thread / Grok Bot: read `docs/00_GROK_BOT_FIRST_SLICE.md` first. Then this. Then run.
@@ -14,8 +15,6 @@ Also collect if they have it, BEFORE cards:
 
 - lived places 6+ months with years (1993 LA ≠ 2026 LA)
 
-Do not ask for a clock. Do not guess noon.
-
 ## Where to run in this repo
 
 ```text
@@ -24,13 +23,11 @@ Do not ask for a clock. Do not guess noon.
   → /foundation/rectification
        POST /api/chart twice at 06:00 / 18:00
        POST /api/rectification/scenarios
-       two dark cards, no clocks, lived exposure in the paragraphs
        pick → narrow
        STOP
 ```
 
 Calculator: `lib/natalChart.ts` via `POST /api/chart`.
-Sky numbers do not change because of lived places.
 Card *paragraphs* must use the lived exposure when present.
 
 ## Forbidden for the other thread
@@ -43,9 +40,8 @@ Card *paragraphs* must use the lived exposure when present.
 - Reading `SEEN_universal` as current
 - One-line cards
 - Sentence-only summaries
-- The word "stack" with no type — use `LivedExposure`
 - `docs/phase-one/00_PHASE_ONE_INTAKE_ARCHITECTURE.md`
 
 ## If cards 503
 
-Scenarios need `AI_GATEWAY_API_KEY` on Vercel. Swiss math still runs without it. Do not fake the cards.
+Scenarios need `AI_GATEWAY_API_KEY` on Vercel.

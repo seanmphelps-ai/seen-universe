@@ -1,18 +1,5 @@
 #!/usr/bin/env tsx
-// SEEN Location V1 — live verification script.
-//
-// One-command proof that the real Census/BLS integration works, run from
-// a network-enabled environment (this sandbox cannot reach these domains —
-// see the adapter file comments). Uses one fixed, known test location so
-// the result is reproducible run to run.
-//
-//   npm run verify:location:live
-//
-// This does NOT fall back to mock data on failure. If an adapter's
-// response shape doesn't match what the parser expects, it throws, and
-// this script reports that plainly and exits non-zero — that is the
-// correct outcome for "prove it actually works," not something to catch
-// and paper over.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import { buildLocationField } from '../lib/location/buildLocationField';
 import type { LocationInput } from '../lib/location/types';

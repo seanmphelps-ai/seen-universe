@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # PRIMARY ENDPOINT
 
 SEEN is a mapped recursive traversal engine centered on:
@@ -16,8 +17,6 @@ The system begins with Closure & Composure: two-person recognition and emotional
 SEEN supports both Shadow Chart and Forecast modes.
 
 In Forecast mode, the user can select a past, present, or future date and location. The system can then examine how much of a relational rupture, emotional pattern, or behavioral event was shaped by baseline wiring, environmental pressure, wound activation, relational dynamics, and present-state modulation.
-
-This does not remove responsibility from the person who caused harm. It helps the user see whether the experience was real, patterned, explainable, and connected to underlying markers rather than random chaos.
 
 The Oracle reveals mapped convergence progressively through nesting chips and user-directed expansion.
 

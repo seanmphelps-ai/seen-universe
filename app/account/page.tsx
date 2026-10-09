@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { isSupabaseConfigured } from '../../lib/supabase/config';
@@ -54,7 +55,7 @@ export default async function AccountPage() {
                   <Link className="seenResultName" href={`/people/${person.id}`}>{person.name}</Link>
                   <span className="seenResultValue">
                     {person.birth_date}{person.birth_time ? ` · ${person.birth_time}` : ''}<br />{person.birth_location}
-                    <br />{person.western_charts ? 'Western chart saved' : 'No chart saved yet'}
+                    <br />{person.western_charts ? 'Western chart saved' : 'Chart awaiting save'}
                   </span>
                 </li>
               ))}

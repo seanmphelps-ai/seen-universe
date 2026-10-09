@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # SEEN DOCUMENT CONTROL
 
 This directory is the modular working memory for SEEN.
@@ -33,4 +34,3 @@ This directory is the modular working memory for SEEN.
 ## Update rule
 
 Every recovered document or thread is preserved, classified, and compared against current canon. Confirmed additions update the checklist and relevant context module. Contradictions remain visible until Sean resolves them.
-

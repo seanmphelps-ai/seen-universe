@@ -1,17 +1,4 @@
-// Person-location exposure — step 7 of the contract.
-//
-//   Dose_j = [1 - exp(-months_j / 12)] × V(location_j, lived interval)
-//
-// Two rules this module enforces structurally rather than by convention:
-//
-//   1. Birth location, each residence of ≥6 months, and the current
-//      location are DISTINCT historical slices. They are never merged.
-//   2. "Do not overwrite unavailable historical evidence with current
-//      data." If the vector for a residence's own lived interval could
-//      not be obtained, the slice reports UNAVAILABLE. It does not
-//      silently borrow today's numbers for a place someone lived in
-//      1994 — that would fabricate history, which the contract forbids
-//      everywhere and which matters most precisely here.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import type { EvidenceVector } from './types';
 
@@ -35,13 +22,10 @@ export type SliceDose = {
   slice: ResidenceSlice;
   /** [1 - exp(-months/12)]. Tenure saturation, independent of the vector. */
   tenureWeight: number;
-  /**
-   * Dose per vector component, or null where the component was not
-   * measurable for this slice's own lived interval.
-   */
+
   dose: Record<string, number | null>;
   status: 'COMPUTED' | 'UNAVAILABLE';
-  /** Set when status is UNAVAILABLE. Never filled with substitute data. */
+
   unavailableReason: string | null;
 };
 
@@ -71,13 +55,7 @@ export function qualifiesAsSlice(slice: ResidenceSlice): boolean {
   return slice.months >= MINIMUM_RESIDENCE_MONTHS;
 }
 
-/**
- * Computes the dose for one slice.
- *
- * `vector` must have been built from the slice's OWN lived interval. Pass
- * null when that historical evidence could not be obtained; the slice
- * will report UNAVAILABLE rather than fall back to present-day data.
- */
+
 export function computeSliceDose(
   slice: ResidenceSlice,
   vector: EvidenceVector | null,
@@ -105,7 +83,7 @@ export function computeSliceDose(
       dose: {},
       status: 'UNAVAILABLE',
       unavailableReason:
-        `The supplied vector covers ${vector.key.windowStart}–${vector.key.windowEnd}, which does not ` +
+        `The supplied vector covers ${vector.key.windowStart}–${vector.key.windowEnd}, which fails to ` +
         `overlap this slice's lived interval (${slice.start} to ${slice.end ?? 'present'}). ` +
         `Refusing to apply out-of-period evidence to a historical residence.`,
     };
@@ -140,7 +118,7 @@ export function vectorCoversInterval(vector: EvidenceVector, slice: ResidenceSli
 
 export type ExposureProfile = {
   slices: SliceDose[];
-  /** Slices excluded for falling under the tenure minimum, reported not hidden. */
+
   excludedShortResidences: ResidenceSlice[];
   unavailableSlices: string[];
 };
@@ -166,16 +144,7 @@ export function buildExposureProfile(
   };
 }
 
-/**
- * The conditioning input handed to the Western / Vedic / Hellenistic /
- * BaZi modules and SEEN's own 64-Portal layer.
- *
- * The contract is explicit about what this is and is not: those modules
- * receive the same location vector as a conditioning input, and the
- * evidence engine "stays independent and makes no claim that astrology
- * itself is validated". This type carries that disclaimer in the payload
- * so it cannot be dropped by a downstream consumer that only reads data.
- */
+
 export type LocationConditioningInput = {
   profile: ExposureProfile;
   disclosure: string;

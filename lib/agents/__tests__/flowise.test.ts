@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, expect, it, vi } from 'vitest';
 import { executeSeenWorkers } from '../execution';
 import { flowiseNativeWorker, flowisePortalWorker, invokeFlowise, type FlowiseConfig } from '../flowise';
@@ -27,6 +28,6 @@ describe('Flowise integration', () => {
   });
   it('rejects missing flow IDs rather than pretending to execute', async () => {
     await expect(invokeFlowise({ url: 'https://flowise.example.org', apiKey: 'key', flowIds: {} }, 'missing', {}, (_): _ is object => true))
-      .rejects.toThrow('not configured');
+      .rejects.toThrow('requires configuration');
   });
 });

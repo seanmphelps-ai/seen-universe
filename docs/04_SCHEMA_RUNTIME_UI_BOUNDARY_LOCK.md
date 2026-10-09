@@ -1,14 +1,7 @@
-# 04_SCHEMA_RUNTIME_UI_BOUNDARY_LOCK
-
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 ## Purpose
 
 This file locks the boundary between docs, schemas, runtime, and user-facing copy.
-
-SEEN must not place product philosophy inside generator schemas.
-
-SEEN must not place executable contracts inside product copy.
-
-## Boundary Rules
 
 ### Docs
 
@@ -22,8 +15,6 @@ Docs may contain:
 - conceptual boundaries
 - voice principles
 - source-of-truth order
-
-Docs must not pretend to be machine contracts.
 
 ### Schemas
 
@@ -48,8 +39,6 @@ Schemas may contain:
 - forbidden moves
 - next-step handoff
 
-Schemas must not contain brand promises, sales copy, vague emotional claims, or product philosophy.
-
 ### Runtime
 
 Runtime defines execution order, state transitions, routing, and orchestration.
@@ -62,8 +51,6 @@ Runtime may contain:
 - depth routing
 - pause/continue rules
 - handoff rules
-
-Runtime must not replace schemas.
 
 Runtime must obey schemas.
 
@@ -79,13 +66,9 @@ UI copy may contain:
 - empty states
 - response framing
 
-UI copy must not define generator contracts.
-
 ## Generator Law
 
 The generator obeys schemas and runtime.
-
-The generator does not obey vague product language.
 
 The generator must count:
 
@@ -97,10 +80,6 @@ The generator must count:
 ## Oracle Law
 
 The Oracle renders only approved user-facing output.
-
-The Oracle does not expose hidden mechanics by default.
-
-The Oracle does not calculate, score, or invent structure outside finalized payloads.
 
 ## Final Lock
 

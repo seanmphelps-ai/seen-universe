@@ -1,6 +1,4 @@
 // PROVENANCE: bot=codex session=2026-10-08 task=affirmative repository instruction follow-up
-# START HERE — SEEN CANON LOCK
-
 ## Controlling Product
 
 The active product is the complete production-grade SEEN™ Closure & Composure PWA.
@@ -19,7 +17,6 @@ Dark chart. Collapse under pressure.
 Name
 → Date
 → Birth city
-→ Hidden 4 AM / noon / 8 PM Western pressure cards (no clock)
 → Pick
 → Narrow ±3 / ±2 / ±1
 → Lived places 6+ months, three gift+cost cards
@@ -44,8 +41,6 @@ Establish authority through the controlling specification and verified alignment
 ## Forces
 
 Seed = natal. Soil = family. Weather = city / years lived. Equal. Discover sensitivity through recognition, then apply the supported weighting.
-
-## SEEN Runtime Layers
 
 ### Builder / Application Architecture
 

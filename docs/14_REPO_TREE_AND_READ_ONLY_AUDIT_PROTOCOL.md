@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # 14_REPO_TREE_AND_READ_ONLY_AUDIT_PROTOCOL
 
 Repository:
@@ -12,10 +13,6 @@ Use the repository's existing order sources:
 
 1. README.md
 2. README_CORE_SCHEMA_ORDER.md
-
-Do not create docs/00_REPO_TREE_INDEX.md yet.
-
-If a dedicated repo tree index is later created, it must not override README.md or README_CORE_SCHEMA_ORDER.md unless those canon order files are explicitly updated.
 
 ## 2. Correct audit read order
 
@@ -46,7 +43,7 @@ Tree inspection may be used to resolve:
 - folder/file hierarchy
 - routing gaps
 
-Tree inspection supports audit accuracy. It does not replace the existing canon order sources unless the repo is explicitly updated to do so.
+Tree inspection supports audit accuracy.
 
 ## 4. Read-only audit mode
 
@@ -94,22 +91,13 @@ For each audited file, record:
 
 ## 6. Type distinction
 
-If a file is a doc, lock, or governance file and input/output is not required, mark:
-
-not required
-
-Do not mark it missing.
-
 If a file appears to be a schema or runtime contract and lacks required input/output structure, flag it for review.
-
-Do not force schema requirements onto non-schema canon docs.
 
 ## 7. Structure classification
 
 Audit findings must distinguish between:
 
 1. missing structure
-2. intentionally not applicable
 3. unresolved / unclear
 4. structurally present but weak or incomplete
 5. structurally present and sufficient
@@ -126,14 +114,11 @@ Pass 1
 
 Prior findings remain unless GitHub directly disproves them.
 
-Not allowed:
-
 - compression
 - dropped audit fields
 - silent rewrites
-- replacing a prior finding without citing the GitHub evidence that changed it
 
-## 9. No assumptions
+## 9. Explicit evidence and unresolved states
 
 If repo order is unclear, state unresolved.
 

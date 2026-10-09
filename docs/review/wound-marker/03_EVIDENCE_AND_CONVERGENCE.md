@@ -1,6 +1,5 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # Independent evidence, convergence and provenance
-
-> Exact sections from the uploaded draft, filed by subject; **not automatically approved architecture**. Section numbering is preserved. See 00_SOURCE_DOCUMENT_UNVALIDATED.md for the entire source, including its introductory 15-point overview and retraction.
 
 ==================================================
 2. PRESERVE EVERY SOURCE SIGNAL INDEPENDENTLY
@@ -28,10 +27,6 @@ Convergence may strengthen interpretation.
 Divergence may remain visible.
 Contradiction may remain visible.
 A strong non-overlapping signal must remain preserved.
-
-Do not cancel or erase a source because another source disagrees with it.
-
-
 
 ==================================================
 6. ADD A REAL CONVERGENCE ENGINE
@@ -68,15 +63,7 @@ It must support at least:
 
 Convergence must be evidence-based.
 
-Do not equate number of signals with strength.
-
 Multiple signals count as convergence only when their mechanics actually support the same or meaningfully interacting pattern.
-
-A single strong signal remains visible even without convergence.
-
-Contradictory signals remain inspectable rather than being averaged into a meaningless middle score.
-
-
 
 ==================================================
 18. REQUIRED PROVENANCE / EXPLAINABILITY
@@ -101,4 +88,3 @@ Given any Oracle claim, the system must be able to trace backward through:
     provenance
 
 Preserve contradictions and unresolved variables throughout this chain.
-

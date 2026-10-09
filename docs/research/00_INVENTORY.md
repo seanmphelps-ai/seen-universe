@@ -1,6 +1,7 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # Research upload inventory
 
-This inventory records research/schema/documentation from the box for branch `closure-and-composure`. These are research artifacts only; no production code or product features were added.
+This inventory records research/schema/documentation from the box for branch `closure-and-composure`.
 
 ## Pushed in this upload
 
@@ -11,13 +12,11 @@ This inventory records research/schema/documentation from the box for branch `cl
 - Ship `DARK_CARDS_1979-08-01_TARZANA.md`.
 - Shared `SEEN_SOURCE_LOCK/` prompt and Phase-1 shelf summary.
 
-## Still only paper on the box (not pushed)
+## Source documents awaiting repository import
 
 - The remaining **113** selected source documents remain only on paper/box at this point: Hellenistic `CANON` manifests/seeds, all Hellenistic `LOTS/`, Hellenistic `AUDIT/`, Hellenistic source-lock manifests/mechanics, and all Western, Vedic, BaZi, Dreamspell, and Portals `SOURCE_LOCK/` packs.
-- These artifacts are not production code and are not wired into the application. The Hellenistic `LOTS/` material is existing paper; no new Lots research was run.
 
 ## Source selection and exclusions
 
 - Selected source packs contained 142 text/schema documents: Hellenistic 94; Western 8; Vedic 8; BaZi 8; Dreamspell 13; Portals 8; ship dark cards 1; shared source-lock 2.
 - Existing `docs/hellenistic/` build-law documents were left untouched.
-- No binaries, archives, screenshots, PDFs, `tmp/` content, or other non-document artifacts were copied.

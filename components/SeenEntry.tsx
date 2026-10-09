@@ -1,10 +1,11 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 'use client';
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { resolveExperienceMode } from '../lib/seen/experienceMode';
 
-const WORDS = ['YOU', 'ARE', 'NOT', 'YOUR', 'SUN', 'SIGN.'];
+const WORDS = ['YOUR', 'STORY', 'HOLDS', 'A', 'WHOLE', 'UNIVERSE.'];
 
 export default function SeenEntry() {
   const router = useRouter();
@@ -48,7 +49,7 @@ export default function SeenEntry() {
         {phase === 'ready' && (
           <div className="seenIntroReveal">
             <p>SEEN</p>
-            <h1>You are so much more than that.</h1>
+            <h1>Every part of you has a story.</h1>
             <div className="seenDivider" aria-hidden="true" />
             <button
               type="button"

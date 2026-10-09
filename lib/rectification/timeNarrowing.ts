@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 /**
  * Time-narrowing ladder for the Grok Bot first slice.
  * Round 1 clocks must stay equal to chartEngine.DARK_WINDOWS.
@@ -54,10 +55,7 @@ export function clocksForRound(round: NarrowingRound, pickedClock?: string): str
   return neighborClocks(pickedClock, ROUND_DELTAS[round]);
 }
 
-/**
- * Omitted clocks mean Round 1.
- * A present list must already be valid HH:MM values — never swapped for noon.
- */
+
 export function resolveDarkClocks(
   clocks: unknown,
   fallback: readonly string[] = ROUND_1_CLOCKS,

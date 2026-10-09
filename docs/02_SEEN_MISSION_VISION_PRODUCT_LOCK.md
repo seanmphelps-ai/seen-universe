@@ -1,5 +1,4 @@
-# SEEN — Mission, Vision, Purpose, Product
-
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 ## Mission
 
 To help a person feel truly seen—fast enough, clearly enough, and deeply enough that confusion turns into understanding, and understanding turns into real choice.
@@ -18,10 +17,6 @@ A system that can take:
 - a decision happening today
 
 …and translate it into something coherent.
-
-Not vague.
-
-Not deterministic.
 
 A mirror with context.
 

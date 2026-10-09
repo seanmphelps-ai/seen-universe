@@ -1,4 +1,5 @@
-# SUPERSEDED — DO NOT BUILD
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
+# Superseded historical reference
 
 This file is dead. It says environment before date. That invert is killed.
 
@@ -9,8 +10,7 @@ Controlling files:
 
 Order is: name → date → birth city → lived exposure → dark pressure time cards → family soil → sovereignty → portals.
 
-Environment is weather on a calculated seed. It is not the front door.
-Everything below this line is historical and must not be implemented.
+Environment is weather on a calculated seed.
 
 ---
 
@@ -18,11 +18,7 @@ Everything below this line is historical and must not be implemented.
 
 [... original content retained below for history only ...]
 
-Phase 1 begins with environment, not questionnaire intake.
-
 The first SEEN runtime pass builds the place-field before birth date, temporal narrowing, chart interpretation, wound narration, portal routing, or Oracle rendering.
-
-The user does not begin by answering personal history questions.
 
 The user provides location data first.
 
@@ -67,8 +63,6 @@ At minimum, the environmental prepass evaluates:
 - adolescent-place imprint
 - current-terrain regulation or destabilization
 
-These are not decorative context.
-
 They are the first pressure container.
 
 ## Place-Phase Separation
@@ -83,8 +77,6 @@ The Generator must preserve location phases separately before synthesis:
 6. Event-location field, when applicable
 
 Each phase may amplify, suppress, distort, stabilize, or reroute later signals.
-
-Do not flatten all locations into a single generic place summary.
 
 ## Pre-Date Wound-Trigger Map
 
@@ -112,13 +104,7 @@ This map identifies which wound fields may be activated by place pressure, inclu
 
 These are candidate pressure fields.
 
-They do not become user-facing claims until later convergence supports them.
-
-## No Questionnaire Rule
-
-There is no required intake questionnaire before the first read.
-
-The system must not ask childhood, family, trauma, relationship, or self-description questions before the initial environmental prepass and first Generator scan.
+## First-read intake sequence
 
 Lived experience may be added later as optional refinement.
 
@@ -132,8 +118,6 @@ Post-reading lived experience can refine:
 - suppression
 - amplification
 - section priority
-
-It does not create the first read.
 
 ## Runtime Order
 
@@ -149,8 +133,6 @@ The Phase 1 runtime order is:
 8. Generate hidden time-rectification summaries
 9. Compare summaries by wound, behavior, attachment, rupture, shadow, and regulation difference
 10. Send structured payload to Oracle rendering
-
-The chart is never read in a vacuum.
 
 The same chart in different terrain may express differently.
 
@@ -176,8 +158,6 @@ This allows the engine to separate:
 
 The Oracle receives structured payload only after the Generator completes the environmental prepass, birth-date integration, temporal summary comparison, and convergence pass.
 
-The user does not receive raw mechanics.
-
 The user receives clear recognition, pattern visibility, and regulation guidance.
 
 ## Stable Repo-Level Lock
@@ -186,8 +166,4 @@ Phase 1 is an environmental field prepass before it is a natal interpretation sy
 
 It identifies how birthplace, childhood terrain, adolescent terrain, lived locations, current terrain, biome, abiotic conditions, GeoPresence, and environmental pressure shape, cook, amplify, suppress, distort, stabilize, or reroute later chart expression.
 
-Birth date must not be interpreted before the environmental field exists.
-
 All outputs remain probabilistic.
-
-No environmental marker becomes a major user-facing claim without convergence.

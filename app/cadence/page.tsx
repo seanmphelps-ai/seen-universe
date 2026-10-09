@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -46,7 +47,7 @@ export default function CadencePage() {
           </div>
           <h1 className="seenDisplayLarge">The reading continues as practice.</h1>
           <p className="seenFlowIntroduction">
-            Cadence starts from the selected Closure pattern. No second onboarding.
+            Cadence starts from the selected Closure pattern. Continue directly into daily practice.
           </p>
           <div className="seenDivider" aria-hidden="true" />
         </header>
@@ -72,7 +73,7 @@ export default function CadencePage() {
             </>
           ) : (
             <p className="seenFieldSupport">
-              No Closure selection is stored in this session.
+              Select a Closure pattern to begin.
             </p>
           )}
           <Link className="seenButtonSecondary" href="/closure">← Closure</Link>

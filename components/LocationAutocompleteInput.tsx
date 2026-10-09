@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
@@ -21,7 +22,7 @@ type LocationAutocompleteInputProps = {
   ariaLabel?: string;
   className?: string;
   onLocationEntered?: (label: string) => void;
-  /** Selected city with coordinates. Null when the text is no longer that pick. */
+
   onPlaceSelect?: (suggestion: CitySuggestion | null) => void;
 };
 
@@ -73,8 +74,6 @@ export function LocationAutocompleteInput({
           setHighlightedIndex(-1);
         }
       } catch {
-        // Network hiccup on a typeahead is not worth surfacing — the
-        // user can keep typing their own text either way.
       }
     }, DEBOUNCE_MS);
 
@@ -169,9 +168,6 @@ export function LocationAutocompleteInput({
                     : 'seenCitySuggestion'
                 }
                 onMouseDown={(event) => {
-                  // mousedown (not click) so this fires before the
-                  // input's blur handler would otherwise close the
-                  // dropdown first.
                   event.preventDefault();
                   selectSuggestion(suggestion);
                 }}

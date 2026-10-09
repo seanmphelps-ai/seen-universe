@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, it, expect } from 'vitest';
 import {
   buildLausUnemploymentRateSeriesId,
@@ -47,7 +48,7 @@ describe('parseBlsResponse', () => {
     expect(result.data[0].value).toBe(4.9);
   });
 
-  it('throws when status is not REQUEST_SUCCEEDED rather than treating it as empty data', () => {
+  it('throws for an unsuccessful BLS status', () => {
     expect(() => parseBlsResponse({ status: 'REQUEST_NOT_PROCESSED' }, seriesId)).toThrow(
       BlsLausError,
     );
@@ -70,7 +71,7 @@ describe('parseBlsResponse', () => {
     }
   });
 
-  it('still redacts when the key passed in has surrounding whitespace but the echoed message does not (root cause of the live leak)', () => {
+  it('redacts a trimmed key echoed by the upstream service', () => {
     const cleanKey = 'f0b505d75088441cac8bf73d71a914dd';
     const keyWithWhitespace = `${cleanKey}\n`; // e.g. pasted into a dashboard field
     const response = {
@@ -90,7 +91,7 @@ describe('parseBlsResponse', () => {
   it('throws when the requested series is absent from the response', () => {
     expect(() =>
       parseBlsResponse(blsFixture, 'LAUCN999990000000003'),
-    ).toThrow(/did not include the requested series/);
+    ).toThrow(/requires the requested series/);
   });
 });
 

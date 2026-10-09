@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 // SEEN Location — Environmental Witness first pass.
 //
 // This is the high-recall Location pass. Its job is to reconstruct the
@@ -41,10 +42,7 @@ export type WitnessSourceLane = {
   purpose: string;
 };
 
-/**
- * Explicit first-pass research lanes. Concrete provider implementations can
- * change without changing the environmental witness contract.
- */
+
 export const WITNESS_SOURCE_LANES: WitnessSourceLane[] = [
   {
     sourceFamily: 'SOCIAL_PUBLIC',
@@ -139,11 +137,7 @@ export type EnvironmentalWitnessRecord = {
   providerFailures: WitnessProviderFailure[];
 };
 
-/**
- * Broad witness prompts. They describe the place without selecting what
- * should matter to a particular person. A later SEEN pass can weight these
- * discoveries against natal and other person-specific systems.
- */
+
 export const WITNESS_RESEARCH_QUESTIONS: string[] = [
   'What is repeatedly encountered in ordinary daily life here?',
   'What makes ordinary days easier here?',
@@ -195,12 +189,7 @@ function discoveryFor(markerId: string, observations: Observation[]): Environmen
   };
 }
 
-/**
- * Runs the first-pass environmental witness across every supplied provider.
- * Each provider is isolated so a missing or failed source family cannot erase
- * the rest of the place. Every valid observation is retained for downstream
- * V2 dedupe/vector/confidence/scoring work.
- */
+
 export async function runEnvironmentalWitness(
   input: EnvironmentalWitnessInput,
   providers: WitnessProvider[],

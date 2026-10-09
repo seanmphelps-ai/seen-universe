@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # SEEN Canonical UI Language
 
 This document is the visual source of truth for every SEEN PWA surface.
@@ -199,7 +200,7 @@ Product strings resolve from the governing intake and product-language canon.
 
 ### Location — environmental exposure
 
-The location card is not named The Forge. Its label is environmental exposure.
+Its label is environmental exposure.
 
 `/foundation/location` uses `public/foundation/location-forge-background.png`
 as its canonical visual background and `docs/location-philosophy.md` as its

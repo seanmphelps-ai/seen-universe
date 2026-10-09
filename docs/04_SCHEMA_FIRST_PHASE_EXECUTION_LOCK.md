@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # 04_SCHEMA_FIRST_PHASE_EXECUTION_LOCK
 
 This file defines the schema-first execution rule for SEEN phase work.
@@ -5,10 +6,6 @@ This file defines the schema-first execution rule for SEEN phase work.
 Schemas come first.
 
 Every part runs only after its required schemas, registries, input contracts, output contracts, confidence rules, and storage contracts are loaded and validated.
-
-No calculation may define its own meaning after it runs.
-
-No Generator pass may improvise scoring, routing, extraction, confidence, contradiction handling, or output structure.
 
 The Generator receives those instructions from registered schemas before execution.
 
@@ -23,10 +20,6 @@ Every system must follow this order:
 5. Penetrate and layer through the complete 64-portal lattice.
 6. Validate output contract.
 7. Store result.
-
-Schemas are never added after the calculation they govern.
-
-A system that does not have its required schema and contract loaded must not run.
 
 ## Phase 1 Schema Load
 
@@ -75,23 +68,13 @@ Location data is required.
 
 Location data must be resolved, calculated, retained, and stored as part of the required environmental calculation.
 
-Do not use “when available” for required location and environmental data.
-
 ## Independent System Run Rule
 
 Before each independent system run, load that system’s complete schema first.
 
 Each system runs independently before synthesis.
 
-Do not merge early.
-
-Do not narrate early.
-
-Do not force overlap.
-
 Each system must first produce its own structured source field.
-
-## Required Independent Runs
 
 ### Vedic
 
@@ -153,13 +136,8 @@ Each source layer is stored as:
 - layered
 - contradictory
 - insufficient signal
-- no applicable signal
-
-Sources layer without replacing prior source layers.
 
 Later sources may encounter and read earlier layers.
-
-Later sources may not overwrite earlier layers.
 
 Source identity remains preserved until convergence.
 
@@ -169,11 +147,7 @@ The canonical execution verb is **penetrate**.
 
 Supporting verbs are **layer**, **occupy**, and **accumulate**.
 
-**Scan** is not an execution verb for portal penetration.
-
 All 64 portals are penetrated and layered.
-
-All 64 portals are not surfaced by default.
 
 Only portals with enough validated convergence may become user-facing later through Oracle rendering.
 
@@ -194,17 +168,9 @@ Required source fields include:
 
 Storage must preserve source identity.
 
-Do not collapse source fields into one blended interpretation before portal penetration, confidence scoring, contradiction detection, convergence, and output validation complete.
-
 ## Generator Boundary
 
 The Generator calculates, scores, routes, extracts, penetrates, layers, validates, and stores.
-
-The Generator does not invent the meaning of a system after receiving raw data.
-
-The Generator does not produce prose directly from raw ingredients.
-
-The Generator does not perform Oracle narration.
 
 The Generator must produce schema-shaped structured output.
 
@@ -212,29 +178,15 @@ The Generator must produce schema-shaped structured output.
 
 The Oracle renders only after the Generator has completed schema-governed extraction, portal penetration, persistent source layering, confidence handling, contradiction handling, validated convergence, and structured payload compilation.
 
-The Oracle does not calculate.
-
-The Oracle does not score.
-
-The Oracle does not decide what is present.
-
 The Oracle receives validated structured payloads.
 
 ## Failure Rule
-
-If a required schema, registry, input contract, output contract, scoring rule, confidence rule, contradiction rule, portal penetration contract, or storage contract is missing, the system must not pretend the phase is complete.
 
 Mark the missing dependency as:
 
 - locked
 - likely
 - uncertain
-
-Do not run a calculation governed by a missing required schema.
-
-Do not fill schema gaps with prose.
-
-Do not hallucinate certainty.
 
 ## Final Lock
 
@@ -249,5 +201,3 @@ Every independent system penetrates and layers through all 64 portals.
 Every portal receives a persistent source presence record.
 
 Every output validates before storage.
-
-The Generator never improvises the contract it is supposed to obey.

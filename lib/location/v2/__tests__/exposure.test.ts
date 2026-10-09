@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, it, expect } from 'vitest';
 import {
   CONDITIONING_DISCLOSURE,
@@ -115,7 +116,7 @@ describe('computeSliceDose', () => {
     expect(result.unavailableReason).toMatch(/NOT substituted/);
   });
 
-  it('refuses a vector whose window does not overlap the lived interval', () => {
+  it('rejects a vector with a disjoint lived interval', () => {
     const outOfPeriod = vector({
       key: {
         markerId: 'violent_incident',
@@ -127,7 +128,7 @@ describe('computeSliceDose', () => {
     const result = computeSliceDose(slice({ start: '1990-01-01', end: '1995-01-01' }), outOfPeriod);
 
     expect(result.status).toBe('UNAVAILABLE');
-    expect(result.unavailableReason).toMatch(/does not overlap/);
+    expect(result.unavailableReason).toMatch(/fails to overlap/);
   });
 
   it('accepts a vector that partially overlaps the lived interval', () => {

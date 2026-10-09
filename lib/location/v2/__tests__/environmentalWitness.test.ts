@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, expect, it } from 'vitest';
 import {
   runEnvironmentalWitness,
@@ -115,8 +116,6 @@ describe('runEnvironmentalWitness', () => {
       ]),
     );
 
-    // First pass captures the field. It does not collapse eight distinct
-    // environmental findings into one person-specific interpretation.
     expect(record.discoveries.every((finding) => finding.observationCount >= 1)).toBe(true);
     expect(record.familiesPresent).toEqual(
       expect.arrayContaining(['SOCIAL_PUBLIC', 'REVIEWS', 'MARKETPLACE', 'LOCAL_NEWS', 'OFFICIAL_DATA']),

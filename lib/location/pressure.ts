@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 export type SketchId = 'A' | 'B' | 'C';
 
 export type LocationSketch = {
@@ -35,9 +36,9 @@ const CLASS_COPY: Record<
 > = {
   storefront: {
     sketches: [
-      { id: 'A', title: 'Postcard', body: 'Pretty town. Mountain or lake as the product. Visitors set the main street.', gift: 'Beauty as air.', cost: 'The street is not yours in season.' },
+      { id: 'A', title: 'Postcard', body: 'Pretty town. Mountain or lake as the product. Visitors set the main street.', gift: 'Beauty as air.', cost: 'Visitors dominate the street in season.' },
       { id: 'B', title: 'Floor', body: 'You serve the look. Hours bend to season. Locals buy groceries where tourists buy the view.', gift: 'Clear work.', cost: 'Your life waits on other people\'s holidays.' },
-      { id: 'C', title: 'Split', body: 'Display case in front. Apartments in back. Which room you slept in is the dose.', gift: 'Two rooms to learn.', cost: 'Never fully guest, never fully local.' },
+      { id: 'C', title: 'Split', body: 'Display case in front. Apartments in back. Which room you slept in is the dose.', gift: 'Two rooms to learn.', cost: 'Living between guest and local identities.' },
     ],
     definite: ['season owns the calendar', 'land is the product', 'money arrives with visitors'],
     probableIfChosen: {
@@ -50,7 +51,7 @@ const CLASS_COPY: Record<
   shop_floor: {
     sketches: [
       { id: 'A', title: 'Postcard', body: 'Valley town. Errands, hospital, highway. Ordinary on purpose.', gift: 'A usable life.', cost: 'Easy to disappear into function.' },
-      { id: 'B', title: 'Floor', body: 'Work and kin keep you. Winter is a job, not a postcard.', gift: 'Roots can take.', cost: 'Staying can become a sentence.' },
+      { id: 'B', title: 'Floor', body: 'Work and kin keep you. Winter demands work.', gift: 'Roots can take.', cost: 'Staying can become a sentence.' },
       { id: 'C', title: 'Split', body: 'This town serves the pretty neighbor. Some grow here. Some wait to become the other place.', gift: 'A real floor.', cost: 'Comparison to the storefront.' },
     ],
     definite: ['work calendar', 'winter as duration', 'this town stocks the valley'],
@@ -59,7 +60,7 @@ const CLASS_COPY: Record<
       B: ['stay for function', 'weather as grind'],
       C: ['leaving as a flex or a wound'],
     },
-    potential: ['never leave', 'resent the display town'],
+    potential: ['stay indefinitely', 'resent the display town'],
   },
   tourist_port: {
     sketches: [
@@ -87,12 +88,12 @@ const CLASS_COPY: Record<
       B: ['tired by the time you get home'],
       C: ['owned vs priced-out split'],
     },
-    potential: ['never belonging to the city you work in'],
+    potential: ['feeling like an outsider in the city you work in'],
   },
   working_city: {
     sketches: [
       { id: 'A', title: 'Postcard', body: 'The face the city sells.', gift: 'A public room.', cost: 'The face can eat the floor.' },
-      { id: 'B', title: 'Floor', body: 'Jobs, weather, who owns the street.', gift: 'A usable day.', cost: 'Duty without a chosen stage.' },
+      { id: 'B', title: 'Floor', body: 'Jobs, weather, who owns the street.', gift: 'A usable day.', cost: 'Duty imposed by circumstance.' },
       { id: 'C', title: 'Split', body: 'Pretty blocks and serving blocks share a name.', gift: 'Two soils in one zip.', cost: 'Wrong sketch, wrong dose.' },
     ],
     definite: ['a public street with an owner', 'a season that repeats', 'a way money enters'],

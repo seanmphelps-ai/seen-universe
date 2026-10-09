@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { z } from 'zod';
 
 export const HiddenClockSchema = z.enum(['04:00', '12:00', '20:00']);
@@ -24,7 +25,7 @@ export const AttachmentOnCardSchema = z.object({
 
 export const DarkCardSchema = z.object({
   runId: z.string().min(1),
-  /** Metadata only — never required for face render. */
+
   clock: z.string().regex(/^\d{2}:\d{2}$/).optional(),
   paragraph: z.string().min(80),
   reveal: z.string().min(1),

@@ -1,5 +1,4 @@
-# CLOSURE & COMPOSURE CONTEXT
-
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 ## Goal
 
 Two complete people enter. Three recognizable comparative shadows return. The user selects the true pattern. SEEN explains what happened and begins Cadence immediately.
@@ -18,4 +17,3 @@ Entry → interaction mode → Person A Foundation → Person B Foundation → r
 ## Output contract
 
 Explain connection, recurrence, protective adaptation, trigger, pressure, cost, consequence, capacity, limits, and the first stabilizing action. Preserve each person's evidence and contradictions.
-

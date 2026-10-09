@@ -1,17 +1,4 @@
-// lib/natalChart.ts
-//
-// Real natal chart calculation via swisseph-wasm — a WebAssembly build of the
-// actual Swiss Ephemeris C library (Astrodienst), run with the SEFLG_SWIEPH
-// flag (not SEFLG_MOSEPH/Moshier). Runs in-browser, no native bindings, so it
-// stays compatible with static export.
-//
-// Local birth time is converted to UTC via tz-lookup (coordinates -> IANA
-// timezone) + luxon (correct historical DST handling for that zone), then
-// swe_julday/swe_calc_ut/swe_houses do the actual astronomy.
-//
-// If birth time is unknown, house placements, Ascendant, and Midheaven are
-// left out entirely rather than computed from a guessed noon time — those
-// values are only valid with a real birth time.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import SwissEph from "swisseph-wasm";
 import tzlookup from "tz-lookup";
@@ -90,10 +77,6 @@ const PLANET_LABELS: { key: string; label: string }[] = [
 
 const SOUTH_NODE = { key: "south-node", label: "South Node" };
 
-// Major-aspect angles and orbs. Orb size is a matter of astrological
-// convention, not an empirical fact — these are standard, commonly used
-// values (tighter for sextile, wider for conjunction/opposition), not
-// invented for this app.
 const MAJOR_ASPECTS: { name: string; angle: number; orb: number }[] = [
   { name: "Conjunction", angle: 0, orb: 8 },
   { name: "Sextile", angle: 60, orb: 6 },

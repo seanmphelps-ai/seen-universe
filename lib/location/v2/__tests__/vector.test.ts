@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, it, expect } from 'vitest';
 import {
   computeAmplification,
@@ -115,7 +116,7 @@ describe('computeSeverity', () => {
     expect(severity.n).toBe(3);
   });
 
-  it('does not hide a rare extreme inside the median', () => {
+  it('reports a rare extreme alongside the median', () => {
     // Median sits on the low mass either way; the upper tail is what
     // exposes the fatal events, which is the point of reporting both.
     const oneInTen = computeSeverity(
@@ -137,7 +138,6 @@ describe('computeSeverity', () => {
         ],
       }),
     )!;
-    // The median is unmoved by tripling the fatalities; the tail is not.
     expect(threeInTen.median).toBeCloseTo(0.25, 12);
     expect(threeInTen.upperTail).toBe(1.0);
   });
@@ -174,8 +174,6 @@ describe('computePhysicalDose', () => {
     expect(dose(1)).toBeLessThan(1);
     expect(dose(20)).toBeLessThan(1);
     expect(dose(20)).toBeGreaterThan(dose(1));
-    // ...and never exceeds 1. At extreme dose exp(-x) underflows to 0 in
-    // float64, so the mathematical open bound closes to exactly 1.
     expect(dose(10_000)).toBe(1);
   });
 
@@ -195,7 +193,7 @@ describe('computePhysicalDose', () => {
 });
 
 describe('computeDigitalDose', () => {
-  it('uses measured deduplicated reach when available and does not flag a proxy', () => {
+  it('labels measured deduplicated reach as measured', () => {
     const inputs = baseInputs({
       connectedLocalPopulation: 10_000,
       measuredDedupedLocalReach: 5_000,
@@ -319,9 +317,7 @@ describe('computeConcentration', () => {
     expect(result.top1PercentShare).toBeGreaterThan(0.85);
   });
 
-  it('never reads account participation — that is a confidence diagnostic, not CONC', () => {
-    // No spatialOccurrenceDistribution supplied; accountParticipation is not
-    // even a field on VectorInputs any more (moved to ConfidenceInputs).
+  it('uses account participation as a confidence diagnostic', () => {
     expect(computeConcentration(baseInputs())).toBeNull();
   });
 

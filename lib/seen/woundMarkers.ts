@@ -1,8 +1,5 @@
-/**
- * Wound-marker qualification: the rule governs, not the example list.
- * This module records verified potential. Pressure, activation and expression
- * require separate evidence; neither a natal position nor a place proves them.
- */
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
+
 import type { NatalChartResult } from '../natalChart';
 import type { BaselinePressureEffect } from './geoPresence';
 
@@ -37,16 +34,14 @@ export type WoundCandidate = {
   unresolved?: string[];
 };
 
-/** Canonical qualifying mechanics. A verified independent candidate is not
- * disqualified for being absent from CORE or for failing to overlap. */
+
 const QUALIFYING = /destabiliz|sever|compuls|shadow.intensif|wound|fractur|shame|rage|bind|dissolv|self.undo|sabotage|contraction|fear|power.distort|collaps|chaot/i;
 
 export type WoundMarkerHit = WoundCandidate & {
   sign: string;
   degree: number;
   house: number | null;
-  /** Legacy field; only present when a caller explicitly supplies a baseline.
-   * It is context, not proof of wound activation. */
+
   pressure?: BaselinePressureEffect;
   potential: true;
   activation: 'UNRESOLVED';
@@ -69,11 +64,7 @@ export function qualifiesAsWoundMarker(candidate: WoundCandidate): boolean {
   return candidate.qualities.some(quality => QUALIFYING.test(quality));
 }
 
-/**
- * Preserve independently calculated qualifying signals with provenance.
- * Additional modalities supply verified candidates; unavailable native
- * calculations are not synthesized here.
- */
+
 export function extractWoundMarkers(
   chart: NatalChartResult,
   _baseline?: BaselinePressureEffect,

@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # EDEN CONTEXT
 
 Eden is SEEN's mask-free dating and relational-sharing layer. It follows usable SEEN, Closure & Composure, and Cadence records.
@@ -12,4 +13,3 @@ Eden is SEEN's mask-free dating and relational-sharing layer. It follows usable 
 - Place and timing for dates, trips, and relocation
 - Consent history for every shared field
 - Comparison between the initial reading and the relationship actually lived
-

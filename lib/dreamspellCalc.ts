@@ -1,7 +1,4 @@
-// Wheel: @oshimishi/dreamspell-math@0.3.2 (MIT) https://github.com/oshimish/dreamspell-math
-// Call: dreamdate([year, monthIndex, day]) — CJS entry. The package ESM build does not resolve.
-// Input: birthDate "YYYY-MM-DD". Moment array months are zero-based, matching the library epoch.
-// Output: DreamDate / Kin / Oracle fields. Not a traditional Tzolk'in correlation.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import { createRequire } from 'node:module';
 import type { DreamDate } from '@oshimishi/dreamspell-math';

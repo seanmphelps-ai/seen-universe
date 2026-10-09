@@ -1,30 +1,4 @@
-// Environmental training inference — step 6 of the contract.
-//
-//   Environment → pressure/reward → trigger → adaptation →
-//   behavior/belief → capacity → cost → consequence
-//
-// The question this layer answers is not "what is this place like?" but
-// "what does prolonged exposure to this environment tend to train?" —
-// and it answers it as a claim about what an environment repeatedly
-// rewards, punishes, normalizes and makes adaptive, never as a claim
-// about who any resident is.
-//
-// Three invariants are enforced in code, not left to the prompt or to
-// reviewer discipline, because every one of them has a failure mode that
-// looks fine on the page:
-//
-//   1. LANGUAGE. "may reward", "appears normalized", "evidence suggests"
-//      are permitted. "residents are", "this place makes you", and any
-//      language of fate are rejected outright — renderInference throws.
-//   2. SUPPORT. An inference must cite at least MINIMUM_SUPPORTING_SOURCES
-//      distinct supporting observations. Below that it does not render.
-//   3. COUNTEREVIDENCE. Every inference must carry a counterevidence
-//      field. "None found" is an acceptable value; omitting the search
-//      is not, so the field is required and its absence is an error.
-//
-// Both capacity AND cost are always emitted. An environment that trains
-// vigilance trains both a capability and a liability, and reporting only
-// one half is the distortion this layer exists to prevent.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import type { ConfidenceReport, MarkerPolarity } from './types';
 
@@ -52,23 +26,7 @@ export const INFERENCE_CHAIN: InferenceStage[] = [
   'CONSEQUENCE',
 ];
 
-/**
- * Every stage of the chain is rendered at ENVIRONMENT scope. Location
- * reconstructs what a place asks of anyone living in it; it never
- * concludes that a particular person answered that demand.
- *
- * ADAPTATION is the terminal stage Location may assert on its own
- * evidence. Stages after it (BEHAVIOR_BELIEF, CAPACITY, COST,
- * CONSEQUENCE) are rendered as CANDIDATE demands and possibilities the
- * environment creates — they are handed to later SEEN systems, which
- * decide whether any of it actually appears in this person. See
- * interrogation.ts's ADAPTIVE_DEMAND_BOUNDARY.
- *
- * The distinction is not cosmetic. "This environment may train
- * vigilance" is an environmental claim Location can support. "This
- * person is vigilant" is a psychological claim it cannot, and the
- * language rules below exist to keep the second from being written.
- */
+
 export const LOCATION_TERMINAL_STAGE: InferenceStage = 'ADAPTATION';
 
 export const CANDIDATE_STAGES: InferenceStage[] = [
@@ -139,11 +97,7 @@ export type SupportingObservation = {
 export type Counterevidence = {
   /** Observations that cut against the inference. May be empty. */
   observations: SupportingObservation[];
-  /**
-   * Required narrative. When no counterevidence was found, this must say
-   * so explicitly and say where it was looked for — an empty array with
-   * no explanation is indistinguishable from never having looked.
-   */
+
   statement: string;
 };
 
@@ -166,11 +120,7 @@ export type EnvironmentalInference = {
   confidence: ConfidenceReport;
 };
 
-/**
- * Validates rendered inference text against the language contract.
- * Throws rather than sanitizing: silently rewriting a deterministic claim
- * into a hedged one would hide that a rule is producing bad output.
- */
+
 export function assertPermittedLanguage(text: string, context: string): void {
   const lowered = text.toLowerCase();
 
@@ -179,7 +129,7 @@ export function assertPermittedLanguage(text: string, context: string): void {
       throw new InferenceLanguageError(
         `Inference text for ${context} contains the forbidden phrase "${phrase}". ` +
           `This layer describes what an environment may reward or normalize — ` +
-          `it never asserts what residents are, nor anything about fate. Text: "${text}"`,
+          `it describes evidenced environmental possibilities. Individual claims require person-specific evidence. Text: "${text}"`,
       );
     }
   }
@@ -187,7 +137,7 @@ export function assertPermittedLanguage(text: string, context: string): void {
   if (!REQUIRED_HEDGES.some((hedge) => lowered.includes(hedge))) {
     throw new InferenceLanguageError(
       `Inference text for ${context} contains no permitted hedge ` +
-        `(one of: ${REQUIRED_HEDGES.join(', ')}). Unhedged environmental claims are not renderable. ` +
+        `(one of: ${REQUIRED_HEDGES.join(', ')}). Environmental claims require explicit uncertainty language. ` +
         `Text: "${text}"`,
     );
   }
@@ -216,14 +166,14 @@ export function renderInference(draft: InferenceDraft): EnvironmentalInference {
     throw new InsufficientSupportError(
       `Inference "${draft.inferenceId}" cites ${distinctSupport.size} distinct supporting ` +
         `observation(s); ${MINIMUM_SUPPORTING_SOURCES} are required before it may render. ` +
-        `An under-supported inference is withheld, not weakened and shown anyway.`,
+        `Inference display requires sufficient support.`,
     );
   }
 
   if (!draft.counterevidence || draft.counterevidence.statement.trim() === '') {
     throw new InsufficientSupportError(
       `Inference "${draft.inferenceId}" has no counterevidence statement. The field is required: ` +
-        `"no counterevidence found in <families searched>" is acceptable, silence is not.`,
+        `State the counterevidence found or document the searched families with an empty result.`,
     );
   }
 
@@ -232,11 +182,9 @@ export function renderInference(draft: InferenceDraft): EnvironmentalInference {
     if (!text || text.trim() === '') {
       throw new InferenceLanguageError(
         `Inference "${draft.inferenceId}" is missing chain stage ${stage}. ` +
-          `The full Environment → … → Consequence chain must be rendered; partial chains are not displayable.`,
+          `Render the full Environment → … → Consequence chain.`,
       );
     }
-    // ENVIRONMENT states what was measured and is the one stage that does
-    // not hedge — it reports observation, not inference.
     if (stage !== 'ENVIRONMENT') {
       assertPermittedLanguage(text, `${draft.inferenceId}/${stage}`);
     }
@@ -259,11 +207,7 @@ export function renderInference(draft: InferenceDraft): EnvironmentalInference {
   };
 }
 
-/**
- * The environmental questions the inference layer is built to answer.
- * Stored as data so the rule set and the UI stay in sync, and so that
- * what SEEN claims to examine is auditable rather than implicit.
- */
+
 export type EnvironmentalQuestion = {
   id: string;
   question: string;

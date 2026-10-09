@@ -1,11 +1,11 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # INTAKE SCHEMA — typed inputs and outputs, chained
 
 Every stage has a defined INPUT and a defined OUTPUT.
 The output of one stage is the input of the next.
-No stage runs on a word that is not defined.
 
 Grok Bot first slice: `docs/00_GROK_BOT_FIRST_SLICE.md`.
-First slice is Stage 0 through Stage 5: three hidden runs at `04:00`, `12:00`, and `20:00`, then ±3h, ±2h, and ±1h. Stages 6–10 exist as types only. Do not build them yet.
+First slice is Stage 0 through Stage 5: three hidden runs at `04:00`, `12:00`, and `20:00`, then ±3h, ±2h, and ±1h. Stages 6–10 exist as types only.
 
 ---
 
@@ -30,7 +30,6 @@ First slice is Stage 0 through Stage 5: three hidden runs at `04:00`, `12:00`, a
 - `BirthAnchor { name, birthDate, birthCity }`
 
 Birth city is coordinates only. It exists so Swiss Ephemeris can compute.
-No lived places here. No scoring. No environment.
 
 ---
 
@@ -49,7 +48,7 @@ No lived places here. No scoring. No environment.
 **Output**
 - `LivedExposure { birthAnchor, livedPlaces[] }`
 
-This is data collection. No scoring. No sky calculation. No card text yet.
+This is data collection.
 1993 Los Angeles and 2026 Los Angeles are two separate entries.
 
 ---
@@ -60,7 +59,6 @@ This is data collection. No scoring. No sky calculation. No card text yet.
 - `LivedExposure`
 - three fixed local clocks: `04:00`, `12:00`, `20:00`
 
-**For each clock the engine computes (Swiss Ephemeris, never homemade):**
 - Julian Day from date + clock + birthCity timezone
 - planetary positions: Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, Chiron, true Lilith
 - houses and lots = null until time is locked; signs and aspects still valid
@@ -69,7 +67,7 @@ This is data collection. No scoring. No sky calculation. No card text yet.
 **Output per run**
 - `HiddenRun { clock, positions, woundMarkers[], livedExposure }`
 
-Three runs. Three outputs. None shown to the user yet. Round 1 is these clocks. `06:00` and `18:00` are not hidden-run clocks.
+Three runs. Three outputs. None shown to the user yet. Round 1 is these clocks.
 
 ---
 
@@ -81,8 +79,6 @@ Three runs. Three outputs. None shown to the user yet. Round 1 is these clocks. 
 
 **For each run the generator produces one card:**
 - a paragraph, minimum three sentences
-- no clock shown
-- no planet names, house numbers, degrees, or aspect types visible
 - must contain: trigger, pressure point, behavior, where it collapses, where it thrives, cost to them, cost to others, what is lost if it runs one more cycle
 - the lived exposure shapes the sentence: same Chiron in 1995 Compton and 2026 Whitefish is a different card
 
@@ -98,7 +94,7 @@ If a card reads like a horoscope, reject it.
 **Input**
 - `DarkCard[]`
 
-**Round 1**: three hidden runs (`04:00`, `12:00`, `20:00`). User picks the summary they recognize. No clock on the card.
+**Round 1**: three hidden runs (`04:00`, `12:00`, `20:00`). User picks the summary they recognize.
 **Round 2**: ±3h around the pick → three new cards. `04:00` → `01:00` / `04:00` / `07:00`. `12:00` → `09:00` / `12:00` / `15:00`. `20:00` → `17:00` / `20:00` / `23:00`.
 **Round 3**: ±2h around the latest pick → three new cards.
 **Round 4**: ±1h around the latest pick → three new cards.
@@ -110,7 +106,7 @@ FIRST SLICE ENDS HERE.
 
 ---
 
-## Stage 6 — Locked Western — DO NOT BUILD YET
+## Stage 6 — Locked Western — DEFERRED IMPLEMENTATION
 
 **Input**
 - `LockedTime`
@@ -121,22 +117,22 @@ FIRST SLICE ENDS HERE.
 
 ---
 
-## Stage 7 — Lived-Location Gift and Cost — DO NOT BUILD YET
+## Stage 7 — Lived-Location Gift and Cost — DEFERRED IMPLEMENTATION
 
 ---
 
-## Stage 8 — Family as Soil — DO NOT BUILD YET
+## Stage 8 — Family as Soil — DEFERRED IMPLEMENTATION
 
 ---
 
-## Stage 9 — Sovereignty — DO NOT BUILD YET
+## Stage 9 — Sovereignty — DEFERRED IMPLEMENTATION
 
 ---
 
-## Stage 10 — Portals and Helix — DO NOT BUILD YET
+## Stage 10 — Portals and Helix — DEFERRED IMPLEMENTATION
 
-64 portals file into 45 life sections later. They are not this slice.
-This is where other builders lost the plot. Do not start it.
+64 portals file into 45 life sections later.
+This is where other builders lost the plot.
 
 ---
 
@@ -144,20 +140,18 @@ This is where other builders lost the plot. Do not start it.
 
 `Identity → BirthAnchor → LivedExposure → HiddenRun[3] → DarkCard[3] → Pick/Narrow (±3h → ±2h → ±1h) → STOP`
 
-Each arrow is a typed handoff. No stage skips its input. No stage invents its output.
+Each arrow is a typed handoff.
 
 ---
 
 ## UI
 
 Horizontal scroll rail of live HTML cards over Forge atmosphere art.
-No splash required. No sitemap tree. No separate tab per clock.
 
 ---
 
 ## Forbidden
 
-- The word "stack" with no type behind it
 - Environment before date
 - Optional time
 - Noon as a stand-in
@@ -166,7 +160,6 @@ No splash required. No sitemap tree. No separate tab per clock.
 - One-line or sentence-only cards
 - Planet names or house numbers in user-facing text
 - Jung on dark cards
-- 108 portals (there are 64, and they are not this slice)
 - Personality bands
 - Scoring engines on the first cards
 - Building Stage 6–10 because the file lists them

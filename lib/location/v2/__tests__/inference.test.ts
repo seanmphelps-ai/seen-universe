@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, it, expect } from 'vitest';
 import {
   ENVIRONMENTAL_QUESTIONS,
@@ -119,7 +120,7 @@ describe('renderInference', () => {
     expect(MINIMUM_SUPPORTING_SOURCES).toBe(3);
   });
 
-  it('counts DISTINCT observations, so one source repeated three times is not enough', () => {
+  it('requires distinct observations from independent sources', () => {
     const repeated = draft({
       supporting: [
         { observationId: 'same', sourceUrl: null, provider: 'p', excerpt: 'a' },
@@ -130,7 +131,7 @@ describe('renderInference', () => {
     expect(() => renderInference(repeated)).toThrow(InsufficientSupportError);
   });
 
-  it('requires a counterevidence statement — silence is not acceptable', () => {
+  it('requires an explicit counterevidence statement', () => {
     const silent = draft({ counterevidence: { observations: [], statement: '   ' } });
     expect(() => renderInference(silent)).toThrow(/counterevidence/i);
   });
@@ -162,7 +163,7 @@ describe('renderInference', () => {
     expect(() => renderInference(measured)).not.toThrow();
   });
 
-  it('emits capacity and cost together, never one alone', () => {
+  it('emits capacity and cost together', () => {
     const inference = renderInference(draft());
     expect(inference.capacity.length).toBeGreaterThan(0);
     expect(inference.cost.length).toBeGreaterThan(0);

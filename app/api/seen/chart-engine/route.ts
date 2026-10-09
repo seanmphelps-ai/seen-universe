@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { NextRequest, NextResponse } from 'next/server';
 import { resolveDarkClocks } from '../../../../lib/rectification/timeNarrowing';
 import { DARK_WINDOWS, runChartEngine, runDarkWindowSet } from '../../../../lib/seen/chartEngine';
@@ -70,7 +71,7 @@ export async function POST(request: NextRequest) {
 
     if (!clock || !isClock(clock)) {
       return NextResponse.json(
-        { error: 'A hidden clock is required. Do not guess noon.' },
+        { error: 'Supply a configured hidden candidate clock.' },
         { status: 400 },
       );
     }

@@ -1,14 +1,8 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { NextResponse } from 'next/server';
 import { buildLocationField } from '../../../../lib/location/buildLocationField';
 import type { LocationInput } from '../../../../lib/location/types';
 
-// Deployment-verification endpoint only — exercises the unmodified
-// lib/location/buildLocationField against a fixed test location, run from
-// inside whatever runtime this route is deployed to (Cloudflare Workers,
-// via nodejs_compat + fetch). Same fixed input as
-// scripts/verify-location-live.ts, which cannot run inside a Worker at all
-// (it needs tsx/Node). No mock data; a failed adapter reports UNKNOWN with
-// its real reason, same as the standalone script.
 
 export const runtime = 'nodejs';
 
@@ -21,11 +15,6 @@ const TEST_INPUT: LocationInput = {
   role: 'LIVED',
 };
 
-// Reports whether an env var is actually reaching this running deployment,
-// without exposing the real value — added specifically to distinguish "the
-// Vercel env var isn't wired to Production" from "it's wired correctly but
-// the key itself is rejected by the upstream API". Never logs or returns
-// the full value.
 function maskKey(value: string | undefined): { present: boolean; length: number; masked: string | null } {
   if (!value) return { present: false, length: 0, masked: null };
   const trimmed = value.trim();

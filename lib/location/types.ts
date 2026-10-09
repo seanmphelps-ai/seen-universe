@@ -1,14 +1,4 @@
-// SEEN Location V1 — canonical contract.
-//
-// Scope: this is the tightened V1 spec, which supersedes the older
-// 25-question / full environmental-exposure scope. V1 deliberately omits
-// percentile/extremity normalization, pressure/support composite scores,
-// and multi-location accumulation — those belonged to the older, wider
-// spec. V1 keeps only: exposure, one real Material Field vertical slice,
-// explicit comparator-based classification, provenance, and optional
-// delta against a previous LocationField.
-//
-// Location examines the environment. It does not interpret the person.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 export type LocationRole = 'BIRTH' | 'LIVED' | 'CURRENT';
 
@@ -26,10 +16,6 @@ export type HistoricalGeography = {
   stateName: string;
   countyFips: string;
   countyName: string;
-  // V1 resolves county-level geography only. County FIPS boundaries are
-  // effectively stable for decades, unlike census tract boundaries, which
-  // are redrawn between censuses — resolving to tract would silently imply
-  // historical-boundary precision this V1 does not reconcile.
   geographicResolution: 'county';
   resolvedFrom: {
     latitude: number;

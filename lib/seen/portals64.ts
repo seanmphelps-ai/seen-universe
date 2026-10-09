@@ -1,6 +1,5 @@
-/**
- * 64-portal I Ching spine. Modalities never declare a Portal off.
- */
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
+
 
 export type PortalExpression = {
   portalId: number;
@@ -92,7 +91,7 @@ export function expressPortals(woundCount: number, amplification: number): Porta
       portalId,
       name: PORTAL_64_NAMES[i],
       expression,
-      note: 'Portal remains available; expression changes with pressure. Never inactive.',
+      note: 'Portal remains available; expression changes with pressure.',
     });
   }
   return out;

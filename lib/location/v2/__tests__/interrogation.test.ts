@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, it, expect } from 'vitest';
 import {
   ADAPTIVE_DEMAND_BOUNDARY,
@@ -19,10 +20,10 @@ import { MARKER_REGISTRY } from '../registry';
 import { familyCompetence } from '../competence';
 
 describe('FORGED_REGISTRY canonical schema', () => {
-  it('locks the semantic rule: FORGED is emergent and does not predetermine a person', () => {
+  it('locks FORGED to emergent environmental evidence', () => {
     expect(FORGED_MODEL_RULE).toMatch(/converging evidence/i);
-    expect(FORGED_MODEL_RULE).toMatch(/does not predeclare/i);
-    expect(FORGED_MODEL_RULE).toMatch(/does not.*assert.*resident/i);
+    expect(FORGED_MODEL_RULE).toMatch(/emergent environmental reading/i);
+    expect(FORGED_MODEL_RULE).toMatch(/individual adaptations require evidence specific to the resident/i);
   });
 
   it('declares every required field on every FORGED interrogation', () => {
@@ -83,14 +84,14 @@ describe('FORGED_REGISTRY canonical schema', () => {
     expect(attention.scoringDimensions).not.toContain('PREV');
   });
 
-  it('binds SAFETY to CONC so a citywide rate is never returned bare', () => {
+  it('binds SAFETY to CONC alongside the citywide rate', () => {
     expect(getForged('SAFETY').scoringDimensions).toContain('CONC');
-    expect(getForged('SAFETY').output).toMatch(/never returned without its CONC/i);
+    expect(getForged('SAFETY').output).toMatch(/citywide rate includes its CONC/i);
   });
 
-  it('declares an explicit non-evaluative stance on INTIMACY', () => {
+  it('describes environmental form for INTIMACY', () => {
     const intimacy = getForged('INTIMACY');
-    expect(intimacy.definition).toMatch(/non-evaluative/i);
+    expect(intimacy.definition).toMatch(/describes environmental form/i);
     expect(intimacy.disallowedInference.some((d) => /better, healthier/.test(d))).toBe(true);
   });
 
@@ -105,7 +106,7 @@ describe('disallowed inference', () => {
       const forbidsIndividualClaim = spec.disallowedInference.some((rule) =>
         /\b(a resident|any resident|a specific person|individual)\b/i.test(rule),
       );
-      expect(forbidsIndividualClaim, `${spec.forged} does not forbid an individual-level conclusion`).toBe(true);
+      expect(forbidsIndividualClaim, `${spec.forged} requires an explicit individual-claim boundary`).toBe(true);
     }
   });
 
@@ -155,21 +156,19 @@ describe('decorrelatedWeights — the cross-FORGED double-counting defense', () 
     expect(weights.every((w) => w.weight === 1)).toBe(true);
   });
 
-  it('does not discount a single member of a group', () => {
+  it('preserves full weight for a single group member', () => {
     const weights = decorrelatedWeights(['SCARCITY']);
     expect(weights[0].weight).toBe(1);
   });
 
-  it('discounts correlated FORGED readings so one phenomenon is not counted four times', () => {
+  it('discounts correlated FORGED readings to a shared phenomenon weight', () => {
     // All four are material_conditions, redundancy 0.7.
     const forged: ForgedInterrogation[] = ['EXCLUSION', 'SCARCITY', 'SPENDING_PRIORITY', 'SACRIFICE'];
     const weights = decorrelatedWeights(forged);
     const total = weights.reduce((acc, w) => acc + w.weight, 0);
 
-    // Effective total = 1 + 3*(1-0.7) = 1.9, NOT 4.
     expect(total).toBeCloseTo(1.9, 12);
     expect(total).toBeLessThan(forged.length);
-    // Equal share, so ordering cannot privilege any member.
     expect(new Set(weights.map((w) => w.weight)).size).toBe(1);
   });
 
@@ -190,7 +189,7 @@ describe('decorrelatedWeights — the cross-FORGED double-counting defense', () 
     expect(salience.reduce((a, w) => a + w.weight, 0)).toBeCloseTo(1.5, 12);
   });
 
-  it('never returns a total exceeding the naive count', () => {
+  it('caps the total at the naive count', () => {
     const weights = decorrelatedWeights(ALL_FORGED_INTERROGATIONS);
     const total = weights.reduce((acc, w) => acc + w.weight, 0);
     expect(total).toBeLessThan(ALL_FORGED_INTERROGATIONS.length);
@@ -220,7 +219,7 @@ describe('forgedSourceCompetence', () => {
     expect(forSpending).toBe(0.8);
   });
 
-  it('does not leak an override into other FORGED interrogations', () => {
+  it('scopes an override to its own FORGED interrogation', () => {
     expect(forgedSourceCompetence('SAFETY', 'MARKETPLACE', 'PREV')).toBe(
       familyCompetence('MARKETPLACE', 'PREV'),
     );
@@ -239,7 +238,7 @@ describe('the handoff boundary', () => {
 
     expect(demand.scope).toBe('ENVIRONMENT');
     expect(demand.notAClaimAbout).toBe(ADAPTIVE_DEMAND_BOUNDARY);
-    expect(demand.notAClaimAbout).toMatch(/not a finding about any individual/i);
+    expect(demand.notAClaimAbout).toMatch(/Person-specific evidence is required/i);
   });
 
   it('always carries capacity and cost together', () => {

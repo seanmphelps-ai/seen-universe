@@ -1,18 +1,11 @@
-# SEEN HELLENISTIC CANONICAL BUILD
-
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 ## MISSION
 
 Build a production-grade Hellenistic astrology knowledge and calculation module for SEEN that can withstand independent historical, astrological, mathematical, and engineering audit.
 
-The supplied conversation is project context, not unquestionable canon.
-
 It contains architectural decisions, hypotheses, corrections, candidate schemas, discovered omissions, and unresolved questions.
 
 Extract those distinctions before building.
-
-Do not assume that a technique is complete merely because the conversation describes it.
-
-Do not assume that something is Hellenistic merely because the conversation calls it Hellenistic.
 
 The historical source corpus determines the domain.
 
@@ -33,8 +26,6 @@ OUTPUT\
 
 And reproduce the result independently.
 
-An engineer with no prior knowledge of Hellenistic astrology must be able to implement the module from the resulting artifacts without inventing missing rules.
-
 ---
 
 # NON-NEGOTIABLE ARCHITECTURE
@@ -47,8 +38,6 @@ Preserve these layers independently:
 4. SOURCE-BASED DELINEATION
 5. MODULE SYNTHESIS
 6. SEEN-DERIVED CONVERGENCE
-
-Never silently merge these layers.
 
 ---
 
@@ -68,13 +57,9 @@ INDEPENDENT VERIFICATION SOURCES
 
 Every production rule must retain exact provenance.
 
-Record disagreements rather than flattening them.
-
 ---
 
 # DISCOVERY RULE
-
-Do not treat the technique inventory contained in the supplied project conversation as exhaustive.
 
 It is a candidate inventory.
 
@@ -118,10 +103,6 @@ later techniques incorrectly attributed to the Hellenistic period
 
 modern reconstructions incorrectly presented as ancient
 
-If authoritative evidence requires a field or subsystem not anticipated by the current schema, expand the schema.
-
-Do not omit evidence merely to preserve the proposed architecture.
-
 ---
 
 # MECHANICS CONTRACT
@@ -134,8 +115,6 @@ SOURCE\
 → RESULT\
 → INTERPRETIVE AUTHORITY\
 → TESTIMONY
-
-No production interpretation may exist without this chain.
 
 ---
 
@@ -154,8 +133,6 @@ OPEN_QUESTIONS
 VALIDATION_CASES
 
 Verified corrections become binding module knowledge.
-
-Never silently overwrite historical corrections.
 
 Every verified correction must identify:
 
@@ -181,8 +158,6 @@ A previously corrected failure that appears again is a regression and blocks com
 
 # INDEPENDENT AUDIT
 
-The builder may not certify its own completeness.
-
 Use two logically independent roles.
 
 ## AGENT A — BUILDER
@@ -192,8 +167,6 @@ Researches and constructs each artifact from the locked corpus.
 ## AGENT B — ADVERSARIAL AUDITOR
 
 Independently reconstructs the expected domain from the locked sources.
-
-Agent B must not merely review Agent A's reasoning.
 
 Compare the independent reconstruction against Agent A's artifact.
 
@@ -229,8 +202,6 @@ Blocking failures prevent canon lock.
 
 # RECURSIVE VALIDATION
 
-Do not perform one audit only.
-
 For every major subsystem:
 
 BUILD\
@@ -246,8 +217,6 @@ Apply the same process recursively to complex subsystems such as Lots, planetary
 ---
 
 # LOTS REQUIREMENT
-
-Treat Lots as a first-class historical registry rather than a predefined shortlist.
 
 Discover the inventory from authoritative sources.
 
@@ -279,11 +248,7 @@ textual uncertainty
 
 provenance
 
-Do not collapse identically named lots when different sources provide different formulas or procedures.
-
 Keep Hellenistic material historically distinct from later Persian/Arabic development while recording supported transmission relationships.
-
-The seven planetary/Hermetic lots are an important family, not the assumed boundary of the lot corpus.
 
 ---
 
@@ -312,13 +277,9 @@ TESTIMONY\
 TEMPORAL ACTIVATION\
 OUTPUT
 
-Historical disagreements and formula conflicts are graph relationships, not information to erase.
-
 ---
 
 # IMPLEMENTATION RULE
-
-Do not begin production coding until the relevant knowledge artifact has passed independent audit.
 
 Research determines the canonical mechanics.
 
@@ -326,15 +287,9 @@ Canonical mechanics determine the schema.
 
 The validated schema determines implementation.
 
-Existing SEEN code may be inspected to understand interfaces and integration constraints, but existing code does not determine historical truth.
-
-Do not modify the repository or deploy during the research/canon phase unless explicitly instructed.
-
 ---
 
 # WORK SEQUENCE
-
-Do not attempt the entire Hellenistic system in one generation.
 
 Build and validate it in bounded artifacts.
 
@@ -368,18 +323,13 @@ Complete and validate one bounded artifact before treating it as canon.
 
 # FINAL PRINCIPLE
 
-Completeness is discovered, not presumed.
-
-The purpose of this process is not to make the proposed SEEN architecture appear correct.
-
 The purpose is to determine, preserve, calculate, and expose the most historically defensible Hellenistic system possible, with sufficient provenance and independent verification that SEEN can safely build upon it.
-
 
 ---
 
 # PRODUCTION READING EXECUTION AND DELIVERY CONTRACT
 
-Research completion is not module completion. The Hellenistic module is complete only when verified canon can execute a real chart from intake through a delivered Hellenistic reading.
+The Hellenistic module is complete only when verified canon can execute a real chart from intake through a delivered Hellenistic reading.
 
 After Jobs 01–16 clear their required audit gates, execute the production reading pipeline:
 
@@ -399,13 +349,13 @@ BIRTH INTAKE
 
 The production runner must accept, at minimum: birth date and calendar; birth place and coordinate precision; local birth time, certainty, and source; historical time-zone conversion and uncertainty; ephemeris/version/calculation policy; and the locked Hellenistic tradition/source packet to execute.
 
-Unknown or uncertain birth time must propagate uncertainty. Never manufacture an exact Ascendant, houses/places, Lots, sect status, time-lord start, or other time-sensitive result when the input does not support it.
+Unknown or uncertain birth time must propagate uncertainty.
 
 ## Mandatory execution
 
-For a reading, run every production-eligible verified mechanic whose required inputs and source/tradition conditions are satisfied. Do not cherry-pick only familiar techniques. This includes, when verified and applicable: chart framework; sect; planetary condition; configurations; receptions; bonification/maltreatment; Lots; topical procedures; time-lord/predictive procedures; advanced/source-specific techniques; and any additional mechanics discovered and locked by the canon.
+For a reading, run every production-eligible verified mechanic whose required inputs and source/tradition conditions are satisfied. This includes, when verified and applicable: chart framework; sect; planetary condition; configurations; receptions; bonification/maltreatment; Lots; topical procedures; time-lord/predictive procedures; advanced/source-specific techniques; and any additional mechanics discovered and locked by the canon.
 
-A mechanic with insufficient input, unresolved blocking conflict, or research-only status must not be silently substituted. Record it as NOT_RUN with the reason.
+Record it as NOT_RUN with the reason.
 
 ## Reading output
 
@@ -414,12 +364,11 @@ The delivered Hellenistic reading must contain:
 2. the applicable verified Hellenistic findings;
 3. atomic testimonies with source/rule provenance;
 4. source/tradition-specific interpretation;
-5. synthesis of compatible testimonies without erasing conflicts;
 6. temporal/predictive findings when requested and verified;
 7. explicit uncertainty and NOT_RUN mechanics;
 8. a final human-readable Hellenistic reading generated from the verified testimony set.
 
-The user-facing reading is not a dump of research records. The Generator converts verified testimonies into coherent prose while retaining machine-readable provenance behind every claim.
+The Generator converts verified testimonies into coherent prose while retaining machine-readable provenance behind every claim.
 
 ## Handoff and delivery gate
 
@@ -435,11 +384,9 @@ VERIFIED CANON
 
 Each handoff passes versioned artifact IDs, input fingerprint, source-lock version, calculation trace references, testimony IDs, uncertainty state, and validation status.
 
-No reading may claim VERIFIED provenance unless its complete upstream chain passes validation. Research-only mechanics remain excluded from production.
+Research-only mechanics remain excluded from production.
 
 ## Completion test
-
-The Hellenistic module is not DONE merely because the corpus, schema, or validators exist.
 
 DONE requires at least one end-to-end regression fixture demonstrating:
 
@@ -452,4 +399,4 @@ KNOWN BIRTH INPUT
 → RENDERED DELIVERY
 ```
 
-Agent B independently reproduces the fixture and confirms the delivered reading contains no unsupported production claims. Failure returns to the responsible artifact; correction, regression, version, and lock repeat before delivery.
+Failure returns to the responsible artifact; correction, regression, version, and lock repeat before delivery.

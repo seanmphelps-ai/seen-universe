@@ -1,23 +1,11 @@
-// Cross-family fusion — step 4.3 of the contract.
-//
-// "Fuse available families by weighted median; cap each family's total
-// influence. Missing family: omitted from score, charged to confidence.
-// Contradiction: preserve parallel signals, do not average away."
-//
-// Three properties this module guarantees:
-//   1. A missing family never contributes a number. It is recorded in
-//      `familiesMissing` and handed to confidence.ts. There is no default.
-//   2. No single family can exceed MAX_FAMILY_INFLUENCE of total weight,
-//      so one well-instrumented provider cannot quietly become the answer.
-//   3. When families genuinely disagree, the disagreement is reported
-//      alongside the fused value rather than smoothed out of existence.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import type { DimensionId } from './dimensions';
 import type { EvidenceVector, SourceFamily } from './types';
 import { familyCompetence } from './competence';
 import { weightedMedian } from './stats';
 
-/** No family may hold more than this share of total fusion weight. */
+
 export const MAX_FAMILY_INFLUENCE = 0.4;
 
 export type FamilySignal = {
@@ -29,17 +17,13 @@ export type FamilySignal = {
 
 export type FusedComponent = {
   component: string;
-  /** Fused value, or null when no family could supply this component. */
+
   value: number | null;
   /** Every contributing family's own value, always preserved. */
   signals: FamilySignal[];
   familiesPresent: SourceFamily[];
   familiesMissing: SourceFamily[];
-  /**
-   * True when families disagree beyond CONTRADICTION_SPREAD. The fused
-   * value is still reported, but a contradiction means the parallel
-   * signals — not the fused number — are the honest summary.
-   */
+
   contradiction: boolean;
   contradictionNote: string | null;
   /**
@@ -52,35 +36,14 @@ export type FusedComponent = {
   incompetentFamilies: SourceFamily[];
 };
 
-/**
- * Families are treated as contradictory when their spread exceeds 40
- * percentile points. On a 0-100 normalized scale that is the difference
- * between "unremarkable" and "notably elevated" — a disagreement no
- * single fused number can honestly represent.
- */
+
 export const CONTRADICTION_SPREAD = 40;
 
-/**
- * Caps each family's share of total weight at MAX_FAMILY_INFLUENCE.
- *
- * Solved directly rather than by repeatedly rescaling. If a set C of
- * families is held at the cap c and the remaining families' weights sum
- * to R, the post-cap total T satisfies T = |C|·c·T + R, so
- *
- *   T = R / (1 - |C|·c)
- *
- * and each capped family takes c·T. The loop grows C until no uncapped
- * family exceeds the cap — normally one or two passes. Naive iterative
- * rescaling converges to the same fixed point but only asymptotically,
- * which left a dominant family well above the cap after a bounded number
- * of passes.
- */
+
 export function capFamilyInfluence(
   weights: { sourceFamily: SourceFamily; weight: number }[],
 ): { sourceFamily: SourceFamily; weight: number }[] {
   if (weights.length === 0) return [];
-  // Shares must sum to 1, so with fewer than ceil(1/c) families some
-  // family necessarily exceeds c and the cap cannot bind at all.
   if (weights.length * MAX_FAMILY_INFLUENCE <= 1) return weights;
 
   const result = weights.map((w) => ({ ...w }));
@@ -109,20 +72,7 @@ export function capFamilyInfluence(
   return result;
 }
 
-/**
- * Fuses one component across families, weighted by each family's
- * competence for the GOVERNING DIMENSION — not a single per-family
- * credibility score (see competence.ts). A family with zero declared
- * competence for this dimension still appears in `signals` (transparency:
- * it did produce a value) with effectiveWeight 0, but contributes nothing
- * to the fused number — weightedMedian excludes non-positive weights.
- *
- * `expectedFamilies` is the full set the collection plan intended to
- * query. Anything in it that produced no value is returned in
- * `familiesMissing` so confidence.ts can charge for it — this is the
- * mechanism that turns provider absence into lower confidence rather
- * than a zero.
- */
+
 export function fuseComponent(
   component: string,
   dimensionId: DimensionId,

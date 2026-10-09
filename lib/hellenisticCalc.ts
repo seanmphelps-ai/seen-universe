@@ -1,10 +1,4 @@
-// Wheel: swisseph-wasm positions from calculateNatalChart, plus the same
-// library's houses(..., "W") and azalt(SE_ECL2HOR). Lots are
-// kriya-ephemeris-timelords@0.1.2 (MIT) partOfFortuneDeg / partOfSpiritDeg /
-// partOfErosDeg, fed those Swiss longitudes. Peer: kriya-ephemeris@0.3.0.
-// Input: NatalChartInput. Birth time is required for sect, whole-sign places, and Lots.
-// Output: NatalChartResult plus labeled library Lots. partOfErosDeg is that
-// package's one Eros function, not a SEEN default. Valens and Schmidt are not exported.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import SwissEph from 'swisseph-wasm';
 import tzlookup from 'tz-lookup';
@@ -61,7 +55,7 @@ export type HellenisticCalcResult = {
   blocked: string | null;
 };
 
-const EROS_PASSAGE = 'kriya-ephemeris-timelords partOfErosDeg only. The package reverses Venus and Spirit when dayBirth is false. Valens Eros and Schmidt no-reverse are not exported. This is not a SEEN default.';
+const EROS_PASSAGE = 'kriya-ephemeris-timelords partOfErosDeg only. The package reverses Venus and Spirit when dayBirth is false. Valens Eros and Schmidt fixed-direction formulas require separate support. The SEEN default awaits canonical source selection.';
 
 function angularDelta(a: number, b: number): number {
   const diff = Math.abs(a - b) % 360;
@@ -77,12 +71,12 @@ function placeForLongitude(cusps: Float64Array, longitude: number): number {
     const offset = (norm - start + 360) % 360;
     if (offset < span) return house;
   }
-  throw new Error('swisseph-wasm houses W did not contain this longitude.');
+  throw new Error('Longitude falls outside the returned swisseph-wasm W houses.');
 }
 
 function longitudeOf(chart: NatalChartResult, key: string): number {
   const planet = chart.planets.find((item) => item.key === key);
-  if (!planet) throw new Error(`calculateNatalChart did not return ${key}.`);
+  if (!planet) throw new Error(`calculateNatalChart requires a returned position for ${key}.`);
   return planet.longitude;
 }
 
@@ -112,11 +106,11 @@ export async function calculateHellenistic(input: NatalChartInput): Promise<Hell
     const jd = swe.julday(utc.year, utc.month, utc.day, utc.hour + utc.minute / 60);
     const sun = swe.calc_ut(jd, swe.SE_SUN, swe.SEFLG_SWIEPH | swe.SEFLG_SPEED);
     if (angularDelta(sun[0], longitudeOf(positions, 'sun')) > 1e-4) {
-      throw new Error('Hellenistic Swiss session does not match calculateNatalChart sun longitude.');
+      throw new Error('Hellenistic Swiss session and calculateNatalChart sun longitudes differ.');
     }
 
     const ecl2hor = (swe as unknown as { SE_ECL2HOR?: number }).SE_ECL2HOR;
-    if (typeof ecl2hor !== 'number') throw new Error('swisseph-wasm SE_ECL2HOR is not available.');
+    if (typeof ecl2hor !== 'number') throw new Error('swisseph-wasm SE_ECL2HOR availability is required.');
     const horizontal = swe.azalt(
       jd,
       ecl2hor,

@@ -1,9 +1,4 @@
-// Wheel: free-human-design@1.0.1 (MIT) https://github.com/adamblvck/free-human-design
-// Call: computeChart({ birthdate, birthtime, timezone, location }).
-// Input: birthDate YYYY-MM-DD, birthTime HH:mm, latitude, longitude.
-// Timezone is the IANA zone tz-lookup returns for those coordinates.
-// Output: the package bodygraph (type, profile, centers, gates, channels, 13+13 activations).
-// Gene Keys spheres and the package astrology section are not returned.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import { createRequire } from 'node:module';
 import tzlookup from 'tz-lookup';

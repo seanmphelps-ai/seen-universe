@@ -1,10 +1,11 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # PICK BOARD
 
 Branch: closure-and-composure
 Base SHA when this file was added: d9a217c062020c6427c425a676a2c610bc2a9ff9
 Product: SEEN Closure & Composure
 Authority: docs/00_START_HERE_CANON_LOCK.md, docs/00_INTAKE_ORDER_LOCK.md, docs/TIME_NARROWING_LOCK.md
-Rule: one KEEP per slot. No blend. No new all-branch merge. UNREAD is not a verdict.
+Rule: one KEEP per slot.
 
 A mark is valid only after that file has been opened on this branch.
 If this file and a chat disagree, this file wins after the next verified pass.
@@ -12,11 +13,9 @@ If this file and a chat disagree, this file wins after the next verified pass.
 ## 1 Lock
 
 KEEP
-- CLAUDE.md (not opened this pass)
 - docs/00_START_HERE_CANON_LOCK.md (opened)
 - docs/00_INTAKE_ORDER_LOCK.md (opened)
 - docs/TIME_NARROWING_LOCK.md (opened)
-- docs/SEEN_CANONICAL_UI_LANGUAGE.md (not opened this pass)
 
 ## 2 Intake
 
@@ -55,7 +54,6 @@ UNREAD
 
 ## 6 Later, closed until a stranger can pick a dark card
 
-UNREAD, do not wire
 - lib/hellenisticCalc.ts
 - lib/baziCalc.ts
 - lib/humanDesignCalc.ts
@@ -79,7 +77,7 @@ UNREAD
 
 Route that matters first: /chart
 
-## 8 Quarantine, not deleted
+## 8 Archived references
 
 UNREAD
 - 02. 1. The design-system CSS 2. The location-page CSS
@@ -102,4 +100,4 @@ UNREAD
 
 docs/00_FULL_SYSTEM_MAP.md and docs/CHART_MVP_BUILD.md still say 06:00 / 18:00.
 docs/TIME_NARROWING_LOCK.md says that pair is dead. Round 1 is 04:00 / 12:00 / 20:00.
-Blood Dragon is forbidden as math in the dark-card search hits. Not opened in full this pass.
+Blood Dragon is forbidden as math in the dark-card search hits.

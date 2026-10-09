@@ -1,18 +1,4 @@
-// Marker evidence vector V[M,L,T] — step 3 of the contract.
-//
-// Computed inside a single source family (step 4.1: "Compute the full
-// vector inside each source family first"). Cross-family fusion happens
-// later, in fuse.ts, never here.
-//
-// PERSIST (see dimensions.ts) is not yet computed here — persistence.ts
-// does not exist yet. This file currently produces the other nine
-// components of the ten-dimension spec.
-//
-// Every component returns null when its inputs were not obtainable. Null
-// is not zero: null means "not measured" and is charged to confidence,
-// while zero means "measured, and it was zero". Collapsing the two is the
-// single most misleading thing this engine could do, so the type keeps
-// them apart and every consumer must handle null explicitly.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import type {
   EvidenceVector,
@@ -61,7 +47,7 @@ export type VectorInputs = {
 
   windowDays: number;
 
-  /** Denominators. Each is null when the marker does not use it or it could not be obtained. */
+
   population: number | null;
   sampledLocalContentCount: number | null;
   sampledActiveLocalAccounts: number | null;
@@ -70,14 +56,7 @@ export type VectorInputs = {
   /** Unique local accounts observed participating. One of two signals BRD may combine. */
   uniqueParticipatingLocalAccounts: number | null;
 
-  /**
-   * Occurrence count per sub-geography (tract, neighborhood, district —
-   * whatever unit the collection plan sampled), from the INCIDENT or
-   * AMBIENT_MEASURE channel only. Feeds both BRD (distinct affected
-   * sub-units / sampled sub-units) and CONC (how those occurrences
-   * cluster). This is a spatial distribution of the CONDITION, never of
-   * the evidence about it — circulation counts must not appear here.
-   */
+
   spatialOccurrenceDistribution: Record<string, number> | null;
   /** Total sub-units the collection plan sampled, for BRD's denominator. */
   sampledSubUnitCount: number | null;
@@ -104,17 +83,7 @@ export type VectorInputs = {
 const TREND_PRIOR_SHAPE = 0.5;
 const Z_95 = 1.959963984540054;
 
-/**
- * Deduplicates ambient content by account before it can inform PREV: each
- * account contributes at most its single strongest-quality sample, and
- * null-account records (identity unknown) are each treated as their own
- * singleton. Without this, "the same 200 accounts posting 4,000 times"
- * and "4,000 independent residents" would sum to the same PREV — exactly
- * the failure the account-repetition scenario is designed to catch.
- * Repetition beyond one account's strongest sample is evidence for
- * AMP/DIG (it is real exposure) but not for PREV (it is not more
- * occurrence).
- */
+
 function dedupedAmbientQualitySum(exposure: ExposureRecord[]): number {
   const byAccount = new Map<string, number>();
   let total = 0;
@@ -145,9 +114,6 @@ export function computePrevalence(inputs: VectorInputs): { value: number | null;
     if (inputs.sampledLocalContentCount === null || inputs.sampledLocalContentCount <= 0) {
       return { value: null, note: 'PREV unavailable: no sampled local-content denominator for an ambient marker.' };
     }
-    // Weighted share of DISTINCT accounts: each account counts once, by
-    // its strongest-quality sample, so a body of weak matches cannot read
-    // as a strong ambient presence, and neither can one account repeating.
     const weighted = dedupedAmbientQualitySum(inputs.exposure);
     return { value: weighted / inputs.sampledLocalContentCount };
   }
@@ -165,11 +131,7 @@ export function computePrevalence(inputs: VectorInputs): { value: number | null;
   return { value: per10k * (30 / inputs.windowDays) };
 }
 
-/**
- * SEV — the observed intensity distribution. Median and upper tail are
- * reported separately and the marker's polarity travels with them, so a
- * rare-but-extreme marker cannot be flattened into a low average.
- */
+
 export function computeSeverity(inputs: VectorInputs): SeverityDistribution | null {
   assertChannelAdmissible('SEV', 'INCIDENT');
   const severities = inputs.events
@@ -186,13 +148,7 @@ export function computeSeverity(inputs: VectorInputs): SeverityDistribution | nu
   };
 }
 
-/**
- * PHYS — potential resident dose:
- *   1 - exp(-Σ p(e) × affected-pop-share × duration × severity)
- *
- * "Potential" is load-bearing: this is the dose implied by the observed
- * evidence, not a measured per-person exposure.
- */
+
 export function computePhysicalDose(inputs: VectorInputs): { value: number | null; note?: string } {
   assertChannelAdmissible('PHYS', 'INCIDENT');
   if (inputs.physicalDoseInputs.length === 0) {
@@ -216,14 +172,7 @@ export function computePhysicalDose(inputs: VectorInputs): { value: number | nul
   return { value: 1 - Math.exp(-accumulated) };
 }
 
-/**
- * DIG — potential digital dose:
- *   1 - exp(-deduped local reach / connected local population)
- *
- * When no measured deduplicated reach is available, a summed-reach proxy
- * is used and flagged. The proxy overcounts people reached by more than
- * one item, so it is an upper bound, never a measurement.
- */
+
 export function computeDigitalDose(inputs: VectorInputs): {
   value: number | null;
   isProxy: boolean;
@@ -265,15 +214,7 @@ export function computeDigitalDose(inputs: VectorInputs): {
   };
 }
 
-/**
- * AMP — robust percentile of log-scaled amplification signals against
- * provider/marker/time baselines.
- *
- * Each signal is ranked against its own baseline and the median of the
- * available ranks is taken. Ranking first, then taking a median, means a
- * missing signal simply drops out instead of dragging a summed composite
- * toward zero.
- */
+
 export function computeAmplification(inputs: VectorInputs): { value: number | null; note?: string } {
   assertChannelAdmissible('AMP', 'CIRCULATION');
   assertChannelAdmissible('AMP', 'TEMPORAL_EXTENT');
@@ -393,14 +334,7 @@ export function computeBreadth(inputs: VectorInputs): { value: number | null; no
   return { value: median(available) };
 }
 
-/**
- * CONC — spatial/demographic clustering of the condition: normalized HHI
- * over occurrence shares by sub-unit, plus top-1% and top-10% share.
- * Reads spatialOccurrenceDistribution only (see VectorInputs) — the
- * condition's own footprint, never account activity. Account
- * concentration is a separate evidence-quality diagnostic computed in
- * confidence.ts and must never be substituted here.
- */
+
 export function computeConcentration(inputs: VectorInputs): SpatialConcentrationEstimate | null {
   const distribution = inputs.spatialOccurrenceDistribution;
   if (!distribution) return null;
@@ -450,16 +384,7 @@ export function computeFrameVector(inputs: VectorInputs, frames: (ResponseFrame 
   return vector;
 }
 
-/**
- * TREND — posterior log rate ratio, current window vs prior baseline.
- *
- * Gamma-Poisson conjugate model with a Jeffreys prior (α = 1/2). Using
- * the posterior of ln λ rather than a raw ratio is what keeps a jump
- * from 0 to 2 events from reading as an infinite increase:
- *
- *   E[ln λ] = ψ(α + c) - ln(t)
- *   Var[ln λ] = ψ'(α + c)
- */
+
 export function computeTrend(inputs: VectorInputs): TrendEstimate | null {
   if (!inputs.baseline) return null;
   assertChannelAdmissible('TREND', 'INCIDENT');

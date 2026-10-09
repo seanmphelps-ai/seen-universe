@@ -1,9 +1,7 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { defineAgent } from 'eve'
 import { calculateNumerology, type NumerologyCalcInput } from '../../../lib/numerologyCalc'
 
-// Wheel: @csessh/sochumenh@0.3.0.
-// Call: calculateNumerology → parseDob and the package numeric calculators.
-// Input: name, birthDate YYYY-MM-DD. Output: numeric index values. No interpretation text.
 export function readNumerology(input: NumerologyCalcInput) {
   return calculateNumerology(input)
 }

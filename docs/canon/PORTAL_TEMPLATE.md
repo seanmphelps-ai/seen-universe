@@ -1,11 +1,12 @@
-# Portal examination — not a four-line form
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
+# Portal examination — Full extraction schema
 
-The four asks were a sketch. They are not the schema.
+The four asks were a sketch.
 Every portal already carries the full identification / extraction / emergence set: who, what, when, where, why — plus trigger, pressure, show, defend, react, cost, consequence.
 
 ## What moves the answer
 
-Not only seed. Not only soil. Everything in the field writes the answer.
+Everything in the field writes the answer.
 
 - native seed (untouched)
 - birth clock and birth city
@@ -21,6 +22,5 @@ Linear was too thin. Helix was still a line wrapped on itself. JEV is the shape:
 
 ## Law
 
-All 64 can wake. Activation is the field, not a personality badge.
-No two natives share a sentence.
+All 64 can wake.
 Native seeds stay whole. The field only decides how they come out here, now, with these people.

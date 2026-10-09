@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # INCOMING SOURCES
 
 Place recovered documents and threads here before integration.
@@ -10,4 +11,3 @@ For each source:
 4. Update the relevant context module.
 5. Update `MASTER_BUILD_CHECKLIST.md`.
 6. Move approved examples into `docs/examples/`.
-

@@ -1,9 +1,4 @@
-// Statistical primitives used by the V2 vector and normalization steps.
-//
-// Implemented here rather than pulled from a dependency so the exact
-// formulas the contract specifies are readable and testable in place —
-// and so nothing silently changes underneath the engine on a version
-// bump. Every function is pure.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 /** Linear-interpolated quantile (the "type 7" definition, R/NumPy default). */
 export function quantile(values: number[], p: number): number {
@@ -23,12 +18,7 @@ export function median(values: number[]): number {
   return quantile(values, 0.5);
 }
 
-/**
- * Weighted median — the fusion operator across source families. Chosen
- * over a weighted mean because a single wildly miscalibrated family
- * cannot drag the fused value: it can only shift which family sits at
- * the weight midpoint.
- */
+
 export function weightedMedian(entries: { value: number; weight: number }[]): number {
   const usable = entries.filter((e) => Number.isFinite(e.value) && e.weight > 0);
   if (usable.length === 0) throw new Error('weightedMedian requires at least one weighted value');
@@ -52,10 +42,7 @@ export function weightedMedian(entries: { value: number; weight: number }[]): nu
   return sorted[sorted.length - 1].value;
 }
 
-/**
- * Robust percentile of `value` against a baseline distribution, using the
- * midrank convention so ties do not report as 0 or 100. Returns 0-100.
- */
+
 export function robustPercentile(value: number, baseline: number[]): number {
   if (baseline.length === 0) throw new Error('robustPercentile requires a non-empty baseline');
   let below = 0;
@@ -153,15 +140,7 @@ export function normalQuantile(p: number): number {
   );
 }
 
-/**
- * Normalized Herfindahl-Hirschman index over participation shares:
- *
- *   (Σ sᵢ² - 1/n) / (1 - 1/n)
- *
- * 0 = perfectly even participation, 1 = one account is the whole signal.
- * With n = 1 the denominator vanishes; the limit is complete
- * concentration, so 1 is returned rather than NaN.
- */
+
 export function normalizedHhi(shares: number[]): number {
   const n = shares.length;
   if (n === 0) throw new Error('normalizedHhi requires at least one share');

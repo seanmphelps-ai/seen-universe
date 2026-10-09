@@ -1,3 +1,4 @@
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 // SEEN Location V1 — BLS Local Area Unemployment Statistics (LAUS) adapter.
 //
 // Independent second source for unemployment, cross-checking the ACS
@@ -77,7 +78,7 @@ export function parseBlsResponse(
     const messages = response?.message?.length ? response.message.join(' | ') : '(no message field)';
     throw new BlsLausError(
       redactKeyFromMessage(
-        `BLS API did not report success (status: ${response?.status ?? 'missing'}). BLS message: ${messages}`,
+        `BLS API returned an unsuccessful status (status: ${response?.status ?? 'missing'}). BLS message: ${messages}`,
         apiKey,
       ),
     );
@@ -86,7 +87,7 @@ export function parseBlsResponse(
   const series = response.Results?.series?.find((s) => s.seriesID === expectedSeriesId);
   if (!series) {
     throw new BlsLausError(
-      `BLS response did not include the requested series "${expectedSeriesId}" — series ID format may be wrong, or the geography has no LAUS coverage.`,
+      `BLS response requires the requested series "${expectedSeriesId}" — series ID format may be wrong, or the geography has no LAUS coverage.`,
     );
   }
 
@@ -129,11 +130,6 @@ export async function fetchLausCountyUnemploymentRate(
   stateFips: string,
   countyFips: string,
   year: string,
-  // Unregistered BLS API v2 access is limited to roughly the most recent 3
-  // years of data — a historical query (e.g. 2018-2022) can come back
-  // empty even though the request itself succeeds. A free registration
-  // key (https://www.bls.gov/developers/) removes that limit; read from
-  // env so adding one later requires no code change.
   apiKeyInput: string | undefined = process.env.BLS_API_KEY,
 ): Promise<{ result: BlsSeriesResult; annualAveragePercent: number | null }> {
   // Trimmed once here so the exact same value is used for both the

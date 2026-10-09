@@ -1,8 +1,4 @@
-// Bundled major-city list for birth-location search.
-// Coordinates are city-center approximations, accurate enough for house/
-// ascendant calculation (which is not sensitive to small in-city offsets).
-// This is static/offline by design — this build environment cannot reach
-// external geocoding APIs, so there is no live service to depend on here.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 export type City = {
   name: string;

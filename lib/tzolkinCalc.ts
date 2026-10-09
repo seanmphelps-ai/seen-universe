@@ -1,7 +1,4 @@
-// Wheel: @drewsonne/maya-dates@1.3.14 (GPL-3.0-only) https://github.com/drewsonne/maya-dates
-// Call: LongCount.fromGregorian(localDate, getCorrelationConstant(584283))
-// Input: birthDate "YYYY-MM-DD". 584283 is the package's named GMT constant, not a second correlation.
-// Output: library long count, Tzolk'in, and Haab strings. Dreamspell kin names are not used.
+// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
 import { createRequire } from 'node:module';
 
