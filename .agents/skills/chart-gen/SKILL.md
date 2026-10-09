@@ -1,40 +1,40 @@
+// PROVENANCE: bot=grok session=2026-10-08 task=rewrite .agents/ to positive-only instructions
+---
 # Chart Gen
 
 ## Purpose
+
 Run source calculations independently and preserve their original outputs before synthesis.
 
-## Western canonical path
-Western natal calculation uses the repository-local Swiss Ephemeris implementation as the calculation authority:
+## Task
 
-`SEEN intake/runtime → lib/natalChart.ts → swisseph-wasm → NatalChartResult → lib/seen/westernBridge.ts → downstream SEEN layers`
+Produce versioned independent source-calculation records ready for routing and synthesis.
 
-`app/api/chart/route.ts` is the HTTP adapter for the same local calculator. `app/api/seen/run/route.ts` calls `calculateNatalChart()` directly and then passes the completed result to `buildWesternPortalBridge()`.
+## Inputs
 
-External astrology/chart callout APIs are not part of the canonical Western calculation path. A future provider may be used only as an explicitly requested verification source; it does not replace, steer, or mutate the local Swiss Ephemeris result.
+- SEEN intake/runtime
+- lib/natalChart.ts
+- swisseph-wasm
+- NatalChartResult
+- lib/seen/westernBridge.ts
 
-## Required behavior
-- Use `lib/natalChart.ts` for Western natal calculations.
-- Use `swisseph-wasm` with Swiss Ephemeris for astronomical positions.
-- Convert local birth time through the resolved IANA timezone before calculation.
-- Preserve unknown-time limits: planetary positions may be calculated, while houses, Ascendant, and Midheaven remain absent until a supported birth time exists.
-- Complete the Western calculation independently before Location, environmental, portal, convergence, or narrative interpretation reads it.
-- Pass the completed `NatalChartResult` forward without changing its astronomical facts.
-- Keep Western, Hellenistic, Vedic, Lots, nakshatras/dashas, and other approved source systems independent; route findings separately into SEEN's own 64 Portals.
-- Preserve source-system identity, calculation version, inputs, outputs, confidence, and provenance.
+## Actions
 
-## Rules
-- Never change a source calculation to make it agree with another system.
-- Environmental findings do not alter astronomical calculations.
-- Location is applied downstream to examine pattern expression under independently established conditions; it does not recalculate Western astronomy.
-- A chart task does not authorize modification of intake, Forge, Location, portal, Oracle, or rendering architecture unless explicitly requested.
-- Do not invent birth time. Preserve time-certainty state.
-- Do not introduce an external Western chart dependency when the local Swiss Ephemeris path can perform the calculation.
+1. Use lib/natalChart.ts for Western natal calculations.
+2. Use swisseph-wasm with Swiss Ephemeris for astronomical positions.
+3. Convert local birth time through the resolved IANA timezone before calculation.
+4. Preserve unknown-time limits: planetary positions may be calculated, while houses, Ascendant, and Midheaven remain absent until a supported birth time exists.
+5. Complete the Western calculation independently before Location, environmental, portal, convergence, or narrative interpretation reads it.
+6. Pass the completed NatalChartResult forward without changing its astronomical facts.
+7. Keep Western, Hellenistic, Vedic, Lots, nakshatras/dashas, and other approved source systems independent; route findings separately into SEEN's own 64 Portals.
+8. Preserve source-system identity, calculation version, inputs, outputs, confidence, and provenance.
 
-## Verification
-For Western work, verify all three before completion:
-1. `swisseph-wasm` remains installed in `package.json`.
-2. The runtime resolves Western through `calculateNatalChart()` in `lib/natalChart.ts`.
-3. The completed Western result reaches `buildWesternPortalBridge()` without an external chart API replacing the source calculation.
+## Outputs
 
-## Output
-Versioned independent source-calculation records ready for routing and synthesis.
+- Versioned independent source-calculation records ready for routing and synthesis
+
+## Completion checks
+
+1. swisseph-wasm remains installed in package.json.
+2. The runtime resolves Western through calculateNatalChart() in lib/natalChart.ts.
+3. The completed Western result reaches buildWesternPortalBridge() without an external chart API replacing the source calculation.

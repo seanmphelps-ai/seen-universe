@@ -1,30 +1,43 @@
+// PROVENANCE: bot=grok session=2026-10-08 task=rewrite .agents/ to positive-only instructions
+---
 # Narrative Extract
 
 ## Purpose
-Transform retrieved location-period evidence into structured environmental signals without manufacturing evidence.
 
-## Extract
-- prevalence
-- severity
-- physical exposure
-- digital exposure
-- social amplification
-- participant breadth
-- spatial concentration
-- response framing / valence
-- trend
-- presence
-- absence
-- contradiction
-- confidence inputs
+Transform retrieved location-period evidence into structured environmental signals.
 
-## Rules
-- Evidence before interpretation.
-- Keep confidence separate from intensity.
-- Preserve contradictory signals rather than averaging them away.
-- Every extracted claim must point back to evidence.
+## Task
+
+Extract structured environmental signals from location-period evidence.
+
+## Inputs
+
+- Location-period evidence records
+
+## Actions
+
+1. Extract prevalence.
+2. Extract severity.
+3. Extract physical exposure.
+4. Extract digital exposure.
+5. Extract social amplification.
+6. Extract participant breadth.
+7. Extract spatial concentration.
+8. Extract response framing / valence.
+9. Extract trend.
+10. Extract presence.
+11. Extract absence.
+12. Extract contradiction.
+13. Extract confidence inputs.
+
+## Outputs
+
+- Structured environmental signals ready for Environmental Pressure Field construction and later synthesis
+
+## Completion checks
+
+- Every extracted claim points back to evidence.
+- Confidence is kept separate from intensity.
+- Contradictory signals are preserved rather than averaged away.
 - Environment describes pressure and exposure; it does not prove belief, participation, identity, adoption, or harm.
-- Do not run astrology or alter chart calculations in this skill.
-
-## Output
-Structured environmental signals ready for Environmental Pressure Field construction and later synthesis.
+- No astrology is run and no chart calculations are altered in this skill.

@@ -1,24 +1,51 @@
+// PROVENANCE: bot=grok session=2026-10-08 task=rewrite .agents/ to positive-only instructions
+---
 # Verify
 
 ## Purpose
+
 Required completion gate for SEEN pipeline work.
 
-## Verify
-- requested scope was followed
-- protected/adjacent architecture was not changed without authorization
-- required repository and matching context files were read
-- timeframe is correct
-- requested and matched geography are preserved
-- provenance exists for evidence-derived claims
-- confidence is separate from intensity
-- contradictions are preserved
-- deterministic calculations reproduce
-- source calculations remain independent
-- tests/typecheck/build checks relevant to the change pass
-- output records satisfy their governing contracts
+## Task
 
-## Failure rule
-A failed verification does not authorize unrelated repair or redesign. Return the failure to the bounded skill responsible for it, or stop when the active task does not authorize repair.
+Verify that pipeline work meets its governing contract before completion is declared.
 
-## Output
-PASS with verified checks, or FAIL with the exact failed checks and evidence.
+## Inputs
+
+- Requested scope
+- Protected/adjacent architecture
+- Repository and matching context files
+- Timeframe
+- Requested and matched geography
+- Evidence-derived claims
+- Confidence and intensity values
+- Contradictions
+- Deterministic calculations
+- Source calculations
+- Tests/typecheck/build results
+- Output records and their governing contracts
+
+## Actions
+
+1. Verify the requested scope was followed.
+2. Verify protected/adjacent architecture was not changed without authorization.
+3. Verify required repository and matching context files were read.
+4. Verify the timeframe is correct.
+5. Verify requested and matched geography are preserved.
+6. Verify provenance exists for evidence-derived claims.
+7. Verify confidence is separate from intensity.
+8. Verify contradictions are preserved.
+9. Verify deterministic calculations reproduce.
+10. Verify source calculations remain independent.
+11. Verify tests/typecheck/build checks relevant to the change pass.
+12. Verify output records satisfy their governing contracts.
+13. On failure, return the failure to the bounded skill responsible for it, or stop when the active task does not authorize repair.
+
+## Outputs
+
+- PASS with verified checks, or FAIL with the exact failed checks and evidence
+
+## Completion checks
+
+- A failed verification does not authorize unrelated repair or redesign.
+- The output is PASS with verified checks, or FAIL with the exact failed checks and evidence.
