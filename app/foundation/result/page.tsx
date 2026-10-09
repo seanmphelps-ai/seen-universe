@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import type { NatalChartResult } from '../../../lib/natalChart';
+import { extractWoundMarkers } from '../../../lib/seen/woundMarkers';
+import { rankWounds, type RankedWound } from '../../../lib/seen/woundRanking';
 
 type StoredBirth = {
   name: string;
@@ -27,7 +29,7 @@ type StoredBirth = {
   locked?: boolean;
   method?: string;
   [key: string]: unknown;
-};
+}
 
 type SeenRunResponse = {
   western?: NatalChartResult;
@@ -36,7 +38,7 @@ type SeenRunResponse = {
   locations?: unknown;
   locationV2?: unknown;
   error?: string;
-};
+}
 
 function formatDegree(degree: number): string {
   const whole = Math.floor(degree);
@@ -51,10 +53,19 @@ function placementLine(label: string, sign: string, degree: number, house: numbe
   return parts.join(' — ');
 }
 
+const RANK_LABEL: Record<number, string> = {
+  1: 'Loudest — fires first under pressure.',
+  2: 'Strong — shows up clearly in relationships and self-image.',
+  3: 'Present — noticeable but quieter.',
+  4: 'Quiet — background pressure, rarely the main event.',
+  5: 'Faint — only surfaces under extreme stress.',
+}
+
 export default function FoundationResultPage() {
   const router = useRouter();
   const [birth, setBirth] = useState<StoredBirth | null>(null);
   const [chart, setChart] = useState<NatalChartResult | null>(null);
+  const [rankedWounds, setRankedWounds] = useState<RankedWound[] | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -95,6 +106,9 @@ export default function FoundationResultPage() {
         }
         if (!cancelled) {
           setChart(payload.western);
+          const hits = extractWoundMarkers(payload.western);
+          const ranked = rankWounds(hits, payload.western.aspects);
+          setRankedWounds(ranked);
           setIsLoading(false);
         }
       } catch (err) {
@@ -180,6 +194,31 @@ export default function FoundationResultPage() {
                   <ul className="seenFlowIntroduction" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
                     {chart.aspects.map((aspect, index) => (
                       <li key={index}>{aspect.point1} {aspect.aspect} {aspect.point2} — orb {aspect.orb}°</li>
+                    ))}
+                  </ul>
+                </section>
+              </>
+            )}
+
+            {rankedWounds && rankedWounds.length > 0 && (
+              <>
+                <div className="seenDivider" aria-hidden="true" />
+                <section aria-labelledby="wounds-title">
+                  <h2 id="wounds-title" className="seenLabel">Wound markers — ranked</h2>
+                  <p className="seenFieldSupport">
+                    These are the patterns the chart carries. Rank is authored, not computed — it weighs how tight the aspect is, how heavy the planet is, which house it sits in, and whether several markers fire together.
+                  </p>
+                  <ul className="seenFlowIntroduction" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '1rem' }}>
+                    {rankedWounds.map((wound) => (
+                      <li key={wound.markerId} style={{ borderLeft: '3px solid var(--seen-accent, #c9a227)', paddingLeft: '1rem' }}>
+                        <p style={{ margin: 0, fontWeight: 600 }}>
+                          {wound.label} — rank {wound.rank}
+                        </p>
+                        <p className="seenFieldSupport" style={{ margin: '0.25rem 0' }}>{RANK_LABEL[wound.rank]}</p>
+                        <p style={{ margin: '0.25rem 0' }}>{wound.signature}</p>
+                        <p className="seenFieldSupport" style={{ margin: '0.25rem 0' }}><strong>Cost:</strong> {wound.cost}</p>
+                        <p className="seenFieldSupport" style={{ margin: '0.25rem 0' }}><strong>Repeats:</strong> {wound.repeatPattern}</p>
+                      </li>
                     ))}
                   </ul>
                 </section>
