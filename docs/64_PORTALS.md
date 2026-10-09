@@ -1,4 +1,4 @@
-// PROVENANCE: bot=grok session=2026-10-09 task=rewrite 64 portal names to raw Chinese with blunt war-era meanings, gutting interrogator voice
+// PROVENANCE: bot=grok session=2026-10-09 task=replace soft portal names with raw Chinese and blunt war-era meanings, gutting interrogator voice
 # 64 PORTALS REGISTRY
 
 Status: CANONICAL — approved registry.
@@ -218,11 +218,9 @@ The almost, the state of being nearly there. When pressured: the inability to fi
 
 ## Routing Rules
 
-1. Every portal receives environmental pre-charge before chart interpretation.
-2. Every portal is evaluated for activation status: active, weak, dormant, contradictory, insufficient signal.
-3. Every portal deposit carries a `portalId` (1–64), a `weight` (0–1), and a `reason`.
-4. The Generator surfaces only the strongest sufficiently converged portals.
-5. The Oracle renders only surfaced portals — but the full field is preserved.
-6. Each runs independently.
-7. Portals file into Life Sections.
-8. Dark chart: shadow only. Those come after sovereignty.
+1. The 64 portals are the interrogators. Each portal runs its own question set against the chart, the locations, and the lived evidence.
+2. Each portal's state is built only from its own deposits — signal, source, person, context, pressure, condition, recurrence, confidence.
+3. No global score, no pre-charge, no activation status, no convergence filter. A portal surfaces only when its own evidence earns it.
+4. The seed and the incubator come together. The seed is the natal chart. The incubator is the environment — the city, the places lived, the years in each one. The portals witness what happens to the seed in the incubator.
+5. Each portal files into Life Sections from its own deposits.
+6. Dark chart: shadow only. Those come after sovereignty.
