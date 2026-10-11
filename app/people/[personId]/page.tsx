@@ -20,7 +20,7 @@ export default async function SavedPersonPage({
 
   const { data: person } = await supabase
     .from('people')
-    .select('id,name,birth_date,birth_time,birth_location')
+    .select('id,name,birth_date,birth_location')
     .eq('owner_id', user.id)
     .eq('id', personId)
     .maybeSingle();
