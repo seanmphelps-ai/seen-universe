@@ -46,13 +46,13 @@ Discipline, collective action, the power of organized force. When pressured: rig
 ## 08 — 比 Bǐ — The Bind
 Unity, the bonds that hold people together. When pressured: codependence, loyalty that becomes a cage, the inability to leave a dying bond. When collapsed: the person isolates completely and calls it self-sufficiency.
 
-## 09 — 小畜 Xiǎo Xù — The Small Hold
+## 09 — 小畜 Xiǎo Xù — The Small Restraint
 Attention to detail, the power of small consistent actions. When pressured: obsession with minutiae that avoids the real issue. When collapsed: the person ignores all details and calls it big-picture thinking.
 
 ## 10 — 履 Lǚ — The Step
 Careful conduct, walking the line. When pressured: hypervigilance, walking on eggshells, the constant monitoring of others' reactions. When collapsed: the person stops caring about consequences and calls it authenticity.
 
-## 11 — 泰 Tài — The Breach
+## 11 — 泰 Tài — The Passage
 Harmony, the alignment of forces. When pressured: false harmony, the suppression of real conflict in the name of peace. When collapsed: the person creates chaos and calls it honesty.
 
 ## 12 — 否 Pǐ — The Block
@@ -61,7 +61,7 @@ Stagnation, the blockage of flow. When collapsed: the person forces movement and
 ## 13 — 同人 Tóng Rén — The Same Men
 Community, the gathering of like minds. When pressured: conformity, the loss of self in the group, the fear of standing alone. When collapsed: the person rejects all community and calls it individuality.
 
-## 14 — 大有 Dà Yǒu — The Great Hold
+## 14 — 大有 Dà Yǒu — The Great Harvest
 Abundance, the holding of resources. When pressured: hoarding, the fear of loss that turns abundance into scarcity. When collapsed: the person gives everything away and calls it generosity.
 
 ## 15 — 謙 Qiān — The Low
@@ -76,7 +76,7 @@ The willingness to be led. When pressured: blind obedience, the surrender of age
 ## 18 — 蠱 Gǔ — The Rot
 Repair, the cleaning of what is broken. When collapsed: the person abandons everything broken and calls it moving on.
 
-## 19 — 臨 Lín — The Advance
+## 19 — 臨 Lín — The Overseer
 The movement toward something or someone. When pressured: pursuit that becomes pressure, the inability to let the other come to you. When collapsed: the person withdraws completely and calls it self-respect.
 
 ## 20 — 觀 Guān — The Watch
@@ -97,7 +97,7 @@ The turning point, the return to source. When pressured: regression, the retreat
 ## 25 — 無妄 Wú Wàng — The Unfeigned
 Naturalness, the absence of calculation. When pressured: naivety, the refusal to see what is actually happening. When collapsed: the person becomes cynical and calls it wisdom.
 
-## 26 — 大畜 Dà Xù — The Great Hold
+## 26 — 大畜 Dà Xù — The Great Restraint
 The accumulation of power through restraint. When pressured: suppression, the holding of force until it explodes.
 
 ## 27 — 頤 Yí — The Jaws
@@ -115,7 +115,7 @@ Dependence, the attachment to what illuminates. When pressured: obsession, the i
 ## 31 — 咸 Xián — The Pull
 Attraction, the power to move others. When pressured: manipulation, the use of charm to control. When collapsed: the person withdraws all influence and calls it humility.
 
-## 32 — 恆 Héng — The Hold
+## 32 — 恆 Héng — The Constant
 Perseverance, the staying power. When pressured: stagnation, the refusal to leave what is dead. When collapsed: the person abandons everything at the first sign of difficulty.
 
 ## 33 — 遁 Dùn — The Flight
@@ -199,7 +199,7 @@ Pleasure, the capacity for joy. When pressured: addiction, the pursuit of pleasu
 ## 59 — 渙 Huàn — The Scatter
 Dissolution, the breaking apart of what was held. When pressured: loss, the scattering that feels like death. When collapsed: the person refuses all dissolution and calls it permanence.
 
-## 60 — 節 Jié — The Bind
+## 60 — 節 Jié — The Limit
 Boundaries, the setting of limits. When pressured: restriction, the limits that become a prison.
 
 ## 61 — 中孚 Zhōng Fú — The Center Holds
