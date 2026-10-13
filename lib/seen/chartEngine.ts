@@ -7,6 +7,7 @@ import { calculateNatalChart, type NatalChartInput, type NatalChartResult } from
 import { computeGeoPresence, type GeoPresenceResult } from './geoPresence';
 import { extractWoundMarkers, type WoundMarkerHit } from './woundMarkers';
 import { expressPortals, type PortalExpression } from './portals64';
+import { runAllInterrogators, type InterrogatorResult } from './interrogators';
 
 export const DARK_WINDOWS = ['04:00', '12:00', '20:00'] as const;
 export type DarkWindow = (typeof DARK_WINDOWS)[number];
@@ -34,6 +35,7 @@ export type ChartEngineResult = {
   geo: GeoPresenceResult;
   woundMarkers: WoundMarkerHit[];
   portals: PortalExpression[];
+  interrogations: InterrogatorResult[];
   darkCardSeed: DarkCardSeed;
   doctrine: {
     portals: '64';
@@ -59,21 +61,22 @@ export async function runChartEngine(input: ChartEngineInput): Promise<ChartEngi
     livedStack: input.livedStack,
   });
   const woundMarkers = extractWoundMarkers(chart, geo.baselinePressure);
-  const portals = expressPortals(woundMarkers.length, geo.baselinePressure.amplification);
-  const topPortals = [...portals]
-    .filter((p) => p.expression === 'recurrent' || p.expression === 'pressurized')
-    .slice(0, 12);
+  const portals = expressPortals();
+  const interrogations = runAllInterrogators(
+    woundMarkers.map((w) => ({ modality: 'wound-marker', id: w.id, label: w.label, source: w.source })),
+  );
 
   return {
     chart,
     geo,
     woundMarkers,
     portals,
+    interrogations,
     darkCardSeed: {
       clock: input.clock,
       woundMarkers,
       geoSummary: geo.summary,
-      topPortals: topPortals.length ? topPortals : portals.slice(0, 8),
+      topPortals: portals,
     },
     doctrine: {
       portals: '64',
