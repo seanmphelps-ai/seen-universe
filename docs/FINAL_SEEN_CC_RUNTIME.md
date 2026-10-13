@@ -1,36 +1,61 @@
-# FINAL SEEN CC BRANCH RUNTIME
+# SEEN — Closure & Composure: Compiled Project State
 
-Chief agent: **Generator** — `lib/seen/chartEngine.ts :: runChartEngine()`
+Single reference. Read this before re-deriving architecture from scratch.
 
-## Consecutive order
+## What this is
 
-| # | Stage | Subagent | File | Input | Output |
-|---|---|---|---|---|---|
-| 1 | Western source calc | Swiss Ephemeris | `lib/natalChart.ts` (`swisseph-wasm`) | name, birthDate, clock, lat/lng | `NatalChartResult` |
-| 2 | Environmental pressure | GeoPresence | `lib/seen/geoPresence.ts` | birthPlaceLabel, lat/lng, livedStack | `GeoPresenceResult` |
-| 3 | Wound extraction | WoundMarkers | `lib/seen/woundMarkers.ts` | `chart`, `geo.baselinePressure` | `WoundMarkerHit[]` |
-| 4 | Portal expression | Portals64 | `lib/seen/portals64.ts` | (static archetype set) | `PortalExpression[]` |
-| 5 | Interrogation | 64 Interrogator sub-agents | `lib/seen/interrogators/makeInterrogator.ts` × `interrogatorRoster.ts` | wound markers mapped to `ChartSignal[]` | `InterrogatorResult[]` (per-portal Q&A, no scoring) |
-| — | Assembly | Generator | `runChartEngine()` | all of the above | `ChartEngineResult { chart, geo, woundMarkers, portals, interrogations, darkCardSeed, doctrine }` |
+SEEN's first product, Closure & Composure. A person (or two, for relationship mode) enters birth data once. The system runs it through every modality's **complete native reading**, independently, then synthesizes. Not astrology alone — nine systems. Not reinvented — real installed calculation libraries per modality. Not scored/merged until each is independently audited.
 
-Each interrogator sub-agent is independent: it matches chart signals against its own portal's `woundMarkerAffinity`, runs its fixed question set, returns findings. No interrogator reads another's output. The Generator is the only stage that assembles across sub-agents.
+Two complete people enter → three recognizable comparative shadows return → user selects the true pattern → SEEN explains what happened → Cadence begins.
 
-## Built
+## The nine modalities — real packages, not reinvented
 
-- Western (Swiss Ephemeris) — canonical, local, no external API (`chart-gen` skill forbids one)
-- GeoPresence, WoundMarkers, Portals64
-- 64 Interrogator sub-agents wired into `chartEngine.ts`
+| Modality | Package | Entry point | Status |
+|---|---|---|---|
+| Western | `swisseph-wasm` | `lib/natalChart.ts :: calculateNatalChart` | positions only |
+| Hellenistic | `swisseph-wasm` + `kriya-ephemeris-timelords` | `lib/hellenisticCalc.ts :: calculateHellenistic` | positions only, blocked on SOURCE_LOCK |
+| Jyotisha | `swisseph-wasm` (sidereal) | `lib/seen/jyotishaAstronomy.ts :: calculateJyotishaAstronomy` | positions only, ayanamsha unresolved |
+| BaZi | `lunar-javascript` | `lib/baziCalc.ts :: calculateBazi` | positions only |
+| Numerology | custom (Pythagorean, Goodwin+Decoz sourced) | `lib/seen/numerology` | calc done, shadow text missing |
+| Tzolk'in | `@drewsonne/maya-dates` (GPL-3.0) | `lib/tzolkinCalc.ts :: calculateTzolkin` | positions only |
+| Dreamspell | `@oshimishi/dreamspell-math` | `lib/dreamspellCalc.ts :: calculateDreamspell` | positions only |
+| Human Design | `free-human-design` | `lib/humanDesignCalc.ts :: calculateHumanDesign` | candidate calc only |
+| I Ching | none — fails closed | `lib/ichingCalc.ts :: calculateIChing` | no calc authority yet |
 
-## Not yet built
+64-Portal layer stays separate from I Ching (`docs/64_PORTALS.md`).
 
-- **Vedic/Jyotisha subagent** — research complete (`docs/jyotisha/SEEN_JYOTISHA_CANONICAL_BUILD.md`), no code bridge, not wired into `chartEngine.ts`
-- **Hellenistic subagent** — research complete (`docs/hellenistic/`, 13-entry correction ledger, validated test case), no code bridge, not wired into `chartEngine.ts`
-- **Numerology subagent** — no implementation found
-- **Auditor layer** — no sub-agent currently has an independent auditor re-deriving its output; none exist for Western, Interrogators, or any future Vedic/Hellenistic agent
+## Chief agent + subagent + auditor — already built
 
-## Next build order
+`lib/agents/execution.ts`:
+- `readNative(modality, input)` — one isolated subagent per modality, returns a `NativeReading` with `calcAuthority` (cited source), `interpretiveAuthority` (named school), `trace`, `unresolved[]`
+- `auditNative(reading)` — the auditor step. **Currently a stub**: marks status `pending_auditor`, does not yet independently re-derive or verify
+- `runIsolatedModalities(input)` — the chief agent. Runs all 9 modalities isolated, audits each, returns 9 independent readings
 
-1. Vedic bridge: `lib/seen/vedicBridge.ts`, mirroring `lib/seen/westernBridge.ts`'s pattern, feeding from the Jyotisha canon doc
-2. Hellenistic bridge: `lib/seen/hellenisticBridge.ts`, same pattern, feeding from the Hellenistic canon + lots corpus
-3. Wire both into `runChartEngine()` as independent stages (do not let either rewrite Western output — `chart-gen` skill rule)
-4. Add one auditor per subagent: re-derive the calculation independently, flag mismatch, do not silently correct
+This is the real architecture. It matches what was asked for: one agent per modality, one auditor per agent, real libraries, no reinvention.
+
+## The actual gap (not what I guessed earlier)
+
+1. **Production `/api/seen/run` only computes Western.** The other 8 modalities exist in `lib/agents/execution.ts` but aren't wired into the live endpoint.
+2. **`auditNative()` doesn't audit yet.** It's a status stub, not independent verification.
+3. **No interpretive/shadow layer.** Every modality is raw calculated positions. The "whole native reading" (favorable + difficult findings per named school) doesn't exist yet for any modality.
+4. **Source locks unresolved per modality** — named school/edition/ayanamsha/sect choice still pending for most. See `COCOONS` object in `lib/agents/execution.ts` for the exact unresolved list per modality.
+5. **Two confirmed fakes to remove:**
+   - `lib/seen/woundMarkers.ts` unconditionally appends a hardcoded `"Ashlesha (pending Vedic native)"` wound — not a real calculation
+   - `lib/seen/chartEngine.ts` has a hardcoded bonus for portal IDs 1–14 in its ranking — unexplained, not derived
+6. `lib/seen/westernBridge.ts` fills a 64-portal column with `insufficient_signal` but labels the run "independently completed" — mislabeled, not actually complete.
+7. The `eve/orchestrator-first-slice` 64-interrogator work (`lib/seen/interrogators/`) predates this instruction set and is a separate, older experiment — not part of the `lib/agents/execution.ts` path. Production Agent Runs showed zero use over 30 days. Do not treat it as the canonical pipeline.
+
+## Governing docs (read before implementing)
+
+- `docs/incoming/2026-09-24_full_modality_pipeline_source_audit.md` — current product instruction, acceptance gate for all 9 modalities
+- `docs/CALC_WHEELS.md` — package/entry table, time-rectification input law
+- `docs/01_CLOSURE_COMPOSURE_RUNTIME_ORDER.md` — full runtime order, Generator/Oracle boundary
+- `docs/MASTER_BUILD_CHECKLIST.md` — build status tracker
+
+## Full-pipeline acceptance gate (from the 9/24 audit, still governing)
+
+For each modality: source manifest with edition/version and rights; complete named-school method inventory; input/calculation contract; whole native reading with favorable and difficult findings; independent reconstruction with a boundary case; complete source-specific wound-rule inventory; passing provenance tests. Missing native component blocks that modality's wound extraction. One validated intake starts nine isolated runs and nine independent audits. Delivery presents nine separate readings; a missing/unaudited result stays visibly pending in its own slot — never silently merged or faked.
+
+## Branch
+
+Built on `final-seen-cc-runtime`, cut from `closure-and-composure` (the repo's actual default branch — there is no separate "main").
