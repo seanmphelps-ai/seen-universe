@@ -1,4 +1,4 @@
-// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
+// PROVENANCE: bot=grok-bot session=2026-10-12 task=forge-intake-drop-typed-birth-time-display
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 import NatalChartView from '../../../components/NatalChartView';
@@ -42,7 +42,7 @@ export default async function SavedPersonPage({
           <span className="seenLabel">Saved person</span>
           <h1 id="saved-person-title" className="seenDisplayLarge">{person.name}</h1>
           <p className="seenFlowIntroduction">
-            {person.birth_date}{person.birth_time ? ` · ${person.birth_time}` : ''} — {person.birth_location}
+            {person.birth_date} — {person.birth_location}
           </p>
           <div className="seenDivider" aria-hidden="true" />
           <Link className="seenButtonSecondary" href="/account">← Saved people</Link>

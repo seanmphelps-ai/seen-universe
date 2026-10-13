@@ -1,6 +1,6 @@
-// PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
+// PROVENANCE: bot=grok-bot session=2026-10-12 task=forge-intake-fix-eve-natalChart-import
 import { describe, expect, it } from "vitest";
-import type { NatalChartResult } from "../natalChart";
+import type { NatalChartResult } from "../../natalChart";
 import { runEveOrchestrator } from "../orchestrator";
 
 const sampleChart: NatalChartResult = {
