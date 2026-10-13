@@ -68,12 +68,12 @@ describe('modality calculation axles', () => {
     expect(maya.haab).toBe('3 K\'ank\'in');
   });
 
-  it('returns sochumenh life path 1 for the package example', () => {
+  it('returns SEEN numerology life path 1 (3 + 15/6 + 1990/19/1 = 10/1)', () => {
     const numbers = readNumerology({ name: 'Nguyen Van A', birthDate: '1990-03-15' });
-    expect(numbers.package).toBe('@csessh/sochumenh');
+    expect(numbers.engine).toBe('seen-numerology');
     expect(numbers.nameAccepted).toBe(true);
-    expect(numbers.lifePath).toEqual({ value: 1, karmicDebtHits: [19] });
-    expect(numbers.dob).toEqual({ day: 15, month: 3, year: 1990 });
+    expect(numbers.contributions.find((c) => c.factor === 'lifePath')?.provenance).toMatchObject({ value: 1, reducedFrom: '10/1' });
+    expect(numbers.birth).toEqual({ day: 15, month: 3, year: 1990 });
   });
 
   it('wires readNative to each wheel without a default sidereal mode or BaZi hour', async () => {
@@ -95,7 +95,7 @@ describe('modality calculation axles', () => {
     expect(tzolkin.calculation).toMatchObject({ longCount: '13. 0. 0. 0. 0' });
 
     const numbers = await readNative('numerology', birth);
-    expect(numbers.calculation).toMatchObject({ lifePath: { value: 1 } });
+    expect(numbers.calculation).toMatchObject({ engine: 'seen-numerology' });
 
     const greenwich = {
       name: birth.name,

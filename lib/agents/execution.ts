@@ -5,7 +5,7 @@ import { calculateHellenistic } from '../hellenisticCalc';
 import { calculateHumanDesign } from '../humanDesignCalc';
 import { calculateIChing, IChingCalcBlocked } from '../ichingCalc';
 import { calculateNatalChart, type NatalChartInput, type NatalChartResult } from '../natalChart';
-import { calculateNumerology } from '../numerologyCalc';
+import { calculateNumerology } from '../seen/numerology';
 import { calculateJyotishaAstronomy, type SiderealMode } from '../seen/jyotishaAstronomy';
 import { calculateTzolkin } from '../tzolkinCalc';
 
@@ -106,9 +106,9 @@ const COCOONS: Record<ModalityId, { calcAuthority: string; interpretiveAuthority
     unresolved: ['calculation uses civil time', 'San Ming Tong Hui edition awaits source lock'],
   },
   numerology: {
-    calcAuthority: '@csessh/sochumenh@0.3.0 parseDob and numeric calculators (lib/numerologyCalc.ts)',
-    interpretiveAuthority: 'Goodwin/Decoz edition pages await verification',
-    unresolved: ['Goodwin/Decoz edition awaits comparison with this package'],
+    calcAuthority: 'lib/seen/numerology (Pythagorean; Goodwin Vol.1 + Decoz per SOURCE_LOCK 02 M1–M14)',
+    interpretiveAuthority: 'Goodwin/Decoz meaning text not on box; shadow text MISSING',
+    unresolved: ['M10–M14 source chapters unverified on box', '33/44 master policy unresolved'],
   },
   tzolkin: {
     calcAuthority: '@drewsonne/maya-dates@1.3.14 LongCount.fromGregorian with package correlation 584283 GMT (lib/tzolkinCalc.ts)',
@@ -227,8 +227,8 @@ export async function readNative(modality: ModalityId, input: NativeCalcInput): 
       ...base,
       unresolved: calculation.nameAccepted
         ? base.unresolved
-        : [...base.unresolved, '@csessh/sochumenh validateName rejected the intake name'],
-    }, ['lib/numerologyCalc.ts', 'calculateNumerology', '@csessh/sochumenh'], { calculation });
+        : [...base.unresolved, 'intake name has no Latin letters or unsupported orthography (U4)'],
+    }, ['lib/seen/numerology', 'calculateNumerology'], { calculation });
   }
 
   if (modality === 'tzolkin') {
