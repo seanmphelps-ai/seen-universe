@@ -1,0 +1,1 @@
+$file:/workspace/su-int/agent/subagents/archetypes/subagents/interrogator-14-possession-in-great-measure/agent.ts

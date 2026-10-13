@@ -1,0 +1,1 @@
+$file:/workspace/su-int/agent/subagents/archetypes/subagents/interrogator-26-the-taming-power-of-the-great/agent.ts

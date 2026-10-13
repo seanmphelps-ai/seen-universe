@@ -1,0 +1,1 @@
+$file:/workspace/su-int/agent/subagents/archetypes/subagents/interrogator-43-break-through-resoluteness/archetype.ts

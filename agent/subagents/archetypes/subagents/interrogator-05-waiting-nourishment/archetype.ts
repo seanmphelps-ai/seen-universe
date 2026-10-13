@@ -1,0 +1,1 @@
+$file:/workspace/su-int/agent/subagents/archetypes/subagents/interrogator-05-waiting-nourishment/archetype.ts

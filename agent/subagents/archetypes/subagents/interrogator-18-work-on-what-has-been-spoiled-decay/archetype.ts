@@ -1,0 +1,1 @@
+$file:/workspace/su-int/agent/subagents/archetypes/subagents/interrogator-18-work-on-what-has-been-spoiled-decay/archetype.ts

@@ -1,0 +1,1 @@
+$file:/workspace/su-int/agent/subagents/archetypes/subagents/interrogator-27-the-corners-of-the-mouth-providing-nourishment/agent.ts

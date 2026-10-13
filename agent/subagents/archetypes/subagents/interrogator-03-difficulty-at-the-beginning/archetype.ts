@@ -1,0 +1,1 @@
+$file:/workspace/su-int/agent/subagents/archetypes/subagents/interrogator-03-difficulty-at-the-beginning/archetype.ts
