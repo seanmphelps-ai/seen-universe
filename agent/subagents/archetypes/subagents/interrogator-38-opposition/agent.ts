@@ -14,7 +14,7 @@ export function readInterrogator38(chartSignals: ChartSignal[]) {
 }
 
 export default defineAgent({
-  description: 'SEEN interrogator 38 (Opposition): asks its 52 interrogation questions of every chart signal and carries all signals with provenance. No scoring.',
+  description: 'SEEN interrogator 38 (Opposition): asks the 52 universal questions of every chart signal and carries all signals with provenance. No scoring.',
   model: 'openai/gpt-6-sol',
   reasoning: 'high',
   defaultTools: false,

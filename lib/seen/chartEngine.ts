@@ -7,7 +7,7 @@ import { calculateNatalChart, type NatalChartInput, type NatalChartResult } from
 import { computeGeoPresence, type GeoPresenceResult } from './geoPresence';
 import { extractWoundMarkers, type WoundMarkerHit } from './woundMarkers';
 import { expressPortals, type PortalExpression } from './portals64';
-import { runAllInterrogators, type InterrogatorResult } from './interrogators';
+import { runAllInterrogators, fileIntoSections, type InterrogatorResult, type SectionFiling } from './interrogators';
 
 export const DARK_WINDOWS = ['04:00', '12:00', '20:00'] as const;
 export type DarkWindow = (typeof DARK_WINDOWS)[number];
@@ -36,6 +36,7 @@ export type ChartEngineResult = {
   woundMarkers: WoundMarkerHit[];
   portals: PortalExpression[];
   interrogations: InterrogatorResult[];
+  lifeSections: SectionFiling;
   darkCardSeed: DarkCardSeed;
   doctrine: {
     portals: '64';
@@ -74,6 +75,7 @@ export async function runChartEngine(input: ChartEngineInput): Promise<ChartEngi
     woundMarkers,
     portals,
     interrogations,
+    lifeSections: fileIntoSections(interrogations),
     darkCardSeed: {
       clock: input.clock,
       woundMarkers,

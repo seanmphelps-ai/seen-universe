@@ -73,3 +73,5 @@ export const INTERROGATORS: readonly Interrogator[] = [p01, p02, p03, p04, p05, 
 export function runAllInterrogators(chartSignals: ChartSignal[]): InterrogatorResult[] {
   return INTERROGATORS.map((i) => i.run(chartSignals));
 }
+
+export { fileIntoSections } from './fileIntoSections';

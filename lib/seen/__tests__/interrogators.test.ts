@@ -24,7 +24,26 @@ describe('archetype agents (agent/subagents/archetypes)', () => {
     expect(mod.PIPELINE_ORDER).toEqual(['chief', 'subagents', 'archetypes']);
     expect(mod.ARCHETYPE_AGENTS).toHaveLength(64);
     for (const a of mod.ARCHETYPE_AGENTS) {
-      expect(a.questions.reduce((n, s) => n + s.questions.length, 0)).toBe(52);
+      expect(a.questions.reduce((n: number, s: { questions: string[] }) => n + s.questions.length, 0)).toBe(52);
     }
+  });
+});
+
+describe('t612 universal questions filed into 45 life sections', () => {
+  it('all 64 ask the same set and every answer is filed, none dropped', async () => {
+    const { fileIntoSections } = await import('../interrogators');
+    const { LIFE_SECTIONS } = await import('../lifeSections');
+    const sig = [{ modality: 'western', id: 'PLUTO', label: 'Pluto', source: { ref: 'test' } }];
+    const results = runAllInterrogators(sig);
+    const first = results[0].answers.map((a) => a.question);
+    expect(first).toHaveLength(52);
+    for (const r of results) expect(r.answers.map((a) => a.question)).toEqual(first);
+    const f = fileIntoSections(results);
+    expect(Object.keys(f.sections)).toHaveLength(45);
+    const filed = new Set([...Object.values(f.sections).flatMap((s) => s.entries), ...f.unrouted].map((e) => e.archetypeId));
+    expect(filed.size).toBe(64);
+    for (const s of LIFE_SECTIONS) expect(f.sections[s.id].entries.length).toBe(s.archetypeSources.length * 52);
+    expect(f.sections[1].entries[0]).toMatchObject({ archetypeId: 14, answer: null });
+    expect(f.sections[1].entries[0].signals[0].source).toEqual({ ref: 'test' });
   });
 });

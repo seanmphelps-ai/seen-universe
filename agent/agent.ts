@@ -1,7 +1,8 @@
 // PROVENANCE: bot=grok session=2026-10-13 task=chief pipeline: modality subagents first, then 64 archetypes (no scoring)
 import { defineAgent } from 'eve'
 import { readNative, type ModalityId, type NativeCalcInput, type NativeReading } from '../lib/agents/execution'
-import type { ChartSignal, InterrogatorResult } from '../lib/seen/interrogators/types'
+import type { ChartSignal, InterrogatorResult, SectionFiling } from '../lib/seen/interrogators/types'
+import { fileIntoSections } from '../lib/seen/interrogators/fileIntoSections'
 import { runArchetypesOnModalityOutput } from './subagents/archetypes/pipeline'
 
 /** Stage 1 roster: the modality subagents in agent/subagents. */
@@ -12,6 +13,8 @@ export const MODALITY_SUBAGENTS: readonly ModalityId[] = [
 export type ChiefPipelineResult = {
   modalityOutput: Array<{ modality: ModalityId; reading?: NativeReading; error?: string }>
   archetypes: InterrogatorResult[]
+  /** Every answer filed directly into the 45 life sections. */
+  lifeSections: SectionFiling
 }
 
 /** Chief agent: call every modality subagent first, then hand their full output to all 64 archetypes. */
@@ -33,7 +36,8 @@ export async function runChiefPipeline(input: NativeCalcInput): Promise<ChiefPip
     label: m.reading ? `${m.modality} native reading (${m.reading.status})` : `${m.modality} unresolved: ${m.error}`,
     source: m.reading ?? { error: m.error },
   }))
-  return { modalityOutput, archetypes: runArchetypesOnModalityOutput(signals) }
+  const archetypes = runArchetypesOnModalityOutput(signals)
+  return { modalityOutput, archetypes, lifeSections: fileIntoSections(archetypes) }
 }
 
 export default defineAgent({

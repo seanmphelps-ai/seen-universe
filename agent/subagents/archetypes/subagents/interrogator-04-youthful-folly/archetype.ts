@@ -1,7 +1,7 @@
 // PROVENANCE: bot=grok session=2026-10-13 task=64 interrogator sub-agents (no scoring); data from lib/seen/portals64.ts @abd4fd5
 import type { PortalRecord } from '../../../../../lib/seen/portals64'
 
-/** Archetype 4 — Youthful Folly. 52 interrogation questions. */
+/** Archetype 4 — Youthful Folly. 52 portal-phrased questions (reference); runtime asks the universal set (t612). */
 export const archetype: PortalRecord = {
   "portalId": 4,
   "name": "Youthful Folly",

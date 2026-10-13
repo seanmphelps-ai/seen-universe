@@ -1,7 +1,7 @@
 // PROVENANCE: bot=grok session=2026-10-13 task=64 interrogator sub-agents (no scoring); data from lib/seen/portals64.ts @abd4fd5
 import type { PortalRecord } from '../../../../../lib/seen/portals64'
 
-/** Archetype 62 — Preponderance of the Small. 52 interrogation questions. */
+/** Archetype 62 — Preponderance of the Small. 52 portal-phrased questions (reference); runtime asks the universal set (t612). */
 export const archetype: PortalRecord = {
   "portalId": 62,
   "name": "Preponderance of the Small",
