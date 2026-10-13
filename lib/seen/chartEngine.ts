@@ -53,6 +53,7 @@ export async function runChartEngine(input: ChartEngineInput): Promise<ChartEngi
     longitude: input.longitude,
   };
 
+  // STAGE 1 — modality subagents (agent/subagents) produce their output first.
   const chart = await calculateNatalChart(natalInput);
   const geo = computeGeoPresence({
     birthPlaceLabel: input.birthPlaceLabel,
@@ -62,6 +63,7 @@ export async function runChartEngine(input: ChartEngineInput): Promise<ChartEngi
   });
   const woundMarkers = extractWoundMarkers(chart, geo.baselinePressure);
   const portals = expressPortals();
+  // STAGE 2 — the 64 archetype agents (agent/subagents/archetypes) run after, on the modality output. No scoring.
   const interrogations = runAllInterrogators(
     woundMarkers.map((w) => ({ modality: 'wound-marker', id: w.id, label: w.label, source: w.source })),
   );

@@ -17,3 +17,14 @@ describe('interrogators', () => {
     }
   });
 });
+
+describe('archetype agents (agent/subagents/archetypes)', () => {
+  it('runs after subagents and holds 64 agents with 52 questions each', async () => {
+    const mod = await import('../../../agent/subagents/archetypes/pipeline');
+    expect(mod.PIPELINE_ORDER).toEqual(['chief', 'subagents', 'archetypes']);
+    expect(mod.ARCHETYPE_AGENTS).toHaveLength(64);
+    for (const a of mod.ARCHETYPE_AGENTS) {
+      expect(a.questions.reduce((n, s) => n + s.questions.length, 0)).toBe(52);
+    }
+  });
+});
