@@ -277,10 +277,11 @@
 
 .seenForgeTitle {
   margin: 7px 0 0;
-  font-size: clamp(3.8rem, 17vw, 8.6rem);
+  font-size: clamp(1.18rem, 5.1vw, 2rem);
   font-weight: 500;
-  line-height: 0.72;
-  letter-spacing: 0.14em;
+  line-height: 1.08;
+  letter-spacing: 0.055em;
+  text-wrap: balance;
 }
 
 .seenForgeSubtitle {
@@ -676,16 +677,6 @@
   width: min(100%, 360px);
   margin: 0 auto;
   text-align: center;
-}
-
-.seenForgeMiniTitle {
-  margin: 0 0 4px;
-  color: #d5a942;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
 }
 
 .seenForgeMiniField {

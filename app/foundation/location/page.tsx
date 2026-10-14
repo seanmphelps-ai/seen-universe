@@ -32,11 +32,10 @@ export default function LocationPage() {
       <div className="seenForgeShell">
         <header className="seenForgeMasthead">
           <span className="seenForgeNumber">01</span>
-          <h1 className="seenForgeTitle">The Forge</h1>
+          <h1 className="seenForgeTitle" id="exposure-title">environmental exposure</h1>
         </header>
         <div className="seenForgeGlobeSpace" />
-        <section className="seenForgeMini" aria-labelledby="exposure-title">
-          <h2 id="exposure-title" className="seenForgeMiniTitle">environmental exposures</h2>
+        <section className="seenForgeMini" aria-label="environmental exposures">
           <div className="seenForgeMiniField">
             <LocationAutocompleteInput
               id="birth-location"
