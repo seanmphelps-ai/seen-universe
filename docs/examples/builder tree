@@ -1,0 +1,3721 @@
+ I SEEN™ Convergence Runtime Tree — Phased Implementation Roadmap
+
+1. Implementation Principles
+
+The implementation must preserve the following invariants across every phase:
+
+1. Native independence
+Each modality completes its own calculation independently and retains its original methodology, intermediate values, raw inputs, final values, provenance, and version.
+2. Incubator dual-layer model
+Every location contains:
+  • an objective environmental field; and
+  • a person-specific subjective exposure record.
+3. No environmental determinism
+Objective conditions must never be treated as proof of subjective experience, developmental effect, or recognition.
+4. Person-specific exposure
+In shared locations and relationships, each person retains a separate subjective exposure record.
+5. Traceable convergence
+Every convergence result must be traceable to its source signals, calculations, timing, location, relationship context, environmental evidence, subjective report, recognition evidence, and translator output.
+6. Contradiction preservation
+Conflicting signals, mismatches, unsupported fields, and unresolved interpretations remain visible.
+7. Conditional future modeling
+Future subjective exposure is forecast conditionally and must never be represented as lived evidence.
+8. Probabilistic output
+Stronger language is permitted only when supported by stronger convergence, recurrence, specificity, independence, timing, and recognition evidence.
+
+────────
+
+2. Delivery Phases
+
+Phase 0 — Scope, Governance, and Domain Decisions
+
+Objective
+
+Convert the specification into an implementable domain model with explicit terminology, state transitions, evidence rules, and unresolved design decisions.
+
+Deliverables
+
+• Domain glossary.
+• System boundary definition.
+• Modality registry.
+• Portal registry.
+• Evidence and confidence policy.
+• Recognition-state policy.
+• Objective-versus-subjective data policy.
+• Historical and future-data policy.
+• Privacy and consent policy for subjective exposure.
+• Decision log for unresolved questions.
+
+Key decisions
+
+The following must be resolved before production implementation:
+
+1. Whether subjective exposure is:
+  • user-entered only;
+  • optionally imported from structured records;
+  • or also inferred from observed behavioral evidence.
+2. Whether “recognition” means:
+  • user confirmation;
+  • system-supported interpretation;
+  • or both as separate fields.
+3. Whether objective environmental data may include:
+  • only externally sourced facts;
+  • historically reconstructed conditions;
+  • modeled estimates;
+  • or all three with separate evidence grades.
+4. Whether portal definitions are:
+  • fixed and versioned;
+  • configurable by administrators;
+  • or extensible by modality.
+5. Whether confidence is:
+  • a deterministic score;
+  • a rule-based classification;
+  • or a hybrid score plus explanation.
+
+Dependencies
+
+None.
+
+Acceptance criteria
+
+• Every major term has one canonical definition.
+• Objective environmental presence, subjective exposure, portal relevance, developmental effect, and convergence confidence are represented as separate concepts.
+• Recognition status is not conflated with objective support or subjective exposure.
+• Future forecast data is explicitly distinguishable from historical lived evidence.
+• All unresolved design questions have an owner and decision deadline.
+• No implementation team begins modality or convergence work before the domain decisions are approved.
+
+────────
+
+Phase 1 — Canonical Schemas and Provenance Infrastructure
+
+Objective
+
+Establish the shared data contracts required by every downstream subsystem.
+
+Deliverables
+
+Implement versioned schemas for:
+
+• SeenRunInputSchema
+• NativeSignalSchema
+• AstronomicalStateSchema
+• LocationHistorySchema
+• ObjectiveEnvironmentSchema
+• SubjectiveExposureSchema
+• IncubatorSchema
+• PortalStateSchema
+• ContextualIntersectionSchema
+• HistoricalCaptureSchema
+• FutureWindowSchema
+• RelationshipContextSchema
+• SeenConvergenceSchema
+• RecognitionEvidenceSchema
+• TranslatorOutputSchema
+
+Required capabilities
+
+• Schema validation.
+• Schema versioning.
+• Backward-compatible migrations.
+• Stable identifiers for:
+  • persons;
+  • locations;
+  • runs;
+  • signals;
+  • calculations;
+  • environmental snapshots;
+  • exposure reports;
+  • portal states;
+  • convergence objects;
+  • recognition records.
+• Immutable provenance references.
+• Audit history for corrections and recalculations.
+
+Dependencies
+
+• Phase 0 domain decisions.
+
+Acceptance criteria
+
+• Invalid input is rejected with actionable validation errors.
+• Every persisted object has a stable identifier and schema version.
+• Every native signal can be traced to its calculator, version, raw inputs, intermediate values, final value, and source references.
+• Subjective exposure records are stored separately from objective environmental records.
+• A convergence object can reference all contributing records without copying or overwriting their source identity.
+• Schema migrations preserve historical traceability.
+• Unknown values are represented explicitly and are not silently converted to false, zero, or absent.
+
+────────
+
+Phase 2 — Subject and Birth-Time Foundation
+
+Objective
+
+Implement the subject model, birth data, confidence states, and rectification workflow.
+
+Deliverables
+
+• Subject creation and update service.
+• Birth date and location validation.
+• Birth-time states:
+  • EXACT
+  • RECTIFIED
+  • UNKNOWN
+• Rectification session model.
+• Rectification round model.
+• Candidate time-window model.
+• Recognition summary model.
+• Selected-window and estimated-time model.
+• Birth-time confidence calculation.
+
+Rectification workflow
+
+1. Generate candidate birth-time windows.
+2. Calculate native signals for each candidate.
+3. Generate recognition summaries.
+4. Collect user recognition or rejection.
+5. Narrow the candidate window.
+6. Repeat until:
+  • a selected estimate is reached;
+  • the confidence threshold is met;
+  • or the result remains unresolved.
+
+Dependencies
+
+• Phase 1 schemas.
+• At least one native calculation engine from Phase 3.
+
+Acceptance criteria
+
+• Exact birth times remain distinct from rectified times.
+• Rectification sessions preserve every candidate window and recognition response.
+• The system can represent multiple rounds of narrowing.
+• A selected estimated birth time includes its confidence and supporting evidence.
+• If no candidate is sufficiently supported, the result remains unresolved.
+• Rectification does not overwrite the original reported birth-time data.
+• Every downstream calculation identifies whether it used exact, rectified, or unknown birth time.
+
+────────
+
+Phase 3 — Native Calculation Engines
+
+Objective
+
+Implement independent calculation engines while preserving each system’s native mechanics.
+
+Delivery order
+
+1. Western calculations using Swiss Ephemeris.
+2. Current-sky and transit calculations.
+3. Vedic calculations.
+4. Hellenistic calculations.
+5. BaZi / Four Pillars.
+6. Tzolkin / Mayan.
+7. Dreamspell / Galaxy Signature.
+8. Numerology.
+9. Additional verified systems.
+
+Deliverables per modality
+
+Each modality must provide:
+
+• Input adapter.
+• Native calculation engine.
+• Native result model.
+• Intermediate calculation record.
+• Provenance record.
+• Version identifier.
+• Validation fixtures.
+• Golden test cases.
+• Error and unsupported-input behavior.
+• Native signal extraction adapter.
+
+Western and current-sky requirements
+
+Implement:
+
+• Natal planetary positions.
+• Houses.
+• Angles.
+• Aspects.
+• Native timing mechanics.
+• Historical sky calculations.
+• Present sky calculations.
+• Future sky calculations.
+• Relocated calculations.
+• Natal-to-event transit relationships.
+
+Dependencies
+
+• Phase 1 schemas.
+• Phase 2 subject and birth-time model.
+• Approved ephemeris and calculation libraries.
+
+Acceptance criteria
+
+• Each modality can calculate independently without requiring another modality’s output.
+• Native calculations are reproducible for identical inputs, versions, and configuration.
+• Raw inputs and intermediate values are persisted.
+• A modality failure does not erase or invalidate successful calculations from other modalities.
+• Swiss Ephemeris calculations include calculator version, ephemeris version, timezone, coordinates, and calculation timestamp.
+• Native signals are never replaced by convergence interpretations.
+• Golden test cases pass for every released modality.
+• Unsupported or ambiguous calculations are marked unresolved rather than fabricated.
+
+────────
+
+Phase 4 — Objective Environmental Data Layer
+
+Objective
+
+Build the objective environmental field for each location and period.
+
+Deliverables
+
+• Location registry.
+• Coordinate normalization.
+• Historical location-period model.
+• Environmental snapshot model.
+• Environmental source registry.
+• Historical reconstruction pipeline.
+• Data-quality and evidence-grade model.
+• Period-correctness validation.
+• Objective environmental summary generator.
+
+Objective field categories
+
+Support the following where data is available:
+
+• GeoPresence.
+• Biome.
+• Settlement type.
+• Abiotic conditions.
+• Terrain and elevation.
+• Climate.
+• Heat and cold exposure.
+• Seasonality and light.
+• Environmental stability or volatility.
+• Population and social field.
+• Institutional and resource conditions.
+• Political conditions.
+• Religious and cultural conditions.
+• Violence and safety conditions.
+• Poverty and wealth conditions.
+• Family and household structure.
+• Historical correctness for the relevant period.
+
+Evidence states
+
+Each objective field must support:
+
+• observed;
+• historically reconstructed;
+• modeled;
+• estimated;
+• unavailable;
+• disputed.
+
+Dependencies
+
+• Phase 1 schemas.
+• Location and date normalization.
+• External environmental data sources.
+
+Acceptance criteria
+
+• Objective conditions are stored independently from subjective exposure.
+• Every objective field has a source, period, geographic scope, and evidence status.
+• Historical data is not presented as current data.
+• The system can represent incomplete or conflicting environmental sources.
+• Objective environmental presence alone cannot create a recognition result.
+• The system can generate an objective summary without generating a subjective summary.
+• Environmental snapshots are immutable once used in a historical capture, with corrections represented as new versions.
+
+────────
+
+Phase 5 — Subjective Exposure Intake
+
+Objective
+
+Implement a manageable, structured intake for person-specific lived exposure.
+
+Deliverables
+
+• Location exposure questionnaire.
+• Exposure category model.
+• Intensity, frequency, and direction fields.
+• Setting-selection model.
+• Optional free-text field.
+• “Unknown / cannot assess” option.
+• Exposure certainty model.
+• Exposure report versioning.
+• Consent and privacy controls.
+• Subjective exposure summary generator.
+
+Required primary categories
+
+1. Safety and threat.
+2. Violence or aggression.
+3. Poverty, deprivation, or resource insecurity.
+4. Family conflict or instability.
+5. Emotional neglect or lack of attunement.
+6. Control, surveillance, or restriction.
+7. Responsibility beyond developmental age.
+8. Belonging, exclusion, or social isolation.
+9. Religion, morality, or spiritual pressure.
+10. Politics, ideology, or institutional pressure.
+11. Climate, bodily stress, or environmental hardship.
+12. Opportunity, stimulation, protection, or access.
+
+Required fields per selected category
+
+exposureLevel:
+  LOW | MODERATE | HIGH | UNKNOWN
+
+exposureFrequency:
+  OCCASIONAL | RECURRING | CONSTANT | UNKNOWN
+
+exposureDirection:
+  SUPPORTIVE | STRESSFUL | MIXED | UNKNOWN
+
+Required setting selections
+
+Support:
+
+• urban;
+• suburban;
+• rural;
+• remote;
+• institutional;
+• hot;
+• cold;
+• seasonally extreme;
+• dense;
+• isolated;
+• mobile;
+• stable;
+• volatile.
+
+Dependencies
+
+• Phase 1 schemas.
+• Phase 4 location and objective environment layer.
+• Privacy and consent decisions from Phase 0.
+
+Acceptance criteria
+
+• A user can submit an exposure report without writing a narrative.
+• The user can select any number of exposure categories.
+• Every selected category supports level, frequency, direction, and certainty.
+• The user can explicitly select unknown or cannot assess.
+• Free text is optional.
+• The system does not infer subjective exposure solely from objective environmental data.
+• Exposure reports are person-specific and location-period-specific.
+• Exposure reports can be revised without deleting prior versions.
+• The system can generate a subjective summary that clearly states it is based on reported experience.
+• Sensitive exposure data is access-controlled and auditable.
+
+────────
+
+Phase 6 — Incubator Assembly and Alignment
+
+Objective
+
+Combine objective environmental conditions and subjective reported exposure into a location incubator without collapsing the two layers.
+
+Deliverables
+
+• Incubator assembly service.
+• Objective-subjective alignment engine.
+• Objective-subjective mismatch engine.
+• Incubator summary generator.
+• Exposure certainty propagation.
+• Location recognition state model.
+• Incubator versioning.
+
+Required outputs
+
+For each location-period-person combination:
+
+• objective environmental field;
+• subjective reported exposure;
+• objective summary;
+• subjective summary;
+• convergence summary;
+• exposure selections;
+• exposure intensity;
+• exposure certainty;
+• objective-subjective alignment;
+• objective-subjective mismatch;
+• recognition status:
+  • YES
+  • PARTIAL
+  • NO
+  • UNKNOWN
+
+Alignment rules
+
+The engine must distinguish:
+
+1. Objective condition present and subjectively reported.
+2. Objective condition present but not subjectively reported.
+3. Objective condition absent or unsupported but subjectively reported.
+4. Both objective and subjective layers unknown.
+5. Objective and subjective layers aligned.
+6. Objective and subjective layers mismatched.
+7. Objective data disputed or historically uncertain.
+
+Dependencies
+
+• Phase 4 objective environment.
+• Phase 5 subjective exposure.
+• Phase 1 schemas.
+
+Acceptance criteria
+
+• The same objective environment can be associated with different subjective exposure records for different people.
+• A mismatch is preserved rather than resolved automatically.
+• A benign objective environment cannot invalidate a reported experience.
+• An objectively adverse environment cannot create a subjective experience record without user or evidence support.
+• Incubator recognition remains separate from portal recognition.
+• The incubator can be evaluated even when one layer is unknown.
+• The system can explain why an incubator is aligned, mismatched, partial, or unresolved.
+
+────────
+
+Phase 7 — 64-Portal Interrogation Engine
+
+Objective
+
+Implement the common extraction architecture across all 64 portals.
+
+Deliverables
+
+• Portal registry.
+• Portal versioning.
+• Portal interrogation schema.
+• Portal state engine.
+• Portal-to-life-section routing map.
+• Portal evidence model.
+• Portal unresolved-field model.
+• Portal probability model.
+
+Required portal dimensions
+
+Each portal must support:
+
+• WHAT:
+  • archetypal function;
+  • capacity;
+  • regulated expression;
+  • distorted expression.
+• PRESSURE:
+  • source;
+  • intensity;
+  • accumulation;
+  • competing pressure;
+  • threshold.
+• TRIGGER:
+  • circumstance;
+  • person;
+  • relationship;
+  • place;
+  • timing.
+• ADAPTATION:
+  • protective response;
+  • learned response;
+  • automatic response;
+  • compensation;
+  • escalation.
+• BEHAVIOR:
+  • action;
+  • avoidance;
+  • pursuit;
+  • repetition;
+  • contradiction.
+• PAYOFF:
+  • safety;
+  • control;
+  • belonging;
+  • relief;
+  • reward.
+• COST:
+  • emotional;
+  • relational;
+  • material;
+  • opportunity;
+  • cumulative.
+• CONSEQUENCE:
+  • immediate;
+  • delayed;
+  • interpersonal;
+  • environmental;
+  • recurring.
+• EXPERIENTIAL FAILURE:
+  • breakdown;
+  • avoidance;
+  • loss;
+  • self-defeat;
+  • collapse.
+• SELF-SABOTAGE:
+  • protective need;
+  • repeated strategy;
+  • immediate payoff;
+  • overuse;
+  • eventual cost.
+• PEOPLE:
+  • role;
+  • attraction;
+  • compatibility;
+  • friction;
+  • activation;
+  • recurrence.
+• PLACE:
+  • objective incubator field;
+  • subjective exposure;
+  • constraint;
+  • access;
+  • delta;
+  • amplification;
+  • suppression;
+  • regulation;
+  • rerouting;
+  • recurrence.
+• TIME:
+  • baseline;
+  • onset;
+  • duration;
+  • build;
+  • peak;
+  • transition;
+  • overlap;
+  • recurrence;
+  • resolution.
+• PROBABILITY:
+  • signal strength;
+  • independence;
+  • convergence;
+  • contradiction;
+  • specificity;
+  • timing;
+  • recurrence;
+  • context;
+  • confidence.
+• POTENTIAL:
+  • capacity;
+  • opportunity;
+  • constraint;
+  • readiness;
+  • regulated expression;
+  • alternate response.
+• EVIDENCE:
+  • claim;
+  • provenance;
+  • independence;
+  • quality;
+  • agreement;
+  • contradiction;
+  • specificity;
+  • limitation;
+  • confidence.
+• UNRESOLVED:
+  • every unsupported field remains UNKNOWN.
+
+Dependencies
+
+• Phase 3 native signals.
+• Phase 6 incubators.
+• Phase 2 subject state.
+• Portal definitions approved in Phase 0.
+
+Acceptance criteria
+
+• All 64 portals are addressable through a common interface.
+• Each portal can receive native signals, timing, location, relationship, and incubator context.
+• Portal outputs preserve source signal identity.
+• Unsupported fields remain unknown.
+• Portal expressions can be amplified, suppressed, regulated, rerouted, or left unresolved.
+• Portal logic does not infer subjective exposure from objective conditions alone.
+• Portal outputs include probability-increasing and probability-reducing conditions.
+• Every portal state is versioned and reproducible.
+• Portal extraction can be run for one modality or multiple modalities without changing native calculations.
+
+────────
+
+Phase 8 — Convergence Matrix and Evidence Accumulation
+
+Objective
+
+Build the cross-modality and cross-context convergence engine.
+
+Deliverables
+
+• Convergence matrix.
+• Native-marker intersection model.
+• Reinforcement engine.
+• Contradiction engine.
+• Recurrence engine.
+• Timing-overlap engine.
+• Location-overlap engine.
+• Relationship-overlap engine.
+• Objective environmental support evaluator.
+• Subjective exposure support evaluator.
+• Objective-subjective alignment evaluator.
+• Recognition support and rejection evaluator.
+• Confidence calculator.
+• Unresolved-state evaluator.
+
+Matrix dimensions
+
+Support intersections across:
+
+• Western.
+• Vedic.
+• Hellenistic.
+• BaZi.
+• Tzolkin.
+• Dreamspell.
+• Numerology.
+• Incubator.
+
+Required intersection record
+
+Each supported intersection must store:
+
+• person ID;
+• portal ID;
+• modality;
+• native marker;
+• native calculation;
+• interpretation;
+• direction;
+• pressure;
+• timeframe;
+• location;
+• objective environmental field;
+• subjective exposure;
+• relationship;
+• provenance;
+• confidence;
+• contradictions.
+
+Dependencies
+
+• Phase 3 native engines.
+• Phase 6 incubators.
+• Phase 7 portal engine.
+• Phase 2 subject state.
+
+Acceptance criteria
+
+• Independent signals can reinforce one another without being merged into a single native signal.
+• Contradictory signals remain visible.
+• Repeated signals are distinguishable from independent signals.
+• Objective environmental support and subjective exposure support are scored separately.
+• Recognition support and recognition rejection are scored separately.
+• A high objective score cannot compensate automatically for absent subjective evidence.
+• A high subjective report cannot be rewritten as objective fact.
+• Confidence includes an explanation of contributing and limiting evidence.
+• The matrix can represent no supported intersection without treating it as contradiction.
+• Unresolved results remain available as a first-class output.
+
+────────
+
+Phase 9 — Life-Section Routing and Signal Ripple
+
+Objective
+
+Route surviving portal expressions into applicable life sections while preserving full provenance.
+
+Deliverables
+
+• Life-section registry.
+• Portal-to-life-section routing rules.
+• Signal ripple engine.
+• Cross-modality propagation model.
+• Contextual overlap model.
+• Recalculation triggers.
+
+Required routing behavior
+
+Each surviving portal expression must retain:
+
+• portal ID;
+• source modality;
+• native signal;
+• incubator;
+• objective environmental field;
+• subjective exposure;
+• timing;
+• relationship;
+• convergence state;
+• confidence;
+• contradictions.
+
+Signal ripple sequence
+
+1. Native marker.
+2. Portal intersection.
+3. Pressure and trigger.
+4. Adaptation and behavior.
+5. Payoff, cost, and consequence.
+6. Life-section routing.
+7. Cross-modality comparison.
+8. Incubator comparison.
+9. Timing comparison.
+10. Recognition.
+11. Recalculation.
+
+Dependencies
+
+• Phase 7 portal engine.
+• Phase 8 convergence engine.
+• Life-section definitions.
+
+Acceptance criteria
+
+• A portal expression can route to multiple life sections.
+• Routing does not duplicate or destroy provenance.
+• Cross-modality agreement reinforces a mechanism only when the mechanisms are comparable.
+• Non-comparable signals remain separate.
+• Recalculation can be triggered by new recognition, exposure, timing, or relationship data.
+• The system can show the full ripple path from native marker to final convergence.
+
+────────
+
+Phase 10 — Historical Capture and State Reconstruction
+
+Objective
+
+Reconstruct past periods using the person’s state at entry, historical sky, historical environment, subjective exposure, and observed recognition.
+
+Deliverables
+
+• Historical capture workflow.
+• State snapshot service.
+• Historical sky service.
+• Historical transit service.
+• Historical relocation service.
+• Historical incubator assembly.
+• Historical portal evaluation.
+• Historical recognition capture.
+• Historical capture comparison tools.
+
+Required historical capture fields
+
+• Capture ID.
+• Person ID.
+• Window start and end.
+• Location ID.
+• Person state at entry.
+• Natal chart ID.
+• Historical sky ID.
+• Transit set ID.
+• Relocation set ID.
+• Environmental state ID.
+• Subjective exposure.
+• Incubator summaries.
+• Portal state IDs.
+• Lived evidence.
+• User recognition.
+• Recognized life sections.
+
+Dependencies
+
+• Phases 2–9.
+• Historical environmental data from Phase 4.
+• Historical astronomical calculations from Phase 3.
+
+Acceptance criteria
+
+• Historical captures use the person’s accumulated state at the beginning of the period.
+• Historical sky calculations use the correct date, time, coordinates, and timezone.
+• Historical objective conditions are period-correct or explicitly marked uncertain.
+• Subjective exposure is stored as reported lived evidence.
+• Historical recognition is distinct from system-generated interpretation.
+• The system can reconstruct a historical capture without overwriting current state.
+• Historical captures can be compared across locations, periods, and portal states.
+
+────────
+
+Phase 11 — Present Capture
+
+Objective
+
+Evaluate the person’s current state against the current location, current environment, current relationships, current sky, and active portal field.
+
+Deliverables
+
+• Present capture workflow.
+• Current-sky integration.
+• Current location incubator.
+• Current relationship context.
+• Current portal field.
+• Now-state generator.
+• Present recognition workflow.
+
+Required present-state inputs
+
+• Person’s accumulated state.
+• Current location.
+• Current objective environment.
+• Current subjective exposure.
+• Current sky.
+• Current relationships.
+• Active portal field.
+• Prior recognition history.
+
+Dependencies
+
+• Phases 2–10.
+• Current-sky service from Phase 3.
+• Current environmental data from Phase 4.
+
+Acceptance criteria
+
+• Present capture reflects the person’s accumulated state without altering immutable native mechanics.
+• Current sky and current location are evaluated for the target time.
+• Current subjective exposure remains person-reported or explicitly forecast.
+• Current relationships are represented separately from location and individual state.
+• The output distinguishes current recognition from historical recognition.
+• The system can identify active, suppressed, regulated, rerouted, and unresolved portal expressions.
+
+────────
+
+Phase 12 — Two-Person Relationship Tree
+
+Objective
+
+Implement person-to-person, person-to-location, and shared-context analysis without merging individual exposure histories.
+
+Deliverables
+
+• Relationship input model.
+• Two-person native field.
+• Person A × location field.
+• Person B × location field.
+• Shared relationship × location field.
+• Relationship timing model.
+• Shared capture model.
+• Person-specific exposure comparison.
+
+Required relationship layers
+
+• Person A native modalities.
+• Person B native modalities.
+• Person A accumulated exposure.
+• Person B accumulated exposure.
+• Person A recognition history.
+• Person B recognition history.
+• Person A timing.
+• Person B timing.
+• Person A portal field.
+• Person B portal field.
+• A ↔ B native field.
+• A ↔ location.
+• B ↔ location.
+• A ↔ B ↔ location.
+• Shared time.
+
+Dependencies
+
+• Phases 2–11.
+• Relationship definitions from Phase 0.
+
+Acceptance criteria
+
+• Person A and Person B retain separate subjective exposure records.
+• Shared objective conditions may be reused, but subjective exposure is never copied automatically.
+• Relationship effects are stored separately from individual effects.
+• The system can identify where A and B align, diverge, reinforce, or conflict.
+• A shared location does not imply shared recognition.
+• Relationship timing can be evaluated independently from individual timing.
+• Shared captures preserve all individual and relational provenance.
+
+────────
+
+Phase 13 — Travel Window Search and Relocation Analysis
+
+Objective
+
+Search future destination and date windows for individual, relational, environmental, and portal convergence.
+
+Deliverables
+
+• Candidate-window generator.
+• Destination normalization.
+• Future astronomical pressure calculator.
+• Future environmental pressure calculator.
+• Conditional subjective exposure forecaster.
+• Individual portal-field evaluator.
+• Relationship portal-field evaluator.
+• Candidate scoring and ranking.
+• Contradiction and uncertainty display.
+
+Required candidate outputs
+
+For each candidate window:
+
+• Person A support and pressure.
+• Person B support and pressure, if applicable.
+• Relationship support and pressure.
+• Objective environmental fit.
+• Conditional subjective exposure forecast.
+• Astronomical convergence.
+• Recurring historical similarities.
+• Contradictions.
+• Confidence.
+• Forecast limitations.
+
+Dependencies
+
+• Phases 3, 4, 7, 8, 10, 11, and 12.
+
+Acceptance criteria
+
+• Future subjective exposure is labeled as forecast, not lived evidence.
+• Forecasts are based on prior reported patterns, objective conditions, relationship context, and portal activation.
+• Candidate windows can be compared by exact-state similarity and functional-state similarity.
+• Objective similarity does not imply subjective similarity.
+• The system exposes the assumptions behind each forecast.
+• Contradictory indicators reduce or qualify confidence.
+• Candidate ranking remains probabilistic and explainable.
+• The system can search across date ranges, locations, and optional relationship participants.
+
+────────
+
+Phase 14 — Historical-State Reconstruction to Future Search
+
+Objective
+
+Use known historical captures as target patterns for future-window discovery.
+
+Deliverables
+
+• Historical target-pattern extractor.
+• Exact-state similarity evaluator.
+• Functional-state similarity evaluator.
+• Historical-to-future comparison engine.
+• Recurrence-window search.
+• Pattern explanation report.
+
+Comparison dimensions
+
+Exact-state similarity
+
+Compare:
+
+• location characteristics;
+• objective environmental conditions;
+• date and season;
+• astronomical configuration;
+• native-to-event relationships;
+• portal activation;
+• relationship context;
+• developmental period;
+• reported exposure pattern.
+
+Functional-state similarity
+
+Compare:
+
+• pressure;
+• trigger;
+• adaptation;
+• behavior;
+• payoff;
+• cost;
+• consequence;
+• portal activation;
+• likely subjective exposure;
+• relational dynamics;
+• recognition pattern.
+
+Dependencies
+
+• Phase 10 historical capture.
+• Phase 13 future search.
+• Phase 8 convergence matrix.
+
+Acceptance criteria
+
+• Historical captures can be selected as target patterns.
+• Exact and functional similarity are scored separately.
+• A future location can be objectively similar but functionally dissimilar.
+• A future location can be functionally similar despite objective differences.
+• Developmental stage, resources, relationships, and timing are included in functional comparison.
+• The output clearly distinguishes recurrence from resemblance.
+• Unsupported future conclusions remain conditional or unresolved.
+
+────────
+
+Phase 15 — Translator Layer
+
+Objective
+
+Translate converged portal mechanisms into human-recognizable language without replacing the underlying evidence.
+
+Deliverables
+
+• Translator registry.
+• Translator versioning.
+• Translation rules.
+• Human-readable explanation generator.
+• Source-preserving translation output.
+• Limitation and uncertainty language.
+• Applicable lenses:
+  • attachment theory;
+  • developmental psychology;
+  • nervous-system models;
+  • somatic patterning;
+  • family systems;
+  • Jungian psychology;
+  • relational models;
+  • behavioral frameworks;
+  • applicable Maisel lenses.
+
+Dependencies
+
+• Phase 8 convergence.
+• Phase 9 signal ripple.
+• Phase 14 future and historical comparison where applicable.
+
+Acceptance criteria
+
+• Translator output references the underlying portal and source signals.
+• Translation does not introduce unsupported claims.
+• Objective environmental conditions and subjective exposure remain separately visible.
+• Confidence and contradictions are included in the human-readable output.
+• Translator language distinguishes:
+  • observed;
+  • reported;
+  • inferred;
+  • forecast;
+  • unresolved.
+• Translator versions are stored for reproducibility.
+• A user can navigate from translated language back to native calculations and evidence.
+
+────────
+
+Phase 16 — Dark Shadow Reading and Sovereignty Output
+
+Objective
+
+Generate the final interpretive layer from completed recognition and convergence data.
+
+Deliverables
+
+• Dark shadow reading generator.
+• Self-sabotage loop model.
+• People-pattern model.
+• Incubator-pattern model.
+• Recognition and contradiction summary.
+• Jung / sovereignty handoff.
+• Cadence output.
+• Final report assembly.
+
+Required dark shadow fields
+
+• strongest pressure;
+• likely trigger;
+• protective adaptation;
+• repeated behavior;
+• short-term payoff;
+• distortion;
+• cost;
+• consequence;
+• experiential failure;
+• self-sabotage loop;
+• people pattern;
+• incubator pattern;
+• subjective exposure;
+• timeframe;
+• recurrence;
+• contradictions;
+• confidence;
+• provenance.
+
+Dependencies
+
+• Phases 8–15.
+
+Acceptance criteria
+
+• Dark shadow readings are generated only from completed or explicitly partial convergence.
+• The output distinguishes protective adaptation from moral judgment.
+• Self-sabotage is represented as a repeated strategy with a protective need, payoff, overuse, and eventual cost.
+• Contradictions and unresolved fields remain visible.
+• The output does not label a location universally good or bad.
+• Jung / sovereignty output receives the completed recognition field and its limitations.
+• Cadence output identifies whether the result concerns past reconstruction, present capture, future search, or multiple modes.
+
+────────
+
+Phase 17 — End-to-End Runtime Orchestration
+
+Objective
+
+Connect all services into a coherent runtime capable of executing foundation, historical, present, future, relationship, travel, and relocation runs.
+
+Deliverables
+
+• Run orchestration service.
+• Mode-specific pipelines:
+  • FOUNDATION
+  • HISTORICAL_CAPTURE
+  • PRESENT_CAPTURE
+  • FUTURE_WINDOW
+  • RELATIONSHIP
+  • TRAVEL
+  • RELOCATION
+• Dependency graph execution.
+• Partial-failure handling.
+• Recalculation engine.
+• Run status model.
+• Run audit trail.
+• Result caching.
+• Idempotent execution.
+• Incremental update support.
+
+Required orchestration sequence
+
+VALIDATE INPUT
+    ↓
+LOAD SUBJECT STATE
+    ↓
+CALCULATE NATIVE SYSTEMS INDEPENDENTLY
+    ↓
+LOAD OR BUILD OBJECTIVE ENVIRONMENT
+    ↓
+LOAD OR COLLECT SUBJECTIVE EXPOSURE
+    ↓
+ASSEMBLE INCUBATOR
+    ↓
+CALCULATE TIMING AND RELATIONSHIP CONTEXT
+    ↓
+INTERROGATE 64 PORTALS
+    ↓
+ROUTE INTO LIFE SECTIONS
+    ↓
+BUILD CONVERGENCE MATRIX
+    ↓
+ACCUMULATE EVIDENCE
+    ↓
+PRESERVE CONTRADICTIONS
+    ↓
+GENERATE RECOGNITION STATE
+    ↓
+RECALCULATE IF NEW EVIDENCE EXISTS
+    ↓
+TRANSLATE
+    ↓
+GENERATE DARK SHADOW READING
+    ↓
+HAND OFF TO JUNG / SOVEREIGNTY
+    ↓
+GENERATE CADENCE OUTPUT
+
+Dependencies
+
+• All prior phases.
+
+Acceptance criteria
+
+• Every supported run mode executes through a defined pipeline.
+• A failure in one modality does not erase successful outputs from other modalities.
+• Runs are idempotent for identical inputs and versions.
+• New recognition or exposure data triggers targeted recalculation.
+• Every final result can be traced through the complete runtime tree.
+• Partial results are clearly labeled.
+• The runtime never silently substitutes missing data.
+• The system can resume interrupted runs.
+• Run outputs include status, warnings, unresolved fields, and provenance.
+
+────────
+
+3. Cross-Cutting Technical Requirements
+
+3.1 Versioning
+
+Version independently:
+
+• schemas;
+• modality calculators;
+• ephemeris data;
+• environmental sources;
+• portal definitions;
+• convergence rules;
+• translator rules;
+• confidence rules.
+
+Acceptance criteria
+
+A historical result remains reproducible using the versions recorded at calculation time.
+
+────────
+
+3.2 Evidence and Confidence
+
+Confidence must be explainable and must account for:
+
+• signal strength;
+• source independence;
+• convergence;
+• contradiction;
+• specificity;
+• timing;
+• recurrence;
+• context;
+• objective environmental support;
+• subjective exposure support;
+• recognition support;
+• data quality;
+• limitations.
+
+Acceptance criteria
+
+Every confidence value has a machine-readable breakdown and a human-readable explanation.
+
+────────
+
+3.3 Unknown and Unresolved States
+
+The system must distinguish:
+
+• unknown;
+• unavailable;
+• unsupported;
+• contradictory;
+• not applicable;
+• not yet calculated;
+• forecast;
+• reported;
+• observed;
+• inferred.
+
+Acceptance criteria
+
+No unsupported field is populated with a default interpretation.
+
+────────
+
+3.4 Privacy and Sensitive Data
+
+Subjective exposure may contain sensitive information about violence, neglect, poverty, family conflict, control, religion, politics, and bodily stress.
+
+Required controls:
+
+• explicit consent;
+• field-level access control;
+• encryption at rest and in transit;
+• audit logging;
+• deletion and export workflows;
+• redaction support;
+• separation of personally identifying data from interpretive records where feasible.
+
+Acceptance criteria
+
+A user can view, export, correct, restrict, and delete subjective exposure records according to policy.
+
+────────
+
+3.5 Explainability
+
+Every final convergence must answer:
+
+• What was detected?
+• Which portal was involved?
+• Which native systems contributed?
+• What was the timing?
+• What location was involved?
+• What objective conditions were present?
+• What subjective exposure was reported?
+• What relationships were involved?
+• What reinforced the result?
+• What contradicted it?
+• What remains unknown?
+• Why did the system assign its status and confidence?
+
+Acceptance criteria
+
+A reviewer can navigate from final output to every contributing source record.
+
+────────
+
+4. Milestone Plan
+
+Milestone M1 — Domain and Contract Baseline
+
+Includes
+
+• Phase 0.
+• Phase 1.
+
+Exit criteria
+
+• Approved domain glossary.
+• Approved schemas.
+• Provenance and versioning implemented.
+• Unknown and unresolved states implemented.
+• Privacy model approved.
+
+────────
+
+Milestone M2 — Calculation Foundation
+
+Includes
+
+• Phase 2.
+• Phase 3.
+
+Exit criteria
+
+• Subject and birth-time workflows operational.
+• Western and current-sky calculations operational.
+• At least one additional modality operational.
+• Native signal provenance verified.
+• Rectification workflow preserves all candidate states.
+
+────────
+
+Milestone M3 — Incubator Foundation
+
+Includes
+
+• Phase 4.
+• Phase 5.
+• Phase 6.
+
+Exit criteria
+
+• Objective environmental snapshots operational.
+• Structured subjective exposure intake operational.
+• Person-specific incubators operational.
+• Objective-subjective alignment and mismatch operational.
+• No environmental determinism tests pass.
+
+────────
+
+Milestone M4 — Portal and Convergence Core
+
+Includes
+
+• Phase 7.
+• Phase 8.
+• Phase 9.
+
+Exit criteria
+
+• All 64 portals available through a common interface.
+• Portal outputs preserve unknowns and provenance.
+• Convergence matrix operational.
+• Contradictions and recurrence represented separately.
+• Life-section routing and signal ripple operational.
+
+────────
+
+Milestone M5 — Temporal and Relational Runtime
+
+Includes
+
+• Phase 10.
+• Phase 11.
+• Phase 12.
+
+Exit criteria
+
+• Historical capture operational.
+• Present capture operational.
+• Two-person relationship tree operational.
+• Shared locations preserve separate subjective exposure.
+• Historical and present outputs are distinguishable.
+
+────────
+
+Milestone M6 — Future Search and Pattern Recurrence
+
+Includes
+
+• Phase 13.
+• Phase 14.
+
+Exit criteria
+
+• Travel and relocation search operational.
+• Future subjective exposure is clearly labeled conditional.
+• Exact-state and functional-state similarity are separate.
+• Historical captures can generate future search targets.
+
+────────
+
+Milestone M7 — Interpretation and Final Runtime
+
+Includes
+
+• Phase 15.
+• Phase 16.
+• Phase 17.
+
+Exit criteria
+
+• Translator layer operational.
+• Dark shadow and sovereignty outputs operational.
+• All run modes orchestrated.
+• End-to-end traceability verified.
+• Partial failures, recalculation, and audit trails operational.
+
+────────
+
+5. Dependency Graph
+
+PHASE 0
+  ↓
+PHASE 1
+  ├──→ PHASE 2
+  │      ↓
+  │    PHASE 3
+  │      ├──→ PHASE 7
+  │      └──→ PHASE 10
+  │
+  ├──→ PHASE 4
+  │      ↓
+  │    PHASE 5
+  │      ↓
+  │    PHASE 6
+  │
+  PHASE 2 + PHASE 3 + PHASE 6
+              ↓
+          PHASE 7
+              ↓
+          PHASE 8
+              ↓
+          PHASE 9
+              ↓
+      ┌───────┼────────┐
+      ↓       ↓        ↓
+   PHASE 10 PHASE 11 PHASE 12
+      └───────┼────────┘
+              ↓
+          PHASE 13
+              ↓
+          PHASE 14
+              ↓
+          PHASE 15
+              ↓
+          PHASE 16
+              ↓
+          PHASE 17
+
+────────
+
+6. Recommended Testing Strategy
+
+Unit testing
+
+Test independently:
+
+• schema validation;
+• date and timezone normalization;
+• coordinate normalization;
+• native calculations;
+• environmental field mapping;
+• exposure scoring;
+• incubator alignment;
+• portal extraction;
+• confidence calculation;
+• contradiction handling;
+• forecast labeling.
+
+Contract testing
+
+Verify that every modality returns the required native signal envelope without losing native mechanics.
+
+Golden-data testing
+
+Maintain fixed fixtures for:
+
+• known birth charts;
+• known historical skies;
+• known environmental snapshots;
+• known exposure reports;
+• known portal outputs;
+• known convergence states.
+
+Property testing
+
+Verify invariants such as:
+
+• changing subjective exposure does not alter objective environmental data;
+• changing objective environmental data does not alter the subjective report;
+• adding a modality does not mutate existing native calculations;
+• removing one signal reduces or changes convergence only through explicit rules;
+• unknown values remain unknown;
+• shared locations do not merge person-specific exposure.
+
+Integration testing
+
+Test:
+
+• foundation runs;
+• historical captures;
+• present captures;
+• future windows;
+• relationship runs;
+• travel searches;
+• relocation comparisons;
+• recalculation after recognition;
+• recalculation after exposure updates.
+
+Explainability testing
+
+For every final convergence, verify that the system can reconstruct:
+
+final output
+  → convergence object
+  → portal state
+  → native signals
+  → native calculations
+  → timing
+  → location
+  → objective environment
+  → subjective exposure
+  → recognition evidence
+  → translator output
+
+────────
+
+7. Final Acceptance Criteria
+
+The implementation is complete only when all of the following are true:
+
+1. Every enabled modality calculates independently.
+2. Native mechanics and provenance remain intact.
+3. Every location is represented as an incubator.
+4. Objective environmental conditions and subjective exposure are stored separately.
+5. Subjective exposure is person-specific.
+6. Objective conditions do not imply subjective experience.
+7. Subjective reports are not invalidated solely by benign objective conditions.
+8. All 64 portals are available through a common interrogation architecture.
+9. Portal outputs support WHAT, WHEN, WHERE, HOW, WHY, probability-increasing conditions, and probability-reducing conditions.
+10. Life-section routing preserves portal and source provenance.
+11. Convergence accumulates reinforcement, contradiction, recurrence, timing, location, relationship, objective support, subjective support, recognition, and unresolved states.
+12. Historical captures preserve the person’s state at entry.
+13. Present captures include current sky, current location, current relationships, and current portal field.
+14. Relationship analysis preserves separate exposure records for each person.
+15. Future subjective exposure is modeled conditionally and labeled as forecast.
+16. Historical-to-future search supports both exact-state and functional-state similarity.
+17. Translator outputs remain traceable to the underlying evidence.
+18. Dark shadow readings preserve protective function, payoff, cost, consequence, contradiction, and uncertainty.
+19. Every final convergence object is fully traceable.
+20. The runtime remains conditional, probabilistic, versioned, auditable, and capable of leaving unsupported fields unresolved. SEEN™ CONVERGENCE RUNTIME TREE — BUILDER SPEC
+
+The runtime preserves every source system as an independent calculation, preserves every raw mechanic and provenance trail, routes compatible signals through the 64 SEEN Portals, aligns signals by person × location × time × relationship, accumulates recognition evidence, and renders the strongest convergence without erasing contradiction or unresolved fields.
+
+A location is treated as an incubator. Each incubator is defined by two distinct but equally necessary layers:
+
+1. Objective environmental conditions: the measurable or historically reconstructable conditions present at the location during the relevant period.
+2. Subjective reported exposure: what the person says they experienced, perceived, felt, and adapted to while living in or passing through that location.
+
+Neither layer replaces the other. Objective conditions establish the exposure field; subjective reporting establishes the person’s lived relationship to that field. The same roof, neighborhood, climate, institution, family, or social environment may produce different developmental effects for different people. Therefore, location recognition must never be inferred from environmental description alone.
+
+System Update Request.txt
+
+SEEN
+│
+├── 00. SUBJECT
+│   │
+│   ├── personId
+│   ├── birthDate
+│   ├── birthLocation
+│   ├── birthTime
+│   │   │
+│   │   ├── EXACT
+│   │   └── RECTIFIED
+│   │       │
+│   │       ├── Round 1
+│   │       │   ├── 04:00 recognition summary
+│   │       │   ├── 12:00 recognition summary
+│   │       │   └── 20:00 recognition summary
+│   │       │
+│   │       ├── selected window
+│   │       ├── narrower recognition summaries
+│   │       ├── selected window
+│   │       ├── narrower recognition summaries
+│   │       └── selected estimated birthTime
+│   │
+│   └── birthTimeConfidence
+│
+├── 01. INDEPENDENT NATIVE CALCULATIONS
+│   │
+│   ├── WESTERN
+│   │   ├── Swiss Ephemeris positions
+│   │   ├── planets
+│   │   ├── houses
+│   │   ├── angles
+│   │   ├── aspects
+│   │   └── native timing mechanics
+│   │
+│   ├── HELLENISTIC
+│   │   └── native mechanics
+│   │
+│   ├── VEDIC
+│   │   ├── native positions
+│   │   ├── nakshatras
+│   │   ├── dashas
+│   │   └── native timing mechanics
+│   │
+│   ├── BAZI / FOUR PILLARS
+│   │   └── native mechanics
+│   │
+│   ├── TZOLKIN / MAYAN
+│   │   └── native mechanics
+│   │
+│   ├── DREAMSPELL / GALAXY SIGNATURE
+│   │   └── native mechanics
+│   │
+│   ├── NUMEROLOGY
+│   │   └── native mechanics
+│   │
+│   └── ADDITIONAL VERIFIED SYSTEMS
+│       └── native mechanics
+│
+│   RULE:
+│   Every system completes its native calculation independently.
+│   Every native result retains its original methodology,
+│   intermediate calculation, source system and provenance.
+│
+├── 02. LOCATION INCUBATOR HISTORY
+│   │
+│   ├── LOCATION 1
+│   │   ├── coordinates
+│   │   ├── startDate
+│   │   ├── endDate
+│   │   ├── duration
+│   │   ├── developmentalAge
+│   │   │
+│   │   ├── OBJECTIVE ENVIRONMENTAL FIELD
+│   │   │   ├── GeoPresence
+│   │   │   ├── biome
+│   │   │   ├── settlement type
+│   │   │   │   ├── urban
+│   │   │   │   ├── suburban
+│   │   │   │   ├── rural
+│   │   │   │   ├── remote
+│   │   │   │   └── institutional
+│   │   │   ├── abiotic conditions
+│   │   │   ├── terrain / elevation
+│   │   │   ├── climate
+│   │   │   ├── heat / cold exposure
+│   │   │   ├── seasonality / light
+│   │   │   ├── environmental stability / volatility
+│   │   │   ├── population / social field
+│   │   │   ├── institutional / resource conditions
+│   │   │   ├── political conditions
+│   │   │   ├── religious / cultural conditions
+│   │   │   ├── violence / safety conditions
+│   │   │   ├── poverty / wealth conditions
+│   │   │   ├── family and household structure
+│   │   │   └── historically correct conditions for period
+│   │   │
+│   │   ├── SUBJECTIVE REPORTED EXPOSURE
+│   │   │   ├── perceived safety
+│   │   │   ├── perceived danger
+│   │   │   ├── violence or threat
+│   │   │   ├── poverty or deprivation
+│   │   │   ├── instability or displacement
+│   │   │   ├── family conflict
+│   │   │   ├── emotional neglect
+│   │   │   ├── control or surveillance
+│   │   │   ├── responsibility beyond developmental age
+│   │   │   ├── belonging or exclusion
+│   │   │   ├── religion or spiritual pressure
+│   │   │   ├── political or ideological pressure
+│   │   │   ├── social isolation
+│   │   │   ├── access to resources
+│   │   │   ├── climate or bodily stress
+│   │   │   ├── freedom of movement
+│   │   │   ├── opportunity and stimulation
+│   │   │   ├── protective relationships
+│   │   │   ├── recurring emotional atmosphere
+│   │   │   └── free-text lived-experience note
+│   │   │
+│   │   ├── incubatorSummary
+│   │   ├── exposureSelections
+│   │   ├── exposureIntensity
+│   │   ├── exposureCertainty
+│   │   ├── objectiveSubjectiveAlignment
+│   │   ├── objectiveSubjectiveMismatch
+│   │   └── recognition
+│   │       ├── YES
+│   │       ├── PARTIAL
+│   │       ├── NO
+│   │       └── UNKNOWN
+│   │
+│   ├── LOCATION 2
+│   ├── LOCATION 3
+│   └── CURRENT LOCATION
+│
+│   RULE:
+│   Every location is an incubator.
+│   The incubator contains both the objective environmental field
+│   and the person's subjective reported exposure.
+│
+│   Objective conditions describe what was present.
+│   Subjective exposure describes what the person experienced.
+│   Neither layer is sufficient by itself.
+│
+│   The same objective environment may produce different subjective
+│   exposures for different people, siblings, or developmental periods.
+│
+│   Person-specific fit emerges only after objective conditions,
+│   subjective exposure, timing, relationships and portal signals
+│   are aligned during convergence.   are they though? 
+│
+├── 03. PERSON STATE HISTORY
+│   │
+│   ├── immutable native mechanics
+│   ├── accumulated incubator exposures
+│   ├── accumulated timing periods
+│   ├── recognized patterns
+│   ├── rejected patterns
+│   ├── partial recognitions
+│   ├── unresolved patterns
+│   └── recurring patterns
+│
+│   RESULT:
+│   The natal calculation remains traceable.
+│   The person's expression remains mutable.
+│   The person's reported exposure remains distinct from
+│   the objective conditions of the incubator.
+│
+├── 04. 64-PORTAL INTERROGATION
+│   │
+│   ├── PORTAL 01
+│   ├── PORTAL 02
+│   ├── PORTAL 03
+│   ├── ...
+│   └── PORTAL 64
+│
+│   EACH PORTAL INTERROGATES:
+│   │
+│   ├── WHAT
+│   │   ├── archetypal function
+│   │   ├── capacity
+│   │   ├── regulated expression
+│   │   └── distorted expression
+│   │
+│   ├── PRESSURE
+│   │   ├── source
+│   │   ├── intensity
+│   │   ├── accumulation
+│   │   ├── competing pressure
+│   │   └── threshold
+│   │
+│   ├── TRIGGER
+│   │   ├── circumstance
+│   │   ├── person
+│   │   ├── relationship
+│   │   ├── place
+│   │   └── timing
+│   │
+│   ├── ADAPTATION
+│   │   ├── protective response
+│   │   ├── learned response
+│   │   ├── automatic response
+│   │   ├── compensation
+│   │   └── escalation
+│   │
+│   ├── BEHAVIOR
+│   │   ├── action
+│   │   ├── avoidance
+│   │   ├── pursuit
+│   │   ├── repetition
+│   │   └── contradiction
+│   │
+│   ├── PAYOFF
+│   │   ├── safety
+│   │   ├── control
+│   │   ├── belonging
+│   │   ├── relief
+│   │   └── reward
+│   │
+│   ├── COST
+│   │   ├── emotional
+│   │   ├── relational
+│   │   ├── material
+│   │   ├── opportunity
+│   │   └── cumulative
+│   │
+│   ├── CONSEQUENCE
+│   │   ├── immediate
+│   │   ├── delayed
+│   │   ├── interpersonal
+│   │   ├── environmental
+│   │   └── recurring
+│   │
+│   ├── EXPERIENTIAL FAILURE
+│   │   ├── breakdown
+│   │   ├── avoidance
+│   │   ├── loss
+│   │   ├── self-defeat
+│   │   └── collapse
+│   │
+│   ├── SELF-SABOTAGE
+│   │   ├── protective need
+│   │   ├── repeated strategy
+│   │   ├── immediate payoff
+│   │   ├── overuse
+│   │   └── eventual cost
+│   │
+│   ├── PEOPLE
+│   │   ├── role
+│   │   ├── attraction
+│   │   ├── compatibility
+│   │   ├── friction
+│   │   ├── activation
+│   │   └── recurrence
+│   │
+│   ├── PLACE
+│   │   ├── objective incubator field
+│   │   ├── subjective exposure
+│   │   ├── constraint
+│   │   ├── access
+│   │   ├── delta
+│   │   ├── amplification
+│   │   ├── suppression
+│   │   ├── regulation
+│   │   ├── rerouting
+│   │   └── recurrence
+│   │
+│   ├── TIME
+│   │   ├── baseline
+│   │   ├── onset
+│   │   ├── duration
+│   │   ├── build
+│   │   ├── peak
+│   │   ├── transition
+│   │   ├── overlap
+│   │   ├── recurrence
+│   │   └── resolution
+│   │
+│   ├── PROBABILITY
+│   │   ├── signal strength
+│   │   ├── independence
+│   │   ├── convergence
+│   │   ├── contradiction
+│   │   ├── specificity
+│   │   ├── timing
+│   │   ├── recurrence
+│   │   ├── context
+│   │   └── confidence
+│   │
+│   ├── POTENTIAL
+│   │   ├── capacity
+│   │   ├── opportunity
+│   │   ├── constraint
+│   │   ├── readiness
+│   │   ├── regulated expression
+│   │   └── alternate response
+│   │
+│   ├── EVIDENCE
+│   │   ├── claim
+│   │   ├── provenance
+│   │   ├── independence
+│   │   ├── quality
+│   │   ├── agreement
+│   │   ├── contradiction
+│   │   ├── specificity
+│   │   ├── limitation
+│   │   └── confidence
+│   │
+│   └── UNRESOLVED
+│       └── every unsupported field remains UNKNOWN
+│
+├── 05. CONVERGENCE MATRIX
+│
+│           WEST  VEDIC  HELL  BAZI  TZOLKIN  DREAM  NUM  INCUBATOR
+│   P01       ●      ●     ○     ●      ○       ●     ○      ●
+│   P02       ○      ●     ●     ○      ●       ○     ●      ○
+│   P03       ●      ●     ●     ○      ○       ●     ●      ●
+│   ...
+│   P64       ●      ○     ●     ●      ●       ○     ○      ●
+│
+│   ● = supported intersection
+│   ○ = no supported intersection
+│
+│   EACH ● STORES:
+│   ├── personId
+│   ├── portalId
+│   ├── modality
+│   ├── nativeMarker
+│   ├── nativeCalculation
+│   ├── interpretation
+│   ├── direction
+│   ├── pressure
+│   ├── timeframe
+│   ├── location
+│   ├── objectiveEnvironmentalField
+│   ├── subjectiveExposure
+│   ├── relationship
+│   ├── provenance
+│   ├── confidence
+│   └── contradictions
+│
+├── 06. LIFE-SECTION ROUTING
+│   │
+│   └── each surviving portal expression
+│       routes immediately into every applicable
+│       SEEN Life Section while retaining portal,
+│       source, incubator and exposure provenance.
+│
+├── 07. CONVERGENCE
+│   │
+│   ├── REINFORCEMENT
+│   ├── CONTRADICTION
+│   ├── RECURRENCE
+│   ├── TIMING OVERLAP
+│   ├── LOCATION OVERLAP
+│   ├── RELATIONAL OVERLAP
+│   ├── OBJECTIVE ENVIRONMENTAL SUPPORT
+│   ├── SUBJECTIVE EXPOSURE SUPPORT
+│   ├── OBJECTIVE-SUBJECTIVE ALIGNMENT
+│   ├── OBJECTIVE-SUBJECTIVE MISMATCH
+│   ├── RECOGNITION SUPPORT
+│   ├── RECOGNITION REJECTION
+│   └── UNRESOLVED
+│
+│   OUTPUT STATES:
+│   ├── POSSIBLE
+│   ├── PROBABLE
+│   ├── RECURRING
+│   ├── STRONGLY_SUPPORTED
+│   ├── HIGHLY_CONVERGENT
+│   ├── CONDITIONALLY_AMPLIFIED
+│   └── UNRESOLVED
+│
+├── 08. DARK SHADOW READING
+│   │
+│   ├── strongest pressure
+│   ├── likely trigger
+│   ├── protective adaptation
+│   ├── repeated behavior
+│   ├── short-term payoff
+│   ├── distortion
+│   ├── cost
+│   ├── consequence
+│   ├── experiential failure
+│   ├── self-sabotage loop
+│   ├── people pattern
+│   ├── incubator pattern
+│   ├── subjective exposure
+│   ├── timeframe
+│   ├── recurrence
+│   ├── contradictions
+│   └── confidence/provenance
+│
+└── 09. JUNG / SOVEREIGNTY
+    └── receives the completed recognition field
+
+
+The 64 Portals are the common extraction architecture: each remains available across the runtime, with expression changing according to pressure, timing, environment, relationship and other converging conditions. System Update Request.txt The existing specification explicitly requires WHAT, WHEN, WHERE, HOW, WHY, probability-increasing conditions and probability-reducing conditions for portal extraction.
+
+RUNTIME INPUT CONTRACT
+
+SeenRunInputSchema.parse({
+  subject: {
+    personId,
+    birth: {
+      date,
+      location: {
+        city,
+        region,
+        country,
+        latitude,
+        longitude,
+        timezone
+      },
+      time: {
+        value,
+        certainty: "EXACT" | "RECTIFIED" | "UNKNOWN",
+        rectificationSessionId
+      }
+    }
+  },
+
+  run: {
+    mode:
+      | "FOUNDATION"
+      | "HISTORICAL_CAPTURE"
+      | "PRESENT_CAPTURE"
+      | "FUTURE_WINDOW"
+      | "RELATIONSHIP"
+      | "TRAVEL"
+      | "RELOCATION",
+
+    targetDateTime,
+    targetLocationId,
+    comparisonPersonIds: []
+  },
+
+  locationHistory: [
+    {
+      locationId,
+      coordinates,
+      startDate,
+      endDate,
+      duration,
+      developmentalAgeRange,
+
+      objectiveEnvironment: {
+        environmentalSnapshotId,
+        historicallyCorrectForPeriod: true
+      },
+
+      subjectiveExposure: {
+        exposureSelections: [],
+        freeText,
+        intensity,
+        certainty
+      },
+
+      incubatorSummaryId,
+      recognitionId
+    }
+  ],
+
+  enabledModalities: [
+    "WESTERN",
+    "VEDIC",
+    "HELLENISTIC",
+    "BAZI",
+    "TZOLKIN",
+    "DREAMSPELL",
+    "NUMEROLOGY"
+  ]
+});
+
+
+LOCATION INTAKE DECISION
+
+The runtime will not require the person to produce a polished written narrative before the incubator can be evaluated. The intake should use a structured exposure inventory with a manageable number of selectable categories, followed by optional clarification.
+
+The recommended design is:
+
+• 12 primary exposure categories
+• 3 intensity choices per selected category
+• 1 optional free-text field
+• 1 optional “not sure / cannot assess” choice
+• No fixed limit on the number of categories selected
+
+Twelve categories are broad enough to capture meaningful environmental and developmental differences without overwhelming the person. The categories should describe exposure domains rather than force the person to interpret the meaning of those exposures.
+
+Recommended subjective exposure categories:
+
+1. Safety and threat
+2. Violence or aggression
+3. Poverty, deprivation, or resource insecurity
+4. Family conflict or instability
+5. Emotional neglect or lack of attunement
+6. Control, surveillance, or restriction
+7. Responsibility beyond developmental age
+8. Belonging, exclusion, or social isolation
+9. Religion, morality, or spiritual pressure
+10. Politics, ideology, or institutional pressure
+11. Climate, bodily stress, or environmental hardship
+12. Opportunity, stimulation, protection, or access
+
+Each selected category should include:
+
+exposureLevel:
+  | "LOW"
+  | "MODERATE"
+  | "HIGH"
+  | "UNKNOWN"
+
+exposureFrequency:
+  | "OCCASIONAL"
+  | "RECURRING"
+  | "CONSTANT"
+  | "UNKNOWN"
+
+exposureDirection:
+  | "SUPPORTIVE"
+  | "STRESSFUL"
+  | "MIXED"
+  | "UNKNOWN"
+
+The intake should also allow the person to identify the physical and social character of the location:
+
+settingSelections:
+  | "URBAN"
+  | "SUBURBAN"
+  | "RURAL"
+  | "REMOTE"
+  | "INSTITUTIONAL"
+  | "HOT"
+  | "COLD"
+  | "SEASONALLY EXTREME"
+  | "DENSE"
+  | "ISOLATED"
+  | "MOBILE"
+  | "STABLE"
+  | "VOLATILE"
+
+These setting selections are not treated as conclusions. They are reported descriptors that help define the subjective exposure layer and guide the incubator summary.
+
+The system may generate three concise summaries for each location, but those summaries are outputs of the intake and convergence process rather than substitutes for the person’s report:
+
+1. Objective environmental summary: what conditions were present.
+2. Subjective exposure summary: what the person reports experiencing.
+3. Convergence summary: how the objective field and subjective exposure interacted with the person’s portal and timing signals.
+
+The person’s report remains primary evidence for subjective exposure. The system must not infer that a person experienced violence, poverty, safety, love, toxicity, belonging, or deprivation solely because those conditions were objectively present. Conversely, the system must not reject a reported experience merely because the objective environment appears benign or supportive.
+
+NATIVE SIGNAL CONTRACT
+
+Every discovery engine returns the same envelope while preserving its own mechanics.
+
+NativeSignalSchema.parse({
+  signalId,
+  personId,
+
+  modality: "WESTERN",
+
+  marker: {
+    type: "ASPECT",
+    bodyA: "PLUTO",
+    relationship: "CONJUNCTION",
+    bodyB: "ASCENDANT",
+    orb
+  },
+
+  calculation: {
+    methodology,
+    rawInputs,
+    intermediateValues,
+    finalValue
+  },
+
+  temporalScope: {
+    type: "NATAL",
+    start: birthDateTime,
+    end: null
+  },
+
+  provenance: {
+    calculator,
+    version,
+    sourceRefs
+  }
+});
+
+
+A Vedic signal keeps Vedic mechanics. A BaZi signal keeps BaZi mechanics. A numerology signal keeps numerology mechanics. Convergence never replaces the native record.
+
+CURRENT-SKY CONTRACT
+
+Swiss Ephemeris is repeatedly used across natal, present, historical, future, relocated and relational timing calculations in the supplied runtime specification. System Update Request.txt
+
+RECTIFIED NATAL
+      │
+      ├─────────────────────────────┐
+      │                             │
+      ▼                             ▼
+NATAL WESTERN                 EVENT SKY
+Swiss Ephemeris               Swiss Ephemeris
+birth instant                 target instant
+      │                             │
+      └─────────────┬───────────────┘
+                    ▼
+             TRANSIT RELATION
+                    │
+                    ▼
+              ACTIVE SIGNALS
+AstronomicalStateSchema.parse({
+  personId,
+
+  natal: {
+    calculatedAtBirthInstant: true,
+    chartId
+  },
+
+  event: {
+    dateTime,
+    latitude,
+    longitude,
+    timezone,
+    planetaryPositions,
+    aspects
+  },
+
+  natalToEvent: {
+    transits,
+    angularRelationships,
+    timingSignals
+  }
+});
+
+
+LOCATION × PERSON CONVERGENCE
+
+PERSON NATIVE SIGNAL
+       │
+       │
+       ├──────────────┐
+       ▼              ▼
+Portal 28          LOCATION INCUBATOR
+pressure           Montana
+pattern            winter 2026
+       │              │
+       │              ├── objective environmental field
+       │              └── subjective reported exposure
+       │
+       └──────┬───────┘
+              ▼
+       PERIOD OVERLAP?
+              │
+         YES ─┴─ NO
+          │
+          ▼
+DOES THE INCUBATOR CONDITION
+AMPLIFY / SUPPRESS / REGULATE /
+REROUTE / LEAVE UNRESOLVED?
+          │
+          ▼
+DO OBJECTIVE CONDITIONS
+ALIGN WITH REPORTED EXPOSURE?
+          │
+          ▼
+     RECOGNITION
+
+
+Example:
+
+ContextualIntersectionSchema.parse({
+  personId: "A",
+  portalId: 28,
+
+  nativeSignals: [
+    westernSignalId,
+    vedicSignalId
+  ],
+
+  location: {
+    locationId: "montana-home",
+    exposureWindow: ["2025-01-01", "2026-09-04"],
+
+    objectiveEnvironment: {
+      environmentalSignals: [...],
+      environmentalSnapshotId
+    },
+
+    subjectiveExposure: {
+      exposureSelections: [...],
+      reportedExperience: "...",
+      exposureIntensity,
+      exposureCertainty
+    }
+  },
+
+  timing: {
+    astronomicalSignals: [...],
+    developmentalSignals: [...]
+  },
+
+  effect: {
+    state: "AMPLIFIED",
+    confidence: 0.74
+  },
+
+  recognition: {
+    status: "PARTIAL",
+    applicablePeriod: [...]
+  }
+});
+
+
+Location itself receives no universal GOOD/BAD label. The incubator is not a moral judgment and does not determine a universal outcome. The same objective environment may amplify one person, regulate another, suppress a third person’s expression, or remain unresolved for another.
+
+The runtime must distinguish:
+
+• Objective environmental presence: the condition existed in the location or period.
+• Subjective exposure: the person reports encountering or experiencing the condition.
+• Portal relevance: the condition intersects with a specific portal mechanism.
+• Developmental effect: the condition appears to have shaped adaptation, behavior, capacity, or recognition.
+• Convergence confidence: the degree to which independent signals, timing, reported experience, and observed recurrence support the interpretation.
+
+A reported experience may be valid even when it is not obvious from the objective environment. An objective condition may be relevant to the incubator without being subjectively experienced by the person. Both cases remain visible in the trace.
+
+HISTORICAL CAPTURE
+
+PERSON A
+│
+├── accumulated state entering June 2015
+├── independent native mechanics
+├── active timing mechanics
+└── prior recognized incubator exposures
+             │
+             ▼
+      BALI — JUNE 2015
+             │
+├── historically correct objective environment
+├── subjective reported exposure
+├── current-at-that-time sky
+├── natal ↔ event transits
+├── relocated mechanics
+└── duration
+             │
+             ▼
+      64 PORTAL FIELD
+             │
+             ▼
+      OBSERVED EXPERIENCE
+             │
+             ▼
+        RECOGNITION
+HistoricalCaptureSchema.parse({
+  captureId,
+  personId,
+
+  window: {
+    start: "2015-06-12",
+    end: "2015-06-27"
+  },
+
+  locationId: "bali",
+
+  personStateAtEntry: stateSnapshotId,
+
+  astronomicalState: {
+    natalChartId,
+    historicalSkyId,
+    transitSetId,
+    relocationSetId
+  },
+
+  environmentalState: historicalEnvironmentId,
+
+  subjectiveExposure: {
+    exposureSelections: [...],
+    reportedExperience,
+    exposureIntensity,
+    exposureCertainty
+  },
+
+  incubatorSummary: {
+    objectiveSummary,
+    subjectiveSummary,
+    convergenceSummary
+  },
+
+  portalStateIds: [...],
+
+  livedEvidence: {
+    recognition: "STRONG",
+    userRating,
+    recognizedLifeSections: [...]
+  }
+});
+
+
+PRESENT CAPTURE
+
+WHO THE PERSON HAS BECOME
+          ×
+CURRENT LOCATION INCUBATOR
+          ×
+OBJECTIVE ENVIRONMENT
+          ×
+SUBJECTIVE REPORTED EXPOSURE
+          ×
+CURRENT SKY
+          ×
+CURRENT RELATIONSHIPS
+          ×
+64 PORTALS
+          ↓
+      NOW STATE
+
+
+The runtime specification defines SEEN as a moving field in which time, location, relationships, developmental period and astronomical movement continuously alter expression while underlying mechanics remain traceable. System Update Request.txt The incubator adds a required distinction between the conditions present in the environment and the person’s reported experience of those conditions.
+
+TWO-PERSON RELATIONSHIP TREE
+
+PERSON A                              PERSON B
+│                                     │
+├── native modalities                 ├── native modalities
+├── accumulated exposure              ├── accumulated exposure
+├── recognition history               ├── recognition history
+├── current timing                    ├── current timing
+└── current portal field              └── current portal field
+          │                                    │
+          └──────────────┬─────────────────────┘
+                         ▼
+                A ↔ B NATIVE FIELD
+                         │
+                         ▼
+                 LOCATION INCUBATOR
+                         │
+          ┌──────────────┼──────────────┐
+          ▼              ▼              ▼
+       A ↔ L          B ↔ L        (A ↔ B) ↔ L
+          │              │              │
+          └──────────────┼──────────────┘
+                         ▼
+                       TIME T
+                         │
+          ┌──────────────┼──────────────┐
+          ▼              ▼              ▼
+      A timing        B timing      relationship
+                                     timing
+          │              │              │
+          └──────────────┼──────────────┘
+                         ▼
+                 SHARED CAPTURE
+
+
+For relationship analysis, the incubator must preserve separate exposure records for each person. Person A’s experience of a household, city, climate, or institution must not be assigned to Person B. The shared location may be objective, but the subjective exposure is person-specific.
+
+TRAVEL WINDOW SEARCH
+
+INPUT
+Person A
+Person B optional
+Destination
+Future date range
+
+        ↓
+
+FOR EACH CANDIDATE WINDOW
+
+A × destination × time
+        ↓
+A objective incubator field
+        ↓
+A subjective exposure forecast
+        ↓
+A portal field
+
+B × destination × time
+        ↓
+B objective incubator field
+        ↓
+B subjective exposure forecast
+        ↓
+B portal field
+
+A ↔ B × destination × time
+        ↓
+relationship portal field
+
+        ↓
+
+CROSS-COMPARE
+
+        ↓
+
+candidate window
+├── A support / pressure
+├── B support / pressure
+├── relationship support / pressure
+├── objective environmental fit
+├── subjective exposure expectations
+├── astronomical convergence
+├── recurring historical similarities
+├── contradictions
+└── confidence
+
+
+The supplied specification explicitly includes future astronomical pressure, future environmental pressure, relational collisions, location alignment, timing alignment, travel/relocation comparison, event selection and recurrence windows. System Update Request.txt
+
+For future windows, subjective exposure is not treated as known fact. It is modeled as a conditional forecast based on prior reported patterns, objective conditions, relationship context, and portal activation. The output must distinguish forecast from lived evidence.
+
+HISTORICAL-STATE RECONSTRUCTION → FUTURE SEARCH
+
+KNOWN HISTORICAL CAPTURE
+Bali — June 2015
+│
+├── Person A state
+├── Person B state
+├── A ↔ B state
+├── historical sky
+├── A natal ↔ historical sky
+├── B natal ↔ historical sky
+├── objective historical location field
+├── subjective exposure records
+├── portal convergence
+└── recognized outcome
+             │
+             ▼
+       TARGET PATTERN
+             │
+             ▼
+SEARCH FUTURE
+location × date × time
+             │
+             ▼
+COMPARE EACH CANDIDATE
+             │
+     ┌───────┴────────┐
+     ▼                ▼
+EXACT-STATE       FUNCTIONAL-STATE
+SIMILARITY        SIMILARITY
+     │                │
+     └───────┬────────┘
+             ▼
+      FUTURE WINDOWS
+
+
+Future search must compare both:
+
+• objective environmental similarity;
+• functional similarity in the person’s likely subjective exposure and portal activation.
+
+A future location may resemble a historical incubator objectively while producing a different subjective experience because the person, relationships, developmental stage, resources, or timing have changed.
+
+SIGNAL RIPPLE
+
+NATIVE MARKER
+     ●
+     │
+     ▼
+PORTAL INTERSECTION
+     │
+     ├── pressure
+     ├── trigger
+     ├── adaptation
+     ├── behavior
+     ├── payoff
+     ├── cost
+     └── consequence
+          │
+          ▼
+     LIFE SECTIONS
+          │
+          ▼
+    OTHER MODALITY
+          ●
+          │
+    same mechanism?
+       /       \
+     YES        NO
+      │          │
+reinforce    preserve separately
+      │          │
+      └────┬─────┘
+           ▼
+   LOCATION INCUBATOR
+           │
+   ┌───────┴────────┐
+   ▼                ▼
+OBJECTIVE       SUBJECTIVE
+FIELD           EXPOSURE
+   │                │
+   └───────┬────────┘
+           ▼
+      same period?
+       /       \
+     YES        NO
+      │          │
+ contextual   retain
+ overlap      independent
+      │
+      ▼
+    TIMING
+      │
+      ▼
+ RECOGNITION
+      │
+ ┌────┼─────┬────────┐
+ ▼    ▼     ▼        ▼
+YES PARTIAL NO    UNKNOWN
+ │    │     │        │
+ └────┴─────┴────────┘
+           │
+           ▼
+   RECALCULATE CONVERGENCE
+
+
+TRANSLATOR LAYER
+
+CONVERGED PORTAL MECHANISM
+             │
+             ▼
+        TRANSLATORS
+             │
+├── attachment theory
+├── developmental psychology
+├── nervous-system models
+├── somatic patterning
+├── family systems
+├── Jungian psychology
+├── relational models
+├── behavioral frameworks
+└── applicable Maisel lenses
+             │
+             ▼
+    HUMAN-RECOGNIZABLE LANGUAGE
+
+
+Translator layers describe recognizable expression. They retain the underlying portal, contributing mechanics, timing, objective incubator conditions, subjective exposure, relational overlays, convergence strength, contradictions and confidence. The source specification explicitly requires that traceability. System Update Request.txt
+
+FINAL CONVERGENCE OBJECT
+
+SeenConvergenceSchema.parse({
+  convergenceId,
+  subjectIds: ["A"],
+
+  portalId,
+
+  sourceSignals: [
+    {
+      modality,
+      nativeSignalId,
+      provenance,
+      contribution
+    }
+  ],
+
+  context: {
+    timeframe,
+    locationId,
+    relationshipIds: []
+  },
+
+  incubator: {
+    objectiveEnvironmentalField,
+    subjectiveReportedExposure,
+    exposureSelections,
+    exposureIntensity,
+    exposureCertainty,
+    objectiveSubjectiveAlignment,
+    objectiveSubjectiveMismatch,
+    incubatorSummary
+  },
+
+  dissection: {
+    pressure,
+    triggers,
+    adaptations,
+    behaviors,
+    payoff,
+    distortion,
+    costs,
+    consequences,
+    experientialFailures,
+    selfSabotage,
+    people,
+    place,
+    timeline,
+    potential
+  },
+
+  convergence: {
+    reinforcingSignals,
+    contradictingSignals,
+    recurringSignals,
+    independentSourceCount,
+    objectiveEnvironmentalSupport,
+    subjectiveExposureSupport,
+    recognitionSupport,
+    confidence
+  },
+
+  status:
+    | "POSSIBLE"
+    | "PROBABLE"
+    | "RECURRING"
+    | "STRONGLY_SUPPORTED"
+    | "HIGHLY_CONVERGENT"
+    | "CONDITIONALLY_AMPLIFIED"
+    | "UNRESOLVED",
+
+  unresolved: [...],
+
+  trace: {
+    nativeMechanics,
+    calculations,
+    locations,
+    objectiveEnvironmentalConditions,
+    subjectiveExposureReports,
+    timing,
+    portalMappings,
+    recognitionEvidence,
+    translatorSources
+  }
+});
+
+FINAL PRODUCT LAW
+
+CALCULATE INDEPENDENTLY
+        ↓
+PRESERVE IDENTITY
+        ↓
+DEFINE EACH LOCATION AS AN INCUBATOR
+        ↓
+RECORD OBJECTIVE ENVIRONMENTAL CONDITIONS
+        ↓
+RECORD SUBJECTIVE REPORTED EXPOSURE
+        ↓
+INTERROGATE THROUGH 64
+        ↓
+ROUTE INTO LIFE SECTIONS
+        ↓
+ALIGN PERSON × INCUBATOR × TIME × RELATIONSHIP
+        ↓
+COMPARE OBJECTIVE CONDITIONS WITH LIVED EXPERIENCE
+        ↓
+ACCUMULATE
+        ↓
+COMPARE
+        ↓
+REINFORCE / CONTRADICT / LEAVE UNRESOLVED
+        ↓
+RECOGNITION
+        ↓
+RECALCULATE
+        ↓
+CONVERGE
+        ↓
+TRANSLATE
+        ↓
+DARK SHADOW READING
+        ↓
+JUNG / SOVEREIGNTY
+        ↓
+CADENCE
+        ↓
+PAST RECONSTRUCTION × PRESENT CAPTURE × FUTURE SEARCH
+
+
+SEEN’s output remains conditional, probabilistic and traceable. Stronger language follows stronger convergence, while conflicting and weak evidence remains visible.
+
+The final design decision is that location is not treated as a single environmental label or a universal influence. Location is treated as an incubator defined by both objective environmental conditions and the person’s reported subjective exposure. The objective layer describes what was present. The subjective layer describes what the person experienced. The convergence layer determines how those two layers interacted with the person’s native mechanics, developmental period, relationships, timing and portal field.
+
+The intake therefore uses structured exposure categories rather than relying only on three prewritten location summaries. Summaries remain useful, but they are generated after the person’s report and environmental data are collected. The person does not need to explain the entire meaning of a location in advance. They identify what they were exposed to, how often, with what intensity, and whether the experience was supportive, stressful, mixed, or unknown. The runtime then preserves that report, compares it with the objective incubator field, and leaves any unsupported interpretation unresolved.SEEN™ CONVERGENCE RUNTIME TREE — BUILDER SPEC
+
+The runtime preserves every source system as an independent calculation, preserves every raw mechanic and provenance trail, routes compatible signals through the 64 SEEN Portals, aligns signals by person × location × time × relationship, accumulates recognition evidence, and renders the strongest convergence without erasing contradiction or unresolved fields.
+System Update Request.txt
+
+SEEN
+│
+├── 00. SUBJECT
+│   │
+│   ├── personId
+│   ├── birthDate
+│   ├── birthLocation
+│   ├── birthTime
+│   │   │
+│   │   ├── EXACT
+│   │   └── RECTIFIED
+│   │       │
+│   │       ├── Round 1
+│   │       │   ├── 04:00 recognition summary
+│   │       │   ├── 12:00 recognition summary
+│   │       │   └── 20:00 recognition summary
+│   │       │
+│   │       ├── selected window
+│   │       ├── narrower recognition summaries
+│   │       ├── selected window
+│   │       ├── narrower recognition summaries
+│   │       └── selected estimated birthTime
+│   │
+│   └── birthTimeConfidence
+│
+├── 01. INDEPENDENT NATIVE CALCULATIONS
+│   │
+│   ├── WESTERN
+│   │   ├── Swiss Ephemeris positions
+│   │   ├── planets
+│   │   ├── houses
+│   │   ├── angles
+│   │   ├── aspects
+│   │   └── native timing mechanics
+│   │
+│   ├── HELLENISTIC
+│   │   └── native mechanics
+│   │
+│   ├── VEDIC
+│   │   ├── native positions
+│   │   ├── nakshatras
+│   │   ├── dashas
+│   │   └── native timing mechanics
+│   │
+│   ├── BAZI / FOUR PILLARS
+│   │   └── native mechanics
+│   │
+│   ├── TZOLKIN / MAYAN
+│   │   └── native mechanics
+│   │
+│   ├── DREAMSPELL / GALAXY SIGNATURE
+│   │   └── native mechanics
+│   │
+│   ├── NUMEROLOGY
+│   │   └── native mechanics
+│   │
+│   └── ADDITIONAL VERIFIED SYSTEMS
+│       └── native mechanics
+│
+│   RULE:
+│   Every system completes its native calculation independently.
+│   Every native result retains its original methodology,
+│   intermediate calculation, source system and provenance.
+│
+├── 02. LOCATION HISTORY
+│   │
+│   ├── LOCATION 1
+│   │   ├── coordinates
+│   │   ├── startDate
+│   │   ├── endDate
+│   │   ├── duration
+│   │   ├── developmentalAge
+│   │   ├── GeoPresence
+│   │   ├── biome
+│   │   ├── abiotic conditions
+│   │   ├── terrain / elevation
+│   │   ├── climate
+│   │   ├── seasonality / light
+│   │   ├── environmental stability / volatility
+│   │   ├── population / social field
+│   │   ├── institutional / resource conditions
+│   │   ├── historically correct conditions for period
+│   │   └── recognition
+│   │       ├── YES
+│   │       ├── PARTIAL
+│   │       ├── NO
+│   │       └── UNKNOWN
+│   │
+│   ├── LOCATION 2
+│   ├── LOCATION 3
+│   └── CURRENT LOCATION
+│
+│   RULE:
+│   Location describes the actual exposure field.
+│   Person-specific fit emerges during convergence.
+│
+├── 03. PERSON STATE HISTORY
+│   │
+│   ├── immutable native mechanics
+│   ├── accumulated location exposures
+│   ├── accumulated timing periods
+│   ├── recognized patterns
+│   ├── rejected patterns
+│   ├── partial recognitions
+│   ├── unresolved patterns
+│   └── recurring patterns
+│
+│   RESULT:
+│   The natal calculation remains traceable.
+│   The person's expression remains mutable.
+│
+├── 04. 64-PORTAL INTERROGATION
+│   │
+│   ├── PORTAL 01
+│   ├── PORTAL 02
+│   ├── PORTAL 03
+│   ├── ...
+│   └── PORTAL 64
+│
+│   EACH PORTAL INTERROGATES:
+│   │
+│   ├── WHAT
+│   │   ├── archetypal function
+│   │   ├── capacity
+│   │   ├── regulated expression
+│   │   └── distorted expression
+│   │
+│   ├── PRESSURE
+│   │   ├── source
+│   │   ├── intensity
+│   │   ├── accumulation
+│   │   ├── competing pressure
+│   │   └── threshold
+│   │
+│   ├── TRIGGER
+│   │   ├── circumstance
+│   │   ├── person
+│   │   ├── relationship
+│   │   ├── place
+│   │   └── timing
+│   │
+│   ├── ADAPTATION
+│   │   ├── protective response
+│   │   ├── learned response
+│   │   ├── automatic response
+│   │   ├── compensation
+│   │   └── escalation
+│   │
+│   ├── BEHAVIOR
+│   │   ├── action
+│   │   ├── avoidance
+│   │   ├── pursuit
+│   │   ├── repetition
+│   │   └── contradiction
+│   │
+│   ├── PAYOFF
+│   │   ├── safety
+│   │   ├── control
+│   │   ├── belonging
+│   │   ├── relief
+│   │   └── reward
+│   │
+│   ├── COST
+│   │   ├── emotional
+│   │   ├── relational
+│   │   ├── material
+│   │   ├── opportunity
+│   │   └── cumulative
+│   │
+│   ├── CONSEQUENCE
+│   │   ├── immediate
+│   │   ├── delayed
+│   │   ├── interpersonal
+│   │   ├── environmental
+│   │   └── recurring
+│   │
+│   ├── EXPERIENTIAL FAILURE
+│   │   ├── breakdown
+│   │   ├── avoidance
+│   │   ├── loss
+│   │   ├── self-defeat
+│   │   └── collapse
+│   │
+│   ├── SELF-SABOTAGE
+│   │   ├── protective need
+│   │   ├── repeated strategy
+│   │   ├── immediate payoff
+│   │   ├── overuse
+│   │   └── eventual cost
+│   │
+│   ├── PEOPLE
+│   │   ├── role
+│   │   ├── attraction
+│   │   ├── compatibility
+│   │   ├── friction
+│   │   ├── activation
+│   │   └── recurrence
+│   │
+│   ├── PLACE
+│   │   ├── environment
+│   │   ├── exposure
+│   │   ├── constraint
+│   │   ├── access
+│   │   ├── delta
+│   │   └── recurrence
+│   │
+│   ├── TIME
+│   │   ├── baseline
+│   │   ├── onset
+│   │   ├── duration
+│   │   ├── build
+│   │   ├── peak
+│   │   ├── transition
+│   │   ├── overlap
+│   │   ├── recurrence
+│   │   └── resolution
+│   │
+│   ├── PROBABILITY
+│   │   ├── signal strength
+│   │   ├── independence
+│   │   ├── convergence
+│   │   ├── contradiction
+│   │   ├── specificity
+│   │   ├── timing
+│   │   ├── recurrence
+│   │   ├── context
+│   │   └── confidence
+│   │
+│   ├── POTENTIAL
+│   │   ├── capacity
+│   │   ├── opportunity
+│   │   ├── constraint
+│   │   ├── readiness
+│   │   ├── regulated expression
+│   │   └── alternate response
+│   │
+│   ├── EVIDENCE
+│   │   ├── claim
+│   │   ├── provenance
+│   │   ├── independence
+│   │   ├── quality
+│   │   ├── agreement
+│   │   ├── contradiction
+│   │   ├── specificity
+│   │   ├── limitation
+│   │   └── confidence
+│   │
+│   └── UNRESOLVED
+│       └── every unsupported field remains UNKNOWN
+│
+├── 05. CONVERGENCE MATRIX
+│
+│           WEST  VEDIC  HELL  BAZI  TZOLKIN  DREAM  NUM  LOCATION
+│   P01       ●      ●     ○     ●      ○       ●     ○      ●
+│   P02       ○      ●     ●     ○      ●       ○     ●      ○
+│   P03       ●      ●     ●     ○      ○       ●     ●      ●
+│   ...
+│   P64       ●      ○     ●     ●      ●       ○     ○      ●
+│
+│   ● = supported intersection
+│   ○ = no supported intersection
+│
+│   EACH ● STORES:
+│   ├── personId
+│   ├── portalId
+│   ├── modality
+│   ├── nativeMarker
+│   ├── nativeCalculation
+│   ├── interpretation
+│   ├── direction
+│   ├── pressure
+│   ├── timeframe
+│   ├── location
+│   ├── relationship
+│   ├── provenance
+│   ├── confidence
+│   └── contradictions
+│
+├── 06. LIFE-SECTION ROUTING
+│   │
+│   └── each surviving portal expression
+│       routes immediately into every applicable
+│       SEEN Life Section while retaining portal
+│       and source provenance.
+│
+├── 07. CONVERGENCE
+│   │
+│   ├── REINFORCEMENT
+│   ├── CONTRADICTION
+│   ├── RECURRENCE
+│   ├── TIMING OVERLAP
+│   ├── LOCATION OVERLAP
+│   ├── RELATIONAL OVERLAP
+│   ├── RECOGNITION SUPPORT
+│   ├── RECOGNITION REJECTION
+│   └── UNRESOLVED
+│
+│   OUTPUT STATES:
+│   ├── POSSIBLE
+│   ├── PROBABLE
+│   ├── RECURRING
+│   ├── STRONGLY_SUPPORTED
+│   ├── HIGHLY_CONVERGENT
+│   ├── CONDITIONALLY_AMPLIFIED
+│   └── UNRESOLVED
+│
+├── 08. DARK SHADOW READING
+│   │
+│   ├── strongest pressure
+│   ├── likely trigger
+│   ├── protective adaptation
+│   ├── repeated behavior
+│   ├── short-term payoff
+│   ├── distortion
+│   ├── cost
+│   ├── consequence
+│   ├── experiential failure
+│   ├── self-sabotage loop
+│   ├── people pattern
+│   ├── location pattern
+│   ├── timeframe
+│   ├── recurrence
+│   ├── contradictions
+│   └── confidence/provenance
+│
+└── 09. JUNG / SOVEREIGNTY
+    └── receives the completed recognition field
+
+
+The 64 Portals are the common extraction architecture: each remains available across the runtime, with expression changing according to pressure, timing, environment, relationship and other converging conditions. System Update Request.txt The existing specification explicitly requires WHAT, WHEN, WHERE, HOW, WHY, probability-increasing conditions and probability-reducing conditions for portal extraction.
+System Update Request.txt
+
+RUNTIME INPUT CONTRACT
+
+SeenRunInputSchema.parse({
+  subject: {
+    personId,
+    birth: {
+      date,
+      location: {
+        city,
+        region,
+        country,
+        latitude,
+        longitude,
+        timezone
+      },
+      time: {
+        value,
+        certainty: "EXACT" | "RECTIFIED" | "UNKNOWN",
+        rectificationSessionId
+      }
+    }
+  },
+
+  run: {
+    mode:
+      | "FOUNDATION"
+      | "HISTORICAL_CAPTURE"
+      | "PRESENT_CAPTURE"
+      | "FUTURE_WINDOW"
+      | "RELATIONSHIP"
+      | "TRAVEL"
+      | "RELOCATION",
+
+    targetDateTime,
+    targetLocationId,
+    comparisonPersonIds: []
+  },
+
+  locationHistory: [
+    {
+      locationId,
+      coordinates,
+      startDate,
+      endDate,
+      duration,
+      developmentalAgeRange,
+      environmentalSnapshotId,
+      recognitionId
+    }
+  ],
+
+  enabledModalities: [
+    "WESTERN",
+    "VEDIC",
+    "HELLENISTIC",
+    "BAZI",
+    "TZOLKIN",
+    "DREAMSPELL",
+    "NUMEROLOGY"
+  ]
+});
+
+
+NATIVE SIGNAL CONTRACT
+
+Every discovery engine returns the same envelope while preserving its own mechanics.
+
+NativeSignalSchema.parse({
+  signalId,
+  personId,
+
+  modality: "WESTERN",
+
+  marker: {
+    type: "ASPECT",
+    bodyA: "PLUTO",
+    relationship: "CONJUNCTION",
+    bodyB: "ASCENDANT",
+    orb
+  },
+
+  calculation: {
+    methodology,
+    rawInputs,
+    intermediateValues,
+    finalValue
+  },
+
+  temporalScope: {
+    type: "NATAL",
+    start: birthDateTime,
+    end: null
+  },
+
+  provenance: {
+    calculator,
+    version,
+    sourceRefs
+  }
+});
+
+
+A Vedic signal keeps Vedic mechanics. A BaZi signal keeps BaZi mechanics. A numerology signal keeps numerology mechanics. Convergence never replaces the native record.
+
+CURRENT-SKY CONTRACT
+
+Swiss Ephemeris is repeatedly used across natal, present, historical, future, relocated and relational timing calculations in the supplied runtime specification.
+System Update Request.txt
+
+RECTIFIED NATAL
+      │
+      ├─────────────────────────────┐
+      │                             │
+      ▼                             ▼
+NATAL WESTERN                 EVENT SKY
+Swiss Ephemeris               Swiss Ephemeris
+birth instant                 target instant
+      │                             │
+      └─────────────┬───────────────┘
+                    ▼
+             TRANSIT RELATION
+                    │
+                    ▼
+              ACTIVE SIGNALS
+AstronomicalStateSchema.parse({
+  personId,
+
+  natal: {
+    calculatedAtBirthInstant: true,
+    chartId
+  },
+
+  event: {
+    dateTime,
+    latitude,
+    longitude,
+    timezone,
+    planetaryPositions,
+    aspects
+  },
+
+  natalToEvent: {
+    transits,
+    angularRelationships,
+    timingSignals
+  }
+});
+
+
+LOCATION × PERSON CONVERGENCE
+
+PERSON NATIVE SIGNAL
+       │
+       │
+       ├──────────────┐
+       ▼              ▼
+Portal 28          LOCATION
+pressure           Montana
+pattern            winter 2026
+       │              │
+       └──────┬───────┘
+              ▼
+       PERIOD OVERLAP?
+              │
+         YES ─┴─ NO
+          │
+          ▼
+DOES LOCATION CONDITION
+AMPLIFY / SUPPRESS / REGULATE /
+REROUTE / LEAVE UNRESOLVED?
+          │
+          ▼
+     RECOGNITION
+
+
+Example:
+
+ContextualIntersectionSchema.parse({
+  personId: "A",
+  portalId: 28,
+
+  nativeSignals: [
+    westernSignalId,
+    vedicSignalId
+  ],
+
+  location: {
+    locationId: "montana-home",
+    exposureWindow: ["2025-01-01", "2026-09-04"],
+    environmentalSignals: [...]
+  },
+
+  timing: {
+    astronomicalSignals: [...],
+    developmentalSignals: [...]
+  },
+
+  effect: {
+    state: "AMPLIFIED",
+    confidence: 0.74
+  },
+
+  recognition: {
+    status: "PARTIAL",
+    applicablePeriod: [...]
+  }
+});
+
+
+Location itself receives no universal GOOD/BAD label. The same environment may amplify one person, regulate another, and remain unresolved for another. The source specification already requires environmental expression to change according to the subject and conditions.
+System Update Request.txt
+
+HISTORICAL CAPTURE
+
+PERSON A
+│
+├── accumulated state entering June 2015
+├── independent native mechanics
+├── active timing mechanics
+└── prior recognized exposures
+             │
+             ▼
+      BALI — JUNE 2015
+             │
+├── historically correct environment
+├── current-at-that-time sky
+├── natal ↔ event transits
+├── relocated mechanics
+└── duration
+             │
+             ▼
+      64 PORTAL FIELD
+             │
+             ▼
+      OBSERVED EXPERIENCE
+             │
+             ▼
+        RECOGNITION
+HistoricalCaptureSchema.parse({
+  captureId,
+  personId,
+
+  window: {
+    start: "2015-06-12",
+    end: "2015-06-27"
+  },
+
+  locationId: "bali",
+
+  personStateAtEntry: stateSnapshotId,
+
+  astronomicalState: {
+    natalChartId,
+    historicalSkyId,
+    transitSetId,
+    relocationSetId
+  },
+
+  environmentalState: historicalEnvironmentId,
+
+  portalStateIds: [...],
+
+  livedEvidence: {
+    recognition: "STRONG",
+    userRating,
+    recognizedLifeSections: [...]
+  }
+});
+
+
+PRESENT CAPTURE
+
+WHO THE PERSON HAS BECOME
+          ×
+CURRENT LOCATION
+          ×
+CURRENT SKY
+          ×
+CURRENT RELATIONSHIPS
+          ×
+64 PORTALS
+          ↓
+      NOW STATE
+
+
+The runtime specification already defines SEEN as a moving field in which time, location, relationships, developmental period and astronomical movement continuously alter expression while underlying mechanics remain traceable.
+System Update Request.txt
+
+TWO-PERSON RELATIONSHIP TREE
+
+PERSON A                              PERSON B
+│                                     │
+├── native modalities                 ├── native modalities
+├── accumulated exposure              ├── accumulated exposure
+├── recognition history               ├── recognition history
+├── current timing                    ├── current timing
+└── current portal field              └── current portal field
+          │                                    │
+          └──────────────┬─────────────────────┘
+                         ▼
+                A ↔ B NATIVE FIELD
+                         │
+                         ▼
+                   LOCATION L
+                         │
+          ┌──────────────┼──────────────┐
+          ▼              ▼              ▼
+       A ↔ L          B ↔ L        (A ↔ B) ↔ L
+          │              │              │
+          └──────────────┼──────────────┘
+                         ▼
+                       TIME T
+                         │
+          ┌──────────────┼──────────────┐
+          ▼              ▼              ▼
+      A timing        B timing      relationship
+                                     timing
+          │              │              │
+          └──────────────┼──────────────┘
+                         ▼
+                 SHARED CAPTURE
+
+
+TRAVEL WINDOW SEARCH
+
+INPUT
+Person A
+Person B optional
+Destination
+Future date range
+
+        ↓
+
+FOR EACH CANDIDATE WINDOW
+
+A × destination × time
+        ↓
+A portal field
+
+B × destination × time
+        ↓
+B portal field
+
+A ↔ B × destination × time
+        ↓
+relationship portal field
+
+        ↓
+
+CROSS-COMPARE
+
+        ↓
+
+candidate window
+├── A support / pressure
+├── B support / pressure
+├── relationship support / pressure
+├── environmental fit
+├── astronomical convergence
+├── recurring historical similarities
+├── contradictions
+└── confidence
+
+
+The supplied specification explicitly includes future astronomical pressure, future environmental pressure, relational collisions, location alignment, timing alignment, travel/relocation comparison, event selection and recurrence windows.
+System Update Request.txt
+
+HISTORICAL-STATE RECONSTRUCTION → FUTURE SEARCH
+
+KNOWN HISTORICAL CAPTURE
+Bali — June 2015
+│
+├── Person A state
+├── Person B state
+├── A ↔ B state
+├── historical sky
+├── A natal ↔ historical sky
+├── B natal ↔ historical sky
+├── historical location field
+├── portal convergence
+└── recognized outcome
+             │
+             ▼
+       TARGET PATTERN
+             │
+             ▼
+SEARCH FUTURE
+location × date × time
+             │
+             ▼
+COMPARE EACH CANDIDATE
+             │
+     ┌───────┴────────┐
+     ▼                ▼
+EXACT-STATE       FUNCTIONAL-STATE
+SIMILARITY        SIMILARITY
+     │                │
+     └───────┬────────┘
+             ▼
+      FUTURE WINDOWS
+
+
+SIGNAL RIPPLE
+
+NATIVE MARKER
+     ●
+     │
+     ▼
+PORTAL INTERSECTION
+     │
+     ├── pressure
+     ├── trigger
+     ├── adaptation
+     ├── behavior
+     ├── payoff
+     ├── cost
+     └── consequence
+          │
+          ▼
+     LIFE SECTIONS
+          │
+          ▼
+    OTHER MODALITY
+          ●
+          │
+    same mechanism?
+       /       \
+     YES        NO
+      │          │
+reinforce    preserve separately
+      │          │
+      └────┬─────┘
+           ▼
+       LOCATION
+           │
+      same period?
+       /       \
+     YES        NO
+      │          │
+ contextual   retain
+ overlap      independent
+      │
+      ▼
+    TIMING
+      │
+      ▼
+ RECOGNITION
+      │
+ ┌────┼─────┬────────┐
+ ▼    ▼     ▼        ▼
+YES PARTIAL NO    UNKNOWN
+ │    │     │        │
+ └────┴─────┴────────┘
+           │
+           ▼
+   RECALCULATE CONVERGENCE
+
+
+TRANSLATOR LAYER
+
+CONVERGED PORTAL MECHANISM
+             │
+             ▼
+        TRANSLATORS
+             │
+├── attachment theory
+├── developmental psychology
+├── nervous-system models
+├── somatic patterning
+├── family systems
+├── Jungian psychology
+├── relational models
+├── behavioral frameworks
+└── applicable Maisel lenses
+             │
+             ▼
+    HUMAN-RECOGNIZABLE LANGUAGE
+
+
+Translator layers describe recognizable expression. They retain the underlying portal, contributing mechanics, timing, environment, relational overlays, convergence strength, contradictions and confidence. The source specification explicitly requires that traceability.
+System Update Request.txt
+
+FINAL CONVERGENCE OBJECT
+
+SeenConvergenceSchema.parse({
+  convergenceId,
+  subjectIds: ["A"],
+
+  portalId,
+
+  sourceSignals: [
+    {
+      modality,
+      nativeSignalId,
+      provenance,
+      contribution
+    }
+  ],
+
+  context: {
+    timeframe,
+    locationId,
+    relationshipIds: []
+  },
+
+  dissection: {
+    pressure,
+    triggers,
+    adaptations,
+    behaviors,
+    payoff,
+    distortion,
+    costs,
+    consequences,
+    experientialFailures,
+    selfSabotage,
+    people,
+    place,
+    timeline,
+    potential
+  },
+
+  convergence: {
+    reinforcingSignals,
+    contradictingSignals,
+    recurringSignals,
+    independentSourceCount,
+    recognitionSupport,
+    confidence
+  },
+
+  status:
+    | "POSSIBLE"
+    | "PROBABLE"
+    | "RECURRING"
+    | "STRONGLY_SUPPORTED"
+    | "HIGHLY_CONVERGENT"
+    | "CONDITIONALLY_AMPLIFIED"
+    | "UNRESOLVED",
+
+  unresolved: [...],
+
+  trace: {
+    nativeMechanics,
+    calculations,
+    locations,
+    timing,
+    portalMappings,
+    recognitionEvidence,
+    translatorSources
+  }
+});
+FINAL PRODUCT LAW
+
+CALCULATE INDEPENDENTLY
+        ↓
+PRESERVE IDENTITY
+        ↓
+INTERROGATE THROUGH 64
+        ↓
+ROUTE INTO LIFE SECTIONS
+        ↓
+ALIGN PERSON × PLACE × TIME × RELATIONSHIP
+        ↓
+ACCUMULATE
+        ↓
+COMPARE
+        ↓
+REINFORCE / CONTRADICT / LEAVE UNRESOLVED
+        ↓
+RECOGNITION
+        ↓
+RECALCULATE
+        ↓
+CONVERGE
+        ↓
+TRANSLATE
+        ↓
+DARK SHADOW READING
+        ↓
+JUNG / SOVEREIGNTY
+        ↓
+CADENCE
+        ↓
+PAST RECONSTRUCTION × PRESENT CAPTURE × FUTURE SEARCH
+
+
+SEEN’s output remains conditional, probabilistic and traceable; stronger language follows stronger convergence, while conflicting and weak evidence remains visible.
+System Update Request.txt Location should be known as the incubator  either we give three summaries describing the location that we are going to use as environmental exposure or we have little check boxes for the person to check during intake when they put the location and what they experience there it could be like suburbs, rural heat, cold anything that would amplify any part of their behavioral system or development which is I mean what’s the appropriate amount of boxes for them to click on each Location six isn’t too much 10 isn’t too much right like, what did you? What did you? What were you exposed to violence, poverty politics, religion that might be the better way to just have them other than trying to determine what they experienced in writing down three just have them tell us because I mean different roofs different same roof different experience depending on the kid. One kid might have to see the parents is loving the other kid could see them as  toxic. But we come up with an invite for the incubator really doesn’t matter what they tell us is what it matters what they felt what matters we were only gonna be able to give them so much with three summaries and you’re only gonna be able to use so much.
