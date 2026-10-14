@@ -41,6 +41,18 @@ Build this first as one working vertical slice:
 - [ ] Closure & Composure result explains what happened
 - [ ] First Cadence action begins immediately
 
+## V1 TARGET USER AND RECOGNITION MECHANISM (Sean, 2026-10-14)
+
+V1's target user: someone with a broken heart, ghosted or turned on by a partner who said they loved them. This is the fastest-spreading entry point, not family readings — family comes after.
+
+Recognition mechanism, precisely (this governs Oracle output, not just positioning): the Oracle does not assert unverified personal facts. It surfaces a pressure point from convergent evidence (e.g. Pluto conjunct 4th house, Ashlesha coiling in the 8th, Lilith meeting Chiron) and the user supplies their own specifics in response — "yep, that's exactly what she did." The "holy shit" moment is the user's own recognition confirming the pattern, not the Oracle naming events it was never given. See `docs/examples/RELATIONAL_RECOGNITION_EXEMPLAR.md` for the real transcript this is drawn from.
+
+Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best ever... my brother's like, oh my God"). Every modality-converged reading should land at this level before V1 ships.
+
+- [ ] Build the ghosted/betrayed-partner relational reading as the priority first-complete-path persona, ahead of family readings
+- [ ] Verify Oracle output never asserts a specific unverified personal fact (an affair, an event, a name) that the user did not first supply in-session
+- [ ] Verify convergence across independent modalities is what triggers the pressure-point surfacing, not a single source
+
 ## PRODUCT SPINE
 
 - [ ] SEEN delivers recognition
