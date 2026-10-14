@@ -1,7 +1,29 @@
 // PROVENANCE: bot=grok session=2026-10-13 task=64 interrogator sub-agents (no scoring)
 import { PORTALS_64, type PortalRecord } from '../portals64';
 import { UNIVERSAL_QUESTION_SET } from '../lifeSections';
-import type { ChartSignal, Interrogator } from './types';
+import type { ChartSignal, Interrogator, PortalExtraction } from './types';
+
+/** Every active portal's output contract (Sean, 2026-10-14). Null content: no interpretation layer exists yet, never invented. */
+function emptyExtraction(archetype: PortalRecord): PortalExtraction {
+  return {
+    portalId: archetype.portalId,
+    hexagramName: archetype.name,
+    wound: null,
+    injury: null,
+    darknessUnderneath: null,
+    triggerPressurePoint: null,
+    geoBiomeAmplified: null,
+    reactionPattern: null,
+    relationalImpact: null,
+    attachmentStyleDistortion: null,
+    loveLanguageDistortion: null,
+    sabotagePattern: null,
+    villainUnderPressure: null,
+    realLifeCost: null,
+    ageArcs: null,
+    untreatedConsequences: null,
+  };
+}
 
 /** Every archetype asks the SAME universal question set (t612). Builds an interrogator from an archetype record (used by agent/subagents/archetypes/subagents/interrogator-NN-*). */
 export function makeInterrogatorFromRecord(archetype: PortalRecord): Interrogator {
@@ -12,11 +34,14 @@ export function makeInterrogatorFromRecord(archetype: PortalRecord): Interrogato
       ...s,
       affinityMatch: affinity.has(String(s.id).toUpperCase()),
     }));
+    const active = signals.some((s) => s.affinityMatch);
     return {
       portalId,
       name: archetype.name,
       shadowName: archetype.shadowName,
       giftName: archetype.giftName,
+      active,
+      extraction: active ? emptyExtraction(archetype) : null,
       answers: UNIVERSAL_QUESTION_SET.flatMap((sec) =>
         sec.questions.map((question) => ({ section: sec.section, question, answer: null, signals })),
       ),

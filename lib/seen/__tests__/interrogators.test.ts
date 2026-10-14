@@ -16,6 +16,36 @@ describe('interrogators', () => {
       expect(r.answers.every((a) => a.signals.length === 1 && a.signals[0].source)).toBe(true);
     }
   });
+
+  it('an active portal (signal matches its woundMarkerAffinity) carries the 14-field extraction; an inactive one does not', () => {
+    const sig = [{ modality: 'western', id: 'PLUTO', label: 'Pluto', source: { ref: 'test' } }];
+    const results = runAllInterrogators(sig);
+    const portal1 = results.find((r) => r.portalId === 1)!; // woundMarkerAffinity includes PLUTO
+    expect(portal1.active).toBe(true);
+    expect(portal1.extraction).toMatchObject({ portalId: 1, hexagramName: portal1.name });
+    expect(Object.keys(portal1.extraction!).sort()).toEqual([
+      'ageArcs',
+      'attachmentStyleDistortion',
+      'darknessUnderneath',
+      'geoBiomeAmplified',
+      'hexagramName',
+      'injury',
+      'loveLanguageDistortion',
+      'portalId',
+      'reactionPattern',
+      'realLifeCost',
+      'relationalImpact',
+      'sabotagePattern',
+      'triggerPressurePoint',
+      'untreatedConsequences',
+      'villainUnderPressure',
+      'wound',
+    ]);
+
+    const inactive = results.find((r) => !r.active);
+    expect(inactive).toBeDefined();
+    expect(inactive!.extraction).toBeNull();
+  });
 });
 
 describe('archetype agents (agent/subagents/archetypes)', () => {
