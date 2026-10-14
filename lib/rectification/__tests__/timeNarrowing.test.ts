@@ -6,6 +6,8 @@ import { anonymousCardFace, pressureProseFromSeed } from '../pressureProseFromSe
 import {
   ROUND_1_CLOCKS,
   clocksForRound,
+  isKnownTimeConfirmed,
+  knownTimeClocksForRound,
   neighborClocks,
   resolveDarkClocks,
 } from '../timeNarrowing';
@@ -38,6 +40,21 @@ describe('time narrowing ladder', () => {
 
   it('wraps a neighbor that crosses midnight', () => {
     expect(clocksForRound(3, '01:00')).toEqual(['23:00', '01:00', '03:00']);
+  });
+
+  it('known-time round 1 brackets the typed birth time by ±1h', () => {
+    expect(knownTimeClocksForRound(1, '07:55')).toEqual(['06:55', '07:55', '08:55']);
+    expect(knownTimeClocksForRound(1, '00:15')).toEqual(['23:15', '00:15', '01:15']);
+  });
+
+  it('confirms the given time when the center is picked, no round 2', () => {
+    expect(isKnownTimeConfirmed('07:55', '07:55')).toBe(true);
+    expect(isKnownTimeConfirmed('06:55', '07:55')).toBe(false);
+  });
+
+  it('known-time round 2 brackets the round-1 adjacent pick by ±30min', () => {
+    // User typed 07:55, round 1 offered [06:55, 07:55, 08:55], picked the adjacent 06:55.
+    expect(knownTimeClocksForRound(2, '06:55')).toEqual(['06:25', '06:55', '07:25']);
   });
 
   it('refuses to invent a clock when the pick has none', () => {
