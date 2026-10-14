@@ -9,6 +9,7 @@ import {
   INTAKE_CARDS,
   birthCityCardError,
   birthDateCardError,
+  birthTimeCardError,
   buildIntakeRecord,
   nameCardError,
   placeFromSuggestion,
@@ -30,6 +31,10 @@ const CARD_COPY: Record<IntakeCard, { title: string; support: string }> = {
     title: 'birth date',
     support: 'The day this system entered.',
   },
+  birthTime: {
+    title: 'birth time',
+    support: 'Clock time, 24-hour. Leave blank if not known.',
+  },
   birthCity: {
     title: 'birth city',
     support: 'Search for the city. The pick carries latitude and longitude.',
@@ -45,6 +50,7 @@ export default function NatalChartPage() {
   const [step, setStep] = useState(0);
   const [name, setName] = useState('');
   const [birthDate, setBirthDate] = useState('');
+  const [birthTime, setBirthTime] = useState('');
   const [cityQuery, setCityQuery] = useState('');
   const [birthCity, setBirthCity] = useState<Place | null>(null);
   const [livedRows, setLivedRows] = useState<LivedPlaceDraft[]>(() => [emptyLivedPlaceDraft('1')]);
@@ -70,6 +76,7 @@ export default function NatalChartPage() {
       const record = buildIntakeRecord({
         name,
         birthDate,
+        birthTime: birthTime.trim() ? birthTime : null,
         birthCity: birthCity!,
         livedPlaces: collectLivedPlaces(livedRows),
       });
@@ -83,6 +90,7 @@ export default function NatalChartPage() {
   function errorFor(current: IntakeCard): string | null {
     if (current === 'name') return nameCardError(name);
     if (current === 'birthDate') return birthDateCardError(birthDate);
+    if (current === 'birthTime') return birthTimeCardError(birthTime);
     if (current === 'birthCity') return birthCityCardError(birthCity);
     try {
       collectLivedPlaces(livedRows);
@@ -129,6 +137,23 @@ export default function NatalChartPage() {
                 type="date"
                 value={birthDate}
                 onChange={(event) => setBirthDate(event.target.value)}
+              />
+            </div>
+          </div>
+        )}
+
+        {card === 'birthTime' && (
+          <div className="seenField">
+            <label className="seenLabel" htmlFor="chart-time">
+              Time of birth
+            </label>
+            <div className="seenInputFrame">
+              <input
+                id="chart-time"
+                className="seenInput"
+                type="time"
+                value={birthTime}
+                onChange={(event) => setBirthTime(event.target.value)}
               />
             </div>
           </div>

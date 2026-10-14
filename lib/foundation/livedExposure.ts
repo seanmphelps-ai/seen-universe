@@ -92,6 +92,26 @@ export function collectLivedPlaces(rows: LivedPlaceDraft[], now = new Date()): L
   });
 }
 
+/**
+ * The incubator (docs/canon/SEED_AND_SOIL.md, Sean 2026-10-12): the environmental
+ * exposure a person reports. Birthplace plus every city lived in for more than
+ * 6 months, each with its calendar years. Generator builds this from intake and
+ * pushes it downstream; it never rewrites the native seed (chart calculations).
+ */
+export type Incubator = {
+  birthCity: Place;
+  livedPlaces: LivedPlace[];
+  livedStack: string;
+};
+
+export function buildIncubator(input: { birthCity: Place; livedPlaces: LivedPlace[] }): Incubator {
+  return {
+    birthCity: input.birthCity,
+    livedPlaces: input.livedPlaces,
+    livedStack: livedStackFromPlaces(input.livedPlaces),
+  };
+}
+
 export function livedStackFromPlaces(places: LivedPlace[]): string {
   return places
     .map((entry) => {

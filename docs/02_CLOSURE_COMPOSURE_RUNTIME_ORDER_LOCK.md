@@ -83,7 +83,7 @@ Environmental intake precedes birth-derived interpretation.
 Collect:
 
 - birth location;
-- every location lived for one year or longer;
+- every location lived for more than 6 months;
 - approximate start and end for each exposure;
 - current location.
 

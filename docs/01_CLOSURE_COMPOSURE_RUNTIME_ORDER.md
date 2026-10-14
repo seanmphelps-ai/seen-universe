@@ -110,7 +110,7 @@ Every stage defines runtime-validated input and output schemas. Every output pre
 The environmental intake collects, in order:
 
 1. birth location;
-2. every location lived for one year or longer;
+2. every location lived for more than 6 months;
 3. approximate exposure range for each residence;
 4. current location.
 

@@ -13,10 +13,14 @@ export const IdentitySchema = z.object({
   name: z.string().trim().min(1),
 });
 
+const BirthTimeSchema = z.string().regex(/^([01]\d|2[0-3]):([0-5]\d)$/, 'Enter birth time as HH:mm, 24-hour.');
+
 export const BirthAnchorSchema = z.object({
   name: z.string().trim().min(1),
   birthDate: z.iso.date(),
   birthCity: PlaceSchema,
+  /** null when the birth time is not known. */
+  birthTime: BirthTimeSchema.nullable(),
 });
 
 export const LivedPlaceSchema = z.object({
@@ -53,6 +57,8 @@ export const CurrentResidencePeriodSchema = z.object({
 export const FoundationIntakeSchema = z.object({
   name: z.string().trim().min(1),
   birthDate: z.iso.date(),
+  /** null when the birth time is not known. */
+  birthTime: BirthTimeSchema.nullable(),
   birthLocation: z.string().trim().min(1),
   birthCity: PlaceSchema.optional(),
   maternityLocation: z.string().trim().optional(),

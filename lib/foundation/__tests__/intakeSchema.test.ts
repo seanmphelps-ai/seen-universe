@@ -4,6 +4,7 @@ import { BirthAnchorSchema, FoundationIntakeSchema, LivedExposureSchema } from '
 const validIntake = {
   name: 'self',
   birthDate: '1979-08-01',
+  birthTime: null,
   birthLocation: 'Tarzana, California, United States',
   livedLocations: ['Los Angeles, California, United States'],
   livedPeriods: [{
@@ -71,10 +72,11 @@ describe('FoundationIntakeSchema', () => {
     }).success).toBe(false);
   });
 
-  it('accepts a typed birth anchor with coordinates', () => {
+  it('accepts a typed birth anchor with coordinates and no known birth time', () => {
     expect(BirthAnchorSchema.safeParse({
       name: 'self',
       birthDate: '1979-08-01',
+      birthTime: null,
       birthCity: {
         name: 'Tarzana',
         country: 'United States',
@@ -84,11 +86,40 @@ describe('FoundationIntakeSchema', () => {
     }).success).toBe(true);
   });
 
+  it('accepts a typed birth anchor with a known birth time', () => {
+    expect(BirthAnchorSchema.safeParse({
+      name: 'self',
+      birthDate: '1979-08-01',
+      birthTime: '14:32',
+      birthCity: {
+        name: 'Tarzana',
+        country: 'United States',
+        latitude: 34.1733,
+        longitude: -118.5539,
+      },
+    }).success).toBe(true);
+  });
+
+  it('rejects a malformed birth time', () => {
+    expect(BirthAnchorSchema.safeParse({
+      name: 'self',
+      birthDate: '1979-08-01',
+      birthTime: '2:32pm',
+      birthCity: {
+        name: 'Tarzana',
+        country: 'United States',
+        latitude: 34.1733,
+        longitude: -118.5539,
+      },
+    }).success).toBe(false);
+  });
+
   it('rejects lived exposure under six months', () => {
     expect(LivedExposureSchema.safeParse({
       birthAnchor: {
         name: 'self',
         birthDate: '1979-08-01',
+        birthTime: null,
         birthCity: {
           name: 'Tarzana',
           country: 'United States',
