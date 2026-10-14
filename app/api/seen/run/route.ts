@@ -5,6 +5,7 @@ import { buildLocationField } from '../../../../lib/location/buildLocationField'
 import type { LocationInput } from '../../../../lib/location/types';
 import { redditForumProvider } from '../../../../lib/location/collectors/redditForum';
 import { buildWesternPortalBridge } from '../../../../lib/seen/westernBridge';
+import { readNative, auditNative, type ModalityId } from '../../../../lib/agents/execution';
 import { runEnvironmentalWitness } from '../../../../lib/location/v2/environmentalWitness';
 import {
   computeRuntimeEvidenceVector,
@@ -114,12 +115,27 @@ export async function POST(request: NextRequest) {
       layerSequence: 1,
     });
 
+    const otherModalities: ModalityId[] = [
+      'hellenistic',
+      'jyotisha',
+      'bazi',
+      'numerology',
+      'tzolkin',
+      'dreamspell',
+      'humandesign',
+      'iching',
+    ];
+    const modalityReadings = await Promise.all(
+      otherModalities.map((modality) => readNative(modality, input.chart).then(auditNative)),
+    );
+
     return NextResponse.json({
       locations: officialFields,
       locationV2,
       western: westernBridge.western,
       westernPortalPenetration: westernBridge.portalPenetration,
       westernLifeSectionRouting: westernBridge.lifeSectionRouting,
+      modalities: modalityReadings,
     });
   } catch (err) {
     return NextResponse.json(
