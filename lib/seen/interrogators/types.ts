@@ -12,6 +12,8 @@ export type ChartSignal = {
 export type InterrogatorAnswer = {
   section: string;
   question: string;
+  /** Not generated yet: no interpretation layer exists. Null, never invented. */
+  answer: string | null;
   /** Every incoming signal is carried; none dropped, none scored. */
   signals: Array<ChartSignal & { affinityMatch: boolean }>;
 };
@@ -27,6 +29,20 @@ export type InterrogatorResult = {
 export type Interrogator = {
   portalId: number;
   archetype: PortalRecord;
-  questions: PortalRecord['interrogation'];
+  questions: ReadonlyArray<{ section: string; questions: string[] }>;
   run: (chartSignals: ChartSignal[]) => InterrogatorResult;
+};
+
+export type SectionEntry = {
+  archetypeId: number;
+  questionSection: string;
+  question: string;
+  answer: string | null;
+  signals: InterrogatorAnswer['signals'];
+};
+
+export type SectionFiling = {
+  sections: Record<number, { id: number; name: string; entries: SectionEntry[] }>;
+  /** Archetypes no section routes to (12, 25, 46, 49 today). Kept, not dropped. */
+  unrouted: SectionEntry[];
 };

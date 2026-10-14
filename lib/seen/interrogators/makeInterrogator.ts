@@ -1,10 +1,11 @@
 // PROVENANCE: bot=grok session=2026-10-13 task=64 interrogator sub-agents (no scoring)
-import { PORTALS_64 } from '../portals64';
+import { PORTALS_64, type PortalRecord } from '../portals64';
+import { UNIVERSAL_QUESTION_SET } from '../lifeSections';
 import type { ChartSignal, Interrogator } from './types';
 
-export function makeInterrogator(portalId: number): Interrogator {
-  const archetype = PORTALS_64.find((p) => p.portalId === portalId);
-  if (!archetype) throw new Error(`Unknown portal ${portalId}`);
+/** Every archetype asks the SAME universal question set (t612). Builds an interrogator from an archetype record (used by agent/subagents/archetypes/subagents/interrogator-NN-*). */
+export function makeInterrogatorFromRecord(archetype: PortalRecord): Interrogator {
+  const portalId = archetype.portalId;
   const affinity = new Set(archetype.woundMarkerAffinity.map((a) => a.toUpperCase()));
   const run = (chartSignals: ChartSignal[]) => {
     const signals = chartSignals.map((s) => ({
@@ -16,10 +17,16 @@ export function makeInterrogator(portalId: number): Interrogator {
       name: archetype.name,
       shadowName: archetype.shadowName,
       giftName: archetype.giftName,
-      answers: archetype.interrogation.flatMap((sec) =>
-        sec.questions.map((question) => ({ section: sec.section, question, signals })),
+      answers: UNIVERSAL_QUESTION_SET.flatMap((sec) =>
+        sec.questions.map((question) => ({ section: sec.section, question, answer: null, signals })),
       ),
     };
   };
-  return { portalId, archetype, questions: archetype.interrogation, run };
+  return { portalId, archetype, questions: UNIVERSAL_QUESTION_SET, run };
+}
+
+export function makeInterrogator(portalId: number): Interrogator {
+  const archetype = PORTALS_64.find((p) => p.portalId === portalId);
+  if (!archetype) throw new Error(`Unknown portal ${portalId}`);
+  return makeInterrogatorFromRecord(archetype);
 }
