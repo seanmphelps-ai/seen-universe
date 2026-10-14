@@ -40,10 +40,12 @@ describe('t612 universal questions filed into 45 life sections', () => {
     for (const r of results) expect(r.answers.map((a) => a.question)).toEqual(first);
     const f = fileIntoSections(results);
     expect(Object.keys(f.sections)).toHaveLength(45);
-    const filed = new Set([...Object.values(f.sections).flatMap((s) => s.entries), ...f.unrouted].map((e) => e.archetypeId));
-    expect(filed.size).toBe(64);
-    for (const s of LIFE_SECTIONS) expect(f.sections[s.id].entries.length).toBe(s.archetypeSources.length * 52);
-    expect(f.sections[1].entries[0]).toMatchObject({ archetypeId: 14, answer: null });
+    expect(f.unrouted).toHaveLength(0);
+    // Every life section is habitable for any of the 64 archetypes: each section holds all 64 archetypes' 52 questions.
+    for (const s of LIFE_SECTIONS) expect(f.sections[s.id].entries.length).toBe(64 * 52);
+    const filedArchetypes = new Set(f.sections[1].entries.map((e) => e.archetypeId));
+    expect(filedArchetypes.size).toBe(64);
+    expect(f.sections[1].entries[0]).toMatchObject({ archetypeId: 1, answer: null });
     expect(f.sections[1].entries[0].signals[0].source).toEqual({ ref: 'test' });
   });
 });

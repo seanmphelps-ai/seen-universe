@@ -2,11 +2,10 @@
 import { LIFE_SECTIONS } from '../lifeSections';
 import type { InterrogatorResult, SectionEntry, SectionFiling } from './types';
 
-/** Files every archetype answer directly into sections[sectionId]. Archetypes no section lists go to `unrouted`, never dropped. */
+/** Every life section is habitable for any of the 64 archetypes: files every archetype's answers into every section. Nothing excluded, nothing dropped. */
 export function fileIntoSections(results: InterrogatorResult[]): SectionFiling {
   const sections: Record<number, { id: number; name: string; entries: SectionEntry[] }> = {};
   for (const s of LIFE_SECTIONS) sections[s.id] = { id: s.id, name: s.name, entries: [] };
-  const unrouted: SectionEntry[] = [];
   for (const r of results) {
     const entries: SectionEntry[] = r.answers.map((a) => ({
       archetypeId: r.portalId,
@@ -15,9 +14,7 @@ export function fileIntoSections(results: InterrogatorResult[]): SectionFiling {
       answer: a.answer,
       signals: a.signals,
     }));
-    const targets = LIFE_SECTIONS.filter((s) => s.archetypeSources.includes(r.portalId));
-    if (targets.length === 0) unrouted.push(...entries);
-    for (const t of targets) sections[t.id].entries.push(...entries);
+    for (const s of LIFE_SECTIONS) sections[s.id].entries.push(...entries);
   }
-  return { sections, unrouted };
+  return { sections, unrouted: [] };
 }

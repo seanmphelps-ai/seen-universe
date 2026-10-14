@@ -43,6 +43,6 @@ export type SectionEntry = {
 
 export type SectionFiling = {
   sections: Record<number, { id: number; name: string; entries: SectionEntry[] }>;
-  /** Archetypes no section routes to (12, 25, 46, 49 today). Kept, not dropped. */
+  /** Always empty: every life section is habitable for any of the 64 archetypes, so nothing goes unrouted. Field kept for the contract. */
   unrouted: SectionEntry[];
 };
