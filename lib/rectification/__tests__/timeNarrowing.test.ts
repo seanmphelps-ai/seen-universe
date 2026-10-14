@@ -76,10 +76,10 @@ describe('time narrowing ladder', () => {
 });
 
 describe('first-slice screens', () => {
-  it('keeps the intake screen free of a typed clock and the dead round-1 pair', () => {
+  it('allows a known birth time directly in intake (Sean, 2026-10-14); keeps the dead round-1 pair out', () => {
     const chart = readFileSync('app/chart/page.tsx', 'utf8');
-    expect(chart).not.toMatch(/type="time"/);
-    expect(chart).not.toMatch(/06:00|18:00|04:00|12:00|20:00/);
+    expect(chart).toContain('type="time"');
+    expect(chart).not.toMatch(/06:00|18:00/);
     expect(chart).toContain('type="date"');
     expect(chart).toContain('LocationAutocompleteInput');
     expect(chart).not.toContain('CITIES');
