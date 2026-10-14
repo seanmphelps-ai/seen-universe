@@ -38,7 +38,7 @@ These exist.
 
 ## Agent folders that exist
 
-`agent/subagents/` has western, hellenistic, jyotish, bazi, numerology, tzolkin, dreamspell, humandesign, iching. Each is a folder.
+`agent/subagents/` has western, hellenistic, jyotisha, bazi, numerology, tzolkin, dreamspell, humandesign, iching. Each is a folder.
 
 ## Pending review
 

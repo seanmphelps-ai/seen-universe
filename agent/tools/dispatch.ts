@@ -6,7 +6,7 @@ import { z } from 'zod'
 const auditor = {
   western: 'western-auditor',
   hellenistic: 'hellenistic-auditor',
-  jyotish: 'jyotish-auditor',
+  jyotisha: 'jyotisha-auditor',
   bazi: 'bazi-auditor',
   numerology: 'numerology-auditor',
   tzolkin: 'tzolkin-auditor',
@@ -22,7 +22,7 @@ export default defineWorkflowTool({
     lineage: z.enum([
       'western',
       'hellenistic',
-      'jyotish',
+      'jyotisha',
       'bazi',
       'numerology',
       'tzolkin',

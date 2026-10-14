@@ -6,7 +6,7 @@ import { readDreamspell } from '../../agent/subagents/dreamspell/agent';
 import { readHellenisticPositions } from '../../agent/subagents/hellenistic/agent';
 import { readHumanDesign } from '../../agent/subagents/humandesign/agent';
 import { readIChing } from '../../agent/subagents/iching/agent';
-import { readJyotishaAstronomy } from '../../agent/subagents/jyotish/agent';
+import { readJyotishaAstronomy } from '../../agent/subagents/jyotisha/agent';
 import { readNumerology } from '../../agent/subagents/numerology/agent';
 import { readTzolkin } from '../../agent/subagents/tzolkin/agent';
 import { readWesternChart } from '../../agent/subagents/western/agent';
