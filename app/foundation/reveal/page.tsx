@@ -3,9 +3,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import CardFeed from '../../../components/CardFeed';
-import type { NatalChartResult } from '../../../lib/natalChart';
-import { extractWoundMarkers } from '../../../lib/seen/woundMarkers';
-import { INTERROGATORS, runAllInterrogators } from '../../../lib/seen/interrogators';
 
 type PlaceCity = { name: string; country: string; latitude: number; longitude: number };
 
@@ -20,7 +17,7 @@ type StoredBirth = {
 
 type StoredRectification = { pickedClock?: string };
 
-type SeenRunResponse = { western?: NatalChartResult; error?: string };
+type ChiefPipelineResponse = { cards?: { title: string; deepText: string }[]; error?: string };
 
 export default function RevealPage() {
   const router = useRouter();
@@ -47,40 +44,25 @@ export default function RevealPage() {
         const rectification = rawRectification ? (JSON.parse(rawRectification) as StoredRectification) : null;
         const birthTime = rectification?.pickedClock ?? birth.birthTime ?? null;
 
-        const response = await fetch('/api/seen/run', {
+        const response = await fetch('/api/seen/chief', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            chart: { name: birth.name, birthDate: birth.birthDate, birthTime, latitude: birth.city.latitude, longitude: birth.city.longitude },
-            locations: [{
-              role: 'birth',
-              label: birth.birthLocation?.trim() || `${birth.city.name}, ${birth.city.country}`,
-              latitude: birth.city.latitude,
-              longitude: birth.city.longitude,
-              exposureStart: birth.birthDate,
-            }],
+            name: birth.name,
+            birthDate: birth.birthDate,
+            birthTime,
+            latitude: birth.city.latitude,
+            longitude: birth.city.longitude,
           }),
         });
 
-        const payload = (await response.json().catch(() => null)) as SeenRunResponse | null;
-        if (!response.ok || !payload?.western) {
-          throw new Error(payload?.error || 'Runtime failed.');
+        const payload = (await response.json().catch(() => null)) as ChiefPipelineResponse | null;
+        if (!response.ok || !payload?.cards) {
+          throw new Error(payload?.error || 'Chief pipeline failed.');
         }
 
-        const hits = extractWoundMarkers(payload.western);
-        const signals = hits.map((hit) => ({
-          modality: 'wound-marker',
-          id: hit.id,
-          label: hit.label,
-          source: { sign: hit.sign, degree: hit.degree, house: hit.house },
-        }));
-        const activePortals = runAllInterrogators(signals).filter((result) => result.active);
         if (cancelled) return;
-        setCards(activePortals.map((result) => {
-          const archetype = INTERROGATORS.find((i) => i.portalId === result.portalId)?.archetype;
-          const questions = archetype?.interrogation.flatMap((section) => section.questions) ?? [];
-          return { title: result.name, deepText: questions.join(' ') };
-        }));
+        setCards(payload.cards);
       } catch (err) {
         if (!cancelled) setError(err instanceof Error ? err.message : 'Could not build the reading.');
       }
