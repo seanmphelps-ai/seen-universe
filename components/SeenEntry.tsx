@@ -40,7 +40,7 @@ export default function SeenEntry() {
     }
     const raw = sessionStorage.getItem('seen:experience-mode');
     const resolved = raw ? JSON.parse(raw) : null;
-    const next = resolved?.next === 'closure_people' ? '/closure' : interaction === 'chat' ? '/foundation/chat' : '/chart';
+    const next = resolved?.next === 'closure_people' ? '/closure' : interaction === 'manuscript' ? '/chart' : '/foundation/chat';
     router.push(next);
   }
 
@@ -98,7 +98,7 @@ export default function SeenEntry() {
             <p>Closure & Composure</p>
             <h1>How do you want to tell it?</h1>
             <p className="seenFlowIntroduction" style={{ marginTop: 16 }}>
-              Voice is coming. For now, talk it through in chat, or write it out yourself.
+              Talk it through, type it, or write it out yourself.
             </p>
             <div className="seenDivider" aria-hidden="true" />
             <div className="seenIntroComposer">
@@ -106,6 +106,14 @@ export default function SeenEntry() {
                 type="button"
                 className="seenButtonPrimary"
                 style={{ width: '100%' }}
+                onClick={() => chooseInteraction('voice')}
+              >
+                Voice
+              </button>
+              <button
+                type="button"
+                className="seenIntroContinue"
+                style={{ marginTop: 12 }}
                 onClick={() => chooseInteraction('chat')}
               >
                 Chat
@@ -117,9 +125,6 @@ export default function SeenEntry() {
                 onClick={() => chooseInteraction('manuscript')}
               >
                 Manuscript
-              </button>
-              <button type="button" className="seenIntroContinue" style={{ marginTop: 12 }} disabled>
-                Voice — coming soon
               </button>
             </div>
           </div>
