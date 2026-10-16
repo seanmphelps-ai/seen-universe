@@ -8,6 +8,8 @@ import {
 } from '../../../lib/seen/darkCardSeeds';
 import {
   clocksForRound,
+  isKnownTimeConfirmed,
+  knownTimeClocksForRound,
   type NarrowingRound,
 } from '../../../lib/rectification/timeNarrowing';
 
@@ -21,6 +23,7 @@ type PlaceCity = {
 type StoredBirth = {
   name: string;
   birthDate: string;
+  birthTime?: string | null;
   birthLocation?: string;
   city?: PlaceCity;
   livedStack?: string;
@@ -183,7 +186,7 @@ export default function RectificationPage() {
             birthPlaceLabel: placeLabelFor(birth!),
             livedStack,
           },
-          clocksForRound(1),
+          birth!.birthTime ? knownTimeClocksForRound(1, birth!.birthTime) : clocksForRound(1),
         );
 
         if (cancelled) return;
@@ -221,6 +224,10 @@ export default function RectificationPage() {
 
     setError('');
 
+    const givenTime = birth.birthTime || null;
+    const confirmed = givenTime !== null && round === 1 && isKnownTimeConfirmed(winner.clock, givenTime);
+    const lastRound = givenTime ? 2 : 4;
+
     const record = {
       round,
       method: 'engine-dark-windows-pressure-prose',
@@ -239,11 +246,11 @@ export default function RectificationPage() {
         pickedRunId: winner.runId,
         pickedClock: winner.clock,
         rounds: nextHistory,
-        locked: round === 4,
+        locked: round === 4 || confirmed || (givenTime !== null && round === 2),
       }),
     );
 
-    if (round === 4) {
+    if (confirmed || round === lastRound) {
       sessionStorage.removeItem('seen.foundation.rectification.narrowingStub');
       setLockedMessage('Recognition locked.');
       setPhase('complete');
@@ -254,7 +261,9 @@ export default function RectificationPage() {
     const nextRound = (round + 1) as Exclude<NarrowingRound, 1>;
     let neighborSet: string[];
     try {
-      neighborSet = clocksForRound(nextRound, winner.clock);
+      neighborSet = givenTime
+        ? knownTimeClocksForRound(2, winner.clock)
+        : clocksForRound(nextRound, winner.clock);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Could not narrow this pick.');
       return;
