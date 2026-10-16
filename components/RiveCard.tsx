@@ -6,9 +6,10 @@ import { useRive, useStateMachineInput } from '@rive-app/react-canvas';
 type RiveCardProps = {
   title: string;
   deepText: string;
+  progress: number;
   onProgressChange: (value: number) => void;
 };
-export default function RiveCard({ title, deepText, onProgressChange }: RiveCardProps) {
+export default function RiveCard({ title, deepText, progress, onProgressChange }: RiveCardProps) {
   const [expanded, setExpanded] = useState(false);
   const { rive, RiveComponent } = useRive({ src: '/animations/card.riv', stateMachine: 'Card_SM', autoplay: false });
   const progressInput = useStateMachineInput(rive, 'Card_SM', 'Progress');
@@ -17,10 +18,13 @@ export default function RiveCard({ title, deepText, onProgressChange }: RiveCard
 
   useEffect(() => {
     if (!rive || !progressInput) return;
-    progressInput.value = 1;
-    onProgressChange(1);
+    progressInput.value = progress;
+    onProgressChange(progress);
+  }, [rive, progressInput, progress, onProgressChange]);
+
+  useEffect(() => {
     return () => rive?.cleanup();
-  }, [rive, progressInput, onProgressChange]);
+  }, [rive]);
 
   function handleTap() {
     if (!tappedInput) return;
