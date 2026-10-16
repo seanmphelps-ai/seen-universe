@@ -30,7 +30,7 @@ export default function SeenEntry() {
       /* storage unavailable */
     }
     if (resolved.next === 'person_a_foundation') {
-      router.push('/foundation/location');
+      router.push('/chart');
       return;
     }
     router.push('/closure');
