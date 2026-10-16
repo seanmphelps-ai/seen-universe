@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import CardFeed from '../../../components/CardFeed';
 import type { NatalChartResult } from '../../../lib/natalChart';
 import { extractWoundMarkers } from '../../../lib/seen/woundMarkers';
-import { rankWounds } from '../../../lib/seen/woundRanking';
+import { INTERROGATORS, runAllInterrogators } from '../../../lib/seen/interrogators';
 
 type PlaceCity = { name: string; country: string; latitude: number; longitude: number };
 
@@ -67,12 +67,20 @@ export default function RevealPage() {
           throw new Error(payload?.error || 'Runtime failed.');
         }
 
-        const ranked = rankWounds(extractWoundMarkers(payload.western), payload.western.aspects);
+        const hits = extractWoundMarkers(payload.western);
+        const signals = hits.map((hit) => ({
+          modality: 'wound-marker',
+          id: hit.id,
+          label: hit.label,
+          source: { sign: hit.sign, degree: hit.degree, house: hit.house },
+        }));
+        const activePortals = runAllInterrogators(signals).filter((result) => result.active);
         if (cancelled) return;
-        setCards(ranked.map((wound) => ({
-          title: wound.label,
-          deepText: `${wound.signature} ${wound.cost} ${wound.repeatPattern}`,
-        })));
+        setCards(activePortals.map((result) => {
+          const archetype = INTERROGATORS.find((i) => i.portalId === result.portalId)?.archetype;
+          const questions = archetype?.interrogation.flatMap((section) => section.questions) ?? [];
+          return { title: result.name, deepText: questions.join(' ') };
+        }));
       } catch (err) {
         if (!cancelled) setError(err instanceof Error ? err.message : 'Could not build the reading.');
       }
