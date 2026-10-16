@@ -10,7 +10,7 @@ const WORDS = ['YOUR', 'STORY', 'HOLDS', 'A', 'WHOLE', 'UNIVERSE.'];
 export default function SeenEntry() {
   const router = useRouter();
   const [wordIndex, setWordIndex] = useState(0);
-  const [phase, setPhase] = useState<'words' | 'ready' | 'mode'>('words');
+  const [phase, setPhase] = useState<'words' | 'ready' | 'mode' | 'interaction'>('words');
 
   useEffect(() => {
     if (phase !== 'words') return;
@@ -29,11 +29,19 @@ export default function SeenEntry() {
     } catch {
       /* storage unavailable */
     }
-    if (resolved.next === 'person_a_foundation') {
-      router.push('/chart');
-      return;
+    setPhase('interaction');
+  }
+
+  function chooseInteraction(interaction: 'manuscript' | 'chat' | 'voice') {
+    try {
+      sessionStorage.setItem('seen:interaction-mode', interaction);
+    } catch {
+      /* storage unavailable */
     }
-    router.push('/closure');
+    const raw = sessionStorage.getItem('seen:experience-mode');
+    const resolved = raw ? JSON.parse(raw) : null;
+    const next = resolved?.next === 'closure_people' ? '/closure' : interaction === 'chat' ? '/foundation/chat' : '/chart';
+    router.push(next);
   }
 
   return (
@@ -80,6 +88,38 @@ export default function SeenEntry() {
                 onClick={() => choose('multi_person')}
               >
                 Two people
+              </button>
+            </div>
+          </div>
+        )}
+
+        {phase === 'interaction' && (
+          <div className="seenIntroReveal">
+            <p>Closure & Composure</p>
+            <h1>How do you want to tell it?</h1>
+            <p className="seenFlowIntroduction" style={{ marginTop: 16 }}>
+              Voice is coming. For now, talk it through in chat, or write it out yourself.
+            </p>
+            <div className="seenDivider" aria-hidden="true" />
+            <div className="seenIntroComposer">
+              <button
+                type="button"
+                className="seenButtonPrimary"
+                style={{ width: '100%' }}
+                onClick={() => chooseInteraction('chat')}
+              >
+                Chat
+              </button>
+              <button
+                type="button"
+                className="seenIntroContinue"
+                style={{ marginTop: 12 }}
+                onClick={() => chooseInteraction('manuscript')}
+              >
+                Manuscript
+              </button>
+              <button type="button" className="seenIntroContinue" style={{ marginTop: 12 }} disabled>
+                Voice — coming soon
               </button>
             </div>
           </div>
