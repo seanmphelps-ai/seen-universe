@@ -5,7 +5,7 @@ This document is the visual source of truth for every SEEN PWA surface.
 
 ## Approved Reference
 
-Approved reference image: `docs/assets/SEEN_APPROVED_UI_REFERENCE.jpg`
+Approved reference image: `docs/assets/SEEN_APPROVED_UI_REFERENCE.png`
 
 The reference governs palette, typography, spacing, component geometry, borders, shadows, glow, icon treatment, visual hierarchy, and mobile composition.
 
