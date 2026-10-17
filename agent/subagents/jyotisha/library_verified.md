@@ -839,3 +839,48 @@ Done only when both signs ruled by one planet still carry a number after trikona
   - Markati (backward to the previous sign).
   - Simhavalokana (to the 5th or 9th sign).
   - Effects of the gatis (p.547 onward) are **not read**.
+
+---
+# Batch 9b (2026-10-17)
+
+## #3 (adds) Trikona shodhana in Phaladeepika: PD ch.24 vv.16–17, Ojha p.567 (page n567 = printed p.567; the page header reads "chapter 24: Ashtakavarga-phala")
+- v.16: in the trikonas, reduce all three by the smallest number; if any house of the trikona is empty (zero), do not reduce that trikona.
+- v.17 (first half): if two of the three houses are empty, clear the third as well. (Literal: "if two houses are empty, reduce the other one.")
+- v.17 (second half): if all three are equal, clear them all. This agrees with BPHS 67.3–5 (batch 9a).
+- **Two readings, from Ojha p.572:** "reduce by the smallest" can mean either:
+  - (a) subtract the smallest from all three. Ojha says this is what Parashara's commentators do.
+  - (b) set all three equal to the smallest. Ojha says this is Balabhadra's reading in Hora Ratna, current in South India.
+- This is a flagged textual disagreement. BPHS67 as Santhanam renders it follows (a).
+- **Difference from BPHS:** PD 24.17 adds the "two houses empty" clause, which BPHS67 does not have.
+
+## #40 Kakshya (Ojha's commentary on PD ch.23 vv.16–19, p.556)
+- Each sign splits into 8 kakshyas of 3°45′. In order:
+
+| Kakshya | Arc | Lord |
+|---|---|---|
+| 1 | 0°–3°45′ | Saturn |
+| 2 | 3°45′–7°30′ | Jupiter |
+| 3 | 7°30′–11°15′ | Mars |
+| 4 | 11°15′–15° | Sun |
+| 5 | 15°–18°45′ | Venus |
+| 6 | 18°45′–22°30′ | Mercury |
+| 7 | 22°30′–26°15′ | Moon |
+| 8 | 26°15′–30° | Lagna |
+
+- This is the same order as the rows of the ashtakavarga chart on p.554: Sa, Ju, Ma, Su, Ve, Me, Mo, La.
+- Rule, from Ojha's worked example: a transiting planet gives good results while it passes through a kakshya whose lord put a bindu in that sign of its ashtakavarga. In a kakshya whose lord gave no bindu, the result is bad.
+- Example on page: in Saturn's chart, Venus gave no bindu in Leo. So Saturn transiting Leo 15°–18°45′ (Venus's kakshya) gives bad results.
+- **This is commentary, not the verse text.** The verse is on an earlier page that hasn't been read.
+
+## #3 (adds) Sarvashtakavarga: PD ch.23 v.20, Ojha pp.556–558
+- Add up the bindus of all the ashtakavargas sign by sign.
+- Transits through a sign with more than 28 bindus are good, through fewer than 28 bad. This is the verse's "more than 8 × 3.5", with Ojha's numbers on p.558.
+
+## #34 (partial) Moon benefic or malefic: BPHS ch.3 v.11, BPHS1 p.27 (the OCR said p.16; the page image shows p.27)
+- **Verse:** the Sun, Saturn, Mars, the waning Moon, Rahu and Ketu are malefic. The rest are benefic. Mercury is malefic when joined with a malefic.
+- **Santhanam's note, not the verse (Yavana's view via Saravali p.70):**
+  - Moon 0–120° ahead of the Sun: medium strength.
+  - 120–240°: very auspicious.
+  - 240–360°: without strength.
+- **Note:** the waning Moon is malefic and the waxing Moon benefic. A waning Moon joined or aspected by a benefic turns benefic.
+- Chandra bala counted by house from the natal Moon is **not yet verified**.
