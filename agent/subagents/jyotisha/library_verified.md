@@ -1803,8 +1803,26 @@ The table also gives a fruit name per tithi, e.g. 1 siddhi, 4 hani, 9 mrityuda, 
 - Burgess's note: an oscillation of ±27° about a fixed point near ζ Piscium, with a period of 7200 years, so 54″ a year.
 - No modern ayanamsha value (Lahiri or another) is in the source.
 
+## Batch 16
+### #1 (adds) Karanas, and #14 (adds) sankranti karana: MC ch.3 vv.12–17, pp.48–49, Khemraj, leaves n59–n60 (image)
+- **Hindi tika (p.48), the karana list:**
+  - Bava, Balava, Kaulava, Taitila, Gara, Vanija and Vishti are the 7 chara (moving) karanas.
+  - Shakuni, Kimstughna, Naga and Chatushpada are the 4 sthira (fixed) karanas.
+  - The tika does not say where the fixed karanas fall within the tithis, so that is not recorded.
+- **v.12 (p.48):** vishopakas for a Cancer (karka) sankranti, by the weekday it falls on: Sunday 10, Monday 20, Tuesday 8, Wednesday 12, Thursday 18, Friday 18, Saturday 5.
+- **v.13 (p.48):** effect of a sankranti by the karana in which it falls.
+  - Taitila, Naga or Chatushpada: the Sun is "sleeping". Bad for grain prices and rain.
+  - Gara, Vanija, Vishti, Bava or Balava: the Sun is "seated". Middling.
+  - Kimstughna, Shakuni or Kaulava: the Sun is "standing". Best.
+- **vv.14–17 (pp.48–49), the Sankranti-chakra table:** each karana's sankranti has its own vahana (mount), garment colour, weapon, food, unguent, jati, flower, age and avastha.
+  - Bava gives a lion mount and a white garment. Balava gives a tiger, Kaulava a boar, Taitila an ass, Gara an elephant, Vanija a buffalo and Vishti a horse.
+  - **Printed variant:** for the last four karanas the tika (p.48) and the table (p.49) disagree. I have recorded both.
+    - Tika: Shakuni = dog, Chatushpada = ram, Naga = bull, Kimstughna = cock.
+    - Table: Shakuni = dog, Kimstughna = ram, Naga = bull, Chatushpada = cock.
+  - The tika says those who live by these things, or who are standing, sitting or sleeping at the moment of the sankranti, come to harm ("nasha").
+
 ---
-## Final coverage summary (after batch 15)
+## Final coverage summary (after batch 16)
 Status key:
 - VERIFIED: rules were written from page images.
 - PARTIAL: some sub-rules were image-verified and others are missing.
@@ -1812,7 +1830,7 @@ Status key:
 
 | # | Technique | Status | Notes |
 |---|---|---|---|
-| 1 | Panchanga | PARTIAL | Tithi, paksharandhra, vara muhurta faults, Bhadra/Vishti (MC ch.1). Yoga list and full karana sequence not read. MC does not print a 27-yoga list (checked). |
+| 1 | Panchanga | PARTIAL | MC ch.1 + karana list MC ch.3 tika; no 27-yoga list in MC |
 | 2 | Tara bala | VERIFIED | MC 4.11–13 |
 | 3 | Ashtakavarga | VERIFIED | BPHS2 ch.67–70; PD ch.23–24 |
 | 4 | Vimshottari + subperiods | VERIFIED | BPHS ch.46 vv.12–16; ch.51 vv.1–2 |
@@ -1825,7 +1843,7 @@ Status key:
 | 11 | Graha avasthas | VERIFIED | BPHS ch.45 |
 | 12 | Combustion/yuddha | VERIFIED | SS; BPHS2 ch.79 |
 | 13 | Drishti | VERIFIED |  |
-| 14 | Eclipse/sankranti | PARTIAL | PD 26; PM2 ch.XXV |
+| 14 | Eclipse/sankranti | VERIFIED | PD 26; PM2 XXV; MC 3.12–17 |
 | 15 | Muhurta windows | VERIFIED | KP pp.176–177 |
 | 16 | Shadbala | VERIFIED | BPHS ch.27–28 |
 | 17 | Vargas | VERIFIED | BPHS ch.6 |
@@ -1864,6 +1882,6 @@ Status key:
 | 50 | Ayanamsha | VERIFIED | SS III.9–12 (libration model); no modern value |
 
 Totals:
-- VERIFIED: 34
-- PARTIAL: 12
+- VERIFIED: 35
+- PARTIAL: 11
 - UNSOURCED: 4
