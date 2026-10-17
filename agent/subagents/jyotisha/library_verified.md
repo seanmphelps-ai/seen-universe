@@ -245,3 +245,85 @@ Verified 2026-10-17. Each item was read on the page image (or, for Saravali, the
 - PD 26.22–23 gives Saturn's result by house only.
 - **The names "Sade Sati", "Ashtama Shani", "Ardhashtama Shani" and "Kantaka Shani" are post-classical. They do not appear in this text.** The SEEN model may group 12th+1st+2nd as "Sade Sati", 8th as Ashtama and 4th as Ardhashtama, but it must cite PD 26.22–23 for the results and label the names as post-classical.
 - Related on p.637: PD 26.25 says the Sun and Mars act in the first third of a sign, Jupiter and Venus in the middle third, and the Moon and Saturn in the last third. Mercury and Rahu act throughout the sign. This matters for Saturn timing.
+
+---
+# Batch 2 (2026-10-17)
+
+## Editions added
+- **BPHS2**: BPHS, tr. R. Santhanam, Vol. 2 (archive BPHSEnglish, "BPHS - 2 RSanthanam.pdf"; printed page = PDF page + 490).
+- **JP**: Jataka Parijata, tr. V. Subrahmanya Sastri, Vol. I (archive JatakaParijataVolIOfIIByVSubrahmanyaSastri).
+- **UK**: Uttara Kalamrita, tr. P. S. Sastri (archive uttkalamrita-kalidas-ps-sastri). The pages carry only a running head, not a chapter number.
+- **JS**: Jaiminisutras, tr. B. Suryanarain Rao, 1955 ed. (archive Astrology_Books_by_B_Suryanarayana_Row).
+- **SS**: Surya Siddhanta, tr. E. Burgess (archive su-rya-siddhanta-burgess-translation; leaf = printed page + 52).
+
+## #20 Pancha Mahapurusha: BPHS2 ch.75
+**20.1 Definition** (vv.1–2, p.924)
+- Mars, Mercury, Jupiter, Venus or Saturn in its own sign or exaltation sign, and in a kendra from the ascendant, forms Ruchaka, Bhadra, Hamsa, Malavya or Sasa respectively.
+- The kendra is from the ascendant only. The verse does not count kendras from the Moon.
+
+**20.2 Effects** (vv.3–22, pp.925–927)
+- Each yoga gives a physical type, character and lifespan:
+  - Ruchaka: about 70 years.
+  - Bhadra: 100 years.
+  - Hamsa: 100 years.
+  - Malavya: 70 years.
+  - Sasa: 70 years.
+- The regions of rule named in the verses (Sahya/Vindhya, Madhya Desa, Ganga–Yamuna, Sindhu/Malwa) are, per Santhanam's note, not identifiable today. Do not render them as places.
+
+## #25 Yogini dasha: BPHS2 ch.46 vv.195–199, p.572
+- There are eight yoginis: Mangala, Pingala, Dhanya, Bhramari, Bhadrika, Ulka, Siddha, Sankata.
+- Their lords are, in order: Moon, Sun, Jupiter, Mars, Mercury, Saturn, Venus, Rahu.
+- Periods are 1, 2, 3, 4, 5, 6, 7 and 8 years (36 in total).
+- Starting yogini: (Janma nakshatra number + 3) mod 8. A remainder of 1 means Mangala, and so on; remainder 0 means Sankata. Worked example on the page: Mrigasira (5) + 3 = 8, remainder 0, so Sankata.
+- The balance at birth is found from the elapsed and total portions of the birth star, as in Vimshottari.
+
+## #26 Ashtottari dasha: BPHS2 ch.46
+**26.1 Sequence** (vv.17–20, pp.513–514)
+- Recommended when Rahu is in a kendra or trikona from the lagna lord but not in the lagna.
+- Counting starts from Ardra:
+  - The Sun gets 4 stars.
+  - Then the Moon 3, Mars 4, Mercury 3, Saturn 4, Jupiter 3, Rahu 4, Venus 3.
+- The birth dasha is found by counting to the Janma nakshatra.
+- Periods: Sun 6, Moon 15, Mars 8, Mercury 17, Saturn 10, Jupiter 19, Rahu 12, Venus 21 (108 years). Ketu has no dasha.
+
+**26.2 Balance** (vv.21–22, p.514)
+- Per the translation, one nakshatra spans 1/4 of the dasha for malefic lords and 1/3 for benefic lords.
+- Balance = the expired fraction of the birth star × that star-share, as in Vimshottari.
+- Santhanam's special note on p.514: Abhijit = the 4th pada of Uttarashada plus 1/15 of Sravana. Abhijit is used only in Ashtottari and Shashtihayani.
+
+**26.3 Applicability** (v.23, p.516)
+- Advisable if birth is by day in Krishna paksha or by night in Shukla paksha.
+- This is a second condition, alongside the Rahu condition in vv.17–20. The text gives both; implement them as separate flags.
+
+## #22 Viparita Raja yoga: UK, section "Effects of the Planets and Houses", v.22, p.91
+- Three yogas:
+  1. The 8th lord in the 6th or 12th.
+  2. The 6th lord in the 8th or 12th.
+  3. The 12th lord in the 6th or 8th.
+- The lords must be related to each other by conjunction, mutual aspect or exchange. At the same time they must have no such relation with other planets.
+- Result: famous, prosperous, a powerful king or emperor.
+- Translator's note: the relation is only between the dusthana lords. All three involved is most powerful.
+
+## #31 Jaimini Atmakaraka: JS Su. 11, p.13
+- Among the seven planets Sun–Saturn, or the eight including Rahu, the one with the most degrees (within its sign) is the Atmakaraka.
+- Translator's notes (pp.13–14): Rahu is counted (in reverse, since it moves backward) when two planets tie. Ketu is excluded.
+- 7- vs 8-karaka scheme: the sutra gives both. Record it as an option and do not pick one silently.
+
+## #18 (adds) Kemadruma and lunar yogas: JP Adh. VII
+**18.8 Kemadruma, JP version** (sl.71, p.422)
+- Formed when:
+  - the Moon in the 1st or 7th lacks Jupiter's aspect; or
+  - the ashtakavarga bindus in the signs occupied by planets are very deficient and all planets are weak.
+- This is a third definition, beside BPHS 37.11–13 and SAR 13.2. Keep all three separate.
+
+**18.9 Sunapha / Anapha / Durudhara** (sl.72–73, p.423)
+- Same as BPHS: planets other than the Sun in the 2nd, the 12th, or both from the Moon. With none of the three present, give Kemadruma results.
+- sl.74 (p.423), Daridra yoga: the Moon conjunct the Sun in a malefic navamsa and aspected by a debilitated planet. Also, at night birth, the 8th from the waning Moon aspected or occupied by a malefic.
+
+## #12 (adds) Combustion orbs, classical: SS ch. IX vv.6–9, p.257
+- Degrees of setting (time-degrees in oblique ascension, not ecliptic longitude): Jupiter 11, Saturn 15, Mars 17.
+- Venus: 8° for setting in the west and rising in the east (retrograde phase), and 10° for setting in the east and rising in the west.
+- Mercury: 12° when retrograde and 14° when advancing fast.
+- The Moon is treated in the next chapter.
+- Closer than these, a planet is invisible ("swallowed").
+- **This conflicts with Santhanam's note table (BPHS p.100, #12.1), which gives Saturn 16°.** The classical source is SS (Saturn 15°). Also, SS measures time-degrees, not longitude. Keep the source of each orb on the field.
