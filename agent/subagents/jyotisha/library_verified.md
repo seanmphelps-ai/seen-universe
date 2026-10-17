@@ -1211,24 +1211,287 @@ The table also gives a fruit name per tithi, e.g. 1 siddhi, 4 hani, 9 mrityuda, 
 - #42 Murti nirnaya: the MC Khemraj p.110 and Phaladeepika hits are unrelated (travel and amsha effects). There are no gold, silver, copper or iron murti verses in the MC OCR. UNSOURCED.
 
 ---
-## Final coverage summary (after batch 12, 2026-10-17)
+## Batch 13 (page-image verified 2026-10-17)
+
+### #2 Tara bala: MC ch.4 (gochara prakarana) vv.11–13, Khemraj pp.54–55 (leaf = printed + 11)
+- v.11 (p.54): if costly gems cannot be worn, substitutes may be used: for Rahu and Ketu lajavarta; for the Moon and Venus silver; for Jupiter pearl; for Saturn iron; for Mars and the Sun coral.
+  - The Hindi commentary gives root substitutes as well.
+- v.11, second half: count the taras from the janma nakshatra to the day's nakshatra; the stars repeat in three cycles of nine.
+- v.12 (p.54): the nine taras are Janma, Sampat, Vipat, Kshema, Pratyari, Sadhaka, Vadha, Maitra and Atimaitra. Each gives a result that matches its name.
+  - Commentary: taras 3, 5 and 7 are inauspicious.
+- v.13 (p.55), remedies for a bad tara when the act is necessary:
+  - Vadha (7th): give sesame and gold.
+  - Vipat (3rd): give jaggery.
+  - Janma: give vegetables.
+  - Pratyari (5th): give salt.
+- v.13, a second rule:
+  - In the first cycle, taras 3, 5 and 7 are wholly bad.
+  - In the second cycle only parts of the day are bad: the first 20 ghatis of Vipat, the middle 20 of Pratyari and the last 20 of Vadha.
+  - In the third cycle all taras are auspicious.
+
+### #6 Kuta (Ashtakoota): MC ch.6 (vivaha prakarana) vv.21–34, Khemraj pp.81–85 (leaf = printed + 11)
+- v.21 (p.81): the eight kutas and their points are:
+
+  | Kuta | Points |
+  |---|---|
+  | Varna | 1 |
+  | Vashya | 2 |
+  | Tara | 3 |
+  | Yoni | 4 |
+  | Graha maitri | 5 |
+  | Gana | 6 |
+  | Bhakuta | 7 |
+  | Nadi | 8 |
+
+  - Commentary: the total is 36. More points are better, fewer worse.
+  - The commentary misprints Graha maitri as 4; the sequence and the total of 36 require 5.
+- v.22, Varna:
+  - Brahmin: Pisces, Scorpio, Cancer. Kshatriya: Aries, Leo, Sagittarius. Vaishya: Taurus, Virgo, Capricorn. Shudra: Gemini, Libra, Aquarius.
+  - A bride of lower varna than the groom is good; a bride of higher varna is not.
+  - Same or groom-higher varna gives 1 point.
+- v.23, Vashya:
+  - All signs are vashya to Leo except the human signs (Gemini, Virgo, Libra). The water signs are food for the human signs and so vashya to them. All except Scorpio are vashya to Leo.
+  - Other pairs follow ordinary usage.
+  - Bride's sign vashya to the groom's: 2 points.
+  - The p.85 table gives the graded values.
+- v.24, Tara:
+  - Count from the bride's star to the groom's and from the groom's to the bride's. Divide each count by 9.
+  - A remainder of 3, 5 or 7 is bad; the others are good.
+  - Auspicious both ways: 3 points.
+- vv.25–26, Yoni:
+  - Assignments:
+
+    | Yoni | Nakshatras |
+    |---|---|
+    | Horse | Ashvini, Satabhisha |
+    | Buffalo | Svati, Hasta |
+    | Lion | Dhanishta, P.Bhadrapada |
+    | Elephant | Bharani, Revati |
+    | Ram | Pushya, Krittika |
+    | Monkey | Sravana, P.Ashadha |
+    | Mongoose | U.Ashadha, Abhijit |
+    | Serpent | Rohini, Mrigasira |
+    | Deer | Jyeshtha, Anuradha |
+    | Dog | Mula, Ardra |
+    | Cat | Punarvasu, Aslesha |
+    | Rat | Magha, P.Phalguni |
+    | Tiger | Visakha, Chitra |
+    | Cow | U.Phalguni, U.Bhadrapada |
+
+  - Enemy pairs are cow–tiger, elephant–lion, horse–buffalo, dog–deer, mongoose–serpent, monkey–ram and cat–rat.
+  - Same yoni is best, friendly yoni is middling, and enemy yoni is bad. Yoni maitri gives 4 points.
+- vv.27–28, Graha maitri:
+  - Friend, neutral and enemy lists for each planet are tabulated on p.83.
+  - Scoring:
+
+    | Lords of the two moon signs | Points |
+    |---|---|
+    | Friends, or the same lord | 5 |
+    | Friend and neutral | 4 |
+    | Both neutral | 3 |
+    | Friend and enemy | 2 |
+    | Neutral and enemy | 1 |
+    | Both enemies | 0 |
+
+  - [SENSITIVE] The commentary says that when both lords are enemies, the match is never made and gives "mrityu shadashtaka".
+- v.29 (p.83), Gana:
+  - Rakshasa: Magha, Aslesha, Dhanishta, Jyeshtha, Mula, Satabhisha, Krittika, Chitra, Visakha.
+  - Manushya: the three Purvas, the three Uttaras, Rohini, Bharani, Ardra.
+  - Deva: Anuradha, Punarvasu, Mrigasira, Sravana, Revati, Svati, Ashvini, Pushya, Hasta.
+- v.30, Gana results:
+  - Same gana: great affection. Deva with manushya: middling.
+  - Rakshasa with manushya: [SENSITIVE] the text says death. Deva with rakshasa: enmity.
+  - Commentary points:
+    - Same gana: 6.
+    - Deva with manushya: 5.
+    - Deva with rakshasa, or manushya with rakshasa: 0.
+    - Rakshasa bride with deva groom: 2.
+    - Deva bride with manushya groom: 4.
+- v.31 (pp.83–84), Bhakuta:
+  - 6/8 counted from an odd sign is bad (shatru shadashtaka). 6/8 counted from an even sign is good (mitra).
+  - [SENSITIVE] The text says shadashtaka brings death.
+  - 5/9: loss of progeny. 2/12: poverty. Other relations are happy.
+  - The commentary marks this sloka as an interpolation ("prakshipta").
+- v.32 (p.84), exceptions to bad bhakuta:
+  - The match is still good if both moon signs share a lord, or if the sign lords are friends, provided nadi and nakshatra are clean.
+  - It is also good if the navamsa lords are friends and strong, nadi and tara are clean, or the signs are mutually vashya.
+  - The commentary lists five cancellations of shadashtaka. Even one of them removes the fault, but nadi must be clean in every case.
+- v.33: friendship of the rasi and navamsa lords cancels gana dosha. Bhakuta and graha-maitri faults are cancelled likewise, and rasi-lord friendship removes shadashtaka.
+- v.34 (pp.84–85), Nadi:
+  - Adya (first) nadi: Jyeshtha, Ardra, U.Phalguni, Satabhisha, and the paired stars in that sequence.
+  - Madhya (middle) nadi: Pushya, Mrigasira, Chitra, Anuradha, Bharani, Dhanishta, P.Ashadha, P.Phalguni, U.Bhadrapada.
+  - Antya (last) nadi: Svati, Krittika, Aslesha, U.Ashadha and their pairs.
+  - The same nadi is inauspicious. [SENSITIVE] The text says the same madhya nadi certainly brings death to both.
+  - Commentary: the fault of the outer nadis is not counted south of the Godavari or for Kshatriyas.
+  - Commentary (later tradition): one view holds that adya affects the groom, antya the bride and madhya both. It also describes four- and five-nadi variants. Its remedies are japa and gifts of a gold nadi, a cow and grain.
+- p.85 tables give the varna and vashya points.
+
+### #4 Vimshottari (BPHS tr. Santhanam Vol.2, ch.46 vv.12–16, pp.507–508; ch.51 vv.1–2, pp.618–621)
+- vv.12–14 (p.507):
+  - The dasa lords run Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury, Ketu, Venus, beginning with Krittika.
+  - Count from Krittika to the janma nakshatra and divide by 9. The remainder gives the first dasa lord.
+  - In Kaliyuga the full life is 120 years, so Vimshottari is the best of the dasas.
+- v.15 (p.507), years: Sun 6, Moon 10, Mars 7, Rahu 18, Jupiter 16, Saturn 19, Mercury 17, Ketu 7, Venus 20.
+- Table, p.508:
+
+  | Lord | Nakshatras |
+  |---|---|
+  | Sun | Krittika, U.Phalguni, U.Ashadha |
+  | Moon | Rohini, Hasta, Sravana |
+  | Mars | Mrigasira, Chitra, Dhanishta |
+  | Rahu | Ardra, Svati, Satabhisha |
+  | Jupiter | Punarvasu, Visakha, P.Bhadrapada |
+  | Saturn | Pushya, Anuradha, U.Bhadrapada |
+  | Mercury | Aslesha, Jyeshtha, Revati |
+  | Ketu | Magha, Mula, Ashvini |
+  | Venus | P.Phalguni, P.Ashadha, Bharani |
+
+- v.16, balance of dasa:
+  - Multiply the starting lord's dasa years by the portion of the janma nakshatra the Moon has already traversed. Divide by the nakshatra's full span; the result is the expired part of the dasa.
+  - Subtract it from the full dasa to get the balance at birth.
+  - Translator's example: Mrigasira, expired 3415 palas of 3571, Mars 7 years, gives an expired period of 6y 10m 6d.
+- ch.51 v.1 (p.618), antardasa:
+  - Antardasa = (dasa years of the major lord × years of the sub-lord) ÷ 120 (the total).
+  - Pratyantar = (antardasa span × years of the third lord) ÷ 120.
+  - Translator's example: Venus/Venus is 20 × 20 / 120 = 3y 4m.
+  - Translator's shortcut: multiply the two lords' years, drop the last digit, then multiply that digit by 3 to get days.
+  - Translator's pratyantar example: Venus/Venus/Venus is 40 × 240 / 1440 months = 6m 20d.
+- ch.51 v.2 (p.619): the first antardasa of every dasa belongs to its own lord. The other eight follow in dasa order. The same holds for pratyantar dasas.
+- pp.619–621: antardasa tables for all nine dasas in Y.M.D.
+  - Examples: Sun/Sun 0.03.18; Venus/Venus 3.04.00; Ketu/Ketu 0.04.27.
+  - The translator says the pratyantar tables are given later.
+
+### #9 Gochara dignity: PD 26.31–32 (Ojha p.645)
+- Already image-verified in an earlier batch; see the section "#5 / #8 / #14 / #41 Phaladeepika 26.26–32" above.
+- A planet in a bad transit house but in its own or exaltation sign does no harm. In a good house in its own or exaltation sign, it gives full good.
+- A planet in a good house but debilitated, in an enemy's sign or combust gives no result. In a bad house in the same state, it gives very bad results.
+
+### #47 Karakatva: BPHS ch.32 vv.18–24, BPHS1 pp.320–321; Phaladeepika ch.2 vv.1–6, Ojha pp.32–33 (leaf = printed − 2)
+- BPHS vv.18–21, constant significators:
+  - Father: the stronger of the Sun and Venus.
+  - Mother: the stronger of the Moon and Mars.
+  - Mars: sister, brother-in-law, younger brother and mother.
+  - Mercury: maternal relatives.
+  - Jupiter: paternal grandfather.
+  - Venus: husband.
+  - Saturn: sons.
+  - Ketu: wife, father, mother, parents-in-law and maternal grandfather.
+  - (Translator's table, p.320.)
+- BPHS vv.22–24, house counts from the karakas:
+  - 9th from the Sun: father.
+  - 4th from the Moon: mother.
+  - 3rd from Mars: brothers.
+  - 6th from Mercury: maternal uncle.
+  - 5th from Jupiter: sons.
+  - 7th from Venus: wife.
+  - [SENSITIVE] 8th from Saturn: death.
+  - Translator's notes (p.321), standard karakas:
+
+    | Planet | Signifies |
+    |---|---|
+    | Sun | Father |
+    | Moon | Mother |
+    | Mars | Siblings |
+    | Mercury | Maternal relatives |
+    | Jupiter | Children |
+    | Venus | Spouse |
+    | Saturn | Longevity |
+
+- PD ch.2 (Ojha Hindi commentary on vv.1–6, pp.32–33). These are commentary paraphrases; the verse text on those leaves was not separately read.
+  - Sun (v.1): copper, gold, father, valour, victory in war, the self, happiness, royal service, power, works of Shiva, travel to forest and hill, homa, temples, sharpness and zeal.
+  - Moon (v.2): the mother's welfare, mental cheer, sea bathing, white chowrie, umbrella, fans, fruit, flowers, soft things, farming, grain, fame, pearl, silver, bell-metal, milk, sweets, cloth, water, cows, gaining a wife, comfortable meals and beauty.
+  - Mars (v.3): strength, earth products, siblings' qualities, cruelty, war, courage, enmity, kitchen fire, gold, kinsmen (dayada), weapons, thieves, enemies, adultery, falsehood, virility, wounds and command of armies.
+  - Mercury (v.4): learning, speech, arts, skill, praise by the learned, the maternal uncle, eloquence, worship, Vishnu rites, truth, shells, pleasure places, crafts, kin, the heir apparent, friends and nephews and nieces.
+  - Jupiter (v.5): knowledge, virtue, sons, ministers, conduct, teaching, greatness of soul, the Vedas and Smritis, progress, good destiny, devotion to gods and brahmins, sacrifice, penance, faith, treasury, learning, sense control, honour and compassion.
+    - In a woman's chart Jupiter gives the husband's happiness.
+  - Venus (v.6): wealth, vehicles, clothes, ornaments, buried treasure, music and dance, perfume, flowers, sexual union, beds, houses, luxury, poetry, ministership, sweet speech, marriage and festivals.
+    - In a man's chart Venus gives the wife's happiness.
+    - The commentator says ignoring these sthira karakas causes errors.
+  - Saturn (v.7, Ojha p.34): NOT read.
+
+### #1 Panchanga (adds): MC ch.1 vv.36–45, Khemraj pp.15–18
+- v.36 (p.15), paksharandhra tithis are 4, 6, 8, 9, 12 and 14. When the work is necessary, avoid their opening ghatis: 8, 9, 14, 25, 10 and 5 respectively.
+- v.37 (p.15), vara muhurta faults:
+  - Kulika, Kalavela, Yamaghanta and Kantaka fall on the muhurta set by the weekday.
+  - Commentary rule: count from the current weekday to the faulting planet's day and double the count.
+    - Kulika: count to Saturn.
+    - Kalavela: count to Mercury.
+    - Yamaghanta: count to Jupiter.
+    - Kantaka: count to Mars.
+  - Example: Sunday has Kulika in the 14th muhurta and Kalavela in the 8th.
+  - Table, p.15 (muhurta numbers, each muhurta = 2 ghatis):
+
+    | Fault | Sun | Mon | Tue | Wed | Thu | Fri | Sat |
+    |---|---|---|---|---|---|---|---|
+    | Kulika | 14 | 12 | 10 | 8 | 6 | 4 | 2 |
+    | Kalavela | 8 | 6 | 4 | 2 | 14 | 12 | 10 |
+    | Yamaghanta | 10 | 8 | 6 | 4 | 2 | 14 | 12 |
+    | Kantaka | 6 | 4 | 2 | 14 | 12 | 10 | 8 |
+
+- v.42 (p.17): on a day with a bad yoga that is also a siddhi yoga, the bad yoga loses its effect.
+  - Other views: strong lagna-shuddhi destroys mrityu, krakacha and dagdha yogas.
+  - Bhadra, Vyatipata and similar faults apply only until midday.
+- v.43 (p.17), Bhadra (Vishti karana):
+  - Shukla 8th and 15th: first half. Shukla 11th and 4th: second half.
+  - Krishna 3rd and 10th: second half. Krishna 7th and 14th: first half.
+  - Bhadra is barred for all auspicious work.
+- v.44 (pp.17–18), Bhadra mukha (5 ghatis, avoid) and puccha (last 3 ghatis, usable):
+
+  | Tithi | Mukha prahara | Puccha prahara |
+  |---|---|---|
+  | 4th | 5th | 8th |
+  | 8th | 2nd | 1st |
+  | 11th | 7th | 6th |
+  | 15th | 4th | 3rd |
+  | 3rd | 8th | 7th |
+  | 7th | 3rd | 2nd |
+  | 10th | not legible on the leaf | 5th |
+  | 14th | 1st | 4th |
+
+  - Commentary: Bhadra in the second half of a tithi is good by day. Bhadra in the first half is good by night.
+  - Commentary (purana, later tradition): the origin legend of Bhadra.
+- v.45 (p.18), where Bhadra resides by the Moon's sign:
+  - Moon in Aquarius, Pisces, Cancer or Leo: on earth.
+  - Moon in Aries, Taurus, Gemini or Scorpio: in heaven.
+  - Moon in Virgo, Sagittarius, Libra or Capricorn: in the nether world.
+  - Its effect falls only where it resides.
+- Still not image-read: the yoga list (Vishkambha and the rest) and the full karana sequence.
+
+### #49 Bhava lords (adds): 2nd lord in houses 3–12 (BPHS ch.24 vv.15–24, pp.193–195) and the 3rd lord in lagna (v.25)
+- 2nd lord in:
+  - 3rd: valorous, wise, virtuous, lustful, miserly. With a malefic: heterodox.
+  - 4th: all kinds of wealth. Exalted and with Jupiter: equal to a king.
+    - Translator's note: the exalted case applies only to Libra lagna.
+  - 5th: wealthy, and so are his sons; intent on earning.
+  - 6th with a benefic: wealth through enemies. With a malefic: loss through enemies and mutilation of the shanks.
+  - 7th: given to others' wives; a doctor. With a malefic: the wife is of questionable character.
+  - 8th: abundant land and wealth, limited marital happiness, no happiness from the elder brother.
+  - 9th: wealthy, diligent, skilful; sick in childhood, happy later; visits shrines.
+  - 10th: libidinous, honourable, learned, many wives, much wealth, little filial happiness.
+  - 11th: all kinds of wealth, diligent, honourable, famous.
+  - 12th: adventurous, without wealth, interested in others' wealth. [SENSITIVE] The eldest child brings no happiness.
+    - Translator: with 2 or more benefics, very wealthy. Alone, bad for riches, except for Aries lagna with Venus.
+- 3rd lord in lagna (v.25): self-made wealth, disposed to worship, valorous, intelligent but unlearned.
+- Remaining for #49: the 3rd lord's other placements (vv.26–36) and the lords of the 4th and 6th–12th.
+
+---
+## Final coverage summary (after batch 13, 2026-10-17)
 Status key:
 - VERIFIED: rules were written from page images.
 - PARTIAL: some sub-rules were image-verified and others are missing.
 - UNSOURCED: no image-verified passage in the texts on the box.
-- NOT VERIFIED: OCR leads exist but no page image was checked in batches 1–12.
 
 | # | Technique | Status | Notes |
 |---|---|---|---|
-| 1 | Panchanga | PARTIAL | Tithi only (MC ch.1). Vara, yoga, karana and Vishti not done. |
-| 2 | Tara bala | NOT VERIFIED | |
+| 1 | Panchanga | PARTIAL | Tithi, paksharandhra, vara muhurta faults, Bhadra/Vishti (MC ch.1). Yoga list and full karana sequence not read. |
+| 2 | Tara bala | VERIFIED | MC 4.11–13 |
 | 3 | Ashtakavarga | VERIFIED | BPHS2 ch.67–70; PD ch.23–24 |
-| 4 | Vimshottari subperiods | NOT VERIFIED | |
+| 4 | Vimshottari + subperiods | VERIFIED | BPHS ch.46 vv.12–16; ch.51 vv.1–2 |
 | 5 | Sade sati | PARTIAL | Saturn transit from the Moon (PD 26). "Sade sati" itself is a later-tradition label. |
-| 6 | Kuta/guna milan | NOT VERIFIED | Porutham (#7) is verified instead. |
+| 6 | Kuta/guna milan | VERIFIED | MC 6.21–34 |
 | 7 | Porutham | VERIFIED | KP XIII |
 | 8 | Node vedha | PARTIAL | PD 26 |
-| 9 | Gochara dignity | NOT VERIFIED | |
+| 9 | Gochara dignity | VERIFIED | PD 26.31–32 |
 | 10 | Nakshatra lore | VERIFIED | BPHS ch.3; MC ch.2 |
 | 11 | Graha avasthas | VERIFIED | BPHS ch.45 |
 | 12 | Combustion/yuddha | VERIFIED | SS; BPHS2 ch.79 |
@@ -1263,16 +1526,16 @@ Status key:
 | 41 | Sarvatobhadra | UNSOURCED | Lead only |
 | 42 | Murti nirnaya | UNSOURCED | |
 | 43 | D9 couple | PARTIAL | JP XIV |
-| 44 | Kuja dosha | PARTIAL | Mars in 1/2/4/7/8/12 is a later-tradition label |
+| 44 | Kuja dosha | PARTIAL | Later-tradition label |
 | 45 | Dasha sandhi | PARTIAL | Dasachidra and Mandukagamana verified (JP XVII); sandhi proper unsourced |
 | 46 | Dasha phala | PARTIAL | BPHS2 ch.50 vv.22–28 |
-| 47 | Karakatva | NOT VERIFIED | |
+| 47 | Karakatva | VERIFIED | BPHS 32 vv.18–24; PD ch.2 vv.1–6 (Saturn v.7 not read) |
 | 48 | Dignity/maitri | VERIFIED | |
-| 49 | Placement effects | PARTIAL | Lords of the 1st and 5th done; 2nd begun |
+| 49 | Placement effects | PARTIAL | Lords of the 1st, 2nd and 5th done; 3rd in lagna |
 | 50 | Ayanamsha | PARTIAL | Translator notes only |
 
 Totals:
-- VERIFIED: 24
+- VERIFIED: 29
 - PARTIAL: 17
 - UNSOURCED: 4
-- NOT VERIFIED: 5
+- NOT VERIFIED: 0
