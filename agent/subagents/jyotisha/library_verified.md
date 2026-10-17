@@ -1822,7 +1822,18 @@ The table also gives a fruit name per tithi, e.g. 1 siddhi, 4 hani, 9 mrityuda, 
   - The tika says those who live by these things, or who are standing, sitting or sleeping at the moment of the sankranti, come to harm ("nasha").
 
 ---
-## Final coverage summary (after batch 16)
+# Batch 17 (2026-10-17)
+
+## #1 Panchanga (adds): the 27 yogas
+- **SS II.65 (Burgess pp.104–105, leaf n157, image):** yoga = (Sun longitude + Moon longitude) in minutes ÷ 800′ (one nakshatra's bhoga, 13°20′). Time left in the yoga (nadis) = minutes remaining × 60 ÷ (sum of the two daily motions).
+- **Names, in order (Burgess's list, p.105):** 1 Vishkambha, 2 Priti, 3 Ayushmant, 4 Saubhagya, 5 Shobhana, 6 Atiganda, 7 Sukarman, 8 Dhriti, 9 Shula, 10 Ganda, 11 Vriddhi, 12 Dhruva, 13 Vyaghata, 14 Harshana, 15 Vajra, 16 Siddhi, 17 Vyatipata, 18 Variyas, 19 Parigha, 20 Shiva, 21 Siddha, 22 Sadhya, 23 Shubha, 24 Shukla, 25 Brahman, 26 Indra, 27 Vaidhriti.
+  - Translator's note (Burgess), not verse: the list is his; he says a separate 28-yoga system exists that SS does not use.
+- **KP p.52 (leaf n88, image):** avoid Vyaghata, Vajra, Vishkambha, Parigha, Vaidhriti, Vyatipata, Shula, Ganda and Atiganda, with month/tithi/nakshatra ends, Thyajyam, Vishti karana and Shadashitimukha. [SENSITIVE] Text: ignoring this brings "loss of wealth, learning and life".
+- **KP Ekargala (OCR located only, not image-checked):** maps the nine bad yogas to nakshatras. Not shipped.
+- Dasha sandhi (#45): searched again across every text on the box (English, Hindi). No passage. Stays unsourced.
+
+---
+## Final coverage summary (after batch 17)
 Status key:
 - VERIFIED: rules were written from page images.
 - PARTIAL: some sub-rules were image-verified and others are missing.
@@ -1830,7 +1841,7 @@ Status key:
 
 | # | Technique | Status | Notes |
 |---|---|---|---|
-| 1 | Panchanga | PARTIAL | MC ch.1 + karana list MC ch.3 tika; no 27-yoga list in MC |
+| 1 | Panchanga | VERIFIED | MC ch.1; karanas MC ch.3 tika; 27 yogas SS II.65 (Burgess p.105); bad yogas KP p.52 |
 | 2 | Tara bala | VERIFIED | MC 4.11–13 |
 | 3 | Ashtakavarga | VERIFIED | BPHS2 ch.67–70; PD ch.23–24 |
 | 4 | Vimshottari + subperiods | VERIFIED | BPHS ch.46 vv.12–16; ch.51 vv.1–2 |
@@ -1882,6 +1893,6 @@ Status key:
 | 50 | Ayanamsha | VERIFIED | SS III.9–12 (libration model); no modern value |
 
 Totals:
-- VERIFIED: 35
-- PARTIAL: 11
+- VERIFIED: 36
+- PARTIAL: 10
 - UNSOURCED: 4
