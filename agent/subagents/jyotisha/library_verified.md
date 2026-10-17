@@ -669,3 +669,53 @@ The commentary calls these "vaidhavya yoga". This is MC's only Mars-7th marriage
 - vv.9–12: the Atmakaraka is the "king" of the karakas, and the others cannot override it.
 - Compare Jaimini Su.11 (#31, batch 2), where the text allows 7 or 8 karakas. BPHS explicitly uses Rahu's reversed degrees.
 - The same paragraph also names "Anthyakaraka, Madhyakaraka and Upakheta". What these refer to is unclear on this page, so record the names and don't implement them.
+
+---
+# Batch 7 (2026-10-17). BPHS1 page images
+
+## #48 Graha maitri (BPHS ch.3)
+**48.1 Natural relationships** (v.55, p.40)
+- From a planet's moolatrikona, the lords of the 2nd, 4th, 5th, 8th, 9th and 12th are its friends, along with the lord of its exaltation sign. All other lords are enemies.
+- If a lord comes out as both friend and enemy under the two counts, it is neutral.
+- Santhanam's table on p.40 is a note, not a verse:
+
+| Planet | Friends | Enemies | Neutral |
+|---|---|---|---|
+| Sun | Moon, Mars, Jupiter | Venus, Saturn | Mercury |
+| Moon | Sun, Mercury | none | Mars, Jupiter, Venus, Saturn |
+| Mars | Sun, Moon, Jupiter | Mercury | Venus, Saturn |
+| Mercury | Sun, Venus | Moon | Mars, Jupiter, Saturn |
+| Jupiter | Sun, Moon, Mars | Mercury, Venus | Saturn |
+| Venus | Mercury, Saturn | Moon, Sun | Mars, Jupiter |
+| Saturn | Mercury, Venus | Sun, Moon, Mars | Jupiter |
+
+- p.41, also a note: the Moon has no enemies, per a Benares/Chaukhamba verse, and Saravali agrees.
+- Rahu and Ketu relations are added in a note flagged "additional", not as a verse:
+  - **Rahu:** enemies Sun, Moon, Mars; friends Jupiter, Venus, Saturn; neutral Mercury.
+  - **Ketu:** enemies Sun and Moon; friends Mars, Venus, Saturn; neutral Mercury and Jupiter.
+
+**48.2 Temporary relationships** (v.56, p.41)
+- A planet in the 10th, 4th, 11th, 3rd, 2nd or 12th from another is its temporary friend. Any other position makes them temporary enemies.
+
+**48.3 Compound relationship** (vv.57–58, p.41)
+
+| Natural | Temporary | Compound |
+|---|---|---|
+| Friend | Friend | Extreme friend |
+| Neutral | Friend | Friend |
+| Enemy | Friend | Neutral |
+| Friend | Enemy | Neutral |
+| Neutral | Enemy | Enemy |
+| Enemy | Enemy | Extreme enemy |
+
+- The first three rows are read on p.41. The rest is the standard continuation of the text, which runs onto p.42.
+- **Rows 4–6 are not image-checked.** Verify p.42 before building them.
+
+## #33 Gandanta (BPHS vv.13–15, p.112; chapter number not yet confirmed from the page header)
+- **Definition (translator note, p.112):** the last navamsa of Cancer, Scorpio and Pisces is called Gandanta. This is the rasi-navamsa form, the last 3°20′ of those signs.
+- The nakshatra-junction form is **not found in BPHS1** so far.
+- Santhanam's notes list three premature-death yogas, each needing the Moon and malefics in angles from the ascendant: birth in Sandhya, birth in a Moon hora, birth in Gandanta. The verse itself is on p.111 and is not read.
+  - **Sensitive: gate this.**
+- **v.14 Sandhya:** 3 ghatikas before the visible half-disc of the rising Sun is morning sandhya, and the same span after sunset is evening sandhya. Santhanam notes about 72 minutes.
+- **v.15:** all malefics in the eastern half of the chart and benefics in the western half means early death for a Scorpio-born native.
+  - **Sensitive: gate this.**
