@@ -865,7 +865,7 @@ Done only when both signs ruled by one planet still carry a number after trikona
 | 5 | Sade sati | VERIFIED (classical extent; later name/rule labelled) | PD 26.22–23; "sade sati" name later tradition |
 | 6 | 18°45′–22°30′ | Mercury |
 | 7 | 22°30′–26°15′ | Moon |
-| 8 | Node vedha | PARTIAL | PD 26.24 Rahu transits; node good houses = Ojha table; node vedha points unsourced |
+| 8 | Node vedha | PARTIAL | PD 26.24 Rahu; SBC v.15 node 3-way vedha; gochara node vedha points unsourced |
 
 - This is the same order as the rows of the ashtakavarga chart on p.554: Sa, Ju, Ma, Su, Ve, Me, Mo, La.
 - Rule, from Ojha's worked example: a transiting planet gives good results while it passes through a kakshya whose lord put a bindu in that sign of its ashtakavarga. In a kakshya whose lord gave no bindu, the result is bad.
@@ -1950,7 +1950,73 @@ The table also gives a fruit name per tithi, e.g. 1 siddhi, 4 hani, 9 mrityuda, 
 - What is verified (BPHS ch.4 v.9, the p.64 note, ch.27 bhava bala) stays. #36 stays PARTIAL.
 
 ---
-## Final coverage summary (after batch 19)
+# Batch 20 (2026-10-17): final gap hunt
+
+## Editions added (all are Hindi or Sanskrit, page-image checked. No English edition exists on archive.org.)
+- **SBC**: Sarvatobhadra Chakra, Sanskrit text with Hindi Trailokya Dipika commentary by Pt. Mithalal Vyas, Lucknow 1972 (archive eJNJ_sarvatobhadra-chakra-sanskrit-and-hindi-text-with-trailokya-dipika-commentary-by; n = printed page + 15; chart on n12). The text says it follows the Brahmayamala. It is not Narapati's.
+- **TN**: Tajika Neelakanthi with the Hindi Gudhartha Prakashika commentary of Sitaram Jha, Banaras (archive nxfu-tajika-neelakanthi-gudhartha-prakashika-commentary; n = printed page + 3).
+- **UK**: Uttara Kalamrita, tr. P. S. Sastri (already listed; leaf n = printed page − 3).
+
+## #41 Sarvatobhadra chakra: SBC vv.2–17, pp.2–5 (n17–n20), chart n12 (images)
+- **vv.2–3:** there are three chakras: 64 cells (khanda), 81 cells (akhanda) and 144 cells (both). The text builds the 81-cell akhanda chakra.
+- **v.4:** draw 10 vertical and 10 horizontal lines, which gives 81 cells.
+- **v.5:** write the 16 vowels in the corner cells, starting from the NE, four rounds in forward order.
+  - Commentary: a/u/ḷ/o go in the NE; ā/ū/ḹ/au in the SE; i/ṛ/e/aṃ in the SW; ī/ṝ/ai/aḥ in the NW.
+- **v.6:** the 28 nakshatras, Abhijit included, go 7 to each side starting from the east: Krittika–Ashlesha east, Magha–Vishakha south, Anuradha–Shravana west, Dhanishtha–Bharani north.
+- **v.7:** consonants: a, va, ka, ha, ḍa east; ma, ṭa, pa, ra, ta south; na, ya, bha, ja, kha west; ga, sa, da, ca, la north.
+- **v.8:** signs: Taurus, Gemini, Cancer east; Leo, Virgo, Libra south; Scorpio, Sagittarius, Capricorn west; Aquarius, Pisces, Aries north.
+- **vv.9–10:** the 5 tithi classes go in the remaining cells, with weekdays.
+  - Nanda (east) takes Tuesday and Sunday.
+  - Bhadra (south) takes Wednesday and Monday.
+  - Jaya (west) takes Thursday.
+  - Rikta (north) takes Friday.
+  - Purna (centre) takes Saturday.
+  - The chart at n12 matches.
+- **v.12:** put each planet on its current nakshatra.
+- **v.13:** from that nakshatra, a planet makes vedha in three directions (left, front and right), by its drishti.
+- **v.14:** for Mars to Saturn, retrograde gives right drishti, fast motion gives left, and mean motion gives front.
+- **v.15:** Rahu and Ketu are always retrograde, and the Sun and Moon are always fast. So these four always have all three drishtis.
+- **vv.16–17:** the left and right drishti pierce every nakshatra, letter, vowel, tithi and sign in that line. The front drishti pierces only the one nakshatra facing it.
+- **vv.19ff (pp.6ff):** the vedha list for each nakshatra position (for example, a planet in Krittika pierces Bharani with right drishti, a list with left, and Shravana in front). This was read from the OCR only and not shipped. The next step is a page-image check.
+
+## #8 Node vedha (adds): SBC v.15, p.5 (n20, image)
+- In the Sarvatobhadra system, Rahu and Ketu always cast vedha in all three directions, because they are always retrograde.
+- The gochara (Moon-house) vedha points and vipreeta vedha for the nodes are still not in any verse. They exist only as Ojha's commentary rows (PD p.621, p.625). #8 stays PARTIAL.
+
+## #36 Bhava cusps and sandhis (adds): UK Khanda I v.4, pp.19–20 (n16–n17, images)
+- **v.4:** find the time of birth (nadis and vinadis from sunrise, by the shadow of the sanku), the sayana Sun and the observed (drig-ganita) planets, then "calculate the bhavas (houses, not signs) and their junction points".
+  - This is classical: the verse itself calls for bhava and sandhi calculation.
+- **Translator's note (P. S. Sastri), not verse; this is the Sripati-style method:**
+  - Find the lagna and the 10th cusp, then deduct the ayanamsha.
+  - (lagna − 10th) ÷ 3 = one step. 10th + step = 11th; + step again = 12th. 12th + 60° = 2nd; 11th + 120° = 3rd. The opposite houses are +180°.
+  - Sandhi = the cusp + half the distance to the next cusp. Planets at or near a sandhi are weak.
+  - Sastri's own caveat (p.21, OCR): he has "serious doubts about the whole method".
+- The method rests only on the translator's note. Sripati Paddhati on archive.org (id sripati-paddhati) is Sanskrit only, and the OCR is unusable. #36 stays PARTIAL.
+
+## #37 Varshaphala (adds): TN ch.1 (images)
+- **v.16 (pp.7–8, n10–n11), day and time of the year entry:**
+  - Take the elapsed years, add a quarter of them (as days etc.).
+  - Add elapsed years × 21 ÷ 40 (as ghatis etc.).
+  - Add the birth weekday and time, then reduce by 7. The result is the weekday and ishtakala of varshapravesha.
+- **Jha's commentary (vi.):** the true entry is the moment the Sun returns to its exact natal longitude. The year is sidereal-solar, and its constant is 1|15|31|30 (days etc., after reducing by 7).
+- **vv.62–63 (p.40, n43), Muntha (Inthiha):**
+  - Muntha moves one sign a year from the natal lagna: natal lagna + elapsed years, reduced by 12.
+  - It moves 5′ a day, so 2½° a month. Per the verse, that is "some say".
+- **v.61 (p.40):** the day/night triplicity lords serve for the year lord (varshesha). The drekkana lords serve for pancha-vargi and dvadasha-vargi strength.
+- Not read: the varshesha selection, sahams, mudda dasha and the yogas (ch.2 onward). #37 moves from UNSOURCED to PARTIAL.
+
+## #45 Dasha sandhi: searched again
+- Searched Phaladeepika (Ojha, all chapters including 19–21), Uttara Kalamrita, Tajika Neelakanthi, Saravali, BPHS and JP.
+- There are only rules for timing within a dasha (beginning, middle or end, by drekkana or rising type). Examples: BPHS2 ch.50 and the Saravali ch.41 v.75 OCR.
+- No passage covers the junction between two mahadashas. #45 stays PARTIAL.
+
+## #28 Narayana dasha and #42 murti: not on archive.org
+- archive.org searches ("narayana dasa", Jaimini editions, "prasna marga murti") returned no edition that has Narayana dasha. The two Jaimini editions on the box have none.
+- Gold/silver/copper/iron murti: none in MC, PD, PM1/2, KP, SBC or TN.
+- Both stay UNSOURCED.
+
+---
+## Final coverage summary (after batch 20)
 Status key:
 - VERIFIED: rules were written from page images.
 - PARTIAL: some sub-rules were image-verified and others are missing.
@@ -1965,7 +2031,7 @@ Status key:
 | 5 | Sade sati | VERIFIED (classical extent; later name/rule labelled) | PD 26.22–23; "sade sati" name later tradition |
 | 6 | Kuta/guna milan | VERIFIED | MC 6.21–34; graha maitri printed as 4, required 5 |
 | 7 | Porutham | VERIFIED | KP XIII |
-| 8 | Node vedha | PARTIAL | PD 26.24 Rahu transits; node good houses = Ojha table; node vedha points unsourced |
+| 8 | Node vedha | PARTIAL | PD 26.24 Rahu; SBC v.15 node 3-way vedha; gochara node vedha points unsourced |
 | 9 | Gochara dignity | VERIFIED | PD 26.31–32 |
 | 10 | Nakshatra lore | VERIFIED | BPHS ch.3; MC ch.2 |
 | 11 | Graha avasthas | VERIFIED | BPHS ch.45 |
@@ -1993,12 +2059,12 @@ Status key:
 | 33 | Gandanta | VERIFIED | BPHS ch.9; MC 6.43 |
 | 34 | Chandra bala | VERIFIED | MC 4.1–8 pp.51–53 (Jup/Ven vedha rows not legible) |
 | 35 | Upagrahas | VERIFIED |  |
-| 36 | Bhava chalit | PARTIAL | Bhava bala + sandhi note verified; unequal-cusp method needs Sripati Paddhati (not on box) |
-| 37 | Varshaphala | UNSOURCED | English texts only |
+| 36 | Bhava chalit | PARTIAL | UK I.4 bhava+sandhi mandated (verse); cusp method = Sastri note only; Sripati Paddhati Sanskrit only |
+| 37 | Varshaphala | PARTIAL | TN v.16 varshapravesha; vv.62–63 muntha; varshesha/sahams/mudda not read |
 | 38 | Prasna | VERIFIED | PM1 st.12–13 p.34; ashtamangala ch.4 st.45–59 pp.71–72; MC vivaha |
 | 39 | Ingress/stations | VERIFIED | Mundane ingress PM2 XXV; natal retro/stations Saravali ch.5 vv.14,39; ch.36 v.9; ch.41 v.68 |
 | 40 | Kakshya | VERIFIED |  |
-| 41 | Sarvatobhadra | UNSOURCED | Lead only |
+| 41 | Sarvatobhadra | VERIFIED | SBC (Vyas 1972, Hindi) vv.2–17 construction + vedha; per-nakshatra list vv.19ff OCR only |
 | 42 | Murti nirnaya | UNSOURCED |  |
 | 43 | D9 couple | VERIFIED | BPHS ch.7 vv.1–8 (navamsa = spouse); ch.18 vv.1–6; JP XIV; partner-D9 comparison = later practice |
 | 44 | Kuja dosha | VERIFIED (classical extent; later name/rule labelled) | JP/MC Mars-7th/12th; 1/2/4/7/8/12 = Ojha comm. |
@@ -2010,6 +2076,6 @@ Status key:
 | 50 | Ayanamsha | VERIFIED | SS III.9–12 (libration model); no modern value |
 
 Totals:
-- VERIFIED: 43 (2 at classical extent, with the later name or rule labelled: #5 and #44)
-- PARTIAL: 3 (#8, 36, 45)
-- UNSOURCED: 4 (#28, 37, 41, 42)
+- VERIFIED: 44 (2 at classical extent, with the later name or rule labelled: #5 and #44)
+- PARTIAL: 4 (#8, 36, 37, 45)
+- UNSOURCED: 2 (#28, 42)
