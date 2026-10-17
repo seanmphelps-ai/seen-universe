@@ -865,7 +865,7 @@ Done only when both signs ruled by one planet still carry a number after trikona
 | 5 | Sade sati | VERIFIED (classical extent; later name/rule labelled) | PD 26.22–23; "sade sati" name later tradition |
 | 6 | 18°45′–22°30′ | Mercury |
 | 7 | 22°30′–26°15′ | Moon |
-| 8 | 26°15′–30° | Lagna |
+| 8 | Node vedha | PARTIAL | PD 26.24 Rahu transits; node good houses = Ojha table; node vedha points unsourced |
 
 - This is the same order as the rows of the ashtakavarga chart on p.554: Sa, Ju, Ma, Su, Ve, Me, Mo, La.
 - Rule, from Ojha's worked example: a transiting planet gives good results while it passes through a kakshya whose lord put a bindu in that sign of its ashtakavarga. In a kakshya whose lord gave no bindu, the result is bad.
@@ -1864,7 +1864,93 @@ The table also gives a fruit name per tithi, e.g. 1 siddhi, 4 hani, 9 mrityuda, 
 - **#45:** Dasachidra and Mandukagamana are verified (JP XVII). Dasha-sandhi proper, the junction between mahadashas, has no passage in any text on the box and stays labelled unsourced, not invented. → VERIFIED (classical extent; later name/rule labelled).
 
 ---
-## Final coverage summary (after batch 18)
+# Batch 19 (2026-10-17)
+
+## Correction: #45 back to PARTIAL
+- The batch-18 "classical extent" ruling on #45 is withdrawn. The core of the technique, the junction between two mahadashas (dasha sandhi), has no source text, so #45 can't count as verified. Dasachidra and Mandukagamana (JP XVII) stay verified as sub-rules.
+
+## #21 Raja yogas (adds): BPHS1 ch.39 vv.15–48, pp.392–399 (PDF pp.391–398, images). Ch.39 is now read to its end.
+- **v.15:** the 3 ascendants (natal, Hora, Ghatika) hold exalted or own-sign planets. Or the natal, Drekkana and Navamsa ascendants hold exalted planets.
+- **v.16:** the Moon and a benefic in the Arudha lagna, Jupiter in the 2nd from the natal ascendant, and both places aspected by exalted or own-sign planets.
+- **v.17:** benefics in the 1st, 2nd and 4th, with a malefic in the 3rd: king or equal to one.
+- **v.18:** wealthy if the Moon, Jupiter, Venus or Mercury is exalted in the 2nd.
+- **vv.19–20:** the 6th, 8th, 3rd or 12th lords in fall, an enemy's sign or combustion, while the ascendant lord in its own or exaltation sign aspects the ascendant.
+- **v.21:** the 10th lord in its own or exaltation sign aspects the ascendant. Or benefics in angles.
+- **v.22:** the Atmakaraka in a benefic's rasi or navamsa: wealthy. Benefics in angles from the karakamsa lagna: king.
+- **v.23:** the Arudha lagna and Darapada in mutual angles, or mutually 3/11, or in mutual trines.
+  - Santhanam's note: if they are mutually 6/8 or 2/12, the raja yogas are lost.
+- **vv.24–25:** two or all of the Bhava, Hora and Ghatika lagnas aspected by exalted planets. Or the 3 ascendants, their drekkanas and their navamsas aspected by a planet.
+- **vv.26–27:** the Arudha pada holds an exalted planet, especially the Moon, or Jupiter or Venus, with no malefic argala. A benefic sign holding the Moon, with Jupiter in the 2nd, does the same.
+- **v.28:** even one of the 6th, 8th or 12th lords debilitated and aspecting the ascendant.
+- **vv.29–31:**
+  - A planet ruling the 4th, 10th, 2nd or 11th aspects the ascendant, while Venus aspects the 11th from the Arudha lagna, and the Arudha lagna is occupied by a benefic.
+  - Or a debilitated planet in the 6th, 8th, 3rd or 11th aspects the ascendant.
+- **vv.33–34:** the 9th lord is a minister and the 5th lord is more so. If they aspect each other, or are conjunct in any house, or are mutually 7th, the native gains a kingdom.
+- **v.35:** the 4th lord in the 10th and the 10th lord in the 4th, aspected by the 5th and 9th lords.
+- **v.36:** the 5th, 10th and 4th lords and the ascendant lord together in the 9th.
+- **v.37:** the 4th or 10th lord joined with the 5th or 9th lord.
+  - Santhanam's note: four yogas (4+5, 4+9, 10+9, 10+5). The 4th lord with both the 5th and 9th, or the 10th lord with both, is superior.
+- **v.38:** the 5th lord in the 1st, 4th or 10th with the 9th lord or the ascendant lord.
+- **v.39:** Jupiter in its own sign in the 9th, with Venus or the 5th lord.
+- **v.40:** birth within 2½ ghatis of mid-day or mid-night: king or equal.
+  - Santhanam's note: he reads mid-day and mid-night as the true midpoints between sunrise and sunset, not the 12:00 clock time.
+  - Uttara Kalamrita's variants (Koteeswara, Lakshadhikari) are cited in his note only.
+- **v.41:** the Moon and Venus mutually 3/11, or mutually aspecting.
+- **v.42:** a strong Moon in Vargottama, aspected by 4 or more planets.
+- **v.43:** the ascendant in Uttamamsa, aspected by 4 or more planets, the Moon not among them.
+- **v.44:** 1 to 3 planets exalted: a royal scion becomes king and others become equal to a king.
+- **v.45:** 4 or 5 planets exalted or in moolatrikona: even someone of low birth becomes king.
+- **v.46:** 6 exalted planets: emperor.
+- **v.47:** one of Jupiter, Venus or Mercury exalted, with a benefic in an angle.
+- **v.48:** all benefics in angles and malefics in the 3rd, 6th and 11th.
+- Ch.40 (yogas for royal association, p.399ff) is a separate chapter and isn't needed for #21.
+
+## #38 Ashtamangala procedure: Prasna Marga Pt.1, tr. Raman, ch.4 stanzas 45–59, pp.71–72 (typed ed., PDF p.71, image)
+- **st.45–50:** a boy or girl who doesn't know astrology, bathed and well dressed, worships the lamp, Ganesha and the planets. They then place the gold piece, with flowers, in one of the signs of the chakra.
+- **st.51–53:** the astrologer divides the cowries into three heaps: left, front and right. Note the omens, the breath and the time, and measure the Sun's shadow. The sign where the gold piece lies is the Arudha rasi.
+- **st.54–55:** count each heap, drop all multiples of 8 and keep the remainder.
+  - Raman's note: left heap = hundreds digit, front heap = tens, right heap = units. This three-digit figure is the Ashtamangala number.
+- **st.56–57:** note the Arudha, how the gold piece lies, the Sun's shadow in feet, the ashtamangala number, the lamp signs (deepa lakshana), the betel leaves, the date and weekday, and the querent's name, house name, nakshatra and object.
+- **st.58–59:** recapitulation of the procedure.
+- How the number is interpreted is in PM ch.8 st.32–36 and later chapters, and wasn't read.
+
+## #43 Navamsa for spouse and the 7th house: BPHS1 (images)
+- **ch.7 vv.1–8, pp.91–92 (PDF p.91):** read spouse from the Navamsa, along with the other vargas and what each shows.
+  - Translator's note: the bhava whose lord is in a malefic Shashtiamsa diminishes, per Garga.
+- **ch.18 (Effects of the Seventh House) vv.1–6, pp.160–161 (PDF p.160):**
+  - v.1: the 7th lord in its own sign or exaltation gives full happiness through the wife.
+  - v.2: the 7th lord in the 6th, 8th or 12th gives a sickly wife, unless it is in its own or exaltation sign there.
+  - v.3: Venus in the 7th makes one exceedingly libidinous. [SENSITIVE] Venus joined by a malefic in any house brings loss of the wife.
+  - vv.4–5: a strong 7th lord with a benefic conjunction or aspect gives wealth, honour and happiness. If the 7th lord is in fall, combust or in an enemy's sign, there are sickly wives and many wives.
+  - v.6: the 7th lord in a sign of Saturn or Venus aspected by a benefic, or the 7th lord exalted, gives many wives.
+- No classical text on the box gives a rule for comparing two partners' navamsas. Any synastry use of D9 is later practice and has to be labelled that way.
+
+## #8 Node transits (adds): Phaladeepika ch.26, Ojha (images; for this PDF, printed page = PDF page − 1)
+- **26.2 (p.621):** Ojha's table of good transit houses from the Moon lists Rahu at 3, 6, 10, 11 and Ketu at 3, 6, 10, 11. The verse names only the seven grahas, so the node rows are Ojha's commentary.
+- **26.24 (p.637), Rahu ("tamas") through the 12 houses from the natal Moon:**
+  - 1st: body wasting and illness.
+  - 2nd: loss of wealth.
+  - 3rd: happiness.
+  - 4th: sorrow.
+  - 5th: loss of wealth.
+  - 6th: happiness.
+  - 7th: loss.
+  - 8th: [SENSITIVE] suffering like death.
+  - 9th: loss.
+  - 10th: gain.
+  - 11th: good fortune.
+  - 12th: expense.
+- **26.25 (pp.637–638):** Rahu and Mercury give their effect evenly through the whole sign. The kakshya rule already in the library covers the other planets.
+- Still unsourced: vedha points for the nodes themselves, and the vipreeta vedha of nodes. Ojha's commentary (p.625, OCR only) lists Rahu and Ketu among the planets that can obstruct Mars and Saturn, but that page wasn't image-checked. #8 stays PARTIAL.
+
+## #36 Bhava chalit / unequal cusps
+- No text on the box gives a classical method for unequal house cusps (cusps built from the MC).
+  - Santhanam's preface (BPHS1, OCR p.~xi) says Parashara advocated the Sripati method, but that's the translator's claim, with no verse.
+  - Sripati Paddhati itself isn't on the box.
+- What is verified (BPHS ch.4 v.9, the p.64 note, ch.27 bhava bala) stays. #36 stays PARTIAL.
+
+---
+## Final coverage summary (after batch 19)
 Status key:
 - VERIFIED: rules were written from page images.
 - PARTIAL: some sub-rules were image-verified and others are missing.
@@ -1879,7 +1965,7 @@ Status key:
 | 5 | Sade sati | VERIFIED (classical extent; later name/rule labelled) | PD 26.22–23; "sade sati" name later tradition |
 | 6 | Kuta/guna milan | VERIFIED | MC 6.21–34; graha maitri printed as 4, required 5 |
 | 7 | Porutham | VERIFIED | KP XIII |
-| 8 | Node vedha | PARTIAL | PD 26 |
+| 8 | Node vedha | PARTIAL | PD 26.24 Rahu transits; node good houses = Ojha table; node vedha points unsourced |
 | 9 | Gochara dignity | VERIFIED | PD 26.31–32 |
 | 10 | Nakshatra lore | VERIFIED | BPHS ch.3; MC ch.2 |
 | 11 | Graha avasthas | VERIFIED | BPHS ch.45 |
@@ -1892,7 +1978,7 @@ Status key:
 | 18 | Chandra yogas | VERIFIED |  |
 | 19 | Surya yogas | VERIFIED |  |
 | 20 | Pancha mahapurusha | VERIFIED |  |
-| 21 | Raja/dhana yogas | PARTIAL | BPHS ch.39, 41 |
+| 21 | Raja/dhana yogas | VERIFIED | BPHS ch.39 vv.1–48 complete; ch.41 vv.1–17 |
 | 22 | Viparita raja | VERIFIED |  |
 | 23 | Nabhasa yogas | VERIFIED | BJ XII |
 | 24 | Arishta yogas | VERIFIED | BJ VI, death language gated |
@@ -1907,16 +1993,16 @@ Status key:
 | 33 | Gandanta | VERIFIED | BPHS ch.9; MC 6.43 |
 | 34 | Chandra bala | VERIFIED | MC 4.1–8 pp.51–53 (Jup/Ven vedha rows not legible) |
 | 35 | Upagrahas | VERIFIED |  |
-| 36 | Bhava chalit | PARTIAL |  |
+| 36 | Bhava chalit | PARTIAL | Bhava bala + sandhi note verified; unequal-cusp method needs Sripati Paddhati (not on box) |
 | 37 | Varshaphala | UNSOURCED | English texts only |
-| 38 | Prasna | PARTIAL | PM1; MC vivaha |
+| 38 | Prasna | VERIFIED | PM1 st.12–13 p.34; ashtamangala ch.4 st.45–59 pp.71–72; MC vivaha |
 | 39 | Ingress/stations | VERIFIED | Mundane ingress PM2 XXV; natal retro/stations Saravali ch.5 vv.14,39; ch.36 v.9; ch.41 v.68 |
 | 40 | Kakshya | VERIFIED |  |
 | 41 | Sarvatobhadra | UNSOURCED | Lead only |
 | 42 | Murti nirnaya | UNSOURCED |  |
-| 43 | D9 couple | PARTIAL | JP XIV |
+| 43 | D9 couple | VERIFIED | BPHS ch.7 vv.1–8 (navamsa = spouse); ch.18 vv.1–6; JP XIV; partner-D9 comparison = later practice |
 | 44 | Kuja dosha | VERIFIED (classical extent; later name/rule labelled) | JP/MC Mars-7th/12th; 1/2/4/7/8/12 = Ojha comm. |
-| 45 | Dasha sandhi | VERIFIED (classical extent; later name/rule labelled) | Dasachidra/Mandukagamana JP XVII; sandhi proper unsourced |
+| 45 | Dasha sandhi | PARTIAL | Dasachidra/Mandukagamana JP XVII verified; core sandhi (mahadasha junction) unsourced |
 | 46 | Dasha phala | VERIFIED | BPHS2 ch.50 vv.1–89 (vv.90–96 heading only) |
 | 47 | Karakatva | VERIFIED | BPHS 32 vv.18–24; PD ch.2 vv.1–7 |
 | 48 | Dignity/maitri | VERIFIED |  |
@@ -1924,6 +2010,6 @@ Status key:
 | 50 | Ayanamsha | VERIFIED | SS III.9–12 (libration model); no modern value |
 
 Totals:
-- VERIFIED: 41 (3 of these at classical extent, with the later name or rule labelled)
-- PARTIAL: 5
-- UNSOURCED: 4
+- VERIFIED: 43 (2 at classical extent, with the later name or rule labelled: #5 and #44)
+- PARTIAL: 3 (#8, 36, 45)
+- UNSOURCED: 4 (#28, 37, 41, 42)
