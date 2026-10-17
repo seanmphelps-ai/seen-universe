@@ -950,3 +950,41 @@ Done only when both signs ruled by one planet still carry a number after trikona
 - **v.52:** 5th lord in the 4th: happy, with maternal happiness, wealth and intelligence. A king, minister or preceptor.
 - **v.53 (starts p.203):** 5th lord in the 5th: progeny if related to a benefic, none if a malefic (continues p.204).
 - Ch.24 is the full lord-in-house chapter. The other lords are **not yet transcribed**.
+
+---
+# Batch 10b (2026-10-17)
+
+## #15 Muhurta windows: KP pp.176–177 (Kalaprakasika 1982; archive leaf = printed + 36, checked on n180 = p.144, n186 = p.150, n212 = p.176)
+**Gulikan, Yamagandam, Ardhapraharam, Kalan** (table, p.176, clock times):
+
+| Day-time | Gulikan | Yamagandam | Ardhapraharam | Kalan |
+|---|---|---|---|---|
+| Sunday | 3–4:30 | 12–1:30 | 10:30–12 | 6–7:30 |
+| Monday | 1:30–3 | 10:30–12 | 9–10:30 | 3–4:30 |
+| Tuesday | 12–1:30 | 9–10:30 | 7:30–9 | 1:30–3 |
+| Wednesday | 10:30–12 | 7:30–9 | 6–7:30 | 12–1:30 |
+| Thursday | 9–10:30 | 6–7:30 | 3–4:30 | 10:30–12 |
+| Friday | 7:30–9 | 3–4:30 | 1:30–3 | 9–10:30 |
+| Saturday | 6–7:30 | 1:30–3 | 12–1:30 | 7:30–9 |
+
+| Night | Gulikan | Yamagandam | Ardhapraharam | Kalan |
+|---|---|---|---|---|
+| Sunday | 9–10:30 | 6–7:30 | 3–4:30 | 10:30–12 |
+| Monday | 7:30–9 | 3–4:30 | 1:30–3 | 9–10:30 |
+| Tuesday | 6–7:30 | 1:30–3 | 12–1:30 | 7:30–9 |
+| Wednesday | 3–4:30 | 12–1:30 | 10:30–12 | 6–7:30 |
+| Thursday | 1:30–3 | 10:30–12 | 9–10:30 | 3–4:30 |
+| Friday | 12–1:30 | 9–10:30 | 7:30–9 | 1:30–3 |
+| Saturday | 10:30–12 | 7:30–9 | 6–7:30 | 12–1:30 |
+
+- Ardhapraharam, Yamagandam and Kalan "should be rejected as inauspicious".
+- **Rahu Kalam** (footnote, p.176): day-time only. Sunday 4:30–6, Monday 7:30–9, Tuesday 3–4:30, Wednesday 12–1:30, Thursday 1:30–3, Friday 10:30–12, Saturday 9–10:30. "Positively harmful for all good business."
+- **Implementation note (mine, not on page):** these are fixed 1½-hour clock slots, which assumes a 6:00–18:00 day. Each slot is 1/8 of a 12-hour day, and the Gulikan column matches BPHS 3.66–69 (Saturn's eighth). To use real sunrise and sunset, scale to 1/8 of the actual day or night (BPHS method, #35).
+- **Hora** (p.176): the 1st hora of the day belongs to the lord of the weekday. Each later hora's lord is the 6th planet in order from the previous hora's lord. Full day/night table on p.177 (1-hour slots from 6:00).
+
+## #40 (completes) Kakshya: verse text, PD ch.23 vv.15–19, Ojha p.553 (header "chapter 23: Ashtakavarga")
+- **v.16:** to determine the time when a bindu's result comes, divide each sign into eight kakshyas. "Others" give the results by kakshya in order. Mantreswara attributes this to others.
+- **v.17:** draw the prastara chart with 9 horizontal and 13 (10 + 3) vertical lines, giving 96 cells: 8 rows × 12 signs.
+- **v.18:** the rows from the south are Lagna, Moon, Mercury, Venus, Sun, Mars, Jupiter, Saturn. Each gives its bindu result in order.
+- **v.19:** Saturn gives the result in the first eighth of a sign, Jupiter in the second, and so on in kakshya order, with Lagna in the last. That makes the order from 0°: Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon, Lagna, which matches Ojha p.556 (batch 9b).
+- **Ojha on v.15 (p.553):** when a planet transits a house and that sign holds more bindus in the planet's own ashtakavarga, that house's matters bring special good. Example: the Sun, Jupiter or Saturn transiting the 10th from their natal sign, with many bindus there.
