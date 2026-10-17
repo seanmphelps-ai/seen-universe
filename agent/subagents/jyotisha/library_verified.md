@@ -988,3 +988,83 @@ Done only when both signs ruled by one planet still carry a number after trikona
 - **v.18:** the rows from the south are Lagna, Moon, Mercury, Venus, Sun, Mars, Jupiter, Saturn. Each gives its bindu result in order.
 - **v.19:** Saturn gives the result in the first eighth of a sign, Jupiter in the second, and so on in kakshya order, with Lagna in the last. That makes the order from 0°: Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon, Lagna, which matches Ojha p.556 (batch 9b).
 - **Ojha on v.15 (p.553):** when a planet transits a house and that sign holds more bindus in the planet's own ashtakavarga, that house's matters bring special good. Example: the Sun, Jupiter or Saturn transiting the 10th from their natal sign, with many bindus there.
+
+---
+# Batch 11a (2026-10-17)
+
+## #29 (completes core) Kalachakra: BPHS2 ch.46, pp.531–536
+**Bharani group** (vv.66–69, pp.531–532). Bharani, Pushyami, Chittra, Poorvashada and Uttarabhadra share these padas:
+
+| Pada | Deha | Jeeva | Dasa signs in order |
+|---|---|---|---|
+| 1 | Scorpio | Pisces | Scorpio, Libra, Virgo, Cancer, Leo, Gemini, Taurus, Aries, Pisces |
+| 2 | Aquarius | Virgo | Aquarius, Capricorn, Sagittarius, Aries, Taurus, Gemini, Cancer, Leo, Virgo |
+| 3 | Libra | Virgo | Libra, Scorpio, Sagittarius, Capricorn, Aquarius, Pisces, Scorpio, Libra, Virgo |
+| 4 | Cancer | Sagittarius | Cancer, Leo, Gemini, Taurus, Aries, Pisces, Aquarius, Capricorn, Sagittarius |
+
+- Lords of pada 1's signs (p.532): Mars, Venus, Mercury, Moon, Sun, Mercury, Venus, Mars, Jupiter.
+- **v.71 (p.532 foot):** starts the apasavya (Rohini, Magha, …) group, counted in reverse from Scorpio. Its pada tables run on pp.533–535 and have **not been transcribed**. vv.71–72 say the apasavya chakra mirrors the savya.
+
+**Dasa years by sign** ("Table of Dasas", p.536):
+
+| Sign | Lord | Years |
+|---|---|---|
+| Aries | Mars | 7 |
+| Taurus | Venus | 16 |
+| Gemini | Mercury | 9 |
+| Cancer | Moon | 21 |
+| Leo | Sun | 5 |
+| Virgo | Mercury | 9 |
+| Libra | Venus | 16 |
+| Scorpio | Mars | 7 |
+| Sagittarius | Jupiter | 10 |
+| Capricorn | Saturn | 4 |
+| Aquarius | Saturn | 4 |
+| Pisces | Jupiter | 10 |
+
+- This table is Santhanam's, not verse. It matches his worked example on p.542 and the full-years totals in v.89 (Aries pada 1: 7+16+9+21+5+9+16+7+10 = 100).
+
+**vv.85–86 (p.536):** span of life comes from the amsa (pada) of the nakshatra at birth or query, using the years of its 9 signs.
+- Some say birth at the start of the pada gives full life, in the middle medium life, and at the end short life or death-like suffering.
+- **Sensitive: longevity and death language. Gate.**
+
+## #10 (completes) Nakshatra lore: MC ch.2 (nakshatra prakarana) vv.1–9, Khemraj pp.24–26 (leaf = printed + 11, confirmed on n35 = p.24)
+**v.1 (p.24), lords of the stars:**
+
+| Star | Lord | Star | Lord |
+|---|---|---|---|
+| Aswini | Aswini Kumaras | Swati | Vayu |
+| Bharani | Yama | Vishakha | Indra and Agni |
+| Krittika | Agni | Anuradha | Mitra |
+| Rohini | Brahma | Jyeshtha | Indra |
+| Mrigashira | Moon | Moola | Nirriti |
+| Ardra | Shiva (Rudra) | Purvashadha | Jala (water) |
+| Punarvasu | Aditi | Uttarashadha | Vishvedeva |
+| Pushya | Brihaspati | Abhijit | Vidhi (Brahma) |
+| Ashlesha | Sarpa | Shravana | Vishnu (Govinda) |
+| Magha | Pitaras | Dhanishtha | Vasu |
+| Purvaphalguni | Bhaga | Shatabhisha | Varuna |
+| Uttaraphalguni | Aryaman | Purvabhadrapada | Ajacharana (Aja Ekapada) |
+| Hasta | Surya | Uttarabhadrapada | Ahirbudhnya |
+| Chitra | Tvashta (Vishvakarma) | Revati | Pusha |
+
+- The commentary lists suitable acts per star (p.24 foot to p.25).
+
+**vv.2–8 (pp.25–26), nature classes and the acts each suits:**
+
+| Class | Stars | Weekday | Suits |
+|---|---|---|---|
+| Dhruva / Sthira (fixed) | Uttaraphalguni, Uttarashadha, Uttarabhadrapada, Rohini | Sunday | Fixed works: sowing, house, shanti, gardens |
+| Chara / Chala (movable) | Swati, Punarvasu, Shravana, Dhanishtha, Shatabhisha | Monday | Vehicles, travel, gardens |
+| Ugra / Krura (fierce) | Purvaphalguni, Purvashadha, Purvabhadrapada, Bharani, Magha | Tuesday | Destruction, fire, deceit, poison, weapons |
+| Mishra / Sadharana (mixed) | Vishakha, Krittika | Wednesday | Agnihotra, vrishotsarga |
+| Kshipra / Laghu (swift) | Hasta, Ashwini, Pushya, Abhijit | Thursday | Trade, pleasure, learning, ornaments, arts |
+| Mridu / Maitra (soft) | Mrigashira, Revati, Chitra, Anuradha | Friday | Song, clothes, love, friendship, ornaments |
+| Tikshna / Daruna (sharp) | Moola, Jyeshtha, Ardra, Ashlesha | Saturday | Spells (abhichara), killing, separation, taming animals |
+
+**v.9 (p.26), facing of the stars:**
+- **Adhomukha (downward):** Moola, Ashlesha, Krittika, Vishakha, Bharani, Magha, and the three Purvas. Commentary: they suit wells, ponds and digging.
+- **Urdhvamukha (upward):** Ardra, Pushya, Shravana, Dhanishtha, Shatabhisha, and the three Uttaras with Rohini (dhruva). They suit coronation and buildings.
+- **Tiryangmukha (sideways):** commentary across pp.26–27 gives the mridu stars (Mrigashira, Revati, Chitra, Anuradha) plus Hasta, Swati, Punarvasu, Jyeshtha and Ashwini. That's 9 names; the verse says "dashakam" (ten), so the discrepancy is flagged. The commentary calls them "samadrishti" and says they suit wheels, chariots, ploughs, seed and animal work.
+
+**Gana, yoni and nadi** are in MC ch.6 (vivaha). The kuta tables there were verified earlier in Vedic's build (MC 6.21–34).
