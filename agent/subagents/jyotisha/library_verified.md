@@ -884,3 +884,69 @@ Done only when both signs ruled by one planet still carry a number after trikona
   - 240–360°: without strength.
 - **Note:** the waning Moon is malefic and the waxing Moon benefic. A waning Moon joined or aspected by a benefic turns benefic.
 - Chandra bala counted by house from the natal Moon is **not yet verified**.
+
+---
+# Batch 10a (2026-10-17). BPHS1/BPHS2 page images. BPHS1: printed = PDF page + 1 from ch.3 on. BPHS2: printed = PDF page + 490.
+
+## #10 (partial) Nakshatras (BPHS ch.3 vv.4–6, pp.24–25)
+- **Verse:** the planets move through the 27 nakshatras, starting from Aswini. The same zodiac is divided into 12 rasis starting from Aries.
+- **Verse:** the rising sign is the Lagna. Good and bad effects come from the ascendant and from planets joining and leaving each other.
+- **Santhanam's note (p.25):** lists the 27 stars in order, Aswini … Revati, as numbers 1–27. Abhijit isn't counted.
+- Deity, gana, yoni and nadi lore is **not on these pages; still open**.
+
+## #50 (partial) Ayanamsa (BPHS1 pp.54, 61; translator material only)
+- Santhanam's worked example on p.54 uses Lahiri ayanamsa, 23°37′51″ for 17 Feb 1984.
+- **His note on p.61 (ch.4):** he says "accurate Ayanamsa is only that of Lahiri, and that is accurate to the second of arc". He bases this on reaching the recorded conception (Adhana) date back from the natal Moon.
+- **This is a translator claim, not verse.** No BPHS verse fixing an ayanamsa value has been found.
+- **Same note, p.61:** Gulika's longitude corresponds to the **beginning** of Saturn's muhurta. Santhanam says he knows no sage who states otherwise. This is relevant to #35: use the start of Saturn's part, not its end.
+
+## #36 Bhava (houses): special ascendants, sandhi, bhava bala
+- **BPHS ch.4 v.9 (p.64):** with the planets kept at their birth positions, make house charts from each special ascendant (Bhava, Hora and Ghatika lagna) and analyse them as for the natal ascendant.
+- **Santhanam's note on the Benares/Chaukhamba edition (p.64), not verse in this edition:**
+  - A planet on a house cusp gives that house's full effect.
+  - A planet in the bhava sandhi (end of the house) gives no result for that house.
+  - Within 15° after the cusp the effects diminish; within 15° before it they proportionately increase.
+- **Bhava bala (BPHS ch.27 vv.26–29, p.286).** The step depends on which sign the bhava cusp falls in:
+
+| Bhava cusp in | Deduct from it |
+|---|---|
+| Virgo, Gemini, Libra, Aquarius, or the first half of Sagittarius | the 7th house |
+| Aries, Taurus, Leo, the first half of Capricorn, or the second half of Sagittarius | the 4th house (nadir) |
+| Cancer or Scorpio | the ascendant |
+| The second half of Capricorn, or Pisces | the 10th (meridian) |
+
+  - If the result exceeds 6 signs, subtract it from 12. Convert to degrees and divide by 3.
+  - Add a fourth for a benefic aspect and take off a fourth for a malefic aspect. Add the full aspect of Jupiter or Mercury, then add the strength of the bhava's lord.
+- **vv.30–31 (p.286):**
+  - Bhavas occupied by Jupiter or Mercury gain 1 rupa each. Those occupied by Saturn, Mars or the Sun lose 1 rupa.
+  - Add 15 virupas to bhavas in seershodaya rasis for a day birth, in dual rasis for a twilight birth, and in prishtodaya rasis for a night birth.
+
+## #21 Raja yogas (BPHS ch.39, pp.388–391)
+- **Maha raja yoga (vv.6–7, p.389):** the ascendant lord and the 5th lord exchange signs, or the Atmakaraka and Putrakaraka (chara scheme) are in the ascendant, the 5th, exaltation, their own sign or their own navamsa, aspected by a benefic. The native will be famous and happy.
+- **v.8 (p.390):** the ascendant lord and the Atmakaraka in the ascendant, 5th or 7th, joined with or aspected by a benefic, give a raja yoga.
+- **vv.9–10 (p.390):** benefics in the 2nd, 4th and 5th from the ascendant lord or from the Atmakaraka make one a king. Malefics in the 3rd and 6th from those points do the same. Mixed placements give mixed results.
+- **v.11 (p.390):** Venus in the karakamsa, or in the 5th from it, or in the ascendant or Arudha ascendant, aspected by or with Jupiter or the Moon, connects one to royal circles.
+- **v.12 (p.391):** a single planet aspecting the natal ascendant, the Hora lagna or the Ghatika lagna makes one a king.
+- **vv.13–14 (p.391):** one planet occupying or aspecting the ascendant in all six vargas (Rasi, Hora, Drekkana, Trimsamsa, Navamsa, Dvadasamsa) gives a raja yoga. Full, half or quarter aspect gives full, medium or negligible results.
+  - Santhanam (note) says he can't fully explain aspects within divisional charts.
+- **Translator note (p.388):** raja yogas are also formed from the karakamsa lagna. That's in the note, not the verse.
+
+## #29 (adds) Kalachakra gati effects (BPHS2 ch.46, pp.544–547)
+- **vv.101–102 (Mandooki in savya):** distress to friends, relations, parents and elders, and trouble from poison, weapons, thieves and enemies.
+- **v.103 (Markati in savya):** loss of wealth, crops and animals, and feelings of lethargy.
+- **vv.104–105 (Simhavalokana in savya):** injury from animals, loss of friends, distress to near relations, drowning, falls, poison, weapons and disease, and destruction of the home.
+- **p.547 (vv.~114–119):** Pisces → Scorpio is bad if one travels north; Sagittarius → Aries brings risk of ill health, imprisonment or death; Sagittarius → Scorpio brings gains of comfort, property and marriage; Leo → Cancer warns against travel west. Results are favourable if the signs are with benefics and adverse with malefics.
+- **vv.120–122 (navamsa natures):** Aries, brave and a thief; Taurus, wealthy; Gemini, learned; Cancer, king; Leo, respected by the government; Virgo, learned; Libra, minister; Sagittarius, sinful; Aquarius, businessman; Pisces, wealthy.
+- **Sensitive:** vv.101–103 and p.547 contain death language (death of mother, father or elder, death). **Gate.**
+
+## #46 (partial) Rasi dasha effects (BPHS2 ch.50 vv.22–28, pp.606–607)
+- **v.22:** the dasha of a rasi is favourable if its own lord or an exalted planet occupies it. A rasi dasha with no planet in it is adverse.
+- **vv.23–25:** danger on journeys, government displeasure and imprisonment come in the dasha or antar of the rasi whose badhaka house, 12th, 6th or 8th is occupied by Rahu. Losses come in an antar rasi occupied by the Sun, Mars, Rahu or Saturn.
+  - **Sensitive: possibility of death when the 5th and 9th from the antar rasi hold a debilitated or malefic planet. Gate.**
+- **vv.26–28 (pp.606–607):** chiefship, a son's birth, financial gains and fortune come when an exalted planet is in a trikona from the antar rasi.
+
+## #49 (partial) House-lord placements (BPHS ch.24 vv.51–53, p.203)
+- **v.51:** 5th lord in the 3rd: attached to co-born, a talebearer, miserly, always interested in his own work.
+- **v.52:** 5th lord in the 4th: happy, with maternal happiness, wealth and intelligence. A king, minister or preceptor.
+- **v.53 (starts p.203):** 5th lord in the 5th: progeny if related to a benefic, none if a malefic (continues p.204).
+- Ch.24 is the full lord-in-house chapter. The other lords are **not yet transcribed**.
