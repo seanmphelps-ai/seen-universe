@@ -1768,8 +1768,43 @@ The table also gives a fruit name per tithi, e.g. 1 siddhi, 4 hani, 9 mrityuda, 
 - **v.8 (p.53):** if the Moon is good by gochara on shukla pratipada, the whole bright fortnight is good. If good on krishna pratipada, the dark fortnight is good. Reversed placements give the reverse. Chandra-bala applies to the paksha in times of difficulty (sankata).
 - **Grahadana table (p.53):** the gifts for each planet are printed. Not transcribed: the columns are not legible at my resolution.
 
+## Batch 15
+### #33 Gandanta: MC ch.6 (vivaha) v.43, p.90, Khemraj, leaf n101 (image)
+- Nakshatra gandanta (4 ghatis): the last 2 ghatis of Jyeshtha, Revati and Ashlesha, plus the first 2 ghatis of Mula, Ashvini and Magha.
+- Lagna gandanta (1 ghati): the last ½ ghati of Cancer, Scorpio and Pisces, plus the first ½ ghati of Aries, Leo and Sagittarius.
+- Tithi gandanta (2 ghatis): the last ghati of the purna tithis (5, 10, 15), plus the first ghati of the nanda tithis (1, 6, 11).
+- Avoid gandanta for auspicious acts. [SENSITIVE] The tika says children born in gandanta are "doshada" (bring harm).
+- Tika (from other texts): a strong Moon cancels tithi gandanta, and a strong Jupiter cancels lagna gandanta.
+- Tika: the junctions of months are 3 days, of years 19 days, and of yoga and karana 1 ghati.
+### #21 (adds) Dhana yogas: BPHS Vol.1 ch.41 vv.1–17, pp.402–406 (images)
+- **vv.2–8, great affluence:** the 5th lord in the 5th in its own sign with a specified planet in the 11th.
+  - Venus in its own 5th with Mars in the 11th.
+  - Mercury in its own 5th with the Moon, Mars and Jupiter in the 11th.
+  - Sun in Leo in the 5th with Saturn, the Moon and Jupiter in the 11th.
+  - Saturn in its own 5th with the Sun and Moon in the 11th.
+  - Jupiter in its own 5th with Mercury in the 11th.
+  - Mars in its own 5th with Venus in the 11th.
+  - Moon in Cancer in the 5th with Saturn in the 11th.
+  - Translator's note: the common formula is the 5th lord in the 5th and the 11th lord in the 11th.
+- **vv.9–15, wealth:** a planet rising in its own sign as lagna, conjunct or aspected by:
+  - Sun: Mars and Jupiter
+  - Moon: Mercury and Jupiter
+  - Mars: Mercury, Venus and Saturn
+  - Mercury: Saturn and Jupiter
+  - Jupiter: Mercury and Mars
+  - Venus: Saturn and Mercury
+  - Saturn: Mars and Jupiter
+- **v.16:** the 5th and 9th lords, and planets joined to them, give wealth in their dasas.
+- **v.17:** judge all of these by the strength and disposition of the participating planets.
+### #50 Ayanamsha: Surya Siddhanta III.9–12, Burgess translation, p.114, leaf n166 (image)
+- **v.9:** in a yuga the "circle of asterisms" falls back eastward 600 revolutions ("thirty score"). Multiply the ahargana (dyugana) by 600 and divide by the number of civil days in a yuga.
+- **v.10:** take the part that fixes the sine, multiply it by 3 and divide by 10. The result is the ayana degrees. Declination, shadow and caradala are computed from longitudes corrected by them.
+- **vv.11–12:** check the result against the observed solstice and equinox, and correct east or west by the difference between the calculated and the shadow-derived solar longitude.
+- Burgess's note: an oscillation of ±27° about a fixed point near ζ Piscium, with a period of 7200 years, so 54″ a year.
+- No modern ayanamsha value (Lahiri or another) is in the source.
+
 ---
-## Final coverage summary (after batch 14b)
+## Final coverage summary (after batch 15)
 Status key:
 - VERIFIED: rules were written from page images.
 - PARTIAL: some sub-rules were image-verified and others are missing.
@@ -1777,7 +1812,7 @@ Status key:
 
 | # | Technique | Status | Notes |
 |---|---|---|---|
-| 1 | Panchanga | PARTIAL | Tithi, paksharandhra, vara muhurta faults, Bhadra/Vishti (MC ch.1). Yoga list and full karana sequence not read. |
+| 1 | Panchanga | PARTIAL | Tithi, paksharandhra, vara muhurta faults, Bhadra/Vishti (MC ch.1). Yoga list and full karana sequence not read. MC does not print a 27-yoga list (checked). |
 | 2 | Tara bala | VERIFIED | MC 4.11–13 |
 | 3 | Ashtakavarga | VERIFIED | BPHS2 ch.67–70; PD ch.23–24 |
 | 4 | Vimshottari + subperiods | VERIFIED | BPHS ch.46 vv.12–16; ch.51 vv.1–2 |
@@ -1797,7 +1832,7 @@ Status key:
 | 18 | Chandra yogas | VERIFIED |  |
 | 19 | Surya yogas | VERIFIED |  |
 | 20 | Pancha mahapurusha | VERIFIED |  |
-| 21 | Raja/dhana yogas | PARTIAL | BPHS ch.39 only |
+| 21 | Raja/dhana yogas | PARTIAL | BPHS ch.39, 41 |
 | 22 | Viparita raja | VERIFIED |  |
 | 23 | Nabhasa yogas | VERIFIED | BJ XII |
 | 24 | Arishta yogas | VERIFIED | BJ VI, death language gated |
@@ -1809,7 +1844,7 @@ Status key:
 | 30 | Conditional dashas | VERIFIED | BPHS2 ch.46 |
 | 31 | Chara karakas | VERIFIED |  |
 | 32 | Arudhas | VERIFIED | JS |
-| 33 | Gandanta | PARTIAL | BPHS ch.9 |
+| 33 | Gandanta | VERIFIED | BPHS ch.9; MC 6.43 |
 | 34 | Chandra bala | VERIFIED | MC 4.1–8 pp.51–53 (Jup/Ven vedha rows not legible) |
 | 35 | Upagrahas | VERIFIED |  |
 | 36 | Bhava chalit | PARTIAL |  |
@@ -1826,9 +1861,9 @@ Status key:
 | 47 | Karakatva | VERIFIED | BPHS 32 vv.18–24; PD ch.2 vv.1–7 |
 | 48 | Dignity/maitri | VERIFIED |  |
 | 49 | Placement effects | VERIFIED | BPHS ch.24 vv.1–148, all twelve lords |
-| 50 | Ayanamsha | PARTIAL | Translator notes only |
+| 50 | Ayanamsha | VERIFIED | SS III.9–12 (libration model); no modern value |
 
 Totals:
-- VERIFIED: 32
-- PARTIAL: 14
+- VERIFIED: 34
+- PARTIAL: 12
 - UNSOURCED: 4
