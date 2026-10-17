@@ -1068,3 +1068,91 @@ Done only when both signs ruled by one planet still carry a number after trikona
 - **Tiryangmukha (sideways):** commentary across pp.26–27 gives the mridu stars (Mrigashira, Revati, Chitra, Anuradha) plus Hasta, Swati, Punarvasu, Jyeshtha and Ashwini. That's 9 names; the verse says "dashakam" (ten), so the discrepancy is flagged. The commentary calls them "samadrishti" and says they suit wheels, chariots, ploughs, seed and animal work.
 
 **Gana, yoni and nadi** are in MC ch.6 (vivaha). The kuta tables there were verified earlier in Vedic's build (MC 6.21–34).
+
+---
+# Batch 11b (2026-10-17)
+
+## #1 (partial) Panchanga, tithi: MC ch.1 (shubhashubha prakarana) vv.4–5, Khemraj pp.3–4 (leaf = printed + 11; n14 = p.3, n15 = p.4)
+**v.4 (p.3), tithi classes:**
+
+| Class | Tithis |
+|---|---|
+| Nanda | 1, 6, 11 |
+| Bhadra | 2, 7, 12 |
+| Jaya | 3, 8, 13 |
+| Rikta | 4, 9, 14 |
+| Purna | 5, 10, 15 |
+
+- **Shukla paksha** (commentary): tithis 1–5 are inauspicious (weak Moon), 6–10 middling, 11–15 auspicious.
+- **Krishna paksha:** 1–5 auspicious, 6–10 middling, 11–15 inauspicious.
+- **Siddha yogas** (v.4 second half; commentary): these remove faults such as masa-shunya and dagdha.
+
+| Weekday | Siddha tithis |
+|---|---|
+| Friday | Nanda |
+| Wednesday | Bhadra |
+| Tuesday | Jaya |
+| Saturday | Rikta |
+| Thursday | Purna |
+
+- **Rikta (p.3, commentary on v.3):** tithis 4, 9 and 14 suit fire, killing, binding and weapons, and are inauspicious for auspicious acts.
+
+**v.5 (p.4), weekday tithis and stars to avoid (ghataka / dagdha):**
+
+| Weekday | Tithis to avoid | Star to avoid |
+|---|---|---|
+| Sunday | Nanda | Bharani |
+| Monday | Bhadra | Chitra |
+| Tuesday | Nanda | Uttarashadha |
+| Wednesday | Jaya | Dhanishtha |
+| Thursday | Rikta | Uttaraphalguni |
+| Friday | Bhadra | Jyeshtha |
+| Saturday | Purna | Revati |
+
+- Avoid these in auspicious work.
+
+**Tithi chakra (p.4, the editor's table):** tithi lords 1–15:
+- 1–8: Agni, Brahma, Gauri, Ganesha, Sarpa, Skanda, Surya, Shiva
+- 9–15: Durga, Yama, Vishve(deva), Hari, Kama, Shiva, Chandra
+- Amavasya (30): Pitara
+
+The table also gives a fruit name per tithi, e.g. 1 siddhi, 4 hani, 9 mrityuda, 14 ugra. It's a commentary table, so it's labelled as such.
+- Vara, nakshatra-yoga, karana and Vishti/Bhadra are **not yet transcribed** from MC ch.1.
+
+## #39 / #14 (adds) Sun's ingress into Aries and Capricorn (mundane): Prasna Marga Pt.2, Raman, ch. XXV, stanzas 41–54 (PDF pp.161–162 of "Prasna Marga 2.pdf"; the typed edition has no footer page here)
+- **Scope:** rainfall and crop prediction for the country (mundane), **not natal**. Usable for a "season / world" layer only.
+- **st.42–49:** effects by the star the Sun occupies at its Aries or Capricorn ingress. Examples:
+  - Aswini: normal rains
+  - Krittika: little rain, oppression by rulers
+  - Ardra: copious rain
+  - Swati: plentiful rain, prosperity
+  - Uttarashadha: scarcity of rain
+  - Revati: rains out of season, but no famine
+  - (Full list on the pages.)
+- **st.50–54:** effects by the tithi of the Aries ingress. Examples:
+  - 1st: no rain
+  - 4th: excessive downpour, floods
+  - 5th: heavy rain, good crops
+  - 6th: fighting
+  - 8th: proper rain, prosperous crops
+  - New or full moon: quarrels, wars, copious rain
+- **st.39–40:** the weekday on which the first tithi of the lunar month Chaitra falls gives the year's rain.
+  - Sunday: none in the first part of the year
+  - Monday: late, then abundant
+  - Tuesday: on hills
+  - Wednesday: good
+  - Thursday: deluge
+  - Friday: prosperity with deficient rain
+  - Saturday: disease, loss of crops
+- Natal sign-ingress and station rules are **still open**.
+
+## #34 (adds) Natural benefics and malefics, Saravali ch.4 v.9 (typed edition p.11)
+- Jupiter, Mercury and Venus are benefics. Saturn, Mars and the Sun are malefics.
+- Mercury with malefics and the waning Moon are also malefic. This agrees with BPHS 3.11 (batch 9b).
+- **Same page, vv.7–8, 12–14 (p.11):**
+  - Portfolios: Sun and Moon kings; Mercury prince; Mars army chief; Jupiter and Venus ministers; Saturn servant.
+  - Directions from the East: Sun, Venus, Mars, Rahu, Saturn, Moon, Mercury, Jupiter.
+  - Colours from the Sun: copper-red, white, blood-red, green, yellow, variegated, black.
+  - Deities: Fire, Water, Kartikeya, Vishnu, Indra, Sachi, Brahma.
+  - Sex: Moon and Venus female; Mercury and Saturn neutral; Jupiter, Sun and Mars male.
+  - Elements from Mars: fire, earth, ether, water, air.
