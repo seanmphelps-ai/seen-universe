@@ -1636,8 +1636,140 @@ The table also gives a fruit name per tithi, e.g. 1 siddhi, 4 hani, 9 mrityuda, 
   - Full, half, quarter or negligible strength gives full, medium, small or negligible effect.
   - Translator's note (p.236): for a Pisces native with Saturn in the 5th, weigh its 11th and 12th lordships and check Jupiter and the Moon.
 
+### #46 (completes) Dasa effects: BPHS tr. Santhanam Vol.2, ch.50 vv.1–89, pp.603–616 (image-checked; vv.22–28 were done in batch 11)
+- **vv.1–3 (p.603):** judge a rasi dasa by the strength of the rasi lord and whether it is a benefic or a malefic.
+  - Lord of full strength: full effects. Medium strength: medium effects. Little strength: little effect.
+- **vv.4–10 (p.604):**
+  - Malefics in the 8th, 5th or 9th from the dasa rasi: distress.
+  - Malefics in the 3rd or 6th from it: victory over enemies.
+  - Benefics in the 3rd or 6th: defeat.
+  - Benefics or malefics in the 11th: conquest and happiness.
+  - Dasa rasi occupied or owned by a benefic: good.
+  - Owned by a benefic but occupied by a malefic: good in the first part, bad in the latter.
+  - Owned by a malefic but occupied by a benefic: the same.
+  - Owned and occupied by a malefic: always bad.
+  - Owned and occupied by a benefic: always good.
+  - Owned by a benefic and occupied by both benefics and malefics: bad first, good later.
+- **vv.11–17 (pp.604–605):** check the rasi's disposition both at birth and during the dasa.
+  - Well disposed at both times: full good. At one time only: mixed. At neither: only bad.
+  - The Sanskrit of vv.11–16 gives house-by-house details. The translation summarises them, so I have not itemised them.
+- **vv.18–19 (p.605):**
+  - The dasa is favourable if the rasi holds a benefic and the rasi before it also holds one; adverse if the rasi holds a malefic.
+  - Benefics in the 5th and 9th are favourable; malefics there, the reverse.
+- **vv.20–21 (pp.605–606), Badhaka:**
+  - Aquarius, Taurus, Leo and Scorpio are the Badhaka houses of Aries, Cancer, Libra and Capricorn respectively, i.e. the 11th from a moveable sign.
+  - [SENSITIVE] A malefic in the house of the rasi lord or in its Badhaka: great sorrow, imprisonment and disease during the dasa.
+- **vv.29–32 (p.607), inimical rasis:**
+  - Taurus, Libra, Capricorn, Aquarius and Gemini are inimical to the Sun. The Moon and the other planets are reckoned similarly.
+  - A planet in an inimical rasi gives a dasa full of adversity.
+- **vv.33–34 (p.607):** the dasa of a planet is favourable if it is a rajayogakaraka, is hemmed between two benefics, or has benefics in the 2nd, 3rd and 4th from it. A malefic hemmed between benefics becomes favourable.
+- **vv.35–36 (p.608):**
+  - The dasa of a planet related to a friend or benefic at the start and end of the dasa is favourable.
+  - In an unfavourable dasa, a benefic's antardasa is favourable.
+  - Benefics in the 5th or 9th from the planet or rasi are favourable.
+- **vv.37–39 (p.608):**
+  - Benefics in a trikona from the dasa rasi or planet: favourable.
+  - A benefic dasa beginning in a benefic rasi: very favourable. An evil dasa beginning in a benefic rasi: also favourable.
+  - Loss of fortune if the dasa starts in a malefic rasi or its lord is debilitated.
+- **vv.40–41 (pp.608–609):** loss of fortune, wealth and crops, and disease, in the dasa of a rasi that:
+  - holds a debilitated planet;
+  - has a debilitated planet in the 5th or 9th; or
+  - has a debilitated lord or one related to a debilitated planet.
+- **v.42 (p.609):** four rasis from Aquarius belong to Rahu and four from Scorpio to Ketu. Rahu or Ketu in one of those rasis gives a beneficial dasa.
+- **vv.43–45 (p.609):** a planet's dasa that is otherwise favourable still brings displeasure of the government and loss of wealth in three cases:
+  - the planet is in a maraka house;
+  - the dasa ends in an inimical rasi; or
+  - the dasa ends when the dasa rasi is aspected by Venus or the Moon.
+- **vv.46–47 (p.609):** [SENSITIVE] loss of everything, imprisonment, "death", exile and great distress at the end of Rahu's dasa. This is certain if malefics are in the 5th and 9th from Rahu.
+- **vv.48–50 (p.610):**
+  - The same applies in the dasa of a rasi occupied by malefics such as Rahu.
+  - A maraka planet joined to the rasi at the start or end makes the dasa unproductive.
+  - If that planet is Rahu: imprisonment or loss of wealth.
+- **vv.51–52 (p.610):**
+  - The house that Rahu occupies is harmed at the start of the dasa: in the 2nd, loss of wealth.
+  - Moon and Venus in the 12th: losses through the government.
+  - [SENSITIVE] Mars and Ketu there: death or danger from fire.
+  - Venus and Moon in the 2nd at the start of the dasa: acquisition of a kingdom.
+  - Moon and Venus in the 6th, 8th or 12th: only adverse effects.
+- **vv.53–55 (p.611), Argala:** the dasa of a rasi with auspicious, unobstructed argala, or aspected by a benefic, is favourable. A rasi with obstructed (vipreet) argala or none is not.
+- **vv.56–59 (p.611):**
+  - Gains in the dasa of a rasi occupied or aspected by its benefic lord, or by an exalted planet.
+  - Loss if such a planet is in the 12th from the rasi.
+  - Malefics in the 5th and 9th: good results destroyed, distress to children and father, mental agony.
+  - Evil in the dasa of a rasi occupied by the 8th lord, the 12th lord, the Sun, Mars or Saturn.
+- **vv.60–63 (p.612):**
+  - Rahu or Ketu in a trikona to the rasi: distress to children, exile and disturbance.
+  - Malefic, debilitated or combust planets in the 6th or 8th: danger from enemies, the king and disease.
+  - A malefic or debilitated planet in the 4th: loss of house and fields.
+  - In the 4th: Mars brings heart pains, Saturn danger from government, Rahu poison and thieves.
+- **vv.64–66½ (p.612):**
+  - Rahu in the 10th: pilgrimage.
+  - Gains, religious rites, renown and success in the dasa of the rasi 10th, 11th or 9th from the one occupied by benefics.
+  - Children, happiness from the wife and recognition when the 5th, 7th and 9th are occupied by benefics or exalted planets.
+  - The houses whose lords occupy the dasa rasi grow.
+- **vv.67–70 (p.613):**
+  - Rasi occupied by Jupiter, Venus or a trikona lord: well-being, opulence, devotion.
+  - An exalted planet or trikona lord in the 4th from it: conveyances and cattle.
+  - The Moon gives grains and ghee; the full Moon treasure and jewels; Venus enjoyment of music.
+- **vv.71–72 (p.613):**
+  - Jupiter in the 4th from the rasi: a palanquin, success, a kingdom.
+  - A rasi with yoga between the lagna lord and the 9th and 10th lords, or holding an exalted planet or benefics: rise to high position.
+- **vv.73–77 (p.614):** nakshatra dasa effects depend on 18 conditions of the planet:
+  - dignity: deep exaltation, exaltation, moolatrikona, own sign, adhimitra, natural friend, tatkalika friend, neutral, enemy, adhisatru, deep debilitation, debilitation;
+  - placement: own varga, kendra, trikona;
+  - war and combustion: defeated in planetary war, deep combustion.
+- **vv.78–83½ (pp.614–615):**
+  - Deep exaltation: kingdom, enjoyment and property.
+  - Exaltation: health, opulence, glory, with some possibility of disease.
+  - [SENSITIVE] Deep debilitation is "rikta" (void): disease, loss and danger of death.
+  - Between exaltation and debilitation, ascending: "avrohini" (descending) or "rohini".
+    - The translator's wording is self-contradictory as printed: he calls the dasa from exaltation towards debilitation avrohini (descending), and the dasa from debilitation towards exaltation rohini (ascending).
+  - In exaltation or a friend's sign: "madhya", moderately good.
+  - Debilitated and in an enemy navamsa: "adhama", danger and distress.
+- **vv.84–87 (p.615):**
+  - The dasa of other planets is auspicious if the 9th lord and Jupiter are in yoga or kendra, or related to the house concerned.
+  - A yoga planet free from retrogression and without combustion gives good results.
+  - The planets' weakness, inabilities and yogas are also weighed; dasas give full, medium or little effects accordingly.
+- **vv.88–89½ (p.616):**
+  - Shirshodaya, ubhayodaya and prishthodaya rasis give results at the start, middle and end of the dasa respectively.
+  - In the antardasa of natural or temporal friends results are auspicious; of enemies, adverse.
+- vv.90–96 (antardasas of rasis, p.616 onward): only the heading was read, not the verses.
+
+### #34 (completes) Gochara counted from the janma rashi (the natal Moon sign): Muhurta Chintamani ch.4 (Gochara-prakarana) vv.1–8, pp.51–53, Khemraj edition with Hindi tika (image-checked, leaves n62–n64)
+- **vv.1–4 (p.51) and the Vedhachakra table (p.52):** houses are counted from the janma rashi. Each pair below is (good house / the house that obstructs it, its vedha):
+  - **Sun:** 6/12, 10/4, 3/9, 11/5.
+  - **Mars, Saturn, Rahu:** 6/9, 11/5, 3/12.
+  - **Moon:** 10/4, 3/9, 11/8, 1/5, 6/12, 7/2.
+  - **Mercury:** 2/5, 4/3, 6/9. The table cells are legible; the rest of the Mercury row was not legible at my resolution and is omitted.
+  - **Jupiter and Venus:** the rows are printed, but the vedha row was cut off in my crop. Not recorded.
+- **Tika note (p.51):**
+  - Without vedha these planets are good. With vedha the good effect is lost.
+  - There is no vedha between Sun and Saturn, or between Moon and Mercury ("father and son").
+  - Reverse vedha (vamavedha): a planet in a bad house that is obstructed by one in the vedha house becomes good.
+  - In the bright half (shukla paksha), the Moon in the 2nd, 5th and 9th is good. In the dark half (krishna paksha) the tika's statement is printed with partly broken numbers (6, 8, 4), so I do not rely on it.
+- **v.5 (p.52):** one view counts vedha from the janma rashi, the other from the occupied rashi. Kashyapa says vedha applies only between the Himalaya and the Vindhya, not in all lands.
+- **v.6 (p.52), eclipse in the nth rashi from the janma rashi** (Hindi tika: results last six months):
+  - [SENSITIVE] Eclipse in the janma nakshatra: "nidhana" (death).
+  - Houses 1–12 from the janma rashi, in order:
+    1. bodily injury
+    2. loss
+    3. wealth
+    4. disease
+    5. trouble to children
+    6. happiness
+    7. trouble to the wife
+    8. [SENSITIVE] death
+    9. loss of honour
+    10. happiness
+    11. gain
+    12. destruction
+  - Remedies: japa, gifts of gold and a cow, and shanti. Some say the inauspicious eclipse should simply not be looked at.
+- **v.7 (p.52), Chandra-bala qualifier:** a well-placed Moon still gives bad results if it is hemmed between malefics, joined with a malefic, or in the 7th from one. An ill-placed Moon gives good results in a benefic or adhimitra amsha, or when aspected by Jupiter.
+- **v.8 (p.53):** if the Moon is good by gochara on shukla pratipada, the whole bright fortnight is good. If good on krishna pratipada, the dark fortnight is good. Reversed placements give the reverse. Chandra-bala applies to the paksha in times of difficulty (sankata).
+- **Grahadana table (p.53):** the gifts for each planet are printed. Not transcribed: the columns are not legible at my resolution.
+
 ---
-## Final coverage summary (after batch 14a, 2026-10-17)
+## Final coverage summary (after batch 14b)
 Status key:
 - VERIFIED: rules were written from page images.
 - PARTIAL: some sub-rules were image-verified and others are missing.
@@ -1678,7 +1810,7 @@ Status key:
 | 31 | Chara karakas | VERIFIED |  |
 | 32 | Arudhas | VERIFIED | JS |
 | 33 | Gandanta | PARTIAL | BPHS ch.9 |
-| 34 | Chandra bala | PARTIAL | House-from-Moon count not found |
+| 34 | Chandra bala | VERIFIED | MC 4.1–8 pp.51–53 (Jup/Ven vedha rows not legible) |
 | 35 | Upagrahas | VERIFIED |  |
 | 36 | Bhava chalit | PARTIAL |  |
 | 37 | Varshaphala | UNSOURCED | English texts only |
@@ -1690,13 +1822,13 @@ Status key:
 | 43 | D9 couple | PARTIAL | JP XIV |
 | 44 | Kuja dosha | PARTIAL | Later-tradition label |
 | 45 | Dasha sandhi | PARTIAL | Dasachidra and Mandukagamana verified (JP XVII); sandhi proper unsourced |
-| 46 | Dasha phala | PARTIAL | BPHS2 ch.50 vv.22–28 |
+| 46 | Dasha phala | VERIFIED | BPHS2 ch.50 vv.1–89 (vv.90–96 heading only) |
 | 47 | Karakatva | VERIFIED | BPHS 32 vv.18–24; PD ch.2 vv.1–7 |
 | 48 | Dignity/maitri | VERIFIED |  |
 | 49 | Placement effects | VERIFIED | BPHS ch.24 vv.1–148, all twelve lords |
 | 50 | Ayanamsha | PARTIAL | Translator notes only |
 
 Totals:
-- VERIFIED: 30
-- PARTIAL: 16
+- VERIFIED: 32
+- PARTIAL: 14
 - UNSOURCED: 4
