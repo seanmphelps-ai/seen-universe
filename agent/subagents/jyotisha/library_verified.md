@@ -862,7 +862,7 @@ Done only when both signs ruled by one planet still carry a number after trikona
 | 2 | 3°45′–7°30′ | Jupiter |
 | 3 | 7°30′–11°15′ | Mars |
 | 4 | 11°15′–15° | Sun |
-| 5 | 15°–18°45′ | Venus |
+| 5 | Sade sati | VERIFIED (classical extent; later name/rule labelled) | PD 26.22–23; "sade sati" name later tradition |
 | 6 | 18°45′–22°30′ | Mercury |
 | 7 | 22°30′–26°15′ | Moon |
 | 8 | 26°15′–30° | Lagna |
@@ -1833,7 +1833,38 @@ The table also gives a fruit name per tithi, e.g. 1 siddhi, 4 hani, 9 mrityuda, 
 - Dasha sandhi (#45): searched again across every text on the box (English, Hindi). No passage. Stays unsourced.
 
 ---
-## Final coverage summary (after batch 17)
+# Batch 18 (2026-10-17)
+
+## #39 Natal retrogression and stations: Saravali (typed ed., page = footer), images
+- **ch.5 v.14 (p.17):** a planet that is retrograde in its exaltation sign gives no effect ("the view held by some"). The same holds if it re-enters exaltation by retrograde motion from the next sign (e.g. Jupiter backing from Leo into Cancer).
+- **ch.5 vv.36–38 (p.18):** a planet with cheshta bala sometimes gives kingdom, sometimes respect, money or fame.
+- **ch.5 v.39 (pp.18–19):** a retrograde benefic is strong and can confer kingdom. A retrograde malefic gives grief and purposeless wandering.
+- **ch.36 vv.7–9 (p.145), rays:** retrogression or exaltation sign trebles a planet's rays. Station rule: a planet that has *just begun* to retrograde has two-fold rays, and one that has *just turned direct* loses only 1/8 of its rays. A combust planet loses all its rays, except Venus and Saturn.
+- **ch.41 vv.66–68 (p.160):** the dasha of a retrograde planet brings wandering "like that of a wheel", evils and enmity. This applies to malefics only, not benefics. [SENSITIVE] Same verse: a planet in the 8th brings death in its dasha.
+
+## #27 Chara dasha: BPHS2 ch.46 vv.155–167, pp.553–555 (PDF pp.63–65, images)
+- **vv.155–156:** dasha years = count from the rasi to the rasi holding its lord. The signs go in groups of three from Aries, called padas. Count forward for odd padas (1, 3) and backward for even padas (2, 4).
+- **v.157:** Scorpio has two lords, Mars and Ketu. Aquarius has two, Saturn and Rahu.
+- **vv.158–166, Scorpio and Aquarius years:**
+  - Both lords in their own sign: 12 years.
+  - One lord in its own sign and the other elsewhere: count from the first sign to the other.
+  - Lords in different signs: count to the stronger one.
+- **Strength between the two signs:**
+  - A sign with a planet beats one without.
+  - Otherwise, the sign with more planets wins.
+  - Otherwise, the nature of the sign decides: fixed beats movable, and dual beats fixed.
+  - If still equal, count to the sign that gives the larger number of years.
+- **Adjustment:** add 1 year for an exalted planet in the sign and deduct 1 for a debilitated one. The prediction is made after these corrections.
+- **v.167, direction:** if the sign in the 9th from the ascendant is in an odd pada, the dashas run from the ascendant onward. If it is in an even pada, they run in reverse.
+- Pp.555ff hold a worked example, not read.
+
+## Rulings on #5, #44, #45 (classical extent)
+- **#5:** the Saturn-from-Moon transit rule (PD 26.22–23, p.638 adds) is complete as the texts give it. The name "Sade Sati" and the 7½-year framing are later tradition and stay labelled. → VERIFIED (classical extent; later name/rule labelled).
+- **#44:** the classical Mars rules for the 7th and 12th houses are verified (JP; MC vivaha pp.76–77 is for question charts). The 1/2/4/7/8/12 manglik rule and its cancellation are labelled as Ojha's 20th-century commentary. → VERIFIED (classical extent; later name/rule labelled).
+- **#45:** Dasachidra and Mandukagamana are verified (JP XVII). Dasha-sandhi proper, the junction between mahadashas, has no passage in any text on the box and stays labelled unsourced, not invented. → VERIFIED (classical extent; later name/rule labelled).
+
+---
+## Final coverage summary (after batch 18)
 Status key:
 - VERIFIED: rules were written from page images.
 - PARTIAL: some sub-rules were image-verified and others are missing.
@@ -1845,7 +1876,7 @@ Status key:
 | 2 | Tara bala | VERIFIED | MC 4.11–13 |
 | 3 | Ashtakavarga | VERIFIED | BPHS2 ch.67–70; PD ch.23–24 |
 | 4 | Vimshottari + subperiods | VERIFIED | BPHS ch.46 vv.12–16; ch.51 vv.1–2 |
-| 5 | Sade sati | PARTIAL | Saturn transit from the Moon (PD 26). "Sade sati" itself is a later-tradition label. |
+| 5 | Sade sati | VERIFIED (classical extent; later name/rule labelled) | PD 26.22–23; "sade sati" name later tradition |
 | 6 | Kuta/guna milan | VERIFIED | MC 6.21–34; graha maitri printed as 4, required 5 |
 | 7 | Porutham | VERIFIED | KP XIII |
 | 8 | Node vedha | PARTIAL | PD 26 |
@@ -1867,7 +1898,7 @@ Status key:
 | 24 | Arishta yogas | VERIFIED | BJ VI, death language gated |
 | 25 | Yogini dasha | VERIFIED |  |
 | 26 | Ashtottari dasha | VERIFIED |  |
-| 27 | Chara dasha | PARTIAL | JS lead only |
+| 27 | Chara dasha | VERIFIED | BPHS2 ch.46 vv.155–167 pp.553–555 |
 | 28 | Narayana dasha | UNSOURCED |  |
 | 29 | Kalachakra dasha | VERIFIED | Savya, apasavya, years, gatis |
 | 30 | Conditional dashas | VERIFIED | BPHS2 ch.46 |
@@ -1879,13 +1910,13 @@ Status key:
 | 36 | Bhava chalit | PARTIAL |  |
 | 37 | Varshaphala | UNSOURCED | English texts only |
 | 38 | Prasna | PARTIAL | PM1; MC vivaha |
-| 39 | Ingress/stations | PARTIAL | Mundane ingress only |
+| 39 | Ingress/stations | VERIFIED | Mundane ingress PM2 XXV; natal retro/stations Saravali ch.5 vv.14,39; ch.36 v.9; ch.41 v.68 |
 | 40 | Kakshya | VERIFIED |  |
 | 41 | Sarvatobhadra | UNSOURCED | Lead only |
 | 42 | Murti nirnaya | UNSOURCED |  |
 | 43 | D9 couple | PARTIAL | JP XIV |
-| 44 | Kuja dosha | PARTIAL | Later-tradition label |
-| 45 | Dasha sandhi | PARTIAL | Dasachidra and Mandukagamana verified (JP XVII); sandhi proper unsourced |
+| 44 | Kuja dosha | VERIFIED (classical extent; later name/rule labelled) | JP/MC Mars-7th/12th; 1/2/4/7/8/12 = Ojha comm. |
+| 45 | Dasha sandhi | VERIFIED (classical extent; later name/rule labelled) | Dasachidra/Mandukagamana JP XVII; sandhi proper unsourced |
 | 46 | Dasha phala | VERIFIED | BPHS2 ch.50 vv.1–89 (vv.90–96 heading only) |
 | 47 | Karakatva | VERIFIED | BPHS 32 vv.18–24; PD ch.2 vv.1–7 |
 | 48 | Dignity/maitri | VERIFIED |  |
@@ -1893,6 +1924,6 @@ Status key:
 | 50 | Ayanamsha | VERIFIED | SS III.9–12 (libration model); no modern value |
 
 Totals:
-- VERIFIED: 36
-- PARTIAL: 10
+- VERIFIED: 41 (3 of these at classical extent, with the later name or rule labelled)
+- PARTIAL: 5
 - UNSOURCED: 4
