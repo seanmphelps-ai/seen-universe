@@ -1156,3 +1156,123 @@ The table also gives a fruit name per tithi, e.g. 1 siddhi, 4 hani, 9 mrityuda, 
   - Deities: Fire, Water, Kartikeya, Vishnu, Indra, Sachi, Brahma.
   - Sex: Moon and Venus female; Mercury and Saturn neutral; Jupiter, Sun and Mars male.
   - Elements from Mars: fire, earth, ether, water, air.
+
+---
+## Batch 12 (page-image verified 2026-10-17)
+
+### #29 Kalachakra — apasavya group (BPHS tr. Santhanam Vol.2, ch.46, pp.533–535; image-checked)
+- vv.71–72: the apasavya chakra counts the signs in reverse, starting from Scorpio. Rohini, Magha, Visakha and Sravana share the Rohini padas.
+- Rohini pada 1 (v.73): Deha Cancer, Jeeva Sagittarius. Dasa signs: Sag, Cap, Aqu, Pis, Ari, Tau, Gem, Leo, Lib.
+- Rohini pada 2 (v.74): Deha Libra, Jeeva Virgo. Dasa signs: Vir, Lib, Sco, Pis, Aqu, Cap, Sag, Sco, Sco. (Copied as printed; the repeated Sco is in the print.)
+- Rohini pada 3 (v.75): Deha Aquarius, Jeeva Virgo. Dasa signs: Vir, Leo, Can, Gem, Tau, Ari, Sag, Cap, Aqu.
+- Rohini pada 4 (v.76): Deha Scorpio, Jeeva Pisces. Dasa signs: Pis, Ari, Tau, Gem, Leo, Can, Vir, Lib, Sco.
+- v.77: Mrigasira, Ardra, P.Phalguni, U.Phalguni, Anuradha, Jyeshtha, Dhanishta and Satabhisha share the Mrigasira padas.
+- Mrigasira pada 1 (v.78): Deha Cancer, Jeeva Pisces. Dasa signs: Pis, Aqu, Cap, Sag, Ari, Tau, Gem, Leo, Can.
+- Mrigasira pada 2 (v.79): Deha Taurus, Jeeva Gemini. Dasa signs: Gem, Tau, Ari, Sag, Cap, Aqu, Pis, Ari, Tau.
+- Mrigasira pada 3 (v.80): Deha Capricorn, Jeeva Gemini. Dasa signs: Gem, Leo, Can, Vir, Lib, Sco, Pis, Aqu, Cap.
+- Mrigasira pada 4 (v.81): Deha Aries, Jeeva Sagittarius. Dasa signs: Sag, Sco, Lib, Vir, Leo, Can, Gem, Tau, Ari.
+- v.82: the text says this was taught by Mahadeva to Parvati.
+- v.84 (p.535): dasa years by sign lord are Sun 5, Moon 21, Mars 7, Mercury 9, Jupiter 10, Venus 16 and Saturn 4. This verse supports the p.536 table.
+
+### #45 Dasachidra / Kalachakra gati timing (Jataka Parijata tr. V. Subrahmanya Sastri, Vol.II, Adh.XVII; image-checked)
+- p.994, sl.82: if the lord of the rasi in question is in a moveable sign or a moveable navamsa, and the chakra is produced by a moveable sign, the native goes to a foreign country.
+- p.994, sl.83: the stay abroad lasts as long as that chakra lasts. If only one of the two conditions holds, the astrologer weighs the balance of forces (translator's wording).
+- p.997, sl.92–93½: when a Simhavalokana coincides with a Dasachidra, the effects are fever, loss of place, trouble to a loved relation or to people of the native's status, danger from water (such as a well), poison, fire or weapons, and a fall from a vehicle.
+- p.997, sl.94½ (definition): Dasachidra is the dasa, bhukti or apahara of a malefic, eclipsed, debilitated or ill-placed planet.
+- p.997, sl.95½: [SENSITIVE: death language] When Mandukagamana occurs, the text says a revered person or one of the parents may die. It also names danger from poison, weapons, fire, fever and incendiary brigands. This is the text's own wording, recorded only as a classical statement and not as a prediction.
+- p.997, sl.96: a Mandukagamana in a savya chakra brings distress to people (the line continues on p.998, which was not read).
+- Dasha-sandhi proper (the junction between two mahadashas) was NOT found in BPHS2 English, Phaladeepika (Ojha) or JP Vol.II. That part stays UNSOURCED.
+
+### #49 Bhava lords — ascendant lord in houses 1–12 (BPHS tr. Santhanam Vol.1, ch.24 vv.1–12, pp.189–192; image-checked)
+- The lagna lord's house position gives these results:
+  - 1st: physical happiness, prowess, intelligence, fickle mind, two wives, unions with other women.
+  - 2nd: gainful, scholarly, happy, good qualities, religious, honourable, many wives.
+  - 3rd: lion-like valour, all kinds of wealth, honour, two wives, intelligence, happiness.
+  - 4th: paternal and maternal happiness, many brothers, lustful, virtuous, charming.
+  - 5th: middling happiness from children, loss of the first child, honourable, quick to anger, dear to the king.
+  - 6th, and related to a malefic: no physical happiness; trouble from enemies if no benefic aspects.
+  - 7th, and a malefic: [SENSITIVE] the text says the wife "will not live (long)". If a benefic: wandering, penury and dejection, or kingship if strong.
+  - 8th: accomplished scholar, sickly, thievish, very angry, a gambler, takes others' wives.
+  - 9th: fortunate, dear to people, a devotee of Vishnu, skilful, eloquent, with wife, sons and wealth.
+  - 10th: paternal happiness, royal honour, fame and self-earned wealth "without doubt".
+  - 11th: always gains, good qualities, fame and many wives.
+  - 12th, without benefic aspect or conjunction: no physical happiness, unfruitful spending, much anger.
+- Translator's notes (Santhanam):
+  - Lagna lord in lagna: fearless and long-lived.
+  - In the 6th: Scorpio and Taurus lagnas are favoured for freedom from disease.
+  - In the 8th: [SENSITIVE] balarishta is mentioned. Aries and Libra lagnas are to be judged after further scrutiny.
+- 2nd lord in lagna (v.13, p.192): sons and wealth, inimical to family, lustful, hard-hearted, does others' jobs.
+- 2nd lord in the 2nd (v.14): wealthy, proud, two or more wives, no progeny.
+- With the 5th lord (batch 11), #49 now covers the 1st and 5th lords and part of the 2nd.
+
+### Search results, unsourced in the English texts on the box
+- #28 Narayana dasa: the Suryanarain Rao (1955) Jaimini Sutras and the DLI Jaimini Sutras OCR have no "Narayana" dasa passage. The OCR hit is the translator's preface. UNSOURCED.
+- #37 Varshaphala (Tajika): JP Vol.II hit p.149 is an index line ("Varshaphalam ix, 10"). The JP Vol.I OCR has no varshaphala passage at Adh.IX, and Prasna Marga 2 has no Muntha or Tajika. The Tajika Nilakanthi Sanskrit edition was not read. UNSOURCED (in English).
+- #42 Murti nirnaya: the MC Khemraj p.110 and Phaladeepika hits are unrelated (travel and amsha effects). There are no gold, silver, copper or iron murti verses in the MC OCR. UNSOURCED.
+
+---
+## Final coverage summary (after batch 12, 2026-10-17)
+Status key:
+- VERIFIED: rules were written from page images.
+- PARTIAL: some sub-rules were image-verified and others are missing.
+- UNSOURCED: no image-verified passage in the texts on the box.
+- NOT VERIFIED: OCR leads exist but no page image was checked in batches 1–12.
+
+| # | Technique | Status | Notes |
+|---|---|---|---|
+| 1 | Panchanga | PARTIAL | Tithi only (MC ch.1). Vara, yoga, karana and Vishti not done. |
+| 2 | Tara bala | NOT VERIFIED | |
+| 3 | Ashtakavarga | VERIFIED | BPHS2 ch.67–70; PD ch.23–24 |
+| 4 | Vimshottari subperiods | NOT VERIFIED | |
+| 5 | Sade sati | PARTIAL | Saturn transit from the Moon (PD 26). "Sade sati" itself is a later-tradition label. |
+| 6 | Kuta/guna milan | NOT VERIFIED | Porutham (#7) is verified instead. |
+| 7 | Porutham | VERIFIED | KP XIII |
+| 8 | Node vedha | PARTIAL | PD 26 |
+| 9 | Gochara dignity | NOT VERIFIED | |
+| 10 | Nakshatra lore | VERIFIED | BPHS ch.3; MC ch.2 |
+| 11 | Graha avasthas | VERIFIED | BPHS ch.45 |
+| 12 | Combustion/yuddha | VERIFIED | SS; BPHS2 ch.79 |
+| 13 | Drishti | VERIFIED | |
+| 14 | Eclipse/sankranti | PARTIAL | PD 26; PM2 ch.XXV |
+| 15 | Muhurta windows | VERIFIED | KP pp.176–177 |
+| 16 | Shadbala | VERIFIED | BPHS ch.27–28 |
+| 17 | Vargas | VERIFIED | BPHS ch.6 |
+| 18 | Chandra yogas | VERIFIED | |
+| 19 | Surya yogas | VERIFIED | |
+| 20 | Pancha mahapurusha | VERIFIED | |
+| 21 | Raja/dhana yogas | PARTIAL | BPHS ch.39 only |
+| 22 | Viparita raja | VERIFIED | |
+| 23 | Nabhasa yogas | VERIFIED | BJ XII |
+| 24 | Arishta yogas | VERIFIED | BJ VI, death language gated |
+| 25 | Yogini dasha | VERIFIED | |
+| 26 | Ashtottari dasha | VERIFIED | |
+| 27 | Chara dasha | PARTIAL | JS lead only |
+| 28 | Narayana dasha | UNSOURCED | |
+| 29 | Kalachakra dasha | VERIFIED | Savya, apasavya, years, gatis |
+| 30 | Conditional dashas | VERIFIED | BPHS2 ch.46 |
+| 31 | Chara karakas | VERIFIED | |
+| 32 | Arudhas | VERIFIED | JS |
+| 33 | Gandanta | PARTIAL | BPHS ch.9 |
+| 34 | Chandra bala | PARTIAL | House-from-Moon count not found |
+| 35 | Upagrahas | VERIFIED | |
+| 36 | Bhava chalit | PARTIAL | |
+| 37 | Varshaphala | UNSOURCED | English texts only |
+| 38 | Prasna | PARTIAL | PM1; MC vivaha |
+| 39 | Ingress/stations | PARTIAL | Mundane ingress only |
+| 40 | Kakshya | VERIFIED | |
+| 41 | Sarvatobhadra | UNSOURCED | Lead only |
+| 42 | Murti nirnaya | UNSOURCED | |
+| 43 | D9 couple | PARTIAL | JP XIV |
+| 44 | Kuja dosha | PARTIAL | Mars in 1/2/4/7/8/12 is a later-tradition label |
+| 45 | Dasha sandhi | PARTIAL | Dasachidra and Mandukagamana verified (JP XVII); sandhi proper unsourced |
+| 46 | Dasha phala | PARTIAL | BPHS2 ch.50 vv.22–28 |
+| 47 | Karakatva | NOT VERIFIED | |
+| 48 | Dignity/maitri | VERIFIED | |
+| 49 | Placement effects | PARTIAL | Lords of the 1st and 5th done; 2nd begun |
+| 50 | Ayanamsha | PARTIAL | Translator notes only |
+
+Totals:
+- VERIFIED: 24
+- PARTIAL: 17
+- UNSOURCED: 4
+- NOT VERIFIED: 5
