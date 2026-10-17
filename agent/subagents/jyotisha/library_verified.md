@@ -431,3 +431,93 @@ Editions as in batches 1–2. BJ = Brihat Jataka, tr. N. Chidambaram Iyer (archi
 - Ojha's commentary on PD 26.25 says the Sun and Mars give their special results in the first 10° of a sign, Jupiter and Venus at 10–20°, and the Moon and Saturn at 20–30°. Mercury and Rahu act alike throughout (1–30°).
 - Ojha's footnote: Muhurta Chintamani and other texts raise a doubt about whether the vedha planet is counted from the natal Moon or from the transiting planet, and they also treat viparita vedha. Ojha declines to reconcile them.
 - Implication: vedha reference-point handling is a flagged textual disagreement, not settled.
+
+---
+# Batch 4 (2026-10-17)
+
+Page offsets found on the images:
+- PD Ojha: leaf n184 = p.186, so leaf = printed − 2 in ch.8. In ch.26 (pp.635–642) leaf = printed.
+- MC Khemraj (archive wzIF_muhurta-chintamani-khemraj): leaf n60 = p.49 (prakarana 3), so leaf = printed + 11. That page is the karana-sankranti page Vedic cited as MC 3.14–17 p.49, so the mapping matches. Offsets may drift; check each page's header.
+
+## #12 (adds) Planetary war: SS ch. VII "Of Planetary Conjunctions", vv.18–23, pp.199–200
+- Contact of the discs is "ullekha"; separation is "bheda".
+- An encounter (yuddha) is "ray-obliteration" (amsuvimarda) when the rays mingle.
+- Under 1° apart it is "apasavya" (dexter), if one of the two is faint.
+- Over 1° apart, with both powerful, it is samagama (conjunction), not war.
+- Loser (vanquished, vijita): covered, faint, without brilliancy, rough, colourless, or "struck down", or situated to the south.
+- Winner (jayin): north, brilliant, large, or even south if powerful.
+- Very close but both brilliant: samagama. Both very small: kuta, and both struck down: vigraha.
+- v.23: Venus is generally victor, whether north or south.
+- Burgess's note (p.200): these verses only sketch the conditions, and the full astrological criteria lie outside SS.
+- Implementation consequence:
+  - The classical test is under 1° separation plus brightness and latitude (north wins). It is not longitude order.
+  - This contradicts the "lesser longitude wins" note in BPHS1 p.125 (translator).
+  - Sun and Moon are not addressed here.
+  - SS gives no numeric brightness rule. Treat brightness as not_evaluated unless a magnitude source is adopted and declared.
+
+## #30 (adds) Remaining conditional dashas: BPHS2 ch.46
+**30.4 Shatabdika** (vv.32–34, pp.521–522)
+- Use it when the lagna is vargottama (same sign in rasi and navamsa).
+- Count from Revati to the Janma nakshatra and divide by 7. Order: Sun, Moon, Venus, Mercury, Jupiter, Mars, Saturn. Rahu and Ketu have no dasha.
+- Periods: 5, 5, 10, 10, 20, 20, 30 years (100 in total). The table is on p.522.
+
+**30.5 Chaturashiti sama** (vv.35–36, p.523)
+- Use it when the lord of the 10th is in the 10th.
+- Count from Swati to the Janma nakshatra and divide by 7. Order: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn. Rahu and Ketu have no dasha.
+- Each lord gets 12 years (84 in total).
+
+**30.6 Dwisaptati sama** (vv.37–39, p.523)
+- Use it when the lagna lord is in the lagna or the 7th.
+- Count from Moola to the Janma nakshatra and divide by 8. Order: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu. Ketu has no dasha.
+- Each lord gets 9 years (72 in total).
+
+- Shashtihayani: **not yet checked.**
+- Kalachakra (pp.529–553): **not yet checked.** It is long and table-heavy and needs its own batch.
+
+## #3 Ashtakavarga transit use: BPHS2 ch.70 (rekhas × yoga pinda)
+**3.1 General** (p.882, before v.7)
+- Multiply the number of rekhas in a house by the planet's Yoga Pinda (Rasi Pinda + Graha Pinda), then divide by 27.
+- The remainder, counted from Ashwini, gives a nakshatra. While Saturn transits that nakshatra, that bhava is harmed.
+
+**3.2 Father, from the Sun's ashtakavarga** (vv.7–9, p.882)
+- Take the rekhas in the 9th from the Sun, multiply by the Yoga Pinda and divide by 27.
+- Saturn transiting the resulting nakshatra, or its trines (the 10th and 19th stars from it), brings distress to the father.
+- vv.12–14 (p.884): read in OCR only, **not image-checked**. They appear to add father-death conditions involving Rahu, Saturn or Mars in the 9th from the Sun.
+- **Sensitive (death prediction). Gate it behind the separate decision before any user exposure.**
+- Prerequisite: Rasi Pinda and Graha Pinda multipliers. These are in BPHS ch.67–69 and are **not yet checked**.
+
+## #44 Mangal dosha: classical search, Mars in 1/2/4/7/8/12
+Search covered BPHS, BJ, SAR, PD and JP. For MC, only the English-text search was possible, so MC is not covered.
+- **No classical verse defines "mangal/kuja dosha" or names the 1/2/4/7/8/12 set.**
+
+**44.1 Saravali, Mars by house** (SAR ch.30 "Effects of Planets in Bhavas", vv.26–37, p.102)
+- 1st: cruel, short-lived, injured body.
+- 2nd: poor, ugly face, bad company.
+- 4th: no relatives or conveyances, lives in others' houses.
+- 7th: "will lose his wife", diseases, sinful.
+- 8th: diseases, short-lived.
+- 12th: eye disease, "will kill his wife", imprisonment.
+- Only the 7th and 12th verses name the wife.
+
+**44.2 Brihat Jataka** (ch. XXIII v.5, p.205)
+- With Venus and the Moon in one sign and Saturn and Mars in the 7th from lagna: neither wife nor sons.
+- With male and female planets in one sign and Saturn and Mars in the 7th, aspected by benefics: the wife will be older and the man will marry late.
+- v.7: Venus and Mars in the 7th aspected by malefics give swelling illness.
+
+**44.3 JP**: XIV.5 p.846, Venus and Mars in the 7th means bereft of a wife (#43.2).
+
+**44.4 The Manglik rule itself: Ojha's Hindi commentary on PD 8.9, pp.186–187. This is commentary, not Mantreswara's verse.**
+- Mars in the 7th makes one "prabal manglik" and the wife may die. If the wife is also manglik, the dosha is cancelled. A manglik should marry a manglik.
+- Malefics in the 1st, 2nd, 4th, 7th, 8th and 12th: Ojha lists Mars, Saturn, Rahu, Ketu and the Sun. He gives a reason per house:
+  - 2nd: kutumba (family).
+  - 4th: home.
+  - 7th: wife.
+  - 8th: the marital-body house.
+  - 12th: bed-pleasure.
+- Judge this from the lagna, from the Moon, and from Venus.
+- Status: **the 1/2/4/7/8/12 manglik rule with mutual cancellation is VERIFIED only as Ojha's 20th-century commentary.** Label it "commentary/regional tradition", not classical.
+
+## #41 Lead (not a verification)
+- PD Ojha p.642 ("Nakshatra gochara") gives a 7×7-line 28-star chart that includes Abhijit, with the stars arranged from Krittika in the north-east. This is a Sapta-shalaka-type vedha chart, **not the Sarvatobhadra chakra.**
+- Ojha p.641 says Mantreswara did not tabulate nakshatra gochara and that it comes from other acharyas.
+- #41 remains UNVERIFIED.
