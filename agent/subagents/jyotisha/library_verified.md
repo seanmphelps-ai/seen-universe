@@ -521,3 +521,117 @@ Search covered BPHS, BJ, SAR, PD and JP. For MC, only the English-text search wa
 - PD Ojha p.642 ("Nakshatra gochara") gives a 7×7-line 28-star chart that includes Abhijit, with the stars arranged from Krittika in the north-east. This is a Sapta-shalaka-type vedha chart, **not the Sarvatobhadra chakra.**
 - Ojha p.641 says Mantreswara did not tabulate nakshatra gochara and that it comes from other acharyas.
 - #41 remains UNVERIFIED.
+
+---
+# Batch 5 (2026-10-17)
+
+## #44 / #38 Muhurta Chintamani, vivaha prakarana (ch.6), Khemraj pp.76–77 (leaf = printed + 11, confirmed)
+These are **prashna-lagna (query-chart) rules**, not natal rules.
+
+**MC 6.2** (p.76)
+- At a marriage query, the Moon in the 3rd, 5th, 7th, 10th or 11th from the prashna lagna and aspected by Jupiter: marriage comes quickly.
+- So does a Taurus, Libra or Cancer prashna lagna aspected by or joined with benefics.
+
+**MC 6.3** (p.76)
+- The Moon and Venus strong in odd signs and odd navamsas, aspecting the lagna: the girl gets a groom.
+- In even signs and even navamsas: the groom gets a bride.
+
+**MC 6.4, Mars-in-7th vaidhavya yogas** (p.76; in the query chart only)
+1. The Moon in the 6th or 8th from the prashna lagna: the girl is widowed within 8 years.
+2. A malefic in the lagna and Mars in the 7th: the same result.
+3. The Moon in the lagna and Mars in the 7th: the same result.
+
+The commentary calls these "vaidhavya yoga". This is MC's only Mars-7th marriage rule located so far, and it is horary, **not natal manglik**.
+
+**MC 6.6** (p.77)
+- In the Krishna paksha, with the Moon in an even sign in the prashna lagna, aspected by malefics, or with malefics in the 6th or 8th: the marriage will not take place.
+
+**MC 6.7 Remedy for bala-vaidhavya (natal)** (p.77)
+- If the girl's birth chart has a child-widowhood yoga:
+  - she should privately perform the Savitri vrata or the pippala (ashvattha) vrata; or
+  - at an auspicious lagna, she should first be ritually married to a Vishnu image, an ashvattha tree or a pot, and then married to a long-lived groom.
+- Then the dosha does not arise, and there is no "punarbhu" (remarriage) fault.
+- This is the classical source of the "kumbh/peepal vivah" remedy.
+- Layer-C remedy text. Never present it as a prescription.
+
+**MC 6.8–9** (p.77)
+- The query outcome is read from who accompanies the querent and from omens at the time of asking: conch, drum or vina are auspicious; a crow, donkey, dog or jackal crying is inauspicious.
+
+## #3 (adds) Ashtakavarga pinda multipliers: BPHS2 ch.69, pp.879–880
+- Rasi multipliers (Rasimana): Ari 7, Tau 10, Gem 8, Can 4, Leo 10, Vir 6, Lib 7, Sco 8, Sag 9, Cap 5, Aqu 11, Pis 12.
+- Graha multipliers (Grahamana): Sun 5, Moon 5, Mars 8, Mercury 5, Jupiter 10, Venus 7, Saturn 5.
+- Rasi Pinda = Σ over signs of (reduced bindus × rasi multiplier). Graha Pinda = Σ over occupied signs of (reduced bindus × planet multiplier); Rahu and Ketu are excluded. Yoga Pinda = Rasi Pinda + Graha Pinda. Do this per ashtakavarga, including the lagna's.
+- Worked example (Sun's AV): Rasi Pinda 100 + Graha Pinda 48 = 148.
+- The bindus used are after **Trikona and Ekadhipatya shodhana**, the reductions in ch.67–68. **Those reduction rules are not yet checked.**
+
+## #30 (adds): BPHS2 ch.46
+**30.7 Shashtihayani** (vv.40–41, p.525)
+- Use it when the Sun is in the lagna.
+- Order: Jupiter, Sun, Mars, Moon, Mercury, Venus, Saturn, Rahu.
+- Jupiter, the Sun and Mars get 10 years each, and the rest 6 years each (60 in total).
+- Calculation follows Ashtottari: the Sun rules 4 nakshatras of 2½ years each in the worked example. The page's star table is not reproduced here.
+
+**30.8 Shat-trimshat sama** (vv.42–43, p.525)
+- Count from Sravana to the Janma nakshatra and divide by 8.
+- Order: Moon, Sun, Jupiter, Mars, Mercury, Saturn, Venus, Rahu. Periods 1–8 years (36 in total).
+- The applicability condition starts "if the birth be during the day and the Ascendant be in the Hora of the Sun and…". It continues on p.526, **not checked**.
+
+## #5 / #8 / #14 / #41 Phaladeepika 26.26–32, Ojha pp.643–645
+**PD 26.26, nakshatra vedha by the Sun** (p.643)
+- Draw 7 horizontal and 7 vertical lines and write the 28 stars from Krittika, Abhijit included. This is the chart on p.642, so p.642 **is PD 26.26** (a sapta-shalaka chart). It is not the Sarvatobhadra chakra.
+- When the Sun transits a star that has vedha with:
+  - the Janma star: fear for life;
+  - the Adhana star (the 19th from the Janma star): fear and anxiety;
+  - the Karma star (the 10th): loss of wealth.
+- Worse if a malefic is with the Sun.
+
+**26.27** (p.643)
+- If other malefics make vedha to those three stars: death. If benefics make vedha: no death.
+- Apply the same to the other planets.
+
+**26.28** (pp.643–644)
+- Stars from the Janma nakshatra: Adhana (19th), Karma (10th), Vipat (3rd), Vainashika (22nd), Pratyari (5th), Vadha (7th), plus the Janma star itself.
+- Malefic vedha to any of these 7: fear of death. With benefic vedha too: only work or fortune loss.
+
+**26.29, red-flag days** (p.644)
+- On a day of:
+  1. Sun sankranti,
+  2. another planet's sign ingress,
+  3. an eclipse,
+  4. graha yuddha,
+  5. a meteor fall, or
+  6. a celestial portent,
+- if the day's star is the Janma, Anujanma (10th) or Trijanma (19th) star: death-like suffering.
+- This directly feeds #14 (eclipse/sankranti) as a dated flag condition.
+
+**26.30, transit nullifiers** (pp.644–645)
+1. A malefic-giving planet aspected by a benefic: its evil is destroyed.
+2. A benefic-giving planet aspected by a malefic: its good is destroyed.
+3. A planet aspected by its enemy: weakened.
+
+**26.31–32** (p.645): matches Vedic's earlier citation.
+- 26.31: a planet in a bad transit house but in its own or exaltation sign does no harm. In a good house and own or exaltation sign, it gives full good.
+- 26.32: a planet in a good house but debilitated, in an enemy's sign, or combust (mudha) is fruitless. In a bad house under those conditions, it gives very bad results.
+
+**Sensitive:** 26.26–29 contain death language. Gate them behind the separate decision.
+
+## #38 Prasna Marga, tr. B. V. Raman, Pt.1 (typed edition; page = document footer), Stanzas 12–13, p.34
+**Stanza 12**: at query time, note 14 factors:
+- time (samaya)
+- the querent's spot (desa)
+- the astrologer's own breath (swara)
+- the astrologer's own state (avastha)
+- what the querent touches (sparsa)
+- the arudha rasi
+- direction
+- the letters of the question (prasnakshara)
+- deportment (sthiti)
+- movements (cheshta)
+- mental attitude (bhava)
+- gaze (vilokana)
+- dress (vasana)
+- omens (nimitta)
+
+**Stanza 13**: read results from omens at the start, on the way, and on entering, and from sutra, thrisphuta, ashtamangala, arudha and suvarnavastha.
+
+- The ashtamangala method itself is defined later. **Not yet checked.**
