@@ -719,3 +719,62 @@ The commentary calls these "vaidhavya yoga". This is MC's only Mars-7th marriage
 - **v.14 Sandhya:** 3 ghatikas before the visible half-disc of the rising Sun is morning sandhya, and the same span after sunset is evening sandhya. Santhanam notes about 72 minutes.
 - **v.15:** all malefics in the eastern half of the chart and benefics in the western half means early death for a Scorpio-born native.
   - **Sensitive: gate this.**
+
+---
+# Batch 8 (2026-10-17). BPHS1 page images (Santhanam Vol.1; printed = PDF page + 1, checked against each page header)
+
+## #48 (completes) Compound relationship and ratio of effects (BPHS ch.3, p.42)
+**48.3 rows 4–6, now image-checked on p.42.** The page table lists: Friendship+Friendship = Extreme friendship; Neutrality+Friendship = Friendship; Enmity+Enmity = Extreme enmity; Neutrality+Enmity = Enmity; Enmity+Friendship = Neutral. The text under it: "if there is friendship with enmity, then also neutrality will prevail" (covers Friend+Enemy = Neutral). Translator calls the result the "5-fold relationship" (panchadha sambandha).
+**48.4 Ratio of effects** (vv.59–60, p.42)
+- Exaltation: full good effects. Moolatrikona: three-fourths. Own sign: half. Friendly sign: one-fourth. Neutral (equal) sign: one-eighth. Debilitation or enemy's sign: nil good effects.
+- "Inauspicious effects are quite reverse" for the same placements.
+
+## #33 (adds) Gandanta chapter confirmed: BPHS ch.9 (header "Chapter 9", p.111)
+- p.111 carries vv.7–13 of ch.9. v.13 (p.111, continuing to p.112): early death if birth is in the morning/evening junction (sandhya), in a Moon hora, or in gandanta, with the Moon and malefics in angles (completed on p.112, already logged).
+- vv.7–11 and v.12 on p.111 are infant-mortality (balarishta) combinations, e.g. v.12: the Moon in the 8th, 7th or ascendant with a malefic and unrelated to a benefic.
+- **Sensitive: death language. Gate; do not surface as user-facing predictions without a wording decision.**
+- Translator note on p.111: one of Sun/Moon/Rahu/Venus aspecting the 12th checks the evil, "this goes to prove that Rahu has aspects" (note, not verse).
+
+## #11 Graha avasthas (BPHS ch.45, pp.449–451)
+**11.1 Baladi** (v.3, p.449): in odd signs, 6° bands in order: Bala (infant) 0–6°, Kumara 6–12°, Yuva 12–18°, Vriddha 18–24°, Mrita 24–30°. Reversed in even signs. (Band table is Santhanam's note; the verse states 6° steps and reversal.)
+**11.2 Results** (v.4, p.449): one-fourth, half, full, negligible, nil for Bala, Kumara, Yuva, Vriddha, Mrita.
+**11.3 Jagradadi** (vv.5–6, pp.449–450): own sign or exaltation = Jagrat (awake); friend's or neutral's sign = Svapna (dreaming); enemy's sign or debilitation = Sushupti (sleeping). Results full / medium / nil.
+**11.4 Deeptadi** (vv.7–10, p.450): exaltation = Deepta; own sign = Swastha; great friend's sign = Pramudita; friend's sign = Santa; neutral's sign = Deena; with a malefic = Vikala; enemy's sign = Khala; combust ("eclipsed by the Sun") = Kopa. The house occupied gets corresponding effects. (v.7 lists nine names; the page names eight; record as on page.)
+**11.5 Lajjitadi** (vv.11–18 Sanskrit pp.450–451; translation p.451; Garvita verse is v.13 on p.450):
+- Lajjita: in the 5th house, with a node, or with the Sun, Saturn or Mars.
+- Garvita: in exaltation or moolatrikona.
+- Kshudita: in an enemy's sign, or with or aspected by an enemy, or with Saturn.
+- Trushita: in a watery sign, aspected by a malefic and not a benefic.
+- Mudita: in a friendly sign, or with/aspected by a benefic, or with Jupiter.
+- Kshobhita: with the Sun and aspected by a malefic or an enemy.
+- Houses occupied by a Kshudita or Kshobhita planet "are destroyed".
+
+## #17 (completes) Varga calculations (BPHS ch.6, pp.69–84)
+Tables are Santhanam's specula; the rule sentences are his translation of the verse.
+- **D3 Drekkana** (vv.7–8, pp.69–70): 10° each; 1st, 5th, 9th sign from the sign. Lords per note: lord of the sign, of the 5th, of the 9th. Deities Narada, Agasthya, Doorvasa.
+- **D4 Chaturthamsa** (v.9, pp.70–71): 7°30′ each; the sign itself, then the 4th, 7th, 10th from it.
+- **D7 Saptamsa** (vv.10–11, p.71): 4°17′8.57″; odd sign counts from itself, even sign from its 7th.
+- **D9 Navamsa** (v.12, p.72): 3°20′; movable from itself, fixed from its 9th, dual from its 5th. (Equivalent to Aries/Capricorn/Libra/Cancer starts per element; table on page.)
+- **D10 Dasamsa** (vv.13–14, p.73): 3°; odd from itself, even from its 9th. Deities Indra … Anantha, reversed for even.
+- **D12 Dvadasamsa** (v.15, pp.73–74): 2°30′; from the sign itself in succession.
+- **D16 Shodasamsa** (v.16, pp.74–75): 1°52′30″; movable from Aries, fixed from Leo, dual from Sagittarius.
+- **D20 Vimsamsa** (vv.17–21, pp.76–77): 1°30′; movable from Aries, fixed from Sagittarius, dual from Leo.
+- **D24 Siddhamsa/Chaturvimsamsa** (vv.22–23, pp.77–78): 1°15′; odd from Leo, even from Cancer.
+- **D27 Bhamsa** (vv.24–26, pp.78–79): 1°6′40″; per note/table, fiery from Aries, earthy from Cancer, airy from Libra, watery from Capricorn. Santhanam notes Saravali p.31 gives a different method and calls it defective (translator opinion; textual variant).
+- **D30 Trimsamsa** (vv.27–28, p.80): odd signs: Mars 5°, Saturn 5°, Jupiter 8°, Mercury 7°, Venus 5° (table: Aries, Aquarius, Sagittarius, Gemini, Libra). Even signs reversed: Venus 5°, Mercury 7°, Jupiter 8°, Saturn 5°, Mars 5° (Taurus, Virgo, Pisces, Capricorn, Scorpio).
+- **D40 Chatvarimsamsa** (vv.29–30, pp.80–81): 45′; odd from Aries, even from Libra.
+- **D45 Akshavedamsa** (vv.31–32, p.81): 40′; movable from Aries, fixed from Leo, dual from Sagittarius.
+- **D60 Shashtiamsa** (vv.33–41, pp.83–84): ignore the sign, take degrees in sign ×2, divide by 12, remainder +1 = count of signs from the planet's sign. Names Ghora … Chandrarekha in odd signs, reversed in even; each marked benefic (B) or malefic (M) in Santhanam's table on p.84. Worked example on page: Venus Capricorn 13°25′ → Pisces → Jupiter.
+  - Note: the verse's "×2 ÷12 remainder+1" counts from the sign occupied (example confirms).
+
+## #16 (adds) Shadbala components (BPHS ch.27, pp.265–277)
+- **Saptavargaja** (vv.2–4, p.265): in each of D1, D2, D3, D7, D9, D12, D30: moolatrikona 45, own 30, extreme friend 20, friend 15, neutral 10, enemy 4, extreme enemy 2 virupas; sum. Note: compound relationships from the Rasi chart (p.42).
+- **Ojhayugmarasiamsa** (v.4½, pp.265–266): Venus and Moon get 15 virupas in even rasi, others in odd rasi; same again for navamsa.
+- **Kendradi** (v.5, p.266): angle 60, succedent 30, cadent 15.
+- **Drekkana** (v.6, pp.266–267): male (Sun, Mars, Jupiter) in 1st decanate, female (Moon, Venus) in 2nd, eunuch (Saturn, Mercury) in 3rd get 15 virupas. Sthana bala = sum of the five.
+- **Dig** (v.7–7½, p.267): subtract the nadir from Sun and Mars, the descendant from Jupiter and Mercury, the meridian from Venus and Moon, the ascendant from Saturn; if >180° take 360 minus; divide by 3 = virupas (max 60).
+- **Nathonnatha** (vv.8–9, p.268): Moon, Mars, Saturn get night strength (Nata ghatis ×2); Sun, Jupiter, Venus get 60 minus that; Mercury always 60.
+- **Paksha** (vv.10–11, p.269): (Moon − Sun), if >180 take 360 minus, ÷3 = benefics' paksha bala; malefics get 60 minus. Note: Moon's paksha bala is always doubled (translator note).
+- **Tribhaga** (v.12, p.269): day thirds: Mercury, Sun, Saturn; night thirds: Moon, Venus, Mars; Jupiter always gets 60.
+- **Naisargika** (v.14, p.276): 60/7 × 1..7 for Saturn, Mars, Mercury, Jupiter, Venus, Moon, Sun: Sun 1.000, Moon 0.857, Venus 0.714, Jupiter 0.571, Mercury 0.429, Mars 0.286, Saturn 0.143 rupa (table is note). Tie-break: equal shadbala → higher naisargika prevails (note).
+- **Not yet checked:** Varsha-masa-dina-hora (v.13), Ayana (vv.15–17, tables pp.277–281), Yuddha, Cheshta, Drik, ishta/kashta.
