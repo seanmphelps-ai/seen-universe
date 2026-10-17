@@ -1475,7 +1475,169 @@ The table also gives a fruit name per tithi, e.g. 1 siddhi, 4 hani, 9 mrityuda, 
 - Remaining for #49: the 3rd lord's other placements (vv.26–36) and the lords of the 4th and 6th–12th.
 
 ---
-## Final coverage summary (after batch 13, 2026-10-17)
+## Batch 14 (page-image verified 2026-10-17)
+
+### #6 (note) Graha maitri points, printed variant
+- The MC 6.21 commentary (Khemraj p.81) prints graha maitri as "(४)", that is 4 points.
+- The verse sequence and the commentary's own total of 36 require 5 (1+2+3+4+5+6+7+8 = 36). The vv.27–28 commentary also scores same or friendly lords at 5.
+- Record both: printed variant 4 (p.81); required value 5.
+
+### #47 (completes) Saturn karakatva: PD ch.2 v.7, Ojha commentary p.34 (leaf n32)
+- Saturn signifies:
+  - [SENSITIVE] longevity, death and fear;
+  - falls, from a height or from status or caste;
+  - disgrace, illness, sorrow, poverty, infamy and sin;
+  - hard labour, impurity, censure, calamity and an unclean mind;
+  - [SENSITIVE] the impurity that follows a death;
+  - steadiness, shelter with low people, buffaloes, sloth and debt;
+  - iron goods, service, servitude, imprisonment and arrest;
+  - farm implements.
+- p.34 commentary on v.6: Ojha cites his own case reading in which he timed marriage by Venus, the wife significator, rather than by the 7th lord.
+  - He also says that Jupiter well placed as a house lord gives children in youth in its antardasa.
+
+### #49 (completes) Bhava lords in all twelve houses: BPHS ch.24 vv.26–148, BPHS1 pp.196–236
+- **3rd lord (vv.26–36, pp.196–198):**
+  - 2nd: corpulent, without valour, little effort, eyes on others' wives and wealth.
+  - 3rd: happiness through siblings, wealth, sons, cheerful.
+  - 4th: happy, wealthy and intelligent, but a wicked spouse.
+  - 5th: sons, virtuous. With a malefic: a formidable wife.
+  - 6th: inimical to siblings, affluent, hostile to the maternal uncle, dear to the maternal aunt.
+    - Translator's note: the aunt phrase can carry a sexual sense.
+  - 7th: serves the king, unhappy in boyhood, happy at the end of life.
+  - 8th: [SENSITIVE] a thief who lives by service and "will die at the gate of royal palace".
+  - 9th: no paternal bliss, fortune through women, children.
+  - 10th: all happiness, self-made wealth, nurturing wicked females.
+  - 11th: always gains in trade, intelligent though unlettered, adventurous, serves others.
+  - 12th: spends on evil deeds, a wicked father, fortune through a woman.
+- **4th lord (vv.37–48, pp.198–201):**
+  - 1st: learning, virtues, ornaments, lands, conveyances, maternal happiness.
+  - 2nd: pleasures, wealth, family life, honour, adventurous, cunning.
+  - 3rd: valorous, servants, liberal, virtuous, self-made wealth, free from disease.
+  - 4th: a minister, all wealth, skilful, virtuous, honourable, learned, happy, fond of the spouse.
+  - 5th: happy, liked by all, devoted to Vishnu, self-made wealth.
+  - 6th: no maternal happiness, angry, a thief, a conjurer, independent, ill-disposed.
+  - 7th: much education, sacrifices his patrimony, dumb in an assembly.
+  - 8th: no domestic comforts, little parental happiness, "equal to a neuter".
+  - 9th: dear to all, devoted to God, virtuous, honourable, every happiness.
+  - 10th: royal honour, an alchemist, pleased, conquers the senses.
+  - 11th: fear of secret disease, liberal, virtuous, charitable.
+  - 12th: no domestic comforts, vices, foolish, indolent.
+- **5th lord (vv.49–60, pp.202–208):**
+  - 1st: scholarly, progenic happiness, a miser, crooked, steals others' wealth.
+  - 2nd: many sons, wealth, a pater familias, honourable, famous.
+  - 3rd: attached to siblings, a talebearer, a miser.
+  - 4th: happy, maternal happiness, wealth, a king, minister or preceptor.
+  - 5th: progeny if with a benefic, none if with a malefic; virtuous.
+  - 6th: sons equal to his enemies, or loss of sons, or an adopted or purchased son.
+  - 7th: honourable, religious, progenic happiness, helpful.
+  - 8th: little progenic happiness, cough and pulmonary trouble, angry.
+  - 9th: a prince or his equal, an author, famous.
+  - 10th: rajayoga, pleasures, fame.
+  - 11th: learned, popular, an author, skilful, many sons and wealth.
+  - 12th: no happiness from sons, an adopted or purchased son.
+  - Translator's note: Indira Gandhi's chart is given as an example of the 5th lord in the 2nd, with Mars in Leo.
+- **6th lord (vv.61–72, pp.208–211):**
+  - 1st: sickly, famous, inimical to his own men, rich, honourable, adventurous.
+  - 2nd: adventurous, famous, lives abroad, happy, a skilful speaker.
+  - 3rd: angry, no courage, inimical siblings, disobedient servants.
+  - 4th: no maternal happiness, intelligent, a talebearer, jealous, fickle, very rich.
+  - 5th: fluctuating finances, enmity with sons and friends, happy, selfish, kind.
+  - 6th: enmity with kinsmen, friendly to others, middling happiness in wealth.
+  - 7th: no marital happiness, famous, virtuous, wealthy.
+  - 8th: sickly, inimical, desires others' wealth and wives, impure.
+  - 9th: trades in wood and stone (the word "pashana" also means poison), fluctuating profession.
+  - 10th: well known among his men, not respectful to his father, a speaker, happy abroad.
+  - 11th: gains through enemies, virtuous, adventurous, little progenic happiness.
+  - 12th: spends on vices, hostile to the learned, tortures living beings.
+- **7th lord (vv.73–84, pp.212–216):**
+  - 1st: goes to others' wives, wicked, skilful, no courage, windy diseases.
+  - 2nd: many wives, gains through the wife, procrastinates.
+  - 3rd: [SENSITIVE] loss of children, a son survives with difficulty, possibly a daughter.
+  - 4th: the wife is not under his control; truthful, intelligent, religious, dental disease.
+    - Translator's note: Ramadayalu reads this as the wife being chaste and devoted.
+  - 5th: honourable, all virtues, delighted, wealthy.
+  - 6th: a sickly wife, enmity with her, angry, unhappy.
+  - 7th: happiness through the wife, courageous, skilful, intelligent; only windy diseases.
+  - 8th: no marital happiness, a diseased and ill-disposed wife.
+    - [SENSITIVE] Translator's note: the spouse's longevity is at risk.
+  - 9th: union with many women, kind to his own wife, many undertakings.
+  - 10th: a disobedient wife, religious, wealth and sons.
+  - 11th: gains through the wife, little happiness from sons, daughters.
+  - 12th: penury, a miser, livelihood linked to clothes, a spendthrift wife.
+- **8th lord (vv.85–96, pp.216–220):**
+  - 1st: no physical felicity, suffers wounds, hostile to gods and brahmins.
+  - 2nd: no bodily vigour, little wealth, lost wealth not regained.
+  - 3rd: no fraternal happiness, indolent, no servants or strength.
+  - 4th: [SENSITIVE] the child is deprived of its mother; no house, lands or happiness; betrays friends.
+  - 5th: dull-witted, few children, long-lived, wealthy.
+  - 6th: wins over enemies, afflicted by disease, danger in childhood from snakes and water.
+  - 7th: two wives. With a malefic: downfall in business.
+  - 8th: long-lived. If the planet is weak there: medium life, a thief, blameworthy.
+  - 9th: betrays his religion, heterodox, a wicked wife, steals others' wealth.
+  - 10th: no paternal bliss, a talebearer, no livelihood. A benefic aspect prevents this.
+  - 11th with a malefic: no wealth, miserable in boyhood, happy later. With a benefic: long-lived.
+  - 12th: [SENSITIVE] spends on evil deeds, "a short life", more so with a malefic there.
+- **9th lord (vv.97–108, pp.220–223):**
+  - 1st: fortunate, honoured by the king, virtuous, charming, learned.
+  - 2nd: a scholar, dear to all, wealthy, sensuous, happiness from wife and sons.
+  - 3rd: fraternal bliss, wealthy, virtuous, charming.
+  - 4th: houses, conveyances, happiness, all wealth, devoted to the mother.
+  - 5th: sons and prosperity, devoted to elders, bold, charitable, learned.
+  - 6th: meagre prosperity, no happiness from maternal relatives, troubled by enemies.
+  - 7th: happiness after marriage, virtuous, famous.
+  - 8th: not prosperous, no happiness from the elder brother.
+  - 9th: abundant fortune, virtues, beauty, happiness from siblings.
+  - 10th: a king or his equal, a minister or army chief, virtuous, dear to all.
+  - 11th: financial gain day by day, devoted to elders, virtuous, meritorious.
+  - 12th: loss of fortune, spends on auspicious acts, poor through entertaining guests.
+- **10th lord (vv.109–120, pp.223–229):**
+  - 1st: scholarly, famous, a poet, ill in boyhood, happy later, wealth growing daily.
+  - 2nd: wealthy, virtuous, honoured by the king, charitable, happiness from father.
+  - 3rd: happiness from siblings and servants, valorous, eloquent, truthful.
+  - 4th: happy, serves the mother's welfare, conveyances, lands, houses, virtuous, wealthy.
+  - 5th: all learning, delighted, wealthy, sons.
+  - 6th: no paternal bliss, skilful but without wealth, troubled by enemies.
+  - 7th: happiness through the wife, intelligent, virtuous, eloquent, truthful, religious.
+  - 8th: no good acts, long-lived, intent on blaming others.
+  - 9th: one of royal birth becomes a king; an ordinary native becomes equal to one.
+  - 10th: skilful in all jobs, valorous, truthful, devoted to elders.
+  - 11th: wealth, happiness and sons, virtuous, truthful, delighted.
+  - 12th: spends through royal abodes, fear from enemies, worried though skilful.
+- **11th lord (vv.121–132, pp.229–233):**
+  - 1st: genuine, rich, happy, even-sighted, a poet, eloquent, always gains.
+  - 2nd: all wealth and accomplishments, charitable, religious, happy.
+  - 3rd: skilful, wealthy, fraternal bliss, sometimes gout.
+  - 4th: gains from maternal relatives, visits shrines, house and lands.
+  - 5th: happy, educated and virtuous children; religious.
+  - 6th: diseased, cruel, lives abroad, troubled by enemies.
+  - 7th: gains through the wife's relatives, liberal, virtuous, sensuous, under the spouse's command.
+  - 8th: [SENSITIVE] reversals, long-lived, "his wife will predecease him".
+  - 9th: fortunate, skilful, truthful, honoured by the king, affluent.
+  - 10th: honoured by the king, virtuous, religious, intelligent, truthful, subdues the senses.
+  - 11th: gains in all undertakings; learning and happiness grow daily.
+  - 12th: spends on good deeds, sensuous, many wives, befriends foreigners.
+- **12th lord (vv.133–144, pp.233–235):**
+  - 1st: a spendthrift, weak constitution, phlegmatic disorders, no wealth or learning.
+  - 2nd: spends on auspicious deeds, religious, sweet speech, virtuous.
+  - 3rd: no fraternal bliss, hates others, selfish.
+  - 4th: no maternal happiness, daily losses of land, conveyances and houses.
+  - 5th: no sons or learning, spends and visits shrines to get a son.
+  - 6th: enmity with his own men, angry, sinful, miserable, goes to others' wives.
+  - 7th: expenditure on account of the wife, no conjugal bliss, no learning or strength.
+  - 8th: always gains, affable speech, medium life (translator: about 60 years), good qualities.
+  - 9th: dishonours elders, inimical to friends, self-seeking.
+  - 10th: expenditure through royal persons, moderate paternal bliss.
+  - 11th: losses, brought up by others, sometimes gains through others.
+  - 12th: heavy expenditure only, no physical felicity, irritable, spiteful.
+- **vv.145–148 (p.235), how to apply these results:**
+  - Weigh the results by the strengths of the lords.
+  - A planet owning two houses gives results by both lordships.
+  - Where the results conflict, they cancel and mixed results follow.
+  - Full, half, quarter or negligible strength gives full, medium, small or negligible effect.
+  - Translator's note (p.236): for a Pisces native with Saturn in the 5th, weigh its 11th and 12th lordships and check Jupiter and the Moon.
+
+---
+## Final coverage summary (after batch 14a, 2026-10-17)
 Status key:
 - VERIFIED: rules were written from page images.
 - PARTIAL: some sub-rules were image-verified and others are missing.
@@ -1488,54 +1650,53 @@ Status key:
 | 3 | Ashtakavarga | VERIFIED | BPHS2 ch.67–70; PD ch.23–24 |
 | 4 | Vimshottari + subperiods | VERIFIED | BPHS ch.46 vv.12–16; ch.51 vv.1–2 |
 | 5 | Sade sati | PARTIAL | Saturn transit from the Moon (PD 26). "Sade sati" itself is a later-tradition label. |
-| 6 | Kuta/guna milan | VERIFIED | MC 6.21–34 |
+| 6 | Kuta/guna milan | VERIFIED | MC 6.21–34; graha maitri printed as 4, required 5 |
 | 7 | Porutham | VERIFIED | KP XIII |
 | 8 | Node vedha | PARTIAL | PD 26 |
 | 9 | Gochara dignity | VERIFIED | PD 26.31–32 |
 | 10 | Nakshatra lore | VERIFIED | BPHS ch.3; MC ch.2 |
 | 11 | Graha avasthas | VERIFIED | BPHS ch.45 |
 | 12 | Combustion/yuddha | VERIFIED | SS; BPHS2 ch.79 |
-| 13 | Drishti | VERIFIED | |
+| 13 | Drishti | VERIFIED |  |
 | 14 | Eclipse/sankranti | PARTIAL | PD 26; PM2 ch.XXV |
 | 15 | Muhurta windows | VERIFIED | KP pp.176–177 |
 | 16 | Shadbala | VERIFIED | BPHS ch.27–28 |
 | 17 | Vargas | VERIFIED | BPHS ch.6 |
-| 18 | Chandra yogas | VERIFIED | |
-| 19 | Surya yogas | VERIFIED | |
-| 20 | Pancha mahapurusha | VERIFIED | |
+| 18 | Chandra yogas | VERIFIED |  |
+| 19 | Surya yogas | VERIFIED |  |
+| 20 | Pancha mahapurusha | VERIFIED |  |
 | 21 | Raja/dhana yogas | PARTIAL | BPHS ch.39 only |
-| 22 | Viparita raja | VERIFIED | |
+| 22 | Viparita raja | VERIFIED |  |
 | 23 | Nabhasa yogas | VERIFIED | BJ XII |
 | 24 | Arishta yogas | VERIFIED | BJ VI, death language gated |
-| 25 | Yogini dasha | VERIFIED | |
-| 26 | Ashtottari dasha | VERIFIED | |
+| 25 | Yogini dasha | VERIFIED |  |
+| 26 | Ashtottari dasha | VERIFIED |  |
 | 27 | Chara dasha | PARTIAL | JS lead only |
-| 28 | Narayana dasha | UNSOURCED | |
+| 28 | Narayana dasha | UNSOURCED |  |
 | 29 | Kalachakra dasha | VERIFIED | Savya, apasavya, years, gatis |
 | 30 | Conditional dashas | VERIFIED | BPHS2 ch.46 |
-| 31 | Chara karakas | VERIFIED | |
+| 31 | Chara karakas | VERIFIED |  |
 | 32 | Arudhas | VERIFIED | JS |
 | 33 | Gandanta | PARTIAL | BPHS ch.9 |
 | 34 | Chandra bala | PARTIAL | House-from-Moon count not found |
-| 35 | Upagrahas | VERIFIED | |
-| 36 | Bhava chalit | PARTIAL | |
+| 35 | Upagrahas | VERIFIED |  |
+| 36 | Bhava chalit | PARTIAL |  |
 | 37 | Varshaphala | UNSOURCED | English texts only |
 | 38 | Prasna | PARTIAL | PM1; MC vivaha |
 | 39 | Ingress/stations | PARTIAL | Mundane ingress only |
-| 40 | Kakshya | VERIFIED | |
+| 40 | Kakshya | VERIFIED |  |
 | 41 | Sarvatobhadra | UNSOURCED | Lead only |
-| 42 | Murti nirnaya | UNSOURCED | |
+| 42 | Murti nirnaya | UNSOURCED |  |
 | 43 | D9 couple | PARTIAL | JP XIV |
 | 44 | Kuja dosha | PARTIAL | Later-tradition label |
 | 45 | Dasha sandhi | PARTIAL | Dasachidra and Mandukagamana verified (JP XVII); sandhi proper unsourced |
 | 46 | Dasha phala | PARTIAL | BPHS2 ch.50 vv.22–28 |
-| 47 | Karakatva | VERIFIED | BPHS 32 vv.18–24; PD ch.2 vv.1–6 (Saturn v.7 not read) |
-| 48 | Dignity/maitri | VERIFIED | |
-| 49 | Placement effects | PARTIAL | Lords of the 1st, 2nd and 5th done; 3rd in lagna |
+| 47 | Karakatva | VERIFIED | BPHS 32 vv.18–24; PD ch.2 vv.1–7 |
+| 48 | Dignity/maitri | VERIFIED |  |
+| 49 | Placement effects | VERIFIED | BPHS ch.24 vv.1–148, all twelve lords |
 | 50 | Ayanamsha | PARTIAL | Translator notes only |
 
 Totals:
-- VERIFIED: 29
-- PARTIAL: 17
+- VERIFIED: 30
+- PARTIAL: 16
 - UNSOURCED: 4
-- NOT VERIFIED: 0
