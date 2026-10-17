@@ -327,3 +327,107 @@ Verified 2026-10-17. Each item was read on the page image (or, for Saravali, the
 - The Moon is treated in the next chapter.
 - Closer than these, a planet is invisible ("swallowed").
 - **This conflicts with Santhanam's note table (BPHS p.100, #12.1), which gives Saturn 16°.** The classical source is SS (Saturn 15°). Also, SS measures time-degrees, not longitude. Keep the source of each orb on the field.
+
+---
+# Batch 3 (2026-10-17)
+
+Editions as in batches 1–2. BJ = Brihat Jataka, tr. N. Chidambaram Iyer (archive brihatjataka00varaiala). JP Vol. II = archive JatakaParijataVolIIOfIIByVSubrahmanyaSastri.
+
+## #43 Seventh house / couple rules: JP Adh. XIV
+**43.1** (sl.4, p.846)
+- Lords of the 10th, 2nd and 7th in the 10th: affairs outside marriage.
+- Lords of the 5th, 9th and 7th in dusthanas, with the 6th aspected by a malefic: childless.
+- Jupiter+Mercury or Moon+Venus in the 7th: addicted to many women.
+- A strong Venus in the 7th: many wives.
+
+**43.2** (sl.5, p.846)
+- Venus and Mars in the 7th: bereft of a wife. The same holds if they are in the 9th and 6th.
+- Moon and Venus in the 6th: only one son.
+- Malefics in the 1st, 7th and 12th, with a weak Moon in the 5th: a barren wife, or wifeless.
+- Notes on p.849 (cited from other texts, not JP verse):
+  - The 7th lord in the 8th, or the 5th or 8th lord in the 7th: loss of wife.
+  - Sun and Rahu in the 7th: loss of wealth through women.
+
+**43.3 Female chart** (JP, female-horoscopy adhyaya, sl.61–62, p.963)
+- Read the husband from the 7th of the female chart.
+- The Moon in the 7th: a handsome, voluptuous husband troubled by ailments.
+- Mars in the 7th: a husband humble in appearance, fond of cruelty, indolent, quick-tongued and ruddy.
+- sl.61 links the husband's longevity and status to the 7th and 8th lords' placement: trikona or kendra gives long life and wealth, and the various associations give the different traits.
+- Caveat: this is Layer-C text about personality, so gate it carefully in user-facing copy.
+
+## #44 Mangal (kuja) dosha: JP
+- **UNVERIFIED in JP.** No page in either JP volume names kuja or mangal dosha. The nearest JP rules are 43.2 and 43.3 above, about Mars in the 7th.
+- Kalaprakasika, ch. XIII (the porutham chapter), also has no kuja-dosha rule.
+- The term is still unsourced.
+
+## #23 Nabhasa yogas: BJ ch. XII
+**23.1 Counts** (v.1, p.126)
+- Four groups, 32 yogas in all: Akriti 20, Sankhya 7, Asraya 3, Dala 2.
+- Per Varahamihira, the Yavanas give 1,800 Nabhasa yogas.
+
+**23.2 Asraya and Dala** (vv.2–3, p.127)
+- If all planets are in movable, fixed or common signs, the yoga is Rajju, Musala or Nala respectively (Asraya).
+- Benefics in the kendras: Srik/Mala. Malefics in the kendras: Sarpa (Dala). Per the notes, Garga requires three kendras, and Badarayana adds that the other kendras must be free of the opposite kind.
+- v.3: some identify the Asraya yogas with Yava, Abja, Vajra, Andaja and Gola, and say Dala gives no separate effects.
+- Cross-reference: BJ VIII.20 note (p.92) says Nabhasa effects are felt throughout life. This matches XII.19, which was not checked.
+
+## #24 Balarishta: BJ ch. VI "On Balarishta or Early Death"
+**24.1** (vv.1–2, p.55)
+- v.1: either of these gives soon death:
+  - Birth in sandhya (twilight) in a lunar hora, with malefics in the last navamsas of signs.
+  - The Moon and three malefics, one in each kendra.
+- v.2: Cancer or Scorpio rising, malefics in the eastern half and benefics in the western half gives immediate death.
+- v.2 also: malefics in the 12th and 2nd, or in the 6th and 8th, from lagna. Per the notes, Garga counts the pairs 6/12, 8/2, 12/2 and 8/6.
+
+**24.2** (vv.3–5, p.56)
+- v.3: lagna, 7th and the Moon's sign each with a malefic, and the Moon unaspected by benefics.
+- v.4: the waning Moon in the 12th, malefics in the lagna and 8th, and no benefics in the kendras.
+- v.5: the Moon with a malefic in the 1st, 7th, 8th or 12th, with benefics neither in the kendras nor aspecting the Moon.
+- Note to v.5: benefics in the kendras prevent early death. This is the cancellation.
+- **Sensitive. Do not show it to users without the separate gating decision.**
+
+## #32 Arudhas and Upapada: JS
+**32.1 Arudha (Pada) Lagna** (Adh. 1 Pada 1, Su. 29, p.33)
+- Count from the lagna lord as many signs as the lord is from the lagna. The sign reached is the Arudha Lagna.
+- The exception rules (an Arudha in the 1st or 7th moves 10 signs) are **not in this sutra or its notes on this page. UNVERIFIED here.**
+
+**32.2 Upapada** (Adh. 1 Pada 4, Su. 1, pp.106–107)
+- Upapada is the Arudha of the 12th house. Count from the 12th lord as many signs as it is from the 12th.
+- The worked example on p.107 lands the Upapada in Mesha, the 12th itself, and no exception is applied.
+
+**32.3 Jaimini Kemadruma** (Su. 119, p.86)
+- Malefics in the 2nd and 8th from the Janma lagna or the Arudha lagna give Kemadruma (great poverty). The same applies to planets in the 3rd from the Karakamsa.
+- This is a fourth Kemadruma definition, distinct from #18. Keep it separate.
+
+## #27 Chara dasha: JS
+- **UNVERIFIED.** No Chara-dasa calculation sutra was located in the 1955 Rao edition. The p.33 notes discuss rasi-dasa strength comparison only.
+
+## #30 Conditional dashas: BPHS2 ch.46
+**30.1 Shodasottari** (vv.24–26, pp.517–518)
+- Use it when the lagna is in the Moon's hora with birth in Krishna paksha, or in the Sun's hora with birth in Shukla paksha.
+- Count from Pushya to the Janma nakshatra and divide by 8. The remainder gives the lord, in this order: Sun, Mars, Jupiter, Saturn, Ketu, Moon, Mercury, Venus. Rahu has no dasha.
+- Periods: 11, 12, 13, 14, 15, 16, 17, 18 years (116 in total).
+- The star-to-lord table is on p.518.
+
+**30.2 Dwadashottari** (vv.27–28, p.519)
+- Use it when the lagna is in a Venus navamsa.
+- Count from the Janma nakshatra to Revati and divide by 8. Order: Sun, Jupiter, Ketu, Mercury, Rahu, Mars, Saturn, Moon. Venus has no dasha.
+- Periods: 7, 9, 11, 13, 15, 17, 19, 21 years.
+
+**30.3 Panchottari** (vv.29–31, p.519)
+- Use it when the lagna is Cancer and also in Cancer dwadasamsa.
+- Count from Anuradha to the Janma nakshatra and divide by 7. Order: Sun, Mercury, Saturn, Mars, Venus, Moon, Jupiter. Rahu and Ketu have no dasha.
+- Periods: 12, 13, 14, 15, 16, 17, 18 years.
+
+- Shatabdika, Chaturashiti and Shashtihayani follow on pp.520–523. **Not yet checked.**
+
+## #12 (adds) BPHS2 ch.79 (the chapter Santhanam cross-references for planetary war), vv.3–5, p.949
+- Ch.79 is about ascetic orders (pravrajya), not a definition of planetary war.
+- It states only that if the strongest ascetic-producing planet is defeated in war by another, the person relinquishes that order (v.3, translation).
+- If that planet is combust, the person is not initiated (v.4).
+- **BPHS gives no rule for deciding a planetary war here.** The only rule in the library is Santhanam's note at BPHS1 p.125: same degree, lesser longitude wins, with C. G. Rajan's latitude variant. That is a translator note. The classical war rule is still UNVERIFIED (Surya Siddhanta ch. VII is next).
+
+## #5 / #40 (adds) Phaladeepika Ojha p.638
+- Ojha's commentary on PD 26.25 says the Sun and Mars give their special results in the first 10° of a sign, Jupiter and Venus at 10–20°, and the Moon and Saturn at 20–30°. Mercury and Rahu act alike throughout (1–30°).
+- Ojha's footnote: Muhurta Chintamani and other texts raise a doubt about whether the vedha planet is counted from the natal Moon or from the transiting planet, and they also treat viparita vedha. Ojha declines to reconcile them.
+- Implication: vedha reference-point handling is a flagged textual disagreement, not settled.
