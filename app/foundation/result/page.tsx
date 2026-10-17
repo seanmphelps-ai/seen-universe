@@ -4,7 +4,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import type { NatalChartResult } from '../../../lib/natalChart';
-import { extractWoundMarkers } from '../../../lib/seen/woundMarkers';
+import { extractWoundMarkers, type WoundMarkerHit } from '../../../lib/seen/woundMarkers';
 import { rankWounds, type RankedWound } from '../../../lib/seen/woundRanking';
 
 type StoredBirth = {
@@ -62,11 +62,37 @@ const RANK_LABEL: Record<number, string> = {
   5: 'Faint — only surfaces under extreme stress.',
 }
 
+const PLACEMENT_VERB: Record<string, string> = {
+  chiron: 'aching',
+  trueLilith: 'coiling',
+  neptune: 'fogging',
+  mars: 'cutting',
+  venus: 'testing the door',
+  saturn: 'pressing',
+  pluto: 'gripping',
+  uranus: 'cracking',
+}
+
+function ordinal(n: number): string {
+  const s = ['th', 'st', 'nd', 'rd'];
+  const v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
+function placementLead(markerId: string, label: string, hit?: WoundMarkerHit): string {
+  const verb = PLACEMENT_VERB[markerId] ?? 'active';
+  if (!hit) return `${label} is ${verb}.`;
+  if (hit.house !== null) return `${label} is ${verb} in the ${ordinal(hit.house)} house.`;
+  return `${label} is ${verb} in ${hit.sign}.`;
+}
+
 export default function FoundationResultPage() {
   const router = useRouter();
   const [birth, setBirth] = useState<StoredBirth | null>(null);
   const [chart, setChart] = useState<NatalChartResult | null>(null);
   const [rankedWounds, setRankedWounds] = useState<RankedWound[] | null>(null);
+  const [woundHits, setWoundHits] = useState<WoundMarkerHit[]>([]);
+  const [expandedWounds, setExpandedWounds] = useState<Record<string, boolean>>({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -109,6 +135,7 @@ export default function FoundationResultPage() {
           setChart(payload.western);
           const hits = extractWoundMarkers(payload.western);
           const ranked = rankWounds(hits, payload.western.aspects);
+          setWoundHits(hits);
           setRankedWounds(ranked);
           setIsLoading(false);
         }
@@ -205,22 +232,33 @@ export default function FoundationResultPage() {
               <>
                 <div className="seenDivider" aria-hidden="true" />
                 <section aria-labelledby="wounds-title">
-                  <h2 id="wounds-title" className="seenLabel">Wound markers — ranked</h2>
-                  <p className="seenFieldSupport">
-                    These are the patterns the chart carries. Rank follows authored criteria — it weighs how tight the aspect is, how heavy the planet is, which house it sits in, and whether several markers fire together.
-                  </p>
+                  <h2 id="wounds-title" className="seenLabel">What the chart carries</h2>
                   <ul className="seenFlowIntroduction" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '1rem' }}>
-                    {rankedWounds.map((wound) => (
-                      <li key={wound.markerId} style={{ borderLeft: '3px solid var(--seen-accent, #c9a227)', paddingLeft: '1rem' }}>
-                        <p style={{ margin: 0, fontWeight: 600 }}>
-                          {wound.label} — rank {wound.rank}
-                        </p>
-                        <p className="seenFieldSupport" style={{ margin: '0.25rem 0' }}>{RANK_LABEL[wound.rank]}</p>
-                        <p style={{ margin: '0.25rem 0' }}>{wound.signature}</p>
-                        <p className="seenFieldSupport" style={{ margin: '0.25rem 0' }}><strong>Cost:</strong> {wound.cost}</p>
-                        <p className="seenFieldSupport" style={{ margin: '0.25rem 0' }}><strong>Repeats:</strong> {wound.repeatPattern}</p>
-                      </li>
-                    ))}
+                    {rankedWounds.map((wound) => {
+                      const hit = woundHits.find((h) => h.id === wound.markerId);
+                      const expanded = !!expandedWounds[wound.markerId];
+                      return (
+                        <li key={wound.markerId} style={{ borderLeft: '3px solid var(--seen-accent, #c9a227)', paddingLeft: '1rem' }}>
+                          <p style={{ margin: 0, fontWeight: 600 }}>{placementLead(wound.markerId, wound.label, hit)}</p>
+                          <p className="seenFieldSupport" style={{ margin: '0.25rem 0' }}>{RANK_LABEL[wound.rank]}</p>
+                          <button
+                            type="button"
+                            className="seenButtonSecondary"
+                            style={{ marginTop: '0.5rem' }}
+                            onClick={() => setExpandedWounds((prev) => ({ ...prev, [wound.markerId]: !prev[wound.markerId] }))}
+                          >
+                            {expanded ? 'Show less' : `Want to know more about ${wound.label}'s wound?`}
+                          </button>
+                          {expanded && (
+                            <div style={{ marginTop: '0.5rem' }}>
+                              <p style={{ margin: '0.25rem 0' }}>{wound.signature}</p>
+                              <p className="seenFieldSupport" style={{ margin: '0.25rem 0' }}><strong>Cost:</strong> {wound.cost}</p>
+                              <p className="seenFieldSupport" style={{ margin: '0.25rem 0' }}><strong>Repeats:</strong> {wound.repeatPattern}</p>
+                            </div>
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </section>
               </>
