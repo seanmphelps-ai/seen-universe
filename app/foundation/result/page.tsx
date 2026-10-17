@@ -92,7 +92,6 @@ export default function FoundationResultPage() {
   const [chart, setChart] = useState<NatalChartResult | null>(null);
   const [rankedWounds, setRankedWounds] = useState<RankedWound[] | null>(null);
   const [woundHits, setWoundHits] = useState<WoundMarkerHit[]>([]);
-  const [expandedWounds, setExpandedWounds] = useState<Record<string, boolean>>({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -232,30 +231,23 @@ export default function FoundationResultPage() {
               <>
                 <div className="seenDivider" aria-hidden="true" />
                 <section aria-labelledby="wounds-title">
-                  <h2 id="wounds-title" className="seenLabel">What the chart carries</h2>
+                  <h2 id="wounds-title" className="seenLabel">Wound markers — ranked</h2>
+                  <p className="seenFieldSupport">
+                    These are the patterns the chart carries. Rank follows authored criteria — it weighs how tight the aspect is, how heavy the planet is, which house it sits in, and whether several markers fire together.
+                  </p>
                   <ul className="seenFlowIntroduction" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '1rem' }}>
                     {rankedWounds.map((wound) => {
                       const hit = woundHits.find((h) => h.id === wound.markerId);
-                      const expanded = !!expandedWounds[wound.markerId];
                       return (
                         <li key={wound.markerId} style={{ borderLeft: '3px solid var(--seen-accent, #c9a227)', paddingLeft: '1rem' }}>
-                          <p style={{ margin: 0, fontWeight: 600 }}>{placementLead(wound.markerId, wound.label, hit)}</p>
+                          <p style={{ margin: 0, fontWeight: 600 }}>
+                            {wound.label} — rank {wound.rank}
+                          </p>
+                          <p className="seenFieldSupport" style={{ margin: '0.25rem 0' }}>{placementLead(wound.markerId, wound.label, hit)}</p>
                           <p className="seenFieldSupport" style={{ margin: '0.25rem 0' }}>{RANK_LABEL[wound.rank]}</p>
-                          <button
-                            type="button"
-                            className="seenButtonSecondary"
-                            style={{ marginTop: '0.5rem' }}
-                            onClick={() => setExpandedWounds((prev) => ({ ...prev, [wound.markerId]: !prev[wound.markerId] }))}
-                          >
-                            {expanded ? 'Show less' : `Want to know more about ${wound.label}'s wound?`}
-                          </button>
-                          {expanded && (
-                            <div style={{ marginTop: '0.5rem' }}>
-                              <p style={{ margin: '0.25rem 0' }}>{wound.signature}</p>
-                              <p className="seenFieldSupport" style={{ margin: '0.25rem 0' }}><strong>Cost:</strong> {wound.cost}</p>
-                              <p className="seenFieldSupport" style={{ margin: '0.25rem 0' }}><strong>Repeats:</strong> {wound.repeatPattern}</p>
-                            </div>
-                          )}
+                          <p style={{ margin: '0.25rem 0' }}>{wound.signature}</p>
+                          <p className="seenFieldSupport" style={{ margin: '0.25rem 0' }}><strong>Cost:</strong> {wound.cost}</p>
+                          <p className="seenFieldSupport" style={{ margin: '0.25rem 0' }}><strong>Repeats:</strong> {wound.repeatPattern}</p>
                         </li>
                       );
                     })}
