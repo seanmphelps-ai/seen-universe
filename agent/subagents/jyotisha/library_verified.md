@@ -635,3 +635,37 @@ The commentary calls these "vaidhavya yoga". This is MC's only Mars-7th marriage
 **Stanza 13**: read results from omens at the start, on the way, and on entering, and from sutra, thrisphuta, ashtamangala, arudha and suvarnavastha.
 
 - The ashtamangala method itself is defined later. **Not yet checked.**
+
+---
+# Batch 6 (2026-10-17). BPHS1 (Santhanam Vol.1; printed = PDF + 1)
+
+## #35 Upagrahas: Gulika and the Kala-velas (BPHS ch.3 vv.66–69, pp.44–45)
+- **Day:** divide the day duration (sunrise to sunset of that weekday) into 8 equal parts. Allot them in order from the lord of the weekday.
+- The 8th part is lordless. Saturn's part is **Gulika**. The Sun's part is Kala, Mars's is Mrityu, Jupiter's is Yamaghantaka, and Mercury's is Ardhaprahara.
+- **Night:** divide the night into 8 parts. The first part goes to the lord of the **5th weekday** counted from the day's lord, then continue in weekday order. The 8th part is again lordless, and the same names apply.
+- Santhanam's note (p.45): Gulika and Mandi are one and the same, citing a Chaukhambha Hindi BPHS ch.4 sl.15. The verse is "not available in our version", so this is a translator note.
+- v.65 (p.44): Dhooma etc. afflicting the Sun harm the dynasty, the Moon life, and the ascendant longevity and wisdom.
+- This gives a daily "Gulika kala" window per weekday directly (#15).
+
+## #17 Vargas (BPHS ch.6)
+**17.1** (vv.2–4, p.68)
+- The 16 vargas: Rasi, Hora, Drekkana, Chaturthamsa, Saptamsa, Navamsa, Dasamsa, Dvadasamsa, Shodasamsa, Vimsamsa, Chaturvimsamsa, Saptavimsamsa, Trimsamsa, Khavedamsa, Akshavedamsa, Shashtiamsa.
+
+**17.2 Hora** (vv.5–6, p.68)
+- In an odd sign, the first half (0–15°) is the Sun's hora and the second half the Moon's. In an even sign it is reversed.
+- The calculation rules for the other vargas follow in ch.6. **Not yet checked.**
+
+## #16 Shadbala (BPHS ch.27)
+**16.1 Uchcha bala** (vv.1–1½, pp.263–264)
+- Subtract the planet's deep-debilitation point from its longitude. If the result exceeds 6 signs, subtract it from 12 signs. Convert to degrees and divide by 3. The result is the Uchcha bala in virupas, maximum 60.
+- Santhanam's notes (p.264) list the six balas: Sthana, Dig, Kala (including Ayana), Cheshta, Naisargika, Drik. Sthana bala consists of Uchcha, Saptavargaja, Ojhayugma (odd/even rasi and navamsa), Kendradi, and Drekkana bala. Nodes are excluded.
+- This list is a translator note. The verse rules for each component are **not yet checked**.
+- The deep-debilitation points are BPHS 3.49–50, pp.38–39, already in Vedic's build.
+
+## #31 (adds) BPHS chara karakas (ch.32 vv.3–8, p.317)
+- Among the planets from the Sun on, the one with the most degrees within its sign is the Atmakaraka.
+- Tie on degrees: compare minutes, then seconds.
+- **Rahu:** deduct its longitude within its sign from 30. Rahu is included, so this is the 8-karaka scheme.
+- vv.9–12: the Atmakaraka is the "king" of the karakas, and the others cannot override it.
+- Compare Jaimini Su.11 (#31, batch 2), where the text allows 7 or 8 karakas. BPHS explicitly uses Rahu's reversed degrees.
+- The same paragraph also names "Anthyakaraka, Madhyakaraka and Upakheta". What these refer to is unclear on this page, so record the names and don't implement them.
