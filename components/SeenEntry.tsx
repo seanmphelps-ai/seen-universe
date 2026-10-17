@@ -1,26 +1,13 @@
 // PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { resolveExperienceMode } from '../lib/seen/experienceMode';
 
-const WORDS = ['YOUR', 'STORY', 'HOLDS', 'A', 'WHOLE', 'UNIVERSE.'];
-
 export default function SeenEntry() {
   const router = useRouter();
-  const [wordIndex, setWordIndex] = useState(0);
-  const [phase, setPhase] = useState<'words' | 'ready' | 'mode'>('words');
-
-  useEffect(() => {
-    if (phase !== 'words') return;
-    if (wordIndex >= WORDS.length) {
-      const timer = window.setTimeout(() => setPhase('ready'), 700);
-      return () => window.clearTimeout(timer);
-    }
-    const timer = window.setTimeout(() => setWordIndex((index) => index + 1), 700);
-    return () => window.clearTimeout(timer);
-  }, [phase, wordIndex]);
+  const [phase, setPhase] = useState<'ready' | 'mode'>('ready');
 
   function choose(mode: 'single_person' | 'multi_person') {
     const resolved = resolveExperienceMode({ mode });
@@ -38,25 +25,27 @@ export default function SeenEntry() {
 
   return (
     <main className="seenIntro">
-      <div className="seenIntroAmbient" aria-hidden="true" />
+      <video
+        className="seenIntroVideo"
+        src="/foundation/splash.mp4"
+        poster="/foundation/splash-poster.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+      />
+      <div className="seenIntroVeil" aria-hidden="true" />
       <div className="seenIntroContent">
-        {phase === 'words' && (
-          <div className="seenIntroWord" data-active="true">
-            {WORDS[Math.min(wordIndex, WORDS.length - 1)]}
-          </div>
-        )}
-
         {phase === 'ready' && (
           <div className="seenIntroReveal">
-            <p>SEEN</p>
-            <h1>Every part of you has a story.</h1>
-            <div className="seenDivider" aria-hidden="true" />
+            <h1 className="seenIntroMark">SEEN</h1>
             <button
               type="button"
-              className="seenButtonPrimary"
+              className="seenIntroEnter"
               onClick={() => setPhase('mode')}
             >
-              Are you ready to be seen?
+              Enter
             </button>
           </div>
         )}
