@@ -397,7 +397,20 @@ export default function RectificationPage() {
             <span className="seenLabel">Recognition locked</span>
             <p className="seenFlowIntroduction">{lockedMessage}</p>
             <div className="seenDivider" aria-hidden="true" />
-            <button type="button" className="seenButtonPrimary" onClick={backToRound1}>
+            <button
+              type="button"
+              className="seenButtonPrimary"
+              onClick={() => router.push('/foundation/reveal')}
+            >
+              See the reading
+              <span aria-hidden="true">→</span>
+            </button>
+            <button
+              type="button"
+              className="seenButtonSecondary"
+              style={{ marginTop: '0.75rem' }}
+              onClick={backToRound1}
+            >
               Start over
             </button>
           </section>

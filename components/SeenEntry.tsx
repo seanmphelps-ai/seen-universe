@@ -7,7 +7,7 @@ import { resolveExperienceMode } from '../lib/seen/experienceMode';
 
 export default function SeenEntry() {
   const router = useRouter();
-  const [phase, setPhase] = useState<'ready' | 'mode'>('ready');
+  const [phase, setPhase] = useState<'ready' | 'mode' | 'interaction'>('ready');
 
   function choose(mode: 'single_person' | 'multi_person') {
     const resolved = resolveExperienceMode({ mode });
@@ -16,11 +16,19 @@ export default function SeenEntry() {
     } catch {
       /* storage unavailable */
     }
-    if (resolved.next === 'person_a_foundation') {
-      router.push('/foundation/location');
-      return;
+    setPhase('interaction');
+  }
+
+  function chooseInteraction(interaction: 'manuscript' | 'chat' | 'voice') {
+    try {
+      sessionStorage.setItem('seen:interaction-mode', interaction);
+    } catch {
+      /* storage unavailable */
     }
-    router.push('/closure');
+    const raw = sessionStorage.getItem('seen:experience-mode');
+    const resolved = raw ? JSON.parse(raw) : null;
+    const next = resolved?.next === 'closure_people' ? '/closure' : interaction === 'manuscript' ? '/chart' : '/foundation/chat';
+    router.push(next);
   }
 
   return (
@@ -69,6 +77,43 @@ export default function SeenEntry() {
                 onClick={() => choose('multi_person')}
               >
                 Two people
+              </button>
+            </div>
+          </div>
+        )}
+
+        {phase === 'interaction' && (
+          <div className="seenIntroReveal">
+            <p>Closure & Composure</p>
+            <h1>How do you want to tell it?</h1>
+            <p className="seenFlowIntroduction" style={{ marginTop: 16 }}>
+              Talk it through, type it, or write it out yourself.
+            </p>
+            <div className="seenDivider" aria-hidden="true" />
+            <div className="seenIntroComposer">
+              <button
+                type="button"
+                className="seenButtonPrimary"
+                style={{ width: '100%' }}
+                onClick={() => chooseInteraction('voice')}
+              >
+                Voice
+              </button>
+              <button
+                type="button"
+                className="seenIntroContinue"
+                style={{ marginTop: 12 }}
+                onClick={() => chooseInteraction('chat')}
+              >
+                Chat
+              </button>
+              <button
+                type="button"
+                className="seenIntroContinue"
+                style={{ marginTop: 12 }}
+                onClick={() => chooseInteraction('manuscript')}
+              >
+                Manuscript
               </button>
             </div>
           </div>
