@@ -778,3 +778,64 @@ Tables are Santhanam's specula; the rule sentences are his translation of the ve
 - **Tribhaga** (v.12, p.269): day thirds: Mercury, Sun, Saturn; night thirds: Moon, Venus, Mars; Jupiter always gets 60.
 - **Naisargika** (v.14, p.276): 60/7 × 1..7 for Saturn, Mars, Mercury, Jupiter, Venus, Moon, Sun: Sun 1.000, Moon 0.857, Venus 0.714, Jupiter 0.571, Mercury 0.429, Mars 0.286, Saturn 0.143 rupa (table is note). Tie-break: equal shadbala → higher naisargika prevails (note).
 - **Not yet checked:** Varsha-masa-dina-hora (v.13), Ayana (vv.15–17, tables pp.277–281), Yuddha, Cheshta, Drik, ishta/kashta.
+
+---
+# Batch 9a (2026-10-17). BPHS1/BPHS2 page images (local PDF render; BPHS2 printed = PDF page + 490, checked on headers)
+
+## #16 (completes) Shadbala, remaining components (BPHS ch.27, BPHS1 pp.270–285)
+- **Varsha-masa-dina-hora** (v.13, p.270): the year lord, month lord, weekday lord and hora lord get 15, 30, 45 and 60 virupas. Working out the year lord uses the ahargana (days since creation; Santhanam's abridged tables pp.272–274). That table is a translator aid, not verse.
+- **Tribhaga** (p.270 note, completes v.12): two planets get 1 rupa: Jupiter always, plus the planet ruling the third of the day or night in which birth falls. The other five get none.
+- **Ayana** (vv.15–17, p.277): khandas 45, 33, 12. Add the ayanamsa to the planet, take the bhuja (distance from the nearest equinox), and work it through the khandas.
+  - For the Moon and Saturn, if in Libra onward (southern), add 3 rasis; if in Aries to Virgo, reduce. Reverse for the Sun, Mars, Venus and Jupiter. Mercury: always additive. Result ÷3 = virupas.
+  - Translator formula: (23°27′ ± kranti) × 1.2793, where + is used for the Moon and Saturn with southern declination and for the Sun, Mars, Jupiter and Venus with northern; minus otherwise; Mercury always +. The Sun's ayana bala is doubled.
+  - Tables pp.277–281 are translator aids.
+- **Cheshta for the Sun and Moon** (v.18, p.284): the Sun's cheshta bala = his ayana bala; the Moon's = her paksha bala.
+- **Drik bala** (v.19, p.284): reduce by one-fourth of the drishti pinda for malefic aspects, add one-fourth for benefic aspects, and add the full aspect of Mercury and Jupiter.
+- **Yuddha bala** (v.20, p.284): in a war between two planets from Mars to Saturn, the difference of their shadbalas is added to the victor and deducted from the vanquished.
+- **Eight motions** (vv.21–23, pp.284–285): Vakra (retrograde) 60, Anuvakra (re-entering the previous sign retrograde) 30, Vikala (stationary) 15, Manda 30, Mandatara 15, Sama 7.5, Chara 45, Atichara (entering the next sign fast) 30 virupas.
+  - The page maps the strengths in that listed order: 60, 30, 15, 30, 15, 7.5, 45, 30.
+- **Cheshta for Mars–Saturn** (vv.24–25, p.285): average the mean and true longitudes, subtract from the seeghrocha to get the cheshta kendra; if over 180° take 360 minus; ÷3 = virupas. The six balas are Sthana, Dig, Kala, Drik, Cheshta, Naisargika.
+
+## #16 (adds) Ishta and Kashta (BPHS ch.28, BPHS1 pp.289–290)
+- **Uchcha rasmi** (v.2, p.289): planet − debilitation point; if >6 signs, 12 minus; add 1 rasi; ×2 = uchcha rasmi.
+- **Cheshta rasmi** (vv.3–4, p.289): from the cheshta kendra. For the Sun, kendra = sayana Sun + 3 rasis; for the Moon, kendra = Moon − Sun (sidereal). If >6 signs, 12 minus; add 1 sign; ×2.
+- **Subha/Asubha rasmi** (v.5, p.290): (uchcha + cheshta rasmi) ÷ 2 = subha rasmis; 8 − subha = asubha.
+- **Ishta/Kashta phala** (v.6, p.290): subtract 1 from each of cheshta and uchcha rasmi, multiply them, ×10, take half = ishta phala; 60 − ishta = kashta phala. (Page wording: "multiply the products by 10 and add together. Half of the sum"; ambiguous, record as printed.)
+- **Saptavargaja subhanka** (vv.7–9, p.290): exaltation 60, moolatrikona 45, own 30, extreme friend 22, friend 15, neutral 8, enemy 4, bitter enemy 2, debilitation 0; asubhanka = 60 − subhanka. Halved in other vargas.
+  - Note these differ from the ch.27 saptavargaja virupas (p.265: 45/30/20/15/10/4/2). Both are printed; keep as separate tables.
+- **v.10** (p.290): auspicious in the first five of those places, neutral in the sixth, inauspicious in the last three.
+
+## #3 (adds) Trikona shodhana (BPHS2 ch.67 vv.1–5, pp.867–868)
+- Trikonas: Aries–Leo–Sagittarius, Taurus–Virgo–Capricorn, Gemini–Libra–Aquarius, Cancer–Scorpio–Pisces.
+- Of the three trikona rasis, subtract the smallest rekha count from all three.
+- No shodhana if any of the three has no rekha. If all three are equal, all become zero.
+- Ekadhipatya shodhana follows (ch.68).
+
+## #3 (adds) Ekadhipatya shodhana (BPHS2 ch.68 vv.1–5, pp.875–876)
+Done only when both signs ruled by one planet still carry a number after trikona shodhana.
+1. Both signs without planets and the numbers differ: both get the smaller number.
+2. Both signs have planets: no shodhana.
+3. One has a planet and the smaller number, the other is empty with the bigger: subtract the smaller from the bigger; the occupied sign stays unchanged.
+4. The occupied sign has the bigger number: the empty sign becomes zero; the occupied one stays unchanged.
+5. Both empty with equal numbers: both become zero.
+6. One occupied, one empty: the empty one becomes zero. (Rules 4 and 6 overlap on the page; record as printed.)
+- The Sun's and Moon's single signs (Leo, Cancer) stay unchanged.
+
+## #29 Kalachakra dasha (BPHS2 ch.46, pp.530–543)
+- **Savya and apasavya** (vv.56–58, p.530): Aswini-group nakshatras go in the savya chakra and Rohini-group in the apasavya. Aswini, Punarvasu, Hasta, Moola, Poorvabhadra, Krittika, Ashlesha, Swati, Uttarashada and Revati follow Aswini's padas.
+- **Deha and Jeeva** (vv.59–64, pp.530–531), for the Aswini group:
+  - pada 1: Aries is Deha, Sagittarius Jeeva; dasha signs Aries → Sagittarius.
+  - pada 2: Capricorn Deha, Gemini Jeeva; the 9 signs Capricorn → Gemini.
+  - pada 3: Taurus Deha, Gemini Jeeva; signs 2, 1, 12, 11, 10, 9, 1, 2, 3.
+  - pada 4: Cancer Deha, Pisces Jeeva; signs Cancer → Pisces.
+- **Bharani group** (vv.65–66, p.531): Bharani, Pushyami, Chittra, Poorvashada and Uttarabhadra share. Bharani pada 1: Scorpio Deha, Pisces Jeeva; signs 8, 7, 6, 4, 5, 3, 2, 1, … (continues p.532; not yet read).
+- **Navamsa of the Moon** (vv.87–88, p.537): past nakshatras from Aswini ÷3, remainder ×4, + current pada = navamsa count from Aries.
+- **Full years** (v.89, p.537): Aries 100, Taurus 85, Gemini 83, Cancer 86; the 5th and 9th from each get the same.
+- **Balance at birth** (v.93, p.542): past kalas of the Moon's navamsa × the years of the dasha ÷ 200 = expired portion.
+  - Santhanam's worked example (p.542) uses sign-dasha years Taurus 16, Aries 7, Pisces 10, Aquarius 4, Capricorn 4, Sagittarius 10, Gemini 9. Those are the planetary years by sign lord (Venus 16, Mars 7, Jupiter 10, Saturn 4, Mercury 9). The verse giving them is **not read yet**.
+- **Deha and Jeeva** (vv.94–95, p.543): in savya, the first amsa is Deha and the last Jeeva; reversed in apasavya.
+- **Gatis** (vv.96–100, p.543):
+  - Mandooki (jump over one sign), e.g. Virgo → Cancer, Leo → Gemini.
+  - Markati (backward to the previous sign).
+  - Simhavalokana (to the 5th or 9th sign).
+  - Effects of the gatis (p.547 onward) are **not read**.
