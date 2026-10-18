@@ -32,7 +32,7 @@ Coordinate SEEN's parallel native-system builders and independent auditors. Cons
 9. Feed failures back to the same builder and repeat until verified.
 10. Require traditional native delivery for each active system.
 11. Route findings separately into Portals/convergence only after each relevant native reading passes its own audit.
-12. Work on the active integration branch, closure-and-composure. Use an additional branch when the user explicitly authorizes it.
+12. Work on the active integration branch, final-seen-cc-runtime. Use an additional branch when the user explicitly authorizes it.
 13. Preserve concurrent changes and integrate each agent's work through its assigned file ownership.
 14. Run npm run typecheck, npm test, and npm run build before declaring integration ready.
 15. Provide a compact dashboard: system, builder status, auditor status, blocker, commit SHA.

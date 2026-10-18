@@ -11,5 +11,5 @@ export default defineAgent({
   model: 'openai/gpt-6-sol',
   reasoning: 'high',
   defaultTools: false,
-  tool: true,
+  tool: false,
 })
