@@ -117,6 +117,6 @@ describe('first-slice screens', () => {
     expect(page).not.toMatch(/\{card\.clock\}/);
     expect(page).not.toMatch(/type="time"/);
     expect(page).not.toMatch(/06:00|18:00/);
-    expect(page).toContain('Pick the one');
+    expect(page).toContain('How much of this summary can you see yourself in?');
   });
 });
