@@ -62,7 +62,7 @@ const PLACEMENT_VERB: Record<string, string> = {
 
 /** One clause naming what each marker is, so the mechanic teaches something instead of just labeling a placement. */
 const MARKER_TEACHING: Record<string, string> = {
-  chiron: 'the wound point',
+  chiron: 'the wound that never heals',
   trueLilith: 'the exiled instinct',
   neptune: 'the dissolver',
   mars: 'the drive to act and sever',
