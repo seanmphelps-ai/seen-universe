@@ -41,19 +41,6 @@ type SeenRunResponse = {
   error?: string;
 }
 
-function formatDegree(degree: number): string {
-  const whole = Math.floor(degree);
-  const minutes = Math.round((degree - whole) * 60);
-  return `${whole}°${minutes.toString().padStart(2, '0')}'`;
-}
-
-function placementLine(label: string, sign: string, degree: number, house: number | null, retrograde: boolean): string {
-  const parts = [label, `${formatDegree(degree)} ${sign}`];
-  if (house !== null) parts.push(`House ${house}`);
-  if (retrograde) parts.push('Rx');
-  return parts.join(' — ');
-}
-
 const RANK_LABEL: Record<number, string> = {
   1: 'Loudest — fires first under pressure.',
   2: 'Strong — shows up clearly in relationships and self-image.',
@@ -73,6 +60,18 @@ const PLACEMENT_VERB: Record<string, string> = {
   uranus: 'cracking',
 }
 
+/** One clause naming what each marker is, so the mechanic teaches something instead of just labeling a placement. */
+const MARKER_TEACHING: Record<string, string> = {
+  chiron: 'the wound point',
+  trueLilith: 'the exiled instinct',
+  neptune: 'the dissolver',
+  mars: 'the drive to act and sever',
+  venus: 'the relational mirror',
+  saturn: 'the fear structure',
+  pluto: 'the power compulsion',
+  uranus: 'the shock point',
+}
+
 function ordinal(n: number): string {
   const s = ['th', 'st', 'nd', 'rd'];
   const v = n % 100;
@@ -81,9 +80,11 @@ function ordinal(n: number): string {
 
 function placementLead(markerId: string, label: string, hit?: WoundMarkerHit): string {
   const verb = PLACEMENT_VERB[markerId] ?? 'active';
-  if (!hit) return `${label} is ${verb}.`;
-  if (hit.house !== null) return `${label} is ${verb} in the ${ordinal(hit.house)} house.`;
-  return `${label} is ${verb} in ${hit.sign}.`;
+  const teaching = MARKER_TEACHING[markerId];
+  const name = teaching ? `${label} — ${teaching} —` : label;
+  if (!hit) return `${name} is ${verb}.`;
+  if (hit.house !== null) return `${name} is ${verb} in the ${ordinal(hit.house)} house.`;
+  return `${name} is ${verb} in ${hit.sign}.`;
 }
 
 export default function FoundationResultPage() {
@@ -174,44 +175,6 @@ export default function FoundationResultPage() {
               {chart.name}
               {chart.hasBirthTime ? ` — birth time known, ${chart.timezone}` : ' — no birth time, houses and angles omitted'}
             </p>
-
-            <div className="seenDivider" aria-hidden="true" />
-
-            <section aria-labelledby="planets-title">
-              <h2 id="planets-title" className="seenLabel">Planets</h2>
-              <ul className="seenFlowIntroduction" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
-                {chart.planets.map((planet) => (
-                  <li key={planet.key}>{placementLine(planet.label, planet.sign, planet.degreeInSign, planet.house, planet.retrograde)}</li>
-                ))}
-              </ul>
-            </section>
-
-            {(chart.ascendant || chart.midheaven) && (
-              <>
-                <div className="seenDivider" aria-hidden="true" />
-                <section aria-labelledby="angles-title">
-                  <h2 id="angles-title" className="seenLabel">Angles</h2>
-                  <ul className="seenFlowIntroduction" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
-                    {chart.ascendant && <li>{placementLine(chart.ascendant.label, chart.ascendant.sign, chart.ascendant.degreeInSign, null, false)}</li>}
-                    {chart.midheaven && <li>{placementLine(chart.midheaven.label, chart.midheaven.sign, chart.midheaven.degreeInSign, null, false)}</li>}
-                  </ul>
-                </section>
-              </>
-            )}
-
-            {chart.houses && (
-              <>
-                <div className="seenDivider" aria-hidden="true" />
-                <section aria-labelledby="houses-title">
-                  <h2 id="houses-title" className="seenLabel">Houses</h2>
-                  <ul className="seenFlowIntroduction" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
-                    {chart.houses.map((house) => (
-                      <li key={house.house}>House {house.house} — {formatDegree(house.degreeInSign)} {house.sign}</li>
-                    ))}
-                  </ul>
-                </section>
-              </>
-            )}
 
             {chart.aspects.length > 0 && (
               <>
