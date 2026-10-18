@@ -7,6 +7,10 @@ import {
   fetchSeedsForClocks,
   type EngineSeedCard,
 } from '../../../lib/seen/darkCardSeeds';
+import {
+  isKnownTimeConfirmed,
+  knownTimeClocksForRound,
+} from '../../../lib/rectification/timeNarrowing';
 
 type PlaceCity = {
   name: string;
@@ -18,6 +22,7 @@ type PlaceCity = {
 type StoredBirth = {
   name: string;
   birthDate: string;
+  birthTime?: string | null;
   birthLocation?: string;
   city?: PlaceCity;
   livedStack?: string;
@@ -210,19 +215,24 @@ export default function RectificationPage() {
       setNarrowingMessage('');
       setRoundHistory([]);
 
-      const { name, birthDate, city, livedStack } = birth!;
+      const { name, birthDate, birthTime, city, livedStack } = birth!;
       const placeLabel = placeLabelFor(birth!);
 
       try {
-        // PRIMARY Round-1 path: real Swiss dark-windows (not LLM scenarios).
-        const seeds = await fetchDarkWindowSeeds({
-          name,
-          birthDate,
-          latitude: city!.latitude,
-          longitude: city!.longitude,
-          birthPlaceLabel: placeLabel,
-          livedStack,
-        });
+        // Known birth time: bracket it ±1h instead of the three fixed dark windows.
+        const seeds = birthTime
+          ? await fetchSeedsForClocks(
+              { name, birthDate, latitude: city!.latitude, longitude: city!.longitude, birthPlaceLabel: placeLabel, livedStack },
+              knownTimeClocksForRound(1, birthTime),
+            )
+          : await fetchDarkWindowSeeds({
+              name,
+              birthDate,
+              latitude: city!.latitude,
+              longitude: city!.longitude,
+              birthPlaceLabel: placeLabel,
+              livedStack,
+            });
 
         if (cancelled) return;
         if (seeds.length < 3) {
@@ -333,6 +343,10 @@ export default function RectificationPage() {
     const nextHistory = record ? [...roundHistory, record] : roundHistory;
     setRoundHistory(nextHistory);
 
+    const givenTime = birth.birthTime || null;
+    const confirmed = givenTime !== null && round === 1 && !!winner.card.clock && isKnownTimeConfirmed(winner.card.clock, givenTime);
+    const lastRound = givenTime ? 2 : 4;
+
     sessionStorage.setItem('seen.foundation.chartResult', JSON.stringify(winner.card.chart));
     sessionStorage.setItem(
       'seen.foundation.rectification',
@@ -344,11 +358,11 @@ export default function RectificationPage() {
         pickedResonancePercent: winner.resonance,
         pickedFromAge: winner.fromAge,
         rounds: nextHistory,
-        locked: round === 4,
+        locked: confirmed || round === lastRound,
       }),
     );
 
-    if (round === 4) {
+    if (confirmed || round === lastRound) {
       sessionStorage.removeItem('seen.foundation.rectification.narrowingStub');
       setNarrowingMessage('Recognition locked.');
       setPhase('complete');
@@ -356,9 +370,10 @@ export default function RectificationPage() {
     }
 
     const nextRound = (round + 1) as 2 | 3 | 4;
-    const deltaHours = ROUND_DELTAS[nextRound];
     const anchorClock = winner.card.clock ?? '12:00';
-    const neighborClocks = neighborClocksForDelta(anchorClock, deltaHours);
+    const neighborClocks = givenTime
+      ? knownTimeClocksForRound(2, anchorClock)
+      : neighborClocksForDelta(anchorClock, ROUND_DELTAS[nextRound]);
 
     setPhase(`round${nextRound}` as RectificationPhase);
     setIsLoading(true);
