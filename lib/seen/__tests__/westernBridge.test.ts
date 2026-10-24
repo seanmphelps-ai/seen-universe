@@ -1,12 +1,12 @@
 // PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { describe, expect, it } from 'vitest';
 import type { NatalChartResult } from '../../natalChart';
-import { PortalPenetrationRunSchema } from '../portalPenetration';
+import { IdentifyingArchetypePenetrationRunSchema } from '../identifyingArchetypePenetration';
 import {
   WESTERN_SOURCE_SYSTEM_ID,
   WesternLifeSectionRoutingOutputSchema,
-  WesternPortalPenetrationRunSchema,
-  buildWesternPortalBridge,
+  WesternIdentifyingArchetypePenetrationRunSchema,
+  buildWesternIdentifyingArchetypeBridge,
 } from '../westernBridge';
 
 const timedChart: NatalChartResult = {
@@ -35,19 +35,19 @@ const timedChart: NatalChartResult = {
   aspects: [{ point1: 'Sun', point2: 'Moon', aspect: 'Trine', orb: 1.25 }],
 };
 
-describe('buildWesternPortalBridge', () => {
-  it('validates exactly one persistent Western layer in every portal', () => {
-    const result = buildWesternPortalBridge(timedChart, {
+describe('buildWesternIdentifyingArchetypeBridge', () => {
+  it('validates exactly one persistent Western layer in every identifying archetype', () => {
+    const result = buildWesternIdentifyingArchetypeBridge(timedChart, {
       sourceFieldId: 'western-field-1',
       layerSequence: 1,
     });
 
-    expect(() => PortalPenetrationRunSchema.parse(result.portalPenetration)).not.toThrow();
-    expect(result.portalPenetration.layers).toHaveLength(64);
-    expect(result.portalPenetration.layers.map((layer) => layer.portalId)).toEqual(
+    expect(() => IdentifyingArchetypePenetrationRunSchema.parse(result.identifyingArchetypePenetration)).not.toThrow();
+    expect(result.identifyingArchetypePenetration.layers).toHaveLength(64);
+    expect(result.identifyingArchetypePenetration.layers.map((layer) => layer.archetypeId)).toEqual(
       Array.from({ length: 64 }, (_, index) => index + 1),
     );
-    expect(result.portalPenetration.layers.every((layer) => (
+    expect(result.identifyingArchetypePenetration.layers.every((layer) => (
       layer.sourceSystemId === WESTERN_SOURCE_SYSTEM_ID
       && layer.sourceIdentityPreserved
       && layer.persistent
@@ -56,7 +56,7 @@ describe('buildWesternPortalBridge', () => {
   });
 
   it('routes the validated complete column into all 45 Life Section IDs', () => {
-    const result = buildWesternPortalBridge(timedChart, {
+    const result = buildWesternIdentifyingArchetypeBridge(timedChart, {
       sourceFieldId: 'western-field-2',
       layerSequence: 1,
     });
@@ -67,12 +67,12 @@ describe('buildWesternPortalBridge', () => {
       Array.from({ length: 45 }, (_, index) => index + 1),
     );
     expect(result.lifeSectionRouting.routes.every((route) => (
-      route.portalIds.length === 64 && route.layerRefs.length === 64
+      route.archetypeIds.length === 64 && route.layerRefs.length === 64
     ))).toBe(true);
   });
 
   it('preserves unknown-time limits instead of inventing houses or angles', () => {
-    const result = buildWesternPortalBridge(
+    const result = buildWesternIdentifyingArchetypeBridge(
       {
         ...timedChart,
         hasBirthTime: false,
@@ -83,37 +83,37 @@ describe('buildWesternPortalBridge', () => {
       { sourceFieldId: 'western-field-3', layerSequence: 1 },
     );
 
-    expect(result.portalPenetration.layers[0].evidence[0].confidence).toBe(0.75);
-    expect(result.portalPenetration.layers[0].evidence[0].summary).toContain(
+    expect(result.identifyingArchetypePenetration.layers[0].evidence[0].confidence).toBe(0.75);
+    expect(result.identifyingArchetypePenetration.layers[0].evidence[0].summary).toContain(
       'houses and angles await a known birth time',
     );
   });
 
-  it('rejects an incomplete canonical portal column', () => {
-    const result = buildWesternPortalBridge(timedChart, {
+  it('rejects an incomplete canonical identifying archetype column', () => {
+    const result = buildWesternIdentifyingArchetypeBridge(timedChart, {
       sourceFieldId: 'western-field-4',
       layerSequence: 1,
     });
     const incomplete = {
-      ...result.portalPenetration,
-      layers: result.portalPenetration.layers.slice(0, 63),
+      ...result.identifyingArchetypePenetration,
+      layers: result.identifyingArchetypePenetration.layers.slice(0, 63),
     };
 
-    expect(() => PortalPenetrationRunSchema.parse(incomplete)).toThrow();
+    expect(() => IdentifyingArchetypePenetrationRunSchema.parse(incomplete)).toThrow();
   });
 
-  it('rejects a 64-record column that duplicates a portal ID', () => {
-    const result = buildWesternPortalBridge(timedChart, {
+  it('rejects a 64-record column that duplicates a identifying archetype ID', () => {
+    const result = buildWesternIdentifyingArchetypeBridge(timedChart, {
       sourceFieldId: 'western-field-5',
       layerSequence: 1,
     });
     const duplicated = {
-      ...result.portalPenetration,
-      layers: result.portalPenetration.layers.map((layer, index) => (
-        index === 63 ? { ...layer, portalId: 63 } : layer
+      ...result.identifyingArchetypePenetration,
+      layers: result.identifyingArchetypePenetration.layers.map((layer, index) => (
+        index === 63 ? { ...layer, archetypeId: 63 } : layer
       )),
     };
 
-    expect(() => WesternPortalPenetrationRunSchema.parse(duplicated)).toThrow();
+    expect(() => WesternIdentifyingArchetypePenetrationRunSchema.parse(duplicated)).toThrow();
   });
 });

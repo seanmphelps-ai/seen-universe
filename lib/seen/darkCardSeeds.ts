@@ -1,7 +1,7 @@
 // PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 /**
  * Soft dark-card seeds when LLM scenarios are unavailable.
- * Uses the real chart engine (Swiss + GeoPresence + wounds + 64 portals).
+ * Uses the real chart engine (Swiss + GeoPresence + wounds + 64 identifying archetypes).
  * Face output is anonymous pressure prose — clocks stay metadata only.
  */
 
@@ -22,7 +22,7 @@ export type EngineSeedCard = {
 
   geoSummary?: string;
   wounds?: Array<{ label: string; sign: string; degree: number; qualities: string[] }>;
-  topPortals?: Array<{ portalId: number; name: string; expression: string }>;
+  topIdentifyingArchetypes?: Array<{ archetypeId: number; name: string; expression: string }>;
 };
 
 type DarkWindowResultPayload = {
@@ -37,7 +37,7 @@ type DarkWindowResultPayload = {
       house?: number | null;
       qualities: string[];
     }>;
-    topPortals: Array<{ portalId: number; name: string; expression: string }>;
+    topIdentifyingArchetypes: Array<{ archetypeId: number; name: string; expression: string }>;
   };
 };
 
@@ -61,12 +61,12 @@ function mapResultsToCards(results: DarkWindowResultPayload[]): EngineSeedCard[]
       house: w.house ?? null,
       qualities: w.qualities,
     }));
-    const topPortals = seed.topPortals;
+    const topIdentifyingArchetypes = seed.topIdentifyingArchetypes;
     const paragraph = anonymousCardFace(pressureProseFromSeed({
       clock,
       geoSummary: seed.geoSummary,
       wounds,
-      topPortals,
+      topIdentifyingArchetypes,
     }));
 
     return {
@@ -81,7 +81,7 @@ function mapResultsToCards(results: DarkWindowResultPayload[]): EngineSeedCard[]
         degree,
         qualities,
       })),
-      topPortals,
+      topIdentifyingArchetypes,
     };
   });
 }

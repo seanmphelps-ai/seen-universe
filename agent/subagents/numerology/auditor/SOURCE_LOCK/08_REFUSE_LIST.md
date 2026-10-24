@@ -11,5 +11,5 @@ Not authority for this module:
 - Destiny-guarantee / pay-to-fix-karma commercial claims
 - AI-invented letter values or inconsistent master collapse
 - Cafe Astrology–class SEO pages as calc authority
-- Four PORTAL_ASKS templates
+- Four IDENTIFYING_ARCHETYPE_ASKS templates
 - Multi-modality blended summaries

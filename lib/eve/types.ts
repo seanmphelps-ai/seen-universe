@@ -3,7 +3,7 @@
 
 export type EveTask = {
   id: string;
-  kind: 'wound-extract' | 'portal-express' | 'echo';
+  kind: 'wound-extract' | 'identifying-archetype-express' | 'echo';
   payload: Record<string, unknown>;
   meta?: Record<string, unknown>;
 }

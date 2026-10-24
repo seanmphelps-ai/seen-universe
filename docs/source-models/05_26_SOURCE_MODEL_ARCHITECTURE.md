@@ -12,7 +12,7 @@ Status: SUPERSEDED HISTORICAL REFERENCE. Active implementation follows the curre
 5. Galactic signature runs independently.
 6. I Ching runs independently.
 7. Human Design runs independently.
-8. Independent outputs remain separate until portal/gate synthesis.
+8. Independent outputs remain separate until identifying-archetype/gate synthesis.
 9. Developmental arc is applied after synthesis.
 10. Core identity narrative is written last.
 

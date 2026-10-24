@@ -79,7 +79,7 @@ Environmental Intake
 → Place Resolution
 → Place-Period Temporalization
 → Baseline Environmental Pressure
-→ Portal Pre-Charge
+→ Identifying archetype Pre-Charge
 → Birth Foundation Intake
 → Numerology
 → Swiss Ephemeris Candidate Runs
@@ -92,7 +92,7 @@ Environmental Intake
 → Recognition Summary Generation
 → Recognition Selection
 → Full Helix Ignition
-→ 64-Portal Scan
+→ 64-Identifying-archetype Scan
 → Dr. Maisel 25-Lens Inspection
 → Recursive Passes
 → Convergence / Divergence
@@ -124,17 +124,17 @@ Environmental execution produces:
 - baseline environmental pressure;
 - support, pressure, mitigation, and net-effect vectors;
 - wound-quality candidates;
-- portal deposits;
+- identifying archetype deposits;
 - provenance;
 - confidence;
 - contradictions;
 - unresolved variables.
 
-## Portal Pre-Charge
+## Identifying archetype Pre-Charge
 
-Environmental pressure enters the portal field before birth-date and chart interpretation.
+Environmental pressure enters the identifying archetype field before birth-date and chart interpretation.
 
-Portal pre-charge records environmental receptivity across all 64 portals, including:
+Identifying archetype pre-charge records environmental receptivity across all 64 identifying archetypes, including:
 
 - amplification;
 - suppression;
@@ -145,7 +145,7 @@ Portal pre-charge records environmental receptivity across all 64 portals, inclu
 - recurrence rate;
 - split factor.
 
-Portal pre-charge prepares the field. Full portal evaluation occurs after recognition calibration and Full Helix Ignition.
+Identifying archetype pre-charge prepares the field. Full identifying archetype evaluation occurs after recognition calibration and Full Helix Ignition.
 
 ## Birth Foundation and Time Calibration
 
@@ -217,7 +217,7 @@ It activates the complete calibrated person field across:
 - attachment;
 - wound and shadow fields;
 - recursive passes;
-- portal convergence;
+- identifying archetype convergence;
 - Life Section routing.
 
 Required contracts:
@@ -225,16 +225,16 @@ Required contracts:
 - `HelixIgnitionInputSchema`;
 - `HelixIgnitionOutputSchema`.
 
-The output identifies activated signals, convergences, divergences, surfaced portals, routed Life Sections, and Generator readiness.
+The output identifies activated signals, convergences, divergences, surfaced identifying archetypes, routed Life Sections, and Generator readiness.
 
 ## Dr. Maisel 25-Lens Inspection
 
-The 25 Dr. Maisel lenses inspect the stabilized portal and signal field after the full 64-portal scan.
+The 25 Dr. Maisel lenses inspect the stabilized identifying archetype and signal field after the full 64-identifying-archetype scan.
 
 Execution position:
 
 ```text
-64-Portal Scan
+64-Identifying-archetype Scan
 → Dr. Maisel 25-Lens Inspection
 → Recursive Passes
 → Convergence / Divergence
@@ -299,7 +299,7 @@ The Drama Triangle is one input to the broader Jungian inversion.
 
 Jungian inversion receives:
 
-- surfaced portals;
+- surfaced identifying archetypes;
 - wound and shadow fields;
 - attachment results;
 - childhood formation;
@@ -332,12 +332,12 @@ Every registry entry contains:
 - canonical label;
 - definition;
 - supported source categories;
-- valid portal routes;
+- valid identifying archetype routes;
 - valid Generator destinations;
 - valid Oracle destinations;
 - version.
 
-Every active signal, portal deposit, wound result, lens result, relational finding, Jungian inversion, recognition summary, reveal section, and deeper path carries one or more valid Life Section routes.
+Every active signal, identifying archetype deposit, wound result, lens result, relational finding, Jungian inversion, recognition summary, reveal section, and deeper path carries one or more valid Life Section routes.
 
 Required contracts:
 
@@ -404,7 +404,7 @@ The Generator owns:
 - wound and shadow evaluation;
 - attachment evaluation;
 - childhood formation;
-- portal scanning;
+- identifying archetype scanning;
 - Dr. Maisel lens inspection;
 - recursive passes;
 - convergence and divergence;
@@ -438,7 +438,7 @@ The Generator establishes structured evidence.
 
 The Oracle renders recognition.
 
-Portals route evidence.
+Identifying archetypes route evidence.
 
 Life Sections organize application and interpretation domains.
 

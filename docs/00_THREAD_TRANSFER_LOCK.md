@@ -26,7 +26,7 @@ SEEN begins before calculation.
 SEEN begins before extraction.  
 SEEN begins before comparison.  
 SEEN begins before Cadence.  
-SEEN begins before portals.  
+SEEN begins before identifying archetypes.  
 SEEN begins before life sections.  
 SEEN begins before rendering.
 
@@ -63,7 +63,7 @@ Wound markers are source pressure signals.
 
 Shadow lenses are interpretive viewing angles.
 
-Portals are routing structures.
+Identifying archetypes are routing structures.
 
 Global amplifiers are moving contextual modifiers.
 

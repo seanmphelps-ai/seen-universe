@@ -5,7 +5,7 @@ import { INTERROGATORS, runAllInterrogators } from '../interrogators';
 describe('interrogators', () => {
   it('registers 64 interrogators with ids 1..64', () => {
     expect(INTERROGATORS).toHaveLength(64);
-    expect(INTERROGATORS.map((i) => i.portalId)).toEqual(Array.from({ length: 64 }, (_, i) => i + 1));
+    expect(INTERROGATORS.map((i) => i.archetypeId)).toEqual(Array.from({ length: 64 }, (_, i) => i + 1));
   });
   it('each one runs and carries every signal on every answer', () => {
     const sig = [{ modality: 'western', id: 'PLUTO', label: 'Pluto', source: { ref: 'test' } }];
@@ -17,21 +17,21 @@ describe('interrogators', () => {
     }
   });
 
-  it('an active portal (signal matches its woundMarkerAffinity) carries the 14-field extraction; an inactive one does not', () => {
+  it('an active identifying archetype (signal matches its woundMarkerAffinity) carries the 14-field extraction; an inactive one does not', () => {
     const sig = [{ modality: 'western', id: 'PLUTO', label: 'Pluto', source: { ref: 'test' } }];
     const results = runAllInterrogators(sig);
-    const portal1 = results.find((r) => r.portalId === 1)!; // woundMarkerAffinity includes PLUTO
-    expect(portal1.active).toBe(true);
-    expect(portal1.extraction).toMatchObject({ portalId: 1, hexagramName: portal1.name });
-    expect(Object.keys(portal1.extraction!).sort()).toEqual([
+    const identifyingArchetype1 = results.find((r) => r.archetypeId === 1)!; // woundMarkerAffinity includes PLUTO
+    expect(identifyingArchetype1.active).toBe(true);
+    expect(identifyingArchetype1.extraction).toMatchObject({ archetypeId: 1, hexagramName: identifyingArchetype1.name });
+    expect(Object.keys(identifyingArchetype1.extraction!).sort()).toEqual([
       'ageArcs',
+      'archetypeId',
       'attachmentStyleDistortion',
       'darknessUnderneath',
       'geoBiomeAmplified',
       'hexagramName',
       'injury',
       'loveLanguageDistortion',
-      'portalId',
       'reactionPattern',
       'realLifeCost',
       'relationalImpact',

@@ -1,8 +1,8 @@
 // PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
-# Portal examination — Full extraction schema
+# Identifying archetype examination — Full extraction schema
 
 The four asks were a sketch.
-Every portal already carries the full identification / extraction / emergence set: who, what, when, where, why — plus trigger, pressure, show, defend, react, cost, consequence.
+Every identifying archetype already carries the full identification / extraction / emergence set: who, what, when, where, why — plus trigger, pressure, show, defend, react, cost, consequence.
 
 ## What moves the answer
 
@@ -16,7 +16,7 @@ Everything in the field writes the answer.
 - trip type (family, business, alone)
 - the other person’s seed in that same soil
 
-Change one body in the field and the portal answers again. That is the point.
+Change one body in the field and the identifying archetype answers again. That is the point.
 
 Linear was too thin. Helix was still a line wrapped on itself. JEV is the shape: bodies in a system, each one pulling every other one. Cross-contamination is the work.
 

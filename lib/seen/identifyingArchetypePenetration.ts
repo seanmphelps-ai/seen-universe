@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 // Mirrored from SEEN_universal/schemas/01_PORTAL_PENETRATION_CONTRACT.schema.ts.
 // Keep this shape aligned with canonical schema version 1.0.0.
-export const PortalIdSchema = z.number().int().min(1).max(64);
+export const ArchetypeIdSchema = z.number().int().min(1).max(64);
 
 export const SourceLayerStateSchema = z.enum([
   'layered',
@@ -19,10 +19,10 @@ export const SourceEvidenceSchema = z.object({
   provenance: z.array(z.string().min(1)).min(1),
 });
 
-export const PortalSourceLayerSchema = z.object({
+export const IdentifyingArchetypesourceLayerSchema = z.object({
   sourceSystemId: z.string().min(1),
   sourceFieldId: z.string().min(1),
-  portalId: PortalIdSchema,
+  archetypeId: ArchetypeIdSchema,
   layerSequence: z.number().int().nonnegative(),
   state: SourceLayerStateSchema,
   evidence: z.array(SourceEvidenceSchema),
@@ -33,14 +33,14 @@ export const PortalSourceLayerSchema = z.object({
   replaceExistingLayers: z.literal(false),
 });
 
-export const PortalPenetrationRunSchema = z.object({
+export const IdentifyingArchetypePenetrationRunSchema = z.object({
   schemaVersion: z.literal('1.0.0'),
   sourceSystemId: z.string().min(1),
   sourceFieldId: z.string().min(1),
   sourceRunCompletedIndependently: z.literal(true),
-  penetrateCompletePortalLattice: z.literal(true),
-  portalCount: z.literal(64),
-  layers: z.array(PortalSourceLayerSchema).length(64),
+  penetrateCompleteIdentifyingArchetypeLattice: z.literal(true),
+  identifyingArchetypeCount: z.literal(64),
+  layers: z.array(IdentifyingArchetypesourceLayerSchema).length(64),
   laterSourcesMayReadExistingLayers: z.literal(true),
   laterSourcesMayOverwriteExistingLayers: z.literal(false),
   preserveSourceIdentityUntilConvergence: z.literal(true),
@@ -48,5 +48,5 @@ export const PortalPenetrationRunSchema = z.object({
   earlyNarrationForbidden: z.literal(true),
 });
 
-export type PortalSourceLayer = z.infer<typeof PortalSourceLayerSchema>;
-export type PortalPenetrationRun = z.infer<typeof PortalPenetrationRunSchema>;
+export type IdentifyingArchetypesourceLayer = z.infer<typeof IdentifyingArchetypesourceLayerSchema>;
+export type IdentifyingArchetypePenetrationRun = z.infer<typeof IdentifyingArchetypePenetrationRunSchema>;

@@ -5,12 +5,12 @@ The Life Map makes SEEN's structure visible through public explanations while pr
 
 ## Life Map
 
-- Center the permanent 64-portal lattice/field.
+- Center the permanent 64-identifying-archetype lattice/field.
 - Keep every approved source system visually and structurally independent.
 - Represent Forge/environment/exposure as contextual pressure around the pattern.
 - Represent timing, relationships, events, wounds, and recurrence as activation/pressure layers.
 - Show convergence only where independent supported signals meet.
-- Allow zoom/drill-down from overview -> convergence -> portal -> source calculation/evidence.
+- Allow zoom/drill-down from overview -> convergence -> identifying archetype -> source calculation/evidence.
 - Life Sections sit on the human-readable perimeter after the final registry is locked.
 
 ## Public / private boundary
@@ -18,7 +18,7 @@ The Life Map makes SEEN's structure visible through public explanations while pr
 Public:
 - source-system identity
 - high-level origin/provenance
-- visible portal/convergence relationships
+- visible identifying-archetype/convergence relationships
 - user-facing evidence explanation
 - claim/evidence inspection
 

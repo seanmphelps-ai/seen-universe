@@ -58,7 +58,7 @@ For each relevant interaction, ask progressively:
 8. What evidence would distinguish competing explanations?
 9. What remains a user recollection versus an inferred interpretation?
 
-Use existing portal interrogators to select and deepen questions; preserve their original archetype identities.
+Use existing identifying archetype interrogators to select and deepen questions; preserve their original archetype identities.
 
 ## Narrative quality
 - Render chart/environment collisions as an integrated lived event, retaining planet, house, nakshatra and other native provenance in the underlying evidence.

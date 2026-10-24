@@ -23,7 +23,7 @@ Recorded by the Bazi Auditor (Agent B). Statuses: VERIFIED = independently repro
 | R10 Luck direction | Yang-year male / yin-year female go forward; yin-year male / yang-year female go reverse. | **VERIFIED** for yin-male, yang-male and yang-female. Yin-female has no fixture yet. |
 | R11 Luck start age | Days to the adjacent jie ÷ 3 = years. | **VERIFIED** against a hand count (1990 pair: 9y10m). The HKO comparison is **UNVERIFIED**. Citation **DEFECT D6** (miscited to 子平真诠; the rule is from the 渊海子平/三命通会 tradition). |
 | R12 Provenance log | Log the ephemeris version, HKO table year, EoT method, day-epoch formula, true-solar flag, zi policy and `year_boundary=li_chun`. | **DEFECT D2**: missing. |
-| R13 Contributions | CoS locked shape; portalId null; dark markers only; Layer D tagged `seenDerived`. | Shape **VERIFIED**. sourceRefs have no chapter references: **DEFECT D7**. |
+| R13 Contributions | CoS locked shape; archetypeId null; dark markers only; Layer D tagged `seenDerived`. | Shape **VERIFIED**. sourceRefs have no chapter references: **DEFECT D7**. |
 
 ### Layers
 A = raw data; B = calculated mechanics; C = traditional interpretation with citation; D = SEEN-derived. Wound and sabotage framing is allowed only in Layer D. Blood Dragon / blood-type items are tagged Layer D, and Di Tian Sui is marked MISSING (both checked).

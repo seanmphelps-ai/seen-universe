@@ -40,9 +40,9 @@ The arithmetic for the core five numbers is right. The build still fails because
 
 | Check | Base 41022b8 | Patched | Match builder? |
 |---|---|---|---|
-| tsc | exit 2, 5 errors (execution.test parallelLimit/any, flowise executeSeenWorkers, orchestrator natalChart, chartEngine portals64) | identical 5 errors, 0 numerology errors | YES |
+| tsc | exit 2, 5 errors (execution.test parallelLimit/any, flowise executeSeenWorkers, orchestrator natalChart, chartEngine identifyingArchetypes64) | identical 5 errors, 0 numerology errors | YES |
 | vitest | 4 files / 5 tests fail; 321/326 pass | same 4 files / 5 tests fail; 327/332 pass (+6 numerology) | YES |
-| next build | fails: `Can't resolve './portals64'` (chartEngine.ts) | same | YES |
+| next build | fails: `Can't resolve './identifyingArchetypes64'` (chartEngine.ts) | same | YES |
 
 ## Hand-checked arithmetic
 
@@ -98,7 +98,7 @@ The arithmetic for the core five numbers is right. The build still fails because
 | ADV-NUM-004 | No date validation (2000-02-31 is accepted). Leap day 02-29 computes correctly | calc.ts:30-34 |
 | ADV-NUM-005 | Hyphenated names count as one part ("MARY-ANN" = 32/5). The lock is silent on hyphen splitting | calc.ts:44 |
 | ADV-NUM-006 | Pinnacle/challenge `reducedFrom` is `String(number)`, so the compound is lost. P4/C4 `endAge:null` vs t514 `endAge: number` (t514:163,173) | contributions.ts:60,62 |
-| ADV-NUM-007 | Shape drift vs t514 (no gift/amplification/portalModification) is intentional per the CoS-locked shape. Field set matches the CoS 11 fields exactly (test:41). No prose, gift, or score found. `portalId` is always null. Accepted | contributions.ts:7-19 |
+| ADV-NUM-007 | Shape drift vs t514 (no gift/amplification/identifyingArchetypeModification) is intentional per the CoS-locked shape. Field set matches the CoS 11 fields exactly (test:41). No prose, gift, or score found. `archetypeId` is always null. Accepted | contributions.ts:7-19 |
 | ADV-NUM-008 | Chaldean: not implemented, every row is tagged `pythagorean`. **No silent merge found** | contributions.ts:30 |
 | ADV-NUM-009 | Dead code calc.ts:22 (`/* noop */`); odd ternary calc.ts:31 | — |
 | ADV-NUM-010 | Year intermediate 19 (e.g. 1990→19→10) isn't flagged. That's consistent with U3 (06:10) staying open | probe |

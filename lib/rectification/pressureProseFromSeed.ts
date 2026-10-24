@@ -11,8 +11,8 @@ export type PressureSeedInput = {
     house?: number | null;
     qualities?: string[];
   }>;
-  topPortals?: Array<{
-    portalId?: number;
+  topIdentifyingArchetypes?: Array<{
+    archetypeId?: number;
     name?: string;
     expression?: string;
   }>;
@@ -146,15 +146,15 @@ function costCrack(archetype: PressureArchetype): { cost: string; crack: string 
   };
 }
 
-function portalCueSentence(
-  portals: PressureSeedInput['topPortals'],
+function identifyingArchetypeCueSentence(
+  identifyingArchetypes: PressureSeedInput['topIdentifyingArchetypes'],
   archetype: PressureArchetype,
 ): string | null {
-  const names = (portals ?? [])
+  const names = (identifyingArchetypes ?? [])
     .map((p) => (p.name ?? '').trim())
     .filter(Boolean)
     .slice(0, 4);
-  const expressions = (portals ?? [])
+  const expressions = (identifyingArchetypes ?? [])
     .map((p) => (p.expression ?? '').trim().toLowerCase())
     .filter(Boolean);
 
@@ -197,7 +197,7 @@ export function pressureProseFromSeed(seed: PressureSeedInput): string {
   const pressure = pressureFromArchetype(archetype, qualities);
   const behavior = behaviorFromQualities(qualities, archetype);
   const { cost, crack } = costCrack(archetype);
-  const portalLine = portalCueSentence(seed.topPortals, archetype);
+  const identifyingArchetypeLine = identifyingArchetypeCueSentence(seed.topIdentifyingArchetypes, archetype);
 
   const reveal =
     archetype === 'private-test'
@@ -207,7 +207,7 @@ export function pressureProseFromSeed(seed: PressureSeedInput): string {
         : 'This person keeps a cool distance until someone reaches the protected core. Then the response can be sudden: intense pursuit, an abrupt exit, or a clean break that leaves little room for negotiation.';
 
   const parts = [reveal, pressure, behavior];
-  if (portalLine) parts.push(portalLine);
+  if (identifyingArchetypeLine) parts.push(identifyingArchetypeLine);
   parts.push(dirt, cost, crack);
 
   const paragraph = parts.join(' ').replace(/\s+/g, ' ').trim();
@@ -215,7 +215,7 @@ export function pressureProseFromSeed(seed: PressureSeedInput): string {
 }
 
 const FORBIDDEN_FACE =
-  /\b(night|day|evening|morning|afternoon|sunrise|sunset|ascendant|rising|midheaven|house\s*\d+|portal\s*#?\d+|\d{1,2}:\d{2}|chiron|lilith|neptune|mars|venus|saturn|pluto|uranus|mercury|jupiter|ashlesha|aries|taurus|gemini|cancer|leo|virgo|libra|scorpio|sagittarius|capricorn|aquarius|pisces)\b/gi;
+  /\b(night|day|evening|morning|afternoon|sunrise|sunset|ascendant|rising|midheaven|house\s*\d+|identifying archetype\s*#?\d+|\d{1,2}:\d{2}|chiron|lilith|neptune|mars|venus|saturn|pluto|uranus|mercury|jupiter|ashlesha|aries|taurus|gemini|cancer|leo|virgo|libra|scorpio|sagittarius|capricorn|aquarius|pisces)\b/gi;
 
 function stripForbiddenFaceTokens(text: string): string {
   // Soft scrub — qualities already avoid most jargon; this is a safety net.

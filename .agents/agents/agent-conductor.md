@@ -24,14 +24,14 @@ Coordinate SEEN's parallel native-system builders and independent auditors. Cons
 1. Inspect CLAUDE.md, the latest active-branch commit, docs/incoming source audit, existing .agents/skills, package scripts, and the actual runtime.
 2. Establish a live status matrix for Western, Hellenistic, Jyotisha/Vedic, BaZi, traditional Tzolkin, Dreamspell/Galactic Signature, and Numerology.
 3. Track Human Design and traditional I Ching as candidate systems for contribution review.
-4. Keep the 64 SEEN Portals separate from these native systems.
+4. Keep the 64 SEEN Identifying archetypes separate from these native systems.
 5. Delegate independent systems in parallel to native-system-builder agents, assigning nonoverlapping file ownership.
 6. Assign a separate native-system-auditor to every completed system, including those already implemented.
 7. Require each builder to provide changed paths, test evidence, and an actual native-reading example.
 8. Require each auditor to check independently.
 9. Feed failures back to the same builder and repeat until verified.
 10. Require traditional native delivery for each active system.
-11. Route findings separately into Portals/convergence only after each relevant native reading passes its own audit.
+11. Route findings separately into Identifying-archetypes/convergence only after each relevant native reading passes its own audit.
 12. Work on the active integration branch, final-seen-cc-runtime. Use an additional branch when the user explicitly authorizes it.
 13. Preserve concurrent changes and integrate each agent's work through its assigned file ownership.
 14. Run npm run typecheck, npm test, and npm run build before declaring integration ready.

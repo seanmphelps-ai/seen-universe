@@ -149,8 +149,8 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 - [ ] Add astrocartographic conditions when rectified birth time is available
 - [ ] Preserve birthplace, lived places, current place, trips, and event places as separate records
 - [ ] Produce an `EnvironmentalPressureField` for every location-period pair
-- [ ] Route every environmental contribution into all relevant portals
-- [ ] Produce a complete 64-record Environmental Portal Layer
+- [ ] Route every environmental contribution into all relevant identifying archetypes
+- [ ] Produce a complete 64-record Environmental Identifying archetype Layer
 
 ## LOCATION EVIDENCE PIPELINE
 
@@ -187,10 +187,10 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 - [ ] Continue narrowing through the approved rectification rounds
 - [ ] Store the final rectified time, confidence, and provenance
 
-## PERMANENT 64-PORTAL ARCHITECTURE
+## PERMANENT 64-IDENTIFYING-ARCHETYPE ARCHITECTURE
 
-- [ ] Create one permanent registry of 64 portal identities
-- [ ] Attach every modality as a separate complete 64-portal layer
+- [ ] Create one permanent registry of 64 identifying archetype identities
+- [ ] Attach every modality as a separate complete 64-identifying-archetype layer
 - [ ] Preserve original calculation
 - [ ] Preserve original extraction
 - [ ] Preserve source-system identity
@@ -202,16 +202,16 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 - [ ] Apply append-first, synthesize-second, render-third
 - [ ] Record simultaneous amplification and restraint
 - [ ] Model split, delayed, oscillating, rerouted, context-dependent, and collapsed expression
-- [ ] Route portal outputs into Life Sections continuously
+- [ ] Route identifying archetype outputs into Life Sections continuously
 - [?] Lock the final Life Section registry count and remove conflicting counts
-- [ ] Keep internal portal IDs, signal IDs, candidate keys, and routing backstage
+- [ ] Keep internal identifying archetype IDs, signal IDs, candidate keys, and routing backstage
 
 ## WOUNDS, DARK CHART, AND SHADOW WORK
 
 - [ ] Register all wound-marker sets independently
 - [ ] Include Chiron, Lilith, nodes, Saturn, Pluto, Mars, Neptune, Moon, and houses 4/8/10/12 where their source systems support them
 - [ ] Preserve marker-set identity
-- [ ] Route a marker into every relevant portal
+- [ ] Route a marker into every relevant identifying archetype
 - [ ] Model amplification, suppression, sensitization, delay, distortion, rerouting, splitting, lowered threshold, and recurrence
 - [ ] Extract wound pattern
 - [ ] Extract protective adaptation
@@ -225,7 +225,7 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 - [ ] Extract cost to others
 - [ ] Extract probable consequence
 - [ ] Extract capacity and regulated expression
-- [ ] Produce a complete 64-record Wound Portal Layer
+- [ ] Produce a complete 64-record Wound Identifying archetype Layer
 - [ ] Produce each person's Dark Chart before comparison
 
 ## HELIX AND CONVERGENCE
@@ -308,7 +308,7 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 - [ ] Feed observed Cadence data back into the preserved subject record
 - [ ] Keep observed behavior distinct from calculated source layers
 - [ ] Update confidence from accumulated evidence
-- [ ] Route repeated triggers into the correct portals and Life Sections
+- [ ] Route repeated triggers into the correct identifying archetypes and Life Sections
 - [ ] Produce a daily next action
 - [ ] Produce a weekly pattern review
 - [ ] Continue into Jung / Sovereignty when the evidence is mature
@@ -372,12 +372,12 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 
 - [ ] Add account and email gate at the correct point in onboarding
 - [ ] Replace critical `sessionStorage` records with persistent storage
-- [ ] Define subject, relationship, location-period, event, portal-layer, evidence, convergence, shadow, reading, Cadence, and sharing tables
+- [ ] Define subject, relationship, location-period, event, identifying-archetype-layer, evidence, convergence, shadow, reading, Cadence, and sharing tables
 - [ ] Version all calculations and extraction templates
 - [ ] Preserve provenance for generated claims
 - [ ] Encrypt private user records
 - [ ] Define deletion and export flows
-- [ ] Keep Generator logic, system prompts, portal routing, and proprietary scoring server-side
+- [ ] Keep Generator logic, system prompts, identifying archetype routing, and proprietary scoring server-side
 - [ ] Add authorization checks for every subject and relationship record
 - [ ] Add explicit sharing controls for family and Eden
 - [ ] Store audit events for edits, consent, generation, and sharing
@@ -387,7 +387,7 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 - [ ] Generator validates inputs
 - [ ] Generator runs source calculations
 - [ ] Generator runs source-specific extraction
-- [ ] Generator routes all contributions through 64 portals
+- [ ] Generator routes all contributions through 64 identifying archetypes
 - [ ] Generator preserves evidence and provenance
 - [ ] Generator detects convergence, divergence, contradiction, and recurrence
 - [ ] Generator prepares Dark Chart and comparative shadow candidates

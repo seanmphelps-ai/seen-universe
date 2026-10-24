@@ -2,7 +2,7 @@
 import { defineAgent } from "eve";
 
 export default defineAgent({
-  description: "Independent Portals auditor. Separate from the Portals reader.",
+  description: "Independent Identifying archetypes auditor. Separate from the Identifying archetypes reader.",
   model: "openai/gpt-6-sol",
   defaultTools: false,
   tool: false,

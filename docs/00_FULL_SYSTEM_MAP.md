@@ -78,7 +78,7 @@ Family intake. Modifies expression on the 45.
 
 ---
 
-## PHASE E — Lists that must exist before portals
+## PHASE E — Lists that must exist before identifying archetypes
 
 45 named ids required.
 64 names + the question each asks.
@@ -88,7 +88,7 @@ Builder stops here until those three files are in the repo.
 
 ---
 
-## PHASE F — Systems as agents, portals as questions
+## PHASE F — Systems as agents, identifying archetypes as questions
 
 One agent per system. Each starts cold from the same BirthAnchor + LockedTime + LivedExposure.
 
@@ -103,7 +103,7 @@ Agents:
 - Human Design (complete traditional native reading)
 - 25 lenses (after the list exists)
 
-The 64 Portals are a separate SEEN archetypal layer, distinct from all traditional native systems. Human Design and traditional I Ching each produce a separate complete native reading and receive an independent auditor.
+The 64 Identifying archetypes are a separate SEEN archetypal layer, distinct from all traditional native systems. Human Design and traditional I Ching each produce a separate complete native reading and receive an independent auditor.
 
 Each agent returns `{ sectionId, finding, source, arc }` and files it.
 
@@ -114,14 +114,14 @@ Each agent returns `{ sectionId, finding, source, arc }` and files it.
 File: `docs/04_IT.md`
 
 Native marker keeps full weight.
-Portals receive source-tagged deposits only through SEEN's documented routing rules.
+Identifying archetypes receive source-tagged deposits only through SEEN's documented routing rules.
 Composite analysis preserves each native marker and incorporates supported lived-exposure evidence.
 SEEN asks: pressure, trigger, adaptation, behavior, payoff, cost, consequence, people, place, time, recurrence, failure, potential.
 File into a Life Section. Keep source.
 
 Three operations:
 1. Discovery — each modality finds what it knows
-2. Resolution — route only through documented SEEN Portal mappings
+2. Resolution — route only through documented SEEN Identifying archetype mappings
 3. Dissection — ask the lattice of the higher-resolution signal
 
 ---
@@ -159,7 +159,7 @@ Last. A script pulls from the 45 by keys. Each source still sounds like itself.
 - Optional time. Dead.
 - One-line / sentence-only cards. Dead.
 - Use `LivedExposure`.
-- 108 portals. There are 64.
+- 108 identifying archetypes. There are 64.
 - Shipper / dyad / stackblitz memory. Dead.
 
 ---

@@ -29,11 +29,11 @@ export async function POST(request: NextRequest) {
   try {
     const result = await runChiefPipeline(input);
     const cards = result.archetypes
-      .filter((portal) => portal.active)
-      .map((portal) => {
-        const archetype = INTERROGATORS.find((i) => i.portalId === portal.portalId)?.archetype;
+      .filter((identifyingArchetype) => identifyingArchetype.active)
+      .map((identifyingArchetype) => {
+        const archetype = INTERROGATORS.find((i) => i.archetypeId === identifyingArchetype.archetypeId)?.archetype;
         const questions = archetype?.interrogation.flatMap((section) => section.questions) ?? [];
-        return { title: portal.name, deepText: questions.join(' ') };
+        return { title: identifyingArchetype.name, deepText: questions.join(' ') };
       });
     return NextResponse.json({ ...result, cards });
   } catch (err) {

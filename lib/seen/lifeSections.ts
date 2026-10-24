@@ -2,7 +2,7 @@
 /** The ONE universal question set every archetype asks (seen_runtime.json questionSet, 52 questions). */
 export const UNIVERSAL_QUESTION_SET: ReadonlyArray<{ section: string; questions: string[] }> = [
   {
-    "section": "III. PORTAL SPINE — Hexagram / Gate spine",
+    "section": "III. IDENTIFYING ARCHETYPE SPINE — Hexagram / Gate spine",
     "questions": [
       "Source of pressure",
       "Reaction pattern",
@@ -97,7 +97,7 @@ export const UNIVERSAL_QUESTION_SET: ReadonlyArray<{ section: string; questions:
     ]
   },
   {
-    "section": "ATTACHMENT & LOVE LANGUAGE (explored inside every portal — Sean: \"implemented into the dark chart from the very beginning\")",
+    "section": "ATTACHMENT & LOVE LANGUAGE (explored inside every identifying archetype — Sean: \"implemented into the dark chart from the very beginning\")",
     "questions": [
       "Attachment move under pressure",
       "Love language withheld / demanded / weaponized"
@@ -105,7 +105,7 @@ export const UNIVERSAL_QUESTION_SET: ReadonlyArray<{ section: string; questions:
   }
 ]
 
-/** The 45 life sections and which archetypes (portals 1-64) file into each (seen_runtime.json sections[].shipPortals). */
+/** The 45 life sections and which archetypes (identifying archetypes 1-64) file into each (seen_runtime.json sections[].shipPortals). */
 export const LIFE_SECTIONS: ReadonlyArray<{ id: number; name: string; archetypeSources: number[]; source: string }> = [
   {
     "id": 1,

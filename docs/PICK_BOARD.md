@@ -61,9 +61,9 @@ UNREAD
 - lib/numerologyCalc.ts
 - lib/tzolkinCalc.ts
 - lib/dreamspellCalc.ts
-- lib/portals
+- lib/identifying-archetypes
 - docs/45_LIFE_SECTIONS.md
-- docs/64_PORTALS.md
+- docs/64_IDENTIFYING_ARCHETYPES.md
 - docs/04_IT.md
 
 ## 7 App shell

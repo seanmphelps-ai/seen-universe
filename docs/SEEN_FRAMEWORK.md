@@ -6,7 +6,7 @@
 - Wound markers: destabilizing/severing/compulsive factors qualify; baseline pressure amplifies OR mutes/delays/distorts/reroutes
 - Oracle: nesting questions, darkness first, Cadence only after, Cadence = emotional Apple Health
 - Sequence: SEEN → Composure → Cadence
-- The 64 SEEN Portals retain canonical hexagram names; Human Design and independent I Ching computation are excluded.
+- The 64 SEEN Identifying archetypes retain canonical hexagram names; Human Design and independent I Ching computation are excluded.
 - App name: Scene
 - Phrase: "Seen. You. Them. Us."
 - Dedicated agents per concern: time-narrowing, location, etc.

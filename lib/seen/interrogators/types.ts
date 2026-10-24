@@ -1,5 +1,5 @@
 // PROVENANCE: bot=grok session=2026-10-13 task=64 interrogator sub-agents (no scoring)
-import type { PortalRecord } from '../portals64';
+import type { IdentifyingArchetypeRecord } from '../identifyingArchetypes64';
 
 /** One incoming signal from any modality, with its provenance. */
 export type ChartSignal = {
@@ -19,13 +19,13 @@ export type InterrogatorAnswer = {
 };
 
 /**
- * Every active portal's output contract (Sean, 2026-10-14). Portals are hubs,
+ * Every active identifying archetype's output contract (Sean, 2026-10-14). Identifying archetypes are hubs,
  * not decorative labels. Content fields are null until the interpretation
  * layer exists -- never invented to fill the shape.
  */
-export type PortalExtraction = {
-  portalId: number;
-  /** Portal ID + hexagram / frequency name. */
+export type IdentifyingArchetypeExtraction = {
+  archetypeId: number;
+  /** Identifying archetype ID + hexagram / frequency name. */
   hexagramName: string;
   wound: string | null;
   injury: string | null;
@@ -47,20 +47,20 @@ export type PortalExtraction = {
 };
 
 export type InterrogatorResult = {
-  portalId: number;
+  archetypeId: number;
   name: string;
   shadowName: string;
   giftName: string;
-  /** True when an incoming signal matches this portal's woundMarkerAffinity. */
+  /** True when an incoming signal matches this identifying archetype's woundMarkerAffinity. */
   active: boolean;
-  /** Present only for an active portal; null otherwise. Portals are hubs, not decorative labels. */
-  extraction: PortalExtraction | null;
+  /** Present only for an active identifying archetype; null otherwise. Identifying archetypes are hubs, not decorative labels. */
+  extraction: IdentifyingArchetypeExtraction | null;
   answers: InterrogatorAnswer[];
 };
 
 export type Interrogator = {
-  portalId: number;
-  archetype: PortalRecord;
+  archetypeId: number;
+  archetype: IdentifyingArchetypeRecord;
   questions: ReadonlyArray<{ section: string; questions: string[] }>;
   run: (chartSignals: ChartSignal[]) => InterrogatorResult;
 };

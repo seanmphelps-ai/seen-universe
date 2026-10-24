@@ -36,7 +36,7 @@ Card *paragraphs* must use the lived exposure when present.
 - Environment-before-date
 - Pretty natal wheel before two dark cards
 - Optional time field
-- Building 64 portals before this ladder works
+- Building 64 identifying archetypes before this ladder works
 - Reading `SEEN_universal` as current
 - One-line cards
 - Sentence-only summaries

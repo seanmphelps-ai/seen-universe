@@ -1,12 +1,12 @@
 // PROVENANCE: bot=numerology-executor date=2026-10-12 layer=B (values) + D (signalType label; seenDerived:true)
 // SOURCES: values via ./calc (A1 Goodwin Vol.1, A2 Decoz — exact titles per SOURCE_LOCK/01). Wound/shadow labels are
 //          SEEN Layer D per SOURCE_LOCK/07_SEEN_LAYER_D.md — never numerology tradition. Shape locked by CoS 2026-10-12.
-// NOTE: repo lib/portals/template.ts PortalActivation ({portalId, placeName, answers}) does not match t514 activation
-//       types; portalId stays null here and Portals (64) maps later.
+// NOTE: repo lib/identifying-archetypes/template.ts IdentifyingArchetypeActivation ({archetypeId, placeName, answers}) does not match t514 activation
+//       types; archetypeId stays null here and Identifying archetypes (64) maps later.
 import * as N from './calc';
 
 export type NumerologyContribution = {
-  portalId: null;
+  archetypeId: null;
   system: 'numerology';
   signalType: 'wound' | 'shadow';
   factor: string;
@@ -34,9 +34,9 @@ const NAME_FACTORS = new Set(['expression', 'soulUrge', 'personality', 'maturity
 export function numerologyContributions(input: NumerologyInput): NumerologyContribution[] {
   const { fullName, birth, now } = input;
   const out: NumerologyContribution[] = [];
-  type Row = Omit<NumerologyContribution, 'portalId' | 'system' | 'seenDerived' | 'missing' | 'sourceRefs' | 'schoolTags'> & { sourceRefs: string[]; schoolTags?: string[]; missing?: string[] };
+  type Row = Omit<NumerologyContribution, 'archetypeId' | 'system' | 'seenDerived' | 'missing' | 'sourceRefs' | 'schoolTags'> & { sourceRefs: string[]; schoolTags?: string[]; missing?: string[] };
   const add = (c: Row) => out.push({
-    portalId: null, system: 'numerology', signalType: c.signalType, factor: c.factor, factorType: c.factorType,
+    archetypeId: null, system: 'numerology', signalType: c.signalType, factor: c.factor, factorType: c.factorType,
     timeWindow: c.timeWindow, provenance: c.provenance, sourceRefs: [...c.sourceRefs, LAYER_D],
     schoolTags: ['pythagorean', ...(c.schoolTags ?? [])], seenDerived: true, missing: [SHADOW_MISSING, ...(c.missing ?? [])],
   });

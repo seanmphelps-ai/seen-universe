@@ -61,7 +61,7 @@ The place asks itself.
 - What happens if you transplant out of it
 - What happens if you stay
 
-Same bank can be reworded for a portal.
+Same bank can be reworded for a identifying archetype.
 
 ---
 
@@ -119,7 +119,7 @@ Every card includes:
 - where money goes
 - under pressure on THIS soil
 - routes into the 45 life sections
-- pre-charge into the 64 portals
+- pre-charge into the 64 identifying archetypes
 
 This is someone’s life. Over-inform.
 
@@ -128,7 +128,7 @@ This is someone’s life. Over-inform.
 ## Helix
 
 Places sit on a strand you can scroll.
-Pick a place. See the cards. Pick a portal on that place. See the full extraction:
+Pick a place. See the cards. Pick a identifying archetype on that place. See the full extraction:
 trigger, pressure, behavior, collapse, thrive, cost to self, cost to others, what is lost.
 
 Empty stays empty.
@@ -137,7 +137,7 @@ Empty stays empty.
 
 ## Filing
 
-Portals file into life sections.
+Identifying archetypes file into life sections.
 Empty section = visible silence.
 
 ---

@@ -36,7 +36,7 @@ Before implementation edits, read this file, `docs/MASTER_BUILD_CHECKLIST.md`, t
 | --- | --- |
 | Closure, relationships, comparisons | `docs/contexts/CLAUDE_CLOSURE.md` |
 | Location, exposure, trips, place, time | `docs/contexts/CLAUDE_LOCATION.md` |
-| Generator, portals, layers, shadows, convergence, Helix | `docs/contexts/CLAUDE_GENERATOR_HELIX.md` |
+| Generator, identifying-archetypes, layers, shadows, convergence, Helix | `docs/contexts/CLAUDE_GENERATOR_HELIX.md` |
 | Life Map, source-system tabs, historical provenance, visual and narrative rendering | `docs/contexts/CLAUDE_LIFE_MAP_RENDERING.md` |
 | Oracle, voice, chat | `docs/contexts/CLAUDE_ORACLE.md` |
 | Cadence, tracker, widget, daily follow-through | `docs/contexts/CLAUDE_CADENCE.md` |

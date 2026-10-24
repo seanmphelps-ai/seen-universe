@@ -17,7 +17,7 @@ A signal must preserve enough information to answer:
 - what mechanic produced it?
 - what source/provenance supports it?
 - what pressure behavior does it carry?
-- what Portal(s), Life Section(s), wound patterns, or other structures does it explicitly route to?
+- what Identifying archetype(s), Life Section(s), wound patterns, or other structures does it explicitly route to?
 - what confidence/uncertainty applies?
 - what remains unresolved?
 
@@ -79,7 +79,7 @@ Given any Oracle claim, the system must be able to trace backward through:
         ↓
     convergence record
         ↓
-    Portal/Life Section deposits where relevant
+    Identifying-archetype/Life Section deposits where relevant
         ↓
     individual source signals
         ↓

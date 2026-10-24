@@ -101,12 +101,12 @@ describe('numerology', () => {
     expect(() => N.lifePath({ year: 2000, month: 2, day: 31 })).toThrow();
     expect(N.lifePath({ year: 2000, month: 2, day: 29 }).value).toBe(6);
   });
-  it('MF-003 shape: seenDerived true, no gift/score keys, portalId null', () => {
+  it('MF-003 shape: seenDerived true, no gift/score keys, archetypeId null', () => {
     for (const c of numerologyContributions(ann)) {
-      expect(c.portalId).toBeNull();
+      expect(c.archetypeId).toBeNull();
       expect(c.seenDerived).toBe(true);
       expect(c.provenance.labelLayer).toBe('D');
-      expect(Object.keys(c).sort()).toEqual(['factor', 'factorType', 'missing', 'portalId', 'provenance', 'schoolTags', 'seenDerived', 'signalType', 'sourceRefs', 'system', 'timeWindow']);
+      expect(Object.keys(c).sort()).toEqual(['archetypeId', 'factor', 'factorType', 'missing', 'provenance', 'schoolTags', 'seenDerived', 'signalType', 'sourceRefs', 'system', 'timeWindow']);
       expect(JSON.stringify(c)).not.toMatch(/gift|score|weight|amplif/i);
       expect(c.missing).toContain('MISSING: sourced shadow text');
     }

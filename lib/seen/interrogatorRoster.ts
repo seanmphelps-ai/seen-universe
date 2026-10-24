@@ -1,9 +1,9 @@
-// PROVENANCE: bot=claude-code session=2026-10-12 task=interrogator roster carries raw Chinese names from 64_PORTALS.md, no Wilhelm renderings
+// PROVENANCE: bot=claude-code session=2026-10-12 task=interrogator roster carries raw Chinese names from 64_IDENTIFYING_ARCHETYPES.md, no Wilhelm renderings
 
 /**
  * The 64 interrogators (formerly "portals").
  * Names are the original Zhouyi character, its pinyin, and the blunt meaning.
- * Source of truth: docs/64_PORTALS.md. No soft Wilhelm renderings ("Youthful Folly").
+ * Source of truth: docs/64_IDENTIFYING_ARCHETYPES.md. No soft Wilhelm renderings ("Youthful Folly").
  */
 
 export interface Interrogator {

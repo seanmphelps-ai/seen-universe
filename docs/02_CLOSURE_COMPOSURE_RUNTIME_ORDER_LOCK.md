@@ -50,7 +50,7 @@ Environmental Intake
 → Place Resolution
 → Place-Period Temporalization
 → Baseline Environmental Pressure
-→ Portal Pre-Charge
+→ Identifying archetype Pre-Charge
 → Birth Foundation Intake
 → Numerology
 → Swiss Ephemeris Candidate Runs
@@ -63,7 +63,7 @@ Environmental Intake
 → Recognition Summary Generation
 → Recognition Selection
 → Full Helix Ignition
-→ 64-Portal Scan
+→ 64-Identifying-archetype Scan
 → Dr. Maisel 25-Lens Inspection
 → Recursive Passes
 → Convergence / Divergence
@@ -76,7 +76,7 @@ Environmental Intake
 
 Every runtime layer defines validated input and output contracts. Every handoff preserves IDs, provenance, confidence, contradictions, unresolved variables, version metadata, and valid Life Section routes.
 
-## Environmental Intake and Portal Pre-Charge
+## Environmental Intake and Identifying archetype Pre-Charge
 
 Environmental intake precedes birth-derived interpretation.
 
@@ -89,7 +89,7 @@ Collect:
 
 Resolve each location into structured records, then temporalize each exposure into a place-period field.
 
-Portal pre-charge receives environmental pressure before chart interpretation.
+Identifying archetype pre-charge receives environmental pressure before chart interpretation.
 
 Required contracts:
 
@@ -99,12 +99,12 @@ Required contracts:
 - `PlaceResolutionOutputSchema`
 - `PlacePeriodFieldInputSchema`
 - `PlacePeriodFieldOutputSchema`
-- `PortalPrechargeInputSchema`
-- `PortalPrechargeOutputSchema`
+- `IdentifyingArchetypePrechargeInputSchema`
+- `IdentifyingArchetypePrechargeOutputSchema`
 
-Portal pre-charge stores environmental receptivity, amplification, suppression, sensitization, delay, distortion, reroute weight, recurrence rate, split factor, wound-quality receptivity, attachment receptivity, and Life Section routing capacity.
+Identifying archetype pre-charge stores environmental receptivity, amplification, suppression, sensitization, delay, distortion, reroute weight, recurrence rate, split factor, wound-quality receptivity, attachment receptivity, and Life Section routing capacity.
 
-Portal pre-charge prepares the lattice. Full portal scanning occurs after recognition selection and Full Helix Ignition.
+Identifying archetype pre-charge prepares the lattice. Full identifying archetype scanning occurs after recognition selection and Full Helix Ignition.
 
 ## Birth Foundation and Hidden Calibration
 
@@ -136,7 +136,7 @@ Recognition selection becomes calibration evidence and the working recognition a
 
 Full Helix Ignition begins after recognition selection.
 
-It receives the selected candidate state, environmental pressure, portal pre-charge, numerology, astronomical state, maternal and family pressure, childhood formation, attachment, wound, shadow, and recognition anchor.
+It receives the selected candidate state, environmental pressure, identifying archetype pre-charge, numerology, astronomical state, maternal and family pressure, childhood formation, attachment, wound, shadow, and recognition anchor.
 
 Required contracts:
 
@@ -149,7 +149,7 @@ The output establishes:
 - activated signals;
 - recursive-pass eligibility;
 - convergence and divergence inputs;
-- full portal-scan readiness;
+- full identifying-archetype-scan readiness;
 - Life Section routing readiness;
 - Generator readiness.
 
@@ -170,13 +170,13 @@ Required contracts:
 
 The output preserves axis findings, adaptations, confidence, provenance, contradictions, unresolved variables, and Life Section routes.
 
-## Portal Scan
+## Identifying archetype Scan
 
-Full portal scanning occurs after Full Helix Ignition.
+Full identifying archetype scanning occurs after Full Helix Ignition.
 
-All 64 core portals are evaluated for every completed person state.
+All 64 core identifying archetypes are evaluated for every completed person state.
 
-Each portal receives one status:
+Each identifying archetype receives one status:
 
 - `active`
 - `weak`
@@ -186,17 +186,17 @@ Each portal receives one status:
 
 The Generator evaluates activation strength, source convergence, wound and shadow relevance, environmental modulation, relationship-field relevance, recursive-pass results, convergence and divergence, Life Section routing, contradiction flags, and confidence.
 
-The Generator surfaces only the strongest sufficiently converged portals. The Oracle renders only surfaced portals.
+The Generator surfaces only the strongest sufficiently converged identifying archetypes. The Oracle renders only surfaced identifying archetypes.
 
 Required contracts:
 
-- `PortalScanInputSchema`
-- `PortalScanResultSchema`
-- `PortalSurfaceOutputSchema`
+- `IdentifyingArchetypescanInputSchema`
+- `IdentifyingArchetypescanResultSchema`
+- `IdentifyingArchetypesurfaceOutputSchema`
 
 ## Dr. Maisel 25-Lens Inspection
 
-Dr. Maisel lenses inspect stabilized signal after portal scanning and before recursive convergence and Jungian inversion.
+Dr. Maisel lenses inspect stabilized signal after identifying archetype scanning and before recursive convergence and Jungian inversion.
 
 The 25 lenses are:
 
@@ -226,7 +226,7 @@ The 25 lenses are:
 24. Creativity
 25. Life Purpose and Meaning
 
-The lenses inspect signal. They remain distinct from wound markers, portals, and Oracle prose.
+The lenses inspect signal. They remain distinct from wound markers, identifying-archetypes, and Oracle prose.
 
 Required contracts:
 
@@ -261,12 +261,12 @@ The output preserves active role, role transitions, protected need, hidden fear,
 
 ## Jungian Sovereignty Inversion
 
-Jungian inversion receives stabilized repeated signal after portal scan, Dr. Maisel inspection, recursive passes, and convergence/divergence.
+Jungian inversion receives stabilized repeated signal after identifying archetype scan, Dr. Maisel inspection, recursive passes, and convergence/divergence.
 
 It receives:
 
 - active wound markers;
-- surfaced portal routes;
+- surfaced identifying archetype routes;
 - Dr. Maisel lens results;
 - childhood formation results;
 - Drama Triangle results;
@@ -296,11 +296,11 @@ Jungian inversion transforms established signal.
 
 ## 45 Life Sections Registry
 
-The 45 Life Sections form the canonical destination registry for person, relationship, portal, lens, inversion, reveal, and deeper-path routing.
+The 45 Life Sections form the canonical destination registry for person, relationship, identifying archetype, lens, inversion, reveal, and deeper-path routing.
 
-The registry contains stable IDs, canonical labels, descriptions, supported source categories, valid portal routes, valid Oracle destinations, and version metadata.
+The registry contains stable IDs, canonical labels, descriptions, supported source categories, valid identifying archetype routes, valid Oracle destinations, and version metadata.
 
-Every major signal, portal deposit, lens result, wound result, relational finding, Jungian inversion, recognition summary, reveal section, and deeper path carries one or more valid Life Section routes.
+Every major signal, identifying archetype deposit, lens result, wound result, relational finding, Jungian inversion, recognition summary, reveal section, and deeper path carries one or more valid Life Section routes.
 
 Required contracts:
 
@@ -366,9 +366,9 @@ A Closure & Composure implementation path is complete when:
 - experience mode is explicit;
 - every person completes independently;
 - environmental intake precedes birth-derived interpretation;
-- portal pre-charge precedes chart interpretation;
+- identifying archetype pre-charge precedes chart interpretation;
 - recognition selection activates Full Helix Ignition;
-- all 64 portals are scanned;
+- all 64 identifying archetypes are scanned;
 - Dr. Maisel lenses execute in the defined position;
 - recursive convergence and divergence complete;
 - Drama Triangle and sovereignty role inversion complete;

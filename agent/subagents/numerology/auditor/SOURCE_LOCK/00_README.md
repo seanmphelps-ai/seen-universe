@@ -13,7 +13,7 @@
 | **A RAW DATA** | Full birth name (Roman letters), birth date Y-M-D; optional current/known-as name for Chaldean opt-in |
 | **B CALCULATED MECHANICS** | Goodwin Vol.1 + Decoz algorithms: reduction, masters 11/22, Life Path, Birthday, Expression, Soul Urge, Personality, karmic debts 13/14/16/19 |
 | **C TRADITIONAL INTERPRETATION** | Jordan / Decoz / Goodwin meaning charts — labeled school text only |
-| **D SEEN DERIVED** | Wound/shadow packaging for Portals provenance — **never labeled as numerology tradition** |
+| **D SEEN DERIVED** | Wound/shadow packaging for Identifying archetypes provenance — **never labeled as numerology tradition** |
 
 **Enforcement stack (CoS):**
 - **Goodwin/Decoz algorithms** = calc authority (B)
@@ -45,7 +45,7 @@ Modality WHOLE untouched in own cocoon — traditional native from verified SOUR
 - No fold / blend summaries
 - No new-age invent
 - Location incubator AFTER intact seed only
-- Four PORTAL_ASKS: **dead**
+- Four IDENTIFYING_ARCHETYPE_ASKS: **dead**
 
 ## Gate
 

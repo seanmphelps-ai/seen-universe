@@ -26,7 +26,7 @@ export const WESTERN_AUDITOR = {
     layerA_raw: 'Birth date, time or dark-card window, place lat/lon, timezone to UT. No fabricated birth time; no noon fallback for houses/angles.',
     layerB_calc: 'Swiss Ephemeris only (Koch/Treindl, Astrodienst). Tropical, true equinox of date, geocentric apparent. Placidus houses. Polar latitudes: houses null + flag, never a substitute system. Applying/separating by sign of instantaneous closing rate; exact and stationary labels; per-body station thresholds (placeholder, MISSING). True node used, mean vs true unresolved (06 U5).',
     layerC_tradition: 'Ptolemy Tetrabiblos (Robbins 1940), Lilly Christian Astrology (1647), Hand, Leo. Orb tables cited per 02:88-89; no single-school silent merge.',
-    layerD_seen: 'Wound triggers only per 02 §12: Sun/Moon via Mars or Saturn; outer planets tagged modern-outer, never classical; Chiron/Lilith seen-layer-d + modern-point per CoS ruling 2026-10-12. Every Layer D record carries "SEEN-derived; not traditional doctrine". Dignity/reception MISSING. Typhon and portalId MISSING.',
+    layerD_seen: 'Wound triggers only per 02 §12: Sun/Moon via Mars or Saturn; outer planets tagged modern-outer, never classical; Chiron/Lilith seen-layer-d + modern-point per CoS ruling 2026-10-12. Every Layer D record carries "SEEN-derived; not traditional doctrine". Dignity/reception MISSING. Typhon and archetypeId MISSING.',
     output: 'Shared t555 contribution shape. Reads no other modality. No prose, gifts, or scores.',
   },
   checks: [

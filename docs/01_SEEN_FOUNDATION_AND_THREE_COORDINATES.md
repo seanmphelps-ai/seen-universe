@@ -6,7 +6,7 @@ Controlling files:
 - `docs/TIME_NARROWING_LOCK.md`
 - `docs/00_START_HERE_CANON_LOCK.md`
 
-Order is: name → date → birth city → lived stack → dark pressure time cards → family soil → portals.
+Order is: name → date → birth city → lived stack → dark pressure time cards → family soil → identifying archetypes.
 
 Environment is weather on a calculated seed.
 

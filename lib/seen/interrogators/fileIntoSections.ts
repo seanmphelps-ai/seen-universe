@@ -8,7 +8,7 @@ export function fileIntoSections(results: InterrogatorResult[]): SectionFiling {
   for (const s of LIFE_SECTIONS) sections[s.id] = { id: s.id, name: s.name, entries: [] };
   for (const r of results) {
     const entries: SectionEntry[] = r.answers.map((a) => ({
-      archetypeId: r.portalId,
+      archetypeId: r.archetypeId,
       questionSection: a.section,
       question: a.question,
       answer: a.answer,

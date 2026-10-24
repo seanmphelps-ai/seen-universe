@@ -17,10 +17,10 @@ First deliver one separate, whole native reading each for Western, Hellenistic, 
 
 1. Production `POST /api/seen/run` computes only Western and official location. `lib/agents/execution.ts` `readNative` calls each wheel in `docs/CALC_WHEELS.md`. Interpretive modality audits are still unresolved.
 2. `lib/seen/woundMarkers.ts` unconditionally appends `Ashlesha (pending Vedic native)` to a Western-chart pass. A shared `wound-extract` agent is outside the immediate independent-modality deliverable.
-3. `lib/seen/chartEngine.ts` ranks all 64 portals from a wound count and one location amplification, including a hard-coded bonus for IDs 1–14.
-4. `lib/seen/westernBridge.ts` fills a 64-portal column with `insufficient_signal` and labels it an independently completed source run.
+3. `lib/seen/chartEngine.ts` ranks all 64 identifying archetypes from a wound count and one location amplification, including a hard-coded bonus for IDs 1–14.
+4. `lib/seen/westernBridge.ts` fills a 64-identifying-archetype column with `insufficient_signal` and labels it an independently completed source run.
 5. `eve/orchestrator-first-slice` contains a loop called an Eve orchestrator and one `wound-extract` specialist. It predates the production branch's recent instruction changes. Production Agent Runs returned zero for the inspected 30-day window.
-6. Production docs currently exclude independent I Ching and Human Design (`docs/64_PORTALS.md`, `docs/00_FULL_SYSTEM_MAP.md`), whereas historical docs include them. Current instruction is to inspect their actual contribution before changing active status.
+6. Production docs currently exclude independent I Ching and Human Design (`docs/64_IDENTIFYING_ARCHETYPES.md`, `docs/00_FULL_SYSTEM_MAP.md`), whereas historical docs include them. Current instruction is to inspect their actual contribution before changing active status.
 7. `docs/00_FULL_SYSTEM_MAP.md` and the source shelf describe multiple modalities, but `docs/MASTER_BUILD_CHECKLIST.md` still treats numerology as undecided. The current instruction includes numerology.
 8. Introductory time-window and intake documents differ.
 9. Production `lib/rectification/schema.ts` accepted one singular `wound` in `DarkCardSchema`, and `lib/rectification/darkChartGenerator.ts` asked for a singular surface wound. This review branch replaces those with source-identified wound records. Complete native readers and per-finding auditor coverage are still required before the runtime can attest that none were omitted.

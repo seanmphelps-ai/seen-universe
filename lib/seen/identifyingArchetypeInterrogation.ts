@@ -1,10 +1,10 @@
 // PROVENANCE: bot=grok session=2026-10-13 task=load 64 interrogator question sets from seen-runtime/seen_runtime.json (SHIP_64 interrogation)
 export type InterrogationSection = { section: string; questions: string[] };
 
-export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
+export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSection[]> = {
   "1": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did destruction first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -108,7 +108,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "2": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did rootlessness first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -212,7 +212,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "3": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did disruption first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -316,7 +316,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "4": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did rigidity first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -420,7 +420,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "5": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did rush first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -524,7 +524,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "6": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did war first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -628,7 +628,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "7": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did separation first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -732,7 +732,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "8": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did invisibility first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -836,7 +836,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "9": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did inflexibility first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -940,7 +940,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "10": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did destruction first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -1044,7 +1044,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "11": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did paralysis first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -1148,7 +1148,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "12": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did burden first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -1252,7 +1252,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "13": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did blame first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -1356,7 +1356,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "14": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did hoarding first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -1460,7 +1460,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "15": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did inflation first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -1564,7 +1564,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "16": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did comparison first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -1668,7 +1668,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "17": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did consumption first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -1772,7 +1772,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "18": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did rage first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -1876,7 +1876,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "19": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did numbness first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -1980,7 +1980,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "20": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did filling first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -2084,7 +2084,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "21": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did compulsion first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -2188,7 +2188,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "22": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did performance first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -2292,7 +2292,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "23": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did dissolution first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -2396,7 +2396,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "24": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did repetition first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -2500,7 +2500,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "25": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did naivety first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -2604,7 +2604,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "26": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did control first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -2708,7 +2708,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "27": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did depletion first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -2812,7 +2812,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "28": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did overwhelm first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -2916,7 +2916,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "29": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did repetition first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -3020,7 +3020,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "30": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did obsession first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -3124,7 +3124,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "31": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did seduction first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -3228,7 +3228,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "32": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did stagnation first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -3332,7 +3332,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "33": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did avoidance first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -3436,7 +3436,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "34": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did force first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -3540,7 +3540,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "35": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did burnout first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -3644,7 +3644,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "36": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did concealment first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -3748,7 +3748,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "37": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did obligation first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -3852,7 +3852,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "38": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did polarization first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -3956,7 +3956,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "39": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did blocking first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -4060,7 +4060,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "40": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did escape first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -4164,7 +4164,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "41": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did scarcity first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -4268,7 +4268,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "42": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did excess first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -4372,7 +4372,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "43": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did rupture first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -4476,7 +4476,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "44": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did entrapment first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -4580,7 +4580,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "45": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did exploitation first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -4684,7 +4684,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "46": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did overreach first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -4788,7 +4788,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "47": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did constriction first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -4892,7 +4892,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "48": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did isolation first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -4996,7 +4996,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "49": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did destruction first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -5100,7 +5100,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "50": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did sacrifice first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -5204,7 +5204,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "51": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did shock first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -5308,7 +5308,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "52": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did frozen first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -5412,7 +5412,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "53": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did impatience first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -5516,7 +5516,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "54": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did subservience first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -5620,7 +5620,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "55": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did peak collapse first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -5724,7 +5724,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "56": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did alienation first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -5828,7 +5828,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "57": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did infiltration first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -5932,7 +5932,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "58": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did addiction first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -6036,7 +6036,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "59": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did dissolution first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -6140,7 +6140,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "60": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did prison first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -6244,7 +6244,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "61": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did weaponized truth first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -6348,7 +6348,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "62": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did pettiness first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -6452,7 +6452,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "63": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did trap first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",
@@ -6556,7 +6556,7 @@ export const PORTAL_INTERROGATION: Record<number, InterrogationSection[]> = {
   ],
   "64": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did almost first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",

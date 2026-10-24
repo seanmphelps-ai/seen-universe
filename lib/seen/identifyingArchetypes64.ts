@@ -1,16 +1,16 @@
-// PROVENANCE: bot=grok session=2026-10-13 task=restore portals64 data (no scoring) from seen-runtime/seen_runtime.json SHIP_64
+// PROVENANCE: bot=grok session=2026-10-13 task=restore identifyingArchetypes64 data (no scoring) from seen-runtime/seen_runtime.json SHIP_64
 /**
- * The 64 portals (interrogators) as data. NO SCORING: every portal is always
+ * The 64 identifying archetypes (interrogators) as data. NO SCORING: every identifying archetype is always
  * returned, unranked and unfiltered. `expression` is a fixed 'available' label
  * kept only for type compatibility with existing consumers.
  */
 
-import { PORTAL_INTERROGATION, type InterrogationSection } from './portalInterrogation';
+import { IDENTIFYING_ARCHETYPE_INTERROGATION, type InterrogationSection } from './identifyingArchetypeInterrogation';
 
 export type { InterrogationSection };
 
-export type PortalRecord = {
-  portalId: number;
+export type IdentifyingArchetypeRecord = {
+  archetypeId: number;
   name: string;
   shadowName: string;
   giftName: string;
@@ -24,14 +24,14 @@ export type PortalRecord = {
   interrogation: InterrogationSection[];
 };
 
-export type PortalExpression = PortalRecord & {
+export type IdentifyingArchetypeExpression = IdentifyingArchetypeRecord & {
   expression: 'available';
   note: string;
 };
 
-const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
+const IDENTIFYING_ARCHETYPES_64_BASE: Omit<IdentifyingArchetypeRecord, 'interrogation'>[] = [
   {
-    "portalId": 1,
+    "archetypeId": 1,
     "name": "The Creative",
     "shadowName": "Entropy",
     "giftName": "Origination",
@@ -55,7 +55,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 2,
+    "archetypeId": 2,
     "name": "The Receptive",
     "shadowName": "Dislocation",
     "giftName": "Orientation",
@@ -79,7 +79,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 3,
+    "archetypeId": 3,
     "name": "Difficulty at the Beginning",
     "shadowName": "Chaos",
     "giftName": "Innovation",
@@ -102,7 +102,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 4,
+    "archetypeId": 4,
     "name": "Youthful Folly",
     "shadowName": "Intolerance",
     "giftName": "Understanding",
@@ -127,7 +127,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 5,
+    "archetypeId": 5,
     "name": "Waiting (Nourishment)",
     "shadowName": "Impatience",
     "giftName": "Patience",
@@ -154,7 +154,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 6,
+    "archetypeId": 6,
     "name": "Conflict",
     "shadowName": "Conflict",
     "giftName": "Diplomacy",
@@ -182,7 +182,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 7,
+    "archetypeId": 7,
     "name": "The Army",
     "shadowName": "Division",
     "giftName": "Unity",
@@ -209,7 +209,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 8,
+    "archetypeId": 8,
     "name": "Holding Together [Union]",
     "shadowName": "Mediocrity",
     "giftName": "Contribution",
@@ -233,7 +233,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 9,
+    "archetypeId": 9,
     "name": "The Taming Power of the Small",
     "shadowName": "Stubbornness",
     "giftName": "Determination",
@@ -259,7 +259,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 10,
+    "archetypeId": 10,
     "name": "Treading [Conduct]",
     "shadowName": "Self-Sabotage",
     "giftName": "Authenticity",
@@ -285,7 +285,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 11,
+    "archetypeId": 11,
     "name": "Peace",
     "shadowName": "Fear of Failure",
     "giftName": "Inspiration",
@@ -310,7 +310,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 12,
+    "archetypeId": 12,
     "name": "Standstill [Stagnation]",
     "shadowName": "Over-Responsibility",
     "giftName": "Discretion",
@@ -331,7 +331,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     "sectionsFed": []
   },
   {
-    "portalId": 13,
+    "archetypeId": 13,
     "name": "Fellowship with Men",
     "shadowName": "Victimhood",
     "giftName": "Empathy",
@@ -359,7 +359,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 14,
+    "archetypeId": 14,
     "name": "Possession in Great Measure",
     "shadowName": "Greed",
     "giftName": "Competence",
@@ -383,7 +383,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 15,
+    "archetypeId": 15,
     "name": "Modesty",
     "shadowName": "Pride",
     "giftName": "Humility",
@@ -408,7 +408,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 16,
+    "archetypeId": 16,
     "name": "Enthusiasm",
     "shadowName": "Envy",
     "giftName": "Versatility",
@@ -432,7 +432,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 17,
+    "archetypeId": 17,
     "name": "Following",
     "shadowName": "Lust",
     "giftName": "Anticipation",
@@ -458,7 +458,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 18,
+    "archetypeId": 18,
     "name": "Work on What Has Been Spoiled [Decay]",
     "shadowName": "Wrath",
     "giftName": "Integrity",
@@ -483,7 +483,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 19,
+    "archetypeId": 19,
     "name": "Approach",
     "shadowName": "Sloth",
     "giftName": "Sensitivity",
@@ -510,7 +510,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 20,
+    "archetypeId": 20,
     "name": "Contemplation (View)",
     "shadowName": "Gluttony",
     "giftName": "Presence",
@@ -533,7 +533,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 21,
+    "archetypeId": 21,
     "name": "Biting Through",
     "shadowName": "Biting Through",
     "giftName": "Authority",
@@ -558,7 +558,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 22,
+    "archetypeId": 22,
     "name": "Grace",
     "shadowName": "Grace Under Pressure",
     "giftName": "Graciousness",
@@ -582,7 +582,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 23,
+    "archetypeId": 23,
     "name": "Splitting Apart",
     "shadowName": "Splitting Apart",
     "giftName": "Simplicity",
@@ -608,7 +608,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 24,
+    "archetypeId": 24,
     "name": "Return (The Turning Point)",
     "shadowName": "Return",
     "giftName": "Rationalization",
@@ -633,7 +633,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 25,
+    "archetypeId": 25,
     "name": "Innocence (The Unexpected)",
     "shadowName": "Innocence",
     "giftName": "Acceptance",
@@ -654,7 +654,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     "sectionsFed": []
   },
   {
-    "portalId": 26,
+    "archetypeId": 26,
     "name": "The Taming Power of the Great",
     "shadowName": "Taming Great",
     "giftName": "Manipulation",
@@ -679,7 +679,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 27,
+    "archetypeId": 27,
     "name": "The Corners of the Mouth (Providing Nourishment)",
     "shadowName": "Nourishment",
     "giftName": "Care",
@@ -705,7 +705,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 28,
+    "archetypeId": 28,
     "name": "Preponderance of the Great",
     "shadowName": "Preponderance Great",
     "giftName": "Totality",
@@ -729,7 +729,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 29,
+    "archetypeId": 29,
     "name": "The Abysmal (Water)",
     "shadowName": "Abysmal",
     "giftName": "Commitment",
@@ -758,7 +758,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 30,
+    "archetypeId": 30,
     "name": "The Clinging, Fire",
     "shadowName": "Clinging",
     "giftName": "Passion",
@@ -784,7 +784,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 31,
+    "archetypeId": 31,
     "name": "Influence (Wooing)",
     "shadowName": "Influence",
     "giftName": "Leadership",
@@ -808,7 +808,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 32,
+    "archetypeId": 32,
     "name": "Duration",
     "shadowName": "Duration",
     "giftName": "Continuity",
@@ -832,7 +832,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 33,
+    "archetypeId": 33,
     "name": "Retreat",
     "shadowName": "Retreat",
     "giftName": "Privacy",
@@ -857,7 +857,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 34,
+    "archetypeId": 34,
     "name": "The Power of the Great",
     "shadowName": "Power Great",
     "giftName": "Strength",
@@ -881,7 +881,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 35,
+    "archetypeId": 35,
     "name": "Progress",
     "shadowName": "Progress",
     "giftName": "Change",
@@ -904,7 +904,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 36,
+    "archetypeId": 36,
     "name": "Darkening of the Light",
     "shadowName": "Darkening Light",
     "giftName": "Crisis",
@@ -931,7 +931,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 37,
+    "archetypeId": 37,
     "name": "The Family [The Clan]",
     "shadowName": "Family",
     "giftName": "Equality",
@@ -957,7 +957,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 38,
+    "archetypeId": 38,
     "name": "Opposition",
     "shadowName": "Opposition",
     "giftName": "Honor",
@@ -983,7 +983,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 39,
+    "archetypeId": 39,
     "name": "Obstruction",
     "shadowName": "Obstruction",
     "giftName": "Provocation",
@@ -1006,7 +1006,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 40,
+    "archetypeId": 40,
     "name": "Deliverance",
     "shadowName": "Deliverance",
     "giftName": "Resolve",
@@ -1029,7 +1029,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 41,
+    "archetypeId": 41,
     "name": "Decrease",
     "shadowName": "Decrease",
     "giftName": "Contraction",
@@ -1054,7 +1054,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 42,
+    "archetypeId": 42,
     "name": "Increase",
     "shadowName": "Increase",
     "giftName": "Expansion",
@@ -1078,7 +1078,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 43,
+    "archetypeId": 43,
     "name": "Break-through (Resoluteness)",
     "shadowName": "Breakthrough",
     "giftName": "Insight",
@@ -1102,7 +1102,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 44,
+    "archetypeId": 44,
     "name": "Coming to Meet",
     "shadowName": "Coming to Meet",
     "giftName": "Alertness",
@@ -1130,7 +1130,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 45,
+    "archetypeId": 45,
     "name": "Gathering Together [Massing]",
     "shadowName": "Gathering",
     "giftName": "Communion",
@@ -1155,7 +1155,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 46,
+    "archetypeId": 46,
     "name": "Pushing Upward",
     "shadowName": "Pushing Upward",
     "giftName": "Determination",
@@ -1176,7 +1176,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     "sectionsFed": []
   },
   {
-    "portalId": 47,
+    "archetypeId": 47,
     "name": "Oppression (Exhaustion)",
     "shadowName": "Oppression",
     "giftName": "Realization",
@@ -1205,7 +1205,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 48,
+    "archetypeId": 48,
     "name": "The Well",
     "shadowName": "The Well",
     "giftName": "Depth",
@@ -1231,7 +1231,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 49,
+    "archetypeId": 49,
     "name": "Revolution (Molting)",
     "shadowName": "Revolution",
     "giftName": "Principles",
@@ -1253,7 +1253,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     "sectionsFed": []
   },
   {
-    "portalId": 50,
+    "archetypeId": 50,
     "name": "The Caldron",
     "shadowName": "Cauldron",
     "giftName": "Values",
@@ -1277,7 +1277,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 51,
+    "archetypeId": 51,
     "name": "The Arousing (Shock, Thunder)",
     "shadowName": "Arousing",
     "giftName": "Initiative",
@@ -1301,7 +1301,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 52,
+    "archetypeId": 52,
     "name": "Keeping Still, Mountain",
     "shadowName": "Keeping Still",
     "giftName": "Stillness",
@@ -1325,7 +1325,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 53,
+    "archetypeId": 53,
     "name": "Development (Gradual Progress)",
     "shadowName": "Development",
     "giftName": "Beginnings",
@@ -1348,7 +1348,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 54,
+    "archetypeId": 54,
     "name": "The Marrying Maiden",
     "shadowName": "Marrying Maiden",
     "giftName": "Ambition",
@@ -1372,7 +1372,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 55,
+    "archetypeId": 55,
     "name": "Abundance [Fullness]",
     "shadowName": "Abundance",
     "giftName": "Spirit",
@@ -1395,7 +1395,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 56,
+    "archetypeId": 56,
     "name": "The Wanderer",
     "shadowName": "Wanderer",
     "giftName": "Stimulation",
@@ -1420,7 +1420,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 57,
+    "archetypeId": 57,
     "name": "The Gentle (The Penetrating, Wind)",
     "shadowName": "Gentle",
     "giftName": "Intuition",
@@ -1445,7 +1445,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 58,
+    "archetypeId": 58,
     "name": "The Joyous, Lake",
     "shadowName": "Joyous",
     "giftName": "Vitality",
@@ -1470,7 +1470,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 59,
+    "archetypeId": 59,
     "name": "Dispersion [Dissolution]",
     "shadowName": "Dispersion",
     "giftName": "Sexuality",
@@ -1493,7 +1493,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 60,
+    "archetypeId": 60,
     "name": "Limitation",
     "shadowName": "Limitation",
     "giftName": "Acceptance",
@@ -1516,7 +1516,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 61,
+    "archetypeId": 61,
     "name": "Inner Truth",
     "shadowName": "Inner Truth",
     "giftName": "Mystery",
@@ -1541,7 +1541,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 62,
+    "archetypeId": 62,
     "name": "Preponderance of the Small",
     "shadowName": "Preponderance Small",
     "giftName": "Detail",
@@ -1565,7 +1565,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 63,
+    "archetypeId": 63,
     "name": "After Completion",
     "shadowName": "After Completion",
     "giftName": "Doubt",
@@ -1592,7 +1592,7 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
     ]
   },
   {
-    "portalId": 64,
+    "archetypeId": 64,
     "name": "Before Completion",
     "shadowName": "Before Completion",
     "giftName": "Confusion",
@@ -1619,19 +1619,19 @@ const PORTALS_64_BASE: Omit<PortalRecord, 'interrogation'>[] = [
   }
 ];
 
-export const PORTALS_64: readonly PortalRecord[] = PORTALS_64_BASE.map((p) => ({
+export const IDENTIFYING_ARCHETYPES_64: readonly IdentifyingArchetypeRecord[] = IDENTIFYING_ARCHETYPES_64_BASE.map((p) => ({
   ...p,
-  interrogation: PORTAL_INTERROGATION[p.portalId] ?? [],
+  interrogation: IDENTIFYING_ARCHETYPE_INTERROGATION[p.archetypeId] ?? [],
 }));
 
-export const PORTAL_64_NAMES: string[] = PORTALS_64.map((p) => p.name);
+export const IDENTIFYING_ARCHETYPE_64_NAMES: string[] = IDENTIFYING_ARCHETYPES_64.map((p) => p.name);
 
-/** Returns all 64 portals unchanged. Arguments are ignored: no scoring, no filtering. */
+/** Returns all 64 identifying archetypes unchanged. Arguments are ignored: no scoring, no filtering. */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function expressPortals(..._ignored: unknown[]): PortalExpression[] {
-  return PORTALS_64.map((p) => ({
+export function expressIdentifyingArchetypes(..._ignored: unknown[]): IdentifyingArchetypeExpression[] {
+  return IDENTIFYING_ARCHETYPES_64.map((p) => ({
     ...p,
     expression: 'available' as const,
-    note: 'Portal remains available; no score is applied.',
+    note: 'Identifying archetype remains available; no score is applied.',
   }));
 }

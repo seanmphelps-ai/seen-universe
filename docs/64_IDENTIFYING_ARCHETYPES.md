@@ -1,12 +1,12 @@
-// PROVENANCE: bot=grok session=2026-10-09 task=replace soft portal names with raw Chinese and blunt war-era meanings, gutting interrogator voice
-# 64 PORTALS REGISTRY
+// PROVENANCE: bot=grok session=2026-10-09 task=replace soft identifying archetype names with raw Chinese and blunt war-era meanings, gutting interrogator voice
+# 64 IDENTIFYING ARCHETYPES REGISTRY
 
 Status: CANONICAL — approved registry.
 Version: 2.0.0
 
-The 64 SEEN Portals are SEEN's separate archetypal interpretation layer. They retain the canonical hexagram names as identities, restructured as behavioral frequencies. Human Design and traditional I Ching are independent native systems with their own complete traditional readings and auditors, like every other modality. The 64 Portals are always present. They are channels through which pressure becomes behavior.
+The 64 SEEN Identifying archetypes are SEEN's separate archetypal interpretation layer. They retain the canonical hexagram names as identities, restructured as behavioral frequencies. Human Design and traditional I Ching are independent native systems with their own complete traditional readings and auditors, like every other modality. The 64 Identifying archetypes are always present. They are channels through which pressure becomes behavior.
 
-Each portal is evaluated through the same extraction arc:
+Each identifying archetype is evaluated through the same extraction arc:
 
 - **WHAT** — the archetypal function, what it protects, creates, avoids, repairs, controls, understands, expresses, defends, or transforms.
 - **WHEN** — when it becomes sensitive, reactive, available, or dangerous.
@@ -16,7 +16,7 @@ Each portal is evaluated through the same extraction arc:
 - **WHAT INCREASES** — what lowers the threshold and intensifies expression.
 - **WHAT REDUCES** — what regulates it, what environments support adaptive expression, what timing windows carry less activation.
 
-Every portal output carries: trigger, pressure point, behavior, collapse, thrive, cost to self, cost to others, what is lost if it runs one more cycle. The portal runs until the mechanism is fully named.
+Every identifying archetype output carries: trigger, pressure point, behavior, collapse, thrive, cost to self, cost to others, what is lost if it runs one more cycle. The identifying archetype runs until the mechanism is fully named.
 
 The names below are the raw Chinese with the blunt meaning. No soft rendering. The Zhouyi was written by a king in a dungeon and a general on a battlefield. The text does not need softening. The translation did.
 
@@ -218,9 +218,9 @@ The almost, the state of being nearly there. When pressured: the inability to fi
 
 ## Routing Rules
 
-1. The 64 portals are the interrogators. Each portal runs its own question set against the chart, the locations, and the lived evidence.
-2. Each portal's state is built only from its own deposits — signal, source, person, context, pressure, condition, recurrence, confidence.
-3. No global score, no pre-charge, no activation status, no convergence filter. A portal surfaces only when its own evidence earns it.
-4. The seed and the incubator come together. The seed is the natal chart. The incubator is the environment — the city, the places lived, the years in each one. The portals witness what happens to the seed in the incubator.
-5. Each portal files into Life Sections from its own deposits.
+1. The 64 identifying archetypes are the interrogators. Each identifying archetype runs its own question set against the chart, the locations, and the lived evidence.
+2. Each identifying archetype's state is built only from its own deposits — signal, source, person, context, pressure, condition, recurrence, confidence.
+3. No global score, no pre-charge, no activation status, no convergence filter. A identifying archetype surfaces only when its own evidence earns it.
+4. The seed and the incubator come together. The seed is the natal chart. The incubator is the environment — the city, the places lived, the years in each one. The identifying archetypes witness what happens to the seed in the incubator.
+5. Each identifying archetype files into Life Sections from its own deposits.
 6. Dark chart: shadow only. Those come after sovereignty.

@@ -43,5 +43,5 @@ Implement one complete independent traditional system from intake through its na
 - Native output is demonstrable.
 - All applicable source-backed markers survive.
 - Preserve every applicable verified wound marker and the complete independent native reading before cross-system synthesis.
-- Portals and convergence remain downstream.
+- Identifying archetypes and convergence remain downstream.
 - Next.js 15, local Swiss Ephemeris where relevant, Supabase, Vercel, and the existing branch are preserved.

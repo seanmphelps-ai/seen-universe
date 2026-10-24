@@ -34,17 +34,17 @@ Real progress was made. Two claimed fixes are false or incomplete in ways that p
 
 | Check | Base 41022b8 | Patched | Builder claim |
 |---|---|---|---|
-| tsc | 8 errors (people/page birth_time ×2, execution.test ×3, flowise, orchestrator natalChart, chartEngine portals64) | identical 8, 0 in numerology files | HOLDS |
+| tsc | 8 errors (people/page birth_time ×2, execution.test ×3, flowise, orchestrator natalChart, chartEngine identifyingArchetypes64) | identical 8, 0 in numerology files | HOLDS |
 | vitest full | 4 files / 5 tests fail; 321/326 | same 5 failures; 334/339 | HOLDS |
 | numerology + modalityCalcs | 5/5 (modality only) | **18/18** | HOLDS |
-| next build | `Can't resolve './portals64'` | same | HOLDS |
+| next build | `Can't resolve './identifyingArchetypes64'` | same | HOLDS |
 
 ## Regression checks
 
 | Check | Result | Evidence |
 |---|---|---|
 | 11-field shape | OK. One distinct key set across all ANN rows, matching the CoS 11 fields | contributions.ts:8-20,38-42; test:76 |
-| portalId null | OK | contributions.ts:39 |
+| archetypeId null | OK | contributions.ts:39 |
 | No prose/gift/score | OK. Probe regex `gift|score|weight|amplif|meaning|theme` matched nothing | probe |
 | ANN LEE 1979-08-01 | LP 8, BD 1, Expr 6, SU 2, Pers 4, no debts. Matches the hand check in B_01 / 04 V1 | probe; test:14-18 |
 | JOSÉ | J1+O6+S1+E5 = 13/4, `karmicDebt13@expression` | probe; test:35-40 |

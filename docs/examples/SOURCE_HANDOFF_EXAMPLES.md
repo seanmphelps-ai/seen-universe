@@ -54,13 +54,13 @@ Keep GeoPresence, biome, and abiotic outputs separate before synthesis.
 }
 ```
 
-### 5. Portal routing
+### 5. Identifying archetype routing
 
 ```json
 {
-  "portalLayer": [
+  "identifyingArchetypeLayer": [
     {
-      "portalId": "P01",
+      "archetypeId": "P01",
       "pressure": 0,
       "evidence": [],
       "provenance": []
@@ -71,14 +71,14 @@ Keep GeoPresence, biome, and abiotic outputs separate before synthesis.
 
 ### 6. Life Section routing
 
-Portal findings retain their source trail when routed onward.
+Identifying archetype findings retain their source trail when routed onward.
 
 ```json
 {
   "lifeSectionId": "section-id",
   "signals": [
     {
-      "portalId": "P01",
+      "archetypeId": "P01",
       "source": "environment",
       "evidenceRefs": []
     }
@@ -111,7 +111,7 @@ raw source evidence
 → verified mechanic
 → typed calculation output
 → source-specific extraction
-→ portal contribution
+→ identifying archetype contribution
 → convergence record
 → Oracle-ready payload
 ```

@@ -4,7 +4,7 @@
 Voice Oracle is SEEN's conversational interface and regulated rendering condition.
 
 Foundation intake and the Runtime collect names, dates, places, and timeframes.
-Generator owns calculation, portal routing, convergence, Dark Chart, comparative shadows, evidence, and provenance.
+Generator owns calculation, identifying archetype routing, convergence, Dark Chart, comparative shadows, evidence, and provenance.
 
 ## Responsibilities
 

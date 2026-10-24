@@ -4,7 +4,7 @@ import { calculateNatalChart, type NatalChartInput } from '../../../../lib/natal
 import { buildLocationField } from '../../../../lib/location/buildLocationField';
 import type { LocationInput } from '../../../../lib/location/types';
 import { redditForumProvider } from '../../../../lib/location/collectors/redditForum';
-import { buildWesternPortalBridge } from '../../../../lib/seen/westernBridge';
+import { buildWesternIdentifyingArchetypeBridge } from '../../../../lib/seen/westernBridge';
 import { readNative, auditNative, type ModalityId } from '../../../../lib/agents/execution';
 import { runEnvironmentalWitness } from '../../../../lib/location/v2/environmentalWitness';
 import {
@@ -110,7 +110,7 @@ export async function POST(request: NextRequest) {
       .update(JSON.stringify(input.chart))
       .digest('hex')
       .slice(0, 16)}`;
-    const westernBridge = buildWesternPortalBridge(western, {
+    const westernBridge = buildWesternIdentifyingArchetypeBridge(western, {
       sourceFieldId,
       layerSequence: 1,
     });
@@ -133,7 +133,7 @@ export async function POST(request: NextRequest) {
       locations: officialFields,
       locationV2,
       western: westernBridge.western,
-      westernPortalPenetration: westernBridge.portalPenetration,
+      westernIdentifyingArchetypePenetration: westernBridge.identifyingArchetypePenetration,
       westernLifeSectionRouting: westernBridge.lifeSectionRouting,
       modalities: modalityReadings,
     });

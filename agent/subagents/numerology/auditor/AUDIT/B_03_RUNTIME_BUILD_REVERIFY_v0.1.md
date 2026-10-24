@@ -46,7 +46,7 @@ The clearance post-dates the 00/01/02 edits, so rule 3's acceptance covers them.
 | tsc | 8 errors | identical 8 (sorted diff empty) | HOLDS |
 | vitest full | 4 files / 5 tests fail; 321/326 | same 5; 338/343 | HOLDS |
 | numerology + modalityCalcs | 5/5 | **22/22** | HOLDS |
-| next build | `Can't resolve './portals64'` | same | HOLDS |
+| next build | `Can't resolve './identifyingArchetypes64'` | same | HOLDS |
 
 ## Hand checks (Pythagorean M1; M6 as stated in 02:47; rule 5)
 
@@ -69,7 +69,7 @@ Silent-error hunt for rule 5: the "certain" branches are initial Y/W before a vo
 | Check | Result |
 |---|---|
 | 11-field shape | One key set across all ANN rows, matching the CoS 11 fields |
-| portalId / seenDerived / layers | every row `null | true | valueLayer B, labelLayer D` |
+| archetypeId / seenDerived / layers | every row `null | true | valueLayer B, labelLayer D` |
 | prose/gift/score | regex `gift|score|weight|amplif|meaning|theme` matched nothing |
 | single engine | no code importer of `sochumenh`; numerologyCalc.ts is a shim |
 | execution.ts routing | `readNative('numerology', …)` returns `calculation.engine = 'seen-numerology'`, LP 8 for ANN LEE 1979-08-01 |

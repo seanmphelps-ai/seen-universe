@@ -63,7 +63,7 @@ describe("Eve orchestrator first slice", () => {
       tasks: [
         {
           id: "t2",
-          kind: "portal-express" as any,
+          kind: "identifying-archetype-express" as any,
           payload: {},
         },
       ],

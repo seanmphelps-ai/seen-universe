@@ -53,8 +53,8 @@ THEN
   clock lock
 
 THEN
-  64 portals pre-charged by the locked field
-  each portal files into 45 life sections
+  64 identifying archetypes pre-charged by the locked field
+  each identifying archetype files into 45 life sections
   Oracle later
 ```
 
@@ -95,7 +95,7 @@ Every location card MUST contain all of these fields. Paragraphs allowed.
 - moneyGoesTo          what people spend on when they have a choice
 - lean                 WESTERN | VEDIC | BLENDED
 - routesTo             lifeSectionId[] (1–45)
-- precharges           portalId[] (1–64)
+- precharges           archetypeId[] (1–64)
 
 Training chain the generator must name, in this order, for each locked place:
 
@@ -159,7 +159,7 @@ Opposite of time:
 - What happens if you transplant out of it
 - What happens if you stay
 
-Same question bank can be reworded for a portal.
+Same question bank can be reworded for a identifying archetype.
 
 ---
 
@@ -209,8 +209,8 @@ Name: bonsai.
 
 After lock:
 - Every named pressure routes to one or more of docs/45_LIFE_SECTIONS.md
-- Every activated frequency pre-charges one or more of docs/64_PORTALS.md
-- Portals file into sections.
+- Every activated frequency pre-charges one or more of docs/64_IDENTIFYING_ARCHETYPES.md
+- Identifying archetypes file into sections.
 - Empty section = visible silence.
 
 ---
@@ -220,7 +220,7 @@ After lock:
 Location cards sit on the place strand.
 User scrolls places left to right.
 Select a place → three cards → pick → tighten.
-Select a portal on that place → full extraction (trigger, pressure, behavior, collapse, thrive, cost to self, cost to others, what is lost).
+Select a identifying archetype on that place → full extraction (trigger, pressure, behavior, collapse, thrive, cost to self, cost to others, what is lost).
 
 ---
 

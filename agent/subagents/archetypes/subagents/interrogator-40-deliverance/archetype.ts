@@ -1,9 +1,9 @@
-// PROVENANCE: bot=grok session=2026-10-13 task=64 interrogator sub-agents (no scoring); data from lib/seen/portals64.ts @abd4fd5
-import type { PortalRecord } from '../../../../../lib/seen/portals64'
+// PROVENANCE: bot=grok session=2026-10-13 task=64 interrogator sub-agents (no scoring); data from lib/seen/identifyingArchetypes64.ts @abd4fd5
+import type { IdentifyingArchetypeRecord } from '../../../../../lib/seen/identifyingArchetypes64'
 
-/** Archetype 40 — Deliverance. 52 portal-phrased questions (reference); runtime asks the universal set (t612). */
-export const archetype: PortalRecord = {
-  "portalId": 40,
+/** Archetype 40 — Deliverance. 52 identifying-archetype-phrased questions (reference); runtime asks the universal set (t612). */
+export const archetype: IdentifyingArchetypeRecord = {
+  "archetypeId": 40,
   "name": "Deliverance",
   "shadowName": "Deliverance",
   "giftName": "Resolve",
@@ -26,7 +26,7 @@ export const archetype: PortalRecord = {
   ],
   "interrogation": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did escape first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",

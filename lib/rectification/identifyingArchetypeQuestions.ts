@@ -1,12 +1,12 @@
 // PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 export type TimeClass = '04:00' | '12:00' | '20:00' | string;
 
-export type PortalAsk = {
+export type IdentifyingArchetypeAsk = {
   id: 'trigger' | 'pressure' | 'show' | 'defend' | 'react' | 'cost_self' | 'cost_other' | 'lost';
   ask: string;
 };
 
-const ASKS: PortalAsk[] = [
+const ASKS: IdentifyingArchetypeAsk[] = [
   { id: 'trigger', ask: 'What hits first and makes this person move before they think?' },
   { id: 'pressure', ask: 'Where does the room get tight for them?' },
   { id: 'show', ask: 'How does it show on the body and in the room?' },
@@ -17,11 +17,11 @@ const ASKS: PortalAsk[] = [
   { id: 'lost', ask: 'What is gone if this runs one more cycle in this place?' },
 ];
 
-export function questionsForClock(_clock: TimeClass): PortalAsk[] {
+export function questionsForClock(_clock: TimeClass): IdentifyingArchetypeAsk[] {
   return ASKS;
 }
 
-export const DARK_CARD_ASK_SYSTEM = `You are the SEEN portal examiner.
+export const DARK_CARD_ASK_SYSTEM = `You are the SEEN identifying archetype examiner.
 Write a person-specific paragraph.
 Ground each sentence in this person’s evidence.
 Answer ONLY these asks, in this person's lived places and years.

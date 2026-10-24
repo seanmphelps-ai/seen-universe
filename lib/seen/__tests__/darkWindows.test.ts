@@ -18,7 +18,7 @@ describe('dark window engine', () => {
       clock: result.darkCardSeed.clock,
       geoSummary: result.darkCardSeed.geoSummary,
       wounds: result.darkCardSeed.woundMarkers,
-      topPortals: result.darkCardSeed.topPortals,
+      topIdentifyingArchetypes: result.darkCardSeed.topIdentifyingArchetypes,
     })));
     expect(new Set(faces).size).toBe(3);
     for (const face of faces) {

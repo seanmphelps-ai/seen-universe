@@ -40,7 +40,7 @@ Deliverables
 • Domain glossary.
 • System boundary definition.
 • Modality registry.
-• Portal registry.
+• Identifying archetype registry.
 • Evidence and confidence policy.
 • Recognition-state policy.
 • Objective-versus-subjective data policy.
@@ -65,7 +65,7 @@ The following must be resolved before production implementation:
   • historically reconstructed conditions;
   • modeled estimates;
   • or all three with separate evidence grades.
-4. Whether portal definitions are:
+4. Whether identifying archetype definitions are:
   • fixed and versioned;
   • configurable by administrators;
   • or extensible by modality.
@@ -81,7 +81,7 @@ None.
 Acceptance criteria
 
 • Every major term has one canonical definition.
-• Objective environmental presence, subjective exposure, portal relevance, developmental effect, and convergence confidence are represented as separate concepts.
+• Objective environmental presence, subjective exposure, identifying archetype relevance, developmental effect, and convergence confidence are represented as separate concepts.
 • Recognition status is not conflated with objective support or subjective exposure.
 • Future forecast data is explicitly distinguishable from historical lived evidence.
 • All unresolved design questions have an owner and decision deadline.
@@ -106,7 +106,7 @@ Implement versioned schemas for:
 • ObjectiveEnvironmentSchema
 • SubjectiveExposureSchema
 • IncubatorSchema
-• PortalStateSchema
+• IdentifyingArchetypestateSchema
 • ContextualIntersectionSchema
 • HistoricalCaptureSchema
 • FutureWindowSchema
@@ -128,7 +128,7 @@ Required capabilities
   • calculations;
   • environmental snapshots;
   • exposure reports;
-  • portal states;
+  • identifying archetype states;
   • convergence objects;
   • recognition records.
 • Immutable provenance references.
@@ -480,32 +480,32 @@ Acceptance criteria
 • A mismatch is preserved rather than resolved automatically.
 • A benign objective environment cannot invalidate a reported experience.
 • An objectively adverse environment cannot create a subjective experience record without user or evidence support.
-• Incubator recognition remains separate from portal recognition.
+• Incubator recognition remains separate from identifying archetype recognition.
 • The incubator can be evaluated even when one layer is unknown.
 • The system can explain why an incubator is aligned, mismatched, partial, or unresolved.
 
 ────────
 
-Phase 7 — 64-Portal Interrogation Engine
+Phase 7 — 64-Identifying-archetype Interrogation Engine
 
 Objective
 
-Implement the common extraction architecture across all 64 portals.
+Implement the common extraction architecture across all 64 identifying archetypes.
 
 Deliverables
 
-• Portal registry.
-• Portal versioning.
-• Portal interrogation schema.
-• Portal state engine.
-• Portal-to-life-section routing map.
-• Portal evidence model.
-• Portal unresolved-field model.
-• Portal probability model.
+• Identifying archetype registry.
+• Identifying archetype versioning.
+• Identifying archetype interrogation schema.
+• Identifying archetype state engine.
+• Identifying-archetype-to-life-section routing map.
+• Identifying archetype evidence model.
+• Identifying archetype unresolved-field model.
+• Identifying archetype probability model.
 
-Required portal dimensions
+Required identifying archetype dimensions
 
-Each portal must support:
+Each identifying archetype must support:
 
 • WHAT:
   • archetypal function;
@@ -629,19 +629,19 @@ Dependencies
 • Phase 3 native signals.
 • Phase 6 incubators.
 • Phase 2 subject state.
-• Portal definitions approved in Phase 0.
+• Identifying archetype definitions approved in Phase 0.
 
 Acceptance criteria
 
-• All 64 portals are addressable through a common interface.
-• Each portal can receive native signals, timing, location, relationship, and incubator context.
-• Portal outputs preserve source signal identity.
+• All 64 identifying archetypes are addressable through a common interface.
+• Each identifying archetype can receive native signals, timing, location, relationship, and incubator context.
+• Identifying archetype outputs preserve source signal identity.
 • Unsupported fields remain unknown.
-• Portal expressions can be amplified, suppressed, regulated, rerouted, or left unresolved.
-• Portal logic does not infer subjective exposure from objective conditions alone.
-• Portal outputs include probability-increasing and probability-reducing conditions.
-• Every portal state is versioned and reproducible.
-• Portal extraction can be run for one modality or multiple modalities without changing native calculations.
+• Identifying archetype expressions can be amplified, suppressed, regulated, rerouted, or left unresolved.
+• Identifying archetype logic does not infer subjective exposure from objective conditions alone.
+• Identifying archetype outputs include probability-increasing and probability-reducing conditions.
+• Every identifying archetype state is versioned and reproducible.
+• Identifying archetype extraction can be run for one modality or multiple modalities without changing native calculations.
 
 ────────
 
@@ -686,7 +686,7 @@ Required intersection record
 Each supported intersection must store:
 
 • person ID;
-• portal ID;
+• identifying archetype ID;
 • modality;
 • native marker;
 • native calculation;
@@ -706,7 +706,7 @@ Dependencies
 
 • Phase 3 native engines.
 • Phase 6 incubators.
-• Phase 7 portal engine.
+• Phase 7 identifying archetype engine.
 • Phase 2 subject state.
 
 Acceptance criteria
@@ -728,12 +728,12 @@ Phase 9 — Life-Section Routing and Signal Ripple
 
 Objective
 
-Route surviving portal expressions into applicable life sections while preserving full provenance.
+Route surviving identifying archetype expressions into applicable life sections while preserving full provenance.
 
 Deliverables
 
 • Life-section registry.
-• Portal-to-life-section routing rules.
+• Identifying-archetype-to-life-section routing rules.
 • Signal ripple engine.
 • Cross-modality propagation model.
 • Contextual overlap model.
@@ -741,9 +741,9 @@ Deliverables
 
 Required routing behavior
 
-Each surviving portal expression must retain:
+Each surviving identifying archetype expression must retain:
 
-• portal ID;
+• identifying archetype ID;
 • source modality;
 • native signal;
 • incubator;
@@ -758,7 +758,7 @@ Each surviving portal expression must retain:
 Signal ripple sequence
 
 1. Native marker.
-2. Portal intersection.
+2. Identifying archetype intersection.
 3. Pressure and trigger.
 4. Adaptation and behavior.
 5. Payoff, cost, and consequence.
@@ -771,13 +771,13 @@ Signal ripple sequence
 
 Dependencies
 
-• Phase 7 portal engine.
+• Phase 7 identifying archetype engine.
 • Phase 8 convergence engine.
 • Life-section definitions.
 
 Acceptance criteria
 
-• A portal expression can route to multiple life sections.
+• A identifying archetype expression can route to multiple life sections.
 • Routing does not duplicate or destroy provenance.
 • Cross-modality agreement reinforces a mechanism only when the mechanisms are comparable.
 • Non-comparable signals remain separate.
@@ -800,7 +800,7 @@ Deliverables
 • Historical transit service.
 • Historical relocation service.
 • Historical incubator assembly.
-• Historical portal evaluation.
+• Historical identifying archetype evaluation.
 • Historical recognition capture.
 • Historical capture comparison tools.
 
@@ -818,7 +818,7 @@ Required historical capture fields
 • Environmental state ID.
 • Subjective exposure.
 • Incubator summaries.
-• Portal state IDs.
+• Identifying archetype state IDs.
 • Lived evidence.
 • User recognition.
 • Recognized life sections.
@@ -837,7 +837,7 @@ Acceptance criteria
 • Subjective exposure is stored as reported lived evidence.
 • Historical recognition is distinct from system-generated interpretation.
 • The system can reconstruct a historical capture without overwriting current state.
-• Historical captures can be compared across locations, periods, and portal states.
+• Historical captures can be compared across locations, periods, and identifying archetype states.
 
 ────────
 
@@ -845,7 +845,7 @@ Phase 11 — Present Capture
 
 Objective
 
-Evaluate the person’s current state against the current location, current environment, current relationships, current sky, and active portal field.
+Evaluate the person’s current state against the current location, current environment, current relationships, current sky, and active identifying archetype field.
 
 Deliverables
 
@@ -853,7 +853,7 @@ Deliverables
 • Current-sky integration.
 • Current location incubator.
 • Current relationship context.
-• Current portal field.
+• Current identifying archetype field.
 • Now-state generator.
 • Present recognition workflow.
 
@@ -865,7 +865,7 @@ Required present-state inputs
 • Current subjective exposure.
 • Current sky.
 • Current relationships.
-• Active portal field.
+• Active identifying archetype field.
 • Prior recognition history.
 
 Dependencies
@@ -881,7 +881,7 @@ Acceptance criteria
 • Current subjective exposure remains person-reported or explicitly forecast.
 • Current relationships are represented separately from location and individual state.
 • The output distinguishes current recognition from historical recognition.
-• The system can identify active, suppressed, regulated, rerouted, and unresolved portal expressions.
+• The system can identify active, suppressed, regulated, rerouted, and unresolved identifying archetype expressions.
 
 ────────
 
@@ -912,8 +912,8 @@ Required relationship layers
 • Person B recognition history.
 • Person A timing.
 • Person B timing.
-• Person A portal field.
-• Person B portal field.
+• Person A identifying archetype field.
+• Person B identifying archetype field.
 • A ↔ B native field.
 • A ↔ location.
 • B ↔ location.
@@ -941,7 +941,7 @@ Phase 13 — Travel Window Search and Relocation Analysis
 
 Objective
 
-Search future destination and date windows for individual, relational, environmental, and portal convergence.
+Search future destination and date windows for individual, relational, environmental, and identifying archetype convergence.
 
 Deliverables
 
@@ -950,8 +950,8 @@ Deliverables
 • Future astronomical pressure calculator.
 • Future environmental pressure calculator.
 • Conditional subjective exposure forecaster.
-• Individual portal-field evaluator.
-• Relationship portal-field evaluator.
+• Individual identifying-archetype-field evaluator.
+• Relationship identifying-archetype-field evaluator.
 • Candidate scoring and ranking.
 • Contradiction and uncertainty display.
 
@@ -977,7 +977,7 @@ Dependencies
 Acceptance criteria
 
 • Future subjective exposure is labeled as forecast, not lived evidence.
-• Forecasts are based on prior reported patterns, objective conditions, relationship context, and portal activation.
+• Forecasts are based on prior reported patterns, objective conditions, relationship context, and identifying archetype activation.
 • Candidate windows can be compared by exact-state similarity and functional-state similarity.
 • Objective similarity does not imply subjective similarity.
 • The system exposes the assumptions behind each forecast.
@@ -1013,7 +1013,7 @@ Compare:
 • date and season;
 • astronomical configuration;
 • native-to-event relationships;
-• portal activation;
+• identifying archetype activation;
 • relationship context;
 • developmental period;
 • reported exposure pattern.
@@ -1029,7 +1029,7 @@ Compare:
 • payoff;
 • cost;
 • consequence;
-• portal activation;
+• identifying archetype activation;
 • likely subjective exposure;
 • relational dynamics;
 • recognition pattern.
@@ -1056,7 +1056,7 @@ Phase 15 — Translator Layer
 
 Objective
 
-Translate converged portal mechanisms into human-recognizable language without replacing the underlying evidence.
+Translate converged identifying archetype mechanisms into human-recognizable language without replacing the underlying evidence.
 
 Deliverables
 
@@ -1085,7 +1085,7 @@ Dependencies
 
 Acceptance criteria
 
-• Translator output references the underlying portal and source signals.
+• Translator output references the underlying identifying archetype and source signals.
 • Translation does not introduce unsupported claims.
 • Objective environmental conditions and subjective exposure remain separately visible.
 • Confidence and contradictions are included in the human-readable output.
@@ -1196,7 +1196,7 @@ ASSEMBLE INCUBATOR
     ↓
 CALCULATE TIMING AND RELATIONSHIP CONTEXT
     ↓
-INTERROGATE 64 PORTALS
+INTERROGATE 64 IDENTIFYING ARCHETYPES
     ↓
 ROUTE INTO LIFE SECTIONS
     ↓
@@ -1246,7 +1246,7 @@ Version independently:
 • modality calculators;
 • ephemeris data;
 • environmental sources;
-• portal definitions;
+• identifying archetype definitions;
 • convergence rules;
 • translator rules;
 • confidence rules.
@@ -1327,7 +1327,7 @@ A user can view, export, correct, restrict, and delete subjective exposure recor
 Every final convergence must answer:
 
 • What was detected?
-• Which portal was involved?
+• Which identifying archetype was involved?
 • Which native systems contributed?
 • What was the timing?
 • What location was involved?
@@ -1399,7 +1399,7 @@ Exit criteria
 
 ────────
 
-Milestone M4 — Portal and Convergence Core
+Milestone M4 — Identifying archetype and Convergence Core
 
 Includes
 
@@ -1409,8 +1409,8 @@ Includes
 
 Exit criteria
 
-• All 64 portals available through a common interface.
-• Portal outputs preserve unknowns and provenance.
+• All 64 identifying archetypes available through a common interface.
+• Identifying archetype outputs preserve unknowns and provenance.
 • Convergence matrix operational.
 • Contradictions and recurrence represented separately.
 • Life-section routing and signal ripple operational.
@@ -1524,7 +1524,7 @@ Test independently:
 • environmental field mapping;
 • exposure scoring;
 • incubator alignment;
-• portal extraction;
+• identifying archetype extraction;
 • confidence calculation;
 • contradiction handling;
 • forecast labeling.
@@ -1541,7 +1541,7 @@ Maintain fixed fixtures for:
 • known historical skies;
 • known environmental snapshots;
 • known exposure reports;
-• known portal outputs;
+• known identifying archetype outputs;
 • known convergence states.
 
 Property testing
@@ -1575,7 +1575,7 @@ For every final convergence, verify that the system can reconstruct:
 
 final output
   → convergence object
-  → portal state
+  → identifying archetype state
   → native signals
   → native calculations
   → timing
@@ -1598,12 +1598,12 @@ The implementation is complete only when all of the following are true:
 5. Subjective exposure is person-specific.
 6. Objective conditions do not imply subjective experience.
 7. Subjective reports are not invalidated solely by benign objective conditions.
-8. All 64 portals are available through a common interrogation architecture.
-9. Portal outputs support WHAT, WHEN, WHERE, HOW, WHY, probability-increasing conditions, and probability-reducing conditions.
-10. Life-section routing preserves portal and source provenance.
+8. All 64 identifying archetypes are available through a common interrogation architecture.
+9. Identifying archetype outputs support WHAT, WHEN, WHERE, HOW, WHY, probability-increasing conditions, and probability-reducing conditions.
+10. Life-section routing preserves identifying archetype and source provenance.
 11. Convergence accumulates reinforcement, contradiction, recurrence, timing, location, relationship, objective support, subjective support, recognition, and unresolved states.
 12. Historical captures preserve the person’s state at entry.
-13. Present captures include current sky, current location, current relationships, and current portal field.
+13. Present captures include current sky, current location, current relationships, and current identifying archetype field.
 14. Relationship analysis preserves separate exposure records for each person.
 15. Future subjective exposure is modeled conditionally and labeled as forecast.
 16. Historical-to-future search supports both exact-state and functional-state similarity.
@@ -1612,7 +1612,7 @@ The implementation is complete only when all of the following are true:
 19. Every final convergence object is fully traceable.
 20. The runtime remains conditional, probabilistic, versioned, auditable, and capable of leaving unsupported fields unresolved. SEEN™ CONVERGENCE RUNTIME TREE — BUILDER SPEC
 
-The runtime preserves every source system as an independent calculation, preserves every raw mechanic and provenance trail, routes compatible signals through the 64 SEEN Portals, aligns signals by person × location × time × relationship, accumulates recognition evidence, and renders the strongest convergence without erasing contradiction or unresolved fields.
+The runtime preserves every source system as an independent calculation, preserves every raw mechanic and provenance trail, routes compatible signals through the 64 SEEN Identifying archetypes, aligns signals by person × location × time × relationship, accumulates recognition evidence, and renders the strongest convergence without erasing contradiction or unresolved fields.
 
 A location is treated as an incubator. Each incubator is defined by two distinct but equally necessary layers:
 
@@ -1771,7 +1771,7 @@ SEEN
 │   exposures for different people, siblings, or developmental periods.
 │
 │   Person-specific fit emerges only after objective conditions,
-│   subjective exposure, timing, relationships and portal signals
+│   subjective exposure, timing, relationships and identifying archetype signals
 │   are aligned during convergence.   are they though? 
 │
 ├── 03. PERSON STATE HISTORY
@@ -1791,15 +1791,15 @@ SEEN
 │   The person's reported exposure remains distinct from
 │   the objective conditions of the incubator.
 │
-├── 04. 64-PORTAL INTERROGATION
+├── 04. 64-IDENTIFYING-ARCHETYPE INTERROGATION
 │   │
-│   ├── PORTAL 01
-│   ├── PORTAL 02
-│   ├── PORTAL 03
+│   ├── IDENTIFYING ARCHETYPE 01
+│   ├── IDENTIFYING ARCHETYPE 02
+│   ├── IDENTIFYING ARCHETYPE 03
 │   ├── ...
-│   └── PORTAL 64
+│   └── IDENTIFYING ARCHETYPE 64
 │
-│   EACH PORTAL INTERROGATES:
+│   EACH IDENTIFYING ARCHETYPE INTERROGATES:
 │   │
 │   ├── WHAT
 │   │   ├── archetypal function
@@ -1948,7 +1948,7 @@ SEEN
 │
 │   EACH ● STORES:
 │   ├── personId
-│   ├── portalId
+│   ├── archetypeId
 │   ├── modality
 │   ├── nativeMarker
 │   ├── nativeCalculation
@@ -1966,9 +1966,9 @@ SEEN
 │
 ├── 06. LIFE-SECTION ROUTING
 │   │
-│   └── each surviving portal expression
+│   └── each surviving identifying archetype expression
 │       routes immediately into every applicable
-│       SEEN Life Section while retaining portal,
+│       SEEN Life Section while retaining identifying archetype,
 │       source, incubator and exposure provenance.
 │
 ├── 07. CONVERGENCE
@@ -2020,7 +2020,7 @@ SEEN
     └── receives the completed recognition field
 
 
-The 64 Portals are the common extraction architecture: each remains available across the runtime, with expression changing according to pressure, timing, environment, relationship and other converging conditions. System Update Request.txt The existing specification explicitly requires WHAT, WHEN, WHERE, HOW, WHY, probability-increasing conditions and probability-reducing conditions for portal extraction.
+The 64 Identifying archetypes are the common extraction architecture: each remains available across the runtime, with expression changing according to pressure, timing, environment, relationship and other converging conditions. System Update Request.txt The existing specification explicitly requires WHAT, WHEN, WHERE, HOW, WHY, probability-increasing conditions and probability-reducing conditions for identifying archetype extraction.
 
 RUNTIME INPUT CONTRACT
 
@@ -2170,7 +2170,7 @@ The system may generate three concise summaries for each location, but those sum
 
 1. Objective environmental summary: what conditions were present.
 2. Subjective exposure summary: what the person reports experiencing.
-3. Convergence summary: how the objective field and subjective exposure interacted with the person’s portal and timing signals.
+3. Convergence summary: how the objective field and subjective exposure interacted with the person’s identifying archetype and timing signals.
 
 The person’s report remains primary evidence for subjective exposure. The system must not infer that a person experienced violence, poverty, safety, love, toxicity, belonging, or deprivation solely because those conditions were objectively present. Conversely, the system must not reject a reported experience merely because the objective environment appears benign or supportive.
 
@@ -2266,7 +2266,7 @@ PERSON NATIVE SIGNAL
        │
        ├──────────────┐
        ▼              ▼
-Portal 28          LOCATION INCUBATOR
+Identifying archetype 28          LOCATION INCUBATOR
 pressure           Montana
 pattern            winter 2026
        │              │
@@ -2296,7 +2296,7 @@ Example:
 
 ContextualIntersectionSchema.parse({
   personId: "A",
-  portalId: 28,
+  archetypeId: 28,
 
   nativeSignals: [
     westernSignalId,
@@ -2343,7 +2343,7 @@ The runtime must distinguish:
 
 • Objective environmental presence: the condition existed in the location or period.
 • Subjective exposure: the person reports encountering or experiencing the condition.
-• Portal relevance: the condition intersects with a specific portal mechanism.
+• Identifying archetype relevance: the condition intersects with a specific identifying archetype mechanism.
 • Developmental effect: the condition appears to have shaped adaptation, behavior, capacity, or recognition.
 • Convergence confidence: the degree to which independent signals, timing, reported experience, and observed recurrence support the interpretation.
 
@@ -2369,7 +2369,7 @@ PERSON A
 └── duration
              │
              ▼
-      64 PORTAL FIELD
+      64 IDENTIFYING ARCHETYPE FIELD
              │
              ▼
       OBSERVED EXPERIENCE
@@ -2411,7 +2411,7 @@ HistoricalCaptureSchema.parse({
     convergenceSummary
   },
 
-  portalStateIds: [...],
+  identifyingArchetypestateIds: [...],
 
   livedEvidence: {
     recognition: "STRONG",
@@ -2435,7 +2435,7 @@ CURRENT SKY
           ×
 CURRENT RELATIONSHIPS
           ×
-64 PORTALS
+64 IDENTIFYING ARCHETYPES
           ↓
       NOW STATE
 
@@ -2450,7 +2450,7 @@ PERSON A                              PERSON B
 ├── accumulated exposure              ├── accumulated exposure
 ├── recognition history               ├── recognition history
 ├── current timing                    ├── current timing
-└── current portal field              └── current portal field
+└── current identifying archetype field              └── current identifying archetype field
           │                                    │
           └──────────────┬─────────────────────┘
                          ▼
@@ -2497,7 +2497,7 @@ A objective incubator field
         ↓
 A subjective exposure forecast
         ↓
-A portal field
+A identifying archetype field
 
 B × destination × time
         ↓
@@ -2505,11 +2505,11 @@ B objective incubator field
         ↓
 B subjective exposure forecast
         ↓
-B portal field
+B identifying archetype field
 
 A ↔ B × destination × time
         ↓
-relationship portal field
+relationship identifying archetype field
 
         ↓
 
@@ -2531,7 +2531,7 @@ candidate window
 
 The supplied specification explicitly includes future astronomical pressure, future environmental pressure, relational collisions, location alignment, timing alignment, travel/relocation comparison, event selection and recurrence windows. System Update Request.txt
 
-For future windows, subjective exposure is not treated as known fact. It is modeled as a conditional forecast based on prior reported patterns, objective conditions, relationship context, and portal activation. The output must distinguish forecast from lived evidence.
+For future windows, subjective exposure is not treated as known fact. It is modeled as a conditional forecast based on prior reported patterns, objective conditions, relationship context, and identifying archetype activation. The output must distinguish forecast from lived evidence.
 
 HISTORICAL-STATE RECONSTRUCTION → FUTURE SEARCH
 
@@ -2546,7 +2546,7 @@ Bali — June 2015
 ├── B natal ↔ historical sky
 ├── objective historical location field
 ├── subjective exposure records
-├── portal convergence
+├── identifying archetype convergence
 └── recognized outcome
              │
              ▼
@@ -2572,7 +2572,7 @@ SIMILARITY        SIMILARITY
 Future search must compare both:
 
 • objective environmental similarity;
-• functional similarity in the person’s likely subjective exposure and portal activation.
+• functional similarity in the person’s likely subjective exposure and identifying archetype activation.
 
 A future location may resemble a historical incubator objectively while producing a different subjective experience because the person, relationships, developmental stage, resources, or timing have changed.
 
@@ -2582,7 +2582,7 @@ NATIVE MARKER
      ●
      │
      ▼
-PORTAL INTERSECTION
+IDENTIFYING ARCHETYPE INTERSECTION
      │
      ├── pressure
      ├── trigger
@@ -2641,7 +2641,7 @@ YES PARTIAL NO    UNKNOWN
 
 TRANSLATOR LAYER
 
-CONVERGED PORTAL MECHANISM
+CONVERGED IDENTIFYING ARCHETYPE MECHANISM
              │
              ▼
         TRANSLATORS
@@ -2660,7 +2660,7 @@ CONVERGED PORTAL MECHANISM
     HUMAN-RECOGNIZABLE LANGUAGE
 
 
-Translator layers describe recognizable expression. They retain the underlying portal, contributing mechanics, timing, objective incubator conditions, subjective exposure, relational overlays, convergence strength, contradictions and confidence. The source specification explicitly requires that traceability. System Update Request.txt
+Translator layers describe recognizable expression. They retain the underlying identifying archetype, contributing mechanics, timing, objective incubator conditions, subjective exposure, relational overlays, convergence strength, contradictions and confidence. The source specification explicitly requires that traceability. System Update Request.txt
 
 FINAL CONVERGENCE OBJECT
 
@@ -2668,7 +2668,7 @@ SeenConvergenceSchema.parse({
   convergenceId,
   subjectIds: ["A"],
 
-  portalId,
+  archetypeId,
 
   sourceSignals: [
     {
@@ -2742,7 +2742,7 @@ SeenConvergenceSchema.parse({
     objectiveEnvironmentalConditions,
     subjectiveExposureReports,
     timing,
-    portalMappings,
+    identifyingArchetypeMappings,
     recognitionEvidence,
     translatorSources
   }
@@ -2793,11 +2793,11 @@ PAST RECONSTRUCTION × PRESENT CAPTURE × FUTURE SEARCH
 
 SEEN’s output remains conditional, probabilistic and traceable. Stronger language follows stronger convergence, while conflicting and weak evidence remains visible.
 
-The final design decision is that location is not treated as a single environmental label or a universal influence. Location is treated as an incubator defined by both objective environmental conditions and the person’s reported subjective exposure. The objective layer describes what was present. The subjective layer describes what the person experienced. The convergence layer determines how those two layers interacted with the person’s native mechanics, developmental period, relationships, timing and portal field.
+The final design decision is that location is not treated as a single environmental label or a universal influence. Location is treated as an incubator defined by both objective environmental conditions and the person’s reported subjective exposure. The objective layer describes what was present. The subjective layer describes what the person experienced. The convergence layer determines how those two layers interacted with the person’s native mechanics, developmental period, relationships, timing and identifying archetype field.
 
 The intake therefore uses structured exposure categories rather than relying only on three prewritten location summaries. Summaries remain useful, but they are generated after the person’s report and environmental data are collected. The person does not need to explain the entire meaning of a location in advance. They identify what they were exposed to, how often, with what intensity, and whether the experience was supportive, stressful, mixed, or unknown. The runtime then preserves that report, compares it with the objective incubator field, and leaves any unsupported interpretation unresolved.SEEN™ CONVERGENCE RUNTIME TREE — BUILDER SPEC
 
-The runtime preserves every source system as an independent calculation, preserves every raw mechanic and provenance trail, routes compatible signals through the 64 SEEN Portals, aligns signals by person × location × time × relationship, accumulates recognition evidence, and renders the strongest convergence without erasing contradiction or unresolved fields.
+The runtime preserves every source system as an independent calculation, preserves every raw mechanic and provenance trail, routes compatible signals through the 64 SEEN Identifying archetypes, aligns signals by person × location × time × relationship, accumulates recognition evidence, and renders the strongest convergence without erasing contradiction or unresolved fields.
 System Update Request.txt
 
 SEEN
@@ -2911,15 +2911,15 @@ SEEN
 │   The natal calculation remains traceable.
 │   The person's expression remains mutable.
 │
-├── 04. 64-PORTAL INTERROGATION
+├── 04. 64-IDENTIFYING-ARCHETYPE INTERROGATION
 │   │
-│   ├── PORTAL 01
-│   ├── PORTAL 02
-│   ├── PORTAL 03
+│   ├── IDENTIFYING ARCHETYPE 01
+│   ├── IDENTIFYING ARCHETYPE 02
+│   ├── IDENTIFYING ARCHETYPE 03
 │   ├── ...
-│   └── PORTAL 64
+│   └── IDENTIFYING ARCHETYPE 64
 │
-│   EACH PORTAL INTERROGATES:
+│   EACH IDENTIFYING ARCHETYPE INTERROGATES:
 │   │
 │   ├── WHAT
 │   │   ├── archetypal function
@@ -3064,7 +3064,7 @@ SEEN
 │
 │   EACH ● STORES:
 │   ├── personId
-│   ├── portalId
+│   ├── archetypeId
 │   ├── modality
 │   ├── nativeMarker
 │   ├── nativeCalculation
@@ -3080,9 +3080,9 @@ SEEN
 │
 ├── 06. LIFE-SECTION ROUTING
 │   │
-│   └── each surviving portal expression
+│   └── each surviving identifying archetype expression
 │       routes immediately into every applicable
-│       SEEN Life Section while retaining portal
+│       SEEN Life Section while retaining identifying archetype
 │       and source provenance.
 │
 ├── 07. CONVERGENCE
@@ -3129,7 +3129,7 @@ SEEN
     └── receives the completed recognition field
 
 
-The 64 Portals are the common extraction architecture: each remains available across the runtime, with expression changing according to pressure, timing, environment, relationship and other converging conditions. System Update Request.txt The existing specification explicitly requires WHAT, WHEN, WHERE, HOW, WHY, probability-increasing conditions and probability-reducing conditions for portal extraction.
+The 64 Identifying archetypes are the common extraction architecture: each remains available across the runtime, with expression changing according to pressure, timing, environment, relationship and other converging conditions. System Update Request.txt The existing specification explicitly requires WHAT, WHEN, WHERE, HOW, WHY, probability-increasing conditions and probability-reducing conditions for identifying archetype extraction.
 System Update Request.txt
 
 RUNTIME INPUT CONTRACT
@@ -3288,7 +3288,7 @@ PERSON NATIVE SIGNAL
        │
        ├──────────────┐
        ▼              ▼
-Portal 28          LOCATION
+Identifying archetype 28          LOCATION
 pressure           Montana
 pattern            winter 2026
        │              │
@@ -3311,7 +3311,7 @@ Example:
 
 ContextualIntersectionSchema.parse({
   personId: "A",
-  portalId: 28,
+  archetypeId: 28,
 
   nativeSignals: [
     westernSignalId,
@@ -3363,7 +3363,7 @@ PERSON A
 └── duration
              │
              ▼
-      64 PORTAL FIELD
+      64 IDENTIFYING ARCHETYPE FIELD
              │
              ▼
       OBSERVED EXPERIENCE
@@ -3392,7 +3392,7 @@ HistoricalCaptureSchema.parse({
 
   environmentalState: historicalEnvironmentId,
 
-  portalStateIds: [...],
+  identifyingArchetypestateIds: [...],
 
   livedEvidence: {
     recognition: "STRONG",
@@ -3412,7 +3412,7 @@ CURRENT SKY
           ×
 CURRENT RELATIONSHIPS
           ×
-64 PORTALS
+64 IDENTIFYING ARCHETYPES
           ↓
       NOW STATE
 
@@ -3428,7 +3428,7 @@ PERSON A                              PERSON B
 ├── accumulated exposure              ├── accumulated exposure
 ├── recognition history               ├── recognition history
 ├── current timing                    ├── current timing
-└── current portal field              └── current portal field
+└── current identifying archetype field              └── current identifying archetype field
           │                                    │
           └──────────────┬─────────────────────┘
                          ▼
@@ -3469,15 +3469,15 @@ FOR EACH CANDIDATE WINDOW
 
 A × destination × time
         ↓
-A portal field
+A identifying archetype field
 
 B × destination × time
         ↓
-B portal field
+B identifying archetype field
 
 A ↔ B × destination × time
         ↓
-relationship portal field
+relationship identifying archetype field
 
         ↓
 
@@ -3511,7 +3511,7 @@ Bali — June 2015
 ├── A natal ↔ historical sky
 ├── B natal ↔ historical sky
 ├── historical location field
-├── portal convergence
+├── identifying archetype convergence
 └── recognized outcome
              │
              ▼
@@ -3540,7 +3540,7 @@ NATIVE MARKER
      ●
      │
      ▼
-PORTAL INTERSECTION
+IDENTIFYING ARCHETYPE INTERSECTION
      │
      ├── pressure
      ├── trigger
@@ -3592,7 +3592,7 @@ YES PARTIAL NO    UNKNOWN
 
 TRANSLATOR LAYER
 
-CONVERGED PORTAL MECHANISM
+CONVERGED IDENTIFYING ARCHETYPE MECHANISM
              │
              ▼
         TRANSLATORS
@@ -3611,7 +3611,7 @@ CONVERGED PORTAL MECHANISM
     HUMAN-RECOGNIZABLE LANGUAGE
 
 
-Translator layers describe recognizable expression. They retain the underlying portal, contributing mechanics, timing, environment, relational overlays, convergence strength, contradictions and confidence. The source specification explicitly requires that traceability.
+Translator layers describe recognizable expression. They retain the underlying identifying archetype, contributing mechanics, timing, environment, relational overlays, convergence strength, contradictions and confidence. The source specification explicitly requires that traceability.
 System Update Request.txt
 
 FINAL CONVERGENCE OBJECT
@@ -3620,7 +3620,7 @@ SeenConvergenceSchema.parse({
   convergenceId,
   subjectIds: ["A"],
 
-  portalId,
+  archetypeId,
 
   sourceSignals: [
     {
@@ -3679,7 +3679,7 @@ SeenConvergenceSchema.parse({
     calculations,
     locations,
     timing,
-    portalMappings,
+    identifyingArchetypeMappings,
     recognitionEvidence,
     translatorSources
   }

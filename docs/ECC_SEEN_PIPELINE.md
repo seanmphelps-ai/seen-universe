@@ -73,4 +73,4 @@ Preserve presence and absence, timeframe, provenance, confidence, contradictions
 
 ## Authorized execution scope
 
-Use the active user request to establish the authorized stages and necessary intermediate work. Repair chart calculations through chart-gen, social retrieval through social-pull, and portal behavior through its assigned implementation. Preserve adjacent stages. Route verification failures to the responsible stage, complete authorized repairs, and continue independent authorized work while a genuine external dependency is unresolved.
+Use the active user request to establish the authorized stages and necessary intermediate work. Repair chart calculations through chart-gen, social retrieval through social-pull, and identifying archetype behavior through its assigned implementation. Preserve adjacent stages. Route verification failures to the responsible stage, complete authorized repairs, and continue independent authorized work while a genuine external dependency is unresolved.

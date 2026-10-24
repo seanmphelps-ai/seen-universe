@@ -1,12 +1,12 @@
 // PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 /**
- * Smallest SEEN chart engine: Swiss sky + GeoPresence + wound markers + 64 portals.
+ * Smallest SEEN chart engine: Swiss sky + GeoPresence + wound markers + 64 identifying archetypes.
  */
 
 import { calculateNatalChart, type NatalChartInput, type NatalChartResult } from '../natalChart';
 import { computeGeoPresence, type GeoPresenceResult } from './geoPresence';
 import { extractWoundMarkers, type WoundMarkerHit } from './woundMarkers';
-import { expressPortals, type PortalExpression } from './portals64';
+import { expressIdentifyingArchetypes, type IdentifyingArchetypeExpression } from './identifyingArchetypes64';
 import { runAllInterrogators, fileIntoSections, type InterrogatorResult, type SectionFiling } from './interrogators';
 
 export const DARK_WINDOWS = ['04:00', '12:00', '20:00'] as const;
@@ -27,20 +27,20 @@ export type DarkCardSeed = {
   clock: string;
   woundMarkers: WoundMarkerHit[];
   geoSummary: string;
-  topPortals: PortalExpression[];
+  topIdentifyingArchetypes: IdentifyingArchetypeExpression[];
 };
 
 export type ChartEngineResult = {
   chart: NatalChartResult;
   geo: GeoPresenceResult;
   woundMarkers: WoundMarkerHit[];
-  portals: PortalExpression[];
+  identifyingArchetypes: IdentifyingArchetypeExpression[];
   interrogations: InterrogatorResult[];
   lifeSections: SectionFiling;
   darkCardSeed: DarkCardSeed;
   doctrine: {
-    portals: '64';
-    neverDeclarePortalOff: true;
+    identifyingArchetypes: '64';
+    neverDeclareIdentifyingArchetypeOff: true;
     locationPhrase: string;
   };
 };
@@ -63,7 +63,7 @@ export async function runChartEngine(input: ChartEngineInput): Promise<ChartEngi
     livedStack: input.livedStack,
   });
   const woundMarkers = extractWoundMarkers(chart, geo.baselinePressure);
-  const portals = expressPortals();
+  const identifyingArchetypes = expressIdentifyingArchetypes();
   // STAGE 2 — the 64 archetype agents (agent/subagents/archetypes) run after, on the modality output. No scoring.
   const interrogations = runAllInterrogators(
     woundMarkers.map((w) => ({ modality: 'wound-marker', id: w.id, label: w.label, source: w.source })),
@@ -73,18 +73,18 @@ export async function runChartEngine(input: ChartEngineInput): Promise<ChartEngi
     chart,
     geo,
     woundMarkers,
-    portals,
+    identifyingArchetypes,
     interrogations,
     lifeSections: fileIntoSections(interrogations),
     darkCardSeed: {
       clock: input.clock,
       woundMarkers,
       geoSummary: geo.summary,
-      topPortals: portals,
+      topIdentifyingArchetypes: identifyingArchetypes,
     },
     doctrine: {
-      portals: '64',
-      neverDeclarePortalOff: true,
+      identifyingArchetypes: '64',
+      neverDeclareIdentifyingArchetypeOff: true,
       locationPhrase: geo.doctrine,
     },
   };

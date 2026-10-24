@@ -6,7 +6,7 @@
 - Ran the existing **seen-universe** Next route: `POST /api/seen/chart-engine/` with `mode: "dark-windows"`.
 - **Calculation is real:** Swiss Ephemeris WASM, `SEFLG_SWIEPH`, with `tz-lookup` + Luxon historical timezone conversion. The API returned three charts.
 - Scenario anchors from the live output: night Ascendant Cancer 11.59°; day Libra 22.02°; evening Aquarius 11.97°. The Sun, Moon, and outer placements are nearly stable; houses/angles move substantially.
-- Existing 64-portal layer also ran.
+- Existing 64-identifying-archetype layer also ran.
 
 ---
 
@@ -85,7 +85,7 @@
 
 ## Live vs missing
 
-**Live now:** Swiss sky calculation; timezone conversion; three-clock dark-window API; angles and houses per scenario; major aspects; rule-based wound markers; heuristic GeoPresence; 64-portal expression layer; these three cards as a static demo deliverable.
+**Live now:** Swiss sky calculation; timezone conversion; three-clock dark-window API; angles and houses per scenario; major aspects; rule-based wound markers; heuristic GeoPresence; 64-identifying-archetype expression layer; these three cards as a static demo deliverable.
 
 ## One next ship step
 

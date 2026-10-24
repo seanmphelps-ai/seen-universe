@@ -8,7 +8,7 @@ SEEN is a mapped recursive traversal engine centered on:
 - shadow convergence
 - environmental modulation
 - Oracle-guided nesting depth
-- portal traversal
+- identifying archetype traversal
 - recursive accumulation
 - Cadence longitudinal tracking
 

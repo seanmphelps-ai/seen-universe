@@ -17,7 +17,7 @@ Every system must follow this order:
 2. Validate schema.
 3. Load input contract.
 4. Run calculation.
-5. Penetrate and layer through the complete 64-portal lattice.
+5. Penetrate and layer through the complete 64-identifying-archetype lattice.
 6. Validate output contract.
 7. Store result.
 
@@ -27,9 +27,9 @@ Before Phase 1 begins, load and validate the schemas that govern the entire phas
 
 Phase 1 requires:
 
-- 64 Portal schemas
-- Portal input/output contracts
-- Portal penetration contract
+- 64 Identifying archetype schemas
+- Identifying archetype input/output contracts
+- Identifying archetype penetration contract
 - Environmental domain registry
 - Environmental signal registry
 - GeoPresence schemas
@@ -57,7 +57,7 @@ After Phase 1 schemas are loaded and validated, execute in this order:
 
 1. Location intake
 2. Environmental calculation
-3. 64-portal environmental penetration and layering
+3. 64-identifying-archetype environmental penetration and layering
 4. Permanent environmental inheritance
 5. Birth date
 6. Swiss Ephemeris calculation
@@ -80,56 +80,56 @@ Each system must first produce its own structured source field.
 
 1. Load Vedic schemas.
 2. Run Vedic.
-3. Penetrate and layer through all 64 portals.
+3. Penetrate and layer through all 64 identifying archetypes.
 4. Store Vedic source field.
 
 ### Western
 
 1. Load Western schemas.
 2. Run Western.
-3. Penetrate and layer through all 64 portals.
+3. Penetrate and layer through all 64 identifying archetypes.
 4. Store Western source field.
 
 ### Hellenistic
 
 1. Load Hellenistic schemas.
 2. Run Hellenistic.
-3. Penetrate and layer through all 64 portals.
+3. Penetrate and layer through all 64 identifying archetypes.
 4. Store Hellenistic source field.
 
 ### Persian / Arabic Lots
 
 1. Load Persian / Arabic Lot schemas.
 2. Run Lot calculations.
-3. Penetrate and layer through all 64 portals.
+3. Penetrate and layer through all 64 identifying archetypes.
 4. Store Lot source field.
 
 ### Attachment Theory
 
 1. Load Attachment Theory schemas.
 2. Run Attachment lens.
-3. Penetrate and layer through all 64 portals.
+3. Penetrate and layer through all 64 identifying archetypes.
 4. Store Attachment field.
 
 ### Love Language
 
 1. Load Love Language schemas.
 2. Run Love Language lens.
-3. Penetrate and layer through all 64 portals.
+3. Penetrate and layer through all 64 identifying archetypes.
 4. Store Love Language field.
 
 ### Numerology
 
 1. Load Numerology schemas.
 2. Run Numerology.
-3. Penetrate and layer through all 64 portals.
+3. Penetrate and layer through all 64 identifying archetypes.
 4. Store Numerology field.
 
-## Portal Penetration Rule
+## Identifying archetype Penetration Rule
 
-Every independent source system penetrates the complete 64-portal lattice.
+Every independent source system penetrates the complete 64-identifying-archetype lattice.
 
-Every portal receives a source presence record for every independent source run.
+Every identifying archetype receives a source presence record for every independent source run.
 
 Each source layer is stored as:
 
@@ -147,9 +147,9 @@ The canonical execution verb is **penetrate**.
 
 Supporting verbs are **layer**, **occupy**, and **accumulate**.
 
-All 64 portals are penetrated and layered.
+All 64 identifying archetypes are penetrated and layered.
 
-Only portals with enough validated convergence may become user-facing later through Oracle rendering.
+Only identifying archetypes with enough validated convergence may become user-facing later through Oracle rendering.
 
 ## Storage Rule
 
@@ -176,7 +176,7 @@ The Generator must produce schema-shaped structured output.
 
 ## Oracle Boundary
 
-The Oracle renders only after the Generator has completed schema-governed extraction, portal penetration, persistent source layering, confidence handling, contradiction handling, validated convergence, and structured payload compilation.
+The Oracle renders only after the Generator has completed schema-governed extraction, identifying archetype penetration, persistent source layering, confidence handling, contradiction handling, validated convergence, and structured payload compilation.
 
 The Oracle receives validated structured payloads.
 
@@ -196,8 +196,8 @@ Contracts load before calculation.
 
 Location and environment are required in Phase 1.
 
-Every independent system penetrates and layers through all 64 portals.
+Every independent system penetrates and layers through all 64 identifying archetypes.
 
-Every portal receives a persistent source presence record.
+Every identifying archetype receives a persistent source presence record.
 
 Every output validates before storage.

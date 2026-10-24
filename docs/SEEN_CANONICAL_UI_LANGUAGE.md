@@ -215,7 +215,7 @@ Product strings resolve from the governing intake and product-language canon.
 
 ## Build Application
 
-Every user-facing SEEN route consumes these tokens and component rules before phase-specific styling. Splash, Foundation Intake, Oracle, Recognition, Portal Cards, Closure & Composure, Cadence, and Share Cards use this same visual language.
+Every user-facing SEEN route consumes these tokens and component rules before phase-specific styling. Splash, Foundation Intake, Oracle, Recognition, Identifying archetype Cards, Closure & Composure, Cadence, and Share Cards use this same visual language.
 
 ## Visual Acceptance
 

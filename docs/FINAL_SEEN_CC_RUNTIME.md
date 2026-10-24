@@ -22,7 +22,7 @@ Two complete people enter → three recognizable comparative shadows return → 
 | Human Design | `free-human-design` | `lib/humanDesignCalc.ts :: calculateHumanDesign` | candidate calc only |
 | I Ching | none — fails closed | `lib/ichingCalc.ts :: calculateIChing` | no calc authority yet |
 
-64-Portal layer stays separate from I Ching (`docs/64_PORTALS.md`).
+64-Identifying-archetype layer stays separate from I Ching (`docs/64_IDENTIFYING_ARCHETYPES.md`).
 
 ## Chief agent + subagent + auditor — already built
 
@@ -41,8 +41,8 @@ This is the real architecture. It matches what was asked for: one agent per moda
 4. **Source locks unresolved per modality** — named school/edition/ayanamsha/sect choice still pending for most. See `COCOONS` object in `lib/agents/execution.ts` for the exact unresolved list per modality.
 5. **Two confirmed fakes to remove:**
    - `lib/seen/woundMarkers.ts` unconditionally appends a hardcoded `"Ashlesha (pending Vedic native)"` wound — not a real calculation
-   - `lib/seen/chartEngine.ts` has a hardcoded bonus for portal IDs 1–14 in its ranking — unexplained, not derived
-6. `lib/seen/westernBridge.ts` fills a 64-portal column with `insufficient_signal` but labels the run "independently completed" — mislabeled, not actually complete.
+   - `lib/seen/chartEngine.ts` has a hardcoded bonus for identifying archetype IDs 1–14 in its ranking — unexplained, not derived
+6. `lib/seen/westernBridge.ts` fills a 64-identifying-archetype column with `insufficient_signal` but labels the run "independently completed" — mislabeled, not actually complete.
 7. The `eve/orchestrator-first-slice` 64-interrogator work (`lib/seen/interrogators/`) predates this instruction set and is a separate, older experiment — not part of the `lib/agents/execution.ts` path. Production Agent Runs showed zero use over 30 days. Do not treat it as the canonical pipeline.
 
 ## Governing docs (read before implementing)

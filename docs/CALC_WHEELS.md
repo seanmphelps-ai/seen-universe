@@ -20,4 +20,4 @@ The first rectification round generates three hidden-time summaries from 04:00, 
 ## I Ching gap
 
 - `iching` (sitnin, 2013) is a native addon for He Luo Li Shu birth/core/end numbers.
-- The 64 Portals stay a separate layer.
+- The 64 Identifying archetypes stay a separate layer.

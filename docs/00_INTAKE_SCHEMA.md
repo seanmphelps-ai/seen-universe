@@ -129,9 +129,9 @@ FIRST SLICE ENDS HERE.
 
 ---
 
-## Stage 10 — Portals and Helix — DEFERRED IMPLEMENTATION
+## Stage 10 — Identifying archetypes and Helix — DEFERRED IMPLEMENTATION
 
-64 portals file into 45 life sections later.
+64 identifying archetypes file into 45 life sections later.
 This is where other builders lost the plot.
 
 ---

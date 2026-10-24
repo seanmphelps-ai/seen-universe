@@ -8,7 +8,7 @@ Controlling files:
 - `docs/00_INTAKE_ORDER_LOCK.md`
 - `docs/TIME_NARROWING_LOCK.md`
 
-Order is: name → date → birth city → lived exposure → dark pressure time cards → family soil → sovereignty → portals.
+Order is: name → date → birth city → lived exposure → dark pressure time cards → family soil → sovereignty → identifying archetypes.
 
 Environment is weather on a calculated seed.
 
@@ -18,7 +18,7 @@ Environment is weather on a calculated seed.
 
 [... original content retained below for history only ...]
 
-The first SEEN runtime pass builds the place-field before birth date, temporal narrowing, chart interpretation, wound narration, portal routing, or Oracle rendering.
+The first SEEN runtime pass builds the place-field before birth date, temporal narrowing, chart interpretation, wound narration, identifying archetype routing, or Oracle rendering.
 
 The user provides location data first.
 

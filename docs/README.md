@@ -23,7 +23,7 @@ This directory is the modular working memory for SEEN.
 - `MASTER_BUILD_CHECKLIST.md` — printable, cumulative implementation checklist
 - `contexts/CLAUDE_CLOSURE.md` — Closure & Composure product path
 - `contexts/CLAUDE_LOCATION.md` — location, exposure, place, and time
-- `contexts/CLAUDE_GENERATOR_HELIX.md` — portals, layers, convergence, Helix, shadows
+- `contexts/CLAUDE_GENERATOR_HELIX.md` — identifying archetypes, layers, convergence, Helix, shadows
 - `contexts/CLAUDE_ORACLE.md` — Voice Oracle rendering and interaction
 - `contexts/CLAUDE_CADENCE.md` — immediate follow-through and daily tracking
 - `contexts/CLAUDE_FAMILY.md` — child, parent, teacher, and caregiver translation

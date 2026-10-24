@@ -3,7 +3,7 @@
  * Flowise runs as a separate service; this module executes its configured flows.
  * Configure server-only FLOWISE_URL, FLOWISE_API_KEY and per-worker flow IDs.
  */
-import type { Audit, JobContext, NativeSystem, NativeWorker, PortalWorker, Reading, PortalResult } from './execution';
+import type { Audit, JobContext, NativeSystem, NativeWorker, IdentifyingArchetypeWorker, Reading, IdentifyingArchetypeResult } from './execution';
 
 export type FlowiseConfig = {
   url: string;
@@ -55,8 +55,8 @@ const isAudit = (x: unknown): x is Audit =>
 const isReading = (x: unknown): x is Reading =>
   isRecord(x) && typeof x.system === 'string' && 'output' in x &&
   Array.isArray(x.sources) && x.sources.every(s => typeof s === 'string');
-const isPortal = (x: unknown): x is PortalResult =>
-  isRecord(x) && typeof x.portal === 'number' && 'output' in x &&
+const isIdentifyingArchetype = (x: unknown): x is IdentifyingArchetypeResult =>
+  isRecord(x) && typeof x.identifyingArchetype === 'number' && 'output' in x &&
   Array.isArray(x.sources) && x.sources.every(s => typeof s === 'string');
 
 export function flowiseNativeWorker(config: FlowiseConfig, system: NativeSystem): NativeWorker {
@@ -67,13 +67,13 @@ export function flowiseNativeWorker(config: FlowiseConfig, system: NativeSystem)
       invokeFlowise(config, `audit-${system}`, { context, reading }, isAudit),
   };
 }
-export function flowisePortalWorker(config: FlowiseConfig, portal: number): PortalWorker {
-  if (!Number.isInteger(portal) || portal < 1 || portal > 64) throw new Error('Invalid Portal number');
+export function flowiseIdentifyingArchetypeWorker(config: FlowiseConfig, identifyingArchetype: number): IdentifyingArchetypeWorker {
+  if (!Number.isInteger(identifyingArchetype) || identifyingArchetype < 1 || identifyingArchetype > 64) throw new Error('Invalid Identifying archetype number');
   return {
-    portal,
+    identifyingArchetype,
     run: (context: JobContext, acceptedReadings: Reading[]) =>
-      invokeFlowise(config, `portal-${portal}`, { context, acceptedReadings }, isPortal),
-    audit: (context: JobContext, result: PortalResult) =>
-      invokeFlowise(config, `audit-portal-${portal}`, { context, result }, isAudit),
+      invokeFlowise(config, `portal-${identifyingArchetype}`, { context, acceptedReadings }, isIdentifyingArchetype),
+    audit: (context: JobContext, result: IdentifyingArchetypeResult) =>
+      invokeFlowise(config, `audit-portal-${identifyingArchetype}`, { context, result }, isAudit),
   };
 }

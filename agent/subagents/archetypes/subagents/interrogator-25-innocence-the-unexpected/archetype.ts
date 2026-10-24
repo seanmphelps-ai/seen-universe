@@ -1,9 +1,9 @@
-// PROVENANCE: bot=grok session=2026-10-13 task=64 interrogator sub-agents (no scoring); data from lib/seen/portals64.ts @abd4fd5
-import type { PortalRecord } from '../../../../../lib/seen/portals64'
+// PROVENANCE: bot=grok session=2026-10-13 task=64 interrogator sub-agents (no scoring); data from lib/seen/identifyingArchetypes64.ts @abd4fd5
+import type { IdentifyingArchetypeRecord } from '../../../../../lib/seen/identifyingArchetypes64'
 
-/** Archetype 25 — Innocence (The Unexpected). 52 portal-phrased questions (reference); runtime asks the universal set (t612). */
-export const archetype: PortalRecord = {
-  "portalId": 25,
+/** Archetype 25 — Innocence (The Unexpected). 52 identifying-archetype-phrased questions (reference); runtime asks the universal set (t612). */
+export const archetype: IdentifyingArchetypeRecord = {
+  "archetypeId": 25,
   "name": "Innocence (The Unexpected)",
   "shadowName": "Innocence",
   "giftName": "Acceptance",
@@ -24,7 +24,7 @@ export const archetype: PortalRecord = {
   "sectionsFed": [],
   "interrogation": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did naivety first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",

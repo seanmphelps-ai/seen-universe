@@ -2,29 +2,29 @@
 import { z } from 'zod';
 import type { NatalChartResult } from '../natalChart';
 import {
-  PortalIdSchema,
-  PortalPenetrationRunSchema,
+  ArchetypeIdSchema,
+  IdentifyingArchetypePenetrationRunSchema,
   SourceLayerStateSchema,
-  type PortalPenetrationRun,
-} from './portalPenetration';
+  type IdentifyingArchetypePenetrationRun,
+} from './identifyingArchetypePenetration';
 
 export const WESTERN_SOURCE_SYSTEM_ID = 'western_astrology';
 
 const LIFE_SECTION_COUNT = 45;
-const PORTAL_COUNT = 64;
-const COMPLETE_PORTAL_IDS = Array.from({ length: PORTAL_COUNT }, (_, index) => index + 1);
+const IDENTIFYING_ARCHETYPE_COUNT = 64;
+const COMPLETE_ARCHETYPE_IDS = Array.from({ length: IDENTIFYING_ARCHETYPE_COUNT }, (_, index) => index + 1);
 const COMPLETE_LIFE_SECTION_IDS = Array.from(
   { length: LIFE_SECTION_COUNT },
   (_, index) => index + 1,
 );
 
-export const WesternPortalPenetrationRunSchema = PortalPenetrationRunSchema.superRefine(
+export const WesternIdentifyingArchetypePenetrationRunSchema = IdentifyingArchetypePenetrationRunSchema.superRefine(
   (run, context) => {
-    if (!sameOrderedIds(run.layers.map((layer) => layer.portalId), COMPLETE_PORTAL_IDS)) {
+    if (!sameOrderedIds(run.layers.map((layer) => layer.archetypeId), COMPLETE_ARCHETYPE_IDS)) {
       context.addIssue({
         code: 'custom',
         path: ['layers'],
-        message: 'Western penetration must contain each portal ID 1-64 exactly once in order.',
+        message: 'Western penetration must contain each identifying archetype ID 1-64 exactly once in order.',
       });
     }
 
@@ -55,8 +55,8 @@ export const WesternLifeSectionRouteSchema = z.object({
   sourceSystemId: z.literal(WESTERN_SOURCE_SYSTEM_ID),
   sourceFieldId: z.string().min(1),
   lifeSectionId: z.number().int().min(1).max(LIFE_SECTION_COUNT),
-  portalIds: z.array(PortalIdSchema).length(PORTAL_COUNT),
-  layerRefs: z.array(z.string().min(1)).length(PORTAL_COUNT),
+  archetypeIds: z.array(ArchetypeIdSchema).length(IDENTIFYING_ARCHETYPE_COUNT),
+  layerRefs: z.array(z.string().min(1)).length(IDENTIFYING_ARCHETYPE_COUNT),
   state: SourceLayerStateSchema,
   contradictionRefs: z.array(z.string().min(1)),
   sourceIdentityPreserved: z.literal(true),
@@ -69,7 +69,7 @@ export const WesternLifeSectionRoutingOutputSchema = z
     schemaVersion: z.literal('1.0.0'),
     sourceSystemId: z.literal(WESTERN_SOURCE_SYSTEM_ID),
     sourceFieldId: z.string().min(1),
-    sourcePortalCount: z.literal(PORTAL_COUNT),
+    sourceIdentifyingArchetypeCount: z.literal(IDENTIFYING_ARCHETYPE_COUNT),
     sectionCount: z.literal(LIFE_SECTION_COUNT),
     sourceColumnValidated: z.literal(true),
     routedImmediately: z.literal(true),
@@ -87,7 +87,7 @@ export const WesternLifeSectionRoutingOutputSchema = z
     routing.routes.forEach((route, index) => {
       if (
         route.sourceFieldId !== routing.sourceFieldId
-        || !sameOrderedIds(route.portalIds, COMPLETE_PORTAL_IDS)
+        || !sameOrderedIds(route.archetypeIds, COMPLETE_ARCHETYPE_IDS)
       ) {
         context.addIssue({
           code: 'custom',
@@ -102,21 +102,21 @@ export type WesternLifeSectionRoutingOutput = z.infer<
   typeof WesternLifeSectionRoutingOutputSchema
 >;
 
-export type WesternPortalBridge = {
+export type WesternIdentifyingArchetypeBridge = {
   western: NatalChartResult;
-  portalPenetration: PortalPenetrationRun;
+  identifyingArchetypePenetration: IdentifyingArchetypePenetrationRun;
   lifeSectionRouting: WesternLifeSectionRoutingOutput;
 };
 
-type WesternPortalBridgeOptions = {
+type WesternIdentifyingArchetypeBridgeOptions = {
   sourceFieldId: string;
   layerSequence: number;
 };
 
-export function buildWesternPortalBridge(
+export function buildWesternIdentifyingArchetypeBridge(
   western: NatalChartResult,
-  options: WesternPortalBridgeOptions,
-): WesternPortalBridge {
+  options: WesternIdentifyingArchetypeBridgeOptions,
+): WesternIdentifyingArchetypeBridge {
   const sourceFieldId = options.sourceFieldId.trim();
   if (!sourceFieldId) throw new Error('Western sourceFieldId is required.');
   if (!Number.isInteger(options.layerSequence) || options.layerSequence < 0) {
@@ -126,26 +126,26 @@ export function buildWesternPortalBridge(
   const chartSummary = summarizeChart(western);
   const confidence = western.hasBirthTime ? 1 : 0.75;
   const mappingGap =
-    'Portal activation awaits canonical portal-specific Western interpretation criteria.';
+    'Identifying archetype activation awaits canonical identifying-archetype-specific Western interpretation criteria.';
 
-  const portalPenetration = WesternPortalPenetrationRunSchema.parse({
+  const identifyingArchetypePenetration = WesternIdentifyingArchetypePenetrationRunSchema.parse({
     schemaVersion: '1.0.0',
     sourceSystemId: WESTERN_SOURCE_SYSTEM_ID,
     sourceFieldId,
     sourceRunCompletedIndependently: true,
-    penetrateCompletePortalLattice: true,
-    portalCount: PORTAL_COUNT,
-    layers: Array.from({ length: PORTAL_COUNT }, (_, index) => {
-      const portalId = index + 1;
+    penetrateCompleteIdentifyingArchetypeLattice: true,
+    identifyingArchetypeCount: IDENTIFYING_ARCHETYPE_COUNT,
+    layers: Array.from({ length: IDENTIFYING_ARCHETYPE_COUNT }, (_, index) => {
+      const archetypeId = index + 1;
       return {
         sourceSystemId: WESTERN_SOURCE_SYSTEM_ID,
         sourceFieldId,
-        portalId,
+        archetypeId,
         layerSequence: options.layerSequence,
         state: 'insufficient_signal' as const,
         evidence: [
           {
-            evidenceId: `${sourceFieldId}:portal:${portalId}:western-source-presence`,
+            evidenceId: `${sourceFieldId}:portal:${archetypeId}:western-source-presence`,
             sourceReference: 'NatalChartResult',
             summary: chartSummary,
             confidence,
@@ -170,20 +170,20 @@ export function buildWesternPortalBridge(
     earlyNarrationForbidden: true,
   });
 
-  const portalIds = portalPenetration.layers.map((layer) => layer.portalId);
-  const layerRefs = portalPenetration.layers.map(
-    (layer) => `${layer.sourceFieldId}:portal:${layer.portalId}:layer:${layer.layerSequence}`,
+  const archetypeIds = identifyingArchetypePenetration.layers.map((layer) => layer.archetypeId);
+  const layerRefs = identifyingArchetypePenetration.layers.map(
+    (layer) => `${layer.sourceFieldId}:portal:${layer.archetypeId}:layer:${layer.layerSequence}`,
   );
   const contradictionRefs = Array.from(
-    new Set(portalPenetration.layers.flatMap((layer) => layer.contradictionRefs)),
+    new Set(identifyingArchetypePenetration.layers.flatMap((layer) => layer.contradictionRefs)),
   );
-  const state = aggregateColumnState(portalPenetration);
+  const state = aggregateColumnState(identifyingArchetypePenetration);
 
   const lifeSectionRouting = WesternLifeSectionRoutingOutputSchema.parse({
     schemaVersion: '1.0.0',
     sourceSystemId: WESTERN_SOURCE_SYSTEM_ID,
     sourceFieldId,
-    sourcePortalCount: PORTAL_COUNT,
+    sourceIdentifyingArchetypeCount: IDENTIFYING_ARCHETYPE_COUNT,
     sectionCount: LIFE_SECTION_COUNT,
     sourceColumnValidated: true,
     routedImmediately: true,
@@ -191,7 +191,7 @@ export function buildWesternPortalBridge(
       sourceSystemId: WESTERN_SOURCE_SYSTEM_ID,
       sourceFieldId,
       lifeSectionId: index + 1,
-      portalIds,
+      archetypeIds,
       layerRefs,
       state,
       contradictionRefs,
@@ -201,7 +201,7 @@ export function buildWesternPortalBridge(
     })),
   });
 
-  return { western, portalPenetration, lifeSectionRouting };
+  return { western, identifyingArchetypePenetration, lifeSectionRouting };
 }
 
 function summarizeChart(western: NatalChartResult): string {
@@ -217,15 +217,15 @@ function summarizeChart(western: NatalChartResult): string {
 }
 
 function aggregateColumnState(
-  portalPenetration: PortalPenetrationRun,
+  identifyingArchetypePenetration: IdentifyingArchetypePenetrationRun,
 ): z.infer<typeof SourceLayerStateSchema> {
-  if (portalPenetration.layers.some((layer) => layer.state === 'contradictory')) {
+  if (identifyingArchetypePenetration.layers.some((layer) => layer.state === 'contradictory')) {
     return 'contradictory';
   }
-  if (portalPenetration.layers.some((layer) => layer.state === 'layered')) {
+  if (identifyingArchetypePenetration.layers.some((layer) => layer.state === 'layered')) {
     return 'layered';
   }
-  if (portalPenetration.layers.some((layer) => layer.state === 'insufficient_signal')) {
+  if (identifyingArchetypePenetration.layers.some((layer) => layer.state === 'insufficient_signal')) {
     return 'insufficient_signal';
   }
   return 'no_applicable_signal';

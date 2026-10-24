@@ -5,7 +5,7 @@ The Generator determines what exists. The Oracle and rendering layers present it
 
 ## Invariants
 
-- One permanent 64-portal registry
+- One permanent 64-identifying-archetype registry
 - Separate complete modality layers
 - Append first, synthesize second, render third
 - Evidence and provenance preserved
@@ -18,7 +18,7 @@ The Helix is the visible convergence model. Its strands preserve independent sig
 
 ## Life Map
 
-- Center the permanent 64-portal lattice/field.
+- Center the permanent 64-identifying-archetype lattice/field.
 - Preserve independent source-system strands.
 - Represent timing, relationships, events, wounds, and recurrence as activation/pressure layers.
 - Illuminate only supported convergence.

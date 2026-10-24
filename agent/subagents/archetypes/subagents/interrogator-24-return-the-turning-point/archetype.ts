@@ -1,9 +1,9 @@
-// PROVENANCE: bot=grok session=2026-10-13 task=64 interrogator sub-agents (no scoring); data from lib/seen/portals64.ts @abd4fd5
-import type { PortalRecord } from '../../../../../lib/seen/portals64'
+// PROVENANCE: bot=grok session=2026-10-13 task=64 interrogator sub-agents (no scoring); data from lib/seen/identifyingArchetypes64.ts @abd4fd5
+import type { IdentifyingArchetypeRecord } from '../../../../../lib/seen/identifyingArchetypes64'
 
-/** Archetype 24 — Return (The Turning Point). 52 portal-phrased questions (reference); runtime asks the universal set (t612). */
-export const archetype: PortalRecord = {
-  "portalId": 24,
+/** Archetype 24 — Return (The Turning Point). 52 identifying-archetype-phrased questions (reference); runtime asks the universal set (t612). */
+export const archetype: IdentifyingArchetypeRecord = {
+  "archetypeId": 24,
   "name": "Return (The Turning Point)",
   "shadowName": "Return",
   "giftName": "Rationalization",
@@ -28,7 +28,7 @@ export const archetype: PortalRecord = {
   ],
   "interrogation": [
     {
-      "section": "III. PORTAL SPINE",
+      "section": "III. IDENTIFYING ARCHETYPE SPINE",
       "questions": [
         "Source of pressure: where did repetition first get pressed into you — which place, which people, which year?",
         "Reaction pattern: when that pressure lands, what do you do first — before you think?",

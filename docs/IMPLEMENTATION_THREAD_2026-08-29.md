@@ -2,7 +2,7 @@
 ### Western runtime bridge
 Verified path:
 
-`SEEN intake/runtime -> calculateNatalChart() -> local swisseph-wasm -> NatalChartResult -> buildWesternPortalBridge() -> persistent Western portal layer`
+`SEEN intake/runtime -> calculateNatalChart() -> local swisseph-wasm -> NatalChartResult -> buildWesternIdentifyingArchetypeBridge() -> persistent Western identifying archetype layer`
 
 Action:
 - preserve this path
@@ -11,7 +11,7 @@ Action:
 
 Acceptance:
 - direct code path remains local
-- Western raw result remains inspectable before portal routing
+- Western raw result remains inspectable before identifying archetype routing
 
 ### B1. Environmental Resonance
 Insert after objective environmental pressure and before pattern interaction.
@@ -49,10 +49,10 @@ Acceptance:
 - candidate count is always 3
 
 ### B2. Life Map
-Create a public-facing system map backed by existing source-layer IDs, portal IDs, convergence IDs, and evidence refs.
+Create a public-facing system map backed by existing source-layer IDs, identifying archetype IDs, convergence IDs, and evidence refs.
 
 Map topology:
-- center: 64 portals
+- center: 64 identifying archetypes
 - source-system strands: independent layers
 - Forge/environment field: contextual pressure around pattern
 - activation layer: time / relationships / events / wounds / recurrence
@@ -61,7 +61,7 @@ Map topology:
 - Life Sections: human-readable perimeter after final registry is locked
 
 Public/private boundary:
-- expose system name, source identity, high-level provenance, portal/convergence relationship, user-facing evidence explanation
+- expose system name, source identity, high-level provenance, identifying-archetype/convergence relationship, user-facing evidence explanation
 - keep proprietary weights, prompts, mapping tables, scoring internals, hidden schemas, and server-side routing private
 
 Acceptance:
@@ -77,7 +77,7 @@ Each system view must show:
 - input provenance
 - calculation/version provenance
 - time-certainty limitations
-- optional route into portal layer after interpretation criteria exist
+- optional route into identifying archetype layer after interpretation criteria exist
 
 Convergence remains a separate view.
 
@@ -136,7 +136,7 @@ Acceptance:
 Prototype before production wiring.
 
 Prototype must demonstrate:
-- portal center
+- identifying archetype center
 - multiple independent strands
 - Forge/environment field
 - one supported convergence
@@ -230,7 +230,7 @@ Implement P1 before downstream convergence:
 
 1. Environmental Resonance schema + persistence boundary + tests.
 2. Location source-audit P0 schema corrections needed by downstream claims.
-3. Public Life Map projection contract over existing portal/source/convergence IDs.
+3. Public Life Map projection contract over existing identifying-archetype/source/convergence IDs.
 4. One static/fixture-backed Life Map prototype proving the navigation model.
 5. Native Western source view using the already-canonical local Swiss Ephemeris result.
 6. Rendering contract.

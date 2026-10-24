@@ -7,7 +7,7 @@ This protocol runs after STRUCTURE and before EXECUTION.
 
 ## PASS 11 - Oracle First
 
-Confirm the Oracle field remains before interpretation, calculation, extraction, comparison, routing, Cadence, portals, rendering, or user-facing output.
+Confirm the Oracle field remains before interpretation, calculation, extraction, comparison, routing, Cadence, identifying-archetypes, rendering, or user-facing output.
 
 ## PASS 12 - Canon Alignment
 

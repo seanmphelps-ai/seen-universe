@@ -2,7 +2,7 @@
 import { defineAgent } from "eve";
 
 export default defineAgent({
-  description: "Portals only. Does not calculate a chart.",
+  description: "Identifying archetypes only. Does not calculate a chart.",
   model: "openai/gpt-6-sol",
   defaultTools: false,
   tool: false,

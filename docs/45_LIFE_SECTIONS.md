@@ -4,7 +4,7 @@
 Status: CANONICAL — approved registry.
 Version: 1.0.0
 
-Every portal deposit, wound result, lens result, environmental signal, attachment finding, childhood triangle result, drama triangle result, Jungian inversion, recognition summary, and Oracle reveal carries one or more valid routes from this registry.
+Every identifying archetype deposit, wound result, lens result, environmental signal, attachment finding, childhood triangle result, drama triangle result, Jungian inversion, recognition summary, and Oracle reveal carries one or more valid routes from this registry.
 
 The Generator deposits evidence into sections. The Oracle renders from sections.
 

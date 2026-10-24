@@ -8,11 +8,11 @@ Status: recovered thread material; validate/canonize item by item before impleme
 - `swisseph-wasm` is installed locally.
 - `lib/natalChart.ts` initializes Swiss Ephemeris and calculates Western planetary positions, retrogrades, aspects, houses, Ascendant, and Midheaven when birth time is known.
 - `app/api/chart/route.ts` exposes the local calculator.
-- `app/api/seen/run/route.ts` calls `calculateNatalChart()` directly, then passes the completed Western result to `buildWesternPortalBridge()`.
+- `app/api/seen/run/route.ts` calls `calculateNatalChart()` directly, then passes the completed Western result to `buildWesternIdentifyingArchetypeBridge()`.
 - Western calculation remains independent from Location/environment.
 
 ### Open
-- Canonical portal-specific Western interpretation criteria are still absent.
+- Canonical identifying-archetype-specific Western interpretation criteria are still absent.
 
 ### Established architecture
 - Environment is calculated independently before person-level interpretation.
@@ -62,13 +62,13 @@ Strongly endorsed concept:
 - The map is analogous to a family tree/subway map: visible relationships, hidden implementation.
 
 ### Proposed visual topology
-- Center: permanent 64-portal lattice/sphere/field.
-- Independent source systems remain visually separate and feed their own strands toward the portal field.
+- Center: permanent 64-identifying-archetype lattice/sphere/field.
+- Independent source systems remain visually separate and feed their own strands toward the identifying archetype field.
 - Forge/environment/exposure surrounds the central structure as pressure/context.
 - Convergence lights up where independent strands hit the same territory.
 - Expression moves outward through adaptation, behavior, belief, capacity, cost, consequence.
 - Life Sections form a human-readable perimeter.
-- User can zoom from overview -> convergence -> portal -> source calculation/evidence.
+- User can zoom from overview -> convergence -> identifying archetype -> source calculation/evidence.
 
 Core principle:
 `Show the subway map; keep the signaling software private.`
@@ -177,7 +177,7 @@ Source-knowledge only unless separately approved:
 
 ### Partially implemented / architecture present
 - Location v1/v2/scoring infrastructure
-- portal-layer contracts
+- identifying-archetype-layer contracts
 - Helix/convergence concepts
 - Forge visual references
 

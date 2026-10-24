@@ -21,7 +21,7 @@ Name
 → Narrow ±3 / ±2 / ±1
 → Lived places 6+ months, three gift+cost cards
 → Family as soil on the 45 sections
-→ Stop. Portals after this slice works.
+→ Stop. Identifying archetypes after this slice works.
 ```
 
 ## Repository Authority
@@ -58,7 +58,7 @@ The SEEN Runtime coordinates:
 - state-machine gates;
 - Generator invocation;
 - Oracle invocation;
-- portal routing;
+- identifying archetype routing;
 - Life Section routing;
 - persistent SEEN session state.
 
@@ -66,7 +66,7 @@ The SEEN Runtime coordinates:
 
 The Generator calculates, evaluates, scans, converges, scores, and structures evidence.
 
-The Generator owns environmental fields, portal pre-charge, numerology, Swiss Ephemeris, Western/Vedic/Hellenistic interpretation, maternal and family pressure, childhood formation, attachment, wound and shadow evaluation, recognition candidates, Full Helix Ignition, 64-portal scanning, Dr. Maisel lens inspection, recursive passes, convergence and divergence, Drama Triangle evaluation, Jungian inversion structures, Life Section routing, independent person states, relational comparison, confidence, contradiction handling, provenance, unresolved variables, and typed payload construction.
+The Generator owns environmental fields, identifying archetype pre-charge, numerology, Swiss Ephemeris, Western/Vedic/Hellenistic interpretation, maternal and family pressure, childhood formation, attachment, wound and shadow evaluation, recognition candidates, Full Helix Ignition, 64-identifying-archetype scanning, Dr. Maisel lens inspection, recursive passes, convergence and divergence, Drama Triangle evaluation, Jungian inversion structures, Life Section routing, independent person states, relational comparison, confidence, contradiction handling, provenance, unresolved variables, and typed payload construction.
 
 ### Oracle
 
@@ -76,19 +76,19 @@ The Oracle owns naming, interpretation, pacing, disclosure, consent, uncertainty
 
 First Oracle surface is the dark pressure card describing collapse under pressure.
 
-### Portals
+### Identifying archetypes
 
-All 64 portals receive traceable deposits and route established signals through the active SEEN field.
+All 64 identifying archetypes receive traceable deposits and route established signals through the active SEEN field.
 
-Calculate the natal seed before environmental portal pre-charge. Environment is weather on that calculated seed.
+Calculate the natal seed before environmental identifying archetype pre-charge. Environment is weather on that calculated seed.
 
-Full portal evaluation occurs after recognition selection and Full Helix Ignition.
+Full identifying archetype evaluation occurs after recognition selection and Full Helix Ignition.
 
 ### Life Sections
 
 The 45 Life Sections form a versioned canonical routing registry.
 
-Active signals, portal deposits, wound results, lens results, relational findings, Jungian inversions, recognition summaries, reveal sections, and deeper paths carry valid Life Section routes.
+Active signals, identifying archetype deposits, wound results, lens results, relational findings, Jungian inversions, recognition summaries, reveal sections, and deeper paths carry valid Life Section routes.
 
 ### Sovereignty
 
@@ -123,7 +123,7 @@ Birth Foundation Intake (name, date, birth city)
 → Locked-time Western tab
 → Mix seed + soil + weather into 45 sections
 → Full Helix Ignition (after the slice works)
-→ 64-Portal Scan
+→ 64-Identifying-archetype Scan
 → Dr. Maisel 25-Lens Inspection
 → Convergence / Divergence
 → Drama Triangle Evaluation
@@ -241,6 +241,6 @@ The Generator governs computation and structured evidence.
 
 The Oracle governs user-facing recognition.
 
-Portals and Life Sections govern routing.
+Identifying archetypes and Life Sections govern routing.
 
 Sovereignty completes the active product journey.

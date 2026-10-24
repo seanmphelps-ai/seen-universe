@@ -34,7 +34,7 @@ type StoredBirth = {
 
 type SeenRunResponse = {
   western?: NatalChartResult;
-  westernPortalPenetration?: unknown;
+  westernIdentifyingArchetypePenetration?: unknown;
   westernLifeSectionRouting?: unknown;
   locations?: unknown;
   locationV2?: unknown;

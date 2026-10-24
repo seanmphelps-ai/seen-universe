@@ -73,10 +73,10 @@ unknown input
 - `BaselineEnvironmentalPressureInputSchema`
 - `BaselineEnvironmentalPressureOutputSchema`
 
-### Portal Pre-Charge
+### Identifying archetype Pre-Charge
 
-- `PortalPrechargeInputSchema`
-- `PortalPrechargeOutputSchema`
+- `IdentifyingArchetypePrechargeInputSchema`
+- `IdentifyingArchetypePrechargeOutputSchema`
 
 ### Birth Foundation
 
@@ -148,10 +148,10 @@ unknown input
 - `HelixIgnitionInputSchema`
 - `HelixIgnitionOutputSchema`
 
-### 64-Portal Scan
+### 64-Identifying-archetype Scan
 
-- `PortalScanInputSchema`
-- `PortalScanOutputSchema`
+- `IdentifyingArchetypescanInputSchema`
+- `IdentifyingArchetypescanOutputSchema`
 
 ### Dr. Maisel 25-Lens Inspection
 

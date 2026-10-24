@@ -36,8 +36,8 @@ export type Reading = {
   sources: string[];
 };
 
-export type PortalResult = {
-  portal: number;
+export type IdentifyingArchetypeResult = {
+  identifyingArchetype: number;
   output: unknown;
   sources: string[];
 };
@@ -53,10 +53,10 @@ export type NativeWorker = {
   audit: (context: JobContext, reading: Reading) => Promise<Audit>;
 };
 
-export type PortalWorker = {
-  portal: number;
-  run: (context: JobContext, acceptedReadings: Reading[]) => Promise<PortalResult>;
-  audit: (context: JobContext, result: PortalResult) => Promise<Audit>;
+export type IdentifyingArchetypeWorker = {
+  identifyingArchetype: number;
+  run: (context: JobContext, acceptedReadings: Reading[]) => Promise<IdentifyingArchetypeResult>;
+  audit: (context: JobContext, result: IdentifyingArchetypeResult) => Promise<Audit>;
 };
 
 export type CocoonStatus = 'positions_only' | 'pending_source_lock' | 'pending_auditor';
@@ -131,7 +131,7 @@ const COCOONS: Record<ModalityId, { calcAuthority: string; interpretiveAuthority
   },
   iching: {
     calcAuthority: 'none — lib/ichingCalc.ts calculateIChing fails closed',
-    interpretiveAuthority: 'Zhou Yi requires a separate cast record. Portals occupy their own layer.',
+    interpretiveAuthority: 'Zhou Yi requires a separate cast record. Identifying archetypes occupy their own layer.',
     unresolved: [
       'cast record (question, method, six lines) awaits collection',
       'birth-date-to-hexagram mapping remains unspecified',

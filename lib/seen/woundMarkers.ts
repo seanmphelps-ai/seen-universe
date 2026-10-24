@@ -27,7 +27,7 @@ export type WoundCandidate = {
   relationalDistortion?: string;
   domainImpact?: string[];
   linkedShadowCategories?: string[];
-  portalRoutes?: number[];
+  identifyingArchetypeRoutes?: number[];
   ageArcs?: unknown[];
   jungCapacity?: unknown;
   confidence?: number;

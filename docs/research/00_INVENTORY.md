@@ -14,9 +14,9 @@ This inventory records research/schema/documentation from the box for branch `cl
 
 ## Source documents awaiting repository import
 
-- The remaining **113** selected source documents remain only on paper/box at this point: Hellenistic `CANON` manifests/seeds, all Hellenistic `LOTS/`, Hellenistic `AUDIT/`, Hellenistic source-lock manifests/mechanics, and all Western, Vedic, BaZi, Dreamspell, and Portals `SOURCE_LOCK/` packs.
+- The remaining **113** selected source documents remain only on paper/box at this point: Hellenistic `CANON` manifests/seeds, all Hellenistic `LOTS/`, Hellenistic `AUDIT/`, Hellenistic source-lock manifests/mechanics, and all Western, Vedic, BaZi, Dreamspell, and Identifying archetypes `SOURCE_LOCK/` packs.
 
 ## Source selection and exclusions
 
-- Selected source packs contained 142 text/schema documents: Hellenistic 94; Western 8; Vedic 8; BaZi 8; Dreamspell 13; Portals 8; ship dark cards 1; shared source-lock 2.
+- Selected source packs contained 142 text/schema documents: Hellenistic 94; Western 8; Vedic 8; BaZi 8; Dreamspell 13; Identifying archetypes 8; ship dark cards 1; shared source-lock 2.
 - Existing `docs/hellenistic/` build-law documents were left untouched.

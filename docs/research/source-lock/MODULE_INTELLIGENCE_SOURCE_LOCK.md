@@ -126,4 +126,4 @@ Example (Western):
 - Primary/traditional + carefully selected modern scholarship → interpretive mechanics
 - SEEN → convergence/recognition intelligence
 
-Each module (Western, Vedic, Hellenistic, BaZi, Tzolkin/Dreamspell, Numerology, Portals, Location, wound mechanics) locks its own stack independently.
+Each module (Western, Vedic, Hellenistic, BaZi, Tzolkin/Dreamspell, Numerology, Identifying-archetypes, Location, wound mechanics) locks its own stack independently.

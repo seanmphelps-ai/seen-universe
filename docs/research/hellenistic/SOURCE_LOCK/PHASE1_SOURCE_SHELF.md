@@ -21,7 +21,7 @@
 ### 3. Chris Brennan — *Hellenistic Astrology: The Study of Fate and Fortune* (Amor Fati, 2017)
 - **Citation:** ISBN 9780998588902; Google Books record verified: https://books.google.com/books/about/Hellenistic_Astrology.html?id=GjI8DgAAQBAJ (TOC shows Ch. 10 Twelve Places, Ch. 11 House Division, Ch. 16 Lots, Ch. 18–19 Profections / Zodiacal Releasing).
 - **Why valid:** Modern scholarly reconstruction citing primary corpus; standard SEEN-class secondary for whole-sign implementation and Fortune/Spirit articulation.
-- **Use:** **CALC** (implementation rules) + **INTERPRETATION** (sect, places, lots) + **RENDERING** (clear English for Portal packets).
+- **Use:** **CALC** (implementation rules) + **INTERPRETATION** (sect, places, lots) + **RENDERING** (clear English for Identifying archetype packets).
 
 ### 4. Paulus Alexandrinus — Hermetic Lots (via Project Hindsight / documented formulas)
 - **Citation path checked:** Detailed formula documentation with Paulus quotes + Schmidt notes at https://www.astrology-x-files.com/x-files/arabic-parts.html (fetched OK). Underlying Project Hindsight: Robert Schmidt trans., *Paulus Alexandrinus: Introductory Matters* (Golden Hind Press).

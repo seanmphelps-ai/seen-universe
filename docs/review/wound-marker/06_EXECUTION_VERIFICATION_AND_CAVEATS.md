@@ -19,9 +19,9 @@ Refactor the existing chart-engine flow toward:
         ↓
     convergence
         ↓
-    Portal evidence routing
+    Identifying archetype evidence routing
         ↓
-    Portal-specific synthesis
+    Identifying-archetype-specific synthesis
         ↓
     Life Section routing
         ↓
@@ -53,10 +53,10 @@ PASS 4
 Implement convergence engine.
 
 PASS 5
-Replace global Portal scoring with Portal evidence deposits and Portal-specific synthesis.
+Replace global Identifying archetype scoring with Identifying archetype evidence deposits and Identifying-archetype-specific synthesis.
 
 PASS 6
-Wire convergence/Portal synthesis into chart-engine orchestration.
+Wire convergence/Identifying-archetype synthesis into chart-engine orchestration.
 
 PASS 7
 Wire Life Section and Jung inversion outputs where their canonical structures already exist.
@@ -75,15 +75,15 @@ Correct every verified discrepancy or record it explicitly as unresolved.
 
 TEST A — WOUND COUNT
 
-Two people with the same number of wound markers but different markers/context must be capable of producing different Portal evidence and expression.
+Two people with the same number of wound markers but different markers/context must be capable of producing different Identifying archetype evidence and expression.
 
-TEST B — PORTAL SPECIFICITY
+TEST B — IDENTIFYING ARCHETYPE SPECIFICITY
 
-Two different Portals must be capable of receiving different evidence and producing different states for the same person.
+Two different Identifying archetypes must be capable of receiving different evidence and producing different states for the same person.
 
 TEST C — PROVENANCE
 
-A Portal state must be traceable to the exact source signals that produced it.
+A Identifying archetype state must be traceable to the exact source signals that produced it.
 
 TEST D — SUPPRESSION
 
@@ -135,7 +135,7 @@ At minimum inspect current versions of:
     docs/contexts/CLAUDE_ORACLE.md
 
     lib/seen/woundMarkers.ts
-    lib/seen/portals64.ts
+    lib/seen/identifyingArchetypes64.ts
     lib/seen/chartEngine.ts
     lib/seen/geoPresence.ts
 
@@ -143,11 +143,11 @@ and the current canonical wound-marker schema.
 
 Search the repository for all consumers of:
 
-    expressPortals
+    expressIdentifyingArchetypes
     extractWoundMarkers
     WoundMarkerHit
     BaselinePressureEffect
-    PortalExpression
+    IdentifyingArchetypeExpression
     runChartEngine
 
 before changing shared types or signatures.
@@ -192,9 +192,9 @@ RECURSIVE EXTRACTION
                 ↓
 CONVERGENCE / DIVERGENCE / CONTRADICTION
                 ↓
-PORTAL-SPECIFIC EVIDENCE DEPOSITS
+IDENTIFYING-ARCHETYPE-SPECIFIC EVIDENCE DEPOSITS
                 ↓
-64-PORTAL SYNTHESIS
+64-IDENTIFYING-ARCHETYPE SYNTHESIS
                 ↓
 LIFE SECTION ROUTING
                 ↓
@@ -219,11 +219,11 @@ The system must always be able to show why it reached a result.
   
 **The direct answer should have been:**  
   
-**I found a real defect in the current portal runtime.
+**I found a real defect in the current identifying archetype runtime.
   
 **That’s it.**  
   
-**The defect is still concrete: the current portal function uses **woundMarkers.length**, GeoPresence amplification, and that hard-coded early-portal bonus. That finding stands because we inspected the actual implementation.**  
+**The defect is still concrete: the current identifying archetype function uses **woundMarkers.length**, GeoPresence amplification, and that hard-coded early-identifying-archetype bonus. That finding stands because we inspected the actual implementation.**  
   
 **Everything after that—when I started specifying the replacement architecture from an old thread, the 5/15 wound schema, and a subset of newer repo documents—I outran what I’d actually established. Then I made it worse by producing a giant directive that *looked* authoritative.**  
   

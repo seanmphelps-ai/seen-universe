@@ -14,7 +14,7 @@ Location changes expression. Every person, place, and timeframe is evaluated ind
 
 ## Required output
 
-One Environmental Pressure Field per location-period pair, routed across all 64 portals. Preserve duration, confidence, evidence, contradictions, and the difference between Person A and Person B in the same place.
+One Environmental Pressure Field per location-period pair, routed across all 64 identifying archetypes. Preserve duration, confidence, evidence, contradictions, and the difference between Person A and Person B in the same place.
 
 ## Environmental Resonance
 

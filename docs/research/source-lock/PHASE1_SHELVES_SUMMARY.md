@@ -11,4 +11,4 @@ Light ≥3-source shelves delivered by modality agents. **Superseded as the gate
 | Bazi | Li Chun / jie / true solar conventions | Yuanhai Ziping, Zi Ping Zhen Quan, Di Tian Sui, San Ming Tong Hui |
 | Dreamspell | Law of Time epoch (Kin 34 on 1987-07-26) | Argüelles kit; classical Maya GMT separate |
 | Numerology | Pythagorean Goodwin/Decoz | Jordan; Cheiro Chaldean name-only opt-in |
-| Portals | King Wen 01–64 structure | Wilhelm/Baynes, Rutt, Shaughnessy, ctext |
+| Identifying archetypes | King Wen 01–64 structure | Wilhelm/Baynes, Rutt, Shaughnessy, ctext |

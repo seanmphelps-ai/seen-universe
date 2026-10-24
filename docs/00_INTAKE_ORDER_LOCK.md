@@ -15,7 +15,7 @@ One path. SOL environment-before-date is dead.
    - Pick → neighbors → ±2h → ±1h
 6. Family as soil on the 45 sections — after the dark cards work
 7. Sovereignty after dark protocol
-8. Then portals / helix / cadence
+8. Then identifying archetypes / helix / cadence
 
 Birth city is coordinates. Lived exposure is the rooms with years.
 Sky stays independent.

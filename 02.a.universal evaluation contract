@@ -2,10 +2,10 @@
   "name": "SEEN Universal Evaluation Contract",
   "version": "1.0.0",
   "status": "implementation_ready",
-  "purpose": "Convert minimal factual inputs into standardized cross-domain evaluations that can be deposited into portals, converged, and translated by the Oracle.",
+  "purpose": "Convert minimal factual inputs into standardized cross-domain evaluations that can be deposited into identifying archetypes, converged, and translated by the Oracle.",
   "productPromise": {
     "primary": "Show the person what happened, why it happened, what pattern formed, what it cost, and what changes the pattern.",
-    "mechanism": "Invariant multi-domain pressure reconstruction followed by portal deposition and convergence.",
+    "mechanism": "Invariant multi-domain pressure reconstruction followed by identifying archetype deposition and convergence.",
     "result": "A consistent recognition record that supports Dark Chart, Closure & Composure, and Cadence."
   },
   "runtime": {
@@ -20,7 +20,7 @@
     "generator": {
       "responsibility": "Resolve factual inputs, execute invariant checklists, evaluate canonical definitions, calculate pressure, and emit normalized evaluations.",
       "inputs": ["subjectId", "location", "startDate", "endDate"],
-      "outputs": ["environmentalPressureProfile", "seenEvaluations", "portalDeposits", "lifeSectionDeposits"]
+      "outputs": ["environmentalPressureProfile", "seenEvaluations", "identifyingArchetypeDeposits", "lifeSectionDeposits"]
     },
     "oracle": {
       "responsibility": "Compare normalized evaluations, identify convergence, traverse active recognition branches, and render user-facing recognition.",
@@ -44,7 +44,7 @@
     "outputShape": {
       "evaluationId": "string",
       "subjectId": "string",
-      "domain": "environment | astrology | portal | wound_marker | attachment | behavioral_lens | childhood_triangle | relationship",
+      "domain": "environment | astrology | identifying archetype | wound_marker | attachment | behavioral_lens | childhood_triangle | relationship",
       "sourceDefinitionId": "string",
       "evaluatedAt": "ISO-8601 datetime",
       "pressures": ["string"],
@@ -55,9 +55,9 @@
       "consequences": ["string"],
       "interventions": ["string"],
       "expectedChanges": ["string"],
-      "portalDeposits": [
+      "identifyingArchetypeDeposits": [
         {
-          "portalId": "integer 1-64",
+          "archetypeId": "integer 1-64",
           "weight": "number 0-1",
           "reason": "string"
         }
@@ -142,7 +142,7 @@
       "identifyReinforcedBelief",
       "identifyAdaptiveBehavior",
       "identifyLongTermCost",
-      "identifySensitizedPortals",
+      "identifySensitizedIdentifyingArchetypes",
       "attachEvidence",
       "calculateConfidence"
     ],
@@ -166,7 +166,7 @@
         "recurrenceRate": "number 0-1",
         "splitFactor": "number 0-1"
       },
-      "portalDeposits": ["weighted portal deposits"],
+      "identifyingArchetypeDeposits": ["weighted identifying archetype deposits"],
       "confidence": {
         "score": "number 0-1",
         "basis": ["string"]
@@ -185,7 +185,7 @@
       "observableBehaviors",
       "hiddenCosts",
       "likelyConsequences",
-      "portalDeposits",
+      "identifyingArchetypeDeposits",
       "lifeSectionDeposits",
       "evidenceRequirements"
     ],
@@ -203,7 +203,7 @@
       "attachEncodedCausalMeaning",
       "calculateConfidence",
       "emitSeenEvaluation",
-      "depositIntoPortals",
+      "depositIntoIdentifyingArchetypes",
       "depositIntoLifeSections"
     ]
   },
@@ -229,10 +229,10 @@
     "consequenceIfContinued": ["string"],
     "consequenceIfInterrupted": ["string"],
     "regulatedExpression": ["string"],
-    "affectedPortals": ["integer"],
-    "portalEffects": [
+    "affectedIdentifyingArchetypes": ["integer"],
+    "identifyingArchetypeEffects": [
       {
-        "portalId": "integer",
+        "archetypeId": "integer",
         "effect": "amplify | suppress | distort | delay | split | reroute",
         "weight": "number"
       }
@@ -241,18 +241,18 @@
     "contraindicators": ["string"],
     "confidenceRules": ["string"]
   },
-  "portalEngine": {
-    "totalPortals": 64,
-    "pressurizationRule": "EnvironmentalPressureProfile + wound marker portalEffects + other domain deposits feed into each portal before any numerology or interpretation",
+  "identifyingArchetypeEngine": {
+    "totalIdentifyingArchetypes": 64,
+    "pressurizationRule": "EnvironmentalPressureProfile + wound marker identifyingArchetypeEffects + other domain deposits feed into each identifying archetype before any numerology or interpretation",
     "effectTypes": ["amplify", "suppress", "distort", "delay", "split", "reroute"]
   },
   "lifeSections": {
     "total": 45,
-    "derivation": "Sectioned from the 64 pre-loaded portals after environmental and wound marker deposits"
+    "derivation": "Sectioned from the 64 pre-loaded identifying archetypes after environmental and wound marker deposits"
   },
   "drMeizoLenses": {
     "total": 25,
-    "integration": "Applied on top of the 45 life sections after portal deposition",
+    "integration": "Applied on top of the 45 life sections after identifying archetype deposition",
     "lenses": [
       "Original Personality",
       "Formed Personality",
@@ -287,7 +287,7 @@
     "environmentalProfile",
     "pressureProfile",
     "canonicalDefinitionEvaluation",
-    "portalDeposits",
+    "identifyingArchetypeDeposits",
     "lifeSectionDeposits",
     "drMeizoLensIntegration",
     "crossDomainConvergence",
@@ -300,7 +300,7 @@
     "Every environmental location executes the checklist in the stored order.",
     "Every causal relationship resolves from a canonical registry definition.",
     "Every evaluation carries evidence and confidence.",
-    "Every portal deposit includes a weight and reason.",
+    "Every identifying archetype deposit includes a weight and reason.",
     "Every life-section deposit includes a weight and reason.",
     "The Oracle receives domain-agnostic normalized evaluations.",
     "Runtime validation executes before persistence and before Oracle handoff.",
@@ -311,7 +311,7 @@
     "schema": "src/schemas/seen-universal-evaluation-contract.schema.ts",
     "environmentGenerator": "src/generators/environment/evaluate-environment.ts",
     "registries": "src/registries",
-    "portalEngine": "src/engines/portals",
+    "identifyingArchetypeEngine": "src/engines/identifying-archetypes",
     "convergenceEngine": "src/engines/convergence",
     "oracle": "src/oracle"
   }

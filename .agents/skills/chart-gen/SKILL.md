@@ -24,9 +24,9 @@ Produce versioned independent source-calculation records ready for routing and s
 2. Use swisseph-wasm with Swiss Ephemeris for astronomical positions.
 3. Convert local birth time through the resolved IANA timezone before calculation.
 4. Preserve unknown-time limits: planetary positions may be calculated, while houses, Ascendant, and Midheaven remain absent until a supported birth time exists.
-5. Complete the Western calculation independently before Location, environmental, portal, convergence, or narrative interpretation reads it.
+5. Complete the Western calculation independently before Location, environmental, identifying archetype, convergence, or narrative interpretation reads it.
 6. Pass the completed NatalChartResult forward with its astronomical facts intact.
-7. Keep Western, Hellenistic, Vedic, Lots, nakshatras/dashas, and other approved source systems independent; route findings separately into SEEN's own 64 Portals.
+7. Keep Western, Hellenistic, Vedic, Lots, nakshatras/dashas, and other approved source systems independent; route findings separately into SEEN's own 64 Identifying archetypes.
 8. Preserve source-system identity, calculation version, inputs, outputs, confidence, and provenance.
 
 ## Outputs
@@ -37,4 +37,4 @@ Produce versioned independent source-calculation records ready for routing and s
 
 1. swisseph-wasm remains installed in package.json.
 2. The runtime resolves Western through calculateNatalChart() in lib/natalChart.ts.
-3. The completed local Swiss Ephemeris Western result reaches buildWesternPortalBridge().
+3. The completed local Swiss Ephemeris Western result reaches buildWesternIdentifyingArchetypeBridge().
