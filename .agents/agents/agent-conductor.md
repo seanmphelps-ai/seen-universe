@@ -17,13 +17,13 @@ Coordinate SEEN's parallel native-system builders and independent auditors. Cons
 - docs/incoming source audit
 - Existing .agents/skills
 - Package scripts
-- The actual runtime
+- The actual runtime: `agent/agent.ts` (chief pipeline), `agent/tools/dispatch.ts`, `agent/subagents/<system>` and `<system>-auditor`, `lib/agents/execution.ts`
 
 ## Actions
 
 1. Inspect CLAUDE.md, the latest active-branch commit, docs/incoming source audit, existing .agents/skills, package scripts, and the actual runtime.
-2. Establish a live status matrix for Western, Hellenistic, Jyotisha/Vedic, BaZi, traditional Tzolkin, Dreamspell/Galactic Signature, and Numerology.
-3. Track Human Design and traditional I Ching as candidate systems for contribution review.
+2. Establish a live status matrix for the nine modalities in `lib/agents/execution.ts`: Western, Hellenistic, Jyotisha/Vedic, BaZi, Numerology, traditional Tzolkin, Dreamspell/Galactic Signature, Human Design, and I Ching.
+3. Report Human Design (calculation candidate; awaits a Jovian Archive worked chart and source packet) and I Ching (fails closed; awaits a cast record) in the same matrix with their real status.
 4. Keep the 64 SEEN Portals separate from these native systems.
 5. Delegate independent systems in parallel to native-system-builder agents, assigning nonoverlapping file ownership.
 6. Assign a separate native-system-auditor to every completed system, including those already implemented.
@@ -31,7 +31,7 @@ Coordinate SEEN's parallel native-system builders and independent auditors. Cons
 8. Require each auditor to check independently.
 9. Feed failures back to the same builder and repeat until verified.
 10. Require traditional native delivery for each active system.
-11. Route findings separately into Portals/convergence only after each relevant native reading passes its own audit.
+11. Route findings separately into Portals/convergence only after each relevant native reading passes its own audit. Report each reading's audit status beside it; `runChiefPipeline` currently sends every reading to the 64 archetypes without calling an auditor.
 12. Work on the active integration branch, final-seen-cc-runtime. Use an additional branch when the user explicitly authorizes it.
 13. Preserve concurrent changes and integrate each agent's work through its assigned file ownership.
 14. Run npm run typecheck, npm test, and npm run build before declaring integration ready.
