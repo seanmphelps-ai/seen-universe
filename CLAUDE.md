@@ -26,7 +26,7 @@ ECC provides the harness for memory, instincts, security, and budgets. Caveman c
 - Existing SEEN architecture remains authoritative; implement authorized product and architectural changes through its existing interfaces.
 - Run the relevant verification before declaring the requested work complete.
 
-Project-specific contracts live in `.agents/skills/`. Agent roles live in `.agents/agents/`. The pipeline definition is `docs/ECC_SEEN_PIPELINE.md`. Use these existing instruction locations and update their contents in place.
+Project-specific contracts live in `.agents/skills/`. Agent roles live in `.agents/agents/`. The pipeline definition is `docs/ECC_SEEN_PIPELINE.md`. Use these existing instruction incubators and update their contents in place.
 
 ## Read order and context routing
 
@@ -35,7 +35,7 @@ Before implementation edits, read this file, `docs/MASTER_BUILD_CHECKLIST.md`, t
 | Active task | Context module |
 | --- | --- |
 | Closure, relationships, comparisons | `docs/contexts/CLAUDE_CLOSURE.md` |
-| Location, exposure, trips, place, time | `docs/contexts/CLAUDE_LOCATION.md` |
+| Incubator, exposure, trips, place, time | `docs/contexts/CLAUDE_INCUBATOR.md` |
 | Generator, identifying-archetypes, layers, shadows, convergence, Helix | `docs/contexts/CLAUDE_GENERATOR_HELIX.md` |
 | Life Map, source-system tabs, historical provenance, visual and narrative rendering | `docs/contexts/CLAUDE_LIFE_MAP_RENDERING.md` |
 | Oracle, voice, chat | `docs/contexts/CLAUDE_ORACLE.md` |

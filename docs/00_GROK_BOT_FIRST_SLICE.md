@@ -1,7 +1,7 @@
 // PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
 # GROK BOT — FIRST SLICE ONLY
 
-Read this file. Then `docs/00_INTAKE_SCHEMA.md`. Then `docs/TIME_NARROWING_LOCK.md`. Then `docs/LOCATION.md`.
+Read this file. Then `docs/00_INTAKE_SCHEMA.md`. Then `docs/TIME_NARROWING_LOCK.md`. Then `docs/INCUBATOR.md`.
 
 ## Order
 

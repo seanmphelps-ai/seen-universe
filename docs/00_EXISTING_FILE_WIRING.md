@@ -7,9 +7,9 @@ Builder: change these files.
 
 | Job | File |
 |---|---|
-| City typeahead with lat/long | `components/LocationAutocompleteInput.tsx` |
+| City typeahead with lat/long | `components/IncubatorAutocompleteInput.tsx` |
 | Suggest API | `app/api/location/suggest/route.ts` |
-| City data | `lib/location/citySuggest.ts` |
+| City data | `lib/incubator/citySuggest.ts` |
 | Swiss calc | `lib/natalChart.ts` → `POST /api/chart` |
 | Card text API | `app/api/rectification/scenarios/route.ts` |
 | One user, many names | `app/api/saved-people/route.ts` |
@@ -26,7 +26,7 @@ It already collects name, date, city, lived text, writes `seen.foundation.birth`
 
 Change only this on that page:
 
-1. Replace the local `CITIES` filter with `LocationAutocompleteInput` so the pick includes lat/long from `/api/location/suggest`.
+1. Replace the local `CITIES` filter with `IncubatorAutocompleteInput` so the pick includes lat/long from `/api/location/suggest`.
 2. Replace the `livedStack` textarea string with `livedPlaces[]` matching `LivedPlaceSchema` (place + startYear + endYear).
 3. Copy on the page still says 4 AM / noon / 8 PM. Change it to 06:00 / 18:00 until we switch back.
 4. On submit, also `POST /api/saved-people` when the user is signed in.
@@ -49,7 +49,7 @@ Change only this:
 
 `app/foundation/birth/page.tsx`
 
-It expects location to already exist (`Complete your location first`). That is the old invert. Leave the file.
+It expects incubator to already exist (`Complete your incubator first`). That is the old invert. Leave the file.
 
 `components/NatalIntakeForm.tsx`
 
@@ -65,7 +65,7 @@ It still has optional time. Keep it for a later locked-time override only.
 
 ```
 /chart
-  LocationAutocompleteInput
+  IncubatorAutocompleteInput
   LivedPlaceSchema rows
   session seen.foundation.birth
   POST /api/saved-people if signed in

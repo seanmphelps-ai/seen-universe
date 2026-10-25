@@ -85,7 +85,7 @@ export const archetype: IdentifyingArchetypeRecord = {
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Migration pressure biomes; Unstable weather patterns; Polar light extremes; Multiple childhood relocations; Draining field locations?",
+        "Environment: which of these surroundings turn it up — Migration pressure biomes; Unstable weather patterns; Polar light extremes; Multiple childhood relocations; Draining field incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },

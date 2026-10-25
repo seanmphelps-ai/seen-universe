@@ -2,7 +2,7 @@
 'use client';
 
 import { useRef, type Dispatch, type SetStateAction } from 'react';
-import { LocationAutocompleteInput } from './LocationAutocompleteInput';
+import { IncubatorAutocompleteInput } from './IncubatorAutocompleteInput';
 import { placeFromSuggestion } from '../lib/foundation/intakeDeck';
 import {
   emptyLivedPlaceDraft,
@@ -71,7 +71,7 @@ function LivedPlaceRow({
         Place {index + 1}
       </label>
       <div className="seenInputFrame">
-        <LocationAutocompleteInput
+        <IncubatorAutocompleteInput
           id={`lived-city-${row.id}`}
           className="seenInput"
           value={row.query}

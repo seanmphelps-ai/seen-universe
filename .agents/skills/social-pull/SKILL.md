@@ -2,15 +2,15 @@
 ---
 ## Purpose
 
-Collect timeframe-locked public observable evidence for one location-period at a time.
+Collect timeframe-locked public observable evidence for one incubator-period at a time.
 
 ## Task
 
-Collect public observable evidence for one location-period.
+Collect public observable evidence for one incubator-period.
 
 ## Inputs
 
-- One location-period
+- One incubator-period
 
 ## Actions
 
@@ -30,7 +30,7 @@ Collect public observable evidence for one location-period.
 
 ## Completion checks
 
-- Match each evidence record to the subject's location-period using its observation timestamp and supported historical timeframe.
+- Match each evidence record to the subject's incubator-period using its observation timestamp and supported historical timeframe.
 - Evaluate representativeness from sampling coverage, geography, timeframe, and participant breadth; record provider popularity separately.
 - The underlying event is deduplicated from its social spread.
 - Absence and contradiction are preserved.

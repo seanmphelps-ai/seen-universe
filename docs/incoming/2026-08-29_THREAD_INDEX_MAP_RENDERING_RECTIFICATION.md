@@ -1,5 +1,5 @@
 // PROVENANCE: bot=codex session=2026-10-09 task=remove negative instruction and definition lines
-# SEEN THREAD INDEX — MAP, RENDERING, RECTIFICATION, WESTERN, LOCATION
+# SEEN THREAD INDEX — MAP, RENDERING, RECTIFICATION, WESTERN, INCUBATOR
 
 Date: 2026-08-29
 Status: recovered thread material; validate/canonize item by item before implementation.
@@ -9,14 +9,14 @@ Status: recovered thread material; validate/canonize item by item before impleme
 - `lib/natalChart.ts` initializes Swiss Ephemeris and calculates Western planetary positions, retrogrades, aspects, houses, Ascendant, and Midheaven when birth time is known.
 - `app/api/chart/route.ts` exposes the local calculator.
 - `app/api/seen/run/route.ts` calls `calculateNatalChart()` directly, then passes the completed Western result to `buildWesternIdentifyingArchetypeBridge()`.
-- Western calculation remains independent from Location/environment.
+- Western calculation remains independent from Incubator/environment.
 
 ### Open
 - Canonical identifying-archetype-specific Western interpretation criteria are still absent.
 
 ### Established architecture
 - Environment is calculated independently before person-level interpretation.
-- One Environmental Pressure Field per location-period pair.
+- One Environmental Pressure Field per incubator-period pair.
 - Preserve public observable evidence, official-data corroboration, provenance, confidence, contradictions, geography precision, and time coverage.
 
 ### Environmental Resonance layer
@@ -54,7 +54,7 @@ Established meaning:
 - The Forge represents what that pattern had to grow through: place, environment, exposure, timing, relationships, pressure, adaptation, and expression.
 
 Visual/product implication:
-- Location belongs naturally inside the Forge.
+- Incubator belongs naturally inside the Forge.
 
 ## 5. Life Map / system map
 
@@ -139,9 +139,9 @@ Invariant:
 Required before canonization:
 - compare 3-card/four-round approach against 12-candidate broad sweep for discrimination quality, user fatigue, token/runtime cost, and false-positive/Barnum susceptibility.
 
-## 12. SEEN Location scoring/source audit file
+## 12. SEEN Incubator scoring/source audit file
 
-`SEEN_LOCATION_SCORING_VIP_SOURCE_AUDIT.md` should be retained as Location implementation diligence.
+`SEEN_INCUBATOR_SCORING_VIP_SOURCE_AUDIT.md` should be retained as Incubator implementation diligence.
 
 It covers:
 - dataset-specific temporal aggregation
@@ -176,7 +176,7 @@ Source-knowledge only unless separately approved:
 - skill contracts including chart-gen, resonance, verify, intake, social-pull, narrative-extract
 
 ### Partially implemented / architecture present
-- Location v1/v2/scoring infrastructure
+- Incubator v1/v2/scoring infrastructure
 - identifying-archetype-layer contracts
 - Helix/convergence concepts
 - Forge visual references
@@ -195,7 +195,7 @@ Source-knowledge only unless separately approved:
 
 1. Standard source systems calculate natively and independently.
 2. Preserve raw source output before interpretation.
-3. Location/environment is calculated independently.
+3. Incubator/environment is calculated independently.
 5. Convergence happens after independent source layers exist.
 6. Creative rendering happens after supported findings exist.
 7. Public UI can reveal system topology while proprietary mechanics remain server-side.

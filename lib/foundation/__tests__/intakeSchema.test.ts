@@ -1,3 +1,4 @@
+// PROVENANCE: bot=grok session=2026-10-24 task=rename environmental exposure engine to incubator
 import { describe, expect, it } from 'vitest';
 import { BirthAnchorSchema, FoundationIntakeSchema, LivedExposureSchema } from '../intakeSchema';
 
@@ -6,13 +7,13 @@ const validIntake = {
   birthDate: '1979-08-01',
   birthTime: null,
   birthLocation: 'Tarzana, California, United States',
-  livedLocations: ['Los Angeles, California, United States'],
+  livedIncubators: ['Los Angeles, California, United States'],
   livedPeriods: [{
-    location: 'Los Angeles, California, United States',
+    incubator: 'Los Angeles, California, United States',
     startYear: '1997',
     endYear: '2020',
   }],
-  currentLocation: 'Kalispell, Montana, United States',
+  currentIncubator: 'Kalispell, Montana, United States',
   currentPeriod: {
     startYear: '2020',
     endYear: 'present' as const,
@@ -21,30 +22,30 @@ const validIntake = {
 };
 
 describe('FoundationIntakeSchema', () => {
-  it('accepts the Universe birth-date and location timeline', () => {
+  it('accepts the Universe birth-date and incubator timeline', () => {
     expect(FoundationIntakeSchema.safeParse(validIntake).success).toBe(true);
   });
 
-  it('accepts a timeline without an additional lived location', () => {
+  it('accepts a timeline without an additional lived incubator', () => {
     expect(FoundationIntakeSchema.safeParse({
       ...validIntake,
-      livedLocations: [],
+      livedIncubators: [],
       livedPeriods: [],
     }).success).toBe(true);
   });
 
-  it('requires exposure years for every lived location', () => {
+  it('requires exposure years for every lived incubator', () => {
     expect(FoundationIntakeSchema.safeParse({
       ...validIntake,
       livedPeriods: [{
-        location: 'Los Angeles, California, United States',
+        incubator: 'Los Angeles, California, United States',
         startYear: '',
         endYear: '',
       }],
     }).success).toBe(false);
   });
 
-  it('requires the current-location start year', () => {
+  it('requires the current-incubator start year', () => {
     expect(FoundationIntakeSchema.safeParse({
       ...validIntake,
       currentPeriod: {
@@ -58,17 +59,17 @@ describe('FoundationIntakeSchema', () => {
     expect(FoundationIntakeSchema.safeParse({
       ...validIntake,
       livedPeriods: [{
-        location: 'Los Angeles, California, United States',
+        incubator: 'Los Angeles, California, United States',
         startYear: '2020',
         endYear: '1997',
       }],
     }).success).toBe(false);
   });
 
-  it('rejects mismatched lived-location records', () => {
+  it('rejects mismatched lived-incubator records', () => {
     expect(FoundationIntakeSchema.safeParse({
       ...validIntake,
-      livedLocations: ['Oakland, California, United States'],
+      livedIncubators: ['Oakland, California, United States'],
     }).success).toBe(false);
   });
 

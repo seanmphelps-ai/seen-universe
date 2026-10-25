@@ -1,3 +1,4 @@
+// PROVENANCE: bot=grok session=2026-10-24 task=rename environmental exposure engine to incubator
 # SEEN MODULE INTELLIGENCE SOURCE LOCK — Numerology
 
 **Module:** Numerology (Pythagorean default; Chaldean name-only optional)  
@@ -44,7 +45,7 @@ Modality WHOLE untouched in own cocoon — traditional native from verified SOUR
 - No mixing modalities
 - No fold / blend summaries
 - No new-age invent
-- Location incubator AFTER intact seed only
+- Incubator AFTER intact seed only
 - Four IDENTIFYING_ARCHETYPE_ASKS: **dead**
 
 ## Gate

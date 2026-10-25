@@ -1,3 +1,4 @@
+// PROVENANCE: bot=grok session=2026-10-24 task=rename environmental exposure engine to incubator
 'use client';
 
 import { FormEvent, useState } from 'react';
@@ -47,7 +48,7 @@ export default function AuthPage() {
         <header className="seenFlowHeader">
           <h1 id="account-access-title" className="seenDisplayLarge">Your SEEN account</h1>
           <p className="seenFlowIntroduction">
-            Save multiple people, their birth information, locations, charts, and readings.
+            Save multiple people, their birth information, incubators, charts, and readings.
           </p>
           <div className="seenDivider" aria-hidden="true" />
         </header>

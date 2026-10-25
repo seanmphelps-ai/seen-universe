@@ -55,7 +55,7 @@ Phase 1 requires:
 
 After Phase 1 schemas are loaded and validated, execute in this order:
 
-1. Location intake
+1. Incubator intake
 2. Environmental calculation
 3. 64-identifying-archetype environmental penetration and layering
 4. Permanent environmental inheritance
@@ -64,9 +64,9 @@ After Phase 1 schemas are loaded and validated, execute in this order:
 
 Environmental calculation happens before birth-date and ephemeris interpretation.
 
-Location data is required.
+Incubator data is required.
 
-Location data must be resolved, calculated, retained, and stored as part of the required environmental calculation.
+Incubator data must be resolved, calculated, retained, and stored as part of the required environmental calculation.
 
 ## Independent System Run Rule
 
@@ -194,7 +194,7 @@ Schemas come first.
 
 Contracts load before calculation.
 
-Location and environment are required in Phase 1.
+Incubator and environment are required in Phase 1.
 
 Every independent system penetrates and layers through all 64 identifying archetypes.
 

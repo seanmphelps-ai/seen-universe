@@ -46,6 +46,6 @@ Then the regulated version lands because it is earned.
 
 ## 2.0 — Retired reference
 
-Former rule: location field before birth date. Retired 2026-09-17.
+Former rule: incubator field before birth date. Retired 2026-09-17.
 
 Use `docs/00_INTAKE_ORDER_LOCK.md`.

@@ -84,7 +84,7 @@ export const archetype: IdentifyingArchetypeRecord = {
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Slow growth forest biomes; Temperate patient climates; Gradual seasonal transitions; Rushed development in childhood; Ancient geological locations?",
+        "Environment: which of these surroundings turn it up — Slow growth forest biomes; Temperate patient climates; Gradual seasonal transitions; Rushed development in childhood; Ancient geological incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },

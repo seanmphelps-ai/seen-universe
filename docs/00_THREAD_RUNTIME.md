@@ -32,7 +32,7 @@ Card *paragraphs* must use the lived exposure when present.
 
 ## Forbidden for the other thread
 
-- Start at `/foundation/location`
+- Start at `/foundation/incubator`
 - Environment-before-date
 - Pretty natal wheel before two dark cards
 - Optional time field

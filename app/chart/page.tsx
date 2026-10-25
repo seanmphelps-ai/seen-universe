@@ -4,7 +4,7 @@
 import { FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import LivedPlacesField from '../../components/LivedPlacesField';
-import { LocationAutocompleteInput } from '../../components/LocationAutocompleteInput';
+import { IncubatorAutocompleteInput } from '../../components/IncubatorAutocompleteInput';
 import {
   INTAKE_CARDS,
   birthCityCardError,
@@ -165,7 +165,7 @@ export default function NatalChartPage() {
               Birth city
             </label>
             <div className="seenInputFrame">
-              <LocationAutocompleteInput
+              <IncubatorAutocompleteInput
                 id="chart-city"
                 className="seenInput"
                 value={cityQuery}

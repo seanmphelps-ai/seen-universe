@@ -1,10 +1,11 @@
+// PROVENANCE: bot=grok session=2026-10-24 task=rename environmental exposure engine to incubator
 import { NextRequest, NextResponse } from 'next/server';
 import {
   computeRuntimeEvidenceVector,
   fuseRuntimeVectors,
   type RuntimeVectorInput,
-} from '../../../../../lib/location/v2/runtime';
-import type { SourceFamily } from '../../../../../lib/location/v2/types';
+} from '../../../../../lib/incubator/v2/runtime';
+import type { SourceFamily } from '../../../../../lib/incubator/v2/types';
 
 export const runtime = 'nodejs';
 
@@ -37,7 +38,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ vectors, fusion });
   } catch (err) {
     return NextResponse.json(
-      { error: err instanceof Error ? err.message : 'Location V2 scoring failed.' },
+      { error: err instanceof Error ? err.message : 'Incubator V2 scoring failed.' },
       { status: 500 },
     );
   }

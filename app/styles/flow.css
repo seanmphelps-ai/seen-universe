@@ -138,18 +138,18 @@
   pointer-events: none;
 }
 
-.seenLocationList {
+.seenIncubatorList {
   display: grid;
   gap: var(--seen-space-3);
 }
 
-.seenLocationRow {
+.seenIncubatorRow {
   display: flex;
   align-items: center;
   gap: var(--seen-space-2);
 }
 
-.seenLocationRemove {
+.seenIncubatorRemove {
   flex: 0 0 42px;
   width: 42px;
   height: 42px;
@@ -163,7 +163,7 @@
   cursor: pointer;
 }
 
-.seenAddLocation {
+.seenAddIncubator {
   display: inline-flex;
   align-items: center;
   align-self: start;
@@ -181,7 +181,7 @@
   cursor: pointer;
 }
 
-.seenAddLocation span {
+.seenAddIncubator span {
   display: grid;
   width: 28px;
   height: 28px;
@@ -222,7 +222,7 @@
   opacity: 0.72;
 }
 
-/* Location card — environmental exposure */
+/* Incubator card — environmental exposure */
 .seenForgePage {
   position: relative;
   min-height: 100svh;
@@ -345,7 +345,7 @@
 }
 
 .seenForgeForm,
-.seenForgeLocationList {
+.seenForgeIncubatorList {
   display: grid;
   gap: 12px;
 }

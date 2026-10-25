@@ -109,16 +109,16 @@ Every stage defines runtime-validated input and output schemas. Every output pre
 
 The environmental intake collects, in order:
 
-1. birth location;
-2. every location lived for more than 6 months;
+1. birth incubator;
+2. every incubator lived for more than 6 months;
 3. approximate exposure range for each residence;
-4. current location.
+4. current incubator.
 
-Birth location remains distinct from residence.
+Birth incubator remains distinct from residence.
 
 Environmental execution produces:
 
-- resolved locations;
+- resolved incubators;
 - place-period fields;
 - developmental-stage exposure;
 - baseline environmental pressure;

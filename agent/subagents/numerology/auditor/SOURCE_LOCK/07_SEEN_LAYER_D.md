@@ -1,3 +1,4 @@
+// PROVENANCE: bot=grok session=2026-10-24 task=rename environmental exposure engine to incubator
 # SEEN LAYER D — Numerology
 
 Layer D is **SEEN-derived only**. Never present as Goodwin, Jordan, Decoz, Cheiro, or “the numbers say.”
@@ -11,5 +12,5 @@ Layer D is **SEEN-derived only**. Never present as Goodwin, Jordan, Decoz, Cheir
 - Four IDENTIFYING_ARCHETYPE_ASKS (dead)
 - Folding Numerology with Western/Vedic/Hellenistic/Bazi/Dreamspell into one blended card
 - Inventing new number meanings or letter maps
-- Location incubator inside numerology calc (incubator AFTER intact seed only)
+- Incubator inside numerology calc (incubator AFTER intact seed only)
 - Claiming Layer D pressure lists are traditional numerology doctrine

@@ -17,9 +17,9 @@ Purpose: One printable list of what must be fixed, completed, verified, or suppl
 - [x] `closure-and-composure` is the default production branch
 - [x] GitHub pushes automatically trigger Vercel
 - [x] Unrequested `/foundation` splash page removed
-- [x] `/foundation` redirects to `/foundation/location`
-- [x] Location intake route exists
-- [x] Birth location, lived locations, current location, birth date, and approximate calendar-year inputs exist in the current Location screen
+- [x] `/foundation` redirects to `/foundation/incubator`
+- [x] Incubator intake route exists
+- [x] Birth incubator, lived incubators, current incubator, birth date, and approximate calendar-year inputs exist in the current Incubator screen
 - [x] City autocomplete component exists
 
 ## FIRST COMPLETE PRODUCT PATH
@@ -33,7 +33,7 @@ Build this first as one working vertical slice:
 - [ ] Relationship or event context
 - [ ] Independent Person A calculation
 - [ ] Independent Person B calculation
-- [ ] Location-over-time calculation for each person
+- [ ] Incubator-over-time calculation for each person
 - [ ] Dark Chart and shadow extraction for each person
 - [ ] Comparative Helix convergence
 - [ ] Three recognizable comparative-shadow cards
@@ -64,12 +64,12 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 
 ## DISTINCTIVE PRODUCT MECHANICS
 
-- [ ] Treat Location as a primary causal pressure layer
-- [ ] Calculate location effects separately for every person
+- [ ] Treat Incubator as a primary causal pressure layer
+- [ ] Calculate incubator effects separately for every person
 - [ ] Calculate how a shared place affected the relationship field
 - [ ] Explain why a trip improved, strained, or changed the relationship
 - [ ] Include the time period spent in each place
-- [ ] Include trip/event location and dates when analyzing a specific event
+- [ ] Include trip/event incubator and dates when analyzing a specific event
 - [ ] Build the Dark Chart around wound markers, shadow mechanics, protective adaptations, sabotage potential, and recurring loops
 - [ ] Detect convergence across independent source systems
 - [ ] Render convergence through the Helix / DNA-strand model
@@ -102,33 +102,33 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 - [ ] Collect name
 - [ ] Collect relationship role
 - [ ] Collect birth date
-- [ ] Collect birth location
-- [ ] Collect complete location timeline
-- [ ] Collect current location
-- [ ] Collect location start and end dates or approximate calendar years
-- [ ] Collect specific relationship/event dates and locations when relevant
-- [ ] Begin Time Rectification only after the user selects the Location experiential summary that best resonates with lived experience
+- [ ] Collect birth incubator
+- [ ] Collect complete incubator timeline
+- [ ] Collect current incubator
+- [ ] Collect incubator start and end dates or approximate calendar years
+- [ ] Collect specific relationship/event dates and incubators when relevant
+- [ ] Begin Time Rectification only after the user selects the Incubator experiential summary that best resonates with lived experience
 
-## LOCATION INTAKE FIXES
+## INCUBATOR INTAKE FIXES
 
-- [ ] Change the lived-location threshold from 12 months to 6 months everywhere
+- [ ] Change the lived-incubator threshold from 12 months to 6 months everywhere
 - [ ] Change visible copy from “More Than 1 Year” to “6 Months or More”
 - [ ] Change validation, storage, schemas, tests, and documentation to `minimumResidenceMonths: 6`
 - [ ] Require selection of a confirmed geographic record
 - [ ] Store place ID, normalized city, region, country, country code, latitude, longitude, timezone, elevation, feature class, and feature code
 - [ ] Make selected place data immutable until the user intentionally edits it
 - [ ] Remove all production hardcoded cities and personal test data
-- [ ] Keep regression locations only in tests
+- [ ] Keep regression incubators only in tests
 - [ ] Add start/end month or approximate duration where year-only input is insufficient
-- [ ] Support current-location “Present” state
-- [ ] Support repeated lived locations
-- [ ] Support revisiting the same location during different periods
-- [ ] Support temporary trips and event locations separately from residence history
+- [ ] Support current-incubator “Present” state
+- [ ] Support repeated lived incubators
+- [ ] Support revisiting the same incubator during different periods
+- [ ] Support temporary trips and event incubators separately from residence history
 - [ ] Save intake beyond `sessionStorage`
 
-## LOCATION ENGINE
+## INCUBATOR ENGINE
 
-- [ ] Calculate each location independently
+- [ ] Calculate each incubator independently
 - [ ] Calculate duration-weighted exposure
 - [ ] Calculate GeoPresence
 - [ ] Calculate biome
@@ -148,11 +148,11 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 - [ ] Calculate environmental stability and volatility
 - [ ] Add astrocartographic conditions when rectified birth time is available
 - [ ] Preserve birthplace, lived places, current place, trips, and event places as separate records
-- [ ] Produce an `EnvironmentalPressureField` for every location-period pair
+- [ ] Produce an `EnvironmentalPressureField` for every incubator-period pair
 - [ ] Route every environmental contribution into all relevant identifying archetypes
 - [ ] Produce a complete 64-record Environmental Identifying archetype Layer
 
-## LOCATION EVIDENCE PIPELINE
+## INCUBATOR EVIDENCE PIPELINE
 
 - [ ] Use public observable signals as the primary evidence universe
 - [ ] Ingest local social posts, forums, reviews, news, events, commerce, jobs, housing, search, and movement/place signals through provider-agnostic adapters
@@ -181,7 +181,7 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 - [ ] Add and verify nakshatras and dashas
 - [?] Lock whether numerology remains in the first product pass
 - [ ] Verify Galaxy Signature / Dreamspell calculation protocol
-- [ ] Begin Time Rectification after the user selects the Location experiential summary that best resonates with lived experience
+- [ ] Begin Time Rectification after the user selects the Incubator experiential summary that best resonates with lived experience
 - [ ] Generate the first three hidden-time summaries from 04:00, 12:00 noon, and 20:00
 - [ ] After each user selection, narrow around the selected candidate using selected time -3 hours, selected time, and selected time +3 hours
 - [ ] Continue narrowing through the approved rectification rounds
@@ -249,7 +249,7 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 - [ ] Compare their birth patterns
 - [ ] Compare their wound and shadow patterns
 - [ ] Compare their attachment and regulation needs
-- [ ] Compare their locations over time
+- [ ] Compare their incubators over time
 - [ ] Compare shared place and shared timeframe
 - [ ] Compare how each person received the same environment
 - [ ] Compare triggers and protective adaptations
@@ -372,7 +372,7 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 
 - [ ] Add account and email gate at the correct point in onboarding
 - [ ] Replace critical `sessionStorage` records with persistent storage
-- [ ] Define subject, relationship, location-period, event, identifying-archetype-layer, evidence, convergence, shadow, reading, Cadence, and sharing tables
+- [ ] Define subject, relationship, incubator-period, event, identifying-archetype-layer, evidence, convergence, shadow, reading, Cadence, and sharing tables
 - [ ] Version all calculations and extraction templates
 - [ ] Preserve provenance for generated claims
 - [ ] Encrypt private user records
@@ -403,7 +403,7 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 - [ ] Keep the active card centered and illuminated
 - [ ] Keep prior cards visible as sealed layers
 - [ ] Implement pulse, turn, dissolve, environmental transformation, and next-question transitions
-- [ ] Visualize Location pressure before celestial layers
+- [ ] Visualize Incubator pressure before celestial layers
 - [ ] Visualize distinct modality layers interwoven in the Helix
 - [ ] Verify animation performance and reduced-motion behavior
 
@@ -414,8 +414,8 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 - [ ] Add provenance-preservation tests
 - [ ] Add contradiction and convergence tests
 - [ ] Add Person A / Person B isolation tests
-- [ ] Add location-duration and repeated-location tests
-- [ ] Add trip/event-location comparison tests
+- [ ] Add incubator-duration and repeated-incubator tests
+- [ ] Add trip/event-incubator comparison tests
 - [ ] Add time-rectification tests
 - [ ] Add three-card calibration tests
 - [ ] Add Generator / Oracle boundary tests
@@ -437,7 +437,7 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 - [ ] Lock one Closure & Composure entry hook
 - [ ] Lock one result transition
 - [ ] Lock one Cadence handoff
-- [ ] Keep Location and comparative shadows visible in the differentiating explanation
+- [ ] Keep Incubator and comparative shadows visible in the differentiating explanation
 - [ ] Explain the Helix in plain language
 - [ ] Explain family and teacher value
 - [ ] Explain Voice Oracle
@@ -461,7 +461,7 @@ Current quality bar: `docs/examples/FATHER_READING_EXEMPLAR.md` (Sean: "the best
 - [ ] Add the family comparative thread
 - [ ] Add recovered Helix / DNA-strand documents
 - [ ] Add recovered Dark Chart and shadow documents
-- [ ] Add recovered Location-over-time documents
+- [ ] Add recovered Incubator-over-time documents
 - [ ] Add recovered Cadence and widget documents
 - [ ] Add recovered Eden documents
 - [ ] Add recovered copy and splash research

@@ -1,13 +1,13 @@
 // PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { NextResponse } from 'next/server';
-import { buildLocationField } from '../../../../lib/location/buildLocationField';
-import type { LocationInput } from '../../../../lib/location/types';
+import { buildIncubatorField } from '../../../../lib/incubator/buildIncubatorField';
+import type { IncubatorInput } from '../../../../lib/incubator/types';
 
 
 export const runtime = 'nodejs';
 
-const TEST_INPUT: LocationInput = {
-  label: 'Los Angeles, CA (fixed live-verification location)',
+const TEST_INPUT: IncubatorInput = {
+  label: 'Los Angeles, CA (fixed live-verification incubator)',
   latitude: 34.0522,
   longitude: -118.2437,
   exposureStart: '2018-01-01',
@@ -24,7 +24,7 @@ function maskKey(value: string | undefined): { present: boolean; length: number;
 }
 
 export async function GET() {
-  const field = await buildLocationField(TEST_INPUT);
+  const field = await buildIncubatorField(TEST_INPUT);
   const success = field.adapterFailures.length === 0 && field.unknownConditions.length === 0;
 
   return NextResponse.json(

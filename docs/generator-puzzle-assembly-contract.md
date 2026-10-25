@@ -3,7 +3,7 @@
 
 They reconstruct a picture the way a person solves a jigsaw puzzle: first classify the piece, then determine what it can legitimately connect to, then assemble compatible pieces into clusters, and only then reveal the larger pattern.
 
-This contract applies to Location first and is intended to govern every SEEN generator that works from heterogeneous evidence.
+This contract applies to Incubator first and is intended to govern every SEEN generator that works from heterogeneous evidence.
 
 ---
 
@@ -51,7 +51,7 @@ Examples:
 
 - geographic identity
 - geographic precision
-- location role: BIRTH / LIVED / CURRENT
+- incubator role: BIRTH / LIVED / CURRENT
 - applicable time period
 - historical versus current evidence
 - source identity
@@ -185,9 +185,9 @@ Preserve them as part of the actual picture.
 
 ## Environmental evidence before person-specific translation
 
-Location generation reconstructs the environment first.
+Incubator generation reconstructs the environment first.
 
-The Location generator answers what was present, repeated, rewarded, punished, normalized, absent, amplified, feared, desired, reachable, difficult, or structurally constrained in the environment.
+The Incubator generator answers what was present, repeated, rewarded, punished, normalized, absent, amplified, feared, desired, reachable, difficult, or structurally constrained in the environment.
 
 Person-specific translation happens only after the environmental picture has been assembled and connected to the subject through supported SEEN transitions.
 

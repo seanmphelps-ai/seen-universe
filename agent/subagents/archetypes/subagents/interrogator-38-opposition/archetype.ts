@@ -87,7 +87,7 @@ export const archetype: IdentifyingArchetypeRecord = {
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Border biomes — where two ecosystems meet; Volatile transitional weather; Equinox locations — equal dark and light; Divided household — warring parents; Tectonic boundary locations?",
+        "Environment: which of these surroundings turn it up — Border biomes — where two ecosystems meet; Volatile transitional weather; Equinox incubators — equal dark and light; Divided household — warring parents; Tectonic boundary incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },

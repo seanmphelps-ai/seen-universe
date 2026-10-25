@@ -9,7 +9,7 @@
 - The 64 SEEN Identifying archetypes retain canonical hexagram names; Human Design and independent I Ching computation are excluded.
 - App name: Scene
 - Phrase: "Seen. You. Them. Us."
-- Dedicated agents per concern: time-narrowing, location, etc.
+- Dedicated agents per concern: time-narrowing, incubator, etc.
 
 ## BIRTH-IMPRINT / FIRST SABOTAGE LOOP
 

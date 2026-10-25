@@ -19,7 +19,7 @@
   "roles": {
     "generator": {
       "responsibility": "Resolve factual inputs, execute invariant checklists, evaluate canonical definitions, calculate pressure, and emit normalized evaluations.",
-      "inputs": ["subjectId", "location", "startDate", "endDate"],
+      "inputs": ["subjectId", "incubator", "startDate", "endDate"],
       "outputs": ["environmentalPressureProfile", "seenEvaluations", "identifyingArchetypeDeposits", "lifeSectionDeposits"]
     },
     "oracle": {
@@ -86,7 +86,7 @@
   "environmentalGenerator": {
     "input": {
       "subjectId": "string",
-      "location": {
+      "incubator": {
         "label": "string",
         "country": "string",
         "region": "string",
@@ -149,7 +149,7 @@
     "output": {
       "profileId": "string",
       "subjectId": "string",
-      "location": "resolved location object",
+      "incubator": "resolved incubator object",
       "period": {
         "startDate": "ISO-8601 date",
         "endDate": "ISO-8601 date | current"
@@ -297,7 +297,7 @@
   ],
   "acceptanceCriteria": [
     "Every domain emits the universal evaluation shape.",
-    "Every environmental location executes the checklist in the stored order.",
+    "Every environmental incubator executes the checklist in the stored order.",
     "Every causal relationship resolves from a canonical registry definition.",
     "Every evaluation carries evidence and confidence.",
     "Every identifying archetype deposit includes a weight and reason.",

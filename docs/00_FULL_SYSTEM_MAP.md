@@ -65,7 +65,7 @@ Output: full Western at the locked clock. Own plate on the rail.
 
 ---
 
-## PHASE C — Lived-location gift and cost
+## PHASE C — Lived-incubator gift and cost
 
 Three summaries per major place. Each summary has good and bad.
 Rural vs projects, year-specific. Same city different years = different cards.

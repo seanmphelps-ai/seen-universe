@@ -87,7 +87,7 @@ export const archetype: IdentifyingArchetypeRecord = {
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Abundance biomes — food rich environments; Fertile atmospheric conditions; Growing season dominant locations; Parentified child; Fertile nourishing ground?",
+        "Environment: which of these surroundings turn it up — Abundance biomes — food rich environments; Fertile atmospheric conditions; Growing season dominant incubators; Parentified child; Fertile nourishing ground?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },

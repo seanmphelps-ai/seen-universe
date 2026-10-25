@@ -9,15 +9,15 @@ The implementation must preserve the following invariants across every phase:
 1. Native independence
 Each modality completes its own calculation independently and retains its original methodology, intermediate values, raw inputs, final values, provenance, and version.
 2. Incubator dual-layer model
-Every location contains:
+Every incubator contains:
   • an objective environmental field; and
   • a person-specific subjective exposure record.
 3. No environmental determinism
 Objective conditions must never be treated as proof of subjective experience, developmental effect, or recognition.
 4. Person-specific exposure
-In shared locations and relationships, each person retains a separate subjective exposure record.
+In shared incubators and relationships, each person retains a separate subjective exposure record.
 5. Traceable convergence
-Every convergence result must be traceable to its source signals, calculations, timing, location, relationship context, environmental evidence, subjective report, recognition evidence, and translator output.
+Every convergence result must be traceable to its source signals, calculations, timing, incubator, relationship context, environmental evidence, subjective report, recognition evidence, and translator output.
 6. Contradiction preservation
 Conflicting signals, mismatches, unsupported fields, and unresolved interpretations remain visible.
 7. Conditional future modeling
@@ -102,7 +102,7 @@ Implement versioned schemas for:
 • SeenRunInputSchema
 • NativeSignalSchema
 • AstronomicalStateSchema
-• LocationHistorySchema
+• IncubatorHistorySchema
 • ObjectiveEnvironmentSchema
 • SubjectiveExposureSchema
 • IncubatorSchema
@@ -122,7 +122,7 @@ Required capabilities
 • Backward-compatible migrations.
 • Stable identifiers for:
   • persons;
-  • locations;
+  • incubators;
   • runs;
   • signals;
   • calculations;
@@ -159,7 +159,7 @@ Implement the subject model, birth data, confidence states, and rectification wo
 Deliverables
 
 • Subject creation and update service.
-• Birth date and location validation.
+• Birth date and incubator validation.
 • Birth-time states:
   • EXACT
   • RECTIFIED
@@ -271,13 +271,13 @@ Phase 4 — Objective Environmental Data Layer
 
 Objective
 
-Build the objective environmental field for each location and period.
+Build the objective environmental field for each incubator and period.
 
 Deliverables
 
-• Location registry.
+• Incubator registry.
 • Coordinate normalization.
-• Historical location-period model.
+• Historical incubator-period model.
 • Environmental snapshot model.
 • Environmental source registry.
 • Historical reconstruction pipeline.
@@ -321,7 +321,7 @@ Each objective field must support:
 Dependencies
 
 • Phase 1 schemas.
-• Location and date normalization.
+• Incubator and date normalization.
 • External environmental data sources.
 
 Acceptance criteria
@@ -344,7 +344,7 @@ Implement a manageable, structured intake for person-specific lived exposure.
 
 Deliverables
 
-• Location exposure questionnaire.
+• Incubator exposure questionnaire.
 • Exposure category model.
 • Intensity, frequency, and direction fields.
 • Setting-selection model.
@@ -402,7 +402,7 @@ Support:
 Dependencies
 
 • Phase 1 schemas.
-• Phase 4 location and objective environment layer.
+• Phase 4 incubator and objective environment layer.
 • Privacy and consent decisions from Phase 0.
 
 Acceptance criteria
@@ -413,7 +413,7 @@ Acceptance criteria
 • The user can explicitly select unknown or cannot assess.
 • Free text is optional.
 • The system does not infer subjective exposure solely from objective environmental data.
-• Exposure reports are person-specific and location-period-specific.
+• Exposure reports are person-specific and incubator-period-specific.
 • Exposure reports can be revised without deleting prior versions.
 • The system can generate a subjective summary that clearly states it is based on reported experience.
 • Sensitive exposure data is access-controlled and auditable.
@@ -424,7 +424,7 @@ Phase 6 — Incubator Assembly and Alignment
 
 Objective
 
-Combine objective environmental conditions and subjective reported exposure into a location incubator without collapsing the two layers.
+Combine objective environmental conditions and subjective reported exposure into an incubator without collapsing the two layers.
 
 Deliverables
 
@@ -433,12 +433,12 @@ Deliverables
 • Objective-subjective mismatch engine.
 • Incubator summary generator.
 • Exposure certainty propagation.
-• Location recognition state model.
+• Incubator recognition state model.
 • Incubator versioning.
 
 Required outputs
 
-For each location-period-person combination:
+For each incubator-period-person combination:
 
 • objective environmental field;
 • subjective reported exposure;
@@ -634,7 +634,7 @@ Dependencies
 Acceptance criteria
 
 • All 64 identifying archetypes are addressable through a common interface.
-• Each identifying archetype can receive native signals, timing, location, relationship, and incubator context.
+• Each identifying archetype can receive native signals, timing, incubator, relationship, and incubator context.
 • Identifying archetype outputs preserve source signal identity.
 • Unsupported fields remain unknown.
 • Identifying archetype expressions can be amplified, suppressed, regulated, rerouted, or left unresolved.
@@ -659,7 +659,7 @@ Deliverables
 • Contradiction engine.
 • Recurrence engine.
 • Timing-overlap engine.
-• Location-overlap engine.
+• Incubator-overlap engine.
 • Relationship-overlap engine.
 • Objective environmental support evaluator.
 • Subjective exposure support evaluator.
@@ -694,7 +694,7 @@ Each supported intersection must store:
 • direction;
 • pressure;
 • timeframe;
-• location;
+• incubator;
 • objective environmental field;
 • subjective exposure;
 • relationship;
@@ -809,7 +809,7 @@ Required historical capture fields
 • Capture ID.
 • Person ID.
 • Window start and end.
-• Location ID.
+• Incubator ID.
 • Person state at entry.
 • Natal chart ID.
 • Historical sky ID.
@@ -837,7 +837,7 @@ Acceptance criteria
 • Subjective exposure is stored as reported lived evidence.
 • Historical recognition is distinct from system-generated interpretation.
 • The system can reconstruct a historical capture without overwriting current state.
-• Historical captures can be compared across locations, periods, and identifying archetype states.
+• Historical captures can be compared across incubators, periods, and identifying archetype states.
 
 ────────
 
@@ -845,13 +845,13 @@ Phase 11 — Present Capture
 
 Objective
 
-Evaluate the person’s current state against the current location, current environment, current relationships, current sky, and active identifying archetype field.
+Evaluate the person’s current state against the current incubator, current environment, current relationships, current sky, and active identifying archetype field.
 
 Deliverables
 
 • Present capture workflow.
 • Current-sky integration.
-• Current location incubator.
+• Current incubator.
 • Current relationship context.
 • Current identifying archetype field.
 • Now-state generator.
@@ -860,7 +860,7 @@ Deliverables
 Required present-state inputs
 
 • Person’s accumulated state.
-• Current location.
+• Current incubator.
 • Current objective environment.
 • Current subjective exposure.
 • Current sky.
@@ -877,9 +877,9 @@ Dependencies
 Acceptance criteria
 
 • Present capture reflects the person’s accumulated state without altering immutable native mechanics.
-• Current sky and current location are evaluated for the target time.
+• Current sky and current incubator are evaluated for the target time.
 • Current subjective exposure remains person-reported or explicitly forecast.
-• Current relationships are represented separately from location and individual state.
+• Current relationships are represented separately from incubator and individual state.
 • The output distinguishes current recognition from historical recognition.
 • The system can identify active, suppressed, regulated, rerouted, and unresolved identifying archetype expressions.
 
@@ -889,15 +889,15 @@ Phase 12 — Two-Person Relationship Tree
 
 Objective
 
-Implement person-to-person, person-to-location, and shared-context analysis without merging individual exposure histories.
+Implement person-to-person, person-to-incubator, and shared-context analysis without merging individual exposure histories.
 
 Deliverables
 
 • Relationship input model.
 • Two-person native field.
-• Person A × location field.
-• Person B × location field.
-• Shared relationship × location field.
+• Person A × incubator field.
+• Person B × incubator field.
+• Shared relationship × incubator field.
 • Relationship timing model.
 • Shared capture model.
 • Person-specific exposure comparison.
@@ -915,9 +915,9 @@ Required relationship layers
 • Person A identifying archetype field.
 • Person B identifying archetype field.
 • A ↔ B native field.
-• A ↔ location.
-• B ↔ location.
-• A ↔ B ↔ location.
+• A ↔ incubator.
+• B ↔ incubator.
+• A ↔ B ↔ incubator.
 • Shared time.
 
 Dependencies
@@ -931,7 +931,7 @@ Acceptance criteria
 • Shared objective conditions may be reused, but subjective exposure is never copied automatically.
 • Relationship effects are stored separately from individual effects.
 • The system can identify where A and B align, diverge, reinforce, or conflict.
-• A shared location does not imply shared recognition.
+• A shared incubator does not imply shared recognition.
 • Relationship timing can be evaluated independently from individual timing.
 • Shared captures preserve all individual and relational provenance.
 
@@ -983,7 +983,7 @@ Acceptance criteria
 • The system exposes the assumptions behind each forecast.
 • Contradictory indicators reduce or qualify confidence.
 • Candidate ranking remains probabilistic and explainable.
-• The system can search across date ranges, locations, and optional relationship participants.
+• The system can search across date ranges, incubators, and optional relationship participants.
 
 ────────
 
@@ -1008,7 +1008,7 @@ Exact-state similarity
 
 Compare:
 
-• location characteristics;
+• incubator characteristics;
 • objective environmental conditions;
 • date and season;
 • astronomical configuration;
@@ -1044,8 +1044,8 @@ Acceptance criteria
 
 • Historical captures can be selected as target patterns.
 • Exact and functional similarity are scored separately.
-• A future location can be objectively similar but functionally dissimilar.
-• A future location can be functionally similar despite objective differences.
+• A future incubator can be objectively similar but functionally dissimilar.
+• A future incubator can be functionally similar despite objective differences.
 • Developmental stage, resources, relationships, and timing are included in functional comparison.
 • The output clearly distinguishes recurrence from resemblance.
 • Unsupported future conclusions remain conditional or unresolved.
@@ -1148,7 +1148,7 @@ Acceptance criteria
 • The output distinguishes protective adaptation from moral judgment.
 • Self-sabotage is represented as a repeated strategy with a protective need, payoff, overuse, and eventual cost.
 • Contradictions and unresolved fields remain visible.
-• The output does not label a location universally good or bad.
+• The output does not label a incubator universally good or bad.
 • Jung / sovereignty output receives the completed recognition field and its limitations.
 • Cadence output identifies whether the result concerns past reconstruction, present capture, future search, or multiple modes.
 
@@ -1330,7 +1330,7 @@ Every final convergence must answer:
 • Which identifying archetype was involved?
 • Which native systems contributed?
 • What was the timing?
-• What location was involved?
+• What incubator was involved?
 • What objective conditions were present?
 • What subjective exposure was reported?
 • What relationships were involved?
@@ -1430,7 +1430,7 @@ Exit criteria
 • Historical capture operational.
 • Present capture operational.
 • Two-person relationship tree operational.
-• Shared locations preserve separate subjective exposure.
+• Shared incubators preserve separate subjective exposure.
 • Historical and present outputs are distinguishable.
 
 ────────
@@ -1553,7 +1553,7 @@ Verify invariants such as:
 • adding a modality does not mutate existing native calculations;
 • removing one signal reduces or changes convergence only through explicit rules;
 • unknown values remain unknown;
-• shared locations do not merge person-specific exposure.
+• shared incubators do not merge person-specific exposure.
 
 Integration testing
 
@@ -1579,7 +1579,7 @@ final output
   → native signals
   → native calculations
   → timing
-  → location
+  → incubator
   → objective environment
   → subjective exposure
   → recognition evidence
@@ -1593,7 +1593,7 @@ The implementation is complete only when all of the following are true:
 
 1. Every enabled modality calculates independently.
 2. Native mechanics and provenance remain intact.
-3. Every location is represented as an incubator.
+3. Every incubator is represented as an incubator.
 4. Objective environmental conditions and subjective exposure are stored separately.
 5. Subjective exposure is person-specific.
 6. Objective conditions do not imply subjective experience.
@@ -1601,9 +1601,9 @@ The implementation is complete only when all of the following are true:
 8. All 64 identifying archetypes are available through a common interrogation architecture.
 9. Identifying archetype outputs support WHAT, WHEN, WHERE, HOW, WHY, probability-increasing conditions, and probability-reducing conditions.
 10. Life-section routing preserves identifying archetype and source provenance.
-11. Convergence accumulates reinforcement, contradiction, recurrence, timing, location, relationship, objective support, subjective support, recognition, and unresolved states.
+11. Convergence accumulates reinforcement, contradiction, recurrence, timing, incubator, relationship, objective support, subjective support, recognition, and unresolved states.
 12. Historical captures preserve the person’s state at entry.
-13. Present captures include current sky, current location, current relationships, and current identifying archetype field.
+13. Present captures include current sky, current incubator, current relationships, and current identifying archetype field.
 14. Relationship analysis preserves separate exposure records for each person.
 15. Future subjective exposure is modeled conditionally and labeled as forecast.
 16. Historical-to-future search supports both exact-state and functional-state similarity.
@@ -1612,14 +1612,14 @@ The implementation is complete only when all of the following are true:
 19. Every final convergence object is fully traceable.
 20. The runtime remains conditional, probabilistic, versioned, auditable, and capable of leaving unsupported fields unresolved. SEEN™ CONVERGENCE RUNTIME TREE — BUILDER SPEC
 
-The runtime preserves every source system as an independent calculation, preserves every raw mechanic and provenance trail, routes compatible signals through the 64 SEEN Identifying archetypes, aligns signals by person × location × time × relationship, accumulates recognition evidence, and renders the strongest convergence without erasing contradiction or unresolved fields.
+The runtime preserves every source system as an independent calculation, preserves every raw mechanic and provenance trail, routes compatible signals through the 64 SEEN Identifying archetypes, aligns signals by person × incubator × time × relationship, accumulates recognition evidence, and renders the strongest convergence without erasing contradiction or unresolved fields.
 
-A location is treated as an incubator. Each incubator is defined by two distinct but equally necessary layers:
+A incubator is treated as an incubator. Each incubator is defined by two distinct but equally necessary layers:
 
-1. Objective environmental conditions: the measurable or historically reconstructable conditions present at the location during the relevant period.
-2. Subjective reported exposure: what the person says they experienced, perceived, felt, and adapted to while living in or passing through that location.
+1. Objective environmental conditions: the measurable or historically reconstructable conditions present at the incubator during the relevant period.
+2. Subjective reported exposure: what the person says they experienced, perceived, felt, and adapted to while living in or passing through that incubator.
 
-Neither layer replaces the other. Objective conditions establish the exposure field; subjective reporting establishes the person’s lived relationship to that field. The same roof, neighborhood, climate, institution, family, or social environment may produce different developmental effects for different people. Therefore, location recognition must never be inferred from environmental description alone.
+Neither layer replaces the other. Objective conditions establish the exposure field; subjective reporting establishes the person’s lived relationship to that field. The same roof, neighborhood, climate, institution, family, or social environment may produce different developmental effects for different people. Therefore, incubator recognition must never be inferred from environmental description alone.
 
 System Update Request.txt
 
@@ -1687,9 +1687,9 @@ SEEN
 │   Every native result retains its original methodology,
 │   intermediate calculation, source system and provenance.
 │
-├── 02. LOCATION INCUBATOR HISTORY
+├── 02. INCUBATOR HISTORY
 │   │
-│   ├── LOCATION 1
+│   ├── INCUBATOR 1
 │   │   ├── coordinates
 │   │   ├── startDate
 │   │   ├── endDate
@@ -1754,12 +1754,12 @@ SEEN
 │   │       ├── NO
 │   │       └── UNKNOWN
 │   │
-│   ├── LOCATION 2
-│   ├── LOCATION 3
-│   └── CURRENT LOCATION
+│   ├── INCUBATOR 2
+│   ├── INCUBATOR 3
+│   └── CURRENT INCUBATOR
 │
 │   RULE:
-│   Every location is an incubator.
+│   Every incubator is an incubator.
 │   The incubator contains both the objective environmental field
 │   and the person's subjective reported exposure.
 │
@@ -1956,7 +1956,7 @@ SEEN
 │   ├── direction
 │   ├── pressure
 │   ├── timeframe
-│   ├── location
+│   ├── incubator
 │   ├── objectiveEnvironmentalField
 │   ├── subjectiveExposure
 │   ├── relationship
@@ -1977,7 +1977,7 @@ SEEN
 │   ├── CONTRADICTION
 │   ├── RECURRENCE
 │   ├── TIMING OVERLAP
-│   ├── LOCATION OVERLAP
+│   ├── INCUBATOR OVERLAP
 │   ├── RELATIONAL OVERLAP
 │   ├── OBJECTIVE ENVIRONMENTAL SUPPORT
 │   ├── SUBJECTIVE EXPOSURE SUPPORT
@@ -2029,7 +2029,7 @@ SeenRunInputSchema.parse({
     personId,
     birth: {
       date,
-      location: {
+      incubator: {
         city,
         region,
         country,
@@ -2056,13 +2056,13 @@ SeenRunInputSchema.parse({
       | "RELOCATION",
 
     targetDateTime,
-    targetLocationId,
+    targetIncubatorId,
     comparisonPersonIds: []
   },
 
-  locationHistory: [
+  incubatorHistory: [
     {
-      locationId,
+      incubatorId,
       coordinates,
       startDate,
       endDate,
@@ -2098,7 +2098,7 @@ SeenRunInputSchema.parse({
 });
 
 
-LOCATION INTAKE DECISION
+INCUBATOR INTAKE DECISION
 
 The runtime will not require the person to produce a polished written narrative before the incubator can be evaluated. The intake should use a structured exposure inventory with a manageable number of selectable categories, followed by optional clarification.
 
@@ -2147,7 +2147,7 @@ exposureDirection:
   | "MIXED"
   | "UNKNOWN"
 
-The intake should also allow the person to identify the physical and social character of the location:
+The intake should also allow the person to identify the physical and social character of the incubator:
 
 settingSelections:
   | "URBAN"
@@ -2166,7 +2166,7 @@ settingSelections:
 
 These setting selections are not treated as conclusions. They are reported descriptors that help define the subjective exposure layer and guide the incubator summary.
 
-The system may generate three concise summaries for each location, but those summaries are outputs of the intake and convergence process rather than substitutes for the person’s report:
+The system may generate three concise summaries for each incubator, but those summaries are outputs of the intake and convergence process rather than substitutes for the person’s report:
 
 1. Objective environmental summary: what conditions were present.
 2. Subjective exposure summary: what the person reports experiencing.
@@ -2259,14 +2259,14 @@ AstronomicalStateSchema.parse({
 });
 
 
-LOCATION × PERSON CONVERGENCE
+INCUBATOR × PERSON CONVERGENCE
 
 PERSON NATIVE SIGNAL
        │
        │
        ├──────────────┐
        ▼              ▼
-Identifying archetype 28          LOCATION INCUBATOR
+Identifying archetype 28          INCUBATOR
 pressure           Montana
 pattern            winter 2026
        │              │
@@ -2303,8 +2303,8 @@ ContextualIntersectionSchema.parse({
     vedicSignalId
   ],
 
-  location: {
-    locationId: "montana-home",
+  incubator: {
+    incubatorId: "montana-home",
     exposureWindow: ["2025-01-01", "2026-09-04"],
 
     objectiveEnvironment: {
@@ -2337,11 +2337,11 @@ ContextualIntersectionSchema.parse({
 });
 
 
-Location itself receives no universal GOOD/BAD label. The incubator is not a moral judgment and does not determine a universal outcome. The same objective environment may amplify one person, regulate another, suppress a third person’s expression, or remain unresolved for another.
+Incubator itself receives no universal GOOD/BAD label. The incubator is not a moral judgment and does not determine a universal outcome. The same objective environment may amplify one person, regulate another, suppress a third person’s expression, or remain unresolved for another.
 
 The runtime must distinguish:
 
-• Objective environmental presence: the condition existed in the location or period.
+• Objective environmental presence: the condition existed in the incubator or period.
 • Subjective exposure: the person reports encountering or experiencing the condition.
 • Identifying archetype relevance: the condition intersects with a specific identifying archetype mechanism.
 • Developmental effect: the condition appears to have shaped adaptation, behavior, capacity, or recognition.
@@ -2385,7 +2385,7 @@ HistoricalCaptureSchema.parse({
     end: "2015-06-27"
   },
 
-  locationId: "bali",
+  incubatorId: "bali",
 
   personStateAtEntry: stateSnapshotId,
 
@@ -2425,7 +2425,7 @@ PRESENT CAPTURE
 
 WHO THE PERSON HAS BECOME
           ×
-CURRENT LOCATION INCUBATOR
+CURRENT INCUBATOR
           ×
 OBJECTIVE ENVIRONMENT
           ×
@@ -2440,7 +2440,7 @@ CURRENT RELATIONSHIPS
       NOW STATE
 
 
-The runtime specification defines SEEN as a moving field in which time, location, relationships, developmental period and astronomical movement continuously alter expression while underlying mechanics remain traceable. System Update Request.txt The incubator adds a required distinction between the conditions present in the environment and the person’s reported experience of those conditions.
+The runtime specification defines SEEN as a moving field in which time, incubator, relationships, developmental period and astronomical movement continuously alter expression while underlying mechanics remain traceable. System Update Request.txt The incubator adds a required distinction between the conditions present in the environment and the person’s reported experience of those conditions.
 
 TWO-PERSON RELATIONSHIP TREE
 
@@ -2457,7 +2457,7 @@ PERSON A                              PERSON B
                 A ↔ B NATIVE FIELD
                          │
                          ▼
-                 LOCATION INCUBATOR
+                 INCUBATOR
                          │
           ┌──────────────┼──────────────┐
           ▼              ▼              ▼
@@ -2477,7 +2477,7 @@ PERSON A                              PERSON B
                  SHARED CAPTURE
 
 
-For relationship analysis, the incubator must preserve separate exposure records for each person. Person A’s experience of a household, city, climate, or institution must not be assigned to Person B. The shared location may be objective, but the subjective exposure is person-specific.
+For relationship analysis, the incubator must preserve separate exposure records for each person. Person A’s experience of a household, city, climate, or institution must not be assigned to Person B. The shared incubator may be objective, but the subjective exposure is person-specific.
 
 TRAVEL WINDOW SEARCH
 
@@ -2529,7 +2529,7 @@ candidate window
 └── confidence
 
 
-The supplied specification explicitly includes future astronomical pressure, future environmental pressure, relational collisions, location alignment, timing alignment, travel/relocation comparison, event selection and recurrence windows. System Update Request.txt
+The supplied specification explicitly includes future astronomical pressure, future environmental pressure, relational collisions, incubator alignment, timing alignment, travel/relocation comparison, event selection and recurrence windows. System Update Request.txt
 
 For future windows, subjective exposure is not treated as known fact. It is modeled as a conditional forecast based on prior reported patterns, objective conditions, relationship context, and identifying archetype activation. The output must distinguish forecast from lived evidence.
 
@@ -2544,7 +2544,7 @@ Bali — June 2015
 ├── historical sky
 ├── A natal ↔ historical sky
 ├── B natal ↔ historical sky
-├── objective historical location field
+├── objective historical incubator field
 ├── subjective exposure records
 ├── identifying archetype convergence
 └── recognized outcome
@@ -2554,7 +2554,7 @@ Bali — June 2015
              │
              ▼
 SEARCH FUTURE
-location × date × time
+incubator × date × time
              │
              ▼
 COMPARE EACH CANDIDATE
@@ -2574,7 +2574,7 @@ Future search must compare both:
 • objective environmental similarity;
 • functional similarity in the person’s likely subjective exposure and identifying archetype activation.
 
-A future location may resemble a historical incubator objectively while producing a different subjective experience because the person, relationships, developmental stage, resources, or timing have changed.
+A future incubator may resemble a historical incubator objectively while producing a different subjective experience because the person, relationships, developmental stage, resources, or timing have changed.
 
 SIGNAL RIPPLE
 
@@ -2607,7 +2607,7 @@ reinforce    preserve separately
       │          │
       └────┬─────┘
            ▼
-   LOCATION INCUBATOR
+   INCUBATOR
            │
    ┌───────┴────────┐
    ▼                ▼
@@ -2681,7 +2681,7 @@ SeenConvergenceSchema.parse({
 
   context: {
     timeframe,
-    locationId,
+    incubatorId,
     relationshipIds: []
   },
 
@@ -2738,7 +2738,7 @@ SeenConvergenceSchema.parse({
   trace: {
     nativeMechanics,
     calculations,
-    locations,
+    incubators,
     objectiveEnvironmentalConditions,
     subjectiveExposureReports,
     timing,
@@ -2754,7 +2754,7 @@ CALCULATE INDEPENDENTLY
         ↓
 PRESERVE IDENTITY
         ↓
-DEFINE EACH LOCATION AS AN INCUBATOR
+DEFINE EACH INCUBATOR AS AN INCUBATOR
         ↓
 RECORD OBJECTIVE ENVIRONMENTAL CONDITIONS
         ↓
@@ -2793,11 +2793,11 @@ PAST RECONSTRUCTION × PRESENT CAPTURE × FUTURE SEARCH
 
 SEEN’s output remains conditional, probabilistic and traceable. Stronger language follows stronger convergence, while conflicting and weak evidence remains visible.
 
-The final design decision is that location is not treated as a single environmental label or a universal influence. Location is treated as an incubator defined by both objective environmental conditions and the person’s reported subjective exposure. The objective layer describes what was present. The subjective layer describes what the person experienced. The convergence layer determines how those two layers interacted with the person’s native mechanics, developmental period, relationships, timing and identifying archetype field.
+The final design decision is that incubator is not treated as a single environmental label or a universal influence. Incubator is treated as an incubator defined by both objective environmental conditions and the person’s reported subjective exposure. The objective layer describes what was present. The subjective layer describes what the person experienced. The convergence layer determines how those two layers interacted with the person’s native mechanics, developmental period, relationships, timing and identifying archetype field.
 
-The intake therefore uses structured exposure categories rather than relying only on three prewritten location summaries. Summaries remain useful, but they are generated after the person’s report and environmental data are collected. The person does not need to explain the entire meaning of a location in advance. They identify what they were exposed to, how often, with what intensity, and whether the experience was supportive, stressful, mixed, or unknown. The runtime then preserves that report, compares it with the objective incubator field, and leaves any unsupported interpretation unresolved.SEEN™ CONVERGENCE RUNTIME TREE — BUILDER SPEC
+The intake therefore uses structured exposure categories rather than relying only on three prewritten incubator summaries. Summaries remain useful, but they are generated after the person’s report and environmental data are collected. The person does not need to explain the entire meaning of a incubator in advance. They identify what they were exposed to, how often, with what intensity, and whether the experience was supportive, stressful, mixed, or unknown. The runtime then preserves that report, compares it with the objective incubator field, and leaves any unsupported interpretation unresolved.SEEN™ CONVERGENCE RUNTIME TREE — BUILDER SPEC
 
-The runtime preserves every source system as an independent calculation, preserves every raw mechanic and provenance trail, routes compatible signals through the 64 SEEN Identifying archetypes, aligns signals by person × location × time × relationship, accumulates recognition evidence, and renders the strongest convergence without erasing contradiction or unresolved fields.
+The runtime preserves every source system as an independent calculation, preserves every raw mechanic and provenance trail, routes compatible signals through the 64 SEEN Identifying archetypes, aligns signals by person × incubator × time × relationship, accumulates recognition evidence, and renders the strongest convergence without erasing contradiction or unresolved fields.
 System Update Request.txt
 
 SEEN
@@ -2864,9 +2864,9 @@ SEEN
 │   Every native result retains its original methodology,
 │   intermediate calculation, source system and provenance.
 │
-├── 02. LOCATION HISTORY
+├── 02. INCUBATOR HISTORY
 │   │
-│   ├── LOCATION 1
+│   ├── INCUBATOR 1
 │   │   ├── coordinates
 │   │   ├── startDate
 │   │   ├── endDate
@@ -2888,18 +2888,18 @@ SEEN
 │   │       ├── NO
 │   │       └── UNKNOWN
 │   │
-│   ├── LOCATION 2
-│   ├── LOCATION 3
-│   └── CURRENT LOCATION
+│   ├── INCUBATOR 2
+│   ├── INCUBATOR 3
+│   └── CURRENT INCUBATOR
 │
 │   RULE:
-│   Location describes the actual exposure field.
+│   Incubator describes the actual exposure field.
 │   Person-specific fit emerges during convergence.
 │
 ├── 03. PERSON STATE HISTORY
 │   │
 │   ├── immutable native mechanics
-│   ├── accumulated location exposures
+│   ├── accumulated incubator exposures
 │   ├── accumulated timing periods
 │   ├── recognized patterns
 │   ├── rejected patterns
@@ -3052,7 +3052,7 @@ SEEN
 │
 ├── 05. CONVERGENCE MATRIX
 │
-│           WEST  VEDIC  HELL  BAZI  TZOLKIN  DREAM  NUM  LOCATION
+│           WEST  VEDIC  HELL  BAZI  TZOLKIN  DREAM  NUM  INCUBATOR
 │   P01       ●      ●     ○     ●      ○       ●     ○      ●
 │   P02       ○      ●     ●     ○      ●       ○     ●      ○
 │   P03       ●      ●     ●     ○      ○       ●     ●      ●
@@ -3072,7 +3072,7 @@ SEEN
 │   ├── direction
 │   ├── pressure
 │   ├── timeframe
-│   ├── location
+│   ├── incubator
 │   ├── relationship
 │   ├── provenance
 │   ├── confidence
@@ -3091,7 +3091,7 @@ SEEN
 │   ├── CONTRADICTION
 │   ├── RECURRENCE
 │   ├── TIMING OVERLAP
-│   ├── LOCATION OVERLAP
+│   ├── INCUBATOR OVERLAP
 │   ├── RELATIONAL OVERLAP
 │   ├── RECOGNITION SUPPORT
 │   ├── RECOGNITION REJECTION
@@ -3119,7 +3119,7 @@ SEEN
 │   ├── experiential failure
 │   ├── self-sabotage loop
 │   ├── people pattern
-│   ├── location pattern
+│   ├── incubator pattern
 │   ├── timeframe
 │   ├── recurrence
 │   ├── contradictions
@@ -3139,7 +3139,7 @@ SeenRunInputSchema.parse({
     personId,
     birth: {
       date,
-      location: {
+      incubator: {
         city,
         region,
         country,
@@ -3166,13 +3166,13 @@ SeenRunInputSchema.parse({
       | "RELOCATION",
 
     targetDateTime,
-    targetLocationId,
+    targetIncubatorId,
     comparisonPersonIds: []
   },
 
-  locationHistory: [
+  incubatorHistory: [
     {
-      locationId,
+      incubatorId,
       coordinates,
       startDate,
       endDate,
@@ -3281,14 +3281,14 @@ AstronomicalStateSchema.parse({
 });
 
 
-LOCATION × PERSON CONVERGENCE
+INCUBATOR × PERSON CONVERGENCE
 
 PERSON NATIVE SIGNAL
        │
        │
        ├──────────────┐
        ▼              ▼
-Identifying archetype 28          LOCATION
+Identifying archetype 28          INCUBATOR
 pressure           Montana
 pattern            winter 2026
        │              │
@@ -3299,7 +3299,7 @@ pattern            winter 2026
          YES ─┴─ NO
           │
           ▼
-DOES LOCATION CONDITION
+DOES INCUBATOR CONDITION
 AMPLIFY / SUPPRESS / REGULATE /
 REROUTE / LEAVE UNRESOLVED?
           │
@@ -3318,8 +3318,8 @@ ContextualIntersectionSchema.parse({
     vedicSignalId
   ],
 
-  location: {
-    locationId: "montana-home",
+  incubator: {
+    incubatorId: "montana-home",
     exposureWindow: ["2025-01-01", "2026-09-04"],
     environmentalSignals: [...]
   },
@@ -3341,7 +3341,7 @@ ContextualIntersectionSchema.parse({
 });
 
 
-Location itself receives no universal GOOD/BAD label. The same environment may amplify one person, regulate another, and remain unresolved for another. The source specification already requires environmental expression to change according to the subject and conditions.
+Incubator itself receives no universal GOOD/BAD label. The same environment may amplify one person, regulate another, and remain unresolved for another. The source specification already requires environmental expression to change according to the subject and conditions.
 System Update Request.txt
 
 HISTORICAL CAPTURE
@@ -3379,7 +3379,7 @@ HistoricalCaptureSchema.parse({
     end: "2015-06-27"
   },
 
-  locationId: "bali",
+  incubatorId: "bali",
 
   personStateAtEntry: stateSnapshotId,
 
@@ -3406,7 +3406,7 @@ PRESENT CAPTURE
 
 WHO THE PERSON HAS BECOME
           ×
-CURRENT LOCATION
+CURRENT INCUBATOR
           ×
 CURRENT SKY
           ×
@@ -3417,7 +3417,7 @@ CURRENT RELATIONSHIPS
       NOW STATE
 
 
-The runtime specification already defines SEEN as a moving field in which time, location, relationships, developmental period and astronomical movement continuously alter expression while underlying mechanics remain traceable.
+The runtime specification already defines SEEN as a moving field in which time, incubator, relationships, developmental period and astronomical movement continuously alter expression while underlying mechanics remain traceable.
 System Update Request.txt
 
 TWO-PERSON RELATIONSHIP TREE
@@ -3435,7 +3435,7 @@ PERSON A                              PERSON B
                 A ↔ B NATIVE FIELD
                          │
                          ▼
-                   LOCATION L
+                   INCUBATOR L
                          │
           ┌──────────────┼──────────────┐
           ▼              ▼              ▼
@@ -3496,7 +3496,7 @@ candidate window
 └── confidence
 
 
-The supplied specification explicitly includes future astronomical pressure, future environmental pressure, relational collisions, location alignment, timing alignment, travel/relocation comparison, event selection and recurrence windows.
+The supplied specification explicitly includes future astronomical pressure, future environmental pressure, relational collisions, incubator alignment, timing alignment, travel/relocation comparison, event selection and recurrence windows.
 System Update Request.txt
 
 HISTORICAL-STATE RECONSTRUCTION → FUTURE SEARCH
@@ -3510,7 +3510,7 @@ Bali — June 2015
 ├── historical sky
 ├── A natal ↔ historical sky
 ├── B natal ↔ historical sky
-├── historical location field
+├── historical incubator field
 ├── identifying archetype convergence
 └── recognized outcome
              │
@@ -3519,7 +3519,7 @@ Bali — June 2015
              │
              ▼
 SEARCH FUTURE
-location × date × time
+incubator × date × time
              │
              ▼
 COMPARE EACH CANDIDATE
@@ -3565,7 +3565,7 @@ reinforce    preserve separately
       │          │
       └────┬─────┘
            ▼
-       LOCATION
+       INCUBATOR
            │
       same period?
        /       \
@@ -3633,7 +3633,7 @@ SeenConvergenceSchema.parse({
 
   context: {
     timeframe,
-    locationId,
+    incubatorId,
     relationshipIds: []
   },
 
@@ -3677,7 +3677,7 @@ SeenConvergenceSchema.parse({
   trace: {
     nativeMechanics,
     calculations,
-    locations,
+    incubators,
     timing,
     identifyingArchetypeMappings,
     recognitionEvidence,
@@ -3720,4 +3720,4 @@ PAST RECONSTRUCTION × PRESENT CAPTURE × FUTURE SEARCH
 
 
 SEEN’s output remains conditional, probabilistic and traceable; stronger language follows stronger convergence, while conflicting and weak evidence remains visible.
-System Update Request.txt Location should be known as the incubator  either we give three summaries describing the location that we are going to use as environmental exposure or we have little check boxes for the person to check during intake when they put the location and what they experience there it could be like suburbs, rural heat, cold anything that would amplify any part of their behavioral system or development which is I mean what’s the appropriate amount of boxes for them to click on each Location six isn’t too much 10 isn’t too much right like, what did you? What did you? What were you exposed to violence, poverty politics, religion that might be the better way to just have them other than trying to determine what they experienced in writing down three just have them tell us because I mean different roofs different same roof different experience depending on the kid. One kid might have to see the parents is loving the other kid could see them as  toxic. But we come up with an invite for the incubator really doesn’t matter what they tell us is what it matters what they felt what matters we were only gonna be able to give them so much with three summaries and you’re only gonna be able to use so much.
+System Update Request.txt Incubator should be known as the incubator  either we give three summaries describing the incubator that we are going to use as environmental exposure or we have little check boxes for the person to check during intake when they put the incubator and what they experience there it could be like suburbs, rural heat, cold anything that would amplify any part of their behavioral system or development which is I mean what’s the appropriate amount of boxes for them to click on each Incubator six isn’t too much 10 isn’t too much right like, what did you? What did you? What were you exposed to violence, poverty politics, religion that might be the better way to just have them other than trying to determine what they experienced in writing down three just have them tell us because I mean different roofs different same roof different experience depending on the kid. One kid might have to see the parents is loving the other kid could see them as  toxic. But we come up with an invite for the incubator really doesn’t matter what they tell us is what it matters what they felt what matters we were only gonna be able to give them so much with three summaries and you’re only gonna be able to use so much.

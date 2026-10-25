@@ -34,7 +34,7 @@ Aligned work is retained and extended.
 
 Conflicting work is revised, migrated, replaced, or retired.
 
-Establish authority through the controlling specification and verified alignment; record file age, naming, location, and completion status as context.
+Establish authority through the controlling specification and verified alignment; record file age, naming, incubator, and completion status as context.
 
 `docs/00_INTAKE_ORDER_LOCK.md` beats older foundation order language.
 
@@ -104,7 +104,7 @@ Splash
 → Name + date + birth city
 → Dark pressure cards
 → Time lock
-→ Lived-location cards
+→ Lived-incubator cards
 → Family soil
 → Then experience mode / helix
 ```
@@ -118,7 +118,7 @@ Birth Foundation Intake (name, date, birth city)
 → Dark Western pressure runs 04:00 / 12:00 / 20:00
 → Recognition pick
 → Time narrowing
-→ Lived-location gift+cost cards
+→ Lived-incubator gift+cost cards
 → Family soil modifiers
 → Locked-time Western tab
 → Mix seed + soil + weather into 45 sections

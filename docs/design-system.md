@@ -122,7 +122,7 @@ Panel padding: `24px` mobile, `32px` tablet and desktop.
 - Input labels use the UI sans font.
 - Field icons use the gold accent.
 - Supporting copy uses `--seen-text-secondary` at `0.82rem`.
-- Multi-location rows use the same field geometry with a gold circular add control aligned right.
+- Multi-incubator rows use the same field geometry with a gold circular add control aligned right.
 
 ## Primary Button
 
@@ -181,16 +181,16 @@ Glow concentrates around primary actions, line centers, and selected controls. L
 - Stroke icons use `1.5px` lines.
 - Icon color: `--seen-gold-deep` or `--seen-gold`.
 - Standard icon size: `20px`; feature icon size: `24px`.
-- Location, calendar, clock, plus, sparkle, and directional arrow icons follow the approved reference.
+- Incubator, calendar, clock, plus, sparkle, and directional arrow icons follow the approved reference.
 
 ## Foundation Intake Composition
 
 1. Compact progress state.
 2. Canonical screen heading.
 3. Canonical supporting context.
-4. Birth-location control.
-5. Repeatable lived-location controls.
-6. Current-location control.
+4. Birth-incubator control.
+5. Repeatable lived-incubator controls.
+6. Current-incubator control.
 7. Birth-date control.
 8. Optional birth-time control with canonical clarification copy.
 9. Canonical full-width primary action.
@@ -198,12 +198,12 @@ Glow concentrates around primary actions, line centers, and selected controls. L
 
 Product strings resolve from the governing intake and product-language canon.
 
-### Location — environmental exposure
+### Incubator — environmental exposure
 
 Its label is environmental exposure.
 
-`/foundation/location` uses `public/foundation/location-forge-background.png`
-as its canonical visual background and `docs/location-philosophy.md` as its
+`/foundation/incubator` uses `public/foundation/incubator-forge-background.png`
+as its canonical visual background and `docs/incubator-philosophy.md` as its
 language and claim boundary.
 
 Canonical screen hierarchy:
@@ -213,9 +213,9 @@ Canonical screen hierarchy:
 3. `What were you exposed to?`
 4. `Incubators of the field`
 5. `Reveal the places that shaped the pressure.`
-6. Birth Location
-7. Locations Lived 6+ Months
-8. Current Location
+6. Birth Incubator
+7. Incubators Lived 6+ Months
+8. Current Incubator
 9. Submit
 
 ## Responsive Behavior

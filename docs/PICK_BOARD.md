@@ -47,10 +47,10 @@ DROP:
 ## 5 Lived place
 
 UNREAD
-- lib/location
-- docs/LOCATION.md
-- docs/LOCATION_ENGINE.md
-- docs/LOCATION_EVIDENCE_MVP.md
+- lib/incubator
+- docs/INCUBATOR.md
+- docs/INCUBATOR_ENGINE.md
+- docs/INCUBATOR_EVIDENCE_MVP.md
 
 ## 6 Later, closed until a stranger can pick a dark card
 
@@ -80,9 +80,9 @@ Route that matters first: /chart
 ## 8 Archived references
 
 UNREAD
-- 02. 1. The design-system CSS 2. The location-page CSS
+- 02. 1. The design-system CSS 2. The incubator-page CSS
 - 02.a.universal evaluation contract
-- 03.locationintake.tsx
+- 03.incubatorintake.tsx
 - docs/phase-one
 - docs/example transcript from grok VOICE BOT:  seens oracle should reveal similarily this   very casually call out all the nullshit  being with bree for six years
 - docs/10_REVIEW_PROTOCOL_FOUNDATION.md

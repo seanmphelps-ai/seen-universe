@@ -1,3 +1,4 @@
+// PROVENANCE: bot=grok session=2026-10-24 task=rename environmental exposure engine to incubator
 # SEEN Canonical UI Language
 
 This document is the visual source of truth for every SEEN PWA surface.
@@ -121,7 +122,7 @@ Panel padding: `24px` mobile, `32px` tablet and desktop.
 - Input labels use the UI sans font.
 - Field icons use the gold accent.
 - Supporting copy uses `--seen-text-secondary` at `0.82rem`.
-- Multi-location rows use the same field geometry with a gold circular add control aligned right.
+- Multi-incubator rows use the same field geometry with a gold circular add control aligned right.
 
 ## Primary Button
 
@@ -180,16 +181,16 @@ Glow concentrates around primary actions, line centers, and selected controls. L
 - Stroke icons use `1.5px` lines.
 - Icon color: `--seen-gold-deep` or `--seen-gold`.
 - Standard icon size: `20px`; feature icon size: `24px`.
-- Location, calendar, clock, plus, sparkle, and directional arrow icons follow the approved reference.
+- Incubator, calendar, clock, plus, sparkle, and directional arrow icons follow the approved reference.
 
 ## Foundation Intake Composition
 
 1. Compact progress state.
 2. Canonical screen heading.
 3. Canonical supporting context.
-4. Birth-location control.
-5. Repeatable lived-location controls.
-6. Current-location control.
+4. Birth-incubator control.
+5. Repeatable lived-incubator controls.
+6. Current-incubator control.
 7. Birth-date control.
 8. Optional birth-time control with canonical clarification copy.
 9. Canonical full-width primary action.

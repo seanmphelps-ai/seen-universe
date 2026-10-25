@@ -86,7 +86,7 @@ export const archetype: IdentifyingArchetypeRecord = {
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Resource scarcity environments; High positive ions; Low light gestation; Rigid educational system; Insulating field locations?",
+        "Environment: which of these surroundings turn it up — Resource scarcity environments; High positive ions; Low light gestation; Rigid educational system; Insulating field incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },

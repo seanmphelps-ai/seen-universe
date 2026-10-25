@@ -1,29 +1,30 @@
+// PROVENANCE: bot=grok session=2026-10-24 task=rename environmental exposure engine to incubator
 import { NextRequest, NextResponse } from 'next/server';
 import { createHash } from 'node:crypto';
 import { calculateNatalChart, type NatalChartInput } from '../../../../lib/natalChart';
-import { buildLocationField } from '../../../../lib/location/buildLocationField';
-import type { LocationInput } from '../../../../lib/location/types';
-import { redditForumProvider } from '../../../../lib/location/collectors/redditForum';
+import { buildIncubatorField } from '../../../../lib/incubator/buildIncubatorField';
+import type { IncubatorInput } from '../../../../lib/incubator/types';
+import { redditForumProvider } from '../../../../lib/incubator/collectors/redditForum';
 import { buildWesternIdentifyingArchetypeBridge } from '../../../../lib/seen/westernBridge';
 import { readNative, auditNative, type ModalityId } from '../../../../lib/agents/execution';
-import { runEnvironmentalWitness } from '../../../../lib/location/v2/environmentalWitness';
+import { runEnvironmentalWitness } from '../../../../lib/incubator/v2/environmentalWitness';
 import {
   computeRuntimeEvidenceVector,
   fuseRuntimeVectors,
-} from '../../../../lib/location/v2/runtime';
+} from '../../../../lib/incubator/v2/runtime';
 import {
   officialFieldToV2Inputs,
   missingProductFamilies,
   PRODUCT_SOURCE_FAMILIES,
-} from '../../../../lib/location/v2/fromOfficialField';
-import { observationsToRuntimeInputs } from '../../../../lib/location/v2/observationsToRuntime';
-import type { SourceFamily } from '../../../../lib/location/v2/types';
+} from '../../../../lib/incubator/v2/fromOfficialField';
+import { observationsToRuntimeInputs } from '../../../../lib/incubator/v2/observationsToRuntime';
+import type { SourceFamily } from '../../../../lib/incubator/v2/types';
 
 export const runtime = 'nodejs';
 
 type SeenRunRequest = {
   chart: NatalChartInput;
-  locations: LocationInput[];
+  locations: IncubatorInput[];
 };
 
 export async function POST(request: NextRequest) {
@@ -45,24 +46,24 @@ export async function POST(request: NextRequest) {
   }
 
   if (!Array.isArray(input.locations) || input.locations.length === 0) {
-    return NextResponse.json({ error: 'At least one Location input is required.' }, { status: 400 });
+    return NextResponse.json({ error: 'At least one Incubator input is required.' }, { status: 400 });
   }
 
   try {
     const officialFields = await Promise.all(
-      input.locations.map((location) => buildLocationField(location)),
+      input.locations.map((incubator) => buildIncubatorField(incubator)),
     );
 
     const locationV2 = await Promise.all(
       officialFields.map(async (field) => {
-        const locationId = `${field.input.role}:${field.input.latitude},${field.input.longitude}`;
+        const incubatorId = `${field.input.role}:${field.input.latitude},${field.input.longitude}`;
         const windowStart = field.input.exposureStart;
         const windowEnd = field.input.exposureEnd ?? new Date().toISOString().slice(0, 10);
 
         const witness = await runEnvironmentalWitness(
           {
-            locationId,
-            location: field.input.label,
+            incubatorId,
+            incubator: field.input.label,
             windowStart,
             windowEnd,
           },
@@ -72,7 +73,7 @@ export async function POST(request: NextRequest) {
         const officialInputs = officialFieldToV2Inputs(field);
         const collectedInputs = observationsToRuntimeInputs(
           witness.observations,
-          locationId,
+          incubatorId,
           windowStart,
           windowEnd,
         );

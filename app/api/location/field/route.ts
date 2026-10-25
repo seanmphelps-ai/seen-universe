@@ -1,11 +1,12 @@
+// PROVENANCE: bot=grok session=2026-10-24 task=rename environmental exposure engine to incubator
 import { NextRequest, NextResponse } from 'next/server';
-import { buildLocationField } from '../../../../lib/location/buildLocationField';
-import { suggestCities } from '../../../../lib/location/citySuggest';
-import type { LocationInput, LocationRole } from '../../../../lib/location/types';
+import { buildIncubatorField } from '../../../../lib/incubator/buildIncubatorField';
+import { suggestCities } from '../../../../lib/incubator/citySuggest';
+import type { IncubatorInput, IncubatorRole } from '../../../../lib/incubator/types';
 
 export const runtime = 'nodejs';
 
-const ROLES: LocationRole[] = ['BIRTH', 'LIVED', 'CURRENT'];
+const ROLES: IncubatorRole[] = ['BIRTH', 'LIVED', 'CURRENT'];
 
 function parseCoordinate(value: string | null): number | null {
   if (value === null || value.trim() === '') return null;
@@ -32,10 +33,10 @@ export async function GET(request: NextRequest) {
   const label = params.get('q')?.trim() ?? '';
   const exposureStart = params.get('start')?.trim() ?? '';
   const exposureEnd = params.get('end')?.trim() || null;
-  const requestedRole = (params.get('role')?.trim().toUpperCase() || 'LIVED') as LocationRole;
+  const requestedRole = (params.get('role')?.trim().toUpperCase() || 'LIVED') as IncubatorRole;
 
   if (!label) {
-    return NextResponse.json({ error: 'Missing q (location label).' }, { status: 400 });
+    return NextResponse.json({ error: 'Missing q (incubator label).' }, { status: 400 });
   }
   if (!exposureStart) {
     return NextResponse.json({ error: 'Missing start (YYYY-MM-DD).' }, { status: 400 });
@@ -60,7 +61,7 @@ export async function GET(request: NextRequest) {
     longitude = resolvedCity.longitude;
   }
 
-  const input: LocationInput = {
+  const input: IncubatorInput = {
     label,
     latitude,
     longitude,
@@ -69,7 +70,7 @@ export async function GET(request: NextRequest) {
     role: requestedRole,
   };
 
-  const field = await buildLocationField(input);
+  const field = await buildIncubatorField(input);
 
   return NextResponse.json({
     resolvedCity,

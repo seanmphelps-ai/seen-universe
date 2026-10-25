@@ -292,7 +292,7 @@ export function compareClosureCharts(
       happened: 'These two independent Western fields produced fewer than three major synastry contacts inside standard orbs.',
       adaptation: 'Keep this slot empty until sourced shadow evidence is available.',
       cost: 'Forced meaning would overwrite the evidence.',
-      firstAction: 'Keep both charts. Add location, time certainty, or a second source system before claiming a third pattern.',
+      firstAction: 'Keep both charts. Add incubator, time certainty, or a second source system before claiming a third pattern.',
       evidence: ['Major synastry contacts inside orb are exhausted.'],
       confidence: 0.2,
     });
@@ -304,7 +304,7 @@ export function compareClosureCharts(
     personB: personB.name,
     westernIndependent: true,
     unresolved: [
-      'Location pressure awaits calculation for this comparison.',
+      'Incubator pressure awaits calculation for this comparison.',
       'Wound, attachment, and Helix layers await their required evidence.',
       'This is a Western synastry field only.',
     ],

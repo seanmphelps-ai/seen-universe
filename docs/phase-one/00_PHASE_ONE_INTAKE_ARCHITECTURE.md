@@ -20,18 +20,18 @@ Environment is weather on a calculated seed.
 
 The first SEEN runtime pass builds the place-field before birth date, temporal narrowing, chart interpretation, wound narration, identifying archetype routing, or Oracle rendering.
 
-The user provides location data first.
+The user provides incubator data first.
 
-## Front-Door Location Data
+## Front-Door Incubator Data
 
 The first shell asks only for place-field coordinates needed to build the environmental pressure map:
 
 1. Birthplace
-2. Early childhood locations, if known
-3. Adolescent locations, if known
-4. Major lived locations, if relevant
-5. Current location
-6. Relationship, rupture, replay, or event-relevant location, when applicable
+2. Early childhood incubators, if known
+3. Adolescent incubators, if known
+4. Major lived incubators, if relevant
+5. Current incubator
+6. Relationship, rupture, replay, or event-relevant incubator, when applicable
 
 Birth date enters after the environmental prepass exists.
 
@@ -59,7 +59,7 @@ At minimum, the environmental prepass evaluates:
 - cultural and environmental pace
 - sensory load
 - mobility and access pressure
-- origin-current-location friction
+- origin-current-incubator friction
 - adolescent-place imprint
 - current-terrain regulation or destabilization
 
@@ -67,14 +67,14 @@ They are the first pressure container.
 
 ## Place-Phase Separation
 
-The Generator must preserve location phases separately before synthesis:
+The Generator must preserve incubator phases separately before synthesis:
 
 1. Birthplace imprint
 2. Early childhood field
 3. Adolescent field
-4. Major lived-location field
-5. Current-location field
-6. Event-location field, when applicable
+4. Major lived-incubator field
+5. Current-incubator field
+6. Event-incubator field, when applicable
 
 Each phase may amplify, suppress, distort, stabilize, or reroute later signals.
 
@@ -123,7 +123,7 @@ Post-reading lived experience can refine:
 
 The Phase 1 runtime order is:
 
-1. Collect location field
+1. Collect incubator field
 2. Derive environmental markers
 3. Build environmental pressure profile
 4. Build pre-date wound-trigger map
@@ -164,6 +164,6 @@ The user receives clear recognition, pattern visibility, and regulation guidance
 
 Phase 1 is an environmental field prepass before it is a natal interpretation system.
 
-It identifies how birthplace, childhood terrain, adolescent terrain, lived locations, current terrain, biome, abiotic conditions, GeoPresence, and environmental pressure shape, cook, amplify, suppress, distort, stabilize, or reroute later chart expression.
+It identifies how birthplace, childhood terrain, adolescent terrain, lived incubators, current terrain, biome, abiotic conditions, GeoPresence, and environmental pressure shape, cook, amplify, suppress, distort, stabilize, or reroute later chart expression.
 
 All outputs remain probabilistic.

@@ -1,6 +1,6 @@
 // PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 import { NextResponse } from 'next/server';
-import { suggestCities } from '../../../../lib/location/citySuggest';
+import { suggestCities } from '../../../../lib/incubator/citySuggest';
 
 export const runtime = 'nodejs';
 

@@ -82,12 +82,12 @@ Environmental intake precedes birth-derived interpretation.
 
 Collect:
 
-- birth location;
-- every location lived for more than 6 months;
+- birth incubator;
+- every incubator lived for more than 6 months;
 - approximate start and end for each exposure;
-- current location.
+- current incubator.
 
-Resolve each location into structured records, then temporalize each exposure into a place-period field.
+Resolve each incubator into structured records, then temporalize each exposure into a place-period field.
 
 Identifying archetype pre-charge receives environmental pressure before chart interpretation.
 

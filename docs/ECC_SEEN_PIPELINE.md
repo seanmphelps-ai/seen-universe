@@ -25,14 +25,14 @@ ECC is the harness. Caveman compresses output within ECC while preserving operat
 Retrieves public observable evidence for the Social layer and other approved external evidence tasks. Retrieval must preserve source, timeframe, geography, precision, and provenance.
 
 ### postgres-mcp
-Persists structured intake, location-period records, evidence, calculations, provenance, confidence, contradictions, and verified outputs. Storage preserves meaning and independent evidence; synthesis runs in its assigned downstream stage.
+Persists structured intake, incubator-period records, evidence, calculations, provenance, confidence, contradictions, and verified outputs. Storage preserves meaning and independent evidence; synthesis runs in its assigned downstream stage.
 
 Use the MCP slot as a provider-agnostic capability boundary, supporting provider changes through adapters.
 
 ## Skill order
 
-1. `intake` — seal the subject, DOB, confirmed locations, and calendar timeframes.
-2. `social-pull` — collect timeframe-locked public observable evidence for each location-period independently.
+1. `intake` — seal the subject, DOB, confirmed incubators, and calendar timeframes.
+2. `social-pull` — collect timeframe-locked public observable evidence for each incubator-period independently.
 3. `narrative-extract` — convert retrieved evidence into structured environmental signals with every extracted claim linked to retrieved evidence.
 4. `chart-gen` — run source calculations independently, including the existing Western/Swiss Ephemeris path where applicable.
 5. `resonance` — handle user recognition/calibration evidence while preserving original source calculations.
@@ -51,9 +51,9 @@ Hooks enforce deterministic checks; reasoning remains with the assigned agent an
 
 Hooks enforce the listed operation checks and return actionable failures. Product decisions and evidence interpretation remain with their assigned owners.
 
-## Location law
+## Incubator law
 
-Every location-period is evaluated independently before comparison.
+Every incubator-period is evaluated independently before comparison.
 
 Required path:
 

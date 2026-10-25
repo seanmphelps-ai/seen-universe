@@ -1,12 +1,13 @@
+// PROVENANCE: bot=grok session=2026-10-24 task=rename environmental exposure engine to incubator
 # SEEN — FORGE / Incubator / Delta implementation brief
 Source: user-provided 🍀🥜🔗 conversation (981 lines). Target branch: final-siteS. Status: implementation brief, not an assertion that features are missing.
 
 ## Preserve the existing spine
-Build on the existing Location Engine, environmental evidence pipeline, modality agents/auditors, 64 archetype interrogators, Dark Chart Generator, and Oracle. Preserve the existing intake and evidence contracts. Keep the source conversation as conceptual input; verify all chart examples with the native calculators before treating them as computed facts.
+Build on the existing Incubator Engine, environmental evidence pipeline, modality agents/auditors, 64 archetype interrogators, Dark Chart Generator, and Oracle. Preserve the existing intake and evidence contracts. Keep the source conversation as conceptual input; verify all chart examples with the native calculators before treating them as computed facts.
 
 ## Priority 1 — Seed × Incubator × Forge
 - **Seed:** retain each modality's independently calculated and audited chart evidence, with source identifiers, placements, dignity, aspects, houses, nodes, wound markers, and uncertainty.
-- **Incubator:** treat each lived place and its time window as a first-class environmental exposure. Reuse Location Engine's BIRTH/LIVED/CURRENT places, historical year-cut, EnvironmentalResonanceRecord, and pressure chain.
+- **Incubator:** treat each lived place and its time window as a first-class environmental exposure. Reuse Incubator Engine's BIRTH/LIVED/CURRENT places, historical year-cut, EnvironmentalResonanceRecord, and pressure chain.
 - **Soil:** model family, close relationships, social reinforcement, and formative wounds as their own evidence-linked inputs inside the lived environment.
 - **Forge:** assemble compatible chart, environmental, family, and behavioral observations into interactions, then route evidence-backed distinctions through the existing interrogators and Oracle. Preserve provenance and uncertainty at every handoff.
 
@@ -24,7 +25,7 @@ These are **interaction lenses** applied to existing modality evidence, not repl
 Each distinction carries: seed finding IDs; incubator observation IDs; lens; mechanism; alternative plausible readings; user-confirmed/contradicted status; and narrative rendering. Interpretive labels are hypotheses, with specific behavior confirmed through user testimony rather than inferred as fact.
 
 ## Priority 3 — Incubator encoding and seasonal resolution
-- Reuse existing location collectors, Census adapters, historical-year logic, evidence scoring and persistence.
+- Reuse existing incubator collectors, Census adapters, historical-year logic, evidence scoring and persistence.
 - Extend only where needed: altitude, climate/biome, daylight, temperature and precipitation normals, population density, economic opportunity, mobility, lived social tempo, and user-described cultural rewards.
 - Attach data source, geographic resolution, historical validity, time window, and confidence to each observation.
 - Support 6+ consecutive-month lived-place windows as the conversation's default eligibility, plus shorter event/travel windows with explicit duration.
@@ -39,12 +40,12 @@ Each distinction carries: seed finding IDs; incubator observation IDs; lens; mec
 - Provide a compact machine-readable delta to the Generator and a third-person, dark-chart-appropriate narrative to the Oracle.
 
 ## Priority 5 — Astrological Recollection (subsequent feature)
-- Capture reference event: location, date range, participants, lived environmental conditions, user-described felt experience, and remembered relationship dynamics.
-- Compute independently audited person-to-location chart frames, pairwise synastry in location context, date-specific transits, incubator, and seasonal sub-incubator.
+- Capture reference event: incubator, date range, participants, lived environmental conditions, user-described felt experience, and remembered relationship dynamics.
+- Compute independently audited person-to-incubator chart frames, pairwise synastry in incubator context, date-specific transits, incubator, and seasonal sub-incubator.
 - Preserve a configuration signature with source references, uncertainties, and subjective felt tags.
-- Search candidate location/date windows under travel, budget and preference constraints; compare the five components with transparent adjustable weights.
+- Search candidate incubator/date windows under travel, budget and preference constraints; compare the five components with transparent adjustable weights.
 - Return candidate comparisons and deltas from the reference event, with interpretation presented as a possible resonance rather than an assured future experience.
-- Validate location chart calculation conventions and avoid presenting illustrative placements or numerical scores from the conversation as verified results.
+- Validate incubator chart calculation conventions and avoid presenting illustrative placements or numerical scores from the conversation as verified results.
 
 ## Nested interrogation pattern
 For each relevant interaction, ask progressively:
@@ -66,10 +67,10 @@ Use existing identifying archetype interrogators to select and deepen questions;
 - Express hypotheses proportionately to evidence. User-reported events remain user-reported; natal symbolism alone does not establish a person's actions or motives.
 
 ## Integration and acceptance
-1. Inspect current Location Engine, v2 evidence contracts, archetype pipeline, modality/auditor output, and Dark Chart Generator before coding.
+1. Inspect current Incubator Engine, v2 evidence contracts, archetype pipeline, modality/auditor output, and Dark Chart Generator before coding.
 2. Map each item above to **existing / partial / absent** using actual code and tests.
 3. Add schema/adapter changes only for confirmed gaps; preserve branch ownership.
-4. Test: same chart across two locations; same location across winter/summer; family soil change; contradictory environmental observations; missing birth time; unsupported chart claim; multiple people and reference event.
+4. Test: same chart across two incubators; same incubator across winter/summer; family soil change; contradictory environmental observations; missing birth time; unsupported chart claim; multiple people and reference event.
 5. Confirm deterministic environmental data and audited chart calculations precede interpretive synthesis.
 6. Publish only reviewed changes from final-siteS through explicit cherry-picks or pull requests; keep final-seen-cc-runtime untouched.
 

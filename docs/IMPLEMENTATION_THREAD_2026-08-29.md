@@ -7,7 +7,7 @@ Verified path:
 Action:
 - preserve this path
 - keep external chart APIs outside the canonical runtime
-- keep Location downstream of completed Western calculation
+- keep Incubator downstream of completed Western calculation
 
 Acceptance:
 - direct code path remains local
@@ -27,7 +27,7 @@ Contract:
 Required fields:
 - `resonanceRecordId`
 - `subjectId`
-- `locationPeriodId`
+- `incubatorPeriodId`
 - `pressureFieldVersion`
 - `candidateSummaryIds[]`
 - `selectedSummaryIds[]`
@@ -121,7 +121,7 @@ Required behavior:
 Forge is the continuous visual world of the formative process.
 
 Action:
-- restore a continuous dark-celestial / bronze-gold / ivory visual language across Location -> Date -> Rectification/Resonance -> system exploration
+- restore a continuous dark-celestial / bronze-gold / ivory visual language across Incubator -> Date -> Rectification/Resonance -> system exploration
 - treat type scale, width, spacing, negative space, linework, image proportion, and motion as design-system tokens/behaviors
 - preserve mobile-first constraints
 
@@ -186,11 +186,11 @@ Evaluation metrics:
 
 Decision gate:
 
-## F. Location scoring/source audit integration
+## F. Incubator scoring/source audit integration
 
-Retain `SEEN_LOCATION_SCORING_VIP_SOURCE_AUDIT.md` as implementation diligence.
+Retain `SEEN_INCUBATOR_SCORING_VIP_SOURCE_AUDIT.md` as implementation diligence.
 
-Implement its P0 requirements before treating Location scores as production-grade:
+Implement its P0 requirements before treating Incubator scores as production-grade:
 - dataset-specific temporal aggregation
 - absolute vs relative delta separation
 - statistical uncertainty preservation
@@ -209,7 +209,7 @@ Implement P1 before downstream convergence:
 - birth role separated from residence exposure
 
 ### Canon / task contexts
-- `docs/contexts/CLAUDE_LOCATION.md` -> Environmental Resonance invariants
+- `docs/contexts/CLAUDE_INCUBATOR.md` -> Environmental Resonance invariants
 - `docs/contexts/CLAUDE_GENERATOR_HELIX.md` -> Life Map + rendering boundary
 - new `docs/contexts/CLAUDE_LIFE_MAP_RENDERING.md` -> visual map, source tabs, provenance, render modes
 
@@ -220,7 +220,7 @@ Implement P1 before downstream convergence:
 - this file
 
 ### Future code areas
-- `lib/location/...` -> Environmental Resonance data contract/runtime
+- `lib/incubator/...` -> Environmental Resonance data contract/runtime
 - `lib/seen/...` -> public Life Map projection contract
 - `lib/rendering/...` -> rendering contract and modes
 - `app/...` -> Life Map + source-system views
@@ -229,7 +229,7 @@ Implement P1 before downstream convergence:
 ## H. Build order
 
 1. Environmental Resonance schema + persistence boundary + tests.
-2. Location source-audit P0 schema corrections needed by downstream claims.
+2. Incubator source-audit P0 schema corrections needed by downstream claims.
 3. Public Life Map projection contract over existing identifying-archetype/source/convergence IDs.
 4. One static/fixture-backed Life Map prototype proving the navigation model.
 5. Native Western source view using the already-canonical local Swiss Ephemeris result.

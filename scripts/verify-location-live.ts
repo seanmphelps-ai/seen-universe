@@ -1,15 +1,15 @@
 #!/usr/bin/env tsx
 // PROVENANCE: bot=codex session=2026-10-09 task=positive instruction language cleanup
 
-import { buildLocationField } from '../lib/location/buildLocationField';
-import type { LocationInput } from '../lib/location/types';
+import { buildIncubatorField } from '../lib/incubator/buildIncubatorField';
+import type { IncubatorInput } from '../lib/incubator/types';
 
-// Fixed test location: Los Angeles, CA. Chosen because it's large enough
+// Fixed test incubator: Los Angeles, CA. Chosen because it's large enough
 // to have full ACS/BLS/geocoder coverage under any reasonable historical
 // window, minimizing "real coverage gap" as a confound when checking
 // whether the *code* works.
-const TEST_INPUT: LocationInput = {
-  label: 'Los Angeles, CA (fixed live-verification location)',
+const TEST_INPUT: IncubatorInput = {
+  label: 'Los Angeles, CA (fixed live-verification incubator)',
   latitude: 34.0522,
   longitude: -118.2437,
   exposureStart: '2018-01-01',
@@ -22,10 +22,10 @@ function section(title: string) {
 }
 
 async function main() {
-  console.log('SEEN Location V1 — live verification run');
+  console.log('SEEN Incubator V1 — live verification run');
   console.log(`Test input: ${JSON.stringify(TEST_INPUT, null, 2)}`);
 
-  const field = await buildLocationField(TEST_INPUT);
+  const field = await buildIncubatorField(TEST_INPUT);
 
   section('Geography');
   if (!field.geography) {

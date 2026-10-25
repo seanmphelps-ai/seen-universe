@@ -84,7 +84,7 @@ export const archetype: IdentifyingArchetypeRecord = {
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Physically obstructed terrain; Storm-blocked travel climates; Fog-heavy locations; Doors closed by class or race; Low signal clarity field?",
+        "Environment: which of these surroundings turn it up — Physically obstructed terrain; Storm-blocked travel climates; Fog-heavy incubators; Doors closed by class or race; Low signal clarity field?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },

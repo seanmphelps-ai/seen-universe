@@ -15,7 +15,7 @@ These examples define the minimum level of completeness expected when sequence a
 }
 ```
 
-### 2. Location resolution
+### 2. Incubator resolution
 
 ```json
 {
@@ -46,7 +46,7 @@ Keep GeoPresence, biome, and abiotic outputs separate before synthesis.
 
 ```json
 {
-  "locationPeriodId": "lp-001",
+  "incubatorPeriodId": "lp-001",
   "contributions": [],
   "confidence": null,
   "contradictions": [],

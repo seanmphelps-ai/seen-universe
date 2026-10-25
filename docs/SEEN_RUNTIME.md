@@ -15,7 +15,7 @@ The orientation page is written after every section below exists, and is the fir
 - Tone: don't sugarcoat, don't go bleak, keep it exciting. Blunt, masks off, no accusation.  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
 - Depth: never decide what a user can handle. Every piece ends with questions and choices to go deeper, then an embodiment cue.  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
 - Order: shadows first to earn trust; the Jung sovereignty layer comes last and is the golden part.  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
-- Protection: users can drill into every component like a family tree; the binding logic (location, cadence, voice) is hidden and can't be extracted.  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
+- Protection: users can drill into every component like a family tree; the binding logic (incubator, cadence, voice) is hidden and can't be extracted.  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
 - "That structure produces a human operating system rather than an astrology reading." — Sean
 
 ### Binding rules
@@ -23,11 +23,11 @@ The orientation page is written after every section below exists, and is the fir
 - No prices. No medical claims. No forbidden/never lists — say only what to do.  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
 - Every identity claim traces to the six core sources; Sean's words verbatim where they exist.  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
 - Newest dated Sean material wins. Ship = 64 identifying archetypes; 65–108 kept as Sean's later layer.  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
-- Binding logic (location, cadence, voice) is hidden from users.  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
+- Binding logic (incubator, cadence, voice) is hidden from users.  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
 - Each piece ends with choices to go deeper + an embodiment cue.  <!-- REWORDED/PARTIAL: "- Each piece ends with choices to go deeper + an embodiment cue." ≈ seen-portals/INTERROGATION/portal_interrogation_1-64.md:87 "Every portal block ends with: choices to go deeper, and an EMBODIMENT CUE slot (typed upstream, rendered verbatim)." -->
 
 ## 2. Sequence (locked)  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
-1. **INTAKE** — Birth date, birth location, places lived (with years). Calibration (t514 optional sections). Where-are-you-right-now question routes the door (wound active → Blood Dragon; things good → Gold / Cadence).  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
+1. **INTAKE** — Birth date, birth incubator, places lived (with years). Calibration (t514 optional sections). Where-are-you-right-now question routes the door (wound active → Blood Dragon; things good → Gold / Cadence).  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
 2. **TIME NARROWING** — Hidden 4 AM / noon / 8 PM cards → tighter rounds → user picks → locked time. User never sees the clock.  <!-- REWORDED/PARTIAL: traced to seen-location/SEEN_SEQUENCE_LOCKED_2026-10-12.md (Sean tree via CoS, 2026-10-11 MT) — "hidden 4 AM · noon · 8 PM → tighter rounds → user picks → locked time"; NOT in any LIBRARY section folder -->
 3. **MODALITIES — INDEPENDENT, TRADITIONAL** — Hellenistic, Persian Lots, Vedic, Western (last), BaZi, Numerology, Galactic. Each runs alone in its own tradition, frozen when done. No cross-reads.  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
 4. **INCUBATOR — SIX LAYERS** — Biome, Atmospheric, Geological, Light, Social/Density, GeoPresence per place and age range. Pressurizes (blankets) every frozen modality; never replaces it. All six run before any astrology touches the chart.  <!-- REWORDED/PARTIAL: "Biome, Atmospheric, Geological, Light, Social/Density, GeoPresence per place and" ≈ seen-location/LIBRARY/03_wound_markers/wound_marker_thread_323p_t591.md:5135 ". Environmental Stack Schema — 6 layers (Biome, Atmospheric," | "Pressurizes (blankets) every frozen modality" [UNTRACED] | "never replaces it" [UNTRACED] -->
@@ -84,7 +84,7 @@ Fields: `populationDensity`, `crimeRate`, `violenceExposure`, `warOrConflictProx
 ### Layer 6 — GEOPRESENCE
 The field itself. What the earth is broadcasting that has nothing to do with what grows on it.
 
-Fields: `magneticFieldIntensity`, `magneticAnomalyPresent`, `schmannResonanceEffect`, `fieldCharacter`, `batteryState`, `vortexPresent`, `sacredSiteProximity`, `warGroundHistory`, `industrialToxicityLoad`, `geoMismatchFlag`, `astrocartographyLines`, `angularPlanetAtLocation`  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
+Fields: `magneticFieldIntensity`, `magneticAnomalyPresent`, `schmannResonanceEffect`, `fieldCharacter`, `batteryState`, `vortexPresent`, `sacredSiteProximity`, `warGroundHistory`, `industrialToxicityLoad`, `geoMismatchFlag`, `astrocartographyLines`, `angularPlanetAtIncubator`  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
 
 Score-type fields dropped (t581): BIOME.baselineArousalLevel, ATMOSPHERIC.saltContent, SOCIAL / DENSITY.urbanRuralSpectrum, SOCIAL / DENSITY.collectivismScore, GEOPRESENCE.signalClarity, GEOPRESENCE.receiverSensitivityModifier, GEOPRESENCE.signalDistortionIndex  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
 
@@ -274,19 +274,19 @@ Shadow ("avoid") side — Sean, verbatim (LIBRARY/03_wound_markers/wound_marker_
 
 **1. Entropy → Origination** (Destruction / Genesis) — Pure creative force — what happens when it has no outlet versus when it flows freely  
 Body: Crown — top of skull · Domains: CREATIVITY, CAREER, LEGACY · Wound markers: PLUTO, URANUS, SUN_SQUARE_SATURN · Sections fed: 8, 22  
-Place amplifiers — biome: High altitude; Open terrain; Minimal predator pressure | air: High negative ions; Clean air; Low particulate | light: Long summer days; High UV; Equatorial light | social: Low density; High expression freedom; Homeschool or self-directed education | field: Vortex locations; Sacred sites; High conductivity ground
+Place amplifiers — biome: High altitude; Open terrain; Minimal predator pressure | air: High negative ions; Clean air; Low particulate | light: Long summer days; High UV; Equatorial light | social: Low density; High expression freedom; Homeschool or self-directed education | field: Vortex incubators; Sacred sites; High conductivity ground
 
 **2. Dislocation → Orientation** (Rootlessness / Belonging) — The intelligence of knowing where you belong — lost versus found  
 Body: Base of spine — tailbone · Domains: FAMILY, HOME, RELATIONSHIPS · Wound markers: CHIRON, SOUTH_NODE, SATURN_SQUARE_MOON · Sections fed: 6, 19  
-Place amplifiers — biome: Migration pressure biomes; Seasonal extreme environments | air: Unstable weather patterns; High humidity fluctuation | light: Polar light extremes; Seasonal darkness | social: Multiple childhood relocations; Fractured family structure | field: Draining field locations; Geo-mismatch present
+Place amplifiers — biome: Migration pressure biomes; Seasonal extreme environments | air: Unstable weather patterns; High humidity fluctuation | light: Polar light extremes; Seasonal darkness | social: Multiple childhood relocations; Fractured family structure | field: Draining field incubators; Geo-mismatch present
 
 **3. Chaos → Innovation** (Disruption / Mutation) — The creative chaos that precedes new form — disorder as genesis versus disorder as identity  
 Body: Sacral — lower abdomen · Domains: CAREER, CREATIVITY, RELATIONSHIPS · Wound markers: URANUS, TYPHON, ERIS · Sections fed: 22  
-Place amplifiers — biome: Storm-prone environments; Tectonic regions; High predator density | air: High storm frequency; Volatile weather | light: Rapidly changing light seasons | social: Chaotic household; Urban high density; Institutional pressure early | field: Vortex locations; High distortion fields
+Place amplifiers — biome: Storm-prone environments; Tectonic regions; High predator density | air: High storm frequency; Volatile weather | light: Rapidly changing light seasons | social: Chaotic household; Urban high density; Institutional pressure early | field: Vortex incubators; High distortion fields
 
 **4. Intolerance → Understanding** (Rigidity / Clarity) — The mind under pressure to solve — answering before understanding versus genuine clarity  
 Body: Ajna — center of forehead · Domains: MIND, COMMUNICATION, AUTHORITY · Wound markers: SATURN, MERCURY_RETROGRADE, PLUTO_SQUARE_MOON · Sections fed: 10, 16, 24  
-Place amplifiers — biome: Resource scarcity environments; High competition biomes | air: High positive ions; Urban pollution load | light: Low light gestation; Winter born | social: Rigid educational system; Performance as worth installed; Religious or ideological household | field: Insulating field locations; Low signal clarity
+Place amplifiers — biome: Resource scarcity environments; High competition biomes | air: High positive ions; Urban pollution load | light: Low light gestation; Winter born | social: Rigid educational system; Performance as worth installed; Religious or ideological household | field: Insulating field incubators; Low signal clarity
 
 **5. Impatience → Patience** (Rush / Timing) — Alignment with natural timing — forcing versus trusting the rhythm  
 Body: Sacral — lower abdomen · Domains: CAREER, RELATIONSHIPS, HEALTH · Wound markers: MARS, RAHU, URANUS · Sections fed: 5, 8, 13, 15, 23  
@@ -302,7 +302,7 @@ Place amplifiers — biome: Pack survival biomes; Territorial herd environments 
 
 **8. Mediocrity → Contribution** (Invisibility / Impact) — The drive to contribute something real — playing small versus genuine offering  
 Body: Throat — base of neck · Domains: CAREER, COMMUNITY, LEGACY · Wound markers: CHIRON, SATURN, ZOSMA · Sections fed: 9, 41  
-Place amplifiers — biome: Low resource environments; Scarcity biomes | air: Low oxygen; High altitude suppression | light: Low light — suppressive seasonal baseline | social: Both parents absent or emotionally unavailable; Low economic neighborhood; Institutional ranking pressure | field: Suppressing field; Insulating location
+Place amplifiers — biome: Low resource environments; Scarcity biomes | air: Low oxygen; High altitude suppression | light: Low light — suppressive seasonal baseline | social: Both parents absent or emotionally unavailable; Low economic neighborhood; Institutional ranking pressure | field: Suppressing field; Insulating incubator
 
 **9. Stubbornness → Determination** (Inflexibility / Focus) — Focused attention on detail — rigidity versus precise perseverance  
 Body: Sacral — lower abdomen · Domains: CAREER, HEALTH, MIND · Wound markers: SATURN, PLUTO, FIXED_STAR_ANTARES · Sections fed: 4, 15, 23, 25  
@@ -326,7 +326,7 @@ Place amplifiers — biome: Prey-heavy biomes — constant threat | air: Pollute
 
 **14. Greed → Competence** (Hoarding / Mastery) — The relationship to power and resources — hoarding versus mastery  
 Body: Sacral — lower abdomen · Domains: MONEY, CAREER, POWER · Wound markers: PLUTO, RAHU, FIXED_STAR_ALGOL · Sections fed: 1, 33  
-Place amplifiers — biome: Scarcity biomes; Resource-competitive environments | air: Depleted air quality — scarcity signal | light: Seasonal scarcity of warmth and light | social: Low economic neighborhood; Hunger memory active; Both parents working survival mode | field: Extracting field; High energetic debt location
+Place amplifiers — biome: Scarcity biomes; Resource-competitive environments | air: Depleted air quality — scarcity signal | light: Seasonal scarcity of warmth and light | social: Low economic neighborhood; Hunger memory active; Both parents working survival mode | field: Extracting field; High energetic debt incubator
 
 **15. Pride → Humility** (Inflation / Groundedness) — The calibration of self in relation to others — inflation versus genuine modesty  
 Body: G-Center — center of chest · Domains: RELATIONSHIPS, AUTHORITY, REPUTATION · Wound markers: SUN_CONJUNCT_PLUTO, LILITH, FIXED_STAR_REGULUS · Sections fed: 30, 39, 43  
@@ -334,11 +334,11 @@ Place amplifiers — biome: Apex predator environments; Territorial dominance bi
 
 **16. Envy → Versatility** (Comparison / Expression) — The enthusiasm of talent — wanting what others have versus expressing unique gifts  
 Body: Throat — base of neck · Domains: CREATIVITY, RELATIONSHIPS, CAREER · Wound markers: CHIRON, SATURN, MEDUSA · Sections fed: 8, 16  
-Place amplifiers — biome: Competitive display biomes — peacock environments | air: Urban stimulation overload | light: Bright visible environments — constant comparison possible | social: Sibling competition; Ranked educational system; Social media dense environment; Wealth disparity visible | field: High stimulation field; Amplifying location
+Place amplifiers — biome: Competitive display biomes — peacock environments | air: Urban stimulation overload | light: Bright visible environments — constant comparison possible | social: Sibling competition; Ranked educational system; Social media dense environment; Wealth disparity visible | field: High stimulation field; Amplifying incubator
 
 **17. Lust → Anticipation** (Consumption / Direction) — The relationship to desire and what follows — consuming versus directing  
 Body: Sacral — lower abdomen · Domains: SEXUALITY, RELATIONSHIPS, ADDICTION · Wound markers: RAHU, MARS, NEPTUNE, LOT_OF_EROS · Sections fed: 3, 21, 40  
-Place amplifiers — biome: High abundance biomes — tropics; Sensory-rich environments | air: High humidity; Heat; Salt air | light: Long summer days; High sensory activation seasons | social: Absent or emotionally unavailable parent; Early exposure to adult content; Addiction in household | field: High charge vortex; Sensually amplifying locations
+Place amplifiers — biome: High abundance biomes — tropics; Sensory-rich environments | air: High humidity; Heat; Salt air | light: Long summer days; High sensory activation seasons | social: Absent or emotionally unavailable parent; Early exposure to adult content; Addiction in household | field: High charge vortex; Sensually amplifying incubators
 
 **18. Wrath → Integrity** (Rage / Repair) — Correcting what has been corrupted — destructive rage versus principled repair  
 Body: Root — base of spine · Domains: FAMILY, AUTHORITY, SHADOW · Wound markers: MARS, PLUTO, TYPHON, NESSUS · Sections fed: 17, 43  
@@ -346,7 +346,7 @@ Place amplifiers — biome: High predator pressure; Survival-demand environments
 
 **19. Sloth → Sensitivity** (Numbness / Attunement) — Attunement to need — numbness and withdrawal versus profound sensitivity  
 Body: Root — base of spine · Domains: HEALTH, RELATIONSHIPS, SPIRITUALITY · Wound markers: NEPTUNE, CHIRON, KETU, SEDNA · Sections fed: 4, 15, 20, 23  
-Place amplifiers — biome: Low stimulation environments; Flat featureless terrain | air: Low negative ions; Stagnant air; High pollution | light: Long darkness periods; Low UV — dopamine suppression | social: Emotional neglect; Touch deprivation; Disconnected household; Screen-heavy childhood | field: Draining field; Insulating location; Low conductivity ground
+Place amplifiers — biome: Low stimulation environments; Flat featureless terrain | air: Low negative ions; Stagnant air; High pollution | light: Long darkness periods; Low UV — dopamine suppression | social: Emotional neglect; Touch deprivation; Disconnected household; Screen-heavy childhood | field: Draining field; Insulating incubator; Low conductivity ground
 
 **20. Gluttony → Presence** (Filling / Stillness) — The capacity for full presence — filling the void versus genuine witnessing  
 Body: Throat — base of neck · Domains: HEALTH, ADDICTION, MIND · Wound markers: NEPTUNE, RAHU, CHIRON · Sections fed: 5  
@@ -358,15 +358,15 @@ Place amplifiers — biome: High obstacle survival environments; Rocky terrain r
 
 **22. Grace Under Pressure → Graciousness** (Performance / Elegance) — Beauty as a force — superficial adornment versus genuine elegance under pressure  
 Body: Solar plexus — emotional center · Domains: RELATIONSHIPS, CREATIVITY, REPUTATION · Wound markers: NEPTUNE, VENUS_SQUARE_NEPTUNE, LILITH · Sections fed: 8, 22  
-Place amplifiers — biome: Visually beautiful environments; Display biomes | air: Clear crisp air — aesthetic clarity | light: Golden hour dominant locations; Soft diffuse light | social: Appearance pressure in household; Performance of emotion modeled; High social image culture | field: Aesthetically charged locations; Sacred beauty sites
+Place amplifiers — biome: Visually beautiful environments; Display biomes | air: Clear crisp air — aesthetic clarity | light: Golden hour dominant incubators; Soft diffuse light | social: Appearance pressure in household; Performance of emotion modeled; High social image culture | field: Aesthetically charged incubators; Sacred beauty sites
 
 **23. Splitting Apart → Simplicity** (Dissolution / Essentials) — The breakdown of what no longer serves — destruction without rebuild versus essential simplification  
 Body: Throat — base of neck · Domains: SHADOW, RELATIONSHIPS, IDENTITY · Wound markers: PLUTO, URANUS, KETU, FIXED_STAR_MULA · Sections fed: 6, 11, 27  
-Place amplifiers — biome: Seasonal death environments — autumn/winter dominant | air: Cold stripping climates | light: Long darkness — stripping of form | social: Multiple family breakdowns; Early loss; Migration pressure; Instability as normal | field: Field collapse locations; Post-war ground
+Place amplifiers — biome: Seasonal death environments — autumn/winter dominant | air: Cold stripping climates | light: Long darkness — stripping of form | social: Multiple family breakdowns; Early loss; Migration pressure; Instability as normal | field: Field collapse incubators; Post-war ground
 
 **24. Return → Rationalization** (Repetition / Renewal) — The return to what is essential — repeating old pain versus genuine renewal  
 Body: Ajna — center of forehead · Domains: SHADOW, RELATIONSHIPS, MIND · Wound markers: SOUTH_NODE, KETU, SATURN, CHIRON · Sections fed: 13, 33  
-Place amplifiers — biome: Migratory biomes — return patterns in nature | air: Seasonal return cycles — strong seasonal contrast | light: Solstice-sensitive locations | social: Returning to dysfunction modeled in family; Repeat relationship patterns witnessed; Generational loops visible | field: Ancestral land; Birth location return pressure
+Place amplifiers — biome: Migratory biomes — return patterns in nature | air: Seasonal return cycles — strong seasonal contrast | light: Solstice-sensitive incubators | social: Returning to dysfunction modeled in family; Repeat relationship patterns witnessed; Generational loops visible | field: Ancestral land; Birth incubator return pressure
 
 **25. Innocence → Acceptance** (Naivety / Naturalness) — Naturalness and spontaneity — naivety that invites harm versus pure presence  
 Body: G-Center — center of chest · Domains: IDENTITY, SPIRITUALITY, RELATIONSHIPS · Wound markers: NEPTUNE, CHIRON, DEJANIRA · Sections fed: —  
@@ -378,7 +378,7 @@ Place amplifiers — biome: High resource storage biomes — winter preparation 
 
 **27. Nourishment → Care** (Depletion / Nourishment) — What we feed and what feeds us — nourishing others to depletion versus genuine care  
 Body: Throat — base of neck · Domains: HEALTH, FAMILY, RELATIONSHIPS · Wound markers: CHIRON, SATURN, NEPTUNE, NESSUS · Sections fed: 4, 25, 34  
-Place amplifiers — biome: Abundance biomes — food rich environments | air: Fertile atmospheric conditions | light: Growing season dominant locations | social: Parentified child; Fed others emotionally from young age; Hunger memory active; Food as love in household | field: Fertile nourishing ground; High mineral soil
+Place amplifiers — biome: Abundance biomes — food rich environments | air: Fertile atmospheric conditions | light: Growing season dominant incubators | social: Parentified child; Fed others emotionally from young age; Hunger memory active; Food as love in household | field: Fertile nourishing ground; High mineral soil
 
 **28. Preponderance Great → Totality** (Overwhelm / Totality) — Carrying more than the structure can hold — collapse under weight versus conscious totality  
 Body: Spleen — left side of body · Domains: HEALTH, CAREER, SHADOW · Wound markers: SATURN, PLUTO, CHIRON, SEDNA · Sections fed: 28  
@@ -386,7 +386,7 @@ Place amplifiers — biome: Heavy weight survival biomes — carrying through de
 
 **29. Abysmal → Commitment** (Repetition / Mastery) — Entering danger repeatedly — falling into the same abyss versus mastery through immersion  
 Body: Sacral — lower abdomen · Domains: SHADOW, ADDICTION, RELATIONSHIPS · Wound markers: PLUTO, NEPTUNE, SOUTH_NODE, FIXED_STAR_SCHEAT · Sections fed: 3, 5, 7, 16, 21, 42  
-Place amplifiers — biome: Water-dominant environments; Flood plains; Deep ocean proximity | air: High humidity; Monsoon environments | light: Darkness-dominant seasons | social: Addiction in household; Repeated family crisis patterns; Chaos as baseline normal | field: Water memory locations; Deep field locations
+Place amplifiers — biome: Water-dominant environments; Flood plains; Deep ocean proximity | air: High humidity; Monsoon environments | light: Darkness-dominant seasons | social: Addiction in household; Repeated family crisis patterns; Chaos as baseline normal | field: Water memory incubators; Deep field incubators
 
 **30. Clinging → Passion** (Obsession / Illumination) — The nature of desire and attachment — obsessive clinging versus illuminating passion  
 Body: Solar plexus — emotional center · Domains: RELATIONSHIPS, SEXUALITY, ADDICTION · Wound markers: RAHU, MARS, NEPTUNE, LOT_OF_EROS · Sections fed: 3, 21, 40  
@@ -394,15 +394,15 @@ Place amplifiers — biome: Fire-adapted biomes; Desert heat environments | air:
 
 **31. Influence → Leadership** (Seduction / Magnetism) — Mutual influence and attraction — seduction as manipulation versus genuine magnetic leadership  
 Body: Throat — base of neck · Domains: RELATIONSHIPS, AUTHORITY, COMMUNITY · Wound markers: LILITH, NEPTUNE, RAHU, ASHLESHA · Sections fed: 24  
-Place amplifiers — biome: Display and mating biomes; High social complexity environments | air: Charged atmospheric conditions; Pre-storm energy | light: Golden hour locations; Visually magnetic environments | social: Used charm to survive in household; Manipulation modeled by parent; High social performance culture | field: Amplifying vortex; High signal clarity
+Place amplifiers — biome: Display and mating biomes; High social complexity environments | air: Charged atmospheric conditions; Pre-storm energy | light: Golden hour incubators; Visually magnetic environments | social: Used charm to survive in household; Manipulation modeled by parent; High social performance culture | field: Amplifying vortex; High signal clarity
 
 **32. Duration → Continuity** (Stagnation / Endurance) — Perseverance and endurance — stagnation dressed as loyalty versus genuine continuity  
 Body: Spleen — left side of body · Domains: CAREER, RELATIONSHIPS, HEALTH · Wound markers: SATURN, KETU, SOUTH_NODE · Sections fed: 13, 32  
-Place amplifiers — biome: Slow-change environments; Ancient forest; Desert longevity biomes | air: Stable consistent climates | light: Consistent seasonal patterns — low variation | social: Family loyalty above health modeled; Staying in dysfunction as virtue; Long-suffering modeled by parent | field: Ancient geological locations; Stable low-change field
+Place amplifiers — biome: Slow-change environments; Ancient forest; Desert longevity biomes | air: Stable consistent climates | light: Consistent seasonal patterns — low variation | social: Family loyalty above health modeled; Staying in dysfunction as virtue; Long-suffering modeled by parent | field: Ancient geological incubators; Stable low-change field
 
 **33. Retreat → Privacy** (Avoidance / Renewal) — Strategic withdrawal — running and calling it strategy versus conscious retreat for renewal  
 Body: G-Center — center of chest · Domains: SHADOW, RELATIONSHIPS, HEALTH · Wound markers: NEPTUNE, CHIRON, SATURN, KETU · Sections fed: 33, 44  
-Place amplifiers — biome: Wilderness retreat biomes; Cave and shelter environments | air: Cool retreating climates; Autumn | light: Shortening days — retreat signal | social: Home as unsafe — retreat instilled early; Introverted pressure in extroverted household; Overstimulating childhood environment | field: Insulating field; Low density locations
+Place amplifiers — biome: Wilderness retreat biomes; Cave and shelter environments | air: Cool retreating climates; Autumn | light: Shortening days — retreat signal | social: Home as unsafe — retreat instilled early; Introverted pressure in extroverted household; Overstimulating childhood environment | field: Insulating field; Low density incubators
 
 **34. Power Great → Strength** (Force / Power) — Raw power — force without wisdom versus strength in service of something real  
 Body: Sacral — lower abdomen · Domains: CAREER, SEXUALITY, AUTHORITY · Wound markers: MARS, PLUTO, TYPHON, URANUS · Sections fed: 30  
@@ -410,11 +410,11 @@ Place amplifiers — biome: Apex predator biomes; High physical demand environme
 
 **35. Progress → Change** (Burnout / Advancement) — Advancement and recognition — advancing to burnout versus genuine evolutionary progress  
 Body: Throat — base of neck · Domains: CAREER, REPUTATION, LEGACY · Wound markers: RAHU, MARS, SATURN_SQUARE_SUN · Sections fed: 43  
-Place amplifiers — biome: Migratory progress biomes; Seasonal advancement environments | air: Stimulating urban atmosphere; High density opportunity | light: Expanding light seasons — spring surge | social: Achievement pressure; College pathway installed; Success as worth; Competitive siblings or peers | field: High signal field; Amplifying location
+Place amplifiers — biome: Migratory progress biomes; Seasonal advancement environments | air: Stimulating urban atmosphere; High density opportunity | light: Expanding light seasons — spring surge | social: Achievement pressure; College pathway installed; Success as worth; Competitive siblings or peers | field: High signal field; Amplifying incubator
 
 **36. Darkening Light → Crisis** (Concealment / Protection) — The concealment of light under oppressive conditions — hiding the flame versus protecting the inner light  
 Body: Solar plexus — emotional center · Domains: SHADOW, FAMILY, IDENTITY · Wound markers: SATURN, PLUTO, NEPTUNE, CHIRON · Sections fed: 5, 6, 7, 27  
-Place amplifiers — biome: Low light biomes; Forest floor darkness | air: Overcast persistent cloud cover; Low UV chronic | light: Long winter darkness; Winter born; Low light gestation | social: Unsafe to be visible in household; Truth-telling punished; Suppression of authentic expression; Political or cultural oppression in ancestry | field: Insulating field; Suppressing location
+Place amplifiers — biome: Low light biomes; Forest floor darkness | air: Overcast persistent cloud cover; Low UV chronic | light: Long winter darkness; Winter born; Low light gestation | social: Unsafe to be visible in household; Truth-telling punished; Suppression of authentic expression; Political or cultural oppression in ancestry | field: Insulating field; Suppressing incubator
 
 **37. Family → Equality** (Obligation / Belonging) — The ordering of the family system — duty as trap versus genuine belonging  
 Body: Solar plexus — emotional center · Domains: FAMILY, RELATIONSHIPS, COMMUNITY · Wound markers: SATURN, CHIRON, SOUTH_NODE, PHOLUS · Sections fed: 2, 26, 37  
@@ -422,99 +422,99 @@ Place amplifiers — biome: Pack and herd survival biomes; Community-dependent e
 
 **38. Opposition → Honor** (Polarization / Integration) — The tension between opposites — polarity as permanent conflict versus creative tension  
 Body: Root — base of spine · Domains: RELATIONSHIPS, AUTHORITY, COMMUNITY · Wound markers: URANUS, ERIS, MARS_OPPOSITE_SATURN · Sections fed: 2, 17, 18, 39  
-Place amplifiers — biome: Border biomes — where two ecosystems meet | air: Volatile transitional weather | light: Equinox locations — equal dark and light | social: Divided household — warring parents; Cultural opposition in ancestry; Outsider identity in community | field: Tectonic boundary locations; High distortion field
+Place amplifiers — biome: Border biomes — where two ecosystems meet | air: Volatile transitional weather | light: Equinox incubators — equal dark and light | social: Divided household — warring parents; Cultural opposition in ancestry; Outsider identity in community | field: Tectonic boundary incubators; High distortion field
 
 **39. Obstruction → Provocation** (Blocking / Redirection) — The obstacle that demands a different path — blocking and blaming versus finding the true way  
 Body: Root — base of spine · Domains: CAREER, SHADOW, HEALTH · Wound markers: SATURN, CHIRON, KETU · Sections fed: 18  
-Place amplifiers — biome: Physically obstructed terrain; Mountain pass environments | air: Storm-blocked travel climates | light: Fog-heavy locations; Low visibility environments | social: Doors closed by class or race; Institutional obstruction experienced; Achievement blocked by external forces; Educational system failed them | field: Low signal clarity field; Containment locations
+Place amplifiers — biome: Physically obstructed terrain; Mountain pass environments | air: Storm-blocked travel climates | light: Fog-heavy incubators; Low visibility environments | social: Doors closed by class or race; Institutional obstruction experienced; Achievement blocked by external forces; Educational system failed them | field: Low signal clarity field; Containment incubators
 
 **40. Deliverance → Resolve** (Escape / Liberation) — Liberation from tension — escape instead of heal versus genuine resolution  
 Body: Sacral — lower abdomen · Domains: SHADOW, ADDICTION, RELATIONSHIPS · Wound markers: NEPTUNE, URANUS, SOUTH_NODE · Sections fed: 28  
-Place amplifiers — biome: Migration escape biomes; Nomadic survival environments | air: Open expansive atmospheres — escape visible | light: Bright open light after darkness | social: Addiction as escape modeled; Leaving as survival strategy learned early; Multiple relocations as solution to problems | field: Open expansive field; Migration route locations
+Place amplifiers — biome: Migration escape biomes; Nomadic survival environments | air: Open expansive atmospheres — escape visible | light: Bright open light after darkness | social: Addiction as escape modeled; Leaving as survival strategy learned early; Multiple relocations as solution to problems | field: Open expansive field; Migration route incubators
 
 **41. Decrease → Contraction** (Scarcity / Preparation) — Reduction as preparation — loss as punishment versus conscious contraction before expansion  
 Body: Root — base of spine · Domains: MONEY, HEALTH, SHADOW · Wound markers: SATURN, CHIRON, SEDNA · Sections fed: 1, 6, 33  
-Place amplifiers — biome: Winter preparation biomes; Scarcity-cycle environments | air: Autumn stripping climates; Cold approaching | light: Contracting light seasons | social: Hunger memory active; Financial scarcity in childhood; Nutritional imprint of deprivation; Resources withheld | field: Extracting field; Resource-depleted locations
+Place amplifiers — biome: Winter preparation biomes; Scarcity-cycle environments | air: Autumn stripping climates; Cold approaching | light: Contracting light seasons | social: Hunger memory active; Financial scarcity in childhood; Nutritional imprint of deprivation; Resources withheld | field: Extracting field; Resource-depleted incubators
 
 **42. Increase → Expansion** (Excess / Growth) — Growth and abundance — excess and greed versus genuine expansion  
 Body: Sacral — lower abdomen · Domains: MONEY, CAREER, CREATIVITY · Wound markers: RAHU, JUPITER_AFFLICTED, PLUTO · Sections fed: 1, 33  
-Place amplifiers — biome: High abundance biomes; Tropical excess environments | air: Fertile rich atmosphere; High negative ions | light: Long growing seasons; High UV abundance | social: Wealth as identity in household; Abundance or scarcity both creating excess relationship; Achievement culture strong | field: Charging field; High resource locations
+Place amplifiers — biome: High abundance biomes; Tropical excess environments | air: Fertile rich atmosphere; High negative ions | light: Long growing seasons; High UV abundance | social: Wealth as identity in household; Abundance or scarcity both creating excess relationship; Achievement culture strong | field: Charging field; High resource incubators
 
 **43. Breakthrough → Insight** (Rupture / Resolution) — The decisive moment of resolution — breakthrough as rupture versus breakthrough as clarity  
 Body: Ajna — center of forehead · Domains: MIND, CAREER, SHADOW · Wound markers: URANUS, PLUTO, MARS · Sections fed: 22, 43  
-Place amplifiers — biome: Storm-breakthrough biomes; Lightning environments | air: High electrical charge; Pre-storm buildup | light: Intense sudden light; Lightning storms | social: Truth-telling rewarded or punished; Breakthrough behavior modeled as explosive or as clarity; Household where things came to a head | field: High voltage field; Tectonic active locations
+Place amplifiers — biome: Storm-breakthrough biomes; Lightning environments | air: High electrical charge; Pre-storm buildup | light: Intense sudden light; Lightning storms | social: Truth-telling rewarded or punished; Breakthrough behavior modeled as explosive or as clarity; Household where things came to a head | field: High voltage field; Tectonic active incubators
 
 **44. Coming to Meet → Alertness** (Entrapment / Discernment) — The encounter with what approaches — seductive drain versus conscious alertness  
 Body: Spleen — left side of body · Domains: RELATIONSHIPS, SEXUALITY, SHADOW · Wound markers: LILITH, ASHLESHA, NEPTUNE, RAHU · Sections fed: 2, 3, 14, 26, 40  
-Place amplifiers — biome: Predator ambush biomes; Camouflage environments | air: Charged seductive atmospheric conditions | light: Low light — reduced discernment | social: Seduction modeled in household; Boundary violations in early environment; Attraction to unavailable people learned early | field: High seductive field charge; Entrapment location history
+Place amplifiers — biome: Predator ambush biomes; Camouflage environments | air: Charged seductive atmospheric conditions | light: Low light — reduced discernment | social: Seduction modeled in household; Boundary violations in early environment; Attraction to unavailable people learned early | field: High seductive field charge; Entrapment incubator history
 
 **45. Gathering → Communion** (Exploitation / Community) — The assembly of community — exploitation of group power versus genuine communion  
 Body: Solar plexus — emotional center · Domains: COMMUNITY, AUTHORITY, MONEY · Wound markers: PLUTO, SATURN, LILITH · Sections fed: 9, 30, 41  
-Place amplifiers — biome: Herd survival biomes; Pack cooperation environments | air: Dense populated atmospheres | light: Harvest season locations; Autumn gathering light | social: Community exploitation witnessed; Cult dynamics in ancestry or culture; Group identity over individual; Collective shame | field: High density field; Community gathering sites
+Place amplifiers — biome: Herd survival biomes; Pack cooperation environments | air: Dense populated atmospheres | light: Harvest season incubators; Autumn gathering light | social: Community exploitation witnessed; Cult dynamics in ancestry or culture; Group identity over individual; Collective shame | field: High density field; Community gathering sites
 
 **46. Pushing Upward → Determination** (Overreach / Ascent) — Gradual organic ascent — overreach and ambition versus patient upward movement  
 Body: Sacral — lower abdomen · Domains: CAREER, LEGACY, SPIRITUALITY · Wound markers: RAHU, MARS, SATURN · Sections fed: —  
-Place amplifiers — biome: Upward growth biomes; Forest canopy competition; Mountain climbing environments | air: Thin high altitude air — effort required | light: Expanding spring light | social: First generation ambition; Upward mobility as family narrative; College as ascent pressure | field: Upward energy vortex; Mountain summit locations
+Place amplifiers — biome: Upward growth biomes; Forest canopy competition; Mountain climbing environments | air: Thin high altitude air — effort required | light: Expanding spring light | social: First generation ambition; Upward mobility as family narrative; College as ascent pressure | field: Upward energy vortex; Mountain summit incubators
 
 **47. Oppression → Realization** (Constriction / Clarity) — The experience of constriction — the person convinced the floor is the ceiling  
 Body: Ajna — center of forehead · Domains: CAREER, SHADOW, HEALTH · Wound markers: SATURN, CHIRON, KETU · Sections fed: 1, 5, 16, 27, 28, 42, 44  
-Place amplifiers — biome: Resource scarcity environments; Compressed survival biomes | air: High positive ions; Depleting urban atmosphere; Concrete — no discharge | light: Low light; Winter born; Low light gestation | social: Traditional institutional schooling; Grade-based worth; College pressure; Achievement ceiling installed; Both parents in survival mode | field: Draining field; Insulating location; Low conductivity ground
+Place amplifiers — biome: Resource scarcity environments; Compressed survival biomes | air: High positive ions; Depleting urban atmosphere; Concrete — no discharge | light: Low light; Winter born; Low light gestation | social: Traditional institutional schooling; Grade-based worth; College pressure; Achievement ceiling installed; Both parents in survival mode | field: Draining field; Insulating incubator; Low conductivity ground
 
 **48. The Well → Depth** (Isolation / Source) — The source of nourishment — depth as isolation versus depth as inexhaustible resource  
 Body: Spleen — left side of body · Domains: MIND, SPIRITUALITY, HEALTH · Wound markers: SATURN, CHIRON, SHATABHISHA_NAKSHATRA · Sections fed: 4, 10, 25, 34  
-Place amplifiers — biome: Deep water environments; Underground water systems; Cave systems | air: High humidity; Deep forest atmosphere | light: Low light deep environments | social: Intellectual isolation in childhood; Depth not rewarded in household; Gifted child unseen; Homeschooled with depth but no community | field: Deep geological locations; Underground water presence; High mineral conductivity
+Place amplifiers — biome: Deep water environments; Underground water systems; Cave systems | air: High humidity; Deep forest atmosphere | light: Low light deep environments | social: Intellectual isolation in childhood; Depth not rewarded in household; Gifted child unseen; Homeschooled with depth but no community | field: Deep geological incubators; Underground water presence; High mineral conductivity
 
 **49. Revolution → Principles** (Destruction / Transformation) — Fundamental change — revolution as chaos versus principled transformation  
 Body: Solar plexus — emotional center · Domains: SHADOW, CAREER, AUTHORITY · Wound markers: PLUTO, URANUS, ERIS, TYPHON · Sections fed: —  
-Place amplifiers — biome: Molting and transformation biomes; Seasonal death- rebirth environments | air: Storm revolution climates | light: Equinox transition — equal day and night | social: Radical family change experienced; Political revolution in ancestry; Generational upheaval; Multiple complete life restarts witnessed | field: Tectonic active locations; Post-revolution cultural sites
+Place amplifiers — biome: Molting and transformation biomes; Seasonal death- rebirth environments | air: Storm revolution climates | light: Equinox transition — equal day and night | social: Radical family change experienced; Political revolution in ancestry; Generational upheaval; Multiple complete life restarts witnessed | field: Tectonic active incubators; Post-revolution cultural sites
 
 **50. Cauldron → Values** (Sacrifice / Alchemy) — Transformation through cooking — sacrifice without meaning versus alchemical transformation  
 Body: Will Center — solar plexus · Domains: SPIRITUALITY, SHADOW, LEGACY · Wound markers: PLUTO, CHIRON, BHARANI_NAKSHATRA · Sections fed: 11, 27  
-Place amplifiers — biome: Fire-adapted transformation biomes | air: Heat and fire climates | light: Intense transformative light | social: Sacrificial role in family; Carrier of family transformation burden; Spiritual or shamanic lineage | field: Volcanic locations; Sacred fire sites; High mineral transformation substrate
+Place amplifiers — biome: Fire-adapted transformation biomes | air: Heat and fire climates | light: Intense transformative light | social: Sacrificial role in family; Carrier of family transformation burden; Spiritual or shamanic lineage | field: Volcanic incubators; Sacred fire sites; High mineral transformation substrate
 
 **51. Arousing → Initiative** (Shock / Awakening) — The shock that awakens — fear response versus awakened initiative  
 Body: Root — base of spine · Domains: SHADOW, HEALTH, IDENTITY · Wound markers: URANUS, TYPHON, MARS · Sections fed: 17, 20  
-Place amplifiers — biome: Lightning storm biomes; Earthquake zones; High predator startle environments | air: High electrical charge; Storm-prone | light: Sudden intense light changes | social: Shock or trauma in early environment; Unpredictable household; Sudden loss in childhood; Birth trauma active | field: High tectonic activity; Volcanic field; High voltage locations
+Place amplifiers — biome: Lightning storm biomes; Earthquake zones; High predator startle environments | air: High electrical charge; Storm-prone | light: Sudden intense light changes | social: Shock or trauma in early environment; Unpredictable household; Sudden loss in childhood; Birth trauma active | field: High tectonic activity; Volcanic field; High voltage incubators
 
 **52. Keeping Still → Stillness** (Frozen / Presence) — The practice of stillness — repression and freezing versus conscious presence  
 Body: Root — base of spine · Domains: HEALTH, MIND, SPIRITUALITY · Wound markers: SATURN, NEPTUNE, CHIRON · Sections fed: 15, 23  
-Place amplifiers — biome: Mountain stillness biomes; High altitude low movement environments | air: Still cold air; High altitude oxygen restriction | light: Low light stillness; Winter | social: Freeze response modeled; Still as survival in chaotic household; Emotional suppression as virtue; Meditation or spiritual bypassing modeled | field: Insulating still field; Mountain peak locations
+Place amplifiers — biome: Mountain stillness biomes; High altitude low movement environments | air: Still cold air; High altitude oxygen restriction | light: Low light stillness; Winter | social: Freeze response modeled; Still as survival in chaotic household; Emotional suppression as virtue; Meditation or spiritual bypassing modeled | field: Insulating still field; Mountain peak incubators
 
 **53. Development → Beginnings** (Impatience / Organic Growth) — Organic gradual development — impatience destroying what is growing versus trust in organic timing  
 Body: Root — base of spine · Domains: CAREER, RELATIONSHIPS, HEALTH · Wound markers: MARS, RAHU, SATURN · Sections fed: 13  
-Place amplifiers — biome: Slow growth forest biomes; Ancient grove environments | air: Temperate patient climates | light: Gradual seasonal transitions | social: Rushed development in childhood; Early achievement pressure; Comparison to peers constantly; No patience for natural timing modeled | field: Ancient geological locations; Slow stable field
+Place amplifiers — biome: Slow growth forest biomes; Ancient grove environments | air: Temperate patient climates | light: Gradual seasonal transitions | social: Rushed development in childhood; Early achievement pressure; Comparison to peers constantly; No patience for natural timing modeled | field: Ancient geological incubators; Slow stable field
 
 **54. Marrying Maiden → Ambition** (Subservience / Right Timing) — The secondary position — subservience as manipulation versus healthy ambition  
 Body: Sacral — lower abdomen · Domains: RELATIONSHIPS, CAREER, SEXUALITY · Wound markers: LILITH, CHIRON, SOUTH_NODE, LOT_OF_NECESSITY · Sections fed: 13  
-Place amplifiers — biome: Hierarchical herd biomes; Secondary position survival environments | air: Suppressive dense atmospheres | light: Low light — hidden position | social: Gender role suppression; Secondary position in family; Serving others as primary identity; Cultural subservience normalized | field: Suppressing field; Culturally hierarchical locations
+Place amplifiers — biome: Hierarchical herd biomes; Secondary position survival environments | air: Suppressive dense atmospheres | light: Low light — hidden position | social: Gender role suppression; Secondary position in family; Serving others as primary identity; Cultural subservience normalized | field: Suppressing field; Culturally hierarchical incubators
 
 **55. Abundance → Spirit** (Peak Collapse / Transcendence) — The peak moment — abundance turning to decline versus spirit that transcends peak and valley  
 Body: Solar plexus — emotional center · Domains: MONEY, CAREER, SPIRITUALITY · Wound markers: PLUTO, SATURN, RAHU · Sections fed: 22  
-Place amplifiers — biome: Peak abundance biomes; Summer maximum environments | air: Peak summer atmosphere | light: Summer solstice — maximum light | social: Success then collapse witnessed in family; Boom-bust economic environment; Abundance followed by loss as pattern | field: Peak charge vortex; High point locations
+Place amplifiers — biome: Peak abundance biomes; Summer maximum environments | air: Peak summer atmosphere | light: Summer solstice — maximum light | social: Success then collapse witnessed in family; Boom-bust economic environment; Abundance followed by loss as pattern | field: Peak charge vortex; High point incubators
 
 **56. Wanderer → Stimulation** (Alienation / Perspective) — The traveler without home — rootless alienation versus the wisdom of the witness  
 Body: G-Center — center of chest · Domains: IDENTITY, RELATIONSHIPS, SPIRITUALITY · Wound markers: CHIRON, SOUTH_NODE, SEDNA, URANUS · Sections fed: 41, 44  
-Place amplifiers — biome: Nomadic migratory biomes; No-fixed-territory environments | air: Transitional atmospheric conditions | light: Equinox — between seasons | social: Multiple childhood relocations; Immigrant family; Never fully belonging anywhere; Cultural outsider identity | field: Migration route locations; Transitional field — neither here nor there
+Place amplifiers — biome: Nomadic migratory biomes; No-fixed-territory environments | air: Transitional atmospheric conditions | light: Equinox — between seasons | social: Multiple childhood relocations; Immigrant family; Never fully belonging anywhere; Cultural outsider identity | field: Migration route incubators; Transitional field — neither here nor there
 
 **57. Gentle → Intuition** (Infiltration / Clarity) — Penetrating persistence — infiltration and manipulation versus intuitive clarity  
 Body: Spleen — left side of body · Domains: MIND, RELATIONSHIPS, HEALTH · Wound markers: NEPTUNE, LILITH, ASHLESHA · Sections fed: 14, 15, 24  
-Place amplifiers — biome: Wind-dominant biomes; Open plain wind environments | air: High wind; Moving atmospheric conditions | light: Diffuse soft light; Wind-cleared sky | social: Intuition suppressed in household; Gaslighting in early environment; Truth perception punished; Subtle manipulation modeled | field: High conductivity field; Wind-exposed locations
+Place amplifiers — biome: Wind-dominant biomes; Open plain wind environments | air: High wind; Moving atmospheric conditions | light: Diffuse soft light; Wind-cleared sky | social: Intuition suppressed in household; Gaslighting in early environment; Truth perception punished; Subtle manipulation modeled | field: High conductivity field; Wind-exposed incubators
 
 **58. Joyous → Vitality** (Addiction / Joy) — Joy and pleasure — pleasure as addiction versus genuine vitality  
 Body: Solar plexus — emotional center · Domains: HEALTH, RELATIONSHIPS, ADDICTION · Wound markers: NEPTUNE, RAHU, VENUS_SQUARE_NEPTUNE · Sections fed: 8, 21, 34  
-Place amplifiers — biome: Lake and water joy biomes; Abundant pleasure environments | air: High negative ions; Water proximity; Salt air | light: Summer joy light; Long pleasant days | social: Joy suppressed in household; Pleasure as sin or reward only; Addiction modeled as joy substitute; Fun as conditional on performance | field: Lake and water field; Nourishing charging locations
+Place amplifiers — biome: Lake and water joy biomes; Abundant pleasure environments | air: High negative ions; Water proximity; Salt air | light: Summer joy light; Long pleasant days | social: Joy suppressed in household; Pleasure as sin or reward only; Addiction modeled as joy substitute; Fun as conditional on performance | field: Lake and water field; Nourishing charging incubators
 
 **59. Dispersion → Sexuality** (Dissolution / Opening) — The dissolution of barriers — loss of self versus genuine opening  
 Body: Sacral — lower abdomen · Domains: SEXUALITY, RELATIONSHIPS, SPIRITUALITY · Wound markers: NEPTUNE, LILITH, CHIRON · Sections fed: 3  
-Place amplifiers — biome: Water dissolution biomes; Ocean wave environments | air: High humidity; Rain dissolution climates | light: Soft dispersed light | social: Boundaries dissolved in household; Enmeshment modeled; Sexual boundary violations in early environment; No privacy in childhood | field: Ocean field; High dissolving location; Sacred water sites
+Place amplifiers — biome: Water dissolution biomes; Ocean wave environments | air: High humidity; Rain dissolution climates | light: Soft dispersed light | social: Boundaries dissolved in household; Enmeshment modeled; Sexual boundary violations in early environment; No privacy in childhood | field: Ocean field; High dissolving incubator; Sacred water sites
 
 **60. Limitation → Acceptance** (Prison / Structure) — The acceptance of limits — boundaries as prison versus structure as liberation  
 Body: Root — base of spine · Domains: SHADOW, HEALTH, MONEY · Wound markers: SATURN, CHIRON, ORCUS · Sections fed: 25  
-Place amplifiers — biome: Constrained survival biomes; Island environments; Landlocked terrain | air: Dense compressed atmospheres | light: Winter limitation; Restricted light seasons | social: Rigid rule household; Financial limitation severe; Educational limitation by class or race; Institutional constraint experienced | field: Insulating field; Contained geographic locations
+Place amplifiers — biome: Constrained survival biomes; Island environments; Landlocked terrain | air: Dense compressed atmospheres | light: Winter limitation; Restricted light seasons | social: Rigid rule household; Financial limitation severe; Educational limitation by class or race; Institutional constraint experienced | field: Insulating field; Contained geographic incubators
 
 **61. Inner Truth → Mystery** (Weaponized Truth / Penetrating Truth) — The truth that penetrates — truth as weapon versus truth as bridge  
 Body: Ajna — center of forehead · Domains: MIND, RELATIONSHIPS, SPIRITUALITY · Wound markers: PLUTO, MERCURY_RETROGRADE, CHIRON · Sections fed: 7, 24, 35  
-Place amplifiers — biome: Deep resonance environments; Cave acoustics; Sacred sound locations | air: Clear high altitude air — truth clarity | light: Full moon locations; Clear night sky | social: Truth-telling punished in household; Secrets kept as survival; Family mythology over reality; Gaslighting environment | field: High resonance field; Sacred acoustic sites
+Place amplifiers — biome: Deep resonance environments; Cave acoustics; Sacred sound incubators | air: Clear high altitude air — truth clarity | light: Full moon incubators; Clear night sky | social: Truth-telling punished in household; Secrets kept as survival; Family mythology over reality; Gaslighting environment | field: High resonance field; Sacred acoustic sites
 
 **62. Preponderance Small → Detail** (Pettiness / Precision) — Attention to small things — pettiness and obsession with detail versus precision and care  
 Body: Ajna — center of forehead · Domains: MIND, HEALTH, CAREER · Wound markers: SATURN, MERCURY_RETROGRADE, CHIRON · Sections fed: 10, 16  
@@ -522,11 +522,11 @@ Place amplifiers — biome: Detail-survival biomes; Foraging precision environme
 
 **63. After Completion → Doubt** (Trap / Refinement) — The moment after success — the trap of completion versus conscious doubt that refines  
 Body: Ajna — center of forehead · Domains: CAREER, SHADOW, MIND · Wound markers: SATURN, PLUTO, SOUTH_NODE · Sections fed: 10, 11, 28, 29, 31  
-Place amplifiers — biome: Post-peak decline biomes; Autumn after harvest | air: Post-storm settled atmosphere | light: Declining light after peak | social: Success followed by loss pattern in family; Achievement never enough; Post-success depression modeled; Completion anxiety in household | field: Post-peak field; Completion energy locations
+Place amplifiers — biome: Post-peak decline biomes; Autumn after harvest | air: Post-storm settled atmosphere | light: Declining light after peak | social: Success followed by loss pattern in family; Achievement never enough; Post-success depression modeled; Completion anxiety in household | field: Post-peak field; Completion energy incubators
 
 **64. Before Completion → Confusion** (Almost / Potential) — The threshold before the crossing — almost there never quite versus the creative power of the unfinished  
 Body: Crown — top of skull · Domains: MIND, CAREER, SPIRITUALITY · Wound markers: NEPTUNE, CHIRON, RAHU · Sections fed: 7, 11, 31, 35  
-Place amplifiers — biome: Transitional threshold biomes; Dawn environments | air: Pre-dawn transitional atmosphere | light: Pre-dawn light; Threshold between dark and light | social: Almost syndrome in family; Projects never completed modeled; So close but not quite as family pattern; Potential never actualized in household | field: Threshold locations; Dawn facing sites; Transitional field
+Place amplifiers — biome: Transitional threshold biomes; Dawn environments | air: Pre-dawn transitional atmosphere | light: Pre-dawn light; Threshold between dark and light | social: Almost syndrome in family; Projects never completed modeled; So close but not quite as family pattern; Potential never actualized in household | field: Threshold incubators; Dawn facing sites; Transitional field
 
 ### Identifying archetypes 65–108 (Sean's later layer: epigenetic 65–86, developmental 87–99, ancestral 100–108)  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
 
@@ -656,7 +656,7 @@ The capacity was always there. The wound was running it. Regulation doesn't crea
 - Inversion marker per identifying archetype × wound: behaviorToWatch, triggerResponseChange, relationalChange, selfReportMarker, timeWindow  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
 - Events: TRIGGER, PROJECTION, COLLAPSE, REGULATION_SUCCESS, PATTERN_RECOGNITION, IGNITE, RELAPSE  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
 - Responses: SNAP, FOLD, FREEZE, FAWN, FLED, REGULATED, IGNITED  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
-- Triggers: PERSON, SITUATION, LOCATION, CONVERSATION, MEMORY, BODY, SUCCESS, FAILURE, ABANDONMENT_CUE, ENGULFMENT_CUE, AUTHORITY, FINANCIAL, UNKNOWN  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
+- Triggers: PERSON, SITUATION, INCUBATOR, CONVERSATION, MEMORY, BODY, SUCCESS, FAILURE, ABANDONMENT_CUE, ENGULFMENT_CUE, AUTHORITY, FINANCIAL, UNKNOWN  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
 - Numeric intensity/rate/trend fields from t514/t591 dropped per t581 pending Sean (see GAPS).  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]
 
 ## 12. Products (no prices)  [UNTRACED — runtime-invented; no LIBRARY source found; cut candidate]

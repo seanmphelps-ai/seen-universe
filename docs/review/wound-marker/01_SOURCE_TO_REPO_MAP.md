@@ -5,18 +5,18 @@ The verbatim document is in [00_SOURCE_DOCUMENT_UNVALIDATED.md](00_SOURCE_DOCUME
 
 ## Verified comparison (read directly from branch closure-and-composure)
 
-| Source topic | Existing repository location | Observed state | Filing |
+| Source topic | Existing repository incubator | Observed state | Filing |
 |---|---|---|---|
 | 1. Full qualifying wound rule | `lib/seen/woundMarkers.ts` | Updated to accept independently calculated candidates using qualifying qualities and preserve provenance; still depends on callers to supply non-Western calculations | PARTIAL; validate native calculations and canonical quality list |
 | 2. Potential vs pressure vs activation vs expression | `lib/seen/woundMarkers.ts`, `lib/seen/geoPresence.ts` | Updated extractor records potential and unresolved activation/expression; old chartEngine still supplies a global baseline and identifying archetype expression still uses it | PARTIAL; downstream integration missing |
 | 3. Eight pressure behaviors | `lib/seen/geoPresence.ts` | Six baseline fields; recurrence and splitting absent from this type | GAP |
 | 6. Individual evidence across 64 identifying archetypes | `lib/seen/identifyingArchetypes64.ts` | Original chartEngine path still uses wound count, amplification and early-identifying-archetype bonus | GAP |
-| 10. Environmental modulation | `lib/seen/geoPresence.ts`, `lib/location/v2/*` | Keyword-based legacy GeoPresence exists; separate official-data Location V2 used by main API | TWO PATHS; NEEDS RECONCILIATION |
+| 10. Environmental modulation | `lib/seen/geoPresence.ts`, `lib/incubator/v2/*` | Keyword-based legacy GeoPresence exists; separate official-data Incubator V2 used by main API | TWO PATHS; NEEDS RECONCILIATION |
 
 ## Actual runtime connection verified
 
 - `lib/seen/chartEngine.ts` imports `extractWoundMarkers`, `computeGeoPresence`, and `expressIdentifyingArchetypes`. It still calls `expressIdentifyingArchetypes(woundMarkers.length, geo.baselinePressure.amplification)`.
-- `lib/location/v2/forged.ts` still imports the retired force-interrogation module.
+- `lib/incubator/v2/forged.ts` still imports the retired force-interrogation module.
 
 ## Filing policy
 

@@ -70,7 +70,7 @@ export default async function AccountPage() {
           <div className="seenInputFrame"><input className="seenInput" name="name" placeholder="Name" required /></div>
           <div className="seenInputFrame"><input className="seenInput" name="birthDate" type="date" required /></div>
           <div className="seenInputFrame"><input className="seenInput" name="birthTime" type="time" /></div>
-          <div className="seenInputFrame"><input className="seenInput" name="birthLocation" placeholder="Birth location" required /></div>
+          <div className="seenInputFrame"><input className="seenInput" name="birthLocation" placeholder="Birth incubator" required /></div>
           <button className="seenButtonSecondary" type="submit">Save person</button>
         </form>
 

@@ -17,7 +17,7 @@ Counted 2026-10-03. 347 files.
 
 These exist.
 
-- `00_SEEN_APPLICATION_ENTRY.md` — entry is Location, date of birth, time rectification, begin. Six-month lived places.
+- `00_SEEN_APPLICATION_ENTRY.md` — entry is Incubator, date of birth, time rectification, begin. Six-month lived places.
 - `docs/01_CLOSURE_COMPOSURE_RUNTIME_ORDER.md` — long controlling order: splash, one person or two, each person finishes alone, then relationship. Environmental intake before birth foundation. Generator calculates. Oracle speaks from finished output.
 - `docs/02_CLOSURE_COMPOSURE_RUNTIME_ORDER_LOCK.md` — lock on that order.
 - `docs/00_INTAKE_ORDER_LOCK.md` — name, date, birth city, lived places.
@@ -32,7 +32,7 @@ These exist.
 - `/cadence`
 - `/closure`
 - `/people/[personId]`
-- `POST /api/seen/run` Western chart plus location field
+- `POST /api/seen/run` Western chart plus incubator field
 - `POST /api/location/field`
 - `POST /api/rectification/scenarios`
 

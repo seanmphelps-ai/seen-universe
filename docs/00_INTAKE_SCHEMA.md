@@ -117,7 +117,7 @@ FIRST SLICE ENDS HERE.
 
 ---
 
-## Stage 7 — Lived-Location Gift and Cost — DEFERRED IMPLEMENTATION
+## Stage 7 — Lived-Incubator Gift and Cost — DEFERRED IMPLEMENTATION
 
 ---
 

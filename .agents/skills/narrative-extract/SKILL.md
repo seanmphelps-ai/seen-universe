@@ -4,15 +4,15 @@
 
 ## Purpose
 
-Transform retrieved location-period evidence into structured environmental signals.
+Transform retrieved incubator-period evidence into structured environmental signals.
 
 ## Task
 
-Extract structured environmental signals from location-period evidence.
+Extract structured environmental signals from incubator-period evidence.
 
 ## Inputs
 
-- Location-period evidence records
+- Incubator-period evidence records
 
 ## Actions
 

@@ -87,7 +87,7 @@ export const archetype: IdentifyingArchetypeRecord = {
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Seasonal death environments — autumn/winter dominant; Cold stripping climates; Long darkness — stripping of form; Multiple family breakdowns; Field collapse locations?",
+        "Environment: which of these surroundings turn it up — Seasonal death environments — autumn/winter dominant; Cold stripping climates; Long darkness — stripping of form; Multiple family breakdowns; Field collapse incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },

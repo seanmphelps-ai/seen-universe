@@ -218,7 +218,7 @@ The almost, the state of being nearly there. When pressured: the inability to fi
 
 ## Routing Rules
 
-1. The 64 identifying archetypes are the interrogators. Each identifying archetype runs its own question set against the chart, the locations, and the lived evidence.
+1. The 64 identifying archetypes are the interrogators. Each identifying archetype runs its own question set against the chart, the incubators, and the lived evidence.
 2. Each identifying archetype's state is built only from its own deposits — signal, source, person, context, pressure, condition, recurrence, confidence.
 3. No global score, no pre-charge, no activation status, no convergence filter. A identifying archetype surfaces only when its own evidence earns it.
 4. The seed and the incubator come together. The seed is the natal chart. The incubator is the environment — the city, the places lived, the years in each one. The identifying archetypes witness what happens to the seed in the incubator.

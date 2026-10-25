@@ -41,9 +41,9 @@ Commercial Type's **Frame** collection is under review:
 - `Frame Head` — potential display face
 - `Frame Text` — potential editorial/text companion
 
-## Location card/page
+## Incubator card/page
 
-The location card is the location card. Where this card needs a label, the label is environmental exposure.
+The incubator card is the incubator card. Where this card needs a label, the label is environmental exposure.
 
 User-facing language should be minimal.
 
@@ -52,13 +52,13 @@ Current hierarchy:
 - `01` — optional small index
 - `environmental exposure` — primary title
 - `What were you exposed to?` — supporting question
-- `Birth Location`
-- `Locations Lived 6+ Months`
-- `Current Location`
-- `+ Add another location`
+- `Birth Incubator`
+- `Incubators Lived 6+ Months`
+- `Current Incubator`
+- `+ Add another incubator`
 - `Continue`
 
-Location is an exposure/incubator field. It collects the conditions a human lived inside.
+Incubator is an exposure/incubator field. It collects the conditions a human lived inside.
 
 ## Change discipline
 

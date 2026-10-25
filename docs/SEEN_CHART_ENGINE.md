@@ -32,6 +32,6 @@
 
 ## Still missing for full foundation UX
 - AI Gateway key for `/api/rectification/scenarios` dark-card *prose*
-- Location→birth payload unify with lat/long
+- Incubator→birth payload unify with lat/long
 - Rich GeoPresence research layers (incident/social) beyond heuristics
 - Vedic Ashlesha native calc (currently pending marker)

@@ -62,7 +62,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — High altitude; High negative ions; Long summer days; Low density; Vortex locations?",
+        "Environment: which of these surroundings turn it up — High altitude; High negative ions; Long summer days; Low density; Vortex incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -166,7 +166,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Migration pressure biomes; Unstable weather patterns; Polar light extremes; Multiple childhood relocations; Draining field locations?",
+        "Environment: which of these surroundings turn it up — Migration pressure biomes; Unstable weather patterns; Polar light extremes; Multiple childhood relocations; Draining field incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -270,7 +270,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Storm-prone environments; High storm frequency; Rapidly changing light seasons; Chaotic household; Vortex locations?",
+        "Environment: which of these surroundings turn it up — Storm-prone environments; High storm frequency; Rapidly changing light seasons; Chaotic household; Vortex incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -374,7 +374,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Resource scarcity environments; High positive ions; Low light gestation; Rigid educational system; Insulating field locations?",
+        "Environment: which of these surroundings turn it up — Resource scarcity environments; High positive ions; Low light gestation; Rigid educational system; Insulating field incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -2246,7 +2246,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Visually beautiful environments; Clear crisp air — aesthetic clarity; Golden hour dominant locations; Appearance pressure in household; Aesthetically charged locations?",
+        "Environment: which of these surroundings turn it up — Visually beautiful environments; Clear crisp air — aesthetic clarity; Golden hour dominant incubators; Appearance pressure in household; Aesthetically charged incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -2350,7 +2350,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Seasonal death environments — autumn/winter dominant; Cold stripping climates; Long darkness — stripping of form; Multiple family breakdowns; Field collapse locations?",
+        "Environment: which of these surroundings turn it up — Seasonal death environments — autumn/winter dominant; Cold stripping climates; Long darkness — stripping of form; Multiple family breakdowns; Field collapse incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -2454,7 +2454,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Migratory biomes — return patterns in nature; Seasonal return cycles — strong seasonal contrast; Solstice-sensitive locations; Returning to dysfunction modeled in family; Ancestral land?",
+        "Environment: which of these surroundings turn it up — Migratory biomes — return patterns in nature; Seasonal return cycles — strong seasonal contrast; Solstice-sensitive incubators; Returning to dysfunction modeled in family; Ancestral land?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -2766,7 +2766,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Abundance biomes — food rich environments; Fertile atmospheric conditions; Growing season dominant locations; Parentified child; Fertile nourishing ground?",
+        "Environment: which of these surroundings turn it up — Abundance biomes — food rich environments; Fertile atmospheric conditions; Growing season dominant incubators; Parentified child; Fertile nourishing ground?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -2974,7 +2974,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Water-dominant environments; High humidity; Darkness-dominant seasons; Addiction in household; Water memory locations?",
+        "Environment: which of these surroundings turn it up — Water-dominant environments; High humidity; Darkness-dominant seasons; Addiction in household; Water memory incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -3182,7 +3182,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Display and mating biomes; Charged atmospheric conditions; Golden hour locations; Used charm to survive in household; Amplifying vortex?",
+        "Environment: which of these surroundings turn it up — Display and mating biomes; Charged atmospheric conditions; Golden hour incubators; Used charm to survive in household; Amplifying vortex?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -3286,7 +3286,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Slow-change environments; Stable consistent climates; Consistent seasonal patterns — low variation; Family loyalty above health modeled; Ancient geological locations?",
+        "Environment: which of these surroundings turn it up — Slow-change environments; Stable consistent climates; Consistent seasonal patterns — low variation; Family loyalty above health modeled; Ancient geological incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -3910,7 +3910,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Border biomes — where two ecosystems meet; Volatile transitional weather; Equinox locations — equal dark and light; Divided household — warring parents; Tectonic boundary locations?",
+        "Environment: which of these surroundings turn it up — Border biomes — where two ecosystems meet; Volatile transitional weather; Equinox incubators — equal dark and light; Divided household — warring parents; Tectonic boundary incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -4014,7 +4014,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Physically obstructed terrain; Storm-blocked travel climates; Fog-heavy locations; Doors closed by class or race; Low signal clarity field?",
+        "Environment: which of these surroundings turn it up — Physically obstructed terrain; Storm-blocked travel climates; Fog-heavy incubators; Doors closed by class or race; Low signal clarity field?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -4638,7 +4638,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Herd survival biomes; Dense populated atmospheres; Harvest season locations; Community exploitation witnessed; High density field?",
+        "Environment: which of these surroundings turn it up — Herd survival biomes; Dense populated atmospheres; Harvest season incubators; Community exploitation witnessed; High density field?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -4950,7 +4950,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Deep water environments; High humidity; Low light deep environments; Intellectual isolation in childhood; Deep geological locations?",
+        "Environment: which of these surroundings turn it up — Deep water environments; High humidity; Low light deep environments; Intellectual isolation in childhood; Deep geological incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -5054,7 +5054,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Molting and transformation biomes; Storm revolution climates; Equinox transition — equal day and night; Radical family change experienced; Tectonic active locations?",
+        "Environment: which of these surroundings turn it up — Molting and transformation biomes; Storm revolution climates; Equinox transition — equal day and night; Radical family change experienced; Tectonic active incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -5158,7 +5158,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Fire-adapted transformation biomes; Heat and fire climates; Intense transformative light; Sacrificial role in family; Volcanic locations?",
+        "Environment: which of these surroundings turn it up — Fire-adapted transformation biomes; Heat and fire climates; Intense transformative light; Sacrificial role in family; Volcanic incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -5470,7 +5470,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Slow growth forest biomes; Temperate patient climates; Gradual seasonal transitions; Rushed development in childhood; Ancient geological locations?",
+        "Environment: which of these surroundings turn it up — Slow growth forest biomes; Temperate patient climates; Gradual seasonal transitions; Rushed development in childhood; Ancient geological incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -5782,7 +5782,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Nomadic migratory biomes; Transitional atmospheric conditions; Equinox — between seasons; Multiple childhood relocations; Migration route locations?",
+        "Environment: which of these surroundings turn it up — Nomadic migratory biomes; Transitional atmospheric conditions; Equinox — between seasons; Multiple childhood relocations; Migration route incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -6302,7 +6302,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Deep resonance environments; Clear high altitude air — truth clarity; Full moon locations; Truth-telling punished in household; High resonance field?",
+        "Environment: which of these surroundings turn it up — Deep resonance environments; Clear high altitude air — truth clarity; Full moon incubators; Truth-telling punished in household; High resonance field?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },
@@ -6614,7 +6614,7 @@ export const IDENTIFYING_ARCHETYPE_INTERROGATION: Record<number, InterrogationSe
         "Rejection: what kind of no lands like a blow here?",
         "Abandonment: what kind of leaving fires it?",
         "Loss of control: what slipping out of your hands detonates it?",
-        "Environment: which of these surroundings turn it up — Transitional threshold biomes; Pre-dawn transitional atmosphere; Pre-dawn light; Almost syndrome in family; Threshold locations?",
+        "Environment: which of these surroundings turn it up — Transitional threshold biomes; Pre-dawn transitional atmosphere; Pre-dawn light; Almost syndrome in family; Threshold incubators?",
         "Relationship: which person, by role, lights the fuse?"
       ]
     },

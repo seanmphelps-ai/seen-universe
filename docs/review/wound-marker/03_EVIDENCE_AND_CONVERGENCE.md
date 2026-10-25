@@ -34,7 +34,7 @@ A strong non-overlapping signal must remain preserved.
 
 Create a bounded runtime convergence module inside the existing SEEN Generator/Helix architecture.
 
-Suggested implementation location:
+Suggested implementation incubator:
 
     lib/seen/convergence.ts
 

@@ -26,7 +26,7 @@ Seed = natal. Soil = family. Weather = city / years. Equal.
 
 ## Forbidden
 
-- Location page before date
+- Incubator page before date
 - Optional time
 - Showing the clock on recognition cards
 - Round 1 at 06:00 / 18:00

@@ -16,7 +16,7 @@ The system begins with Closure & Composure: two-person recognition and emotional
 
 SEEN supports both Shadow Chart and Forecast modes.
 
-In Forecast mode, the user can select a past, present, or future date and location. The system can then examine how much of a relational rupture, emotional pattern, or behavioral event was shaped by baseline wiring, environmental pressure, wound activation, relational dynamics, and present-state modulation.
+In Forecast mode, the user can select a past, present, or future date and incubator. The system can then examine how much of a relational rupture, emotional pattern, or behavioral event was shaped by baseline wiring, environmental pressure, wound activation, relational dynamics, and present-state modulation.
 
 The Oracle reveals mapped convergence progressively through nesting chips and user-directed expansion.
 

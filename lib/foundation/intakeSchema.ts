@@ -1,3 +1,4 @@
+// PROVENANCE: bot=grok session=2026-10-24 task=rename environmental exposure engine to incubator
 import { z } from 'zod';
 
 const CalendarYearSchema = z.string().regex(/^\d{4}$/, 'Enter a four-digit calendar year.');
@@ -36,7 +37,7 @@ export const LivedExposureSchema = z.object({
 });
 
 export const ResidencePeriodSchema = z.object({
-  location: z.string().trim().min(1),
+  incubator: z.string().trim().min(1),
   startYear: CalendarYearSchema,
   endYear: CalendarYearSchema,
 }).superRefine(({ startYear, endYear }, context) => {
@@ -61,22 +62,22 @@ export const FoundationIntakeSchema = z.object({
   birthTime: BirthTimeSchema.nullable(),
   birthLocation: z.string().trim().min(1),
   birthCity: PlaceSchema.optional(),
-  maternityLocation: z.string().trim().optional(),
-  livedLocations: z.array(z.string().trim().min(1)),
+  maternityIncubator: z.string().trim().optional(),
+  livedIncubators: z.array(z.string().trim().min(1)),
   livedPeriods: z.array(ResidencePeriodSchema),
   livedPlaces: z.array(LivedPlaceSchema).optional(),
-  currentLocation: z.string().trim().min(1),
+  currentIncubator: z.string().trim().min(1),
   currentPeriod: CurrentResidencePeriodSchema,
   minimumResidenceMonths: z.literal(6),
-}).superRefine(({ livedLocations, livedPeriods }, context) => {
+}).superRefine(({ livedIncubators, livedPeriods }, context) => {
   if (
-    livedLocations.length !== livedPeriods.length ||
-    livedLocations.some((location, index) => location !== livedPeriods[index]?.location)
+    livedIncubators.length !== livedPeriods.length ||
+    livedIncubators.some((incubator, index) => incubator !== livedPeriods[index]?.incubator)
   ) {
     context.addIssue({
       code: 'custom',
-      path: ['livedLocations'],
-      message: 'Lived locations must match their exposure periods.',
+      path: ['livedIncubators'],
+      message: 'Lived incubators must match their exposure periods.',
     });
   }
 });
