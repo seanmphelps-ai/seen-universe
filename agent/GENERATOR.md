@@ -44,7 +44,7 @@ Dispatch one subagent per system. One system per call. Each runs its own traditi
 | Galactic signature (galactic time, galactic trio) | none yet | none yet |
 | Sacred geometry | none yet | none yet |
 
-HOLD: `humandesign` and `iching` subagents exist but are not on the owner's 2026-10-25 list. Do not dispatch until the owner confirms.
+Human Design and I Ching are not seed readings. Their 64 gates and 64 hexagrams are the base of the identifying archetypes (Step 5). Do not dispatch `humandesign` or `iching` as seed systems.
 
 Time used for the seed:
 - user gave a time: that time, and ±1 hour either side
@@ -68,15 +68,16 @@ Follow `docs/TIME_NARROWING_LOCK.md` for card rules (paragraph cards, no clock s
 
 The final pick is the locked time. Locked time is calibration evidence.
 
-## Step 5 — 64 interrogators
+## Step 5 — 64 identifying archetypes
 
-Run `agent/subagents/archetypes` (all 64, `subagents/interrogator-NN-<slug>`). Names from `lib/seen/interrogatorRoster.ts`.
-Each interrogator asks its same identifying questions inside each system, one system at a time.
+Base: Human Design's 64 gates and I Ching's 64 hexagrams.
+Run `agent/subagents/archetypes` (all 64, `subagents/interrogator-NN-<slug>`). Names from `lib/seen/identifyingArchetypes.ts`.
+Each identifying archetype asks its same identifying questions inside each system, one system at a time.
 It records only what is present in that system. No scoring. No filtering.
 
 ## Step 6 — File into life sections
 
-File every interrogator finding into the extended life sections in `docs/45_LIFE_SECTIONS.md`.
+File every identifying-archetype finding into the extended life sections in `docs/45_LIFE_SECTIONS.md`.
 Convergence = several systems landing in the same section. Convergence is where amplification is strongest.
 
 ## Step 7 — Delivery
@@ -87,5 +88,4 @@ A missing or unaudited system stays visibly pending in its slot. Never merged si
 ## Open (owner)
 
 - Galactic signature and Sacred geometry need subagents and auditors.
-- Human Design and I Ching: in or out?
 - Step after "Jung -" not yet given.

@@ -1,19 +1,20 @@
-// PROVENANCE: bot=claude-code session=2026-10-12 task=interrogator roster carries raw Chinese names from 64_PORTALS.md, no Wilhelm renderings
+// PROVENANCE: bot=claude-code session=2026-10-27 task=rename roster to identifying archetypes, base Human Design gates + I Ching hexagrams
 
 /**
- * The 64 interrogators (formerly "portals").
+ * The 64 identifying archetypes (formerly "portals", briefly "interrogators").
+ * Base: Human Design's 64 gates and I Ching's 64 hexagrams.
  * Names are the original Zhouyi character, its pinyin, and the blunt meaning.
  * Source of truth: docs/64_PORTALS.md. No soft Wilhelm renderings ("Youthful Folly").
  */
 
-export interface Interrogator {
+export interface IdentifyingArchetype {
   number: number;
   hanzi: string;
   pinyin: string;
   name: string;
 }
 
-export const INTERROGATORS_64: Interrogator[] = [
+export const IDENTIFYING_ARCHETYPES_64: IdentifyingArchetype[] = [
   { number: 1, hanzi: "乾", pinyin: "Qián", name: "The Force" },
   { number: 2, hanzi: "坤", pinyin: "Kūn", name: "The Yield" },
   { number: 3, hanzi: "屯", pinyin: "Tún", name: "The Ambush" },
