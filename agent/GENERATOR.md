@@ -41,8 +41,8 @@ Dispatch one subagent per system. One system per call. Each runs its own traditi
 | BaZi | `agent/subagents/bazi` | `bazi-auditor` |
 | Mayan Dreamspell | `agent/subagents/dreamspell` | `dreamspell-auditor` |
 | Tzolk'in | `agent/subagents/tzolkin` | `tzolkin-auditor` |
-| Galactic signature (galactic time, galactic trio) | none yet | none yet |
-| Sacred geometry | none yet | none yet |
+| Galactic signature (galactic time, galactic trio) | `agent/subagents/dreamspell` (extend: kin is the signature; oracle trio incomplete) | `dreamspell-auditor` |
+| Sacred geometry | incomplete, being built | incomplete |
 
 Human Design and I Ching are not seed readings. Their 64 gates and 64 hexagrams are the base of the identifying archetypes (Step 5). Do not dispatch `humandesign` or `iching` as seed systems.
 
@@ -87,5 +87,5 @@ A missing or unaudited system stays visibly pending in its slot. Never merged si
 
 ## Open (owner)
 
-- Galactic signature and Sacred geometry need subagents and auditors.
+- In progress: galactic trio inside Dreamspell; Sacred geometry subagent + auditor. Incomplete, not removed.
 - Step after "Jung -" not yet given.
