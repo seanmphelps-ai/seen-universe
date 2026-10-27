@@ -88,4 +88,4 @@ A missing or unaudited system stays visibly pending in its slot. Never merged si
 ## Open (owner)
 
 - In progress: galactic trio inside Dreamspell; Sacred geometry subagent + auditor. Incomplete, not removed.
-- Step after "Jung -" not yet given.
+- Later phases (Jung onward) held by owner until Steps 0-7 are right.
