@@ -51,16 +51,3 @@ Locked time is calibration evidence.
 
 ## Card length
 
-A card is a paragraph. Minimum three sentences.
-
-It must run: trigger, pressure point, behavior, where it collapses, where it thrives, cost to them, cost to others, what gets lost if it runs one more cycle.
-
-Lived years shape the sentences.
-
-## Forbidden
-
-- "Time of birth optional"
-- Guessing noon as the answer
-- Showing the clock on recognition cards
-- Round 1 at 06:00 / 18:00
-- One-line cards
