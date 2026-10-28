@@ -22,7 +22,7 @@ Independently audit one named native system and its builder's changed files. Ret
 
 1. Read the source audit, canonical references, and actual runtime; use builder summaries as navigation aids.
 2. Check the full chain: birth/location intake -> native calculations -> independent complete native reading -> all applicable source-backed shadow/wound findings -> tests.
-3. Verify by running available tests and tracing actual code paths.
+3. Verify by running available tests and tracing actual code paths. Rerun the generator's exact code on its intake and compare every number; any mismatch fails, and a pass shows both outputs side by side.
 4. Perform a read-only audit of the builder's files and return actionable findings to the builder.
 5. Return a precise pass/fail report with reproducible failures and file/line references.
 6. Report UNVERIFIED for checks with missing evidence and identify the evidence needed to resolve them.

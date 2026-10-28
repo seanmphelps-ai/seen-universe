@@ -29,4 +29,5 @@ Sky / native seed → then soil → then how that seed came out here.
 - **Blanket:** location is draped over the seed as a blanket set. It does not rewrite the seed. It amplifies specific pieces of the original seed reading.
 - **Convergence:** amplification is strongest where multiple systems converge in the same life sections.
 - **What we map:** what can probabilistically affect the shadow side. Fight-or-flight reactions, loops, patterns, destruction, sabotage. The malefic set: Chiron, Lilith, Ashlesha, Saturn, the 4th, 8th, 10th and 12th houses.
-- **Interrogators:** the 64 I Ching archetypes are interrogators (formerly "portals").
+- **Identifying archetypes:** the name for the 64 (formerly "portals", briefly "interrogators"). Base: Human Design's 64 gates and I Ching's 64 hexagrams. They are not seed readings.
+- **Incubator:** the name for environmental exposure, determined at a specific location and calendar time.
