@@ -55,7 +55,7 @@ Place recovered source material in `docs/incoming/`. When reconciling multiple r
 4. Match existing style. Trace every changed line to the request. Preserve surrounding code, comments, formatting, and existing functionality.
 5. Remove imports, variables, and functions made unused by this change. Report unrelated dead code as a separate finding and preserve it for a separately authorized cleanup.
 6. Prefer the simpler sufficient implementation. Keep abstractions and configuration tied to actual requested use cases; handle states that can occur in the supported flow.
-7. Preserve parallel workers' edits through coordinated file ownership and integration on `closure-and-composure`.
+7. Preserve parallel workers' edits through coordinated file ownership and integration on `final-seen-cc-runtime`.
 8. Verify the behavior against the original request. For a bug, reproduce the failure and verify the correction. For a refactor, compare relevant checks before and after. For validation, exercise supported and invalid inputs.
 9. Run checks relevant to the change. For integrated runtime changes, run `npm run typecheck`, `npm test`, and `npm run build`.
 10. Commit the completed work on the existing active branch and report changed behavior, verification evidence, and material unresolved limits.

@@ -66,3 +66,106 @@ button,
 [role='button'] {
   cursor: pointer;
 }
+
+/* Entry splash */
+.seenIntro {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #070605;
+}
+
+.seenIntroVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.seenIntroVeil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 35%, rgba(5, 4, 3, 0.78) 100%);
+}
+
+.seenIntroContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 100svh;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 28px max(56px, env(safe-area-inset-bottom));
+}
+
+.seenIntroReveal {
+  display: grid;
+  justify-items: center;
+  width: min(100%, 380px);
+  text-align: center;
+  animation: seenIntroRise 1400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.seenIntroMark {
+  margin: 0 0 28px;
+  color: #f1d98a;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.4rem, 17vw, 5.6rem);
+  font-weight: 400;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  text-shadow: 0 0 24px rgba(255, 186, 64, 0.45), 0 2px 3px #000;
+}
+
+.seenIntroReveal h1:not(.seenIntroMark) {
+  margin: 8px 0 0;
+  color: #f1d98a;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.7rem, 7vw, 2.4rem);
+  font-weight: 400;
+  text-shadow: 0 2px 4px #000;
+}
+
+.seenIntroReveal > p {
+  margin: 0;
+  color: rgba(241, 217, 138, 0.85);
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.seenIntroEnter {
+  width: 100%;
+  min-height: 56px;
+  color: #f1d98a;
+  background: rgba(8, 6, 4, 0.5);
+  border: 1px solid rgba(241, 200, 98, 0.8);
+  border-radius: 999px;
+  box-shadow: 0 0 16px rgba(255, 176, 39, 0.28), inset 0 0 18px rgba(255, 176, 36, 0.06);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: box-shadow 400ms ease, background 400ms ease;
+}
+
+.seenIntroEnter:hover,
+.seenIntroEnter:focus-visible {
+  background: rgba(8, 6, 4, 0.68);
+  box-shadow: 0 0 26px rgba(255, 176, 39, 0.5), inset 0 0 18px rgba(255, 176, 36, 0.1);
+  outline: none;
+}
+
+@keyframes seenIntroRise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seenIntroReveal { animation: none; }
+}

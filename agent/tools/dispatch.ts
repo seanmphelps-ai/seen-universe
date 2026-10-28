@@ -1,3 +1,4 @@
+// PROVENANCE: bot=claude session=2026-10-18 task=merge Jev subagent set into final-seen-cc-runtime
 import { defineWorkflowTool } from 'eve/tools'
 import { z } from 'zod'
 
@@ -13,6 +14,10 @@ const auditor = {
   dreamspell: 'dreamspell-auditor',
   humandesign: 'humandesign-auditor',
   iching: 'iching-auditor',
+  portals: 'portals-auditor',
+  'time-rectification': 'time-rectification-auditor',
+  oracle: 'oracle-auditor',
+  'forge-ui': 'forge-ui-auditor',
 } as const
 
 export default defineWorkflowTool({
@@ -29,14 +34,19 @@ export default defineWorkflowTool({
       'dreamspell',
       'humandesign',
       'iching',
+      'portals',
+      'time-rectification',
+      'oracle',
+      'forge-ui',
     ]),
     record: z.string().min(1).max(100000),
   }),
   async execute({ lineage, record }, ctx) {
     'use workflow'
     const reading = await ctx.agent(lineage, { message: record })
+    // The auditor receives the original record with the reading so it can reconstruct independently.
     const audit = await ctx.agent(auditor[lineage], {
-      message: typeof reading === 'string' ? reading : JSON.stringify(reading),
+      message: JSON.stringify({ record, reading }),
     })
     return { lineage, reading, audit }
   },

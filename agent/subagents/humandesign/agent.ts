@@ -1,3 +1,4 @@
+// PROVENANCE: bot=claude session=2026-10-18 task=merge Jev subagent set into final-seen-cc-runtime
 import { defineAgent } from 'eve'
 import { calculateHumanDesign, type HumanDesignCalcInput } from '../../../lib/humanDesignCalc'
 
@@ -13,5 +14,5 @@ export default defineAgent({
   model: 'openai/gpt-6-sol',
   reasoning: 'high',
   defaultTools: false,
-  tool: true,
+  tool: false,
 })
