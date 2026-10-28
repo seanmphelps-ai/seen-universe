@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "caelus": {
+      "command": "npx",
+      "args": ["-y", "caelus-mcp"]
+    },
+    "openephemeris": {
+      "command": "npx",
+      "args": ["-y", "@openephemeris/mcp"]
+    },
+    "aryaminus-astro": {
+      "command": "npx",
+      "args": ["-y", "astro-mcp-server"]
+    },
+    "mayan-stele": {
+      "command": "npx",
+      "args": ["-y", "mayan-stele-mcp"]
+    },
+    "browser": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "${DATABASE_URL}"]
+    }
+  }
+}
